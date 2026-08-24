@@ -1,0 +1,130 @@
+{
+  "slug": "tallymeter",
+  "name": "Tallymeter",
+  "domain": "tallymeter.com",
+  "category": "finance-accounting",
+  "subcategory": "time tracking + invoicing",
+  "tagline": "Time tracker that turns tracked hours into numbered client invoices, with a REST API and MCP server so AI agents can log their own time",
+  "priceMonthly": 10.38,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "10.38 USD",
+    "source": "https://tallymeter.com/#pricing",
+    "checkedOn": "2026-08-10",
+    "confidence": "high",
+    "notes": "One plan, every feature included. 9 EUR/month or 90 EUR/year, about $10 at the 1.151 EUR/USD reference rate on 2026-07-31. 30-day free trial, no card.",
+    "tiers": [
+      {
+        "name": "Pro",
+        "monthly": 10.38,
+        "annualPerMonth": 8.65,
+        "per": "workspace",
+        "limits": "Unlimited projects and clients; reports, CSV exports, numbered invoices, Jira integration, REST API, and MCP server",
+        "notes": "Published as €9/month or €90/year; converted using ECB reference rates dated 2026-08-07."
+      }
+    ],
+    "freeTierCaps": "no free tier; 30-day trial with no card",
+    "billingTerms": "monthly + annual (annual is 2 months free)",
+    "priceChanges": [],
+    "hiddenCosts": null,
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://tallymeter.com/#pricing",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "The solo core is a weekend build and nobody should pretend otherwise: a timer, projects with hourly rates, and uninvoiced hours rolled into a numbered PDF. What survives the rebuild is the boring half · two-way Jira worklog sync that reconciles ticket by ticket without double-counting, a hosted MCP server and scoped API tokens your agents can reach from any machine, and invoice numbering plus VAT and bank details that hold up when an accountant reads them. Full disclosure: this entry was submitted by the person who builds Tallymeter. Same rubric as everything else on the list, and the honest answer is that a freelancer billing one client can absolutely one-shot the part they use.",
+  "coreLoopDIY": "Start and stop a timer against a project, fix entry descriptions after the fact, then roll every uninvoiced hour into a sequentially numbered PDF invoice at the project's rate.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "an always-on box if you want the timer off your laptop",
+    "PDF generation",
+    "Jira API credentials if you want worklog sync",
+    "backups you actually test"
+  ],
+  "whatYouLose": [
+    "two-way Jira Cloud worklog sync that reconciles ticket by ticket",
+    "a hosted MCP server and scoped API tokens agents can call from anywhere, with per-agent attribution",
+    "invoice numbering, VAT and bank details that survive an accountant handoff",
+    "shared team workspaces and per-member unbilled totals",
+    "managed hosting, nightly backups and a phone-sized UI for starting a timer away from your desk"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "integrations + hosted agent access",
+  "whyPeopleStillPay": "The timer is a weekend. The failure modes are not. Uninvoiced time that silently double-counts against a Jira worklog, an invoice sequence with a gap in it, or a laptop that was asleep when the agent tried to log its hours are all problems you discover on invoice day, in front of a client. A business billing real money for hours generally decides that maintaining the thing that produces its invoices is not the hobby it wants.",
+  "priorArt": [
+    {
+      "name": "kimai",
+      "url": "https://github.com/kimai/kimai",
+      "desc": "mature self-hosted multi-user time tracking with timesheets, reports and invoices",
+      "status": "alive"
+    },
+    {
+      "name": "solidtime",
+      "url": "https://github.com/solidtime-io/solidtime",
+      "desc": "modern open-source time tracker, the closest self-host starting point",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Kimai",
+      "url": "https://www.kimai.org/",
+      "type": "open-source",
+      "repo": "https://github.com/kimai/kimai",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Time, expenses, numbered invoices and a JSON API; the MCP server is the missing party trick.",
+      "stars": 4900,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Invoice Ninja self-hosted",
+      "url": "https://invoiceninja.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Time entries become numbered invoices and the API is usable; agents do not get a ready-made MCP server.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "solidtime",
+      "url": "https://www.solidtime.io/",
+      "desc": "A polished timer with an API, but it stops before invoices."
+    }
+  ],
+  "relatedSlugs": [
+    "clockify",
+    "freshbooks",
+    "invoice-ninja"
+  ],
+  "pagePriority": 2,
+  "verifiedOneShot": false,
+  "notes": "Submitted by its own builder, judged by the same rubric · the solo core really is a weekend.",
+  "prompt": "Build me a freelance time tracker that produces invoices, like Tallymeter. Requirements:\n\n- Node + Express + better-sqlite3, one process, server-rendered pages on\n  localhost:4820. No accounts, no telemetry, everything stays on my machine.\n- Tables: clients, projects (hourly rate, currency), entries, invoices.\n- One timer, big start/stop button on the index page: starting a new one stops\n  the running one first, so two can never run at once. Entries store\n  description, project, started_at and ended_at as ISO-8601 UTC.\n- Let me edit a finished entry's description in place, and add one after the\n  fact with a duration in minutes for the call I forgot to track. Entries\n  already on an invoice are frozen, reject the edit.\n- An /unbilled page: finished entries with no invoice_id, grouped by project,\n  hours shown as \"3h 25m\" and the money at the project rate.\n- Invoice a project's unbilled entries: one line per description with decimal\n  hours, sequential INV-2026-001 numbers that are never reused even if I delete\n  a draft, bank details and VAT rate from config.json, rendered to\n  ./invoices/INV-2026-001.pdf with puppeteer. Stamp invoice_id on what it billed.\n- Out of scope: multi-user accounts, payment collection, mobile apps. Skip them.\n- README: config.json fields, where the PDFs land, and a warning that the\n  sqlite file is the only copy of my billing history · tell me to back it up.",
+  "promptCurated": true
+}

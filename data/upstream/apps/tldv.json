@@ -1,0 +1,118 @@
+{
+  "slug": "tldv",
+  "name": "tl;dv",
+  "domain": "tldv.io",
+  "category": "meeting-notes",
+  "subcategory": "meeting recorder + clips",
+  "tagline": "AI meeting recorder with transcripts, summaries, clips, and CRM sync",
+  "priceMonthly": 18,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "native": "18 USD",
+    "source": "https://tldv.io/app/pricing/",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; secondary 2026 pricing pages list Pro around $29/month and lower annual price.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited meeting recordings, transcripts, and storage; no retention clock.",
+        "notes": "The live pricing application did not expose all AI-feature caps in crawlable public text."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 18,
+        "per": "user",
+        "limits": "Paid AI and workflow features above Free; exact current numeric feature caps were not exposed in crawlable public pricing text.",
+        "notes": "Annual equivalent was verified on tl;dv's official 2026 pricing material; current monthly numeric price was not reliably exposed."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Conversation intelligence, coaching, and revenue workflows; exact current numeric limits and public price were not reliably exposed.",
+        "notes": "Two official 2026 tl;dv pages gave conflicting annual examples ($29 and $35 per seat/month), so the price is left null."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom security, administration, and support; no public numeric price.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "Unlimited recordings, transcripts, and storage; numeric caps for advanced AI features were not exposed in the crawlable live pricing application.",
+    "billingTerms": "monthly + annual; current monthly prices and Business annual price were not reliably exposed",
+    "priceChanges": [],
+    "hiddenCosts": "The live pricing application is dynamic, and separate official 2026 tl;dv pages conflict on the Business annual figure; that field is intentionally null rather than choosing one.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://tldv.io/app/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A DIY app can record, transcribe, summarize, and generate clips, but tl;dv's team library, CRM integrations, and meeting-bot reliability are real work.",
+  "coreLoopDIY": "Join/record meetings, generate transcript and summary, tag highlights, clip segments, and export notes.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "meeting platform integration",
+    "speech-to-text",
+    "video storage",
+    "LLM API",
+    "hosted backend"
+  ],
+  "whatYouLose": [
+    "meeting bot upkeep",
+    "team/shared library",
+    "CRM integrations",
+    "admin controls",
+    "polished clip sharing"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "integrations/media/collaboration",
+  "whyPeopleStillPay": "They pay for repeatable team-wide capture and distribution, not because summaries are hard.",
+  "priorArt": [
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "Can power the transcription layer for a simpler local clone.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Fathom",
+      "url": "https://www.fathom.ai/",
+      "desc": "Free recording, clips and basic summaries are real; CRM sync and advanced workflows are paid."
+    },
+    {
+      "name": "OpenWhispr",
+      "url": "https://openwhispr.com/",
+      "desc": "A capable private recorder and archive, but no clip workflow or CRM sync."
+    }
+  ],
+  "relatedSlugs": [
+    "krisp",
+    "superwhisper",
+    "descript"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Good page because it forces the reader to separate summarization from meeting operations.",
+  "prompt": "Build me a personal meeting recorder with clips to replace tl;dv. Requirements:\n\n- A macOS menu bar app (or a rec start / rec stop CLI, pick the simpler to ship)\n  that records system audio + mic locally with ffmpeg. No bot joins the call.\n- On stop: transcribe with whisper.cpp with timestamps, or the Whisper API if a key\n  is in .env.\n- Send the transcript to an LLM (key in .env) for a 5-bullet summary and action\n  items; save everything to ~/Meetings/YYYY-MM-DD-<title>/ as notes.md, the\n  transcript, and the audio file.\n- While recording, a global hotkey drops a highlight marker; afterwards each marker\n  becomes a clip, ffmpeg cutting 30 seconds either side into clips/.\n- A local library page (Express on localhost:4700): list meetings, full-text search\n  across transcripts with SQLite FTS5, play recordings and clips inline.\n- No accounts, no telemetry; nothing leaves my machine except optional API calls.\n- Out of scope: a bot that auto-joins Zoom/Meet, CRM sync, and a shared team\n  library. This records what I can hear locally.\n- README: mic + screen-recording permissions, whisper model download, and a\n  reminder that recording other people still requires their consent.",
+  "promptCurated": false
+}

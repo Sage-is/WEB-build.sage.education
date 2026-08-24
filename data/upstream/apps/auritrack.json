@@ -1,0 +1,143 @@
+{
+  "slug": "auritrack",
+  "name": "Auritrack",
+  "domain": "auritrack.com",
+  "category": "personal-finance",
+  "subcategory": "ai-expense-tracking",
+  "tagline": "AI-native expense tracker that does your bookkeeping from chat messages and bank statements",
+  "priceMonthly": 3,
+  "pricing": {
+    "plan": "Plus",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "3.00 USD",
+    "source": "https://auritrack.com",
+    "checkedOn": "2026-08-01",
+    "confidence": "high",
+    "notes": "Free tier with no card required; paid tiers are Plus $3/mo, Pro $8/mo, Premium $20/mo, each granting monthly AI credits, plus pay-as-you-go credits that never expire.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Manual app; 1 AI report/month; 1 custom report/month; 1 period report/month; 1 export/month; 0 alerts",
+        "notes": "Other AI actions and transaction imports are pay per use."
+      },
+      {
+        "name": "Plus",
+        "monthly": 3,
+        "annualPerMonth": 2.5,
+        "per": "workspace",
+        "limits": "50 coins/month or 600/year; 3 AI reports, 3 custom reports, 3 period reports, and 5 exports/month; 0 alerts",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 8,
+        "annualPerMonth": 6.67,
+        "per": "workspace",
+        "limits": "150 coins/month or 1,800/year; unlimited chat, deep dives, and voice; 15 AI/custom/period reports and 30 exports/month; alerts included",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 20,
+        "annualPerMonth": 16.67,
+        "per": "workspace",
+        "limits": "450 coins/month or 5,400/year; all report types and exports included; transaction imports remain pay per use",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "1 AI report, 1 custom report, 1 period report, and 1 export per month; 0 alerts; transaction imports and additional AI actions are pay per use",
+    "billingTerms": "free + monthly/annual paid plans (annual is 2 months free)",
+    "priceChanges": [],
+    "hiddenCosts": "Subscription coins refill each billing cycle and do not roll forward; purchased top-up coins do not expire, but public top-up prices were not disclosed. Transaction imports remain pay per use even on Premium.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.auritrack.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop, logging expenses by typing a sentence into a chat box and having an LLM extract amount, payee, and category, is very buildable with an Anthropic API key. Budgets, categories, and spending reports are standard CRUD. The real gap is statement import: getting one clean CSV parsed by an LLM is a demo, but reliably parsing messy multi-page bank PDFs across many banks needs batching, fallbacks, and cross-checks that take far longer than a weekend.",
+  "coreLoopDIY": "Build a chat input that sends free-text expenses to an LLM with a strict extraction schema, save transactions to SQLite, auto-create categories, track budgets per month, and chart spending.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "Anthropic API key",
+    "local or hosted database",
+    "CSV import",
+    "PDF text extraction",
+    "charting library"
+  ],
+  "whatYouLose": [
+    "battle-tested statement parsing across many banks and layouts",
+    "mobile apps and push notifications",
+    "Telegram bot logging",
+    "predictive spending forecasts",
+    "polished AI-written financial reports"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "AI pipeline robustness/convenience",
+  "whyPeopleStillPay": "They pay because a hardened parsing pipeline, mobile apps, and chat-anywhere logging remove all friction, and $3/mo is cheaper than maintaining your own LLM plumbing.",
+  "priorArt": [
+    {
+      "name": "Firefly III",
+      "url": "https://github.com/firefly-iii/firefly-iii",
+      "desc": "Mature self-hosted personal finance manager with a full API and CSV importer, a solid non-AI base to bolt an LLM onto.",
+      "status": "alive"
+    },
+    {
+      "name": "Actual Budget",
+      "url": "https://github.com/actualbudget/actual",
+      "desc": "Open-source local-first budgeting app with strong transaction import tooling.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "TaxHacker",
+      "url": "https://taxhacker.app/",
+      "type": "open-source",
+      "repo": "https://github.com/vas3k/TaxHacker",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Feed it receipts, invoices or bank statements and let an LLM fill the ledger; it is useful, young and very much your server.",
+      "stars": 6600,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Actual Budget",
+      "url": "https://actualbudget.org/",
+      "desc": "A first-rate ledger, but it does not turn chat messages and statements into bookkeeping."
+    },
+    {
+      "name": "Maybe Finance",
+      "url": "https://github.com/maybe-finance/maybe",
+      "desc": "The famous answer is archived; last push July 2025."
+    },
+    {
+      "name": "Midday",
+      "url": "https://midday.ai/",
+      "desc": "Looks perfect; its README limits the public build to non-commercial use and sends businesses to a paid license."
+    }
+  ],
+  "relatedSlugs": [
+    "ynab",
+    "monarch-money",
+    "copilot-money"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Kinda verdict: the AI chat-logging core is a genuine one-session build, but the flagship statement-import feature degrades sharply on real-world bank PDFs without serious pipeline work.",
+  "prompt": "Build me an AI expense tracker to replace Auritrack. Requirements:\n\n- Local web app: Node + Express + better-sqlite3, server-rendered, binds to\n  localhost only.\n- Chat box on the home page: I type \"lunch 12.50 at Chipotle yesterday\" and the\n  app calls the Claude API (claude-sonnet-5) with a tool schema to extract\n  amount, payee, category, and date, then saves the transaction. Show the parsed\n  result inline with an edit button so I can correct mistakes.\n- Categories are auto-created the first time the model uses one; also give me\n  plain manual add/edit forms for transactions and categories as a fallback.\n- Statement import: upload a CSV or a text-layer PDF (use pdf-parse). Send rows\n  or pages to the model in batches with a strict JSON schema, show everything in\n  a review table before committing, and dedupe on date + amount + payee.\n- Budgets: monthly limit per category with a progress bar that turns red on\n  overspend.\n- Reports: spending by category per month and a 6-month trend line with\n  Chart.js, plus an \"ask about my spending\" box where the model writes a SQL\n  query, runs it against a read-only connection, and explains the answer.\n- Nightly copy of the SQLite file to backups/, keep 30.\n- ANTHROPIC_API_KEY lives in .env; send the model only the rows a request\n  needs and never log transaction data.\n- Out of scope: bank sync, scanned-image PDFs, mobile apps, Telegram bots, and\n  multi-user. Note in the README that imports cost real API money and roughly\n  how much per statement.\n- README: how to map my bank's CSV columns on first import.",
+  "promptCurated": true
+}

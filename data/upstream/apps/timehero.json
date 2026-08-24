@@ -1,0 +1,129 @@
+{
+  "slug": "timehero",
+  "name": "TimeHero",
+  "domain": "timehero.com",
+  "appURL": "https://timehero.com",
+  "category": "productivity-utilities",
+  "subcategory": "automatic work planning",
+  "tagline": "Automatically plans tasks and projects around availability and deadlines",
+  "priceMonthly": 5,
+  "pricing": {
+    "plan": "Basic",
+    "kind": "fixed",
+    "basis": "monthly individual plan",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "$5/month; lower annual-equivalent option",
+    "source": "https://timehero.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official pricing page reviewed; taxes, promotions, and regional pricing may differ.",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 5,
+        "annualPerMonth": 4.6,
+        "per": "user",
+        "limits": "Personal task scheduling; public page does not state a numeric project or task cap.",
+        "notes": null
+      },
+      {
+        "name": "Professional",
+        "monthly": 12,
+        "annualPerMonth": 10,
+        "per": "user",
+        "limits": "Unlimited projects, 2 guest users, and 2 smart templates.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 27,
+        "annualPerMonth": 22,
+        "per": "user",
+        "limits": "Unlimited smart templates and guest users, plus reports, timesheets, and Gantt views.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (annual saves up to 18%); 7-day Premium trial with no card",
+    "priceChanges": [],
+    "hiddenCosts": "Professional limits guest users and smart templates to 2 each; larger deployments above 50 members require invoicing/contact.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.timehero.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible automatic work planning loop is buildable, but a credible replacement needs more than the first screen. TimeHero earns its keep through polish, OS integration, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a local desktop utility that captures the essential automatic work planning workflow with keyboard-first controls and local storage.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "macOS, Windows, or Linux development machine",
+    "Node.js 22 and Rust toolchain",
+    "Local filesystem access and OS permissions"
+  ],
+  "whatYouLose": [
+    "deep operating-system edge-case coverage",
+    "polished shortcuts and accessibility",
+    "vendor-maintained updates",
+    "cross-device sync"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "polish/OS integration",
+  "whyPeopleStillPay": "TimeHero: People keep paying because a utility used dozens of times a day must be instant, predictable, and compatible with every OS update.",
+  "ongoingBurden": "Track OS permission changes, shortcut conflicts, packaging, code signing, and regressions after system updates.",
+  "priorArt": [
+    {
+      "name": "ActivityWatch",
+      "url": "https://github.com/ActivityWatch/activitywatch",
+      "desc": "Local-first automatic time tracking with an extensible event model."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "FlowSavvy Free",
+      "url": "https://flowsavvy.app/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Automatically fits tasks around availability and deadlines; free planning looks only two weeks ahead.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Reclaim Lite",
+      "url": "https://reclaim.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A rolling one-week automatic plan for tasks, habits, and focus blocks, free forever.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "alfred-powerpack",
+    "setapp",
+    "skedpal"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of TimeHero is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for TimeHero, not a full clone.\nUse exactly this stack: Tauri 2 + React + TypeScript + SQLite.\nPrimary job: Build a local desktop utility that captures the essential automatic work planning workflow with keyboard-first controls and local storage.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: deep operating-system edge-case coverage; polished shortcuts and accessibility; vendor-maintained updates.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

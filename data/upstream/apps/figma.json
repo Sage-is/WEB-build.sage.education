@@ -1,0 +1,287 @@
+{
+  "slug": "figma",
+  "name": "Figma",
+  "domain": "figma.com",
+  "category": "design",
+  "subcategory": "collaborative interface design",
+  "tagline": "Collaborative browser-based design and prototyping tool",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Professional Full seat",
+    "basis": "monthly per seat",
+    "unit": "per-seat",
+    "native": "20 USD",
+    "source": "https://www.figma.com/pricing/",
+    "checkedOn": "2026-08-07",
+    "confidence": "high",
+    "notes": "Official pricing/help checked 2026-07-30; Professional Full seat listed at $20/month monthly and $16/month annually.",
+    "freeTier": "The free Starter plan gives limited access with unlimited drafts and daily AI credits.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "3 Figma Design/Sites files, 3 FigJam files and 3 Slides files per team; 3 pages per Starter team file; 30-day version history; 150 AI credits/day capped at 500/month.",
+        "notes": "Unlimited personal drafts."
+      },
+      {
+        "name": "Professional, Full seat",
+        "monthly": 20,
+        "annualPerMonth": 16,
+        "per": "user",
+        "limits": "3,000 AI credits/month; unlimited team files and version history.",
+        "notes": null
+      },
+      {
+        "name": "Professional, Dev seat",
+        "monthly": 15,
+        "annualPerMonth": 12,
+        "per": "user",
+        "limits": "500 AI credits/month; Dev Mode access without full design editing.",
+        "notes": null
+      },
+      {
+        "name": "Professional, Collab seat",
+        "monthly": 5,
+        "annualPerMonth": 3,
+        "per": "user",
+        "limits": "500 AI credits/month; FigJam and Slides editing, but not full Figma Design editing.",
+        "notes": null
+      },
+      {
+        "name": "Organization, Full seat",
+        "monthly": null,
+        "annualPerMonth": 55,
+        "per": "user",
+        "limits": "3,000 AI credits/month; organization-wide libraries and admin controls.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Organization, Dev seat",
+        "monthly": null,
+        "annualPerMonth": 25,
+        "per": "user",
+        "limits": "500 AI credits/month; Dev Mode seat.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Organization, Collab seat",
+        "monthly": null,
+        "annualPerMonth": 5,
+        "per": "user",
+        "limits": "500 AI credits/month; collaboration seat.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Enterprise, Full seat",
+        "monthly": null,
+        "annualPerMonth": 90,
+        "per": "user",
+        "limits": "3,000 AI credits/month; enterprise governance and workspaces.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Enterprise, Dev seat",
+        "monthly": null,
+        "annualPerMonth": 35,
+        "per": "user",
+        "limits": "500 AI credits/month; Dev Mode seat.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Enterprise, Collab seat",
+        "monthly": null,
+        "annualPerMonth": 5,
+        "per": "user",
+        "limits": "500 AI credits/month; collaboration seat.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Paid-plan View seat",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited viewers; 500 AI credits/month; view/comment/basic inspection only.",
+        "notes": "Not a standalone plan; available inside paid organizations."
+      }
+    ],
+    "freeTierCaps": "Starter: unlimited drafts, but each team gets 3 Design/Sites files, 3 FigJam files and 3 Slides files; 3 pages per team file; 30-day history; 150 AI credits/day up to 500/month.",
+    "billingTerms": "Professional monthly + annual; Organization and Enterprise annual-only; AI credits reset monthly without rollover",
+    "priceChanges": [],
+    "hiddenCosts": "Extra AI credits require an add-on subscription or pay-as-you-go usage at prices not publicly listed. On a Professional annual plan, added seats can be charged separately at the full monthly rate until renewal; Organization/Enterprise additions are prorated and invoiced quarterly.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://www.figma.com/pricing/",
+      "https://www.figma.com/pricing-faq/",
+      "https://help.figma.com/hc/en-us/articles/13838684089751-Starter-plan-overview",
+      "https://help.figma.com/hc/en-us/articles/360038511293-Create-and-manage-pages",
+      "https://help.figma.com/hc/en-us/articles/33459875669015-How-AI-credits-work",
+      "https://help.figma.com/hc/en-us/articles/35865276858647-Manage-AI-credits"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can make a small drawing/prototyping tool, but Figma's moat is real-time multiplayer editing, plugin ecosystem, design-system workflows, performance, and enterprise trust.",
+  "coreLoopDIY": "Build a simple canvas editor with rectangles/text/components and export, but expect it to be a toy compared with Figma.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "web canvas/WebGL/SVG expertise",
+    "real-time collaboration backend",
+    "file format",
+    "permissions",
+    "plugin model"
+  ],
+  "whatYouLose": [
+    "real-time multiplayer that just works",
+    "your team, who are all on Figma",
+    "the plugin ecosystem",
+    "ten years of canvas performance engineering"
+  ],
+  "moatTags": [
+    "collaboration",
+    "network-effects",
+    "execution-polish"
+  ],
+  "moatNotes": "collaboration/ecosystem/performance",
+  "whyPeopleStillPay": "They pay because entire product/design teams coordinate inside the file, not because drawing rectangles is hard.",
+  "priorArt": [
+    {
+      "name": "Penpot",
+      "url": "https://github.com/penpot/penpot",
+      "desc": "open-source design tool; the serious alternative"
+    },
+    {
+      "name": "Excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "desc": "collaborative whiteboard, open source"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Lunacy",
+      "url": "https://icons8.com/lunacy",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A polished free desktop UI editor with components, prototypes, cloud documents, and native apps; collaboration limits are small-team sized.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "both",
+        "install": "Install a native Windows, macOS or Linux package, or open Lunacy in a browser",
+        "engines": "Icons8-hosted AI tools for background removal, upscaling, generated text and avatars; avatar generation integrates Generated Photos, while underlying model names are not disclosed",
+        "dataFormat": "Local designs are .sketch files on disk; cloud documents live on Icons8 servers and can be saved back as local .sketch files",
+        "gapVsPaid": "Its free cloud collaboration is small-team limited, and Figma's plugin ecosystem, browser collaboration and import fidelity remain stronger.",
+        "setupBlocker": null,
+        "sources": [
+          "https://icons8.com/lunacy",
+          "https://lunacy.docs.icons8.com/about/",
+          "https://lunacy.docs.icons8.com/clouddocs/",
+          "https://lunacy.docs.icons8.com/subscriptions/",
+          "https://lunacy.docs.icons8.com/faq/",
+          "https://www.figma.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Penpot",
+      "url": "https://penpot.app/",
+      "type": "open-source",
+      "repo": "https://github.com/penpot/penpot",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The real open-source answer: browser UI design, components, tokens, prototypes, comments, and multiplayer without pretending a whiteboard is Figma.",
+      "stars": 58200,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MPL-2.0",
+        "runs": "both",
+        "install": "Use the hosted signup, or download the official Docker Compose file and run docker compose up -d",
+        "engines": null,
+        "dataFormat": "Hosted files in Penpot Cloud; self-hosted data in Docker volumes for PostgreSQL and uploaded assets, with exports based on SVG/CSS/HTML/JSON and open standards",
+        "gapVsPaid": "Its plugin ecosystem, Figma-file fidelity and hosted free-team/history limits are still behind Figma's mature collaborative platform.",
+        "setupBlocker": "Self-hosting requires Docker Compose, DNS and reverse-proxy/TLS knowledge; hosted signup has no setup blocker",
+        "sources": [
+          "https://github.com/penpot/penpot",
+          "https://github.com/penpot/penpot/blob/develop/LICENSE",
+          "https://help.penpot.app/technical-guide/getting-started/",
+          "https://help.penpot.app/technical-guide/getting-started/docker/",
+          "https://penpot.app/pricing",
+          "https://www.figma.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Quant-UX",
+      "url": "https://www.quant-ux.com/",
+      "type": "open-source",
+      "repo": "https://github.com/KlausSchaefers/quant-ux",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Browser prototypes, collaboration, user tests, and analytics in one product; weaker than Figma for pixel-perfect design systems.",
+      "stars": 2700,
+      "lastCommit": "2026-05",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "both",
+        "install": "Use the hosted Quant-UX signup, or run its multi-container Docker Compose stack",
+        "engines": null,
+        "dataFormat": "Hosted projects in Quant-UX's service; self-hosted prototypes and tests in MongoDB with uploaded images in mapped data directories",
+        "gapVsPaid": "It is primarily a prototyping and user-testing tool, not a production-grade vector editor and design-system workspace on Figma's level.",
+        "setupBlocker": "Self-hosting needs several containers plus MongoDB, SMTP, a JWT secret, WebSocket URL and reverse-proxy/TLS configuration",
+        "sources": [
+          "https://www.quant-ux.com/",
+          "https://github.com/KlausSchaefers/quant-ux",
+          "https://github.com/KlausSchaefers/quant-ux/blob/master/LICENSE",
+          "https://www.figma.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Excalidraw",
+      "url": "https://excalidraw.com/",
+      "desc": "Excellent collaborative sketching, but hand-drawn boxes are not a component library, vector UI editor, or production design system."
+    },
+    {
+      "name": "OpenPencil",
+      "url": "https://openpencil.dev/",
+      "desc": "Promising and properly open source, but its own README says it is under active development and not production-ready."
+    },
+    {
+      "name": "Pencil Project",
+      "url": "https://pencil.evolus.vn/",
+      "desc": "The classic recommendation is stale: the repository's last commit was January 2023, well outside the maintenance bar."
+    }
+  ],
+  "relatedSlugs": [
+    "whimsical",
+    "adobe-express",
+    "midjourney"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "The credibility entry. Figma's value is multiplayer CRDTs, a decade of canvas engineering, and everyone else being on it. You can't one-shot a moat; and network effects are the strongest moat there is.",
+  "prompt": "Build me a single-player vector canvas editor, a weekend sketch of Figma's core\ncanvas. Requirements:\n\n- A canvas editor with rectangles, ellipses, text, and frames; select, move,\n  and resize with handles; fill, stroke, and corner-radius controls in a right\n  panel.\n- A layers list with drag-reorder.\n- Export the current selection as SVG and PNG.\n- Local-first: documents persist to IndexedDB, with import and export as JSON.\n- Vanilla JS or Svelte on a single canvas element, pick the simpler to ship; no\n  backend at all.\n- No accounts, no telemetry, everything stays in the browser on my machine.\n- Out of scope: multiplayer, comments, components, auto-layout, and plugins.\n  Do not build any collaboration or sync layer.\n- README: state that this is not a Figma replacement, the moat is real-time\n  multiplayer plus the network of people already on it, and point to Penpot or\n  Excalidraw for serious single-player use.",
+  "promptCurated": true
+}

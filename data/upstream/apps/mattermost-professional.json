@@ -1,0 +1,236 @@
+{
+  "slug": "mattermost-professional",
+  "name": "Mattermost Professional",
+  "domain": "mattermost.com",
+  "appURL": "https://mattermost.com",
+  "category": "community",
+  "subcategory": "online communities and team communication",
+  "tagline": "Self-host team chat with channels, threads, search, and integrations",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Professional",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://mattermost.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Professional monthly seat rate.",
+    "native": "10 USD",
+    "kind": "fixed",
+    "currency": "USD"
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Mattermost Professional, self-host team chat with channels, threads, search, and integrations. The hard boundary is managed operations, mobile push, enterprise security, support, and governance, plus network, moderation, and communication infrastructure.",
+  "coreLoopDIY": "Self-host private team chat with channels, threads, search, and integrations, and keep membership and moderation under the owner's control.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "email provider",
+    "object storage for attachments"
+  ],
+  "whatYouLose": [
+    "managed operations, mobile push, enterprise security, support, and governance",
+    "network effects",
+    "native mobile apps",
+    "video and voice infrastructure",
+    "enterprise moderation and discovery"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "collaboration"
+  ],
+  "moatNotes": "network, moderation, and communication infrastructure",
+  "replacementScope": "single private community",
+  "ongoingBurden": "realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations",
+  "whyPeopleStillPay": "People still pay for Mattermost Professional because community software is valuable when members are already there and the operator does not have to own realtime reliability and abuse response. The recurring cost buys realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Discourse",
+      "url": "https://github.com/discourse/discourse",
+      "desc": "Mature open-source community discussion platform with strong moderation and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Element",
+      "url": "https://element.io/",
+      "type": "open-source",
+      "repo": "https://github.com/element-hq/element-web",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Matrix rooms, threads, files and search with free hosted accounts; less Slack clone, more protocol.",
+      "stars": 13300,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later OR GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use a free Matrix account in Element Web/mobile/desktop, or deploy Element Server Suite on your own infrastructure",
+        "engines": null,
+        "dataFormat": "Rooms, event history, account data, and media live on the selected Matrix homeserver; encrypted-room keys remain on clients and can be backed up through Matrix's key-backup system.",
+        "gapVsPaid": "Element covers rooms, threads, files, and search, but its Matrix-first model and smaller workplace-integration surface are less familiar and less Slack-like than Mattermost.",
+        "setupBlocker": "The clean hosted path is easy, but self-hosting the current Element Server Suite means operating a Matrix homeserver and its Kubernetes/Helm-based stack.",
+        "sources": [
+          "https://github.com/element-hq/element-web",
+          "https://element.io/en/open-source",
+          "https://element.io/en/pricing",
+          "https://docs.element.io/latest/element-server-suite-pro/introduction-to-ess-pro/",
+          "https://matrix.org/docs/matrix-concepts/end-to-end-encryption/",
+          "https://mattermost.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mattermost Team Edition",
+      "url": "https://mattermost.com/",
+      "type": "open-source",
+      "repo": "https://github.com/mattermost/mattermost",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Mattermost without the invoice: full team chat below 250 users, but no SSO and every server problem belongs to you.",
+      "stars": 38700,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Install the official Linux binary with PostgreSQL, then configure systemd, TLS/reverse proxy, SMTP, and file storage",
+        "engines": null,
+        "dataFormat": "Channels, posts, users, and configuration live in PostgreSQL; file attachments live in the Mattermost data directory or configured S3-compatible object storage.",
+        "gapVsPaid": "Team Edition keeps the core chat product, but Professional features such as enterprise authentication, advanced compliance and administration, support, and larger-scale assurances are absent.",
+        "setupBlocker": "The first obstacle is a real Linux service deployment, PostgreSQL, SMTP, DNS/TLS, storage, backups, and upgrades, not an app-store install.",
+        "sources": [
+          "https://docs.mattermost.com/product-overview/editions-and-offerings.html",
+          "https://github.com/mattermost/mattermost",
+          "https://docs.mattermost.com/deployment-guide/server/linux/deploy-rhel.html",
+          "https://docs.mattermost.com/administration-guide/configure/smtp-email.html",
+          "https://mattermost.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Pumble Free",
+      "url": "https://pumble.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "Unlimited users, channels and history with ten gigabytes total; group meetings and serious integrations still cost money.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup; use the browser or Pumble's desktop/mobile apps",
+        "engines": null,
+        "dataFormat": "Messages, channels, user records, and files live in Pumble's cloud; workspace owners can export public-channel data as a ZIP with message data and file links.",
+        "gapVsPaid": "Pumble Free removes server work and keeps unlimited history, but free group meetings, screen sharing, broad integrations, storage, and self-hosted control fall short of Mattermost Professional.",
+        "setupBlocker": "There is no installation hurdle, but migration still requires inviting everyone and rebuilding channels and integrations; free exports exclude private channels and direct messages.",
+        "sources": [
+          "https://pumble.com/pricing",
+          "https://pumble.com/help/workspace-administration/pricing/pumble-subscription-plans-and-extra-features/",
+          "https://pumble.com/help/profile/account-management/export-data-from-pumble/",
+          "https://mattermost.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Rocket.Chat Community",
+      "url": "https://www.rocket.chat/",
+      "type": "open-source",
+      "repo": "https://github.com/RocketChat/Rocket.Chat",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Channels, threads, search and integrations for up to a hundred concurrent users; MongoDB joins the team.",
+      "stars": 45900,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Deploy the Community workspace with Docker Compose, Podman, or Kubernetes",
+        "engines": null,
+        "dataFormat": "Users, rooms, messages, and most metadata live in MongoDB; uploads live on local storage or a configured object-storage backend.",
+        "gapVsPaid": "Rocket.Chat Community provides the expected team-chat surface, but MongoDB and upgrades are yours and the free Community workspace is limited to 100 concurrent users.",
+        "setupBlocker": "A production installation requires MongoDB, DNS/TLS, email, backups, upgrades, and enough capacity planning to stay within the Community plan's 100-concurrent-user limit.",
+        "sources": [
+          "https://github.com/RocketChat/Rocket.Chat",
+          "https://github.com/RocketChat/Rocket.Chat/blob/develop/LICENSE",
+          "https://docs.rocket.chat/docs/our-plans",
+          "https://docs.rocket.chat/docs/deploy-with-docker-docker-compose",
+          "https://mattermost.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Zulip",
+      "url": "https://zulip.com/",
+      "type": "open-source",
+      "repo": "https://github.com/zulip/zulip",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Email-shaped topics inside team chat; excellent for async work and merciless about naming conversations.",
+      "stars": 25600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "slack-pro",
+    "discord-nitro",
+    "circle"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Professional plan and a single private community DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Mattermost Professional in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, WebSockets, and Docker Compose; do not offer alternative stacks.\nThe core loop is: self-host private team chat with channels, threads, search, and integrations, and keep membership and moderation under the owner's control.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement spaces, channels, topics, replies, reactions, mentions, profiles, roles, and invitations.\nUse WebSockets for live updates but preserve every message transactionally in PostgreSQL.\nAdd moderation queues, reports, blocks, rate limits, attachment limits, and an audit log.\nProvide email digests, browser notifications, search, pinned content, and member export.\nAdd owner-controlled retention, account deletion, backup, restore, and health checks.\nShip Docker Compose with a seeded demo, migrations, and an emergency admin command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out public-network discovery and existing member liquidity.\nDeliberately leave out production voice or video rooms.\nDeliberately leave out native mobile applications, enterprise SSO, and 24-hour abuse operations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

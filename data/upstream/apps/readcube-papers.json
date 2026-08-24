@@ -1,0 +1,145 @@
+{
+  "slug": "readcube-papers",
+  "name": "ReadCube Papers",
+  "domain": "papersapp.com",
+  "appURL": "https://papersapp.com",
+  "category": "read-it-later",
+  "subcategory": "reference manager",
+  "tagline": "Reference library, PDF reading, discovery, and citation management",
+  "priceMonthly": 5.42,
+  "pricing": {
+    "plan": "Essentials",
+    "kind": "fixed",
+    "basis": "annual-equivalent individual subscription",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "$65/year; $7 monthly",
+    "source": "https://papersapp.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official pricing page reviewed; taxes, promotions, and regional pricing may differ.",
+    "tiers": [
+      {
+        "name": "Essentials",
+        "monthly": 7,
+        "annualPerMonth": 5.42,
+        "per": "user",
+        "limits": "1 seat; 5 shared libraries; AI PDF chat capped at 5/day.",
+        "notes": "Annual total is $65."
+      },
+      {
+        "name": "Plus",
+        "monthly": 14,
+        "annualPerMonth": 10.83,
+        "per": "user",
+        "limits": "Up to 10 users/group; unlimited shared collections; AI PDF chat 20/day; library chat 1/day.",
+        "notes": "Annual total is $130."
+      },
+      {
+        "name": "Team",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Up to 25 users/group; optional AI add-on; AI PDF chat 10/day when enabled.",
+        "notes": "Quote-based; optional document-delivery charges can apply."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Unlimited users and libraries; optional systematic-review and organization modules.",
+        "notes": "Quote-based."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; 30-day Plus trial with no card",
+    "billingTerms": "monthly + annual for individual plans; Team and Enterprise quote-based; multi-year terms up to 3 years",
+    "priceChanges": [],
+    "hiddenCosts": "academic users can receive 40% off; Team AI and document delivery are optional paid additions; final cost scales by user",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://about.readcube.com/pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Do not mistake the interface for the product. ReadCube Papers's durable value is data, import reliability, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a private reference manager workspace that imports user-supplied URLs or files, extracts metadata, supports notes, and searches the local corpus.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "browser automation for user-authorized imports",
+    "optional OpenAI API key stored in .env",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "team libraries and institutional access",
+    "licensed scholarly metadata",
+    "publisher-specific import reliability",
+    "citation graph scale"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "execution-polish"
+  ],
+  "moatNotes": "data/import reliability",
+  "whyPeopleStillPay": "ReadCube Papers: Researchers pay for correct metadata, resilient importers, citation coverage, and workflows that survive publisher and browser changes.",
+  "ongoingBurden": "Maintain parsers, deduplication, PDF extraction, citation styles, and legal access boundaries.",
+  "priorArt": [
+    {
+      "name": "Zotero",
+      "url": "https://github.com/zotero/zotero",
+      "desc": "Mature open-source research and citation manager."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "JabRef",
+      "url": "https://www.jabref.org",
+      "type": "open-source",
+      "repo": "https://github.com/JabRef/jabref",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "browser-extension"
+      ],
+      "desc": "A serious BibTeX library with the glamour level set correctly.",
+      "stars": 4544,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Zotero",
+      "url": "https://www.zotero.org",
+      "type": "open-source",
+      "repo": "https://github.com/zotero/zotero",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "A mature library, PDF reader, discovery tool and citation engine with no subscription.",
+      "stars": 14890,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "zotero-storage",
+    "elicit",
+    "paperpile"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: ReadCube Papers survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by ReadCube Papers; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite + Playwright.\nPrimary job: Build a private reference manager workspace that imports user-supplied URLs or files, extracts metadata, supports notes, and searches the local corpus.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: team libraries and institutional access; licensed scholarly metadata; publisher-specific import reliability.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

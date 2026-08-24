@@ -1,0 +1,144 @@
+{
+  "slug": "umso",
+  "name": "Umso",
+  "domain": "umso.com",
+  "appURL": "https://umso.com",
+  "category": "website-builder",
+  "subcategory": "websites and landing pages",
+  "tagline": "Create and publish a clean startup landing page with a form and simple analytics",
+  "priceMonthly": 14,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://www.umso.com/",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Basic monthly tier.",
+    "native": "14 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "1 site with homepage only, blog, free Umso subdomain, Umso branding and basic analytics",
+        "notes": "Pricing is per site; users are unlimited."
+      },
+      {
+        "name": "Basic",
+        "monthly": 14,
+        "annualPerMonth": 7,
+        "per": "workspace",
+        "limits": "1 site with up to 10 pages, custom domain, custom code, cookie banner, basic forms and no Umso branding",
+        "notes": "Annual price is the effective monthly rate shown by the live yearly toggle."
+      },
+      {
+        "name": "Pro",
+        "monthly": 25,
+        "annualPerMonth": 20,
+        "per": "workspace",
+        "limits": "1 site with unlimited pages, custom forms, advanced analytics, password protection, multilingual content and site export",
+        "notes": "Annual price is the effective monthly rate shown by the live yearly toggle."
+      }
+    ],
+    "freeTierCaps": "1 homepage-only site with a blog, Umso subdomain, Umso branding and basic analytics; unlimited collaborators",
+    "billingTerms": "monthly + annual; every site has its own subscription and billing cycle",
+    "priceChanges": [],
+    "hiddenCosts": "Each site is billed separately, and custom-domain registration or renewal is separate. Some integrations, such as Memberstack, require their own paid subscription.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.umso.com/",
+      "https://help.umso.com/manage-subscription-346gk"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Umso, create and publish a clean startup landing page with a form and simple analytics. The hard boundary is template system, hosting, domains, and very low maintenance, plus editor polish, hosting, templates, and ecosystem.",
+  "coreLoopDIY": "Assemble a clean startup landing page with a form and simple analytics, edit copy and media, preview breakpoints, and publish a static site to a user-owned target.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Node.js 22",
+    "domain and deploy target",
+    "local images",
+    "optional form-email API key"
+  ],
+  "whatYouLose": [
+    "template system, hosting, domains, and very low maintenance",
+    "large template marketplace",
+    "managed hosting and CDN",
+    "advanced CMS",
+    "commerce and agency workflows"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish",
+    "content-rights"
+  ],
+  "moatNotes": "editor polish, hosting, templates, and ecosystem",
+  "replacementScope": "single-site builder",
+  "ongoingBurden": "responsive rendering, forms, domains, certificates, deploys, backups, template maintenance, and browser regressions",
+  "whyPeopleStillPay": "People still pay for Umso because the page renderer is reproducible, but customers pay to avoid becoming their own hosting and browser-compatibility team. The recurring cost buys responsive rendering, forms, domains, certificates, deploys, backups, template maintenance, and browser regressions, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder designed around web standards."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Mautic",
+      "url": "https://mautic.org",
+      "type": "open-source",
+      "repo": "https://github.com/mautic/mautic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Landing pages, forms and analytics without limits; clean startup simplicity is replaced by a marketing control room.",
+      "stars": 9800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A hosted startup page, custom domain, form and campaign analytics for zero dollars; the funnel UI gives away its ancestry.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "A page-editor framework, not a hosted landing page with forms and analytics."
+    },
+    {
+      "name": "Mobirise AI",
+      "url": "https://ai.mobirise.com",
+      "desc": "It creates the page and form, but a durable built-in analytics story is missing."
+    }
+  ],
+  "relatedSlugs": [
+    "duda",
+    "tilda",
+    "typedream"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Basic plan and a single-site builder DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Umso in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and static export; do not offer alternative stacks.\nThe core loop is: assemble a clean startup landing page with a form and simple analytics, edit copy and media, preview breakpoints, and publish a static site to a user-owned target.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nProvide a section library for hero, proof, features, pricing, FAQ, and footer blocks.\nUse a constrained design-token system rather than arbitrary CSS controls.\nAllow inline text editing and local image upload with responsive optimization.\nPreview desktop, tablet, and mobile widths and surface overflow errors.\nPersist projects in SQLite and support a portable JSON export.\nGenerate a clean static Next.js output and document deployment to one target.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a plugin marketplace.\nDeliberately leave out multi-tenant managed hosting.\nDeliberately leave out advanced ecommerce, memberships, and agency billing.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

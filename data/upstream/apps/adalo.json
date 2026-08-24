@@ -1,0 +1,150 @@
+{
+  "slug": "adalo",
+  "name": "Adalo",
+  "domain": "adalo.com",
+  "appURL": "https://adalo.com",
+  "category": "no-code-apps",
+  "subcategory": "internal tools and application builders",
+  "tagline": "Build a constrained PWA from a schema and fixed mobile components",
+  "priceMonthly": 45,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://adalo.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Starter monthly tier.",
+    "native": "45 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Unlimited test apps, screens and actions; 500 records/app; 1 editor; 0 published apps",
+        "notes": "Build and preview only; publishing requires a paid plan."
+      },
+      {
+        "name": "Starter",
+        "monthly": 45,
+        "annualPerMonth": 36,
+        "per": "workspace",
+        "limits": "1 published app; 1 editor; 5 GB team storage; unlimited app actions",
+        "notes": "Annual billing is 20% lower than monthly."
+      },
+      {
+        "name": "Professional",
+        "monthly": 65,
+        "annualPerMonth": 52,
+        "per": "workspace",
+        "limits": "2 published apps; 5 editors; 25 GB team storage; unlimited app actions",
+        "notes": "Annual billing is 20% lower than monthly."
+      },
+      {
+        "name": "Team",
+        "monthly": 200,
+        "annualPerMonth": 160,
+        "per": "workspace",
+        "limits": "5 published apps; 10 editors; 125 GB team storage; unlimited app actions",
+        "notes": "Annual billing is 20% lower than monthly."
+      },
+      {
+        "name": "Adalo Blue",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom dedicated infrastructure, monitoring, data-source and deployment terms",
+        "notes": "Enterprise offering; contact sales."
+      }
+    ],
+    "freeTierCaps": "Unlimited test apps, screens and actions; 500 database records/app; 1 editor; 0 published apps",
+    "billingTerms": "monthly + annual (-20%)",
+    "priceChanges": [],
+    "hiddenCosts": "No platform usage or token overages, but app-store release requires an Apple Developer account ($99/year) and Google Play Developer account ($25 one time); premium marketplace components or external services can add cost",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.adalo.com/pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Adalo, build a constrained PWA from a schema and fixed mobile components. The hard boundary is native app builds, app-store workflow, marketplace components, hosting, and support, plus connectors, runtime reliability, and governance.",
+  "coreLoopDIY": "Define tables and views, build a constrained CRUD interface as a PWA from fixed mobile components, connect one approved data source, and deploy it for a small trusted team.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted deploy target",
+    "API credentials for one selected integration"
+  ],
+  "whatYouLose": [
+    "native app builds, app-store workflow, marketplace components, hosting, and support",
+    "hundreds of connectors",
+    "pixel-perfect app design",
+    "mobile app-store builds",
+    "enterprise permissions and scale"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "connectors, runtime reliability, and governance",
+  "replacementScope": "small-team internal app",
+  "ongoingBurden": "schema migration, auth, permissions, connector drift, queues, deployments, backups, and auditability",
+  "whyPeopleStillPay": "People still pay for Adalo because the builder is only useful when its runtime, connectors, permissions, and deployments remain boring for years. The recurring cost buys schema migration, auth, permissions, connector drift, queues, deployments, backups, and auditability, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Appsmith",
+      "url": "https://github.com/appsmithorg/appsmith",
+      "desc": "Large open-source low-code platform for internal applications and data sources."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Glide Free",
+      "url": "https://www.glideapps.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A schema-first mobile-style web app with fixed components and ten personal users; native app-store binaries are not included.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Appsmith Community",
+      "url": "https://www.appsmith.com/",
+      "desc": "An internal desktop-web tool builder, not a consumer-facing mobile-style PWA builder."
+    },
+    {
+      "name": "MIT App Inventor",
+      "url": "https://appinventor.mit.edu/",
+      "desc": "It builds Android and iOS packages, not a hosted progressive web app."
+    },
+    {
+      "name": "Thunkable Free",
+      "url": "https://thunkable.com/",
+      "desc": "The free plan is public-project prototyping; keeping a published web or mobile app alive requires a subscription."
+    }
+  ],
+  "relatedSlugs": [
+    "flutterflow",
+    "retool",
+    "weweb"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a small-team internal app DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Adalo in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: define tables and views, build a constrained CRUD interface as a PWA from fixed mobile components, connect one approved data source, and deploy it for a small trusted team.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a schema editor for text, number, boolean, date, enum, and relation fields.\nGenerate list, detail, create, edit, and kanban views from the schema.\nImplement role-based read and write rules for admin and member roles.\nSupport one REST connector with encrypted credentials and explicit field mapping.\nAdd an activity log, CSV import or export, backups, and health checks.\nShip Docker Compose with migrations and a seeded example workspace.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out arbitrary user-authored code execution.\nDeliberately leave out a broad integration marketplace.\nDeliberately leave out native mobile binaries and enterprise compliance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

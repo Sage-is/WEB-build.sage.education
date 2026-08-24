@@ -1,0 +1,100 @@
+{
+  "slug": "dailygram",
+  "name": "Dailygram",
+  "domain": "dailygram.me",
+  "appURL": "https://dailygram.me",
+  "category": "social-media",
+  "subcategory": "social profile monitoring and AI email digests",
+  "tagline": "Turn selected public social profiles into a daily AI email digest",
+  "priceMonthly": 5,
+  "pricing": {
+    "plan": "10 Profiles",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://dailygram.me/",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "The standard price is $10/month; the page showed a limited 50% early-user discount when checked.",
+    "native": "5 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "10 Profiles",
+        "monthly": 5,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Up to 10 monitored public social profiles.",
+        "notes": "Current 50%-off price is $5/month; published list price is $10/month, with no stated promotion end date."
+      },
+      {
+        "name": "Unlimited",
+        "monthly": 50,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited monitored public social profiles.",
+        "notes": "Current 50%-off price is $50/month; published list price is $100/month, with no stated promotion end date."
+      }
+    ],
+    "freeTierCaps": "no perpetual free tier; free evaluation sends 7 total digests for up to 2 profiles",
+    "billingTerms": "monthly only; no annual plan published",
+    "priceChanges": [],
+    "hiddenCosts": "The public 50%-off prices do not state whether the discount is permanent or when accounts return to the $10/$100 list prices.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://dailygram.me/",
+      "https://dailygram.me/#pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "The personal digest pipeline is a realistic weekend build if you bring feeds or a data provider. Reliable ingestion from Instagram, X, TikTok, and LinkedIn is not a one-shot project: access restrictions, changing page formats, rate limits, and connector maintenance are the product's durable edge.",
+  "coreLoopDIY": "Poll user-supplied feeds for selected public profiles, deduplicate new posts, summarize them with an LLM, and send one scheduled email digest.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "RSS, Atom, or JSON feeds for selected profiles",
+    "OpenAI API key",
+    "SMTP credentials",
+    "always-on machine or small server"
+  ],
+  "whatYouLose": [
+    "maintained ingestion across four social networks",
+    "resilience to rate limits, blocks, and page changes",
+    "automatic profile discovery and source setup",
+    "managed email delivery and monitoring"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations"
+  ],
+  "moatNotes": "social data access, connector upkeep, and delivery reliability",
+  "replacementScope": "bring-your-own-feed personal social digest",
+  "ongoingBurden": "Source breakage, blocked requests, schema drift, deduplication edge cases, scheduling, retries, LLM costs, and email deliverability.",
+  "whyPeopleStillPay": "People pay for Dailygram because the digest UI is the easy part. The subscription keeps public-profile ingestion working across hostile and frequently changing platforms, then runs summarization and email delivery without asking the user to maintain feeds, workers, or retries.",
+  "priorArt": [
+    {
+      "name": "RSSHub",
+      "url": "https://github.com/DIYgod/RSSHub",
+      "desc": "Open-source RSS generator with routes for many sites and services.",
+      "status": "alive"
+    },
+    {
+      "name": "Huginn",
+      "url": "https://github.com/huginn/huginn",
+      "desc": "Self-hosted agents that watch sources and build automated digests.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "feedly",
+    "inoreader",
+    "hootsuite"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "The DIY scope intentionally excludes direct scraping and uses feeds supplied by the user.",
+  "prompt": "Build me a personal social-profile email digest to replace Dailygram. Requirements:\n\n- Node 22 + Express + better-sqlite3, with a localhost admin page for adding,\n  editing, pausing, and deleting monitored profiles.\n- Each profile stores network, handle, source URL, and an RSS, Atom, or JSON feed\n  URL. Keep one small adapter per feed format and validate each feed when saved.\n- Poll enabled feeds every 6 hours with node-cron, normalize posts to one schema,\n  and deduplicate by source ID, then canonical URL, before inserting into SQLite.\n- Summarize only new posts with the OpenAI SDK: one sentence per post plus a\n  five-bullet digest overview. Read OPENAI_API_KEY and model name from .env.\n- Send one responsive HTML email per day through Nodemailer and SMTP credentials\n  from .env, grouped by profile with timestamps and links to original posts.\n- The dashboard shows last poll, next digest, source errors, and a preview of the\n  exact pending email. Add a Run now button for polling and another for sending.\n- Retry failed fetches and email sends three times with backoff, preserve the error\n  message, and never mark a digest sent until SMTP accepts it.\n- Bind to localhost only. No accounts, billing, telemetry, or cloud control plane;\n  all data stays in SQLite except feed, OpenAI, and SMTP requests.\n- Out of scope: logging into or scraping social networks, bypassing rate limits,\n  mobile apps, and multi-user collaboration. Do not pretend feeds always exist.\n- Include tests for normalization, deduplication, and digest selection, plus a README\n  covering setup, .env keys, database backup, and the feed-access limitation.",
+  "promptCurated": true
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "linguise",
+  "name": "Linguise",
+  "domain": "linguise.com",
+  "appURL": "https://linguise.com",
+  "category": "localization",
+  "subcategory": "translation management and website localization",
+  "tagline": "Build translated static routes from user-approved strings without operating a live proxy",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Start",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://linguise.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Start monthly tier.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Start",
+        "monthly": 15,
+        "annualPerMonth": 13.75,
+        "per": "workspace",
+        "limits": "1 website; 200,000 translated words; unlimited languages and translated page views",
+        "notes": "Annual price is $165/year."
+      },
+      {
+        "name": "Pro",
+        "monthly": 25,
+        "annualPerMonth": 22.92,
+        "per": "workspace",
+        "limits": "1 website; 600,000 translated words; unlimited languages and translated page views",
+        "notes": "Annual price is $275/year."
+      },
+      {
+        "name": "Large",
+        "monthly": 45,
+        "annualPerMonth": 41.25,
+        "per": "workspace",
+        "limits": "1 website; unlimited translated words subject to fair use; unlimited languages and translated page views",
+        "notes": "Annual price is $495/year; Large is not included in the free month."
+      }
+    ],
+    "freeTierCaps": "no free tier; 1-month no-card trial allows up to 600,000 translated words on each new domain",
+    "billingTerms": "monthly + annual (annual is one month free / about 8.3% lower)",
+    "priceChanges": [],
+    "hiddenCosts": "Each plan covers exactly 1 website/domain; when the word quota is reached, new translations stop although existing translations continue to be served.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.linguise.com/pricing/",
+      "https://www.linguise.com/yearly-prices/",
+      "https://www.linguise.com/linguise-affiliate-program/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Linguise, build translated static routes from user-approved strings without operating a live proxy. The hard boundary is translation proxy, automatic discovery, seo, machine translation, and hosting integrations, plus translation memory, collaboration, and deployment integrations.",
+  "coreLoopDIY": "Manage translation keys and review work, preserve context, import and export standard files, and publish user-approved strings as translated static routes without operating a live proxy.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "PostgreSQL",
+    "self-hosted deployment",
+    "source locale files",
+    "optional DeepL or OpenAI API key"
+  ],
+  "whatYouLose": [
+    "translation proxy, automatic discovery, SEO, machine translation, and hosting integrations",
+    "professional translator marketplace",
+    "advanced translation memory",
+    "website proxy network",
+    "enterprise workflows and integrations"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "integrations"
+  ],
+  "moatNotes": "translation memory, collaboration, and deployment integrations",
+  "replacementScope": "small-team string-management system",
+  "ongoingBurden": "file formats, placeholders, plural rules, screenshots, context, permissions, review, glossary, machine translation, sync, and backups",
+  "whyPeopleStillPay": "People still pay for Linguise because localization teams pay because language context, review discipline, translators, and release integrations are the hard parts. The recurring cost buys file formats, placeholders, plural rules, screenshots, context, permissions, review, glossary, machine translation, sync, and backups, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Tolgee",
+      "url": "https://github.com/tolgee/tolgee-platform",
+      "desc": "Active open-source localization platform with translation memory and in-context tooling."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "GTranslate Free",
+      "url": "https://gtranslate.io/",
+      "desc": "The free widget has no translated routes, search indexing or manual editing; the actual Linguise job starts on paid plans."
+    },
+    {
+      "name": "LibreTranslate",
+      "url": "https://libretranslate.com/",
+      "desc": "A maintained translation server and API, not a finished product that discovers a site and emits localized routes."
+    },
+    {
+      "name": "TranslatePress Free",
+      "url": "https://translatepress.com/",
+      "desc": "A useful free WordPress translator, not a deploy-time static-route generator for an arbitrary site."
+    }
+  ],
+  "relatedSlugs": [
+    "lokalise",
+    "crowdin",
+    "weglot"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Start plan and a small-team string-management system DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Linguise in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and one optional machine-translation API; do not offer alternative stacks.\nThe core loop is: manage translation keys and review work, preserve context, import and export standard files, and publish user-approved strings as translated static routes without operating a live proxy.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement projects, locales, keys, namespaces, descriptions, screenshots, translations, and review status.\nImport and export JSON, YAML, PO, and XLIFF while preserving placeholders and plural forms.\nAdd glossary checks, missing-string filters, translation memory, comments, and reviewer assignment.\nUse machine translation only on selected strings and show provider, cost, and source text before approval.\nProvide token-authenticated pull and push endpoints for CI with an immutable change log.\nAdd backups, locale deletion safeguards, and a pseudo-localization preview.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a translator labor marketplace.\nDeliberately leave out a global website translation proxy.\nDeliberately leave out enterprise integrations, legal translation assurance, and round-the-clock support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

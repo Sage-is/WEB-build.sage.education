@@ -1,0 +1,303 @@
+{
+  "slug": "livingwriter",
+  "name": "LivingWriter",
+  "domain": "livingwriter.com",
+  "appURL": "https://livingwriter.com",
+  "category": "writing-assistant",
+  "subcategory": "grammar, editing and long-form writing",
+  "tagline": "Draft long-form fiction with chapters, boards, templates, and story-element tracking",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://livingwriter.com/pricing",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Typical monthly subscription; promotions and annual pricing may change.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "1 manuscript, up to 25,000 words, PDF export only, and 3 AI requests/month",
+        "notes": "Permanent free plan shown on the live pricing page; this contradicts the previous on-file 'no free tier' assumption."
+      },
+      {
+        "name": "Pro",
+        "monthly": 15,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Unlimited manuscripts and word count; Word import; DOCX/print export; 25 AI requests/month",
+        "notes": "Live page offers a 7-day $0.99 introductory trial and an email reminder 2 days before it ends."
+      },
+      {
+        "name": "Pro + AI",
+        "monthly": 30,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "All Pro limits plus unlimited AI across every feature",
+        "notes": "No annual price was exposed on the live public pricing page."
+      }
+    ],
+    "freeTierCaps": "1 manuscript, up to 25,000 words, PDF export only, and 3 AI requests/month",
+    "billingTerms": "monthly pricing published; no annual price was exposed on the live public page; paid plans start with a 7-day $0.99 trial",
+    "priceChanges": [],
+    "hiddenCosts": "The $15 Pro plan still caps AI at 25 requests/month; unlimited AI requires the $30/month Pro + AI plan.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://livingwriter.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For LivingWriter, draft long-form fiction with chapters, boards, templates, and story-element tracking. The hard boundary is cross-device sync, templates, mobile apps, and a refined writer workflow, plus polish, integrations, and proprietary language models.",
+  "coreLoopDIY": "Draft long-form fiction in local text or Markdown with chapters, boards, templates, and story-element tracking, apply focused editing passes with diffs, and save or export without uploading the document.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS, Windows, or Linux",
+    "local files",
+    "optional OpenAI or Anthropic API key for semantic rewrites"
+  ],
+  "whatYouLose": [
+    "cross-device sync, templates, mobile apps, and a refined writer workflow",
+    "cross-device sync",
+    "large proprietary style models",
+    "browser and office-suite extensions",
+    "team style guides"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "proprietary-models"
+  ],
+  "moatNotes": "polish, integrations, and proprietary language models",
+  "replacementScope": "personal local editor",
+  "ongoingBurden": "model quality, extension compatibility, dictionaries, releases, and sync",
+  "whyPeopleStillPay": "People still pay for LivingWriter because the paid tool is already present everywhere they write and its suggestions have been tuned across millions of documents. The recurring cost buys model quality, extension compatibility, dictionaries, releases, and sync, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "LanguageTool",
+      "url": "https://github.com/languagetool-org/languagetool",
+      "desc": "Mature open-source grammar and style checker with desktop and server components."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "bibisco Community Edition",
+      "url": "https://bibisco.com/novel-writing-software-download/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "The free edition keeps projects, storylines, characters, chapters, scenes, backups and export; outline, timeline and search are paid.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Windows installer/portable ZIP, native macOS or Linux package, or free iOS/Android app",
+        "engines": null,
+        "dataFormat": "Desktop projects live in a user-chosen local directory: each project has a JSON project file and an images folder, with .bibisco2 backup archives; optional third-party drive folders can sync those local files",
+        "gapVsPaid": "Its free edition gates outline, timeline and search, and it does not provide LivingWriter's managed cloud sync, story templates or cross-device browser workspace.",
+        "setupBlocker": "The free download is delivered through a Lemon Squeezy order flow that requires an email, and users must choose and preserve the correct projects directory",
+        "sources": [
+          "https://github.com/andreafeccomandi/bibisco",
+          "https://github.com/andreafeccomandi/bibisco/blob/master/LICENSE",
+          "https://bibisco.com/docs/how-to-download-bibisco/",
+          "https://bibisco.com/docs/how-to-install-bibisco/",
+          "https://bibisco.com/docs/projects-directory-structure/",
+          "https://bibisco.com/docs/differences-between-community-and-supporters-editions/",
+          "https://livingwriter.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Kindling",
+      "url": "https://kindlingwriter.com/",
+      "type": "open-source",
+      "repo": "https://github.com/smith-and-web/kindling",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A tiny local fiction studio where the outline stays beside the draft; no AI, no cloud, and barely any GitHub fame yet.",
+      "stars": 53,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Native macOS DMG, Windows MSI, or Linux AppImage/.deb",
+        "engines": null,
+        "dataFormat": "Each writing project is a local SQLite file; Kindling works offline and does not upload manuscripts, account data, analytics, or telemetry",
+        "gapVsPaid": "It is a compact offline desktop tool with no LivingWriter-style cloud sync, mobile/browser access, story templates, collaboration or mature planning system.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/smith-and-web/kindling",
+          "https://github.com/smith-and-web/kindling/blob/main/LICENSE",
+          "https://kindlingwriter.com/download/",
+          "https://kindlingwriter.com/privacy/",
+          "https://livingwriter.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Manuskript",
+      "url": "https://www.theologeek.ch/manuskript/",
+      "type": "open-source",
+      "repo": "https://github.com/olivierkes/manuskript",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A Scrivener-shaped box of scenes, characters, plots, index cards, and rough edges that cost exactly nothing.",
+      "stars": 2400,
+      "lastCommit": "2026-04",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "local",
+        "install": "Windows portable ZIP, Linux .deb/.rpm/Flatpak/Snap, or source install on macOS",
+        "engines": null,
+        "dataFormat": "Projects save on local disk in Manuskript's open plain-text project format; the default single-file project is an archive, with an uncompressed-folder mode also available",
+        "gapVsPaid": "It covers characters, plots and scenes but is less polished and stable, with no managed cloud service, mobile workflow or LivingWriter template library.",
+        "setupBlocker": "Windows antivirus may flag the unsigned PyInstaller build; macOS has no current packaged app and requires running from source, while DOCX/EPUB export needs Pandoc",
+        "sources": [
+          "https://github.com/olivierkes/manuskript",
+          "https://github.com/olivierkes/manuskript/blob/develop/COPYING",
+          "https://github.com/olivierkes/manuskript/releases/tag/0.17.0",
+          "https://www.theologeek.ch/manuskript/",
+          "https://livingwriter.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Novelist",
+      "url": "https://www.novelist.app/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A genuinely free mobile novel planner with boards, scenes, goals, history, and no ad slot lurking under the keyboard.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Install from Google Play or the App Store, or open the companion web app in a browser",
+        "engines": null,
+        "dataFormat": "Projects are kept in the app/browser's local storage; backups can be exported to device storage or a user-selected cloud provider such as Google Drive, and manuscripts export as EPUB, ODT, or HTML",
+        "gapVsPaid": "It is an excellent free mobile planner, but it is not as capable a full desktop manuscript editor and lacks LivingWriter's cloud collaboration and publishing workflow.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.novelist.app/",
+          "https://play.google.com/store/apps/details?id=it.returntrue.novelist",
+          "https://livingwriter.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "novelWriter",
+      "url": "https://novelwriter.io/",
+      "type": "open-source",
+      "repo": "https://github.com/vkbo/novelWriter",
+      "platforms": [
+        "windows",
+        "linux"
+      ],
+      "desc": "A plain-text novel room with scenes, synopses, cross-references, and no cloud account between you and chapter twelve.",
+      "stars": 3000,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "local",
+        "install": "Signed Windows installer or Linux AppImage/.deb; macOS currently requires pipx/PyPI",
+        "engines": null,
+        "dataFormat": "A project is a normal local directory containing many human-readable plain-text documents plus project metadata and configuration files",
+        "gapVsPaid": "It trades LivingWriter's hosted cross-device convenience and templates for a local plain-text project, leaving sync, sharing and mobile editing to you.",
+        "setupBlocker": "As of release 2026.1 there is no macOS DMG, so Mac users must create a Python environment and install the package",
+        "sources": [
+          "https://github.com/vkbo/novelWriter",
+          "https://github.com/vkbo/novelWriter/blob/main/LICENSE.md",
+          "https://github.com/vkbo/novelWriter/blob/main/pyproject.toml",
+          "https://novelwriter.io/",
+          "https://novelwriter.io/download/",
+          "https://livingwriter.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "yWriter",
+      "url": "https://spacejock.com/yWriter.html",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "windows"
+      ],
+      "desc": "A veteran Windows novel organiser that treats scenes, characters, locations, and reports like a database, because it basically is one.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Run the Windows EXE installer or portable ZIP; Windows .NET 4.8 or newer is required",
+        "engines": null,
+        "dataFormat": "Projects and automatic snapshots stay on the user's computer in yWriter project files such as .yw7; optional FTP or email backup runs only when configured by the user",
+        "gapVsPaid": "It has powerful scene records but a dated Windows-first interface and no LivingWriter-style browser access, automatic cloud sync, templates or collaboration.",
+        "setupBlocker": "The free Windows installer is unsigned and can trigger SmartScreen, and the native macOS/mobile editions are separate paid products",
+        "sources": [
+          "https://spacejock.com/yWriter7.html",
+          "https://spacejock.com/yWriter7_Download.html",
+          "https://livingwriter.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Story Architect",
+      "url": "https://starc.app/",
+      "desc": "The free editor is real, but corkboard, timeline, extended story data, cloud sync, and AI are paid, the bits these apps are bought for."
+    }
+  ],
+  "relatedSlugs": [
+    "sudowrite",
+    "prowritingaid",
+    "languagetool"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the LivingWriter plan and a personal local editor DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for LivingWriter in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, and a small Rust filesystem layer; do not offer alternative stacks.\nThe core loop is: draft long-form fiction in local text or Markdown with chapters, boards, templates, and story-element tracking, apply focused editing passes with diffs, and save or export without uploading the document.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a three-pane editor with source text, suggestion list, and accepted-result preview.\nImplement deterministic checks for repeated words, sentence length, passive constructions, and typography.\nAdd an optional API-backed rewrite action that sends only the selected passage.\nShow every change as an accept-or-reject diff and support undo.\nImport and export .txt and .md while preserving headings and lists.\nPersist user rules, ignored terms, and recent documents in SQLite.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a browser extension.\nDeliberately leave out Office or Google Docs plugins.\nDeliberately leave out collaborative editing and cloud sync.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

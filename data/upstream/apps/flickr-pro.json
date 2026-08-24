@@ -1,0 +1,307 @@
+{
+  "slug": "flickr-pro",
+  "name": "Flickr Pro",
+  "domain": "flickr.com",
+  "appURL": "https://flickr.com",
+  "category": "photo-editing",
+  "subcategory": "photo organization, culling and editing",
+  "tagline": "Host a personal photo gallery and metadata archive on user-owned storage",
+  "priceMonthly": 11,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://www.flickr.com/account/upgrade/pro",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Annual Pro plan divided by 12; exact list price can change.",
+    "native": "11 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Up to 1,000 photos/videos total; up to 50 non-public items; Safe-rated and non-commercial content only.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 11,
+        "annualPerMonth": 6.83,
+        "per": "flat",
+        "limits": "Unlimited full-resolution storage with no monthly upload cap; ad-free browsing, detailed stats and premium support.",
+        "notes": "Annual total is $82; a 2-year plan is $148 ($6.17/month equivalent). US prices exclude applicable tax; international USD pricing is higher."
+      }
+    ],
+    "freeTierCaps": "1,000 items total and 50 non-public photos/videos; only Safe-rated, non-commercial content is allowed",
+    "billingTerms": "monthly + annual + 2-year; auto-renewing and non-refundable",
+    "priceChanges": [],
+    "hiddenCosts": "US tax may be added; users outside supported local currencies can be charged the higher tax-inclusive international USD rates ($13 monthly, $96 annual or $170 for 2 years); app-store prices can differ.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.flickr.com/account/upgrade/pro",
+      "https://www.flickrhelp.com/hc/en-us/articles/4404064001812-Pricing-FAQ",
+      "https://www.flickrhelp.com/hc/en-us/articles/13690320471060-Free-account-limits-and-enforcement",
+      "https://www.flickrhelp.com/hc/en-us/articles/4404058158612-Manage-Your-Flickr-Pro-Subscription-and-Payment-Options"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Flickr Pro, host a personal photo gallery and metadata archive on user-owned storage. The hard boundary is large photography community, discovery, hosting, moderation, and mobile apps, plus image pipeline quality, models, and workflow polish.",
+  "coreLoopDIY": "Catalog local photos into a personal gallery and metadata archive on user-owned storage, generate previews, apply non-destructive adjustments, and export selected originals or rendered copies.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "desktop computer",
+    "local photo library",
+    "sufficient disk space",
+    "optional GPU for AI features"
+  ],
+  "whatYouLose": [
+    "large photography community, discovery, hosting, moderation, and mobile apps",
+    "proprietary raw-processing quality",
+    "cloud sync and sharing",
+    "large AI models",
+    "camera and print ecosystem"
+  ],
+  "moatTags": [
+    "network-effects",
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "image pipeline quality, models, and workflow polish",
+  "replacementScope": "personal local photo catalog",
+  "ongoingBurden": "raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity",
+  "whyPeopleStillPay": "People still pay for Flickr Pro because photographers pay because image quality, catalog safety, and fast handling of huge libraries matter more than cloning sliders. The recurring cost buys raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Immich",
+      "url": "https://github.com/immich-app/immich",
+      "desc": "Active open-source self-hosted photo and video management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Immich",
+      "url": "https://immich.app/",
+      "type": "open-source",
+      "repo": "https://github.com/immich-app/immich",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A superb personal photo archive with mobile backup, metadata, albums, search, maps, and sharing on storage you control; public portfolio polish is modest.",
+      "stars": 109800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Official Docker Compose stack with the server, machine-learning service, Redis, and PostgreSQL",
+        "engines": "Local ONNX-based CLIP or SigLIP-compatible smart-search models and InsightFace buffalo or antelope face models, with optional CPU or GPU acceleration",
+        "dataFormat": "Originals and generated library, upload, thumbnail, profile, video, and backup files live under the configured upload location; users, albums, metadata, and embeddings live in PostgreSQL, and ML models are cached locally",
+        "gapVsPaid": "It is a superb private archive but does not reproduce Flickr's public social graph, groups, discovery, comments, licensing marketplace or portfolio audience.",
+        "setupBlocker": "Docker Compose, roughly 6–8 GB RAM, local PostgreSQL storage rather than a network share, persistent media and database paths, and TLS or a reverse proxy for remote access",
+        "sources": [
+          "https://github.com/immich-app/immich",
+          "https://github.com/immich-app/immich/blob/main/LICENSE",
+          "https://docs.immich.app/install/docker-compose/",
+          "https://docs.immich.app/install/environment-variables/",
+          "https://docs.immich.app/features/searching/",
+          "https://docs.immich.app/features/facial-recognition/",
+          "https://docs.immich.app/developer/architecture",
+          "https://www.flickr.com/account/upgrade/pro"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "LibrePhotos",
+      "url": "https://docs.librephotos.com/",
+      "type": "open-source",
+      "repo": "https://github.com/LibrePhotos/librephotos",
+      "platforms": [
+        "web",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Self-hosted photos and video with faces, objects, semantic search, albums, and public links; deployment is a small server, not a button.",
+      "stars": 8000,
+      "lastCommit": "2026-06",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Clone the monorepo, copy and edit deploy/compose/.env, then start the Docker Compose stack",
+        "engines": "InsightFace and ArcFace via ONNX Runtime, with buffalo_sc as the default face model; local object, scene, and semantic-search models, optional BLIP captioning, and an optional GPU image",
+        "dataFormat": "It scans a user-selected photo directory in place; PostgreSQL stores users, indexes, albums, and ML metadata, while thumbnails, protected media, and downloaded models live in configured application volumes",
+        "gapVsPaid": "It provides private search and sharing, not Flickr's public community, groups, following, discovery, comments and licensing-oriented exposure.",
+        "setupBlocker": "Docker Compose, an absolute scan-directory mapping, about 4 GB RAM minimum (8 GB recommended for ML), and roughly 10 GB extra disk beyond the photo library",
+        "sources": [
+          "https://github.com/LibrePhotos/librephotos",
+          "https://github.com/LibrePhotos/librephotos/blob/dev/LICENSE",
+          "https://docs.librephotos.com/docs/installation/standard-install/",
+          "https://docs.librephotos.com/blog/2026w25/",
+          "https://www.flickr.com/account/upgrade/pro"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Lychee",
+      "url": "https://lycheeorg.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/LycheeOrg/Lychee",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A clean self-hosted album gallery with metadata, passworded sharing, downloads, and a simple Docker setup; much less discovery machinery.",
+      "stars": 4300,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose with the Lychee image and MariaDB; prebuilt and source installs also exist",
+        "engines": null,
+        "dataFormat": "Uploaded originals and derivatives live in persistent uploads storage; albums, users, metadata and settings live in MariaDB (or another configured database), with separate logs and temporary-data volumes",
+        "gapVsPaid": "It publishes albums but offers far less automatic search and no Flickr social network, groups, discovery feed, comments community or built-in audience.",
+        "setupBlocker": "Docker Compose, writable persistent volumes, a database, an APP_KEY, and domain/TLS setup for remote sharing",
+        "sources": [
+          "https://github.com/LycheeOrg/Lychee",
+          "https://github.com/LycheeOrg/Lychee/blob/master/LICENSE",
+          "https://github.com/LycheeOrg/Lychee/blob/master/docker-compose.yaml",
+          "https://lycheeorg.dev/docs/installation.html",
+          "https://www.flickr.com/account/upgrade/pro"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "PhotoPrism",
+      "url": "https://www.photoprism.app/",
+      "type": "open-source",
+      "repo": "https://github.com/photoprism/photoprism",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A searchable self-hosted photo library with RAW support, labels, faces, maps, albums, metadata, and share links; library first, social network never.",
+      "stars": 40000,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Docker Compose with MariaDB recommended, or SQLite for a smaller installation",
+        "engines": "TensorFlow FaceNet for face recognition and TensorFlow Nasnet for built-in labels; optional PhotoPrism Vision API, Ollama, OpenAI, or compatible vision backends",
+        "dataFormat": "Originals remain in the mounted originals folder; sidecars, previews, thumbnails, face embeddings, model assets, and backups live in the storage folder, while indexes, users, albums, and settings live in SQLite or MariaDB",
+        "gapVsPaid": "It is a searchable private library rather than a public photo community, so Flickr's groups, follows, discovery, comments and licensing exposure disappear.",
+        "setupBlocker": "Docker Compose, persistent originals, storage, and database mounts with correct permissions, several GB of RAM or swap, and a CPU- and storage-heavy first index",
+        "sources": [
+          "https://github.com/photoprism/photoprism",
+          "https://raw.githubusercontent.com/photoprism/photoprism/develop/LICENSE",
+          "https://docs.photoprism.app/getting-started/docker-compose/",
+          "https://docs.photoprism.app/getting-started/advanced/docker-volumes/",
+          "https://docs.photoprism.app/developer-guide/vision/face-recognition/",
+          "https://docs.photoprism.app/developer-guide/vision/label-generation/",
+          "https://www.flickr.com/account/upgrade/pro"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Photoview",
+      "url": "https://photoview.github.io/",
+      "type": "open-source",
+      "repo": "https://github.com/photoview/photoview",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Maps existing folders directly into a clean web gallery with RAW, EXIF, users, albums, links, and downloads; your directory tree stays the boss.",
+      "stars": 6497,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Docker Compose with SQLite, MariaDB, or PostgreSQL and one or more mounted media folders",
+        "engines": "Built-in dlib/go-face face detection and recognition; FFmpeg for video processing; optional Mapbox token for maps",
+        "dataFormat": "Original photos remain in the mounted folder tree; the database stores users, albums, indexes, and face metadata, while a media-cache directory stores thumbnails and optimized video",
+        "gapVsPaid": "It mirrors your folder tree into a clean gallery but lacks Flickr's social network, public discovery, communities, comments and portfolio audience.",
+        "setupBlocker": "Docker plus careful volume paths and host-file permissions; safe remote access also needs a reverse proxy or VPN and TLS",
+        "sources": [
+          "https://github.com/photoview/photoview",
+          "https://github.com/photoview/photoview/blob/master/LICENSE.txt",
+          "https://photoview.github.io/en/docs/installation-docker/",
+          "https://photoview.github.io/en/docs/installation-environment-variables/",
+          "https://www.flickr.com/account/upgrade/pro"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Piwigo",
+      "url": "https://piwigo.org/",
+      "type": "open-source",
+      "repo": "https://github.com/Piwigo/Piwigo",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "The old, dependable gallery engine: private albums, users, metadata, themes, plugins, and mobile upload, paid for in maintenance rather than money.",
+      "stars": 3800,
+      "lastCommit": "2026-05",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "self-hosted",
+        "install": "Upload the NetInstall script or release to PHP web hosting, then complete browser setup against MySQL or MariaDB",
+        "engines": null,
+        "dataFormat": "Originals live under the upload or galleries directories, generated derivatives and configuration stay in the Piwigo tree, and albums, users, metadata, and plugin state live in MySQL or MariaDB",
+        "gapVsPaid": "It can host a public gallery, but the audience, groups, following, discovery and community interaction that distinguish Flickr are entirely absent.",
+        "setupBlocker": "Requires PHP web hosting, a database, writable directories, and ongoing web-server, TLS, and plugin maintenance",
+        "sources": [
+          "https://github.com/Piwigo/Piwigo",
+          "https://github.com/Piwigo/Piwigo/blob/master/COPYING",
+          "https://piwigo.org/get-piwigo",
+          "https://doc.piwigo.org/self-hosting-piwigo/move-your-piwigo-to-another-server",
+          "https://doc.piwigo.org/self-hosting-piwigo/importing-and-synchronizing-ftp-photos",
+          "https://www.flickr.com/account/upgrade/pro"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Flickr Free",
+      "url": "https://www.flickr.com/",
+      "desc": "The free account caps the library at 1,000 items, allows only 50 non-public items, and forbids commercial use; that is not a Pro archive."
+    }
+  ],
+  "relatedSlugs": [
+    "adobe-lightroom",
+    "capture-one",
+    "ente-photos"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal local photo catalog DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Flickr Pro in an empty repository.\nUse Tauri 2, React, TypeScript, Rust image libraries, SQLite, and local filesystem access; do not offer alternative stacks.\nThe core loop is: catalog local photos into a personal gallery and metadata archive on user-owned storage, generate previews, apply non-destructive adjustments, and export selected originals or rendered copies.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex selected folders without moving or rewriting originals and store only catalog data in SQLite.\nGenerate thumbnails and previews, read EXIF, detect duplicates by hash, and monitor file changes.\nProvide timeline, folders, albums, ratings, flags, tags, search, and side-by-side compare.\nStore edits as reversible parameters for crop, rotate, exposure, contrast, white balance, and saturation.\nRender exports to a new folder with explicit color space, quality, size, and metadata choices.\nAdd catalog backup, missing-file repair, integrity scan, and a clear original-safety guarantee.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a proprietary raw-rendering engine.\nDeliberately leave out hosted cross-device photo sync and client galleries.\nDeliberately leave out frontier culling, retouching, and generative models.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

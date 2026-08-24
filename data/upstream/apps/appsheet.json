@@ -1,0 +1,294 @@
+{
+  "slug": "appsheet",
+  "name": "AppSheet",
+  "domain": "about.appsheet.com",
+  "appURL": "https://about.appsheet.com",
+  "category": "no-code-apps",
+  "subcategory": "internal tools and application builders",
+  "tagline": "Generate a small operational app from a table and a limited rules engine",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Core",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://about.appsheet.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Core per-user monthly rate.",
+    "native": "10 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Prototype",
+        "monthly": 0,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Up to 10 test users; prototype access to all features; not licensed for a production deployment",
+        "notes": "Free only while prototyping."
+      },
+      {
+        "name": "Starter",
+        "monthly": 5,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Per active user/month; basic app and automation features",
+        "notes": "Monthly per-user subscription."
+      },
+      {
+        "name": "Core",
+        "monthly": 10,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Per active user/month; advanced app and automation features plus security controls",
+        "notes": "Core may be included with eligible paid Google Workspace editions."
+      },
+      {
+        "name": "Enterprise Plus",
+        "monthly": 20,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Per active user/month; enterprise governance, integrations and machine-learning features",
+        "notes": "Requires an organization managed through Google Workspace or Cloud Identity."
+      },
+      {
+        "name": "Publisher Pro",
+        "monthly": 50,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "1 public app with unlimited anonymous users; no sign-in and no security filters",
+        "notes": "Price is per app/month, not per creator or end user."
+      }
+    ],
+    "freeTierCaps": "Prototype use for up to 10 test users; production deployment is not included",
+    "billingTerms": "monthly only; no public annual discount shown",
+    "priceChanges": [],
+    "hiddenCosts": "Starter/Core/Enterprise are per active user, so external-user count drives cost; Publisher Pro is $50 per public app and removes authenticated-user security; Google Workspace may bundle Core, but otherwise Workspace itself is a separate subscription",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://about.appsheet.com/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For AppSheet, generate a small operational app from a table and a limited rules engine. The hard boundary is google integrations, mobile offline support, governance, and managed sync, plus connectors, runtime reliability, and governance.",
+  "coreLoopDIY": "Define tables and views, generate a small operational CRUD app with a limited rules engine, connect one approved data source, and deploy it for a small trusted team.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted deploy target",
+    "API credentials for one selected integration"
+  ],
+  "whatYouLose": [
+    "Google integrations, mobile offline support, governance, and managed sync",
+    "hundreds of connectors",
+    "pixel-perfect app design",
+    "mobile app-store builds",
+    "enterprise permissions and scale"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "connectors, runtime reliability, and governance",
+  "replacementScope": "small-team internal app",
+  "ongoingBurden": "schema migration, auth, permissions, connector drift, queues, deployments, backups, and auditability",
+  "whyPeopleStillPay": "People still pay for AppSheet because the builder is only useful when its runtime, connectors, permissions, and deployments remain boring for years. The recurring cost buys schema migration, auth, permissions, connector drift, queues, deployments, backups, and auditability, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Appsmith",
+      "url": "https://github.com/appsmithorg/appsmith",
+      "desc": "Large open-source low-code platform for internal applications and data sources."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Baserow Free",
+      "url": "https://baserow.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Tables become forms, pages, views, automations, and a small role-aware app without writing code.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Tables, application definitions, uploads, and workspace metadata live in Baserow Cloud; tables can be exported as CSV",
+        "gapVsPaid": "It cannot match AppSheet's native mobile and offline app experience or its spreadsheet-style expression engine, so field workflows are much less capable.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/baserow/baserow",
+          "https://github.com/baserow/baserow/blob/develop/LICENSE",
+          "https://baserow.io/pricing",
+          "https://baserow.io/user-docs/export-a-view",
+          "https://about.appsheet.com/home/",
+          "https://about.appsheet.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Budibase",
+      "url": "https://budibase.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Budibase/budibase",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Internal apps, forms, automations, and portals in one box; much closer to Knack than its developer branding suggests.",
+      "stars": 27902,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Docker image or Docker Compose; Kubernetes is also supported",
+        "engines": "Model-agnostic; the agent builder supports bring-your-own AI provider credentials",
+        "dataFormat": "Built-in app data and app definitions are stored in CouchDB, files in MinIO/S3-compatible object storage, and connected external data remains in its source system",
+        "gapVsPaid": "It is built mainly for responsive internal web apps, not AppSheet's installable mobile apps with offline field use and spreadsheet-driven rules.",
+        "setupBlocker": "Requires Docker and persistent storage; production use also means owning upgrades, TLS, backups, and database/network access",
+        "sources": [
+          "https://github.com/Budibase/budibase",
+          "https://github.com/Budibase/budibase/blob/master/LICENSE",
+          "https://docs.budibase.com/docs/docker",
+          "https://docs.budibase.com/docs/budibase-architecture",
+          "https://budibase.com/pricing/",
+          "https://about.appsheet.com/home/",
+          "https://about.appsheet.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Joget Community Edition",
+      "url": "https://www.joget.org/",
+      "type": "open-source",
+      "repo": "https://github.com/jogetworkflow/jw-community",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Forms, lists, workflows, and role-aware apps from a product old enough to have survived several no-code fashions.",
+      "stars": 607,
+      "lastCommit": "2026-05",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Download the Community Edition bundle or deploy its Docker image/on-premises package",
+        "engines": null,
+        "dataFormat": "Application definitions, workflow state, and records live in the configured relational database; uploaded files live on the Joget server",
+        "gapVsPaid": "It turns a quick table-to-app job into administration of a Java workflow platform and still lacks AppSheet's polished offline mobile client.",
+        "setupBlocker": "The first real hurdle is administering a Java web stack and database rather than clicking through a managed signup",
+        "sources": [
+          "https://github.com/jogetworkflow/jw-community",
+          "https://dev.joget.org/community/display/DX8/Installation+Guide",
+          "https://dev.joget.org/community/display/DX8/Installing+Joget+DX+on+Docker",
+          "https://about.appsheet.com/home/",
+          "https://about.appsheet.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "NocoBase",
+      "url": "https://www.nocobase.com/",
+      "type": "open-source",
+      "repo": "https://github.com/nocobase/nocobase",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A database-backed app builder with pages, forms, roles, workflows, and enough plugins to become your next maintenance hobby.",
+      "stars": 23600,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-NocoBase-Community",
+        "runs": "self-hosted",
+        "install": "NocoBase CLI or Docker deployment with MySQL, MariaDB, or PostgreSQL",
+        "engines": "Built-in AI employees can connect to common LLMs; exact provider support depends on installed AI plugins",
+        "dataFormat": "Business data lives in standard relational tables in the configured MySQL, MariaDB, or PostgreSQL database; files use configured local or object storage",
+        "gapVsPaid": "It is a self-hosted database web-app platform rather than a turnkey offline mobile app builder, making mobile field work the largest loss.",
+        "setupBlocker": "Requires a database, secrets, and deployment administration; the community license also preserves NocoBase branding and restricts some uses",
+        "sources": [
+          "https://github.com/nocobase/nocobase",
+          "https://github.com/nocobase/nocobase/blob/main/LICENSE.txt",
+          "https://docs.nocobase.com/get-started/installation/git",
+          "https://www.nocobase.com/en/commercial",
+          "https://about.appsheet.com/home/",
+          "https://about.appsheet.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "REI3",
+      "url": "https://rei3.de/",
+      "type": "open-source",
+      "repo": "https://github.com/r3-team/r3",
+      "platforms": [
+        "web",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A sober business-app builder with forms, reports, roles, workflows, and no per-user meter.",
+      "stars": 571,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Native Linux/Windows server package or Docker Compose, connected to PostgreSQL",
+        "engines": null,
+        "dataFormat": "Human-readable application records and configuration live in a PostgreSQL database controlled by the operator",
+        "gapVsPaid": "It produces capable browser-based business apps but not AppSheet's native-feeling mobile client, offline behavior, and spreadsheet expression model.",
+        "setupBlocker": "You must provision PostgreSQL and configure a server/reverse proxy; it is not a managed one-click workspace",
+        "sources": [
+          "https://github.com/r3-team/r3",
+          "https://github.com/r3-team/r3/blob/main/LICENSE.md",
+          "https://rei3.de/en/docs/admin",
+          "https://about.appsheet.com/home/",
+          "https://about.appsheet.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "AppSheet Free",
+      "url": "https://about.appsheet.com/",
+      "desc": "Free use is for prototyping and testing with ten users; deployment for real work starts on a paid plan."
+    }
+  ],
+  "relatedSlugs": [
+    "flutterflow",
+    "retool",
+    "weweb"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Core plan and a small-team internal app DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for AppSheet in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: define tables and views, generate a small operational CRUD app with a limited rules engine, connect one approved data source, and deploy it for a small trusted team.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a schema editor for text, number, boolean, date, enum, and relation fields.\nGenerate list, detail, create, edit, and kanban views from the schema.\nImplement role-based read and write rules for admin and member roles.\nSupport one REST connector with encrypted credentials and explicit field mapping.\nAdd an activity log, CSV import or export, backups, and health checks.\nShip Docker Compose with migrations and a seeded example workspace.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out arbitrary user-authored code execution.\nDeliberately leave out a broad integration marketplace.\nDeliberately leave out native mobile binaries and enterprise compliance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,199 @@
+{
+  "slug": "fomr",
+  "name": "Fomr",
+  "domain": "fomr.io",
+  "appURL": "https://fomr.io",
+  "category": "forms",
+  "subcategory": "visual form builder",
+  "tagline": "Visual form builder with unlimited responses, design controls, sharing, and embeds",
+  "priceMonthly": 17,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly, limited 50% offer",
+    "unit": "flat",
+    "native": "17 USD",
+    "source": "https://fomr.io/pricing",
+    "checkedOn": "2026-08-07",
+    "confidence": "high",
+    "notes": "The live pricing page lists Pro at $17/month during a limited 50% offer, reduced from $34/month.",
+    "freeTier": "The Free plan includes unlimited forms, responses, and team members, plus core design, publishing, and notification features.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Unlimited forms, responses and team members; 100MB storage; 1 workflow per form",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 17,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited forms, responses, team members and workflows; 10GB storage; custom domain and branding removal",
+        "notes": "The displayed $17/month is a limited 50%-off offer; the page shows a regular price of $34/month. Exact yearly checkout price is not exposed."
+      },
+      {
+        "name": "Business",
+        "monthly": 84,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited forms, responses and team members; 100GB storage; multiple custom domains; role management, audit trail and priority support",
+        "notes": "Marked 'Coming soon' and not currently purchasable."
+      }
+    ],
+    "freeTierCaps": "Unlimited forms, responses and team members; 100MB storage; 1 workflow per form",
+    "billingTerms": "monthly + yearly advertised as 2 months free; exact yearly totals are not publicly exposed; 7-day money-back guarantee, no trial",
+    "priceChanges": [],
+    "hiddenCosts": "The Pro price is a time-limited 50% promotion and may return to $34/month without a published end date; the $84/month Business tier is advertised but not yet buyable.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://fomr.io/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A useful single-owner form builder is a realistic weekend project. Matching Fomr's visual editor, design depth, managed delivery, collaboration, integrations, and confidence that every public submission arrives turns it into an ongoing product rather than a one-shot clone.",
+  "coreLoopDIY": "Create a single-owner form builder with live preview, publishable links, response storage, email notifications, and CSV export.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "Node.js 22 or newer",
+    "self-hosted deployment target",
+    "SMTP credentials in .env for optional notifications"
+  ],
+  "whatYouLose": [
+    "real-time team collaboration",
+    "custom domains and managed TLS",
+    "managed uptime, backups, and abuse controls",
+    "integration catalog",
+    "template and theme depth"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra",
+    "integrations"
+  ],
+  "moatNotes": "visual editor polish, dependable collection, and maintained integrations",
+  "whyPeopleStillPay": "They pay to publish polished forms without operating a public data-collection service, maintaining email and spreadsheet integrations, or worrying about backups, spam, browser quirks, and lost responses.",
+  "priorArt": [
+    {
+      "name": "HeyForm",
+      "url": "https://github.com/heyform/heyform",
+      "desc": "Open-source form builder with public forms, logic, and response collection."
+    },
+    {
+      "name": "Formbricks",
+      "url": "https://github.com/formbricks/formbricks",
+      "desc": "Open-source survey and experience-management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "HeyForm",
+      "url": "https://heyform.net",
+      "type": "open-source",
+      "repo": "https://github.com/heyform/heyform",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Typeform-style visual forms without the rent; one container to own the whole thing",
+      "stars": 8924,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-09",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup, or Docker Compose with MongoDB and KeyDB/Redis",
+        "engines": "Optional OpenAI-compatible API for AI features; default model documented as gpt-3.5-turbo-0125",
+        "dataFormat": "Hosted data lives in HeyForm Cloud; self-hosted forms and responses live in MongoDB, cache/session data in KeyDB/Redis, and uploads on the server or S3-compatible storage.",
+        "gapVsPaid": "HeyForm offers a visual form builder and unlimited self-hosted responses, but its design polish and hosting simplicity are weaker once you leave the hosted service and run MongoDB plus KeyDB yourself.",
+        "setupBlocker": "Self-hosting needs Docker, a domain, reverse proxy/TLS, email configuration, and persistent database/storage volumes.",
+        "sources": [
+          "https://github.com/heyform/heyform",
+          "https://docs.heyform.net/open-source/license",
+          "https://docs.heyform.net/open-source/self-hosting",
+          "https://docs.heyform.net/open-source/configuration/environment-variables",
+          "https://fomr.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Tally",
+      "url": "https://tally.so",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A generous hosted form builder with logic and unlimited responses; branding is the upsell",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-09",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": "Tally AI is available, but its underlying model provider is not publicly documented",
+        "dataFormat": "Forms and responses live in Tally's EU-hosted cloud; responses can be downloaded as CSV or synchronized to Google Sheets or Notion.",
+        "gapVsPaid": "Tally installs cleanly and permits unlimited free responses, but removing Tally branding, using a custom domain, and deeper visual customization require a paid plan.",
+        "setupBlocker": null,
+        "sources": [
+          "https://tally.so/help/faq",
+          "https://tally.so/help/file-uploads",
+          "https://tally.so/help/export-form-submissions",
+          "https://tally.so/help/tally-ai",
+          "https://fomr.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "OpnForm",
+      "url": "https://opnform.com",
+      "type": "open-source",
+      "repo": "https://github.com/OpnForm/OpnForm",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Open-source forms with unlimited respondents; the free self-hosted builder team stops at two",
+      "stars": 3566,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-09",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup, or the production Docker deployment",
+        "engines": null,
+        "dataFormat": "Hosted data lives in OpnForm Cloud; self-hosted forms and submissions live in MySQL or PostgreSQL, with uploaded files on configured local or object storage.",
+        "gapVsPaid": "OpnForm gives you open-source forms and self-hosted responses, but the free self-hosted workspace is limited to two users and its design controls are less polished than Fomr's.",
+        "setupBlocker": "Self-hosting requires Docker, a database, a public domain/TLS and mail/storage configuration; the free self-hosted edition allows two workspace users.",
+        "sources": [
+          "https://github.com/OpnForm/OpnForm",
+          "https://docs.opnform.com/deployment/docker",
+          "https://docs.opnform.com/deployment/cloud-vs-self-hosting",
+          "https://docs.opnform.com/deployment/local-deployment",
+          "https://fomr.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "typeform",
+    "cognito-forms",
+    "surveymonkey"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "The unusually capable free plan makes building a replacement less urgent than the verdict suggests.",
+  "prompt": "Build a deliberately narrow personal form builder inspired by Fomr, starting from an empty repository.\nUse exactly this stack: Next.js 16, TypeScript, Tailwind CSS, SQLite, and Drizzle ORM.\nThe core loop is create a form, preview it, publish it, collect responses, and export them.\nMake it single-owner and protect the admin area with an ADMIN_PASSWORD from .env.\nCreate an admin form editor with a reorderable field list and a live respondent preview.\nSupport short text, long text, email, number, select, radio, checkbox, rating, date, and content blocks.\nAllow required fields, labels, help text, placeholders, choices, and basic min/max validation.\nSupport one simple conditional rule per field: show it when another answer equals a configured value.\nAdd form-level colors, font choices, logo upload, cover image, spacing, and light or dark appearance.\nPublish each form at /s/<slug> with accessible labels, keyboard navigation, and mobile layouts.\nValidate every submission on the server against the saved form schema.\nStore forms, immutable schema versions, responses, and timestamps in SQLite.\nProvide a private response table with search, detail view, deletion, and CSV export.\nSend optional owner notifications through SMTP, but keep collection working when SMTP is absent.\nAdd a honeypot, per-IP rate limiting, request-size limits, and safe upload handling for branding assets.\nInclude a configurable thank-you message and optional redirect URL.\nHandle empty, loading, validation, success, not-found, and recoverable failure states.\nKeep user data local and add JSON export and import for forms.\nDo not add analytics, telemetry, ads, billing, or third-party accounts.\nPut every secret in .env and include a complete .env.example.\nWrite unit tests for schema validation and branching plus one end-to-end publish-and-submit test.\nCreate a README covering setup, deployment, data location, backups, SMTP, security limits, and recovery.\nDeliberately exclude custom domains, team collaboration, OAuth integrations, payments, and enterprise compliance.\nDeliberately exclude a marketplace-sized template library and promise only personal-scale reliability.\nRun tests and a production build before finishing, fixing failures instead of merely describing them.",
+  "promptCurated": true
+}

@@ -1,0 +1,235 @@
+{
+  "slug": "digitalocean-app-platform",
+  "name": "DigitalOcean App Platform",
+  "domain": "digitalocean.com",
+  "appURL": "https://digitalocean.com",
+  "category": "hosting",
+  "subcategory": "application hosting and backend platforms",
+  "tagline": "Deploy a small containerized service with TLS, logs, and backups on one server",
+  "priceMonthly": 5,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly per container",
+    "unit": "flat",
+    "source": "https://digitalocean.com/pricing/app-platform",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Basic starting monthly container price.",
+    "native": "5 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Static Sites Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Up to 3 static-only apps; 1 GiB outbound transfer/app/month.",
+        "notes": null
+      },
+      {
+        "name": "Shared 1 vCPU / 512 MB fixed",
+        "monthly": 5,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "50 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Shared 1 vCPU / 1 GB fixed",
+        "monthly": 10,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "100 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Shared 1 vCPU / 1 GB scalable",
+        "monthly": 12,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "150 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Shared 1 vCPU / 2 GB",
+        "monthly": 25,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "200 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Shared 2 vCPU / 4 GB",
+        "monthly": 50,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "250 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Dedicated 1 vCPU / 512 MB",
+        "monthly": 29,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "100 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Dedicated 1 vCPU / 1 GB",
+        "monthly": 34,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "200 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Dedicated 1 vCPU / 2 GB",
+        "monthly": 39,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "300 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Dedicated 1 vCPU / 4 GB",
+        "monthly": 49,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "400 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Dedicated 2 vCPU / 4 GB",
+        "monthly": 78,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "500 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Dedicated 2 vCPU / 8 GB",
+        "monthly": 98,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "600 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Dedicated 4 vCPU / 8 GB",
+        "monthly": 156,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "700 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Dedicated 4 vCPU / 16 GB",
+        "monthly": 196,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "800 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      },
+      {
+        "name": "Dedicated 8 vCPU / 32 GB",
+        "monthly": 392,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "900 GiB outbound transfer/month.",
+        "notes": "Per component instance."
+      }
+    ],
+    "freeTierCaps": "up to 3 static-only apps, each with 1 GiB outbound transfer/month",
+    "billingTerms": "monthly usage billing; component compute is prorated per second with a 1-minute minimum; no annual plan",
+    "priceChanges": [],
+    "hiddenCosts": "Extra static-only apps are $3/month; outbound overage is $0.02/GiB; development databases start at $7/month without backups; a dedicated egress-IP pair costs $25/app/month. Billing covers the first 28 days after component creation, and some rename/recreate operations can restart metering.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.digitalocean.com/pricing/app-platform",
+      "https://docs.digitalocean.com/products/app-platform/details/pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For DigitalOcean App Platform, deploy a small containerized service with TLS, logs, and backups on one server. The hard boundary is managed builds, runtime, scaling, databases, networking, and support, plus infrastructure scale, operations, and reliability.",
+  "coreLoopDIY": "Deploy a few trusted containerized services with TLS, route domains, retain logs, and perform backups on one user-owned server.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Linux server",
+    "Docker",
+    "domain and DNS access",
+    "backup destination",
+    "basic systems administration"
+  ],
+  "whatYouLose": [
+    "managed builds, runtime, scaling, databases, networking, and support",
+    "global edge network",
+    "managed databases",
+    "autoscaling",
+    "DDoS protection, support, and compliance"
+  ],
+  "moatTags": [
+    "scale-infra"
+  ],
+  "moatNotes": "infrastructure scale, operations, and reliability",
+  "replacementScope": "single-server personal platform",
+  "ongoingBurden": "patching, certificates, isolation, secrets, builds, deploys, logs, metrics, backups, capacity, incidents, and security response",
+  "whyPeopleStillPay": "People still pay for DigitalOcean App Platform because hosting products sell an operations team and failure-domain diversity, not merely a deploy button. The recurring cost buys patching, certificates, isolation, secrets, builds, deploys, logs, metrics, backups, capacity, incidents, and security response, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "desc": "Active open-source self-hosting platform for applications, databases, and services."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Coolify",
+      "url": "https://coolify.io/",
+      "type": "open-source",
+      "repo": "https://github.com/coollabsio/coolify",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Deploy a container from Git, get TLS, logs, health checks, databases, and scheduled backups on your own server.",
+      "stars": 57000,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Dokploy",
+      "url": "https://dokploy.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Dokploy/dokploy",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A small self-hosted app platform with container deploys, TLS, logs, monitoring, and database backups.",
+      "stars": 36000,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Dokku",
+      "url": "https://dokku.com/",
+      "desc": "Excellent at deploys and routing, but backups and a usable operations console are add-ons you assemble yourself."
+    }
+  ],
+  "relatedSlugs": [
+    "vercel",
+    "railway",
+    "supabase-pro"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Basic plan and a single-server personal platform DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for DigitalOcean App Platform in an empty repository.\nUse Docker Compose, Caddy, PostgreSQL, Redis, and a small Go control plane; do not offer alternative stacks.\nThe core loop is: deploy a few trusted containerized services with TLS, route domains, retain logs, and perform backups on one user-owned server.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nAccept a Git repository or container image and one explicit Dockerfile-based build path.\nImplement applications, environments, secrets, domains, health checks, and rolling container replacement.\nUse Caddy for automatic TLS and route only to healthy local containers.\nCapture bounded build and runtime logs and expose restart, rollback, and redeploy actions.\nBack up PostgreSQL metadata and document backups for each deployed application's data volumes.\nAdd host metrics, disk alerts, update instructions, disaster recovery, and a prominent single-server warning.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out multi-region or serverless infrastructure.\nDeliberately leave out managed data stores and global edge delivery.\nDeliberately leave out DDoS response, compliance, and guaranteed uptime.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

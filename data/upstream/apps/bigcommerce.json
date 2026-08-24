@@ -1,0 +1,290 @@
+{
+  "slug": "bigcommerce",
+  "name": "BigCommerce",
+  "domain": "bigcommerce.com",
+  "appURL": "https://bigcommerce.com",
+  "category": "creator-commerce",
+  "subcategory": "digital products, courses and memberships",
+  "tagline": "Build a small catalog and hand off payments to Stripe Checkout",
+  "priceMonthly": 39,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://bigcommerce.com/essentials/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Standard monthly tier.",
+    "native": "39 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Core",
+        "monthly": 39,
+        "annualPerMonth": 29,
+        "per": "workspace",
+        "limits": "Up to $30,000 trailing-12-month GMV before automatic upgrade; unlimited products/bandwidth/staff; 2% open-payment-provider fee; up to 3 storefronts.",
+        "notes": "Additional storefronts cost $30/month each."
+      },
+      {
+        "name": "Growth",
+        "monthly": 105,
+        "annualPerMonth": 79,
+        "per": "workspace",
+        "limits": "Up to $100,000 trailing-12-month GMV before automatic upgrade; unlimited products/bandwidth/staff; 1% provider fee; up to 5 storefronts.",
+        "notes": "Additional storefronts cost $50/month each."
+      },
+      {
+        "name": "Scale",
+        "monthly": 399,
+        "annualPerMonth": 299,
+        "per": "workspace",
+        "limits": "$33,333 monthly GMV allowance; 0.9% overage on excess; automatic upgrade at $2 million trailing-12-month GMV; 0.6% provider fee; up to 8 storefronts.",
+        "notes": "Additional storefronts cost $100/month each."
+      },
+      {
+        "name": "Performance",
+        "monthly": null,
+        "annualPerMonth": 1499,
+        "per": "workspace",
+        "limits": "Starts at $1,499/month billed annually; custom GMV/payment terms; official update cites a $250,000/month Inclusive-GMV reference cap with 0.6% overage above it, subject to contract.",
+        "notes": "Custom quote; annual contract; contracted terms control."
+      }
+    ],
+    "freeTierCaps": "no free tier; 15-day trial with no credit card",
+    "billingTerms": "monthly + annual for Core/Growth/Scale; Performance starts at $1,499/month billed annually",
+    "priceChanges": [],
+    "hiddenCosts": "Revenue thresholds force automatic upgrades; Scale charges 0.9% of monthly GMV above $33,333; the Performance update cites a $250,000/month Inclusive-GMV reference cap with 0.6% overage, subject to contract; open-payment-provider fees are 2%/1%/0.6% on Core/Growth/Scale; extra storefronts are $30/$50/$100 per month, and Core phone support is a paid add-on with no public price.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.bigcommerce.com/essentials/pricing/",
+      "https://www.bigcommerce.com/dm/plan-pricing-updates-2026/",
+      "https://www.bigcommerce.com/pricing/faq/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For BigCommerce, build a small catalog and hand off payments to Stripe Checkout. The hard boundary is hosted commerce engine, tax, channels, integrations, scale, and support, plus payments, tax, distribution, and operations.",
+  "coreLoopDIY": "Sell a small catalog from a user-owned storefront, hand off payments to Stripe Checkout, deliver purchased files or lessons, and manage customers.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Stripe account",
+    "PostgreSQL",
+    "S3-compatible storage",
+    "public HTTPS deployment",
+    "email provider"
+  ],
+  "whatYouLose": [
+    "hosted commerce engine, tax, channels, integrations, scale, and support",
+    "marketplace discovery",
+    "tax remittance",
+    "fraud operations",
+    "advanced course and community tooling"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "integrations",
+    "scale-infra"
+  ],
+  "moatNotes": "payments, tax, distribution, and operations",
+  "replacementScope": "single-creator storefront",
+  "ongoingBurden": "checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support",
+  "whyPeopleStillPay": "People still pay for BigCommerce because creators pay to outsource the dangerous and tedious parts around money, delivery, tax, and customer access. The recurring cost buys checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "desc": "Active open-source commerce platform with modular checkout and fulfillment primitives."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "OpenCart",
+      "url": "https://www.opencart.com",
+      "type": "open-source",
+      "repo": "https://github.com/opencart/opencart",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A complete catalog and checkout instead of a small one; free software, paid server chores.",
+      "stars": 8174,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Upload a stable PHP release to hosting, create a database, then complete the browser installer",
+        "engines": null,
+        "dataFormat": "Catalog, customers and orders in a SQL database; images, downloads and application storage in server directories",
+        "gapVsPaid": "OpenCart replaces managed reliability and integrations with PHP-server administration and a less polished merchant workflow.",
+        "setupBlocker": "PHP hosting, database and permissions work come first, followed by payment, shipping, mail and extension configuration",
+        "sources": [
+          "https://github.com/opencart/opencart",
+          "https://github.com/opencart/opencart/blob/master/LICENSE.md",
+          "https://docs.opencart.com/en-gb/installation/",
+          "https://github.com/opencart/opencart/releases",
+          "https://www.bigcommerce.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Square Online",
+      "url": "https://squareup.com/us/en/online-store",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A free hosted catalog with unlimited products and checkout; it is Square Checkout, not Stripe Checkout.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a Square account and website from Square Dashboard",
+        "engines": null,
+        "dataFormat": "Catalog, site content, customers, orders and payments in Square's managed cloud",
+        "gapVsPaid": "Square Online uses Square rather than Stripe Checkout and offers less catalog, integration and operational depth than BigCommerce.",
+        "setupBlocker": "A verified Square business account in a supported country is required, and checkout remains tied to Square",
+        "sources": [
+          "https://squareup.com/us/en/online-store",
+          "https://squareup.com/help/us/en/article/6852-get-started-with-square-online-store",
+          "https://squareup.com/help/us/en/article/7014-accept-payments",
+          "https://www.bigcommerce.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Square Payment Links",
+      "url": "https://squareup.com/us/en/payment-links/buy-button",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Embeddable buy buttons and hosted checkout with no monthly bill; country availability is the catch.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a verified Square account, then build a checkout link or buy button in Square Dashboard",
+        "engines": null,
+        "dataFormat": "Products, checkout links, customers, orders and payments in Square's managed cloud",
+        "gapVsPaid": "Square Payment Links is not a real catalog, storefront or order-operations system, and checkout is Square rather than Stripe.",
+        "setupBlocker": "Only supported Square countries qualify, business verification is required, and every sale incurs Square processing fees",
+        "sources": [
+          "https://squareup.com/us/en/payment-links/buy-button",
+          "https://squareup.com/help/us/en/article/6692-get-started-with-square-checkout-links",
+          "https://squareup.com/help/us/en/article/5068-what-are-square-s-fees",
+          "https://www.bigcommerce.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Stripe Payment Links",
+      "url": "https://stripe.com/payments/payment-links",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A tiny product catalog with hosted Stripe checkout; no monthly fee, only ordinary payment processing.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a Stripe account and Payment Link in Dashboard; API use is optional",
+        "engines": null,
+        "dataFormat": "Products, prices, links, Checkout Sessions, customers and payments in Stripe's managed cloud",
+        "gapVsPaid": "Stripe Payment Links supplies only a minimal product list and hosted checkout, not BigCommerce's storefront, catalog management, merchandising and operations.",
+        "setupBlocker": "A supported-country Stripe business account and verification are required, and ordinary payment-processing fees still apply",
+        "sources": [
+          "https://stripe.com/payments/payment-links",
+          "https://docs.stripe.com/payment-links",
+          "https://docs.stripe.com/payment-links/create",
+          "https://docs.stripe.com/payment-links/post-payment",
+          "https://www.bigcommerce.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Vvveb",
+      "url": "https://www.vvveb.com",
+      "type": "open-source",
+      "repo": "https://github.com/givanz/Vvveb",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A visual catalog, checkout and order desk in one install; much more shop than this brief requires.",
+      "stars": 1200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Download and upload the PHP release, open the site URL, and complete the browser installer",
+        "engines": null,
+        "dataFormat": "Content, products, orders and settings in MySQL/MariaDB, SQLite or PostgreSQL; media and downloadable files on the server filesystem",
+        "gapVsPaid": "Vvveb is less mature in catalog operations, integrations, analytics and managed reliability, while still requiring a server.",
+        "setupBlocker": "PHP hosting, a database, writable files, mail and payment configuration, plus ongoing server updates",
+        "sources": [
+          "https://github.com/givanz/Vvveb",
+          "https://github.com/givanz/Vvveb/blob/master/LICENSE",
+          "https://www.vvveb.com",
+          "https://docs.vvveb.com/",
+          "https://www.bigcommerce.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "WooCommerce",
+      "url": "https://woocommerce.com",
+      "type": "open-source",
+      "repo": "https://github.com/woocommerce/woocommerce",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A full WordPress shop for a brief that only asked for a catalog; overkill is still a replacement.",
+      "stars": 10400,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Medusa",
+      "url": "https://medusajs.com",
+      "desc": "A useful commerce backend for developers, not a catalog-and-checkout product a normal merchant can adopt."
+    }
+  ],
+  "relatedSlugs": [
+    "gumroad",
+    "lemon-squeezy",
+    "paddle"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Standard plan and a single-creator storefront DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for BigCommerce in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, Stripe Checkout, and S3-compatible storage; do not offer alternative stacks.\nThe core loop is: sell a small catalog from a user-owned storefront, hand off payments to Stripe Checkout, deliver purchased files or lessons, and manage customers.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement products, variants, prices, files or lessons, coupons, customers, orders, and entitlements.\nUse Stripe-hosted Checkout and verify every webhook signature and idempotency key.\nGrant access only after confirmed payment and revoke it on refund or chargeback.\nCreate a customer library with signed short-lived download or lesson URLs.\nAdd order search, resend receipt, refund handoff, export, and an immutable event log.\nDocument taxes as the creator's responsibility and do not calculate unsupported jurisdictions.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out merchant-of-record tax remittance.\nDeliberately leave out a buyer marketplace or affiliate network.\nDeliberately leave out advanced communities, certificates, mobile apps, and enterprise learning features.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

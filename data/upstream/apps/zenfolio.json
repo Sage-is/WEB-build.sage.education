@@ -1,0 +1,210 @@
+{
+  "slug": "zenfolio",
+  "name": "Zenfolio",
+  "domain": "zenfolio.com",
+  "appURL": "https://zenfolio.com",
+  "category": "photo-editing",
+  "subcategory": "photo organization, culling and editing",
+  "tagline": "Publish a portfolio and client galleries with basic downloads",
+  "priceMonthly": 9,
+  "pricing": {
+    "plan": "Portfolio",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://zenfolio.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Portfolio monthly tier with annual billing.",
+    "native": "9 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Portfolio",
+        "monthly": 9,
+        "annualPerMonth": 7,
+        "per": "workspace",
+        "limits": "15 GB storage (about 4,500 photos) and 500 SMS messages per month.",
+        "notes": "The displayed annual-equivalent price appears to be a first-year offer scheduled to end August 15, 2026; renewal price was not disclosed."
+      },
+      {
+        "name": "PortfolioPlus",
+        "monthly": 23,
+        "annualPerMonth": 11.5,
+        "per": "workspace",
+        "limits": "150 GB storage (about 60,000 photos) and 2,500 SMS messages per month.",
+        "notes": "The displayed annual-equivalent price appears to be a first-year offer scheduled to end August 15, 2026; renewal price was not disclosed."
+      },
+      {
+        "name": "ProSuite",
+        "monthly": 40,
+        "annualPerMonth": 20,
+        "per": "workspace",
+        "limits": "Unlimited JPEG photo storage; 150 GB video (about 10 hours); 5,000 SMS messages per month; up to 4K video.",
+        "notes": "The displayed annual-equivalent price appears to be a first-year offer scheduled to end August 15, 2026; renewal price was not disclosed."
+      }
+    ],
+    "freeTierCaps": "no free tier; a free trial is offered, but the current live page did not reliably expose its numeric duration",
+    "billingTerms": "monthly + annual; displayed annual rates are promotional first-year equivalents",
+    "priceChanges": [],
+    "hiddenCosts": "AI culling is $7/month on Portfolio and PortfolioPlus; Booking is $10/month on those tiers; RAW storage above 2 GB is $0.085/GB/month; commerce carries a 7% platform fee plus payment processing; terms also set 100 GB/month bandwidth and 25 GB/gallery limits.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://zenfolio.com/plans-pricing/",
+      "https://support.zenfolio.com/hc/en-us/articles/7432716203411-Raw-File-Storage",
+      "https://support.zenfolio.com/hc/en-us/articles/7432727552787-Setting-Prices-Profits",
+      "https://zenfolio.com/termsofuse/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Zenfolio, publish a portfolio and client galleries with basic downloads. The hard boundary is hosting, templates, proofing, commerce, print labs, and photographer support, plus image pipeline quality, models, and workflow polish.",
+  "coreLoopDIY": "Catalog local photos, generate previews, apply non-destructive adjustments, publish a portfolio and client galleries with basic downloads, and export selected originals or rendered copies.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "desktop computer",
+    "local photo library",
+    "sufficient disk space",
+    "optional GPU for AI features"
+  ],
+  "whatYouLose": [
+    "hosting, templates, proofing, commerce, print labs, and photographer support",
+    "proprietary raw-processing quality",
+    "cloud sync and sharing",
+    "large AI models",
+    "camera and print ecosystem"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "image pipeline quality, models, and workflow polish",
+  "replacementScope": "personal local photo catalog",
+  "ongoingBurden": "raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity",
+  "whyPeopleStillPay": "People still pay for Zenfolio because photographers pay because image quality, catalog safety, and fast handling of huge libraries matter more than cloning sliders. The recurring cost buys raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Immich",
+      "url": "https://github.com/immich-app/immich",
+      "desc": "Active open-source self-hosted photo and video management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Lychee",
+      "url": "https://lycheeorg.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/LycheeOrg/Lychee",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A tidy self-hosted portfolio and passworded client gallery with downloads; deliberately light on business machinery.",
+      "stars": 4300,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose with the Lychee image and MariaDB; prebuilt and source installs also exist",
+        "engines": null,
+        "dataFormat": "Uploaded originals and derivatives live in persistent uploads storage; albums, users, metadata and settings live in MariaDB (or another configured database), with separate logs and temporary-data volumes",
+        "gapVsPaid": "It handles portfolios and private downloads but lacks Zenfolio's client proofing, store, print fulfillment, booking and photographer-business automation.",
+        "setupBlocker": "Docker Compose, writable persistent volumes, a database, an APP_KEY, and domain/TLS setup for remote sharing",
+        "sources": [
+          "https://github.com/LycheeOrg/Lychee",
+          "https://github.com/LycheeOrg/Lychee/blob/master/LICENSE",
+          "https://github.com/LycheeOrg/Lychee/blob/master/docker-compose.yaml",
+          "https://lycheeorg.dev/docs/installation.html",
+          "https://zenfolio.com/features/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Photoview",
+      "url": "https://photoview.github.io/",
+      "type": "open-source",
+      "repo": "https://github.com/photoview/photoview",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Turns owned folders into a clean web portfolio with RAW, EXIF, users, shares, and downloads; design customization is sparse.",
+      "stars": 6497,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Docker Compose with SQLite, MariaDB, or PostgreSQL and one or more mounted media folders",
+        "engines": "Built-in dlib/go-face face detection and recognition; FFmpeg for video processing; optional Mapbox token for maps",
+        "dataFormat": "Original photos remain in the mounted folder tree; the database stores users, albums, indexes, and face metadata, while a media-cache directory stores thumbnails and optimized video",
+        "gapVsPaid": "Its design customization is sparse and it has none of Zenfolio's commerce, proofing, booking, marketing or managed-domain workflow.",
+        "setupBlocker": "Docker plus careful volume paths and host-file permissions; safe remote access also needs a reverse proxy or VPN and TLS",
+        "sources": [
+          "https://github.com/photoview/photoview",
+          "https://github.com/photoview/photoview/blob/master/LICENSE.txt",
+          "https://photoview.github.io/en/docs/installation-docker/",
+          "https://photoview.github.io/en/docs/installation-environment-variables/",
+          "https://zenfolio.com/features/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Piwigo",
+      "url": "https://piwigo.org/",
+      "type": "open-source",
+      "repo": "https://github.com/Piwigo/Piwigo",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Portfolio-like themes, private client albums, users, metadata, and downloads on your server; sales and lab fulfillment do not come along.",
+      "stars": 3800,
+      "lastCommit": "2026-05",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "self-hosted",
+        "install": "Upload the NetInstall script or release to PHP web hosting, then complete browser setup against MySQL or MariaDB",
+        "engines": null,
+        "dataFormat": "Originals live under the upload or galleries directories, generated derivatives and configuration stay in the Piwigo tree, and albums, users, metadata, and plugin state live in MySQL or MariaDB",
+        "gapVsPaid": "It can build a portfolio through themes and plugins, but sales, lab fulfillment, proofing and photographer-business automation remain separate projects.",
+        "setupBlocker": "Requires PHP web hosting, a database, writable directories, and ongoing web-server, TLS, and plugin maintenance",
+        "sources": [
+          "https://github.com/Piwigo/Piwigo",
+          "https://github.com/Piwigo/Piwigo/blob/master/COPYING",
+          "https://piwigo.org/get-piwigo",
+          "https://doc.piwigo.org/self-hosting-piwigo/move-your-piwigo-to-another-server",
+          "https://doc.piwigo.org/self-hosting-piwigo/importing-and-synchronizing-ftp-photos",
+          "https://zenfolio.com/features/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Immich",
+      "url": "https://immich.app/",
+      "desc": "A strong personal archive with sharing, not a purpose-built portfolio and client-delivery surface."
+    }
+  ],
+  "relatedSlugs": [
+    "adobe-lightroom",
+    "capture-one",
+    "ente-photos"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Portfolio plan and a personal local photo catalog DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Zenfolio in an empty repository.\nUse Tauri 2, React, TypeScript, Rust image libraries, SQLite, and local filesystem access; do not offer alternative stacks.\nThe core loop is: catalog local photos, generate previews, apply non-destructive adjustments, publish a portfolio and client galleries with basic downloads, and export selected originals or rendered copies.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex selected folders without moving or rewriting originals and store only catalog data in SQLite.\nGenerate thumbnails and previews, read EXIF, detect duplicates by hash, and monitor file changes.\nProvide timeline, folders, albums, ratings, flags, tags, search, and side-by-side compare.\nStore edits as reversible parameters for crop, rotate, exposure, contrast, white balance, and saturation.\nRender exports to a new folder with explicit color space, quality, size, and metadata choices.\nAdd catalog backup, missing-file repair, integrity scan, and a clear original-safety guarantee.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a proprietary raw-rendering engine.\nDeliberately leave out hosted cross-device photo sync and client galleries.\nDeliberately leave out frontier culling, retouching, and generative models.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

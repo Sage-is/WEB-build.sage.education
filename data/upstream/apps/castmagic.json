@@ -1,0 +1,115 @@
+{
+  "slug": "castmagic",
+  "name": "Castmagic",
+  "domain": "castmagic.io",
+  "appURL": "https://castmagic.io",
+  "category": "podcasting",
+  "subcategory": "podcast recording, cleanup and publishing",
+  "tagline": "Turn a recording into a transcript, summary, clips, quotes, and reusable content assets",
+  "priceMonthly": 19.92,
+  "pricing": {
+    "plan": "Hobby",
+    "basis": "annual billing, per month",
+    "unit": "flat",
+    "source": "https://www.castmagic.io/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official Hobby monthly tier.",
+    "native": "19.92 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Hobby",
+        "monthly": null,
+        "annualPerMonth": 19.92,
+        "per": "workspace",
+        "limits": "30 transcribed library hours total; 3 spaces; 50 GB storage; 3 seats; 10 GB/file",
+        "notes": "Billed $239/year; month-to-month price was not exposed on the current page. The supplied snapshot's $39/month headline no longer matches the live self-serve offer."
+      },
+      {
+        "name": "Starter",
+        "monthly": null,
+        "annualPerMonth": 48.25,
+        "per": "workspace",
+        "limits": "100 transcribed library hours total; 10 spaces; 250 GB; 5 seats; API access",
+        "notes": "Billed $579/year; month-to-month price was not exposed on the current page."
+      },
+      {
+        "name": "Team",
+        "monthly": null,
+        "annualPerMonth": 139.08,
+        "per": "workspace",
+        "limits": "400 transcribed library hours total; 25 spaces; 1 TB; 5 seats included; unlimited team size",
+        "notes": "Billed $1,669/year; extra seats cost $159/year or $19/month."
+      },
+      {
+        "name": "Business & Scale",
+        "monthly": 699,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom transcription volume, seats, storage, security and support",
+        "notes": "Live promotional starting price is $699/month with $999 struck through."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; a trial is offered, but its numeric allowance is not published on the live pricing page",
+    "billingTerms": "annual self-serve plans (advertised as 30% lower) plus monthly/custom Business & Scale",
+    "priceChanges": [],
+    "hiddenCosts": "Library-hour caps are cumulative rather than simple monthly allowances; more hours can be purchased, and Team seats beyond 5 cost $19/month or $159/year each.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.castmagic.io/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Castmagic, turn a recording into a transcript, summary, clips, quotes, and reusable content assets. The hard boundary is large prompt library, integrations, team workflow, and hosted processing, plus audio infrastructure, distribution, and production polish.",
+  "coreLoopDIY": "Import spoken-word audio, perform practical cleanup, generate a transcript, summary, clips, and quotes, and export production files plus show notes and reusable content assets.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "ffmpeg",
+    "local audio files",
+    "optional transcription API key",
+    "sufficient disk space"
+  ],
+  "whatYouLose": [
+    "large prompt library, integrations, team workflow, and hosted processing",
+    "remote studio reliability",
+    "licensed music libraries",
+    "hosting distribution",
+    "advanced mastering and support"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "audio infrastructure, distribution, and production polish",
+  "replacementScope": "single-creator production tool",
+  "ongoingBurden": "codec support, loudness standards, transcription, storage, feeds, analytics, and deliverability to directories",
+  "whyPeopleStillPay": "People still pay for Castmagic because creators pay to remove fragile audio plumbing and publishing chores from a release schedule. The recurring cost buys codec support, loudness standards, transcription, storage, feeds, analytics, and deliverability to directories, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Audacity",
+      "url": "https://github.com/audacity/audacity",
+      "desc": "Long-running open-source multitrack audio editor and useful implementation prior art."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Speakr",
+      "url": "https://murtaza-nasir.github.io/speakr/",
+      "desc": "It handles transcripts and text assets, but not the audio or video clips in this job."
+    }
+  ],
+  "relatedSlugs": [
+    "riverside",
+    "alitu",
+    "auphonic"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Hobby plan and a single-creator production tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Castmagic in an empty repository.\nUse Python 3.12, FastAPI, ffmpeg, SQLite, and an HTMX interface; do not offer alternative stacks.\nThe core loop is: import spoken-word audio, perform practical cleanup, generate a transcript, summary, clips, and quotes, and export production files plus show notes and reusable content assets.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate an upload queue and preserve originals in a read-only media folder.\nGenerate waveforms and non-destructive edit markers instead of rewriting source files.\nImplement silence trimming, loudness normalization to -16 LUFS, fades, and noise-gate presets.\nAdd chapter markers, intro and outro slots, and a simple two-track timeline.\nProduce a transcript and draft title, description, chapters, and social excerpts.\nExport MP3, WAV, transcript, chapters JSON, and a complete project manifest.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out real-time remote recording.\nDeliberately leave out podcast hosting and directory analytics.\nDeliberately leave out licensed stock music and voice cloning.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

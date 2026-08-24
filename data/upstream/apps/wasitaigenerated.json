@@ -1,0 +1,131 @@
+{
+  "slug": "wasitaigenerated",
+  "name": "WasItAIGenerated",
+  "domain": "wasitaigenerated.com",
+  "appURL": "https://wasitaigenerated.com",
+  "category": "ai-writing",
+  "subcategory": "AI detection across text, image, audio and video",
+  "tagline": "Detection API and tools for AI-generated text, images, audio and video, plus a thesis review",
+  "priceMonthly": 9.99,
+  "pricing": {
+    "plan": "Unlimited Website",
+    "kind": "subscription",
+    "basis": "monthly, flat",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "9.99 USD/month; API + website 119 USD/month; credit packs from 5 USD for 40,000 credits",
+    "source": "https://wasitaigenerated.com/#pricing",
+    "checkedOn": "2026-08-03",
+    "confidence": "high",
+    "notes": "Also sells non-expiring credit packs; detection is metered per word or per asset.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "1,000 credits after email verification; text costs 1 credit/word, image 300 credits, audio/voice 1,000, video 2,000.",
+        "notes": null
+      },
+      {
+        "name": "Unlimited Website",
+        "monthly": 9.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited website detections across text, image, audio, and video; API access not included.",
+        "notes": null
+      },
+      {
+        "name": "Starter Pack",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "40,000 API credits; credits never expire.",
+        "notes": "One-time payment: $5."
+      },
+      {
+        "name": "Credit Package",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "200,000 API credits; credits never expire; bulk/API access.",
+        "notes": "One-time payment: $19.99."
+      }
+    ],
+    "freeTierCaps": "1,000 credits after email verification; text 1 credit/word, image 300, audio/voice 1,000, video 2,000",
+    "billingTerms": "website subscription is monthly only, no annual plan; API credits are one-time purchases",
+    "priceChanges": [],
+    "hiddenCosts": "The $9.99 website subscription does not include API use; API calls consume separately purchased credits.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.wasitaigenerated.com/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "The interface is a text box; the product is a fine-tuned classifier. Detection quality does not come from a clever prompt. It comes from training a model on a labelled corpus and tuning it until the error rate is low enough to act on, which is months of work against a target that moves every time a new generator ships. Asking a general model \"is this AI-written?\" produces confident, unreliable answers, and in an academic-integrity setting that means falsely accusing real students. A one-shot build gets you the UI and none of the responsibility.",
+  "coreLoopDIY": "Build a private workspace that pastes in text, asks one general model for an AI-likelihood judgement with reasoning, stores results, and exports them.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one sitting",
+  "replacementScope": "consolation build only; the classifier and its measured error rate remain the moat",
+  "requirements": [
+    "OpenAI or Anthropic API key in .env",
+    "Node.js 22",
+    "SQLite database",
+    "A README stating plainly that the output is a guess, not a detector, and must never be used to accuse anyone"
+  ],
+  "whatYouLose": [
+    "a trained classifier and the labelled corpus behind it",
+    "a measured false-positive rate you can quote to an institution",
+    "detection for images, audio and video, not just text",
+    "per-sentence highlighting instead of one document-level guess",
+    "retraining as generators change"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "proprietary-data",
+    "compliance-regulatory"
+  ],
+  "moatNotes": "trained classifier, labelled corpus, published error rates",
+  "whyPeopleStillPay": "Institutions do not buy a verdict, they buy a defensible one. A university that flags a student needs a documented error rate, an audit trail and a vendor who will stand behind the number. That is a measurement problem, not an interface problem, and it is why every serious buyer in this category asks about false positives before features.",
+  "ongoingBurden": "Retrain as new generators ship, keep a labelled evaluation set, measure and publish error rates honestly, and resist the pressure to overstate certainty.",
+  "priorArt": [
+    {
+      "name": "Binoculars",
+      "url": "https://github.com/ahans30/Binoculars",
+      "desc": "Zero-shot LLM text detection using perplexity ratios between two models."
+    },
+    {
+      "name": "DetectGPT",
+      "url": "https://github.com/eric-mitchell/detect-gpt",
+      "desc": "Curvature-based zero-shot detection of machine-generated text."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Binoculars",
+      "url": "https://github.com/ahans30/Binoculars",
+      "desc": "Text-only academic code that needs Python and models; it cannot inspect images, audio, or video, and the repo stopped in 2024."
+    },
+    {
+      "name": "DetectGPT",
+      "url": "https://github.com/eric-mitchell/detect-gpt",
+      "desc": "Four-commit text-detection research code from 2023; it is neither a maintained product nor a multimodal detector."
+    },
+    {
+      "name": "GLTR",
+      "url": "https://gltr.io/",
+      "desc": "A GPT-2 text visualizer from 2023; it cannot touch images, audio, or video and is not an installable modern detector."
+    }
+  ],
+  "relatedSlugs": [
+    "gptzero",
+    "originality-ai",
+    "copyleaks"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "The text box is trivial. The trained classifier and its measured false-positive rate are the product.",
+  "prompt": "Build the closest honest consolation tool inspired by WasItAIGenerated. Do not claim it detects AI writing.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: paste text, send it to one general language model, and record that model's opinion on how machine-like the writing reads, with its reasoning.\nStart from an empty folder and create the complete working project.\nSingle-user and private by default; store everything locally.\nPut every secret in .env and provide .env.example.\nShow the result as an opinion with reasoning, never as a score, a percentage or a verdict - the whole point of this build is that it cannot measure what the paid product measures.\nPut a permanent, non-dismissable notice in the UI and the README: this is one model's guess, it has no measured error rate, and it must never be used to accuse anyone of anything.\nInclude clear empty, loading, validation, success and failure states.\nAdd export so the user is not trapped in the app.\nAccessible keyboard navigation, labels, focus states and sensible contrast.\nDeliberately exclude these paid-product advantages: a trained classifier, a labelled corpus, a published false-positive rate, image/audio/video detection, per-sentence attribution.\nDo not fake accuracy claims, benchmarks or compliance statements.\nWrite unit tests for the data model and one end-to-end smoke test of the core loop.\nCreate a README with setup, architecture, data location and an explicit limitations section.\nRun the tests and build before finishing, then fix what fails.",
+  "promptCurated": true
+}

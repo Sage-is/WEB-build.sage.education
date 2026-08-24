@@ -1,0 +1,114 @@
+{
+  "slug": "foundersprime",
+  "name": "FoundersPrime",
+  "domain": "foundersprime.com",
+  "category": "rss-research",
+  "subcategory": "startup deals · cloud credits · grants · accelerators",
+  "tagline": "Verified startup deals, cloud credits, SaaS discounts, grants, and founder programs",
+  "priceMonthly": 4,
+  "pricing": {
+    "plan": "Founder",
+    "basis": "monthly equivalent of $48/year (most popular plan)",
+    "unit": "flat",
+    "native": "48 USD/year",
+    "source": "https://www.foundersprime.com/pricing",
+    "checkedOn": "2026-08-03",
+    "confidence": "high",
+    "notes": "Live pricing page (2026-08-03): Next'Founder $1 first month then $14.99/yr (students); Founder $9.99 first month then $48/yr (most popular); Legend $99 one-time lifetime. Listed priceMonthly is Founder annual ÷ 12 ≈ $4.",
+    "tiers": [
+      {
+        "name": "Next'Founder",
+        "monthly": 1,
+        "annualPerMonth": 1.25,
+        "per": "user",
+        "limits": "1,000+ startup discounts; student eligibility required.",
+        "notes": "Introductory first 30 days cost $1, then billing switches to $14.99/year."
+      },
+      {
+        "name": "Founder",
+        "monthly": 9.99,
+        "annualPerMonth": 4,
+        "per": "user",
+        "limits": "Unlimited deal claims.",
+        "notes": "Introductory first month costs $9.99, then billing switches to $48/year."
+      },
+      {
+        "name": "Legend",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Lifetime membership with unlimited deal claims.",
+        "notes": "One-time purchase: $99."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier",
+    "billingTerms": "paid introductory first month/30 days followed by annual renewal; Legend is a one-time lifetime purchase",
+    "priceChanges": [],
+    "hiddenCosts": "the headline monthly-looking prices are introductory only; Next'Founder requires student eligibility",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://www.foundersprime.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A personal spreadsheet or Markdown catalog of public startup deals is one-shottable. The hard part is continuously verifying cloud credits, SaaS discounts, grants, and accelerator eligibility · that curated database is the product, not the UI shell.",
+  "coreLoopDIY": "Maintain a local searchable catalog of startup deals with tags for cloud, SaaS, ads, grants, and accelerators, plus expiry dates and eligibility notes.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "local SQLite or Markdown/JSON folder",
+    "manual research or scrape scripts for public deal pages",
+    "browser access to vendor program pages"
+  ],
+  "whatYouLose": [
+    "weekly-verified deal freshness across hundreds of programs",
+    "breadth of cloud credits, SaaS discounts, grants, and accelerators in one place",
+    "eligibility notes and search/filters polished for founders",
+    "agent-friendly catalog APIs and ongoing research labor",
+    "someone else chasing expired coupons so you do not"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "execution-polish"
+  ],
+  "moatNotes": "value is curated verification of deals and programs, not a unique widget",
+  "whyPeopleStillPay": "Founders pay to skip hours of hunting scattered vendor pages and expired promos. The subscription buys research time, trust, and a maintained catalog · a DIY list goes stale within weeks without continuous upkeep.",
+  "priorArt": [],
+  "alternatives": [
+    {
+      "name": "F6S",
+      "url": "https://www.f6s.com",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Deals, credits, grants and accelerators in one sprawling free founder bazaar.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "FounderPass",
+      "url": "https://www.founderpass.com",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Hundreds of startup discounts; the free shelf is real, though the premium shelf keeps waving.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Founders deals and credits terminal. Logo is black/white/yellow FP mark from foundersprime.com.",
+  "prompt": "Build me a local startup-deals catalog to replace FoundersPrime. Requirements:\n\n- Node + Express + better-sqlite3, server-rendered pages with a little vanilla JS,\n  no build step.\n- A deal has a name, vendor URL, category (cloud / SaaS / ads / grant / accelerator),\n  amount or percent, expiry date, eligibility notes, tags, and a verified checkbox\n  with a last-checked date.\n- List view with search, category and expiry filters, and an expiring-in-30-days\n  section pinned to the top; a detail panel per deal.\n- Deals load from a deals.json file I maintain by hand, and edits in the UI write\n  back to SQLite; export the whole catalog as JSON or CSV.\n- Binds to localhost only. No accounts, no telemetry.\n- Out of scope: scraping vendor pages, and anything that marks a deal live without\n  me checking it · the verification labor is the part you are not replacing.\n- README: setup, the deals.json format, and how to add and verify deals by hand.",
+  "promptCurated": true
+}

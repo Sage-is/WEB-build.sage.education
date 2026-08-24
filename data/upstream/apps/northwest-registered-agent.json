@@ -1,0 +1,94 @@
+{
+  "slug": "northwest-registered-agent",
+  "name": "Northwest Registered Agent",
+  "domain": "northwestregisteredagent.com",
+  "appURL": "https://northwestregisteredagent.com",
+  "category": "legal",
+  "subcategory": "legal documents, privacy compliance and business administration",
+  "tagline": "Track entity deadlines and documents without serving as a legal registered agent",
+  "priceMonthly": 10.42,
+  "pricing": {
+    "plan": "Registered Agent",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://northwestregisteredagent.com/registered-agent",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Annual registered-agent fee divided by 12.",
+    "native": "10.42 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Registered Agent",
+        "monthly": null,
+        "annualPerMonth": 10.42,
+        "per": "flat",
+        "limits": "$125/year per state; service in all 50 states, DC, and Puerto Rico; online document scans and compliance reminders",
+        "notes": null
+      },
+      {
+        "name": "LLC / Corporation Formation",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "$39 one-time service fee plus state fees; first year of registered-agent service included",
+        "notes": "Registered-agent renewal is $125/year after year 1."
+      }
+    ],
+    "freeTierCaps": "no free tier; first-year registered-agent service is bundled only with the paid $39 formation order plus state fees",
+    "billingTerms": "registered agent billed annually; formation is one-time",
+    "priceChanges": [],
+    "hiddenCosts": "Government/state formation fees are mandatory and vary by state. Registered-agent service renews at $125/year after the included first year.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.northwestregisteredagent.com/registered-agent",
+      "https://www.northwestregisteredagent.com/incorporation-service"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Northwest Registered Agent, track entity deadlines and documents without serving as a legal registered agent. The hard boundary is physical agent network, mail handling, state compliance, privacy, and support, plus expert judgment, compliance, and regulated services.",
+  "coreLoopDIY": "Track entity deadlines and documents, fill clearly labeled templates, track versions and approvals, and repeatedly state that outputs require qualified review, without serving as a legal registered agent.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "self-hosted deployment",
+    "PostgreSQL",
+    "jurisdiction-specific templates supplied by the user or counsel",
+    "secure backup"
+  ],
+  "whatYouLose": [
+    "physical agent network, mail handling, state compliance, privacy, and support",
+    "legal advice",
+    "jurisdictional assurance",
+    "filing and registered-agent network",
+    "continuous regulatory monitoring and liability"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "brand-trust"
+  ],
+  "moatNotes": "expert judgment, compliance, and regulated services",
+  "replacementScope": "internal questionnaire and template tracker",
+  "ongoingBurden": "law changes, jurisdiction, template provenance, access, signatures, filings, deadlines, evidence, retention, security, and professional liability",
+  "whyPeopleStillPay": "People still pay for Northwest Registered Agent because the durable value is expert accountability and regulated execution; document generation alone cannot supply either. The recurring cost buys law changes, jurisdiction, template provenance, access, signatures, filings, deadlines, evidence, retention, security, and professional liability, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "docassemble",
+      "url": "https://github.com/jhpyle/docassemble",
+      "desc": "Open-source expert-system platform for guided interviews and document assembly."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "legalzoom",
+    "rocket-lawyer",
+    "clerky"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Registered Agent plan and a internal questionnaire and template tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Northwest Registered Agent in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and a versioned Markdown template engine; do not offer alternative stacks.\nThe core loop is: track entity deadlines and documents, fill clearly labeled templates, track versions and approvals, and repeatedly state that outputs require qualified review, without serving as a legal registered agent.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate versioned questionnaires, reusable fact fields, conditional sections, templates, and approval states.\nShow the source, jurisdiction, owner, reviewed date, and expiry date for every template.\nGenerate DOCX and PDF drafts with prominent draft and review-required labels.\nKeep an immutable audit log of answers, template version, generation time, downloads, and approvals.\nAdd role-based access, retention, export, encrypted backups, and a deadline calendar.\nDisplay legal-review warnings before generation and again before any final download.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out legal advice or guaranteed compliance.\nDeliberately leave out government filings, identity verification, and registered-agent services.\nDeliberately leave out automatic consent decisions or deployment without qualified review.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

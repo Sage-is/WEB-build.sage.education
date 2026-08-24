@@ -1,0 +1,175 @@
+{
+  "slug": "jetbrains-ai-pro",
+  "name": "JetBrains AI Pro",
+  "domain": "jetbrains.com",
+  "appURL": "https://jetbrains.com",
+  "category": "dev-tools",
+  "subcategory": "AI coding agents and developer workspaces",
+  "tagline": "Build a narrow IDE assistant for code explanation, tests, and reviewed patches",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "AI Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://jetbrains.com/ai-ides/buy/",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical AI Pro monthly price.",
+    "native": "10 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "AI Free - Individual",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "3 AI credits every 30 days; no top-up purchases.",
+        "notes": null
+      },
+      {
+        "name": "AI Pro - Individual",
+        "monthly": 10,
+        "annualPerMonth": 8.33,
+        "per": "user",
+        "limits": "10 AI credits every 30 days.",
+        "notes": "Annual price is $100/year."
+      },
+      {
+        "name": "AI Ultimate - Individual",
+        "monthly": 30,
+        "annualPerMonth": 25,
+        "per": "user",
+        "limits": "35 AI credits every 30 days.",
+        "notes": "Annual price is $300/year."
+      },
+      {
+        "name": "AI Free - Organization",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "3 AI credits/user every 30 days.",
+        "notes": null
+      },
+      {
+        "name": "AI Pro - Organization",
+        "monthly": 20,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "20 AI credits/user every 30 days.",
+        "notes": "An exact public annual organization price was not exposed."
+      },
+      {
+        "name": "AI Ultimate - Organization",
+        "monthly": 60,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "70 AI credits/user every 30 days.",
+        "notes": "An exact public annual organization price was not exposed."
+      },
+      {
+        "name": "AI Enterprise",
+        "monthly": 60,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Quota is at least comparable to AI Ultimate; exact numeric allowance can be customized and is not publicly stated.",
+        "notes": "Enterprise deployment and controls; contact sales for contract terms."
+      }
+    ],
+    "freeTierCaps": "3 AI credits every 30 days; no top-ups on the free plan",
+    "billingTerms": "individual plans offer monthly and annual billing; organization annual prices are not publicly exposed",
+    "priceChanges": [],
+    "hiddenCosts": "Credits reset every 30 days and do not roll over; paid top-ups expire after 12 months. Trial grants of 10 individual or 20 organization credits are temporary, not a permanent free allowance.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.jetbrains.com/ai-ides/buy/",
+      "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For JetBrains AI Pro, build a narrow IDE assistant for code explanation, tests, and reviewed patches. The hard boundary is deep jetbrains ide integration, proprietary models, context, and enterprise tooling, plus frontier models, context infrastructure, and execution safety.",
+  "coreLoopDIY": "Provide a bounded coding assistant that indexes the current repository, explains code, generates tests, proposes reviewed patches, runs approved commands, and preserves an auditable session log.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "VS Code",
+    "OpenAI or Anthropic API key",
+    "Git repository",
+    "local command sandbox"
+  ],
+  "whatYouLose": [
+    "deep JetBrains IDE integration, proprietary models, context, and enterprise tooling",
+    "frontier proprietary model",
+    "large-scale code retrieval",
+    "cloud sandbox fleet",
+    "enterprise policy and support"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "integrations",
+    "scale-infra"
+  ],
+  "moatNotes": "frontier models, context infrastructure, and execution safety",
+  "replacementScope": "single-repository coding assistant",
+  "ongoingBurden": "model changes, indexing, prompt injection, tool permissions, sandboxing, evaluation, telemetry choices, and IDE compatibility",
+  "whyPeopleStillPay": "People still pay for JetBrains AI Pro because the UI can be copied, but high-quality code models, context ranking, safe execution, and constant evaluation are the product. The recurring cost buys model changes, indexing, prompt injection, tool permissions, sandboxing, evaluation, telemetry choices, and IDE compatibility, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Continue",
+      "url": "https://github.com/continuedev/continue",
+      "desc": "Active open-source coding-assistant framework for IDEs and multiple model providers."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Kilo Code",
+      "url": "https://kilo.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/kilo-org/kilocode",
+      "platforms": [
+        "browser-extension",
+        "cli",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A maintained JetBrains agent for explanation, edits and tests; bring a model.",
+      "stars": 26735,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Tabby",
+      "url": "https://tabbyml.com/",
+      "type": "open-source",
+      "repo": "https://github.com/TabbyML/tabby",
+      "platforms": [
+        "browser-extension",
+        "self-hosted"
+      ],
+      "desc": "Self-hosted completions and chat inside JetBrains; your GPU becomes the subscription.",
+      "stars": 33819,
+      "lastCommit": "2026-06",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Continue",
+      "url": "https://continue.dev/",
+      "desc": "Acquired by Cursor; the repo is read-only and 2.0.0 is the last release."
+    }
+  ],
+  "relatedSlugs": [
+    "windsurf",
+    "replit",
+    "bolt-new"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the AI Pro plan and a single-repository coding assistant DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for JetBrains AI Pro in an empty repository.\nUse TypeScript, Node.js 22, a VS Code extension, SQLite, and one user-supplied model API; do not offer alternative stacks.\nThe core loop is: provide a bounded coding assistant that indexes the current repository, explains code, generates tests, proposes reviewed patches, runs approved commands, and preserves an auditable session log.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a VS Code sidebar with chat, selected-code actions, repository search, and a patch preview.\nIndex only the open repository and respect .gitignore plus a separate assistant ignore file.\nRequire explicit approval before reading outside the workspace or running any command.\nRepresent edits as unified diffs with accept, reject, partial apply, undo, and Git status checks.\nCapture tool calls, model requests, command output, and patch decisions in a local session log.\nAdd token and cost estimates, provider errors, cancellation, tests, and an offline data-flow diagram.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out training or reproducing a frontier coding model.\nDeliberately leave out unattended command execution outside a sandbox.\nDeliberately leave out cloud workspaces, team policy, and enterprise support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

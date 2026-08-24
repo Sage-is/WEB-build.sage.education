@@ -1,0 +1,137 @@
+{
+  "slug": "pdf-expert",
+  "name": "PDF Expert",
+  "domain": "pdfexpert.com",
+  "appURL": "https://pdfexpert.com",
+  "category": "documents",
+  "subcategory": "PDF editing, document workflows and electronic signatures",
+  "tagline": "Annotate, fill, merge, and lightly edit PDFs in a polished local desktop app",
+  "priceMonthly": 6.67,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://pdfexpert.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Annual subscription divided by 12; App Store pricing can vary.",
+    "native": "6.67 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Weekly",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "iPhone, iPad and Mac; Premium features including OCR, conversion, editing and PDF Copilot",
+        "notes": "The live official site localized to £4.99/week (about $6.75/week using the ECB 2026-08-12 reference rates); the official US App Store did not expose which listed USD in-app-purchase SKU maps to the weekly plan."
+      },
+      {
+        "name": "Yearly",
+        "monthly": null,
+        "annualPerMonth": 6.67,
+        "per": "flat",
+        "limits": "iPhone, iPad and Mac; major updates/new features, PDF Copilot, OCR, conversion and editing",
+        "notes": "The official US App Store lists $79.99/year; the live website localized to £72.99/year, showing that regional storefront pricing differs. Includes a 30-day money-back guarantee."
+      },
+      {
+        "name": "Lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Mac only; one-time $139.99; ongoing fixes, but future major tools may cost extra",
+        "notes": "The official US App Store lists a one-time $139.99 purchase; the live website localized to £129.99. One-time purchase, not a subscription."
+      }
+    ],
+    "freeTierCaps": "Free download supports basic reading/annotation/form use; official page does not publish numeric free-use caps",
+    "billingTerms": "weekly + annual ($79.99/year in the US App Store) + $139.99 lifetime Mac-only; annual/lifetime have a 30-day guarantee; storefront pricing varies by region",
+    "priceChanges": [],
+    "hiddenCosts": "Lifetime does not cover iPhone/iPad and future major features may require another fee. Weekly USD pricing was not identifiable from the US App Store SKU list, and the website's localized GBP prices differ materially from the US storefront.",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://pdfexpert.com/pricing",
+      "https://apps.apple.com/us/app/pdf-expert-edit-sign-pdfs/id1055273043?mt=12",
+      "https://support.readdle.com/pdfexpert/en_US/billing-subscription/the-pdf-expert-billing-faq",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For PDF Expert, annotate, fill, merge, and lightly edit PDFs in a polished local desktop app. The hard boundary is native apple polish, sync, reliable rendering, and mobile continuity, plus document fidelity, identity, and compliance.",
+  "coreLoopDIY": "Annotate, fill, merge, and lightly edit PDFs in a local desktop app, preserve originals, generate auditable outputs, and keep files in a user-owned store.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "LibreOffice headless",
+    "local or S3-compatible storage",
+    "public HTTPS for signature links"
+  ],
+  "whatYouLose": [
+    "native Apple polish, sync, reliable rendering, and mobile continuity",
+    "pixel-perfect proprietary PDF engine",
+    "identity verification",
+    "qualified trust services",
+    "large template and integration ecosystem"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "document fidelity, identity, and compliance",
+  "replacementScope": "personal document tool or low-stakes signature flow",
+  "ongoingBurden": "format edge cases, fonts, rendering, encryption, signatures, evidence, retention, storage, backups, and legal requirements",
+  "whyPeopleStillPay": "People still pay for PDF Expert because the visible editor is reproducible, but reliable rendering and legally defensible signature workflows are not a casual side project. The recurring cost buys format edge cases, fonts, rendering, encryption, signatures, evidence, retention, storage, backups, and legal requirements, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Stirling PDF",
+      "url": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "desc": "Active open-source web application for a broad set of PDF operations."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "PDFgear",
+      "url": "https://www.pdfgear.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "A polished free local editor for annotation, forms, signatures, merging, conversion, OCR, and light text edits; the most direct answer here.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Preview",
+      "url": "https://support.apple.com/guide/preview/welcome/mac",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos"
+      ],
+      "desc": "Already on every Mac and quietly excellent at viewing, annotating, filling, signing, rearranging, merging, and exporting PDFs; direct text editing is not the deal.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "adobe-acrobat-pro",
+    "smallpdf",
+    "pandadoc"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Premium plan and a personal document tool or low-stakes signature flow DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for PDF Expert in an empty repository.\nUse Next.js 15, TypeScript, Python 3.12, FastAPI, pikepdf, LibreOffice headless, and PostgreSQL; do not offer alternative stacks.\nThe core loop is: annotate, fill, merge, and lightly edit PDFs in a local desktop app, preserve originals, generate auditable outputs, and keep files in a user-owned store.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nKeep every original immutable and write each operation to a versioned output file.\nSupport merge, split, reorder, rotate, compress, watermark, redact, OCR, and Office-to-PDF conversion.\nRender page previews and warn when fonts, forms, signatures, or encryption may be altered.\nFor signature mode, place fields, invite signers, record consent, and seal a final PDF hash.\nMaintain an append-only event log with timestamps, document hashes, and delivery outcomes.\nAdd file expiry, download, deletion, backup, and a prominent low-stakes-use warning.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out qualified or regulated electronic signatures.\nDeliberately leave out government identity verification.\nDeliberately leave out full Acrobat-level editing and enterprise document governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

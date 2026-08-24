@@ -1,0 +1,142 @@
+{
+  "slug": "clickup",
+  "name": "ClickUp",
+  "domain": "clickup.com",
+  "appURL": "https://clickup.com",
+  "category": "project-management",
+  "subcategory": "team projects, issues and delivery planning",
+  "tagline": "Combine tasks, docs, goals, dashboards, and simple automations for a small team",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Unlimited",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://clickup.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Unlimited monthly seat price.",
+    "native": "10 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free Forever",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited tasks/members, 60 MB storage, 5 spaces, 40 lists/space, 100 automation runs/month, 5 active rules, 3 whiteboards, 1 form, 30-day message history",
+        "notes": null
+      },
+      {
+        "name": "Unlimited",
+        "monthly": 10,
+        "annualPerMonth": 7,
+        "per": "user",
+        "limits": "Unlimited storage/spaces/folders/forms, 1,000 automation runs/month and 500 active automation rules",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 19,
+        "annualPerMonth": 12,
+        "per": "user",
+        "limits": "5,000 automation runs/month, unlimited active rules, advanced dashboards/timelines/time tracking and workload",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom seats/security/support and up to 250,000 automation runs/month",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "Unlimited tasks/members; 60 MB storage, 5 spaces, 40 lists per space, 100 automation runs/month, 5 active rules, 3 whiteboards, 1 form and 30-day message history",
+    "billingTerms": "monthly + annual; 100% money-back guarantee",
+    "priceChanges": [],
+    "hiddenCosts": "AI is not included in the core plan price: ClickUp Brain AI is $9/user/month and Everything AI is $28/user/month, with any annual discount shown separately. Automation usage has hard monthly caps, and Enterprise is required for the highest cap.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://clickup.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For ClickUp, combine tasks, docs, goals, dashboards, and simple automations for a small team. The hard boundary is breadth, integrations, mobile apps, reporting, and a highly configurable workflow engine, plus collaboration, integrations, and organizational trust.",
+  "coreLoopDIY": "Plan and track team work through tasks, boards, milestones, docs, goals, dashboards, and simple automations, with comments and a searchable activity history for a small team.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "email credentials for invitations"
+  ],
+  "whatYouLose": [
+    "breadth, integrations, mobile apps, reporting, and a highly configurable workflow engine",
+    "deep integrations",
+    "enterprise permissions",
+    "large-scale reporting",
+    "battle-tested notifications and mobile apps"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "switching-costs"
+  ],
+  "moatNotes": "collaboration, integrations, and organizational trust",
+  "replacementScope": "small-team tracker",
+  "ongoingBurden": "auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime",
+  "whyPeopleStillPay": "People still pay for ClickUp because teams pay because project state has to remain authoritative through staff changes, outages, and years of accumulated workflow exceptions. The recurring cost buys auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Plane",
+      "url": "https://github.com/makeplane/plane",
+      "desc": "Active open-source project and issue tracking platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Leantime",
+      "url": "https://leantime.io",
+      "type": "open-source",
+      "repo": "https://github.com/Leantime/leantime",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Tasks, documents, goals, dashboards, and planning in one community stack; automation is comparatively thin",
+      "stars": 10000,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Huly",
+      "url": "https://huly.io",
+      "desc": "Tasks and documents are real, but goals and dashboards are missing and the hosted service is dead"
+    },
+    {
+      "name": "Plane",
+      "url": "https://plane.so",
+      "desc": "Tasks and pages are strong, but goals and general workflow automation do not clear the bar"
+    },
+    {
+      "name": "YouTrack",
+      "url": "https://www.jetbrains.com/youtrack/",
+      "desc": "Tasks, articles, dashboards, and automation are free for ten users; there is no real goals layer"
+    }
+  ],
+  "relatedSlugs": [
+    "asana",
+    "monday-com",
+    "linear"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Unlimited plan and a small-team tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for ClickUp in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: plan and track team work through tasks, boards, milestones, docs, goals, dashboards, and simple automations, with comments and a searchable activity history for a small team.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement organizations, projects, members, issues, labels, cycles, and milestones.\nProvide list, kanban, and simple timeline views backed by one canonical issue model.\nAdd comments, mentions, assignments, watchers, and a complete activity log.\nImplement project roles for owner, member, and viewer and test every mutation.\nAdd search, CSV import or export, email notifications, and daily database backups.\nShip Docker Compose, health checks, migrations, seed data, and an admin recovery command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out hundreds of external integrations.\nDeliberately leave out enterprise portfolio planning and SSO.\nDeliberately leave out native mobile clients and vendor-operated uptime.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,173 @@
+{
+  "slug": "ecwid",
+  "name": "Ecwid",
+  "domain": "ecwid.com",
+  "appURL": "https://ecwid.com",
+  "category": "creator-commerce",
+  "subcategory": "digital products, courses and memberships",
+  "tagline": "Embed a small catalog and hosted checkout into an existing site",
+  "priceMonthly": 35,
+  "pricing": {
+    "plan": "Venture",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://www.ecwid.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Venture monthly rate.",
+    "native": "35 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 5,
+        "annualPerMonth": 5,
+        "per": "workspace",
+        "limits": "Up to 10 products and email support.",
+        "notes": "Annual billing shows no discount."
+      },
+      {
+        "name": "Venture",
+        "monthly": 35,
+        "annualPerMonth": 29,
+        "per": "workspace",
+        "limits": "Up to 100 products; 3 additional Instant Site pages; digital files up to 25 GB each.",
+        "notes": "Annual total is $348."
+      },
+      {
+        "name": "Business",
+        "monthly": 65,
+        "annualPerMonth": 49,
+        "per": "workspace",
+        "limits": "Up to 2,500 products; 2 staff accounts; 3 active promotions; 10 additional Instant Site pages.",
+        "notes": "Annual total is $588."
+      },
+      {
+        "name": "Unlimited",
+        "monthly": 149,
+        "annualPerMonth": 119,
+        "per": "workspace",
+        "limits": "Unlimited products and staff; up to 500 active promotions and 100 additional Instant Site pages.",
+        "notes": "Annual total is $1,428."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (up to about -20%)",
+    "priceChanges": [
+      {
+        "what": "Venture monthly",
+        "fromUsd": 25,
+        "toUsd": 35,
+        "when": "2026-03",
+        "source": "https://support.ecwid.com/hc/en-us/articles/25122701806108-Changes-to-the-Ecwid-plan-pricing-after-March-2-2026"
+      },
+      {
+        "what": "Business monthly",
+        "fromUsd": 45,
+        "toUsd": 65,
+        "when": "2026-03",
+        "source": "https://support.ecwid.com/hc/en-us/articles/25122701806108-Changes-to-the-Ecwid-plan-pricing-after-March-2-2026"
+      },
+      {
+        "what": "Unlimited monthly",
+        "fromUsd": 105,
+        "toUsd": 149,
+        "when": "2026-03",
+        "source": "https://support.ecwid.com/hc/en-us/articles/25122701806108-Changes-to-the-Ecwid-plan-pricing-after-March-2-2026"
+      }
+    ],
+    "hiddenCosts": "Ecwid charges 0 platform transaction fees, but payment processors, paid App Market integrations, domains and compatible POS hardware/services cost extra; app-store subscription prices can differ from web pricing.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.ecwid.com/pricing",
+      "https://support.ecwid.com/hc/en-us/articles/25122701806108-Changes-to-the-Ecwid-plan-pricing-after-March-2-2026"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Ecwid, embed a small catalog and hosted checkout into an existing site. The hard boundary is commerce integrations, inventory, channels, mobile apps, tax, and support, plus payments, tax, distribution, and operations.",
+  "coreLoopDIY": "Embed a small catalog and hosted checkout into an existing site, deliver purchased files or lessons, and manage customers from a user-owned storefront.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Stripe account",
+    "PostgreSQL",
+    "S3-compatible storage",
+    "public HTTPS deployment",
+    "email provider"
+  ],
+  "whatYouLose": [
+    "commerce integrations, inventory, channels, mobile apps, tax, and support",
+    "marketplace discovery",
+    "tax remittance",
+    "fraud operations",
+    "advanced course and community tooling"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "integrations"
+  ],
+  "moatNotes": "payments, tax, distribution, and operations",
+  "replacementScope": "single-creator storefront",
+  "ongoingBurden": "checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support",
+  "whyPeopleStillPay": "People still pay for Ecwid because creators pay to outsource the dangerous and tedious parts around money, delivery, tax, and customer access. The recurring cost buys checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "desc": "Active open-source commerce platform with modular checkout and fulfillment primitives."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Square Payment Links",
+      "url": "https://squareup.com/us/en/payment-links/buy-button",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A buy button, product card and hosted checkout for zero monthly dollars; Square must operate in your country.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Stripe Payment Links",
+      "url": "https://stripe.com/payments/payment-links",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Hosted product pages and embeddable buy buttons without a monthly plan; catalog management stays deliberately small.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Medusa",
+      "url": "https://medusajs.com",
+      "desc": "Headless commerce is not an embeddable shop for non-builders, however often alternative lists pretend otherwise."
+    },
+    {
+      "name": "Shoprocket",
+      "url": "https://shoprocket.io",
+      "desc": "The closest Ecwid-shaped product, but live selling starts after a 14-day trial at roughly $29 a month."
+    }
+  ],
+  "relatedSlugs": [
+    "gumroad",
+    "lemon-squeezy",
+    "paddle"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Venture plan and a single-creator storefront DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Ecwid in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, Stripe Checkout, and S3-compatible storage; do not offer alternative stacks.\nThe core loop is: embed a small catalog and hosted checkout into an existing site, deliver purchased files or lessons, and manage customers from a user-owned storefront.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement products, variants, prices, files or lessons, coupons, customers, orders, and entitlements.\nUse Stripe-hosted Checkout and verify every webhook signature and idempotency key.\nGrant access only after confirmed payment and revoke it on refund or chargeback.\nCreate a customer library with signed short-lived download or lesson URLs.\nAdd order search, resend receipt, refund handoff, export, and an immutable event log.\nDocument taxes as the creator's responsibility and do not calculate unsupported jurisdictions.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out merchant-of-record tax remittance.\nDeliberately leave out a buyer marketplace or affiliate network.\nDeliberately leave out advanced communities, certificates, mobile apps, and enterprise learning features.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

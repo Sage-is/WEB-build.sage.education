@@ -1,0 +1,281 @@
+{
+  "slug": "miro",
+  "name": "Miro",
+  "domain": "miro.com",
+  "category": "whiteboard",
+  "subcategory": "collaborative whiteboard",
+  "tagline": "Online collaborative whiteboard for diagrams, workshops, and planning",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly per seat",
+    "unit": "per-seat",
+    "native": "10 USD",
+    "source": "https://miro.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Starter listed at $10/member/month monthly and $8/member/month annually.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited members and boards, but only the 3 most recently created boards remain editable; 10 AI credits/month; 100 MCP calls/day",
+        "notes": "No guest or visitor roles; Free-team boards are visible to all team members by default."
+      },
+      {
+        "name": "Starter",
+        "monthly": 10,
+        "annualPerMonth": 8,
+        "per": "user",
+        "limits": "Unlimited private boards and project spaces; visitor editing; 25 AI credits/member/month; 500 MCP calls/day",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 25,
+        "annualPerMonth": 20,
+        "per": "user",
+        "limits": "Unlimited workspaces and guests; 50 AI credits/member/month; 2,000 MCP calls/day; SSO, advanced diagramming and two-way integrations",
+        "notes": "14-day trial."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "30-member minimum; starts at 2,500 pooled AI credits/month; 10,000 MCP calls/day; SCIM, data residency and organization governance",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "Unlimited members and boards, but only 3 most recent boards editable; 10 AI credits/month and 100 MCP calls/day; no guests or visitors",
+    "billingTerms": "free + per-member monthly or annual billing; annual saves 20% and is prepaid; automated card billing has no seat minimum, while invoicing is annual-only with 10 Starter or 5 Business licenses",
+    "priceChanges": [],
+    "hiddenCosts": "New paid members are prorated immediately, while removed seats stay billable until renewal; extra AI-credit packs, Enterprise Guard and Premium Support cost extra; some data-residency migrations carry fees",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://miro.com/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A simple multiplayer whiteboard is doable; Miro's value is scale, templates, integrations, facilitation, permissions, and reliability with many users.",
+  "coreLoopDIY": "Build a canvas with sticky notes, shapes, connectors, comments, and optional multiplayer sync.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "canvas library",
+    "WebSocket/collab backend",
+    "database",
+    "auth",
+    "hosting",
+    "optional template library"
+  ],
+  "whatYouLose": [
+    "large-board performance",
+    "templates",
+    "integrations",
+    "facilitation tools",
+    "permissions",
+    "enterprise controls"
+  ],
+  "moatTags": [
+    "collaboration",
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "collaboration/performance/templates",
+  "whyPeopleStillPay": "They pay for workshops where dozens of people can join and everything still works.",
+  "priorArt": [
+    {
+      "name": "tldraw",
+      "url": "https://github.com/tldraw/tldraw",
+      "desc": "Open-source canvas/whiteboard SDK and app; excellent prior art for DIY whiteboards.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "AFFiNE",
+      "url": "https://affine.pro/",
+      "type": "open-source",
+      "repo": "https://github.com/toeverything/AFFiNE",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "An integrated canvas, docs, databases, and planning workspace for teams willing to accept a younger product and real self-hosting chores.",
+      "stars": 71300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Hosted signup or desktop app; Docker Compose for self-hosting",
+        "engines": "Self-hosted AFFiNE AI can be configured with OpenAI, Anthropic, Google Gemini, and FAL credentials",
+        "dataFormat": "Local-first clients keep workspace data locally and sync to AFFiNE Cloud or the operator's server; self-hosting uses PostgreSQL, Redis, and persistent blob storage",
+        "gapVsPaid": "AFFiNE has far fewer workshop templates, facilitation controls, integrations, embedded app connectors, and enterprise administration features than Miro.",
+        "setupBlocker": "The hosted/desktop app installs cleanly; self-hosting is a multi-service Docker deployment that needs a domain, TLS, secrets, storage, backups, and AI-provider keys for AI features",
+        "sources": [
+          "https://github.com/toeverything/AFFiNE",
+          "https://github.com/toeverything/AFFiNE/blob/canary/LICENSE",
+          "https://docs.affine.pro/self-host-affine/",
+          "https://docs.affine.pro/self-host-affine/install/requirements",
+          "https://docs.affine.pro/self-host-affine/administer/ai",
+          "https://miro.com/",
+          "https://miro.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "CryptPad",
+      "url": "https://cryptpad.fr/",
+      "type": "open-source",
+      "repo": "https://github.com/cryptpad/cryptpad",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Encrypted collaborative whiteboards with persistent folders, permissions, and sharing; fewer templates, far better data boundaries.",
+      "stars": 7825,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use a public CryptPad instance, or self-host the Node.js service behind a reverse proxy",
+        "engines": null,
+        "dataFormat": "Documents are encrypted in the browser before upload; the server stores encrypted document files, blobs, and account pin metadata on its filesystem and cannot read document content",
+        "gapVsPaid": "CryptPad's encrypted whiteboard is much plainer and lacks Miro's facilitation toolkit, templates, integrations, voting, timers, and app marketplace.",
+        "setupBlocker": "Public hosting is immediate; self-hosting requires two domains or subdomains, HTTPS, strict security headers, Node.js configuration, persistent storage, and careful upgrades/backups",
+        "sources": [
+          "https://github.com/cryptpad/cryptpad",
+          "https://github.com/cryptpad/cryptpad/blob/main/LICENSE",
+          "https://docs.cryptpad.org/en/admin_guide/installation.html",
+          "https://docs.cryptpad.org/en/dev_guide/database.html",
+          "https://docs.cryptpad.org/en/user_guide/security.html",
+          "https://miro.com/",
+          "https://miro.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Excalidraw",
+      "url": "https://excalidraw.com/",
+      "type": "open-source",
+      "repo": "https://github.com/excalidraw/excalidraw",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The best simple escape hatch for collaborative diagrams, workshops, and planning: fast, free, local-first, and pleasantly uninterested in becoming Salesforce.",
+      "stars": 124000,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Open the hosted web app/PWA, or deploy the static app and optional collaboration server",
+        "engines": null,
+        "dataFormat": "Solo drawings are stored in browser storage or explicit .excalidraw JSON files; exports include PNG and SVG; multiplayer room data is end-to-end encrypted and the decryption key is carried in the share URL",
+        "gapVsPaid": "Excalidraw covers diagrams and simple workshops but not Miro's vast template, integration, facilitation, planning, and enterprise-governance ecosystem.",
+        "setupBlocker": "None for the hosted app; the trade-off appears later because durable workspace organization, centralized team administration, and managed version history are deliberately minimal",
+        "sources": [
+          "https://github.com/excalidraw/excalidraw",
+          "https://github.com/excalidraw/excalidraw/blob/master/LICENSE",
+          "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/props/excalidraw-app-state",
+          "https://plus.excalidraw.com/how-excalidraw-works",
+          "https://miro.com/",
+          "https://miro.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "tldraw",
+      "url": "https://www.tldraw.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A polished instant multiplayer canvas with sharing and no account requirement; lighter on facilitation, integrations, and admin.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-tldraw",
+        "runs": "cloud",
+        "install": "Open tldraw.com in a browser; no account is required for a quick canvas",
+        "engines": null,
+        "dataFormat": "Hosted shared canvases live in tldraw's cloud; local/offline documents use browser IndexedDB, and snapshots or .tldr JSON files can be exported",
+        "gapVsPaid": "tldraw is frictionless but has far fewer templates, integrations, planning widgets, facilitation features, and team administration controls than Miro.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.tldraw.com/",
+          "https://github.com/tldraw/tldraw",
+          "https://github.com/tldraw/tldraw/blob/main/LICENSE.md",
+          "https://tldraw.dev/community/license",
+          "https://tldraw.dev/docs/persistence",
+          "https://miro.com/",
+          "https://miro.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "WBO",
+      "url": "https://wbo.ophir.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/lovasoa/whitebophir",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A tiny, durable collaborative board with persistent rooms and a free hosted instance; useful precisely because it does not try to run the company.",
+      "stars": 2600,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the free hosted instance, or run the Docker image/Node.js server",
+        "engines": null,
+        "dataFormat": "Boards are persisted as JSON files in the server's data directory; a Docker deployment must mount that directory, while public-hosted boards live on the operator's server",
+        "gapVsPaid": "WBO provides only the basic shared canvas and omits nearly all of Miro's workshop structure, integrations, templates, planning tools, and administration.",
+        "setupBlocker": "None for the public instance; self-hosting needs Docker or Node.js, a persistent writable volume with the expected user ownership, backups, and a public URL/TLS",
+        "sources": [
+          "https://wbo.ophir.dev/",
+          "https://github.com/lovasoa/whitebophir",
+          "https://github.com/lovasoa/whitebophir/blob/master/LICENSE",
+          "https://github.com/lovasoa/whitebophir/blob/master/README.md",
+          "https://github.com/lovasoa/whitebophir/blob/master/package.json",
+          "https://miro.com/",
+          "https://miro.com/pricing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "granola",
+    "otter-ai",
+    "fireflies-ai"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good kinda because open-source makes the demo fast but production/workshop depth remains.",
+  "prompt": "Build me a personal whiteboard app to replace Miro. Requirements:\n\n- Do not write a canvas engine from scratch: build on the tldraw SDK (React +\n  Vite). It already does shapes, sticky notes, connectors, and selection well.\n- A local web app on localhost:4900 with a board picker: named boards with\n  thumbnails, create, rename, delete.\n- Each board autosaves its tldraw snapshot JSON to SQLite (better-sqlite3 behind a\n  small Express API) 2 seconds after the last change, keeping the previous 20\n  snapshots as undo insurance.\n- A toolbar button exports the current board as PNG and SVG to\n  ~/Whiteboards/<board-name>.png.\n- A template row on the new-board screen seeded from JSON files in templates/:\n  retro grid, brainstorm columns, weekly plan.\n- Works fully offline, binds to localhost, no accounts, no telemetry.\n- Optional: share-with-one-person mode over my private network using tldraw's sync\n  package, two cursors max. Skip it if it costs more than an hour.\n- Out of scope: workshop facilitation tools (timers, voting), integrations, and\n  performance tuning for 50-person boards. This is my thinking canvas, not a venue.\n- README: dev and build commands, and where board data lives on disk.",
+  "promptCurated": false
+}

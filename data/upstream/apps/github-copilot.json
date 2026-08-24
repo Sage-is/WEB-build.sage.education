@@ -1,0 +1,302 @@
+{
+  "slug": "github-copilot",
+  "name": "GitHub Copilot",
+  "domain": "github.com",
+  "category": "dev-tools",
+  "subcategory": "AI coding assistant",
+  "tagline": "AI coding assistant integrated with GitHub and editors",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "10 USD",
+    "source": "https://docs.github.com/en/copilot/get-started/plans-for-github-copilot",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official GitHub Copilot plan docs checked 2026-07-30; Pro listed at $10/month, with usage-credit changes in 2026.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "2,000 code completions/month; AI-credit allowance exists but its numeric amount is not publicly stated; automatic model selection only.",
+        "notes": null
+      },
+      {
+        "name": "Student",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited code completions; AI-credit allowance exists but its numeric amount is not publicly stated.",
+        "notes": "Eligibility verification is required."
+      },
+      {
+        "name": "Pro",
+        "monthly": 10,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1,500 AI credits/month: 1,000 base plus 500 Flex; unlimited code completions.",
+        "notes": "For new subscriptions under the June 2026 billing model."
+      },
+      {
+        "name": "Pro+",
+        "monthly": 39,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "7,000 AI credits/month: 3,900 base plus 3,100 Flex; unlimited code completions.",
+        "notes": "For new subscriptions under the June 2026 billing model."
+      },
+      {
+        "name": "Max",
+        "monthly": 100,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "20,000 AI credits/month: 10,000 base plus 10,000 Flex; unlimited code completions.",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 19,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Standard allowance is 1,900 AI credits/user/month; temporary June-August 2026 promotion raises it to 3,000 through August 31, 2026.",
+        "notes": "Organization plan."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 39,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Standard allowance is 3,900 AI credits/user/month; temporary June-August 2026 promotion raises it to 7,000 through August 31, 2026.",
+        "notes": "Organization plan."
+      }
+    ],
+    "freeTierCaps": "2,000 code completions/month; AI-credit quantity is not publicly stated; automatic model selection only",
+    "billingTerms": "new individual subscriptions are monthly only; legacy annual Pro/Pro+ subscriptions remain on the old request model until renewal",
+    "priceChanges": [],
+    "hiddenCosts": "Extra AI credits cost $0.01 each and unused monthly credits do not roll over; Copilot code review can also consume separately billed GitHub Actions minutes.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://docs.github.com/en/copilot/get-started/plans-for-github-copilot",
+      "https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-copilot/about-billing-for-github-copilot"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can use open-source editor agents and local/API models, but Copilot's value is editor integration, model routing, GitHub context, completions, and managed usage.",
+  "coreLoopDIY": "Install an open-source IDE assistant, connect model APIs or a local model, index the repo, and generate code/edit suggestions.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "VS Code/JetBrains extension",
+    "LLM API or local model",
+    "repo indexing",
+    "optional GitHub token"
+  ],
+  "whatYouLose": [
+    "native GitHub/IDE integration",
+    "fast completions",
+    "model routing",
+    "code review/security features",
+    "managed billing",
+    "team controls"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "integrations"
+  ],
+  "moatNotes": "model/platform/editor integration",
+  "whyPeopleStillPay": "They pay because low-latency completion and repo-aware coding are available in their editor without setup.",
+  "priorArt": [
+    {
+      "name": "Continue",
+      "url": "https://github.com/continuedev/continue",
+      "desc": "Open-source coding assistant extension that connects to local or hosted models.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Cline",
+      "url": "https://cline.bot/",
+      "type": "open-source",
+      "repo": "https://github.com/cline/cline",
+      "platforms": [
+        "browser-extension",
+        "cli",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A code agent in your editor; the model bill is still yours.",
+      "stars": 65800,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "Install from the VS Code or JetBrains marketplace, or install the Cline CLI",
+        "engines": "Cline account models or bring-your-own-key providers including Anthropic, OpenAI, Gemini, Azure, Bedrock, Vertex and OpenRouter, plus local Ollama and LM Studio models",
+        "dataFormat": "Repository edits stay in the local workspace; extension/session settings are local, while selected workspace context and prompts go to the chosen model provider",
+        "gapVsPaid": "It is agent-first and separately model-billed, with weaker low-latency inline completions and GitHub-native integration than Copilot.",
+        "setupBlocker": "Sign in to Cline or configure a provider API key or local model",
+        "sources": [
+          "https://github.com/cline/cline/blob/main/LICENSE",
+          "https://docs.cline.bot/getting-started/authorizing-with-cline",
+          "https://docs.cline.bot/getting-started/config",
+          "https://docs.cline.bot/usage/cli-overview",
+          "https://github.com/features/copilot"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Kilo Code",
+      "url": "https://kilo.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/kilo-org/kilocode",
+      "platforms": [
+        "browser-extension",
+        "cli",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "One open agent across VS Code, JetBrains and the terminal; inference still has a meter somewhere.",
+      "stars": 26735,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "OpenCode",
+      "url": "https://opencode.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/anomalyco/opencode",
+      "platforms": [
+        "cli",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A fast local coding agent with no loyalty to any model vendor.",
+      "stars": 193678,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Install with the shell script, Homebrew, npm or Bun; a desktop app is also available",
+        "engines": "A broad provider catalog covering hosted, OpenAI-compatible and local model endpoints, including optional OpenCode Zen or Go services",
+        "dataFormat": "Project files remain local; configuration, sessions and snapshot metadata are local, and a session is uploaded only when the user explicitly shares it, while prompts go to the chosen provider",
+        "gapVsPaid": "It is agent-first and lacks Copilot's equally seamless inline completions and integration across GitHub and existing editors.",
+        "setupBlocker": "Configure a provider credential or local model unless using a separately billed OpenCode model service",
+        "sources": [
+          "https://github.com/anomalyco/opencode/blob/dev/LICENSE",
+          "https://github.com/anomalyco/opencode",
+          "https://opencode.ai/docs/",
+          "https://opencode.ai/docs/providers/",
+          "https://opencode.ai/docs/share/",
+          "https://github.com/features/copilot"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Tabby",
+      "url": "https://tabbyml.com/",
+      "type": "open-source",
+      "repo": "https://github.com/TabbyML/tabby",
+      "platforms": [
+        "browser-extension",
+        "self-hosted"
+      ],
+      "desc": "Copilot-shaped completions and chat, paid for with your own GPU instead of a seat.",
+      "stars": 33819,
+      "lastCommit": "2026-06",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "self-hosted",
+        "install": "Run the server from Docker or a standalone binary, then connect an editor extension",
+        "engines": "Local llama.cpp-backed completion, chat and embedding models or separately configured remote HTTP model endpoints",
+        "dataFormat": "Models, configuration, logs, indexed source and Tabby's database live under TABBY_ROOT, which defaults to the user's .tabby directory",
+        "gapVsPaid": "Completion quality and latency depend on the chosen model and hardware, and the GitHub and editor experience is less turnkey than Copilot.",
+        "setupBlocker": "Download and size suitable models, provide enough GPU or RAM, start the server, and configure each editor client",
+        "sources": [
+          "https://github.com/TabbyML/tabby/blob/main/LICENSE",
+          "https://github.com/TabbyML/tabby",
+          "https://tabby.tabbyml.com/docs/administration/model/",
+          "https://tabby.tabbyml.com/docs/administration/backup/",
+          "https://github.com/features/copilot"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Zed",
+      "url": "https://zed.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/zed-industries/zed",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A fast open editor with completions, chat and agents built in; model usage is separate.",
+      "stars": 88100,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Install the native app from Zed or an operating-system package manager on macOS, Linux or Windows",
+        "engines": "Zed-hosted models, bring-your-own-key providers, local Ollama, LM Studio or llama.cpp models, and ACP-compatible coding agents",
+        "dataFormat": "Project files stay on the local or SSH-accessed machine and app state is local; hosted or BYOK prompts go to the selected provider, while collaboration state uses Zed's cloud",
+        "gapVsPaid": "It requires switching editors, while model usage is separate and Copilot works across more existing editors and GitHub surfaces.",
+        "setupBlocker": "None for the editor itself; AI requires a Zed account, provider key, local model, or external agent",
+        "sources": [
+          "https://github.com/zed-industries/zed",
+          "https://github.com/zed-industries/zed/blob/main/LICENSE-GPL",
+          "https://zed.dev/docs/installation",
+          "https://zed.dev/docs/ai/quick-start.html",
+          "https://zed.dev/docs/ai/privacy-and-security",
+          "https://github.com/features/copilot"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Continue",
+      "url": "https://continue.dev/",
+      "desc": "Acquired by Cursor; the repo is read-only and 2.0.0 is the last release."
+    },
+    {
+      "name": "Refact",
+      "url": "https://github.com/smallcloudai/refact",
+      "desc": "The original repo was archived and Refact Cloud was retired in May 2026."
+    },
+    {
+      "name": "Roo Code",
+      "url": "https://github.com/RooCodeInc/Roo-Code",
+      "desc": "The extension shut down and the repo was archived on May 15, 2026."
+    }
+  ],
+  "relatedSlugs": [
+    "cursor",
+    "replit",
+    "codesandbox"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Very relevant to the site's own audience; verdict is nuanced because the app is partly wrapper, partly platform.",
+  "prompt": "Build me a local-first coding assistant setup to replace GitHub Copilot. Requirements:\n\n- Do not build or train a model. Set up the open-source Continue extension in\n  VS Code, configured against models I control.\n- Chat and edit model: Claude or GPT over API, key referenced from my\n  environment, never committed. Autocomplete model: a small local coder model\n  served by Ollama, so completions are free and work offline.\n- Deliver the actual Continue config file with both models wired, plus\n  sensible keybindings for inline edit and chat.\n- Enable Continue's codebase indexing for repo-aware answers; document where\n  the index lives and how to rebuild it.\n- Add scripts/ai-review.sh: pipes `git diff` to the API model (key from .env)\n  and prints a short pre-commit review.\n- Everything local except the chat-model API calls; turn off the extension's\n  telemetry in the config.\n- Out of scope: writing an editor extension from scratch, GitHub PR-bot\n  features, team seat management.\n- README: Ollama install and model pull commands, where keys go, and an honest\n  note that local autocomplete is slower and dumber than Copilot's, that is\n  the trade for free and private.",
+  "promptCurated": false
+}

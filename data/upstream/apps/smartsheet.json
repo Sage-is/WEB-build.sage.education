@@ -1,0 +1,222 @@
+{
+  "slug": "smartsheet",
+  "name": "Smartsheet",
+  "domain": "smartsheet.com",
+  "appURL": "https://smartsheet.com",
+  "category": "project-management",
+  "subcategory": "team projects, issues and delivery planning",
+  "tagline": "Manage structured project rows with formulas, forms, automations, and reports",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per member",
+    "unit": "per-seat",
+    "source": "https://smartsheet.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Pro monthly member rate.",
+    "native": "12 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Pro",
+        "monthly": 12,
+        "annualPerMonth": 9,
+        "per": "user",
+        "limits": "1–10 paid members, unlimited Contributors, 20 GB storage, 30 MB/attachment and 250 automations/month",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 24,
+        "annualPerMonth": 19,
+        "per": "user",
+        "limits": "Minimum 3 paid members, unlimited Guests/Contributors, 1 TB storage, 250 MB/attachment and unlimited automations",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Minimum 10 paid members, unlimited storage, enterprise security/admin and premium support options",
+        "notes": "Custom quote."
+      },
+      {
+        "name": "Advanced Work Management",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Enterprise bundle with Control Center, Dynamic View, Data Shuttle and other advanced capabilities",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual; free trial only",
+    "priceChanges": [],
+    "hiddenCosts": "Business has a 3-member minimum and Enterprise a 10-member minimum. Dynamic View starts at $125/month and Data Shuttle at $100/month; Brandfolder, Resource Management, Control Center and Calendar App are separately quoted. Smartsheet's user-subscription model can turn active collaborators into paid members.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.smartsheet.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Smartsheet, manage structured project rows with formulas, forms, automations, and reports. The hard boundary is spreadsheet familiarity, enterprise controls, connectors, automation, and scale, plus collaboration, integrations, and organizational trust.",
+  "coreLoopDIY": "Manage structured project rows with formulas, forms, automations, and reports, and track work through milestones, comments, and a searchable activity history for a small team.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "email credentials for invitations"
+  ],
+  "whatYouLose": [
+    "spreadsheet familiarity, enterprise controls, connectors, automation, and scale",
+    "deep integrations",
+    "enterprise permissions",
+    "large-scale reporting",
+    "battle-tested notifications and mobile apps"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "switching-costs"
+  ],
+  "moatNotes": "collaboration, integrations, and organizational trust",
+  "replacementScope": "small-team tracker",
+  "ongoingBurden": "auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime",
+  "whyPeopleStillPay": "People still pay for Smartsheet because teams pay because project state has to remain authoritative through staff changes, outages, and years of accumulated workflow exceptions. The recurring cost buys auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Plane",
+      "url": "https://github.com/makeplane/plane",
+      "desc": "Active open-source project and issue tracking platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Grist",
+      "url": "https://www.getgrist.com",
+      "type": "open-source",
+      "repo": "https://github.com/gristlabs/grist-core",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A spreadsheet that grew relations, forms, and dashboards without becoming Smartsheet",
+      "stars": 11400,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Hosted signup, desktop app, or Docker container for self-hosting",
+        "engines": null,
+        "dataFormat": "Each document is a .grist SQLite database containing table data, attachments, document metadata, and recent history; CSV/Excel exports are also available",
+        "gapVsPaid": "It lacks Smartsheet's mature project dependencies, resource management, cross-sheet reports, and workflow automation built around schedules.",
+        "setupBlocker": "None for hosted or desktop use; shared self-hosting requires Docker, authentication, backups, a public URL, and safe Python-formula sandboxing",
+        "sources": [
+          "https://github.com/gristlabs/grist-core",
+          "https://github.com/gristlabs/grist-core/blob/main/LICENSE.txt",
+          "https://support.getgrist.com/self-managed/",
+          "https://support.getgrist.com/exports/",
+          "https://support.getgrist.com/install/first-run-setup/",
+          "https://www.smartsheet.com/",
+          "https://www.smartsheet.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Baserow",
+      "url": "https://baserow.io",
+      "type": "open-source",
+      "repo": "https://github.com/baserow/baserow",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Airtable's database half with public forms and your own disk underneath",
+      "stars": 5400,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Hosted signup, or Docker/Docker Compose for self-hosting",
+        "engines": null,
+        "dataFormat": "Cloud workspaces live in Baserow Cloud; self-hosted records live in PostgreSQL and uploaded files in the mounted Baserow data volume; CSV export is available",
+        "gapVsPaid": "Baserow can hold project rows but does not match Smartsheet's Gantt dependencies, critical-path planning, portfolio reporting, and resource management.",
+        "setupBlocker": "Self-hosting requires Docker, persistent volumes, secrets, and public-URL/TLS configuration",
+        "sources": [
+          "https://github.com/baserow/baserow",
+          "https://github.com/baserow/baserow/blob/develop/LICENSE",
+          "https://baserow.io/docs/installation/install-with-docker-compose",
+          "https://baserow.io/pricing",
+          "https://www.smartsheet.com/",
+          "https://www.smartsheet.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Teable",
+      "url": "https://teable.ai",
+      "type": "open-source",
+      "repo": "https://github.com/teableio/teable",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Airtable-shaped tables, forms, kanban, and automation; AI is where the upsell begins",
+      "stars": 21300,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup, or Docker Compose/Kubernetes for self-hosting",
+        "engines": "AI features can use a configured model provider or self-hosted compatible service; standalone community deployment omits AI and App Builder",
+        "dataFormat": "Cloud records live in Teable Cloud; self-hosted records live in PostgreSQL, with attachments in local, MinIO, S3, or Aliyun object storage; bases export as .tea backups and tables as CSV",
+        "gapVsPaid": "Teable is an Airtable-like database rather than a project execution suite, so dependencies, portfolio reporting, and resource management are substantially weaker.",
+        "setupBlocker": "Self-hosting needs Docker, at least 4 GB RAM, PostgreSQL, secrets, storage, and a public URL; the full AI/App Builder stack is materially heavier than the standalone deployment",
+        "sources": [
+          "https://github.com/teableio/teable",
+          "https://github.com/teableio/teable/blob/develop/LICENSE",
+          "https://help.teable.ai/en/deploy/docker",
+          "https://help.teable.ai/en/deploy/env",
+          "https://help.teable.ai/en/basic/security",
+          "https://teable.ai/pricing",
+          "https://www.smartsheet.com/",
+          "https://www.smartsheet.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "NocoDB",
+      "url": "https://nocodb.com",
+      "desc": "Community has tables and views, but timeline, Gantt, conditional forms, and the richer workflow layer are paid"
+    }
+  ],
+  "relatedSlugs": [
+    "asana",
+    "monday-com",
+    "clickup"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a small-team tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Smartsheet in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: manage structured project rows with formulas, forms, automations, and reports, and track work through milestones, comments, and a searchable activity history for a small team.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement organizations, projects, members, issues, labels, cycles, and milestones.\nProvide list, kanban, and simple timeline views backed by one canonical issue model.\nAdd comments, mentions, assignments, watchers, and a complete activity log.\nImplement project roles for owner, member, and viewer and test every mutation.\nAdd search, CSV import or export, email notifications, and daily database backups.\nShip Docker Compose, health checks, migrations, seed data, and an admin recovery command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out hundreds of external integrations.\nDeliberately leave out enterprise portfolio planning and SSO.\nDeliberately leave out native mobile clients and vendor-operated uptime.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

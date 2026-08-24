@@ -1,0 +1,245 @@
+{
+  "slug": "macrofactor",
+  "name": "MacroFactor",
+  "domain": "macrofactorapp.com",
+  "appURL": "https://macrofactorapp.com",
+  "category": "wellness",
+  "subcategory": "fitness, activity and general wellbeing",
+  "tagline": "Record user-chosen nutrition information and show neutral trends without aggressive targets",
+  "priceMonthly": 11.99,
+  "pricing": {
+    "plan": "MacroFactor",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://macrofactorapp.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official monthly subscription.",
+    "native": "11.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "MacroFactor Nutrition, monthly",
+        "monthly": 11.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "All nutrition logging, expenditure, coaching, trend, and analytics features",
+        "notes": "Monthly auto-renewing subscription."
+      },
+      {
+        "name": "MacroFactor Nutrition, 6 months",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "All nutrition features for a 6-month term",
+        "notes": "$47.99 every 6 months, equivalent to about $8.00/month."
+      },
+      {
+        "name": "MacroFactor Nutrition, annual",
+        "monthly": null,
+        "annualPerMonth": 6,
+        "per": "user",
+        "limits": "All nutrition features for 12 months",
+        "notes": "$71.99 billed annually."
+      },
+      {
+        "name": "MacroFactor Nutrition + Workouts bundle",
+        "monthly": null,
+        "annualPerMonth": 7.5,
+        "per": "user",
+        "limits": "Both MacroFactor Nutrition and MacroFactor Workouts after the first bundle year",
+        "notes": "$89.99/year after the introductory/transition period; Workouts is otherwise a separately priced app."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; a trial may be offered, but the current official public pages did not publish a numeric trial duration",
+    "billingTerms": "monthly, 6-month, and annual Nutrition subscriptions; Workouts is separate, with an annual bundle path",
+    "priceChanges": [],
+    "hiddenCosts": "MacroFactor Workouts is a separate subscription at the same listed price points unless bundled. The $89.99 combined annual price applies after the first bundle year; taxes/storefront pricing can vary.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://macrofactorapp.com/macrofactor/",
+      "https://help.macrofactorapp.com/en/articles/54-change-your-subscription-length"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For MacroFactor, record user-chosen nutrition information and show neutral trends without aggressive targets. The hard boundary is food database, adaptive coaching models, mobile capture, and ongoing nutrition expertise, plus hardware data, content, coaching, and trust.",
+  "coreLoopDIY": "Record user-chosen nutrition and wellbeing information, plan moderate routines, and show neutral trends without diagnosing, shaming, or enforcing restrictive or aggressive goals.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "iOS or Android device",
+    "optional HealthKit or Health Connect permission",
+    "local storage"
+  ],
+  "whatYouLose": [
+    "food database, adaptive coaching models, mobile capture, and ongoing nutrition expertise",
+    "wearable hardware data",
+    "coach network",
+    "clinical validation",
+    "large content library and social network"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "content-rights",
+    "hardware"
+  ],
+  "moatNotes": "hardware data, content, coaching, and trust",
+  "replacementScope": "personal general-wellbeing tracker",
+  "ongoingBurden": "sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support",
+  "whyPeopleStillPay": "People still pay for MacroFactor because people pay for polished mobile capture, trusted content, hardware integration, and coaching rather than the basic logbook. The recurring cost buys sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "wger",
+      "url": "https://github.com/wger-project/wger",
+      "desc": "Active open-source fitness and workout management application."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "OpenNutriTracker",
+      "url": "https://simonoppowa.github.io/OpenNutriTracker-Website/",
+      "type": "open-source",
+      "repo": "https://github.com/simonoppowa/OpenNutriTracker",
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "desc": "Calories, macros and micronutrients stay on your phone; the app declines to become your diet coach.",
+      "stars": 2300,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Install the iOS/Android build from the app store or F-Droid",
+        "engines": null,
+        "dataFormat": "Diary, goals, custom foods, and measurements are stored in encrypted local Hive databases on the phone and can be exported as JSON/CSV; food searches may query the project's Supabase service and Open Food Facts.",
+        "gapVsPaid": "OpenNutriTracker records nutrition but does not reproduce MacroFactor's adaptive expenditure estimate, weight-trend model, coached program adjustments, and refined analytics.",
+        "setupBlocker": null,
+        "sources": [
+          "https://simonoppowa.github.io/OpenNutriTracker-Website/",
+          "https://github.com/simonoppowa/OpenNutriTracker",
+          "https://github.com/simonoppowa/OpenNutriTracker/blob/main/LICENSE",
+          "https://github.com/simonoppowa/OpenNutriTracker/blob/main/PRIVACY_POLICY.md",
+          "https://macrofactorapp.com/",
+          "https://macrofactorapp.com/macrofactor/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Waistline",
+      "url": "https://waist-line.com/",
+      "type": "open-source",
+      "repo": "https://github.com/davidhealey/waistline",
+      "platforms": [
+        "android"
+      ],
+      "desc": "A plain Android calorie diary that keeps its data local and its opinions to itself.",
+      "stars": 714,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Install the Android app from Google Play or F-Droid",
+        "engines": null,
+        "dataFormat": "Meals, diary entries, foods, goals, and measurements live in a local on-device database with import/export; barcode and food searches can contact Open Food Facts and USDA services.",
+        "gapVsPaid": "Waistline is a straightforward diary and lacks MacroFactor's adaptive energy-expenditure algorithm, smoothed weight trends, program adjustments, and cross-platform polish.",
+        "setupBlocker": null,
+        "sources": [
+          "https://waist-line.com/",
+          "https://github.com/davidhealey/waistline",
+          "https://github.com/davidhealey/waistline/blob/master/LICENSE",
+          "https://f-droid.org/packages/com.waist.line/",
+          "https://macrofactorapp.com/",
+          "https://macrofactorapp.com/macrofactor/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Food You",
+      "url": "https://foodyou.maksimowiczm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/maksimowiczm/FoodYou",
+      "platforms": [
+        "android"
+      ],
+      "desc": "A local Android food diary with proper micronutrients and none of the motivational yelling.",
+      "stars": 520,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "local",
+        "install": "Install the Android app from F-Droid or the published APK",
+        "engines": null,
+        "dataFormat": "The food diary and personal records stay in the app's local database with export/backup options; food searches can contact Open Food Facts, USDA FoodData Central, and the Swiss Food Composition Database.",
+        "gapVsPaid": "Food You provides local logging but not MacroFactor's adaptive expenditure model, trend-weight analysis, program adjustments, or equally polished cross-platform workflow.",
+        "setupBlocker": null,
+        "sources": [
+          "https://foodyou.maksimowiczm.com/",
+          "https://github.com/maksimowiczm/FoodYou",
+          "https://github.com/maksimowiczm/FoodYou/blob/main/LICENSE",
+          "https://github.com/maksimowiczm/FoodYou/blob/main/PRIVACY.md",
+          "https://macrofactorapp.com/",
+          "https://macrofactorapp.com/macrofactor/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "wger",
+      "url": "https://wger.de/",
+      "type": "open-source",
+      "repo": "https://github.com/wger-project/wger",
+      "platforms": [
+        "web",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Meals, workouts and trend charts in one open-source bunker; polish is not the main feature.",
+      "stars": 6600,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Create an account on wger.de/use the mobile app, or deploy the official Docker Compose stack",
+        "engines": null,
+        "dataFormat": "Hosted records live in wger's service; self-hosted users keep accounts, workouts, nutrition, measurements, and exercise data in PostgreSQL plus persistent media volumes, while the mobile client maintains an offline local database and syncs.",
+        "gapVsPaid": "wger can record meals and measurements but lacks MacroFactor's adaptive expenditure calculations, trend modeling, guided program changes, and streamlined food logging.",
+        "setupBlocker": "None for the hosted service or mobile app; self-hosting immediately requires Docker Compose, PostgreSQL, Redis/sync services, a reverse proxy, mail, backups, and upgrades.",
+        "sources": [
+          "https://wger.de/",
+          "https://github.com/wger-project/wger",
+          "https://github.com/wger-project/wger/blob/master/LICENSE.txt",
+          "https://wger.readthedocs.io/en/latest/production/docker.html",
+          "https://wger.de/en/software/mobile-app",
+          "https://macrofactorapp.com/",
+          "https://macrofactorapp.com/macrofactor/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "strava",
+    "myfitnesspal-premium",
+    "cronometer-gold"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the MacroFactor plan and a personal general-wellbeing tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for MacroFactor in an empty repository.\nUse React Native with Expo, TypeScript, SQLite, and HealthKit or Health Connect only when explicitly enabled; do not offer alternative stacks.\nThe core loop is: record user-chosen nutrition and wellbeing information, plan moderate routines, and show neutral trends without diagnosing, shaming, or enforcing restrictive or aggressive goals.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate optional logs for activity, sleep, mood, energy, and personal notes with editable units.\nLet the user build moderate routines and rest days without weight-loss targets, punishment, or competitive pressure.\nRequest health-platform permissions per data type and work fully without granting them.\nShow weekly patterns and consistency with neutral language and no diagnostic or body-image judgments.\nAdd reminders that can be muted, data export, account-free local use, and full deletion.\nInclude a clear statement that the app is not medical care and should not replace qualified advice.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out medical diagnosis or treatment.\nDeliberately leave out extreme exercise or restrictive-eating coaching.\nDeliberately leave out wearable hardware, human coaching, and a large social network.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

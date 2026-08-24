@@ -1,0 +1,137 @@
+{
+  "slug": "samcart",
+  "name": "SamCart",
+  "domain": "samcart.com",
+  "appURL": "https://samcart.com",
+  "category": "creator-commerce",
+  "subcategory": "checkout + courses",
+  "tagline": "Conversion-focused checkout, subscriptions, upsells, courses, and affiliates",
+  "priceMonthly": 79,
+  "pricing": {
+    "plan": "Launch",
+    "kind": "fixed",
+    "basis": "monthly commerce plan",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "$79/month",
+    "source": "https://samcart.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Core",
+        "monthly": 79,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited products, pages and checkouts; 1 user seat.",
+        "notes": "Official pricing page advertises 25% off annual billing, but the exact annual dollar total did not render."
+      },
+      {
+        "name": "Pro",
+        "monthly": 199,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited products, pages and checkouts; 10 seats; upsells, A/B testing, affiliates and API.",
+        "notes": "Official pricing page advertises 25% off annual billing, but the exact annual dollar total did not render."
+      },
+      {
+        "name": "Done For You",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited seats and multiple marketplaces; custom scale and support.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier; 7-day trial",
+    "billingTerms": "monthly + annual (-25%); exact annual dollar totals did not render; annual charged upfront",
+    "priceChanges": [],
+    "hiddenCosts": "SamPay is 2.9% + $0.30 per transaction; tax calculation and collection adds 0.50% on Core or 0.35% on Pro; third-party processors are Pro-only and keep their own fees.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.samcart.com/pricing",
+      "https://help.samcart.com/support/solutions/articles/60001525818-a-guide-to-samcart-s-updated-plans"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. SamCart's durable value is payments, network, compliance, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a narrow checkout + courses storefront or member area for one creator, using Stripe Checkout and explicit digital-delivery rules.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "PostgreSQL",
+    "Stripe account and API keys in .env",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "fulfilment, email, and affiliate ecosystems",
+    "marketplace discovery and buyer trust",
+    "tax, disputes, payouts, and fraud operations",
+    "native apps and community moderation"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "brand-trust"
+  ],
+  "moatNotes": "payments/network/compliance",
+  "whyPeopleStillPay": "SamCart: Creators pay to outsource payments, tax complexity, disputes, deliverability, moderation, and the trust needed to convert strangers.",
+  "ongoingBurden": "Own payments, webhooks, refunds, tax records, fraud, access control, file delivery, moderation, backups, and support.",
+  "priorArt": [
+    {
+      "name": "Medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "desc": "Open-source commerce modules and backend."
+    },
+    {
+      "name": "Ghost",
+      "url": "https://github.com/TryGhost/Ghost",
+      "desc": "Open-source publishing and membership platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Checkout, subscriptions, bumps, upsells, one course and one affiliate program; free until your second course or fourth funnel.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Ghost",
+      "url": "https://ghost.org",
+      "desc": "Subscriptions and content are there; conversion checkout, bumps, upsells and affiliates are not."
+    },
+    {
+      "name": "Medusa",
+      "url": "https://medusajs.com",
+      "desc": "A developer backend, not a conversion checkout, funnel, affiliate and course product."
+    },
+    {
+      "name": "WooCommerce",
+      "url": "https://woocommerce.com",
+      "desc": "The free core sells products, but subscriptions, funnels, affiliates and course delivery require a plugin shopping spree."
+    }
+  ],
+  "relatedSlugs": [
+    "thrivecart",
+    "whop",
+    "learnworlds"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: SamCart survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by SamCart; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + Stripe.\nPrimary job: Build a narrow checkout + courses storefront or member area for one creator, using Stripe Checkout and explicit digital-delivery rules.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: fulfilment, email, and affiliate ecosystems; marketplace discovery and buyer trust; tax, disputes, payouts, and fraud operations.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

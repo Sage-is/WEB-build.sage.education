@@ -1,0 +1,242 @@
+{
+  "slug": "carbonmade",
+  "name": "Carbonmade",
+  "domain": "carbonmade.com",
+  "appURL": "https://carbonmade.com",
+  "category": "website-builder",
+  "subcategory": "portfolio builder",
+  "tagline": "Visual portfolio websites for designers, illustrators, and photographers",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://carbonmade.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Beginner",
+        "monthly": 9.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "8 projects; unlimited image/video uploads; 3 navigation options; SD video",
+        "notes": "Annual billing is offered at about 20% off, but the live page did not expose the exact annual dollar price in its accessible text."
+      },
+      {
+        "name": "Professional",
+        "monthly": 14.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "50 projects; unlimited image/video uploads; 5 navigation options; 4K video/audio; custom pages and private portfolio",
+        "notes": "Annual billing is offered at about 20% off, but the live page did not expose the exact annual dollar price in its accessible text."
+      },
+      {
+        "name": "Unlimited",
+        "monthly": 24.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited projects and pages; includes all Professional features",
+        "notes": "Annual billing is offered at about 20% off, but the live page did not expose the exact annual dollar price in its accessible text."
+      }
+    ],
+    "freeTierCaps": "no free tier; unlimited-duration private trial, but payment is required to publish the portfolio live",
+    "billingTerms": "monthly + annual (advertised as about 20% off); exact annual prices were not exposed in the accessible page text",
+    "priceChanges": [],
+    "hiddenCosts": "A custom domain itself is not included; Carbonmade hosts the site and lets you connect a domain you already own.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://carbonmade.com/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible portfolio builder loop is buildable, but a credible replacement needs more than the first screen. Carbonmade earns its keep through editor, CMS, hosting, polish, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a focused portfolio builder generator that edits structured page sections, previews responsive layouts, and publishes static files.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "deploy target or static hosting",
+    "user-owned domain for publishing"
+  ],
+  "whatYouLose": [
+    "general-purpose visual editing",
+    "large template and component libraries",
+    "CMS collaboration and client handoff",
+    "managed hosting, forms, and analytics",
+    "high-fidelity color, format, and export handling"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra"
+  ],
+  "moatNotes": "editor/CMS/hosting/polish",
+  "whyPeopleStillPay": "Carbonmade: A single site is easy to code. People pay for safe ongoing edits, templates, publishing, domains, collaboration, and no-maintenance hosting.",
+  "ongoingBurden": "Maintain responsive rendering, browser compatibility, deployment, domains, forms, spam protection, backups, and editor migrations.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder."
+    },
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web-builder framework."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Plasmic",
+      "url": "https://www.plasmic.app",
+      "type": "open-source",
+      "repo": "https://github.com/plasmicapp/plasmic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A hosted visual portfolio with full layout freedom and a custom domain free; the Plasmic badge stays.",
+      "stars": 6900,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT AND AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup; optional npm-installed Plasmic CLI for React code generation and deployment in your own repository",
+        "engines": "Plasmic AI (beta); the official site does not name its underlying model provider",
+        "dataFormat": "Hosted projects and CMS records in Plasmic Cloud; codegen writes React components plus plasmic.json and plasmic.lock into the user's repository",
+        "gapVsPaid": "Plasmic lacks Carbonmade's ready-made portfolio onboarding, project-presentation defaults and creative discovery network.",
+        "setupBlocker": "Free hosted output keeps Plasmic branding; codegen/self-deployment requires a Node/React project and deployment workflow",
+        "sources": [
+          "https://github.com/plasmicapp/plasmic",
+          "https://github.com/plasmicapp/plasmic/blob/master/LICENSE",
+          "https://www.plasmic.app/pricing",
+          "https://docs.plasmic.app/learn/codegen-guide/",
+          "https://carbonmade.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Publii",
+      "url": "https://getpublii.com",
+      "type": "open-source",
+      "repo": "https://github.com/GetPublii/Publii",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A desktop portfolio publisher that produces a fast static site; hosting is your problem, server maintenance is not.",
+      "stars": 7300,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Install the native Windows/macOS package or Linux AppImage",
+        "engines": null,
+        "dataFormat": "Source content and media in a user-selected local Sites Location; publishing generates static HTML, CSS and assets, with optional local backup archives",
+        "gapVsPaid": "Publii has no hosted portfolio service, discovery network or portfolio-specific presentation layer; publishing and hosting are separate.",
+        "setupBlocker": "Publishing still needs separate hosting plus SFTP, GitHub or Netlify credentials/configuration",
+        "sources": [
+          "https://github.com/GetPublii/Publii",
+          "https://github.com/GetPublii/Publii/blob/master/LICENSE",
+          "https://getpublii.com/docs/install-publii.html",
+          "https://getpublii.com/docs/publii-global-settings.html",
+          "https://carbonmade.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Silex",
+      "url": "https://www.silex.me",
+      "type": "open-source",
+      "repo": "https://github.com/silexlabs/Silex",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A free visual builder that exports ordinary HTML; portfolio templates are less polished but your files are yours.",
+      "stars": 2919,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the hosted editor with a GitLab login, install the desktop alpha, or run the official Docker setup",
+        "engines": "Optional desktop MCP workflow can connect to Ollama, OpenCode, Goose or Claude Code",
+        "dataFormat": "Project JSON and assets in GitLab, FTP or local storage; publishing produces ordinary static HTML, CSS and JavaScript",
+        "gapVsPaid": "Silex supplies fewer polished portfolio templates and none of Carbonmade's discovery or portfolio-specific guidance.",
+        "setupBlocker": "The stable hosted route starts with a GitLab account; the desktop build is still labelled alpha",
+        "sources": [
+          "https://github.com/silexlabs/Silex",
+          "https://github.com/silexlabs/Silex/blob/develop/LICENSE",
+          "https://docs.silex.me/en/dev/run",
+          "https://docs.silex.me/en/user/register",
+          "https://docs.silex.me/en/user/faq",
+          "https://carbonmade.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Webstudio",
+      "url": "https://webstudio.is",
+      "type": "open-source",
+      "repo": "https://github.com/webstudio-is/webstudio",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Open-source visual design with real CSS control; self-hosting replaces Carbonmade's calm with operations.",
+      "stars": 8800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Hosted signup or desktop app; alternatively export the project or deploy the self-hosted builder/site",
+        "engines": "Webstudio Inception AI and MCP integrations; the hosted model provider is not named in official documentation",
+        "dataFormat": "Projects and assets live in Webstudio Cloud when hosted there; export/self-host routes produce source or static assets under the user's deployment",
+        "gapVsPaid": "Webstudio has no portfolio-specific onboarding, discovery network or calm managed handoff comparable to Carbonmade.",
+        "setupBlocker": "The free cloud plan publishes only to a Webstudio subdomain; a free custom domain requires export or self-hosting",
+        "sources": [
+          "https://github.com/webstudio-is/webstudio",
+          "https://github.com/webstudio-is/webstudio/blob/main/LICENSE",
+          "https://webstudio.is/pricing",
+          "https://docs.webstudio.is/university/self-hosting",
+          "https://carbonmade.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "Everyone recommends it because the demo looks finished; the repo is an embeddable framework you must turn into a product."
+    }
+  ],
+  "relatedSlugs": [
+    "cargo",
+    "pixieset",
+    "format"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Carbonmade is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Carbonmade, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a focused portfolio builder generator that edits structured page sections, previews responsive layouts, and publishes static files.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: general-purpose visual editing; large template and component libraries; CMS collaboration and client handoff.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

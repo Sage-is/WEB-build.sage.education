@@ -1,0 +1,279 @@
+{
+  "slug": "quickbase",
+  "name": "Quickbase",
+  "domain": "quickbase.com",
+  "appURL": "https://quickbase.com",
+  "category": "databases",
+  "subcategory": "spreadsheet databases and operational data apps",
+  "tagline": "Build a constrained operational database and forms for one small team",
+  "priceMonthly": 35,
+  "pricing": {
+    "plan": "Team",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://quickbase.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Team monthly seat amount with minimum contract terms.",
+    "native": "35 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Team",
+        "monthly": null,
+        "annualPerMonth": 35,
+        "per": "user",
+        "limits": "6-month audit-log retention; 14 daily backups plus 6 months of weekly backups; core app building and workflow features.",
+        "notes": "Published as an annual-billing starting rate and explicitly excludes an undisclosed platform minimum."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": 55,
+        "per": "user",
+        "limits": "1-year audit-log retention; SSO and SCIM; sandbox; 14 daily backups plus 6 months of weekly backups.",
+        "notes": "Published as an annual-billing starting rate and explicitly excludes an undisclosed platform minimum."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "3-year audit-log retention; custom governance, security, support and capacity.",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; 30-day trial with Business-plan features",
+    "billingTerms": "published self-service figures require annual billing; no monthly price is published; every paid plan requires a quote because the platform minimum is excluded",
+    "priceChanges": [],
+    "hiddenCosts": "The advertised $35/$55 per-user rates exclude an undisclosed platform minimum; optional Extensions and AI add-ons, implementation services and a separate usage-based licensing model can increase the quote.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://www.quickbase.com/plans-and-pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Quickbase, build a constrained operational database and forms for one small team. The hard boundary is enterprise governance, integrations, scale, app lifecycle, and support, plus data model flexibility, collaboration, and integrations.",
+  "coreLoopDIY": "Model structured records in a constrained operational database for one small team, provide form, grid, kanban, and filtered views, and expose a documented API.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "optional object storage for attachments"
+  ],
+  "whatYouLose": [
+    "enterprise governance, integrations, scale, app lifecycle, and support",
+    "real-time multiplayer",
+    "automation and integration breadth",
+    "scale and formula depth",
+    "enterprise permissions"
+  ],
+  "moatTags": [
+    "switching-costs",
+    "collaboration",
+    "integrations"
+  ],
+  "moatNotes": "data model flexibility, collaboration, and integrations",
+  "replacementScope": "small-team structured database",
+  "ongoingBurden": "schema changes, formulas, permissions, imports, attachments, views, APIs, concurrency, backups, and migrations",
+  "whyPeopleStillPay": "People still pay for Quickbase because teams pay when a flexible database becomes a shared operational system with integrations and years of accumulated business logic. The recurring cost buys schema changes, formulas, permissions, imports, attachments, views, APIs, concurrency, backups, and migrations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "NocoDB",
+      "url": "https://github.com/nocodb/nocodb",
+      "desc": "Active open-source no-code database interface and Airtable alternative."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Budibase",
+      "url": "https://budibase.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Budibase/budibase",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Internal apps, forms, automations, and portals in one box; much closer to Knack than its developer branding suggests.",
+      "stars": 27902,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Docker image or Docker Compose; Kubernetes is also supported",
+        "engines": "Model-agnostic; the agent builder supports bring-your-own AI provider credentials",
+        "dataFormat": "Built-in app data and app definitions are stored in CouchDB, files in MinIO/S3-compatible object storage, and connected external data remains in its source system",
+        "gapVsPaid": "It lacks Quickbase's mature cross-app reporting, governance, auditability, and managed operational layer for business-critical team processes.",
+        "setupBlocker": "Requires Docker and persistent storage; production use also means owning upgrades, TLS, backups, and database/network access",
+        "sources": [
+          "https://github.com/Budibase/budibase",
+          "https://github.com/Budibase/budibase/blob/master/LICENSE",
+          "https://docs.budibase.com/docs/docker",
+          "https://docs.budibase.com/docs/budibase-architecture",
+          "https://budibase.com/pricing/",
+          "https://www.quickbase.com/",
+          "https://www.quickbase.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Corteza",
+      "url": "https://cortezaproject.org/",
+      "type": "open-source",
+      "repo": "https://github.com/cortezaproject/corteza",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A self-hosted business-app suite with records, pages, workflows, charts, and enterprise-grade amounts of configuration.",
+      "stars": 2100,
+      "lastCommit": "2026-03",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "self-hosted",
+        "install": "Docker Compose with a configured MySQL or PostgreSQL database",
+        "engines": null,
+        "dataFormat": "Records and configuration live in the configured SQL database; uploaded attachments live in the server persistence directory",
+        "gapVsPaid": "Corteza can model records and workflows, but its configuration-heavy self-hosted environment is much less approachable and managed than Quickbase.",
+        "setupBlocker": "Docker, a database, secrets, persistent-volume permissions, and a reverse proxy/TLS are the first operational hurdle",
+        "sources": [
+          "https://github.com/cortezaproject/corteza",
+          "https://github.com/cortezaproject/corteza/blob/2024.9.x/LICENSE",
+          "https://docs.cortezaproject.org/corteza-docs/2024.9/devops-guide/index.html",
+          "https://www.quickbase.com/",
+          "https://www.quickbase.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Joget Community Edition",
+      "url": "https://www.joget.org/",
+      "type": "open-source",
+      "repo": "https://github.com/jogetworkflow/jw-community",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Forms, lists, workflows, and role-aware apps from a product old enough to have survived several no-code fashions.",
+      "stars": 607,
+      "lastCommit": "2026-05",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Download the Community Edition bundle or deploy its Docker image/on-premises package",
+        "engines": null,
+        "dataFormat": "Application definitions, workflow state, and records live in the configured relational database; uploaded files live on the Joget server",
+        "gapVsPaid": "It is heavier to administer and less fluid for the spreadsheet-like ad hoc reporting and app changes that Quickbase users expect.",
+        "setupBlocker": "The first real hurdle is administering a Java web stack and database rather than clicking through a managed signup",
+        "sources": [
+          "https://github.com/jogetworkflow/jw-community",
+          "https://dev.joget.org/community/display/DX8/Installation+Guide",
+          "https://dev.joget.org/community/display/DX8/Installing+Joget+DX+on+Docker",
+          "https://www.quickbase.com/",
+          "https://www.quickbase.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "NocoBase",
+      "url": "https://www.nocobase.com/",
+      "type": "open-source",
+      "repo": "https://github.com/nocobase/nocobase",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Operational records, role-aware pages, forms, charts, and workflows without Quickbase's licensing archaeology.",
+      "stars": 23600,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-NocoBase-Community",
+        "runs": "self-hosted",
+        "install": "NocoBase CLI or Docker deployment with MySQL, MariaDB, or PostgreSQL",
+        "engines": "Built-in AI employees can connect to common LLMs; exact provider support depends on installed AI plugins",
+        "dataFormat": "Business data lives in standard relational tables in the configured MySQL, MariaDB, or PostgreSQL database; files use configured local or object storage",
+        "gapVsPaid": "Its younger plugin-driven platform has a smaller integration and governance surface than Quickbase's mature managed operational ecosystem.",
+        "setupBlocker": "Requires a database, secrets, and deployment administration; the community license also preserves NocoBase branding and restricts some uses",
+        "sources": [
+          "https://github.com/nocobase/nocobase",
+          "https://github.com/nocobase/nocobase/blob/main/LICENSE.txt",
+          "https://docs.nocobase.com/get-started/installation/git",
+          "https://www.nocobase.com/en/commercial",
+          "https://www.quickbase.com/",
+          "https://www.quickbase.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "REI3",
+      "url": "https://rei3.de/",
+      "type": "open-source",
+      "repo": "https://github.com/r3-team/r3",
+      "platforms": [
+        "web",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A sober business-app builder with forms, reports, roles, workflows, and no per-user meter.",
+      "stars": 571,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Native Linux/Windows server package or Docker Compose, connected to PostgreSQL",
+        "engines": null,
+        "dataFormat": "Human-readable application records and configuration live in a PostgreSQL database controlled by the operator",
+        "gapVsPaid": "REI3 has far fewer ready-made integrations and less mature enterprise governance than Quickbase, so more of the surrounding workflow must be built and operated manually.",
+        "setupBlocker": "You must provision PostgreSQL and configure a server/reverse proxy; it is not a managed one-click workspace",
+        "sources": [
+          "https://github.com/r3-team/r3",
+          "https://github.com/r3-team/r3/blob/main/LICENSE.md",
+          "https://rei3.de/en/docs/admin",
+          "https://www.quickbase.com/",
+          "https://www.quickbase.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Saltcorn",
+      "url": "https://saltcorn.com/",
+      "desc": "It does the job, but its own security page lists fresh critical RCE, SQL injection, path-traversal, and cross-tenant bugs."
+    }
+  ],
+  "relatedSlugs": [
+    "baserow-cloud",
+    "nocodb-cloud",
+    "grist"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Team plan and a small-team structured database DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Quickbase in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: model structured records in a constrained operational database for one small team, provide form, grid, kanban, and filtered views, and expose a documented API.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate workspaces, bases, tables, fields, records, attachments, relations, and saved views.\nSupport text, number, currency, date, boolean, select, formula-lite, and relation field types.\nBuild grid, form, kanban, and record-detail views from one canonical schema.\nAdd role-based permissions, optimistic concurrency checks, audit history, and trash restore.\nProvide CSV import or export and a token-authenticated REST API generated from the schema.\nShip migrations, seed data, backups, health checks, and a schema export format.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out full spreadsheet formula compatibility.\nDeliberately leave out hundreds of automations and integrations.\nDeliberately leave out large-enterprise governance and vendor-managed scale.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

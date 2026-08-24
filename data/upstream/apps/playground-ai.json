@@ -1,0 +1,346 @@
+{
+  "slug": "playground-ai",
+  "name": "Playground AI",
+  "domain": "playground.com",
+  "appURL": "https://playground.com",
+  "category": "generative-media",
+  "subcategory": "AI image and video generation",
+  "tagline": "Create a local generation gallery with prompt history, masks, and reruns",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://playground.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Pro monthly tier.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "10 standard images per 3 hours; 3 shared premium-model generations per month; the live comparison table lists 2 downloads per day.",
+        "notes": "Playground's own current pages conflict: the comparison table also says 5 images per 3 hours, an April 2026 article says 10 downloads per day, and commercial-use wording differs. The lower download cap is preserved here as the pricing-table value."
+      },
+      {
+        "name": "Pro",
+        "monthly": 15,
+        "annualPerMonth": 12,
+        "per": "flat",
+        "limits": "75 standard images per 3 hours; 150 shared premium-model generations per month; 10 Nano Banana Pro edits per month; unlimited downloads.",
+        "notes": "Annual plan is $144 prepaid."
+      },
+      {
+        "name": "Pro Plus",
+        "monthly": 45,
+        "annualPerMonth": 36,
+        "per": "flat",
+        "limits": "Unlimited standard-image generations; 1,000 shared premium-model generations per month; 250 Nano Banana Pro edits per month; unlimited downloads.",
+        "notes": "Annual plan is $432 prepaid."
+      }
+    ],
+    "freeTierCaps": "10 standard images per 3 hours; 3 shared premium-model generations per month; pricing table says 2 downloads per day, but other official Playground pages publish conflicting free limits.",
+    "billingTerms": "monthly + annual (-20%); subscriptions auto-renew",
+    "priceChanges": [],
+    "hiddenCosts": "Monthly premium-model allowances reset; no rollover or published self-serve overage/top-up price was found, and Playground's official free-limit/commercial-use pages conflict.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://playgroundai.com/design/pricing",
+      "https://playgroundai.com/blog/is-playground-ai-free-what-you-get-on-free-vs-pro-vs-pro-plus"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Playground AI, create a local generation gallery with prompt history, masks, and reruns. The hard boundary is proprietary editing models, hosted compute, moderation, and fast iteration, plus frontier models, compute, and data.",
+  "coreLoopDIY": "Create a local generation gallery with prompt history, masks, and reruns, submit jobs to a user-owned model server, and keep outputs reproducible.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "GPU-capable machine or user-supplied generation API",
+    "ComfyUI",
+    "model files with appropriate licenses",
+    "local storage"
+  ],
+  "whatYouLose": [
+    "proprietary editing models, hosted compute, moderation, and fast iteration",
+    "frontier proprietary models",
+    "hosted GPU capacity",
+    "licensed training data",
+    "moderation and fast global delivery"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "scale-infra"
+  ],
+  "moatNotes": "frontier models, compute, and data",
+  "replacementScope": "local workflow manager, not a model replacement",
+  "ongoingBurden": "GPU procurement, model licensing, safety filters, queueing, storage, and rapid model replacement",
+  "whyPeopleStillPay": "People still pay for Playground AI because the product value is the model and compute fleet, not the prompt box around it. The recurring cost buys GPU procurement, model licensing, safety filters, queueing, storage, and rapid model replacement, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "ComfyUI",
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "desc": "Node-based open-source diffusion workflow engine with a large ecosystem."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "ComfyUI",
+      "url": "https://comfy.org/",
+      "type": "open-source",
+      "repo": "https://github.com/Comfy-Org/ComfyUI",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Masks, history and deterministic reruns are all there; the gallery is less friendly than the graph.",
+      "stars": 124207,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "both",
+        "install": "Windows or macOS desktop installer, Windows portable archive, or manual Python install on Windows, macOS, or Linux",
+        "engines": "Local and downloadable image, video, audio, 3D, and text models including Stable Diffusion/SDXL/SD3.5, FLUX, Wan, LTX-Video, HunyuanVideo, CogVideoX, and Mochi; optional API nodes connect to hosted providers",
+        "dataFormat": "Models, inputs, outputs, and workflow JSON live in the local ComfyUI data tree; generated media can embed workflow and seed metadata, while API nodes transmit selected inputs to their provider",
+        "gapVsPaid": "It preserves parameters and masks, but its graph and raw output folders are less approachable than Playground's polished canvas and hosted gallery.",
+        "setupBlocker": "A compatible GPU, enough VRAM and disk for multi-gigabyte models, and a working model/workflow must be chosen before useful output appears",
+        "sources": [
+          "https://github.com/Comfy-Org/ComfyUI",
+          "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE",
+          "https://docs.comfy.org/installation/desktop/overview",
+          "https://docs.comfy.org/installation/manual_install",
+          "https://docs.comfy.org/interface/features/workflows",
+          "https://playground.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Draw Things",
+      "url": "https://drawthings.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "ios"
+      ],
+      "desc": "Local gallery, infinite canvas, masks and retained settings on Apple hardware.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "both",
+        "install": "Install the signed app from Apple's App Store on macOS, iPhone, or iPad",
+        "engines": "Runs supported Stable Diffusion, SDXL, FLUX, and video models locally, including imported checkpoints and LoRAs; optional cloud compute can offload generation",
+        "dataFormat": "Projects, models, history, and generated media live in the app sandbox; on macOS model files are under the app container, while cloud offload sends prompts and media for processing",
+        "gapVsPaid": "It has a good local gallery and canvas, but no web sharing, team or social workspace, or cross-platform access.",
+        "setupBlocker": "Apple hardware is required, and the first model download is large; older devices can be slow or memory-limited",
+        "sources": [
+          "https://drawthings.ai/",
+          "https://github.com/drawthingsai/draw-things-community",
+          "https://github.com/drawthingsai/draw-things-community/blob/main/LICENSE.md",
+          "https://apps.apple.com/us/app/draw-things-offline-ai-art/id6444050820",
+          "https://drawthings.ai/docs/",
+          "https://playground.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Easy Diffusion",
+      "url": "https://easydiffusion.github.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A local queue with prompt history, inpainting and rerunnable settings; plain, finished and free.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Run the Windows installer, or extract the Linux/macOS package and start it with ./start.sh",
+        "engines": "Local diffusion models including Stable Diffusion variants, FLUX, Z-Image, ERNIE, Lumina, Anima, and supported quantized/custom checkpoints",
+        "dataFormat": "Models, settings, prompts, and generated images remain in the local installation and output directories; the app contacts package/model hosts for dependencies and downloads but says it does not send prompts or images for analytics",
+        "gapVsPaid": "It covers history and inpainting, but its canvas and gallery organization are much plainer than Playground's.",
+        "setupBlocker": "Windows may show SmartScreen, macOS/Linux use a terminal launcher, and the first runtime plus model download can consume roughly tens of gigabytes",
+        "sources": [
+          "https://easydiffusion.github.io/",
+          "https://github.com/easydiffusion/easydiffusion",
+          "https://github.com/easydiffusion/easydiffusion/blob/main/LICENSE",
+          "https://github.com/easydiffusion/easydiffusion/blob/main/PRIVACY.md",
+          "https://playground.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "InvokeAI",
+      "url": "https://invoke.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/invoke-ai/InvokeAI",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "The exact local shape: gallery, prompt metadata, masks, canvas edits and one-click reruns.",
+      "stars": 27776,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Install through Invoke's launcher on Windows, macOS, or Linux, or deploy the documented Docker setup",
+        "engines": "Local models including Stable Diffusion, SDXL, SD3.5, FLUX, CogView, Z-Image, Krea, Anima, Qwen Image, Ideogram, and segmentation models; selected hosted models such as GPT Image, Gemini/Nano Banana, and Wan use API credentials",
+        "dataFormat": "Models, images, boards, canvas state, prompts, metadata, and a SQLite database live in the local Invoke data directory; API-backed nodes send only the selected prompt and image context to their provider",
+        "gapVsPaid": "It closely matches the local workflow, but loses Playground's effortless hosted sharing, collaboration, and managed compute.",
+        "setupBlocker": "The launcher is straightforward, but the user still needs a compatible GPU, a large model download, and sometimes a gated-model login or provider API key",
+        "sources": [
+          "https://invoke.ai/",
+          "https://invoke.ai/download",
+          "https://github.com/invoke-ai/InvokeAI",
+          "https://github.com/invoke-ai/InvokeAI/blob/main/LICENSE",
+          "https://invoke-ai.github.io/InvokeAI/",
+          "https://playground.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Krita AI Diffusion",
+      "url": "https://www.interstice.cloud/",
+      "type": "open-source",
+      "repo": "https://github.com/Acly/krita-ai-diffusion",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A real editor with masks, job history and local reruns, not merely a generation feed.",
+      "stars": 10432,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "both",
+        "install": "Install Krita, import the plugin ZIP through Krita's Python-plugin importer, then connect a managed/local ComfyUI backend or the optional cloud service",
+        "engines": "ComfyUI-based Stable Diffusion, SDXL, FLUX, ControlNet, IP-Adapter, inpainting, upscaling, and segmentation workflows, plus models offered by the optional Interstice cloud",
+        "dataFormat": "The working image remains a local Krita document with layers and masks; local backends keep models and outputs on the machine, while cloud mode sends the prompt and relevant image/layer data",
+        "gapVsPaid": "It is a stronger layered editor, but not a browser gallery and needs a separately configured generation backend.",
+        "setupBlocker": "Local use requires Krita, the plugin, a multi-gigabyte ComfyUI model bundle, and enough GPU memory; the easier cloud path requires an account",
+        "sources": [
+          "https://www.interstice.cloud/",
+          "https://github.com/Acly/krita-ai-diffusion",
+          "https://github.com/Acly/krita-ai-diffusion/blob/main/LICENSE",
+          "https://github.com/Acly/krita-ai-diffusion/blob/main/README.md",
+          "https://playground.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "RuinedFooocus",
+      "url": "https://github.com/runew0lf/RuinedFooocus",
+      "type": "open-source",
+      "repo": "https://github.com/runew0lf/RuinedFooocus",
+      "platforms": [
+        "web",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A local gallery with metadata, inpainting and reruns for people who do not want to wire every image.",
+      "stars": 680,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "local",
+        "install": "Extract the Windows release and run its launcher, or clone the repository and create the documented Python environment on Linux",
+        "engines": "Prompt-first local SDXL-compatible checkpoints with styles, LoRAs, inpainting, image prompting, and related Fooocus workflows",
+        "dataFormat": "Checkpoints, LoRAs, settings, presets, outputs, and image metadata live in local folders; generated PNG files can retain generation parameters",
+        "gapVsPaid": "It is prompt-first and reproducible, but its local gallery and editing tools are less polished than Playground's canvas.",
+        "setupBlocker": "Windows needs a current 7-Zip extraction and a multi-gigabyte base-model download; Linux requires a manual Python environment, and macOS is not an official target",
+        "sources": [
+          "https://github.com/runew0lf/RuinedFooocus",
+          "https://github.com/runew0lf/RuinedFooocus/blob/main/LICENSE",
+          "https://github.com/runew0lf/RuinedFooocus/blob/main/README.md",
+          "https://playground.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "SwarmUI",
+      "url": "https://swarmui.net/",
+      "type": "open-source",
+      "repo": "https://github.com/mcmonkeyprojects/SwarmUI",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Image history, editing, grids and saved parameters wrapped around current local models.",
+      "stars": 4423,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Run the Windows installer script, the Linux launch script, or install .NET/Python/Homebrew prerequisites and run launch-macos.sh on macOS; Docker is optional",
+        "engines": "Uses ComfyUI as its main backend for Stable Diffusion, SDXL, FLUX, Wan, LTX, MiniMax, ACE-Step, and other image/video/audio workflows; an Automatic1111-compatible backend is optional",
+        "dataFormat": "Configuration, users, models, workflows, generated media, and history live in the local SwarmUI installation and configured model/output directories",
+        "gapVsPaid": "It retains settings and history, but offers a more technical self-hosted experience and less polished social and project organization.",
+        "setupBlocker": "The backend and models still have to be downloaded, and non-Windows installs require command-line prerequisites such as .NET, Python, and Git",
+        "sources": [
+          "https://swarmui.net/",
+          "https://github.com/mcmonkeyprojects/SwarmUI",
+          "https://github.com/mcmonkeyprojects/SwarmUI/blob/master/LICENSE.txt",
+          "https://github.com/mcmonkeyprojects/SwarmUI/blob/master/README.md",
+          "https://github.com/mcmonkeyprojects/SwarmUI/blob/master/docs/Model%20Support.md",
+          "https://playground.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "ideogram",
+    "recraft",
+    "photoroom"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a local workflow manager, not a model replacement DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Playground AI in an empty repository.\nUse Python 3.12, FastAPI, SQLite, ComfyUI as a local worker, and a small React frontend; do not offer alternative stacks.\nThe core loop is: create a local generation gallery with prompt history, masks, and reruns, submit jobs to a user-owned model server, and keep outputs reproducible.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate prompt, negative-prompt, seed, dimensions, model, and workflow controls.\nSubmit jobs only to the local ComfyUI endpoint configured in .env.\nRecord exact generation parameters and workflow JSON beside every output.\nBuild a searchable contact sheet with compare, favorite, annotate, and rerun actions.\nSupport local image-to-image and mask inputs without uploading them elsewhere.\nShow estimated VRAM needs and fail clearly when a workflow or model is missing.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out training a new frontier model.\nDeliberately leave out copying a vendor's proprietary model or dataset.\nDeliberately leave out public generation hosting and moderation.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

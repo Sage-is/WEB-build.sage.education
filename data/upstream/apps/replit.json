@@ -1,0 +1,210 @@
+{
+  "slug": "replit",
+  "name": "Replit",
+  "domain": "replit.com",
+  "category": "dev-tools",
+  "subcategory": "cloud IDE + app hosting",
+  "tagline": "Browser IDE with agents, instant apps, hosting, and deployment",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Core",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "25 USD",
+    "source": "https://replit.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page and 2026 updates checked; public page shows Core around $20/month annual-effective and $25/month monthly depending toggle.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 published project; free daily Agent credits are provided, but the numeric daily amount is not publicly stated.",
+        "notes": null
+      },
+      {
+        "name": "Core",
+        "monthly": 25,
+        "annualPerMonth": 20,
+        "per": "user",
+        "limits": "$25 in monthly usage credits; 5 collaborators; 2 parallel agents.",
+        "notes": "Annual price is the published monthly equivalent."
+      },
+      {
+        "name": "Pro",
+        "monthly": 100,
+        "annualPerMonth": 95,
+        "per": "user",
+        "limits": "$100 in monthly usage credits; 15 collaborators; 50 viewers; 10 parallel agents; 28-day rollback history.",
+        "notes": "Annual price is the published monthly equivalent."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom seats, credits, controls, support and contract terms.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "1 published project plus a daily Agent-credit grant whose exact numeric size is not publicly stated",
+    "billingTerms": "monthly and annual for Core and Pro; Enterprise custom",
+    "priceChanges": [],
+    "hiddenCosts": "Agent work, deployments, compute, storage and other resources draw from the included dollar credit and then become pay as you go; current resource rates can change, and taxes are extra.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://replit.com/pricing",
+      "https://docs.replit.com/billing/about-billing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A dev container plus code-server plus deployment can replace some value, but Replit's beginner-friendly cloud IDE, agents, secrets, hosting, and zero-setup environment are a platform.",
+  "coreLoopDIY": "Run code-server in a cloud VM, add templates, secrets, git, AI coding extension, and one-click deploy scripts.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "cloud VM/container platform",
+    "code-server",
+    "domain/HTTPS",
+    "deploy target",
+    "LLM API",
+    "backups"
+  ],
+  "whatYouLose": [
+    "zero-setup browser IDE",
+    "hosted agents",
+    "multiplayer",
+    "templates",
+    "deployments",
+    "education/community workflows"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "cloud platform/deployment",
+  "whyPeopleStillPay": "They pay because code runs in the browser immediately without local environment drama.",
+  "priorArt": [
+    {
+      "name": "code-server",
+      "url": "https://github.com/coder/code-server",
+      "desc": "Open-source VS Code in the browser; useful base for a DIY cloud IDE.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "code-server",
+      "url": "https://coder.com/docs/code-server",
+      "type": "open-source",
+      "repo": "https://github.com/coder/code-server",
+      "platforms": [
+        "web",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "VS Code in a browser; agents, hosting and deployment are separate chores.",
+      "stars": 78643,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Install script, OS package or Docker container",
+        "engines": null,
+        "dataFormat": "Projects, extensions and VS Code settings live on the host or server filesystem",
+        "gapVsPaid": "It is only the browser IDE layer: agents, managed runtimes, databases, hosting and deployment are separate jobs.",
+        "setupBlocker": "Remote use requires authentication plus TLS or a reverse proxy, and you maintain the host, storage and updates",
+        "sources": [
+          "https://github.com/coder/code-server",
+          "https://github.com/coder/code-server/blob/main/LICENSE",
+          "https://coder.com/docs/code-server/install",
+          "https://coder.com/docs/code-server/guide",
+          "https://replit.com/products/agent"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Coder",
+      "url": "https://coder.com/",
+      "type": "open-source",
+      "repo": "https://github.com/coder/coder",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Full cloud workspaces on your infrastructure; Terraform and PostgreSQL come along for the ride.",
+      "stars": 13300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Install the control plane, connect PostgreSQL and define workspaces with Terraform",
+        "engines": "Coder AI Agents can connect to Anthropic, OpenAI, Google, Amazon Bedrock and self-hosted model endpoints",
+        "dataFormat": "Control-plane state in PostgreSQL; source code and tool state inside provisioned workspace volumes or repositories",
+        "gapVsPaid": "It is an infrastructure platform for engineering workspaces, not Replit's beginner-friendly instant IDE, agent and app-hosting service.",
+        "setupBlocker": "Terraform plus your own Docker, VM or Kubernetes infrastructure and a production PostgreSQL deployment",
+        "sources": [
+          "https://github.com/coder/coder",
+          "https://github.com/coder/coder/blob/main/LICENSE",
+          "https://coder.com/docs/install",
+          "https://coder.com/docs/ai-coder",
+          "https://replit.com/products/agent"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Eclipse Che",
+      "url": "https://www.eclipse.org/che/",
+      "type": "open-source",
+      "repo": "https://github.com/eclipse-che/che",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A real browser IDE platform, assuming Kubernetes already counts as normal in your house.",
+      "stars": 7200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "EPL-2.0",
+        "runs": "self-hosted",
+        "install": "Install the Che Operator or chectl into an existing Kubernetes or OpenShift cluster",
+        "engines": null,
+        "dataFormat": "Code and tools run in Kubernetes pods; durable workspace state uses persistent volumes and Devfile or Kubernetes resources",
+        "gapVsPaid": "It assumes Kubernetes and platform administration, while Replit turns a browser tab into an agent-built and deployed app with almost no infrastructure work.",
+        "setupBlocker": "A working Kubernetes or OpenShift cluster is required before the IDE can be installed",
+        "sources": [
+          "https://github.com/eclipse-che/che",
+          "https://github.com/eclipse-che/che/blob/main/LICENSE",
+          "https://eclipse.dev/che/docs/stable/administration-guide/installing-che/",
+          "https://eclipse.dev/che/docs/stable/end-user-guide/overview-of-workspaces/",
+          "https://replit.com/products/agent"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "codesandbox",
+    "vercel",
+    "netlify"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good 'kinda' because the core is composable but platform polish matters.",
+  "prompt": "Build me a personal cloud dev environment to replace Replit, on a VPS I already have.\nRequirements:\n\n- code-server (VS Code in the browser) behind Caddy with HTTPS and basic auth, installed\n  by one setup script. This is assembly of good parts, not a new IDE.\n- A `dev new <name> --template node|python|static` CLI that copies from a templates/\n  folder (each with .gitignore, README stub, and a run script) into ~/projects/<name>\n  and runs git init.\n- Each project gets a port in projects.json; Caddy routes <name>.dev.mydomain.com to it,\n  so anything I run is instantly viewable at a URL.\n- `dev deploy <name>` commits and restarts the project's systemd user service; `dev logs\n  <name>` tails it.\n- Per-project secrets in <project>/.env, never committed; the template .gitignore\n  enforces it.\n- Nightly tarball of ~/projects to a backups/ folder, keep 7.\n- Reachable only over HTTPS with auth (bind to a VPN interface instead if one exists);\n  no telemetry.\n- Out of scope: multiplayer editing, hosted AI agents, and per-project containers. One\n  VPS, one user, my own projects.\n- README: the wildcard DNS record, Caddy config, and code-server auth setup.",
+  "promptCurated": false
+}

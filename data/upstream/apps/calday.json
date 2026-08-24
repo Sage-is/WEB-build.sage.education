@@ -1,0 +1,291 @@
+{
+  "slug": "calday",
+  "name": "Calday",
+  "domain": "calday.com",
+  "appURL": "https://calday.com",
+  "category": "scheduling",
+  "subcategory": "booking links",
+  "tagline": "Simple booking pages, calendars, and reminders for service businesses",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://calday.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "1 service, up to 100 clients, 1 integration and 1 booking page",
+        "notes": "Free forever."
+      },
+      {
+        "name": "Pro",
+        "monthly": 12,
+        "annualPerMonth": 9.6,
+        "per": "flat",
+        "limits": "Unlimited services/clients; unlimited Google, Outlook and iCloud calendars plus Zoom/Meet; payments, add-ons and reminders",
+        "notes": "Annual effective rate calculated from the official 20% annual discount."
+      }
+    ],
+    "freeTierCaps": "1 service, 100 clients, 1 integration and 1 booking page",
+    "billingTerms": "monthly + annual (-20%); 7-day Pro trial, no card; month-to-month cancellation",
+    "priceChanges": [],
+    "hiddenCosts": "Stripe's normal payment-processing fees apply, though Calday takes no transaction cut. Existing customers are grandfathered if published prices change.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://calday.com/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Calday's solo core is compact: build a personal booking links tool that reads one calendar, publishes availability, reserves a slot, and writes the event back. A competent builder can reach a useful personal version in one sitting, while the paid product mainly wins on OAuth, calendar reliability.",
+  "coreLoopDIY": "Build a personal booking links tool that reads one calendar, publishes availability, reserves a slot, and writes the event back.",
+  "diyTimeEstimate": "one sitting",
+  "replacementScope": "personal replacement for the core loop",
+  "requirements": [
+    "Google Calendar OAuth credentials",
+    "hosted callback URL",
+    "email provider API key in .env"
+  ],
+  "whatYouLose": [
+    "race-free booking under load",
+    "team routing and round robin",
+    "reliable reminders and timezone edge cases",
+    "calendar-provider edge cases and timezone correctness",
+    "multi-calendar conflict handling"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "OAuth/calendar reliability",
+  "whyPeopleStillPay": "Calday: People pay because a booking tool must never double-book them, leak private events, or send the wrong time to a client.",
+  "ongoingBurden": "Maintain OAuth, timezone data, webhooks, idempotency, reminders, calendar-provider quirks, and uptime.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.diy",
+      "desc": "Mature open-source scheduling platform and OAuth reference."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Appointy Free",
+      "url": "https://www.appointy.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "One staffer gets reminders, classes and Square checkout for 100 bookings a month; growth wakes the paywall.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Booking, customer, service and staff records live in Appointy's cloud, with connected calendar and payment data also handled by their respective providers",
+        "gapVsPaid": "One staff member, five services, 100 monthly appointments and no free two-way calendar sync make it easier to outgrow than Calday.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.appointy.com/pricing/",
+          "https://help.appointy.com/hc/en-us/articles/215053646-Is-My-Data-Secure-On-Appointy",
+          "https://www.appointy.com/appointy-privacy-policy/",
+          "https://calday.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Easy!Appointments",
+      "url": "https://easyappointments.org/",
+      "type": "open-source",
+      "repo": "https://github.com/alextselegidis/easyappointments",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A proper provider-and-service booking system, provided you will also become its PHP and MySQL caretaker.",
+      "stars": 4300,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Upload the release to PHP hosting, create a MySQL database, edit the configuration and run the web installer; Docker is optional",
+        "engines": null,
+        "dataFormat": "Bookings, providers, services and customers live in MySQL; configuration and logs live on the web server, with optional Google Calendar synchronization",
+        "gapVsPaid": "It has no managed hosting, built-in payment stack or turnkey SMS service, and the owner must maintain PHP and MySQL.",
+        "setupBlocker": "PHP and MySQL hosting with database permissions; Google Calendar sync additionally requires a Google Cloud OAuth application",
+        "sources": [
+          "https://raw.githubusercontent.com/alextselegidis/easyappointments/develop/LICENSE",
+          "https://easyappointments.org/documentation/installation/",
+          "https://easyappointments.org/documentation/faq/",
+          "https://github.com/alextselegidis/easyappointments",
+          "https://github.com/alextselegidis/easyappointments-docker",
+          "https://calday.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Setmore Free",
+      "url": "https://www.setmore.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Four staff, payments, classes and 200 monthly bookings; SMS, recurring appointments and two-way sync cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Booking, customer and staff records live in Setmore's cloud, with calendar and payment records also passing through connected providers",
+        "gapVsPaid": "The free plan caps bookings at 200 and excludes recurring appointments, SMS reminders and two-way calendar sync.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.setmore.com/pricing",
+          "https://www.setmore.com/privacy",
+          "https://calday.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Square Appointments Free",
+      "url": "https://squareup.com/us/en/appointments",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A serious free solo booking stack where Square operates; processing fees remain and the feature mix varies by country.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create or use a Square seller account and enable Appointments",
+        "engines": null,
+        "dataFormat": "Appointment, customer, staff and transaction records live in Square's cloud",
+        "gapVsPaid": "It is available only in supported Square markets, the free tier is solo and the workflow is tied to Square's payment ecosystem.",
+        "setupBlocker": "A Square seller account and identity verification, and the service must be available in the user's country",
+        "sources": [
+          "https://squareup.com/us/en/appointments",
+          "https://squareup.com/help/us/en/article/5355-set-up-online-booking-with-square-appointments",
+          "https://squareup.com/us/en/legal/general/privacy",
+          "https://calday.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "zcal Free",
+      "url": "https://zcal.co/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Unlimited links and calendars, custom questions, email reminders and Stripe payments; teams are paid and zcal takes 3%.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account and booking records live in zcal's cloud; Stripe processes and stores payment details for paid bookings",
+        "gapVsPaid": "It is more meeting-link-oriented and has less provider and service-business administration, while Stripe payments cost an extra 3%.",
+        "setupBlocker": null,
+        "sources": [
+          "https://zcal.co/pricing",
+          "https://help.zcal.co/pricing/free-forever-plan",
+          "https://help.zcal.co/integrations/stripe",
+          "https://zcal.co/privacy",
+          "https://calday.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Zoho Bookings Free",
+      "url": "https://www.zoho.com/bookings/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "A real one-person booking desk with forms, reminders and two-way sync; staff and payment plumbing cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account, booking and customer records live in Zoho's data centres and are synchronized with connected calendar and meeting providers",
+        "gapVsPaid": "It is limited to one user and one service and does not include payment collection on the free plan.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.zoho.com/bookings/pricing.html",
+          "https://www.zoho.com/bookings/free-appointment-scheduling-software.html",
+          "https://www.zoho.com/privacy.html",
+          "https://calday.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Picktime Free",
+      "url": "https://www.picktime.com/",
+      "desc": "The free plan omits automated reminders, which is one of the small-business basics here."
+    }
+  ],
+  "relatedSlugs": [
+    "youcanbookme",
+    "acuity-scheduling",
+    "tidycal"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Strong page because Calday separates a compact personal workflow from the value of long-term polish.",
+  "prompt": "Build a usable personal replacement for the core loop of Calday.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a personal booking links tool that reads one calendar, publishes availability, reserves a slot, and writes the event back.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: race-free booking under load; team routing and round robin; reliable reminders and timezone edge cases.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

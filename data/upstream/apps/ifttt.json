@@ -1,0 +1,236 @@
+{
+  "slug": "ifttt",
+  "name": "IFTTT",
+  "domain": "ifttt.com",
+  "category": "automation",
+  "subcategory": "consumer automations",
+  "tagline": "Consumer automation applets across smart home, apps, and services",
+  "priceMonthly": 2.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "2.99 USD",
+    "source": "https://ifttt.com/plans",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $2.99/month and Pro+ at higher monthly price.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "2 Applets; unlimited Applet runs; standard trigger speeds.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 4.99,
+        "annualPerMonth": 2.99,
+        "per": "flat",
+        "limits": "20 Applets; multi-action Applets; faster trigger speeds.",
+        "notes": "$35.88 is charged yearly at the displayed annual rate; 7-day trial."
+      },
+      {
+        "name": "Pro+",
+        "monthly": 14.99,
+        "annualPerMonth": 8.99,
+        "per": "flat",
+        "limits": "Unlimited Applets; multiple accounts per service; developer tools; AI services.",
+        "notes": "$107.88 is charged yearly at the displayed annual rate; 7-day trial."
+      }
+    ],
+    "freeTierCaps": "2 Applets and unlimited runs; no time limit.",
+    "billingTerms": "monthly + annual (annual displayed at about 40% lower effective monthly price); auto-renews until cancelled",
+    "priceChanges": [],
+    "hiddenCosts": "No general task overage is published; Pro+ AI services are rate-limited to 200 requests per day, so higher recurring use cannot simply be bought as metered overage.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://ifttt.com/plans",
+      "https://help.ifttt.com/hc/en-us/articles/37010116911899-What-are-the-rate-limits-for-AI-services"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "For a few personal applets, a script or simple webhook worker is enough; the full consumer integration catalog and smart-home breadth are what you lose.",
+  "coreLoopDIY": "Create small trigger-action scripts, poll APIs or receive webhooks, and call target APIs.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "API keys/OAuth",
+    "webhook endpoint or scheduler",
+    "small hosted function",
+    "secrets storage"
+  ],
+  "whatYouLose": [
+    "consumer integration catalog",
+    "smart-home integrations",
+    "mobile applets",
+    "easy UI",
+    "maintenance when APIs change"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "integration network/convenience",
+  "whyPeopleStillPay": "They pay because the applet is easier to click together than to maintain.",
+  "priorArt": [
+    {
+      "name": "Huginn",
+      "url": "https://github.com/huginn/huginn",
+      "desc": "Open-source system for building agents that monitor and act on events; useful IFTTT-style ",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Activepieces Community Edition",
+      "url": "https://www.activepieces.com/open-source",
+      "type": "open-source",
+      "repo": "https://github.com/activepieces/activepieces",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "App-to-app automations with schedules, webhooks, approvals, and no per-task meter.",
+      "stars": 23604,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "One Docker container for a personal test; Docker Compose with PostgreSQL and Redis for a durable deployment",
+        "engines": "No model is bundled; AI pieces connect to providers including OpenAI, Anthropic, Google Gemini, Azure OpenAI, Mistral, Groq, Together AI, and other API-backed services, and generic HTTP steps can reach a local backend.",
+        "dataFormat": "Production deployments keep users, projects, flows, encrypted connections, schedules, and run metadata in PostgreSQL, use Redis for queues, and place execution files in the configured local or object-storage backend; everything lives on the operator's infrastructure.",
+        "gapVsPaid": "Activepieces is powerful for APIs and business apps, but it is more technical and has a much smaller consumer smart-home, mobile sensor, location, and one-click applet ecosystem than IFTTT.",
+        "setupBlocker": "The demo container is easy, but useful app-to-app automations quickly require a public HTTPS URL for webhooks, OAuth applications/API keys, PostgreSQL/Redis, email, backups, and connector maintenance.",
+        "sources": [
+          "https://www.activepieces.com/open-source",
+          "https://github.com/activepieces/activepieces",
+          "https://github.com/activepieces/activepieces/blob/main/LICENSE",
+          "https://www.activepieces.com/docs/install/overview",
+          "https://www.activepieces.com/docs/install/options/docker",
+          "https://www.activepieces.com/pieces",
+          "https://www.activepieces.com/docs/install/configuration/environment-variables"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Home Assistant",
+      "url": "https://www.home-assistant.io/",
+      "type": "open-source",
+      "repo": "https://github.com/home-assistant/core",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "IFTTT for the house, except the house keeps the data and needs an always-on box.",
+      "stars": 89769,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "self-hosted",
+        "install": "Flash the Home Assistant OS image to supported hardware or a VM; Container and Core installs are also documented",
+        "engines": null,
+        "dataFormat": "Configuration, automations, integrations, dashboards, and secrets live under the local `/config` directory; history defaults to the local SQLite `home-assistant_v2.db` database and can be moved to MariaDB, MySQL, or PostgreSQL. Device traffic and state remain on the Home Assistant host unless a configured integration sends them elsewhere.",
+        "gapVsPaid": "Home Assistant is better for devices in the house, but its SaaS and social-app breadth is narrower and it requires an always-on controller plus ongoing integration maintenance.",
+        "setupBlocker": "The first real cost is an always-on supported machine and time spent pairing devices; safe remote access, backups, radio dongles, and vendor-specific integration failures become the owner's responsibility.",
+        "sources": [
+          "https://www.home-assistant.io/",
+          "https://github.com/home-assistant/core",
+          "https://github.com/home-assistant/core/blob/dev/LICENSE.md",
+          "https://www.home-assistant.io/installation/",
+          "https://www.home-assistant.io/common-tasks/os/",
+          "https://www.home-assistant.io/integrations/recorder/",
+          "https://www.home-assistant.io/docs/configuration/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Huginn",
+      "url": "https://github.com/huginn/huginn",
+      "type": "open-source",
+      "repo": "https://github.com/huginn/huginn",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "IFTTT's paranoid older cousin: ugly, capable, and living on your server.",
+      "stars": 49754,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose, or a manual Ruby on Rails installation",
+        "engines": null,
+        "dataFormat": "Agents, credentials, schedules, emitted events, logs, users, and scenario definitions live in the configured MySQL or PostgreSQL database, with deployment configuration and secrets supplied through environment variables on the operator's server.",
+        "gapVsPaid": "Huginn can monitor and act on almost anything, but creating Rails agents and JSON event chains is dramatically less approachable than turning on an IFTTT applet, with no native mobile triggers.",
+        "setupBlocker": "The first obstacle is operating a Rails application and database, then translating each consumer applet into low-level agents, JSON payloads, credentials, and schedules without IFTTT's guided connector UI.",
+        "sources": [
+          "https://github.com/huginn/huginn",
+          "https://github.com/huginn/huginn/blob/master/LICENSE",
+          "https://github.com/huginn/huginn/blob/master/doc/docker/install.md",
+          "https://github.com/huginn/huginn/wiki/Getting-Started-with-Huginn",
+          "https://github.com/huginn/huginn/blob/master/.env.example"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Node-RED",
+      "url": "https://nodered.org/",
+      "type": "open-source",
+      "repo": "https://github.com/node-red/node-red",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Visual wiring for events, APIs, and devices; friendly until the payload turns into JavaScript.",
+      "stars": 23499,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Install globally with npm, use a platform package, or run the official Docker image",
+        "engines": null,
+        "dataFormat": "Flows are JSON files in the Node-RED user directory, credentials are stored separately in an encrypted credentials JSON file, settings and installed nodes live beside them, and context can be held in memory or configured file-system/custom stores.",
+        "gapVsPaid": "Node-RED's visual canvas still exposes messages, nodes, JavaScript, credentials, and hosting, while IFTTT hides those details behind maintained consumer connectors and mobile applets.",
+        "setupBlocker": "Installation is clean, but exposing the editor safely requires authentication and TLS, and many real automations eventually demand JavaScript, third-party nodes, API credentials, and debugging raw message payloads.",
+        "sources": [
+          "https://nodered.org/",
+          "https://github.com/node-red/node-red",
+          "https://github.com/node-red/node-red/blob/master/LICENSE",
+          "https://nodered.org/docs/getting-started/",
+          "https://nodered.org/docs/getting-started/docker",
+          "https://nodered.org/docs/user-guide/runtime/configuration",
+          "https://nodered.org/docs/user-guide/context",
+          "https://nodered.org/docs/user-guide/runtime/securing-node-red"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "n8n-cloud",
+    "plausible",
+    "fathom-analytics"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "A cheap yes; helpful for readers deciding when not to overbuild.",
+  "prompt": "Build me a personal trigger-action automation runner to replace IFTTT. Requirements:\n\n- A single Node project: each applet is one JS file in applets/ exporting a trigger\n  (cron expression or webhook path) and an action function. node-cron for schedules,\n  Express on localhost:4820 for incoming webhooks.\n- Ship three working example applets: new RSS item sends a push via ntfy.sh, a 7am\n  weather check emails me if rain is forecast, a GitHub webhook appends to a log.\n- Poll-based triggers keep a last-seen cursor in SQLite (better-sqlite3) so restarts\n  never double-fire.\n- Every run logged to SQLite: applet, timestamp, ok/fail, error text. A /log page\n  lists the last 100 runs.\n- Failures retry 3 times with backoff, then send one alert email (SMTP creds in .env).\n- All API keys and tokens live in .env, referenced by name from applet files.\n- Runs as a single systemd service. Binds to localhost only, no accounts, no\n  telemetry.\n- Out of scope: a visual applet builder and smart-home device integrations. A new\n  applet is a new file, that is the UI.\n- README: how to write an applet, .env keys, and how to tunnel the webhook path when\n  a third-party service needs to reach it.",
+  "promptCurated": false
+}

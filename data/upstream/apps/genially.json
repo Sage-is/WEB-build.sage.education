@@ -1,0 +1,141 @@
+{
+  "slug": "genially",
+  "name": "Genially",
+  "domain": "genially.com",
+  "appURL": "https://genially.com",
+  "category": "design",
+  "subcategory": "visual design and presentations",
+  "tagline": "Build interactive presentations with hotspots, layers, and simple animations",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "region-dependent",
+    "unit": "custom",
+    "source": "https://genially.com/plans",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "Public pricing is localized and can require account context; canonical price is null.",
+    "native": "region-dependent",
+    "kind": "unknown",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "2 GB storage and 500 AI credits; PPTX, Google Slides and PDF import.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Paid individual plan; exact numeric storage/AI caps and USD price were not exposed in the public rendered page.",
+        "notes": "The plan is offered monthly."
+      },
+      {
+        "name": "Master",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Advanced creation/collaboration plan; exact numeric caps and USD price were not exposed.",
+        "notes": "Annual billing only."
+      },
+      {
+        "name": "Author",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Includes SCORM 1.2/2004 publishing; exact numeric caps and USD price were not exposed.",
+        "notes": "Annual billing only."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom seats, security, SCORM and support; public price is not listed.",
+        "notes": "Annual/custom contract."
+      }
+    ],
+    "freeTierCaps": "2 GB storage and 500 AI credits.",
+    "billingTerms": "Pro is available monthly; Master and Author are annual-only; Enterprise is annual/custom",
+    "priceChanges": [],
+    "hiddenCosts": "Higher plans are annual commitments and team pricing is seat-dependent. Bank/SEPA payment is only offered for purchases above $600; NGO discounts can reach 50%.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://genially.com/plans",
+      "https://support.genially.com/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Genially, build interactive presentations with hotspots, layers, and simple animations. The hard boundary is template marketplace, hosted embeds, analytics, collaboration, and education workflows, plus editor polish, assets, collaboration, and distribution.",
+  "coreLoopDIY": "Compose reusable visual blocks on a canvas into interactive presentations with hotspots, layers, and simple animations, edit text and media, and export an SVG or PDF.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "modern desktop browser",
+    "local fonts and images",
+    "optional image-generation API key"
+  ],
+  "whatYouLose": [
+    "template marketplace, hosted embeds, analytics, collaboration, and education workflows",
+    "huge template and asset libraries",
+    "real-time multiplayer",
+    "brand governance",
+    "professional print workflows"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "content-rights",
+    "collaboration"
+  ],
+  "moatNotes": "editor polish, assets, collaboration, and distribution",
+  "replacementScope": "personal design canvas",
+  "ongoingBurden": "canvas correctness, fonts, exports, templates, asset rights, multiplayer state, and accessibility",
+  "whyPeopleStillPay": "People still pay for Genially because people pay for a vast ready-made design system and a collaboration surface that behaves predictably under deadline. The recurring cost buys canvas correctness, fonts, exports, templates, asset rights, multiplayer state, and accessibility, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Penpot",
+      "url": "https://github.com/penpot/penpot",
+      "desc": "Mature open-source collaborative design platform with SVG-native editing."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Lumi H5P Desktop Editor",
+      "url": "https://lumi.education/en/lumi-h5p-offline-desktop-editor/",
+      "type": "open-source",
+      "repo": "https://github.com/Lumieducation/Lumi",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "An installable H5P authoring app for hotspots, branching slides, interactive video, and simple games; distinctly education-shaped, but real.",
+      "stars": 190,
+      "lastCommit": "2026-05",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Penpot",
+      "url": "https://penpot.app/",
+      "desc": "It can draw the screens, but it does not publish the hotspot-heavy interactive presentation Genially is actually hired for."
+    }
+  ],
+  "relatedSlugs": [
+    "kittl",
+    "pitch",
+    "vistacreate"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal design canvas DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Genially in an empty repository.\nUse Next.js 15, TypeScript, React, Tailwind CSS, IndexedDB, and SVG; do not offer alternative stacks.\nThe core loop is: compose reusable visual blocks on a canvas into interactive presentations with hotspots, layers, and simple animations, edit text and media, and export an SVG or PDF.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a fixed-size SVG canvas with zoom, pan, selection, alignment, and snapping.\nSupport text, rectangles, circles, images, groups, layers, and reusable components.\nAdd a small set of high-quality starter layouts relevant to the product category.\nImplement undo, redo, autosave, and import or export of a portable project JSON file.\nExport SVG and print-ready PDF without rasterizing text unnecessarily.\nKeep all assets local and display missing-font warnings before export.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out real-time multiplayer editing.\nDeliberately leave out a commercial stock-asset library.\nDeliberately leave out enterprise brand controls and approval workflows.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

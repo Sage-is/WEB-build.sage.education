@@ -1,0 +1,231 @@
+{
+  "slug": "quicken-simplifi",
+  "name": "Quicken Simplifi",
+  "domain": "quicken.com",
+  "appURL": "https://quicken.com",
+  "category": "personal-finance",
+  "subcategory": "budgeting, invoicing and small-business finance",
+  "tagline": "Import account exports and build spending plans, watchlists, and reports",
+  "priceMonthly": 3.99,
+  "pricing": {
+    "plan": "Quicken Simplifi",
+    "basis": "annual billing, per month",
+    "unit": "flat",
+    "source": "https://www.quicken.com/products/simplifi/",
+    "checkedOn": "2026-08-13",
+    "confidence": "medium",
+    "notes": "Typical standard monthly amount before promotions.",
+    "native": "3.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Quicken Simplifi",
+        "monthly": null,
+        "annualPerMonth": 3.99,
+        "per": "flat",
+        "limits": "Account aggregation, spending plan, reports, investments, projected cash flow and retirement planner; sharing with 1 additional person",
+        "notes": "First-year promotional monthly equivalent, billed annually; crossed-out regular equivalent is $6.99/month. Offer ends 2026-09-11."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "annual only; full annual charge upfront; first-year promotional pricing",
+    "priceChanges": [],
+    "hiddenCosts": "Auto-renews yearly at the then-current rate. The displayed $3.99/month equivalent is a new-member first-year offer, not the renewal rate; exact annual checkout total may differ from 12× the displayed equivalent.",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://www.quicken.com/products/simplifi/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Quicken Simplifi, import account exports and build spending plans, watchlists, and reports. The hard boundary is bank aggregation, transaction cleaning, mobile sync, support, and mature finance workflows, plus financial integrations, compliance, and trust.",
+  "coreLoopDIY": "Import account exports, categorize transactions with transparent rules, build spending plans and watchlists, reconcile balances, and export clean reports without moving money.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "CSV or OFX exports from financial institutions",
+    "local encrypted storage",
+    "optional exchange-rate API key"
+  ],
+  "whatYouLose": [
+    "bank aggregation, transaction cleaning, mobile sync, support, and mature finance workflows",
+    "direct bank feeds",
+    "tax filing guarantees",
+    "payroll and payments",
+    "accountant ecosystem and support"
+  ],
+  "moatTags": [
+    "integrations",
+    "compliance-regulatory"
+  ],
+  "moatNotes": "financial integrations, compliance, and trust",
+  "replacementScope": "personal ledger or simple invoicing tool",
+  "ongoingBurden": "import normalization, reconciliation, rule drift, exchange rates, backups, audit trails, tax changes, bank APIs, and support",
+  "whyPeopleStillPay": "People still pay for Quicken Simplifi because people pay because accurate money records and dependable institution connections are worth more than the visible charts. The recurring cost buys import normalization, reconciliation, rule drift, exchange rates, backups, audit trails, tax changes, bank APIs, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Actual Budget",
+      "url": "https://github.com/actualbudget/actual",
+      "desc": "Active local-first open-source personal finance application."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "FreeBudget",
+      "url": "https://freebudget.org/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "CSV imports, spending plans, rules, reports and net worth for free; live bank links cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser or installation of its progressive web app",
+        "engines": null,
+        "dataFormat": "Transactions, budgets, rules, reports, and net-worth records live in FreeBudget's cloud; manual and CSV import/export are available, while linked-account data passes through Plaid when the paid sync option is enabled.",
+        "gapVsPaid": "FreeBudget's free core lacks Simplifi's automatic account refresh, recurring-bill intelligence, polished watchlists, mobile apps, and low-effort spending-plan updates.",
+        "setupBlocker": null,
+        "sources": [
+          "https://freebudget.org/",
+          "https://freebudget.org/features",
+          "https://freebudget.org/privacy",
+          "https://freebudget.org/help/import-transactions",
+          "https://freebudget.org/help/bank-syncing",
+          "https://www.quicken.com/products/simplifi/",
+          "https://www.quicken.com/lp/ppc/brand/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Actual Budget",
+      "url": "https://actualbudget.org/",
+      "type": "open-source",
+      "repo": "https://github.com/actualbudget/actual",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Imported account data, budgets, rules and reports on your disk; watchlists become categories and schedules.",
+      "stars": 28000,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Native desktop app for local-only use, or the official Docker/Node server for browser access and device sync",
+        "engines": null,
+        "dataFormat": "Each client works from a local SQLite budget; the server keeps account metadata plus budget blobs under its data directory, and optional end-to-end encryption covers budget contents but not bank-sync tokens.",
+        "gapVsPaid": "Actual's schedules and categories can imitate watchlists, but it lacks Simplifi's turnkey bank aggregation, recurring detection, spending-plan presentation, and managed mobile sync.",
+        "setupBlocker": null,
+        "sources": [
+          "https://actualbudget.org/",
+          "https://github.com/actualbudget/actual",
+          "https://github.com/actualbudget/actual/blob/master/LICENSE.md",
+          "https://actualbudget.org/download/",
+          "https://actualbudget.org/docs/install/",
+          "https://actualbudget.org/docs/config/",
+          "https://actualbudget.org/docs/settings/",
+          "https://www.quicken.com/products/simplifi/",
+          "https://www.quicken.com/lp/ppc/brand/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Firefly III",
+      "url": "https://www.firefly-iii.org/",
+      "type": "open-source",
+      "repo": "https://github.com/firefly-iii/firefly-iii",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Imported transactions, budgets, recurring bills and reports in Docker; setup is not simplified.",
+      "stars": 24200,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Official Docker Compose deployment; a separate Firefly III Data Importer is normally added for bank files",
+        "engines": null,
+        "dataFormat": "Transactions, accounts, budgets, rules, and metadata live in the configured MariaDB/MySQL or PostgreSQL database; uploads and generated files live in persistent server volumes.",
+        "gapVsPaid": "Firefly III is far harder to deploy and maintain and does not match Simplifi's automatic account linking, mobile polish, watchlists, and approachable spending-plan workflow.",
+        "setupBlocker": "The first obstacle is operating a real web service, Docker, a database, application secrets, TLS, mail, backups, upgrades, and usually the separate importer plus an API token.",
+        "sources": [
+          "https://www.firefly-iii.org/",
+          "https://github.com/firefly-iii/firefly-iii",
+          "https://github.com/firefly-iii/firefly-iii/blob/main/LICENSE",
+          "https://docs.firefly-iii.org/how-to/firefly-iii/installation/docker/",
+          "https://docs.firefly-iii.org/how-to/data-importer/installation/docker/",
+          "https://www.quicken.com/products/simplifi/",
+          "https://www.quicken.com/lp/ppc/brand/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Wealthfolio",
+      "url": "https://wealthfolio.app/",
+      "type": "open-source",
+      "repo": "https://github.com/afadil/wealthfolio",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "self-hosted"
+      ],
+      "desc": "Spending, budgets, rules and net worth on your device; automatic account sync is paid.",
+      "stars": 8500,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Native desktop or iOS app, or the official Docker image/Compose deployment for web mode",
+        "engines": null,
+        "dataFormat": "Desktop and self-hosted modes use a local SQLite database (the web server exposes a configurable app.db path); optional Wealthfolio Connect and encrypted device sync send selected holdings/account data through the vendor service.",
+        "gapVsPaid": "Wealthfolio is strongest for portfolios and net worth, but its free mode lacks Simplifi's automatic transaction sync, recurring-bill detection, watchlists, and mature spending plan.",
+        "setupBlocker": null,
+        "sources": [
+          "https://wealthfolio.app/",
+          "https://github.com/wealthfolio/wealthfolio",
+          "https://github.com/wealthfolio/wealthfolio/blob/main/LICENSE",
+          "https://github.com/wealthfolio/wealthfolio#docker",
+          "https://wealthfolio.app/privacy",
+          "https://www.quicken.com/products/simplifi/",
+          "https://www.quicken.com/lp/ppc/brand/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "rocket-money",
+    "tiller-money",
+    "pocketsmith"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Simplifi plan and a personal ledger or simple invoicing tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Quicken Simplifi in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and local-first encryption; do not offer alternative stacks.\nThe core loop is: import account exports, categorize transactions with transparent rules, build spending plans and watchlists, reconcile balances, and export clean reports without moving money.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nSupport CSV and OFX import with saved column mappings and duplicate detection.\nImplement accounts, transactions, transfers, categories, payees, notes, and split transactions.\nAdd deterministic categorization rules whose matches can be inspected and undone.\nProvide reconciliation, monthly budget, cash-flow, net-worth, and export views.\nKeep an immutable import log and require explicit confirmation before destructive changes.\nEncrypt local data, create automatic backups, and document restore on a fresh machine.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out initiating payments or moving money.\nDeliberately leave out tax, payroll, or accounting compliance guarantees.\nDeliberately leave out screen-scraped bank access and commercial institution aggregation.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

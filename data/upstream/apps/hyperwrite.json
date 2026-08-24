@@ -1,0 +1,234 @@
+{
+  "slug": "hyperwrite",
+  "name": "HyperWrite",
+  "domain": "hyperwriteai.com",
+  "appURL": "https://hyperwriteai.com",
+  "category": "ai-writing",
+  "subcategory": "AI drafting, research and content optimization",
+  "tagline": "Draft, rewrite, and answer questions using user-selected context and personal templates",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://hyperwriteai.com/plans",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Premium monthly rate; usage limits apply.",
+    "native": "19.99 USD",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Limited monthly AI credits; the public page does not publish a numeric credit count.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 19.99,
+        "annualPerMonth": 16,
+        "per": "flat",
+        "limits": "250 AI messages/month; 3 personas; unlimited TypeAheads.",
+        "notes": null
+      },
+      {
+        "name": "Ultra",
+        "monthly": 44.99,
+        "annualPerMonth": 29,
+        "per": "flat",
+        "limits": "Unlimited AI messages; 10 personas; unlimited TypeAheads.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "limited monthly AI credits; numeric count not publicly disclosed",
+    "billingTerms": "monthly + annual",
+    "priceChanges": [],
+    "hiddenCosts": null,
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.hyperwriteai.com/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For HyperWrite, draft, rewrite, and answer questions using user-selected context and personal templates. The hard boundary is browser presence, personalization history, and proprietary agent workflows, plus workflow, data, and model tuning.",
+  "coreLoopDIY": "Take a brief, gather user-supplied context and personal templates, draft, rewrite, and answer questions from that material, and keep citations and revisions attached to each section.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "OpenAI API key",
+    "Node.js 22",
+    "local or self-hosted deployment",
+    "user-supplied sources"
+  ],
+  "whatYouLose": [
+    "browser presence, personalization history, and proprietary agent workflows",
+    "proprietary ranking data",
+    "brand-trained models",
+    "team workflows",
+    "large template libraries"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "proprietary-models",
+    "proprietary-data"
+  ],
+  "moatNotes": "workflow, data, and model tuning",
+  "replacementScope": "personal content workstation",
+  "ongoingBurden": "prompt maintenance, retrieval quality, source handling, provider changes, and editorial QA",
+  "whyPeopleStillPay": "People still pay for HyperWrite because the subscription bundles a refined workflow, proprietary signals, templates, and predictable output quality for a team. The recurring cost buys prompt maintenance, retrieval quality, source handling, provider changes, and editorial QA, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Open WebUI",
+      "url": "https://github.com/open-webui/open-webui",
+      "desc": "Active open-source interface for local and API-backed language models with retrieval features."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "AnythingLLM",
+      "url": "https://anythingllm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Mintplex-Labs/anything-llm",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A local-first AI workspace with saved agents, files, memory, and reusable context; the model is yours, so the brand voice can be too.",
+      "stars": 64416,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Desktop installer for macOS/Windows/Linux, or Docker for a self-hosted web instance",
+        "engines": "Local llama.cpp models plus Ollama, LM Studio, LocalAI and many cloud APIs including OpenAI, Anthropic, Gemini, Bedrock, Azure, OpenRouter and Mistral",
+        "dataFormat": "Desktop data stays in the app's local storage; self-hosted data is stored in the mounted server storage and chosen vector database (LanceDB by default), while prompts sent to cloud models leave the machine",
+        "gapVsPaid": "It handles documents and saved context, but it lacks HyperWrite's polished browser-level autocomplete and personalized inline writing experience.",
+        "setupBlocker": "The installer is easy, but useful results still require downloading a local model or supplying a model-provider API key",
+        "sources": [
+          "https://github.com/Mintplex-Labs/anything-llm",
+          "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE",
+          "https://docs.anythingllm.com/installation-desktop/overview",
+          "https://docs.anythingllm.com/features/privacy-and-data-handling",
+          "https://www.hyperwriteai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Page Assist",
+      "url": "https://pageassist.xyz/",
+      "type": "open-source",
+      "repo": "https://github.com/n4ze3m/page-assist",
+      "platforms": [
+        "android",
+        "browser-extension"
+      ],
+      "desc": "A browser sidebar that reads the page, rewrites the selection, and saves custom actions; your local model does the thinking.",
+      "stars": 8100,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Install the extension from the Chrome, Edge or Firefox add-on store",
+        "engines": "Ollama, Chrome AI (Gemini Nano) and OpenAI-compatible local endpoints such as LM Studio or llamafile",
+        "dataFormat": "Chats, settings and other extension data are stored in the browser's local storage; only the optional share feature contacts the project's server",
+        "gapVsPaid": "It works inside the browser, but it depends on a separate local model and is less seamless than HyperWrite's hosted autocomplete and personalization.",
+        "setupBlocker": "The extension installs cleanly, but it still needs a running local model endpoint and browser-to-localhost connectivity",
+        "sources": [
+          "https://pageassist.xyz/",
+          "https://github.com/n4ze3m/page-assist",
+          "https://github.com/n4ze3m/page-assist/blob/main/LICENSE",
+          "https://github.com/n4ze3m/page-assist/blob/main/PRIVACY.md",
+          "https://www.hyperwriteai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Witsy",
+      "url": "https://witsyai.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Kochava-Studios/witsy",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "System-wide selected-text commands, reusable experts, a scratchpad, and document context; bring the model and skip the subscription.",
+      "stars": 2000,
+      "lastCommit": "2026-04",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "local",
+        "install": "Download a desktop binary from GitHub Releases; macOS also supports `brew install --cask witsy`",
+        "engines": "OpenAI, Anthropic, Gemini, xAI, Meta, Ollama, LM Studio, Mistral, DeepSeek, OpenRouter, Groq, Cerebras, Azure and OpenAI-compatible endpoints, plus optional image, video, speech, search and MCP providers",
+        "dataFormat": "Conversation history, experts, settings and document repositories live in the local application profile; local files are indexed locally, while prompts and retrieved context sent to a cloud model leave the machine",
+        "gapVsPaid": "Its system-wide commands are powerful, but they are action-based rather than HyperWrite's continuous inline suggestions and browser-aware autocomplete.",
+        "setupBlocker": "It is BYOK unless you install Ollama and a local model; system-wide commands also need OS accessibility permissions",
+        "sources": [
+          "https://github.com/Kochava-Studios/witsy",
+          "https://github.com/Kochava-Studios/witsy/blob/main/LICENSE",
+          "https://github.com/Kochava-Studios/witsy/releases",
+          "https://witsyai.com/",
+          "https://www.hyperwriteai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Writing Tools",
+      "url": "https://github.com/theJayTea/WritingTools",
+      "type": "open-source",
+      "repo": "https://github.com/theJayTea/WritingTools",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "desc": "Select text anywhere, hit a hotkey, and fix, rewrite, summarize, or obey a custom instruction without opening another tab.",
+      "stars": 2400,
+      "lastCommit": "2026-05",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Use the portable Windows ZIP or macOS DMG; Linux currently runs from source",
+        "engines": "Gemini, native Ollama and any OpenAI-compatible cloud or local endpoint on Windows/Linux; the macOS port also supports OpenAI, Anthropic, Mistral, OpenRouter, Gemini, MLX and Ollama",
+        "dataFormat": "API keys and configuration stay on the device; the app does not retain writing or logs, and selected text goes only to the chosen cloud provider unless a local model is used",
+        "gapVsPaid": "It rewrites selected text on demand rather than providing HyperWrite's continuous drafting assistance, autocomplete, and personal writing model.",
+        "setupBlocker": "You must supply an API key or install a local model; macOS needs Accessibility permissions, while Linux installation and Wayland support remain rough",
+        "sources": [
+          "https://github.com/theJayTea/WritingTools",
+          "https://github.com/theJayTea/WritingTools/blob/main/LICENSE",
+          "https://github.com/theJayTea/WritingTools/releases",
+          "https://www.hyperwriteai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "writesonic",
+    "copy-ai",
+    "anyword"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Premium plan and a personal content workstation DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for HyperWrite in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and the OpenAI Responses API; do not offer alternative stacks.\nThe core loop is: take a brief, gather user-supplied context and personal templates, draft, rewrite, and answer questions from that material, and keep citations and revisions attached to each section.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nBuild a brief form with audience, objective, tone, source URLs, and prohibited claims.\nStore imported source text locally and chunk it for retrieval with SQLite FTS5.\nGenerate an outline first and require approval before drafting sections.\nAttach source references to generated paragraphs and flag unsupported claims.\nProvide rewrite controls for shorten, clarify, change tone, and add evidence.\nExport clean Markdown plus a JSON research bundle.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out live search-engine rank data.\nDeliberately leave out automatic publishing to third-party CMSs.\nDeliberately leave out multi-user approvals and brand governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

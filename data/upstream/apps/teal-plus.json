@@ -1,0 +1,192 @@
+{
+  "slug": "teal-plus",
+  "name": "Teal Plus",
+  "domain": "tealhq.com",
+  "appURL": "https://tealhq.com",
+  "category": "career",
+  "subcategory": "resumes, job tracking and interview practice",
+  "tagline": "Track applications, maintain an evidence bank, and tailor truthful resume variants",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Teal Plus",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://tealhq.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official monthly Plus subscription.",
+    "native": "29 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited resumes and job tracking; 10 templates; top 5 job-description keywords; 10 resume-bullet, 2 summary and 2 cover-letter AI credits.",
+        "notes": null
+      },
+      {
+        "name": "Teal+",
+        "monthly": 29,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Unlimited templates, job-description keywords and AI credits.",
+        "notes": "Billed every 30 days; alternatives are $13 every 7 days or $79 every 90 days ($26.33 per 30-day month equivalent)."
+      }
+    ],
+    "freeTierCaps": "Unlimited resumes/job tracking; 10 templates; top 5 job-description keywords; 10 resume-bullet, 2 summary and 2 cover-letter AI credits",
+    "billingTerms": "recurring 7-day + 30-day + 90-day periods; no annual plan",
+    "priceChanges": [],
+    "hiddenCosts": "The shortest option is $13 every 7 days, which is much costlier than the 30- or 90-day cadence; no annual discount exists.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.tealhq.com/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Teal Plus, track applications, maintain an evidence bank, and tailor truthful resume variants. The hard boundary is job-board capture, guidance, templates, keyword tooling, and hosted convenience, plus data, distribution, and coaching.",
+  "coreLoopDIY": "Track job applications, maintain an evidence bank, tailor truthful resume variants against a supplied role, and keep every claim traceable to the user's own evidence.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "local browser",
+    "resume and job-description files",
+    "optional OpenAI API key"
+  ],
+  "whatYouLose": [
+    "job-board capture, guidance, templates, keyword tooling, and hosted convenience",
+    "proprietary recruiter data",
+    "job-board distribution",
+    "human coaching",
+    "automated application networks"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "integrations",
+    "content-rights"
+  ],
+  "moatNotes": "data, distribution, and coaching",
+  "replacementScope": "personal job-search workspace",
+  "ongoingBurden": "document parsing, truthful claim handling, job-source changes, browser automation rules, privacy, model drift, and user review",
+  "whyPeopleStillPay": "People still pay for Teal Plus because people pay for convenience, curated guidance, and distribution; the personal tracking and drafting loop is highly buildable. The recurring cost buys document parsing, truthful claim handling, job-source changes, browser automation rules, privacy, model drift, and user review, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Reactive Resume",
+      "url": "https://github.com/AmruthPillai/Reactive-Resume",
+      "desc": "Active open-source resume builder with structured data and PDF export."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Reactive Resume",
+      "url": "https://rxresu.me/",
+      "type": "open-source",
+      "repo": "https://github.com/AmruthPillai/Reactive-Resume",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Application tracking, evidence reuse, tailored resumes and cover letters in one unusually complete free package.",
+      "stars": 40000,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Use the free hosted service, or deploy the official Docker Compose stack",
+        "engines": "User-configured OpenAI, Anthropic, Google Gemini, OpenRouter, or Ollama models power analysis, edits, agent drafting, and document import.",
+        "dataFormat": "Hosted accounts, resumes, application-pipeline records, and uploads live in Reactive Resume's infrastructure; self-hosted data lives in PostgreSQL with uploads on local persistent storage or S3-compatible storage. Resumes use a documented JSON schema, and PDF export is rendered in the browser.",
+        "gapVsPaid": "Reactive Resume now includes application tracking and AI-assisted tailoring, but Teal still has the better browser capture, job-description analysis, guided scoring, and polished end-to-end job-search workflow.",
+        "setupBlocker": "The hosted version is genuinely simple; self-hosting requires Docker Compose, PostgreSQL, secrets, persistent uploads, and optional Redis/S3 plus API keys or a local Ollama model for AI features.",
+        "sources": [
+          "https://rxresu.me/",
+          "https://github.com/AmruthPillai/Reactive-Resume",
+          "https://docs.rxresu.me/legal/license",
+          "https://docs.rxresu.me/getting-started/quickstart",
+          "https://docs.rxresu.me/self-hosting/docker",
+          "https://docs.rxresu.me/guides/using-ai",
+          "https://docs.rxresu.me/guides/tracking-job-applications",
+          "https://docs.rxresu.me/legal/privacy-policy"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "JobSync",
+      "url": "https://jobsync.ca/",
+      "type": "open-source",
+      "repo": "https://github.com/Gsync/jobsync",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A local job-search command centre with applications, tasks, documents and model-assisted tailoring.",
+      "stars": 800,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Clone the repository and run `docker compose up`",
+        "engines": "Ollama for local models, plus OpenAI, DeepSeek, Google Gemini, and OpenRouter; models must support structured output and tool calling.",
+        "dataFormat": "Applications, resumes, tasks, documents, AI results, and encrypted provider keys live in a persistent SQLite database file mounted at `/data/dev.db`; imported and generated document data remains on the self-host unless a cloud model provider receives prompts.",
+        "gapVsPaid": "JobSync requires a local model or API configuration and lacks Teal's mature browser extension, automatic job capture, managed AI coaching, and broad job-board workflow polish.",
+        "setupBlocker": "Docker is mandatory for the documented quick start, the first image build is slow, and every cloud AI provider needs a user-supplied API key; fully local AI additionally requires a working Ollama installation and suitable model.",
+        "sources": [
+          "https://jobsync.ca/",
+          "https://github.com/Gsync/jobsync",
+          "https://github.com/Gsync/jobsync/blob/main/LICENSE",
+          "https://github.com/Gsync/jobsync/blob/main/docker-compose.yml",
+          "https://github.com/Gsync/jobsync/blob/main/.env.example"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Resume Matcher",
+      "url": "https://www.resumematcher.fyi/",
+      "type": "open-source",
+      "repo": "https://github.com/srbhr/Resume-Matcher",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Excellent at the master-resume and tailoring half; bring a separate board for the applications themselves.",
+      "stars": 28000,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "Run the published Docker image with a persistent data volume, or clone it and start separate Python/FastAPI and Node/Next.js development services",
+        "engines": "LiteLLM connects to 100+ supported providers and models, including local Ollama and major cloud APIs; the selected provider is configured in the backend environment.",
+        "dataFormat": "Resume, job-description, generated-document, and settings records live locally in TinyDB JSON files under the mounted backend data directory; prompts leave the machine only when a cloud model backend is chosen.",
+        "gapVsPaid": "Resume Matcher is strong at matching one resume to one job, but it does not replace Teal's application tracker, evidence bank, browser capture, networking tasks, or ongoing job-search organization.",
+        "setupBlocker": "The Docker image is the clean route, but useful AI still needs either a provider API key or a separately installed and configured Ollama server; source installation also requires Python 3.13+, `uv`, Node, and Playwright/Chromium.",
+        "sources": [
+          "https://www.resumematcher.fyi/",
+          "https://github.com/srbhr/Resume-Matcher",
+          "https://github.com/srbhr/Resume-Matcher/blob/main/LICENSE",
+          "https://github.com/srbhr/Resume-Matcher/blob/main/README.md"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "jobscan",
+    "huntr",
+    "resume-worded"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Teal Plus plan and a personal job-search workspace DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Teal Plus in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and an optional OpenAI API; do not offer alternative stacks.\nThe core loop is: track job applications, maintain an evidence bank, tailor truthful resume variants against a supplied role, and keep every claim traceable to the user's own evidence.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a structured evidence bank for roles, projects, skills, dates, metrics, and source notes.\nImport a job description and highlight requirements without inventing missing experience.\nGenerate a tailored resume variant only from approved evidence and show the source for each bullet.\nAdd application stages, contacts, tasks, dates, notes, documents, and a follow-up view.\nProvide interview-question practice with answer notes and a self-review rubric, not deceptive live assistance.\nExport resume data as JSON and PDF plus the application tracker as CSV.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out automatic mass application.\nDeliberately leave out fabricated qualifications or deceptive interview assistance.\nDeliberately leave out proprietary recruiter databases and guaranteed job outcomes.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

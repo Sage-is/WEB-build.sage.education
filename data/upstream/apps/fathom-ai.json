@@ -1,0 +1,125 @@
+{
+  "slug": "fathom-ai",
+  "name": "Fathom",
+  "domain": "fathom.ai",
+  "category": "meeting-notes",
+  "subcategory": "meeting assistant",
+  "tagline": "AI meeting recorder that summarizes calls and syncs notes to tools",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "native": "20 USD",
+    "source": "https://www.fathom.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Premium is listed at $20/user/month, annual price lower.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited recordings, transcriptions, and storage; advanced summaries, Ask Fathom, and automations are limited but no numeric public cap is stated.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 20,
+        "annualPerMonth": 16,
+        "per": "user",
+        "limits": "Unlimited recordings, transcriptions, and storage with the full individual AI feature set.",
+        "notes": null
+      },
+      {
+        "name": "Team",
+        "monthly": 19,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "Minimum 2 seats; team folders, sharing, comments, keyword alerts, and CRM sync.",
+        "notes": "CRM integration on individual-domain accounts is limited to 3 users; larger deployments need a team plan."
+      },
+      {
+        "name": "Business",
+        "monthly": 34,
+        "annualPerMonth": 25,
+        "per": "user",
+        "limits": "Minimum 2 seats; adds advanced coaching, deal views, security, and administration.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom package; public price and numeric limits are not stated.",
+        "notes": "Optional paid Launch Assist onboarding is available; amount is not public."
+      }
+    ],
+    "freeTierCaps": "Unlimited recordings, transcriptions, and storage; advanced AI summaries, Ask Fathom, and automations have unpublished caps.",
+    "billingTerms": "monthly + annual; annual saves 20%-26%; 90-day money-back guarantee",
+    "priceChanges": [],
+    "hiddenCosts": "Team and Business require at least 2 seats; optional Enterprise onboarding costs extra but the amount is not public.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.fathom.ai/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A solo clone can handle recordings, transcripts, and summaries, but the product's paid value is automated capture plus CRM/workflow sync and team sharing.",
+  "coreLoopDIY": "Record or import calls, transcribe, summarize by template, clip moments, and push notes to a CRM or docs destination.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "speech-to-text API",
+    "LLM API",
+    "calendar/Zoom/Meet/Teams integration",
+    "hosted database",
+    "optional CRM API keys"
+  ],
+  "whatYouLose": [
+    "automatic call capture",
+    "integrations",
+    "searchable team library",
+    "polished clips",
+    "permissions and admin"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "integrations/collaboration",
+  "whyPeopleStillPay": "They pay for workflow certainty: after every call, the right people and systems have the notes without manual effort.",
+  "priorArt": [
+    {
+      "name": "whisperX",
+      "url": "https://github.com/m-bain/whisperX",
+      "desc": "Useful for transcript alignment and speaker-labeled call records.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Meetily",
+      "url": "https://meetily.ai/",
+      "desc": "A solid local meeting assistant with no turnkey note-sync integrations."
+    },
+    {
+      "name": "OpenWhispr",
+      "url": "https://openwhispr.com/",
+      "desc": "It records, transcribes and summarizes locally, but it does not sync finished notes into the tools around your meeting."
+    }
+  ],
+  "relatedSlugs": [
+    "tldv",
+    "krisp",
+    "superwhisper"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Strong 'kinda' because the core is obvious but the workflow moat is real.",
+  "prompt": "Build me a personal call-notes pipeline to replace Fathom. Requirements:\n\n- A watched folder: I drop call recordings (m4a/mp3/mp4) into ~/Calls/inbox/,\n  chokidar picks them up, a Node pipeline processes each one.\n- Transcribe with whisperX for speaker-labeled, timestamped transcripts, or a\n  hosted Whisper API if a key is present in .env.\n- Summarize with an LLM (key in .env) using templates in ./templates/*.md. The\n  default produces a 5-bullet summary, decisions, action items with owners, and\n  open questions. Pick the template from the filename prefix (sales-, 1on1-).\n- Clips: any transcript line can be cut into a share-able moment, ffmpeg trims\n  15 seconds either side of the timestamp into ~/Calls/clips/.\n- Output per call: ~/Calls/notes/YYYY-MM-DD-<name>.md, summary on top, full\n  transcript below a divider.\n- A small local web page (Express, localhost) listing calls with keyword search\n  over transcripts.\n- No accounts, no telemetry; audio never leaves my machine unless I opt into\n  the hosted API.\n- Out of scope: a bot that joins meetings, calendar auto-capture, CRM sync,\n  team libraries. I record with my meeting app or OS and drop the file in.\n- README: dependencies, keys, and how to capture system audio on macOS.",
+  "promptCurated": false
+}

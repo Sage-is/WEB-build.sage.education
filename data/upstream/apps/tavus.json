@@ -1,0 +1,146 @@
+{
+  "slug": "tavus",
+  "name": "Tavus",
+  "domain": "tavus.io",
+  "appURL": "https://tavus.io",
+  "category": "ai-video",
+  "subcategory": "personalized AI video",
+  "tagline": "API and platform for personalized video generation and conversational replicas",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://tavus.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "PAL Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Unlimited text messaging and 15 minutes/month of voice or video calls; 30+ languages.",
+        "notes": null
+      },
+      {
+        "name": "PAL Plus",
+        "monthly": 20,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited text messaging and 150 call minutes/month.",
+        "notes": null
+      },
+      {
+        "name": "PAL Max",
+        "monthly": 50,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited text messaging and 500 call minutes/month.",
+        "notes": null
+      },
+      {
+        "name": "Developer Basic",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "25 conversational-video minutes, 5 video-generation minutes and 25 stock replicas.",
+        "notes": null
+      },
+      {
+        "name": "Developer Starter",
+        "monthly": 59,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "3 custom replica trainings/month, 100 conversational-video minutes, 10 video-generation minutes and 3 concurrent streams.",
+        "notes": null
+      },
+      {
+        "name": "Developer Growth",
+        "monthly": 397,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "7 custom replica trainings/month, 1,250 conversational-video minutes, 100 video-generation minutes, 100+ stock replicas and 10 streams.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom usage, replicas, streams, support and security; price is not public.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "PAL Free: 15 voice/video call minutes per month and unlimited messages. Developer Basic: 25 conversational-video minutes, 5 video-generation minutes and 25 stock replicas.",
+    "billingTerms": "monthly only; no annual plan is displayed for either PAL or developer plans",
+    "priceChanges": [],
+    "hiddenCosts": "Developer overages are metered: extra replicas are $65 on Starter and $40 on Growth; video-generation overage is $1.00/minute and $0.90/minute respectively. The page shows conversational overage around $0.37/minute Starter and $0.32/minute Growth, with a 30-second minimum and 6-second rounding.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.tavus.io/pricing",
+      "https://docs.tavus.io/sections/billing-and-usage"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. Tavus's durable value is proprietary model, inference, safety, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build the closest honest personal personalized AI video workflow using one user-selected local or API model, job history, preview, and export.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "GPU-capable machine or model API key in .env",
+    "Python 3.12",
+    "FFmpeg",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "low-latency inference infrastructure",
+    "licensed data, avatars, and production templates",
+    "production codecs, rendering speed, and media templates",
+    "frontier generation quality",
+    "voice or likeness safety systems"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "scale-infra",
+    "content-rights"
+  ],
+  "moatNotes": "proprietary model/inference/safety",
+  "whyPeopleStillPay": "Tavus: The visible editor is small; the value sits in the model, inference capacity, safety controls, and production-quality outputs.",
+  "ongoingBurden": "Own compute costs, queueing, model and codec changes, consent controls, moderation, storage, and failed jobs.",
+  "priorArt": [
+    {
+      "name": "ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "desc": "Node-based open-source generative image workflow engine."
+    },
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "Local speech-to-text engine suitable for private transcription."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "DUIX Avatar",
+      "url": "https://www.duix.com/",
+      "desc": "It renders cloned presenters, but Tavus's API and live conversational replicas are different jobs."
+    }
+  ],
+  "relatedSlugs": [
+    "kaiber",
+    "fliki",
+    "elai-io"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Tavus survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Tavus; do not claim to replace its structural moat.\nUse exactly this stack: Python 3.12 + FastAPI + FFmpeg + React.\nPrimary job: Build the closest honest personal personalized AI video workflow using one user-selected local or API model, job history, preview, and export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: low-latency inference infrastructure; licensed data, avatars, and production templates; production codecs, rendering speed, and media templates.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

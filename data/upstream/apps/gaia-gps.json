@@ -1,0 +1,132 @@
+{
+  "slug": "gaia-gps",
+  "name": "Gaia GPS",
+  "domain": "gaiagps.com",
+  "appURL": "https://gaiagps.com",
+  "category": "travel",
+  "subcategory": "trip planning, navigation and travel intelligence",
+  "tagline": "View permitted open maps, import GPX tracks, and organize offline trip notes",
+  "priceMonthly": 4.99,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://gaiagps.com/premium",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Annual Premium subscription divided by 12.",
+    "native": "4.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "10 named map sources; record/follow tracks, create waypoints, add photos, sync, share, and print; 0 offline map downloads",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": null,
+        "annualPerMonth": 4.99,
+        "per": "user",
+        "limits": "250+ maps and overlays plus offline map downloads",
+        "notes": "$59.90 billed annually."
+      },
+      {
+        "name": "Premium with Outside+",
+        "monthly": null,
+        "annualPerMonth": 7.49,
+        "per": "user",
+        "limits": "Gaia Premium plus 2,500 videos, 650 lessons, 600+ hours of content, Trailforks, and access to 15 other Outside brands",
+        "notes": "$89.90 billed annually."
+      }
+    ],
+    "freeTierCaps": "Free plan: 10 named map sources and core track/waypoint/photo tools; 0 offline map downloads and 0 access to the 250+ Premium map catalog.",
+    "billingTerms": "annual only; no monthly plan shown",
+    "priceChanges": [],
+    "hiddenCosts": "Outside+ costs $30/year more than Gaia Premium and bundles other publications/services; app-store or promotional pricing may differ.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://help.gaiagps.com/hc/en-us/articles/115003524547-Membership-Options-Free-Premium-and-Premium-with-Outside",
+      "https://apps.apple.com/us/app/gaia-gps-mobile-trail-maps/id1201979492"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Gaia GPS, view permitted open maps, import GPX tracks, and organize offline trip notes. The hard boundary is licensed map layers, offline downloads, route planning, mobile reliability, and outdoor data, plus proprietary live data and network coverage.",
+  "coreLoopDIY": "View permitted open maps, import GPX tracks, map user-entered places and reservations, and keep offline trip notes and an itinerary without claiming live proprietary availability.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "modern browser",
+    "MapTiler or compatible map key",
+    "user-entered reservations",
+    "optional public transit or weather API"
+  ],
+  "whatYouLose": [
+    "licensed map layers, offline downloads, route planning, mobile reliability, and outdoor data",
+    "live fare and inventory data",
+    "global routing dataset",
+    "crowdsourced trail intelligence",
+    "booking, disruption support, and offline map fleet"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "execution-polish"
+  ],
+  "moatNotes": "proprietary live data and network coverage",
+  "replacementScope": "personal itinerary organizer",
+  "ongoingBurden": "map licensing, fare feeds, reservation access, route freshness, disruptions, geocoding, caching, offline data, and support",
+  "whyPeopleStillPay": "People still pay for Gaia GPS because travel subscriptions sell current data and confidence during disruption, not just an itinerary list. The recurring cost buys map licensing, fare feeds, reservation access, route freshness, disruptions, geocoding, caching, offline data, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Wanderer",
+      "url": "https://github.com/Flomp/wanderer",
+      "desc": "Open-source self-hosted trail database and route explorer using open map data."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "OsmAnd~",
+      "url": "https://f-droid.org/packages/net.osmand.plus/",
+      "type": "open-source",
+      "repo": "https://github.com/osmandapp/OsmAnd",
+      "platforms": [
+        "android"
+      ],
+      "desc": "The F-Droid build gives you offline topo maps and GPX without the subscription gate.",
+      "stars": 5900,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Organic Maps",
+      "url": "https://organicmaps.app/",
+      "type": "open-source",
+      "repo": "https://github.com/organicmaps/organicmaps",
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "desc": "Offline open maps and GPX files on the phone; detailed expedition notes remain basic.",
+      "stars": 14989,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "tripit-pro",
+    "wanderlog-pro",
+    "alltrails-plus"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Premium plan and a personal itinerary organizer DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Gaia GPS in an empty repository.\nUse Next.js 15, TypeScript, SQLite, MapLibre GL, and user-supplied map and travel APIs; do not offer alternative stacks.\nThe core loop is: view permitted open maps, import GPX tracks, map user-entered places and reservations, and keep offline trip notes and an itinerary without claiming live proprietary availability.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate trips, days, places, reservations, notes, documents, packing items, and emergency contacts.\nGeocode only user-entered places and display them through MapLibre with cached trip-area tiles where allowed.\nParse forwarded reservation text locally into editable fields without logging message content.\nBuild a day timeline, route overview, conflict warnings, timezone display, and offline printable itinerary.\nAllow manual updates for delays and reservations and label all external data with source and timestamp.\nExport a complete trip bundle as JSON, calendar file, Markdown, and PDF.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out live flight, hotel, award, or ticket inventory.\nDeliberately leave out commercial turn-by-turn navigation and global offline maps.\nDeliberately leave out booking guarantees, disruption rebooking, and traveler support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

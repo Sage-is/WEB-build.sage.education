@@ -1,0 +1,197 @@
+{
+  "slug": "incogni",
+  "name": "Incogni",
+  "domain": "incogni.com",
+  "appURL": "https://incogni.com",
+  "category": "security",
+  "subcategory": "passwords, privacy and private networking",
+  "tagline": "Track manual data-removal requests and reminders without impersonating the user or bypassing identit",
+  "priceMonthly": 15.98,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://incogni.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical month-to-month Standard rate; annual plans are lower.",
+    "native": "15.98 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Standard",
+        "monthly": 15.98,
+        "annualPerMonth": 7.99,
+        "per": "flat",
+        "limits": "1 person; recurring automated removals from 420+ data brokers",
+        "notes": "$95.88 billed annually."
+      },
+      {
+        "name": "Unlimited",
+        "monthly": 29.98,
+        "annualPerMonth": 14.99,
+        "per": "flat",
+        "limits": "1 person; coverage of 3,000+ sites plus unlimited custom removal requests",
+        "notes": "$179.88 billed annually."
+      },
+      {
+        "name": "Family",
+        "monthly": 31.98,
+        "annualPerMonth": 15.99,
+        "per": "workspace",
+        "limits": "Up to 5 people; Standard coverage for each member",
+        "notes": "$191.88 billed annually."
+      },
+      {
+        "name": "Family Unlimited",
+        "monthly": 45.98,
+        "annualPerMonth": 22.99,
+        "per": "workspace",
+        "limits": "Up to 5 people; Unlimited-level coverage and custom requests",
+        "notes": "$275.88 billed annually."
+      }
+    ],
+    "freeTierCaps": "no free tier; 30-day money-back guarantee",
+    "billingTerms": "monthly + annual; annual terms are about 50% lower than month-to-month",
+    "priceChanges": [],
+    "hiddenCosts": "VAT or sales tax can be added; the cheaper Standard plan is limited to the automated broker list, while custom removals and broader site coverage require Unlimited",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://incogni.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Incogni, track manual data-removal requests and reminders without impersonating the user or bypassing identity checks. The hard boundary is broker network, legal authorization, repeated removals, support, and operational scale, plus security assurance, infrastructure, and trust.",
+  "coreLoopDIY": "Track manual data-removal requests and reminders locally with strong encryption, never impersonating the user or bypassing identity checks, and without claiming to replace an audited service.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "desktop OS",
+    "secure backup location",
+    "modern cryptographic libraries",
+    "careful review before real-world use"
+  ],
+  "whatYouLose": [
+    "broker network, legal authorization, repeated removals, support, and operational scale",
+    "independent security audits",
+    "global relay infrastructure",
+    "breach monitoring data",
+    "account recovery and support"
+  ],
+  "moatTags": [
+    "brand-trust",
+    "compliance-regulatory",
+    "scale-infra"
+  ],
+  "moatNotes": "security assurance, infrastructure, and trust",
+  "replacementScope": "educational or low-risk personal utility",
+  "ongoingBurden": "cryptography, secure updates, key recovery, threat intelligence, relay capacity, abuse response, audits, and incident handling",
+  "whyPeopleStillPay": "People still pay for Incogni because security products are paid for because expert review, infrastructure, and accountability matter more than recreating screens. The recurring cost buys cryptography, secure updates, key recovery, threat intelligence, relay capacity, abuse response, audits, and incident handling, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Vaultwarden",
+      "url": "https://github.com/dani-garcia/vaultwarden",
+      "desc": "Widely used Bitwarden-compatible self-hosted password server implementation."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "California DROP",
+      "url": "https://privacy.ca.gov/drop/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "California residents get one government request to 600-plus brokers; everyone else gets a geography lesson.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Government-hosted browser signup followed by one deletion request",
+        "engines": null,
+        "dataFormat": "Personal identifiers encrypted before storage in CalPrivacy's DROP system and matched by registered data brokers",
+        "gapVsPaid": "It is California-only and registry-bound, without Incogni's ongoing request follow-up across a broader broker set.",
+        "setupBlocker": "Only California residents are eligible, and the request requires personal identifiers for broker matching",
+        "sources": [
+          "https://privacy.ca.gov/drop/",
+          "https://privacy.ca.gov/drop/how-drop-works/",
+          "https://privacy.ca.gov/drop/personal-information-and-data-brokers/",
+          "https://privacy.ca.gov/drop-for-data-brokers/",
+          "https://incogni.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Optery Free Basic",
+      "url": "https://www.optery.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Finds the profiles and hands you the opt-out links; your unpaid labor is the business model.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup followed by identity and profile intake",
+        "engines": null,
+        "dataFormat": "Personal profile data, exposure findings and screenshots in Optery's AWS-hosted cloud account, encrypted in transit and at rest",
+        "gapVsPaid": "It supplies exposure reports and self-service links rather than submitting and chasing removal requests for the user.",
+        "setupBlocker": "Providing enough sensitive identity and address history for accurate broker matching",
+        "sources": [
+          "https://www.optery.com/",
+          "https://www.optery.com/pricing/",
+          "https://help.optery.com/en/article/whats-the-difference-between-the-free-basic-core-extended-and-ultimate-plan-tiers-why-should-i-choose-ultimate-over-the-other-plans-tqye1o/",
+          "https://help.optery.com/en/article/what-are-the-self-service-removal-tools-available-in-free-basic-e3fwqm/",
+          "https://help.optery.com/en/article/how-often-does-optery-run-scans-and-opt-outs-z8xpc2/",
+          "https://www.optery.com/privacy-policy-2021-to-2024/",
+          "https://www.optery.com/subprocessors/",
+          "https://incogni.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Permission Slip by DeleteMe",
+      "url": "https://joindeleteme.com/permission-slip/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "desc": "A phone app that sends individual privacy requests and tracks them; bulk broker removal is the paid part.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Mozilla Monitor",
+      "url": "https://monitor.mozilla.org/",
+      "desc": "Everyone still links it; Mozilla shut the broker-removal product down and deleted its scan data."
+    }
+  ],
+  "relatedSlugs": [
+    "bitwarden",
+    "deleteme",
+    "nordvpn"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Standard plan and a educational or low-risk personal utility DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Incogni in an empty repository.\nUse Rust, Tauri 2, React, SQLite, Argon2id, and audited cryptographic libraries; do not offer alternative stacks.\nThe core loop is: track manual data-removal requests and reminders locally with strong encryption, never impersonating the user or bypassing identity checks, and without claiming to replace an audited service.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nWrite a plain-language threat model before implementing any sensitive feature.\nKeep all vault data encrypted with a master key derived through Argon2id and a unique salt.\nUse authenticated encryption from a maintained library and never invent cryptographic primitives.\nImplement lock timeout, clipboard clearing, password generation, import, export, and encrypted backups.\nMake recovery-key creation explicit and test restore from a fresh installation.\nDisplay a persistent warning that the build has not received an independent security audit.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a production VPN or anonymity network.\nDeliberately leave out identity-protection monitoring and data-broker removal.\nDeliberately leave out enterprise security guarantees, audits, and emergency support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

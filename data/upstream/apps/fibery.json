@@ -1,0 +1,130 @@
+{
+  "slug": "fibery",
+  "name": "Fibery",
+  "domain": "fibery.io",
+  "appURL": "https://fibery.io",
+  "category": "tasks",
+  "subcategory": "connected work platform",
+  "tagline": "Flexible databases, documents, whiteboards, and workflows for teams",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://fibery.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Up to 10 users + 10 guests; 10 databases; 1 GB storage; 14-day history; 250 automation runs/month; 5,000 syncs/month; 1 integration; guests can access up to 10 shared entities.",
+        "notes": "Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      },
+      {
+        "name": "Standard",
+        "monthly": 17.33,
+        "annualPerMonth": 13.86,
+        "per": "user",
+        "limits": "250 AI credits/seat/month; paid automation and sync quotas scale with seats.",
+        "notes": "€15 monthly or €12/month annually. Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      },
+      {
+        "name": "Pro",
+        "monthly": 28.88,
+        "annualPerMonth": 23.11,
+        "per": "user",
+        "limits": "500 AI credits/seat/month; expanded history, storage, automations, and integrations.",
+        "notes": "€25 monthly or €20/month annually. Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 57.77,
+        "annualPerMonth": 46.21,
+        "per": "user",
+        "limits": "Minimum 25 paid users; 1,000 AI credits/seat/month; enterprise controls.",
+        "notes": "€50 monthly or €40/month annually. Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      }
+    ],
+    "freeTierCaps": "Up to 10 users + 10 guests; 10 databases; 1 GB storage; 14-day history; 250 automation runs/month; 5,000 syncs/month; 1 integration; guests can access up to 10 shared entities.",
+    "billingTerms": "monthly + annual (-20%)",
+    "priceChanges": [],
+    "hiddenCosts": "Enterprise has a 25-paid-user minimum; migration assistance may be separately quoted; paid users are prorated while observers/guests can be free within plan rules; VAT may apply.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://fibery.com/pricing",
+      "https://wise.com/gb/currency-converter/eur-to-usd-rate/history"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Fibery's solo core is compact: build a single-user connected work platform workspace with projects, tasks, statuses, filters, recurring items, and JSON export. A competent builder can reach a useful personal version in one sitting, while the paid product mainly wins on collaboration, integrations, polish.",
+  "coreLoopDIY": "Build a single-user connected work platform workspace with projects, tasks, statuses, filters, recurring items, and JSON export.",
+  "diyTimeEstimate": "one sitting",
+  "replacementScope": "personal replacement for the core loop",
+  "requirements": [
+    "Node.js 22",
+    "local or self-hosted runtime",
+    "SQLite database"
+  ],
+  "whatYouLose": [
+    "enterprise permissions",
+    "large integration catalog",
+    "mobile capture and notifications",
+    "real-time multiplayer"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "collaboration/integrations/polish",
+  "whyPeopleStillPay": "Fibery: Teams pay because shared state, notifications, permissions, and migrations are harder than the visible board or list.",
+  "ongoingBurden": "Maintain notifications, recurring-date logic, importers, permissions, backups, and collaboration conflict handling.",
+  "priorArt": [
+    {
+      "name": "Vikunja",
+      "url": "https://github.com/go-vikunja/vikunja",
+      "desc": "Open-source task manager with lists, boards, and collaboration."
+    },
+    {
+      "name": "Plane",
+      "url": "https://github.com/makeplane/plane",
+      "desc": "Open-source issue and project tracker."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "AFFiNE",
+      "url": "https://affine.pro",
+      "desc": "Docs, whiteboards, and databases are real; workflow automation is not"
+    },
+    {
+      "name": "AppFlowy",
+      "url": "https://www.appflowy.io",
+      "desc": "The workspace pieces are promising, but the official free self-hosted collaboration tier is one seat plus guests"
+    },
+    {
+      "name": "Huly",
+      "url": "https://huly.io",
+      "desc": "Tasks and documents are real, but whiteboards and a general database layer are missing"
+    }
+  ],
+  "relatedSlugs": [
+    "slite",
+    "nuclino",
+    "height"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Strong page because Fibery separates a compact personal workflow from the value of long-term polish.",
+  "prompt": "Build a usable personal replacement for the core loop of Fibery.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a single-user connected work platform workspace with projects, tasks, statuses, filters, recurring items, and JSON export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: enterprise permissions; large integration catalog; mobile capture and notifications.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

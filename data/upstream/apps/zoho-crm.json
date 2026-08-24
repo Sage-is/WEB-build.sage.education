@@ -1,0 +1,372 @@
+{
+  "slug": "zoho-crm",
+  "name": "Zoho CRM",
+  "domain": "zoho.com",
+  "appURL": "https://zoho.com",
+  "category": "crm",
+  "subcategory": "contacts, relationships and sales pipelines",
+  "tagline": "Manage a focused contact and deal pipeline without recreating the wider Zoho suite",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://zoho.com/crm/zohocrm-pricing.html",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Standard monthly seat price.",
+    "native": "20 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Maximum 3 users; 10 custom email templates, 10 data exports and 5,000 API calls/day",
+        "notes": null
+      },
+      {
+        "name": "Standard",
+        "monthly": 20,
+        "annualPerMonth": 14,
+        "per": "user",
+        "limits": "50,000 base API credits/day plus 250 per user (100,000 maximum); 5 Marketplace extensions; multiple pipelines",
+        "notes": null
+      },
+      {
+        "name": "Professional",
+        "monthly": 35,
+        "annualPerMonth": 23,
+        "per": "user",
+        "limits": "50,000 base API credits/day plus 500 per user (3,000,000 maximum); 10 Marketplace extensions; unlimited reports",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 50,
+        "annualPerMonth": 40,
+        "per": "user",
+        "limits": "50,000 base API credits/day plus 1,000 per user (5,000,000 maximum); 20 Marketplace extensions; territory management and sandbox",
+        "notes": null
+      },
+      {
+        "name": "Ultimate",
+        "monthly": 65,
+        "annualPerMonth": 52,
+        "per": "user",
+        "limits": "50,000 base API credits/day plus 2,000 per user with no stated maximum; 50 Marketplace extensions and enhanced limits",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "3 users; 10 custom email templates; 10 exports; 5,000 API calls/day",
+    "billingTerms": "monthly + annual (up to 34% off); pay-as-you-go with no contract; local taxes extra",
+    "priceChanges": [],
+    "hiddenCosts": "Paid premium support and implementation/onboarding services are optional extras. Third-party integrations can require separate licenses; extra API/function credits and some mail-merge or messaging capacity are sold as add-ons.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.zoho.com/crm/zohocrm-pricing.html",
+      "https://www.zoho.com/crm/complete-feature-list.html",
+      "https://www.zoho.com/crm/hubspot-alternative.html"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Zoho CRM, manage a focused contact and deal pipeline without recreating the wider Zoho suite. The hard boundary is ecosystem breadth, integrations, automation, analytics, and enterprise controls, plus integrations, data quality, and workflow lock-in.",
+  "coreLoopDIY": "Manage contacts and companies, move deals through a focused pipeline, log interactions, and surface the next action without recreating the wider Zoho suite.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "optional email API credentials"
+  ],
+  "whatYouLose": [
+    "ecosystem breadth, integrations, automation, analytics, and enterprise controls",
+    "automatic email and calendar capture",
+    "data enrichment",
+    "large integration ecosystem",
+    "enterprise reporting"
+  ],
+  "moatTags": [
+    "switching-costs",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "integrations, data quality, and workflow lock-in",
+  "replacementScope": "personal or very small-team CRM",
+  "ongoingBurden": "deduplication, permissions, imports, sync, enrichment, email capture, automations, backups, and audit history",
+  "whyPeopleStillPay": "People still pay for Zoho CRM because CRM value compounds as the system becomes the shared memory of every customer interaction and embeds itself in the rest of the stack. The recurring cost buys deduplication, permissions, imports, sync, enrichment, email capture, automations, backups, and audit history, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Twenty",
+      "url": "https://github.com/twentyhq/twenty",
+      "desc": "Active open-source modern CRM with extensible data models."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "EspoCRM",
+      "url": "https://www.espocrm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/espocrm/espocrm",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A traditional CRM that actually lets you change the data model; polished enough, but still your server.",
+      "stars": 3200,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Docker Compose or PHP/web-server installer",
+        "engines": null,
+        "dataFormat": "CRM records in MySQL, MariaDB or PostgreSQL; uploaded files on the application server",
+        "gapVsPaid": "It has a smaller integration, automation, analytics and AI ecosystem than Zoho CRM and makes you administer the deployment.",
+        "setupBlocker": "A server with PHP and a supported database, or Docker; production also needs HTTPS, mail, backups and upgrades",
+        "sources": [
+          "https://github.com/espocrm/espocrm",
+          "https://github.com/espocrm/espocrm/blob/master/LICENSE",
+          "https://docs.espocrm.com/administration/installation/",
+          "https://docs.espocrm.com/administration/server-configuration/",
+          "https://www.zoho.com/crm/features.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Frappe CRM",
+      "url": "https://frappe.io/crm",
+      "type": "open-source",
+      "repo": "https://github.com/frappe/crm",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A clean leads-and-deals board with notes, tasks and email; Frappe underneath means a real server, not a toy.",
+      "stars": 3200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Frappe Cloud signup, or easy-install script, Bench or Docker",
+        "engines": null,
+        "dataFormat": "CRM records in the Frappe site database; attachments in the site's file storage",
+        "gapVsPaid": "It is narrower and less mature in workflow automation, reporting, integrations and administration than Zoho CRM.",
+        "setupBlocker": "Self-hosting means Linux plus Frappe Bench or Docker, database and Redis services, a domain, mail configuration and upgrades",
+        "sources": [
+          "https://github.com/frappe/crm",
+          "https://github.com/frappe/crm/blob/develop/LICENSE",
+          "https://docs.frappe.io/crm/installation",
+          "https://frappe.io/crm",
+          "https://www.zoho.com/crm/features.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "HubSpot Free CRM",
+      "url": "https://www.hubspot.com/products/crm",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A real two-seat CRM for free; 1,000 contacts is where the upsell starts counting.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Records and files live in HubSpot's cloud; CRM records can be exported as CSV or XLSX",
+        "gapVsPaid": "The free tier gates the customization, workflow automation and reporting depth that a paid Zoho CRM user is likely replacing.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.hubspot.com/products/crm",
+          "https://knowledge.hubspot.com/import-and-export/export-records",
+          "https://legal.hubspot.com/privacy-policy",
+          "https://www.zoho.com/crm/features.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Krayin CRM",
+      "url": "https://krayincrm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/krayin/laravel-crm",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A Laravel sales pipeline with leads, contacts and email; glossy enough, but it still wants a PHP stack.",
+      "stars": 24000,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker or Composer/Laravel installation",
+        "engines": null,
+        "dataFormat": "CRM records in MySQL; uploaded files in Laravel application storage",
+        "gapVsPaid": "It has far fewer integrations, automation options, reports and mobile capabilities than Zoho CRM.",
+        "setupBlocker": "A PHP, Laravel and MySQL server stack or Docker, followed by web-server, mail, HTTPS and backup configuration",
+        "sources": [
+          "https://github.com/krayin/laravel-crm",
+          "https://github.com/krayin/laravel-crm/blob/master/LICENSE",
+          "https://devdocs.krayincrm.com/2.1/introduction/installation.html",
+          "https://www.zoho.com/crm/features.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "SuiteCRM",
+      "url": "https://suitecrm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/SuiteCRM/SuiteCRM",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The old-school full-fat CRM: every module you remember, plus the server you now own.",
+      "stars": 5500,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Download archive and run the web installer on a LAMP or LEMP stack",
+        "engines": null,
+        "dataFormat": "CRM data in MySQL or MariaDB; uploaded files on the application server",
+        "gapVsPaid": "Its interface and administration feel dated beside Zoho CRM, and its integrations, mobile experience and AI features are less turnkey.",
+        "setupBlocker": "A supported PHP, web-server and database stack, correct file permissions, cron, mail and ongoing patching",
+        "sources": [
+          "https://github.com/SuiteCRM/SuiteCRM",
+          "https://github.com/SuiteCRM/SuiteCRM/blob/master/LICENSE.txt",
+          "https://docs.suitecrm.com/admin/installation-guide/downloading-installing/",
+          "https://www.zoho.com/crm/features.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Twenty",
+      "url": "https://twenty.com/",
+      "type": "open-source",
+      "repo": "https://github.com/twentyhq/twenty",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A modern pipeline CRM with custom objects, views and mailbox sync; the subscription becomes a Compose file.",
+      "stars": 54400,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup or Docker Compose",
+        "engines": null,
+        "dataFormat": "CRM data in PostgreSQL, jobs and cache in Redis, and files in local or object storage",
+        "gapVsPaid": "It is newer and substantially less broad in mature modules, automation, reporting and integrations than Zoho CRM.",
+        "setupBlocker": "Self-hosting needs Docker Compose, environment variables, a domain, email, persistent storage, backups and upgrades",
+        "sources": [
+          "https://github.com/twentyhq/twenty",
+          "https://github.com/twentyhq/twenty/blob/main/LICENSE",
+          "https://docs.twenty.com/developers/self-host/self-host",
+          "https://docs.twenty.com/developers/self-host/capabilities/docker-compose",
+          "https://www.zoho.com/crm/features.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Odoo CRM One App Free",
+      "url": "https://www.odoo.com/app/crm",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A full hosted pipeline for unlimited users, provided CRM is the only Odoo app you marry.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "CRM data and attachments live in Odoo Online's managed database and filestore",
+        "gapVsPaid": "It is a capable pipeline, but the one-app-free rule and weaker sales-specific ecosystem make it a poor substitute for Zoho's wider CRM workflow.",
+        "setupBlocker": "None for CRM alone; installing a second Odoo app ends the one-app-free arrangement",
+        "sources": [
+          "https://www.odoo.com/pricing-plan",
+          "https://www.odoo.com/app/crm",
+          "https://www.zoho.com/crm/features.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Freshsales Free",
+      "url": "https://www.freshworks.com/crm/sales/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A clean three-user pipeline with email and mobile apps; useful automation starts asking for rent.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "CRM records and files live in Freshworks' cloud; contacts and deals can be imported or exported by CSV",
+        "gapVsPaid": "Its free tier has less workflow, reporting, customization and ecosystem depth than paid Zoho CRM.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.freshworks.com/crm/sales/",
+          "https://crmsupport.freshworks.com/support/solutions/articles/50000002465-how-to-activate-the-free-plan",
+          "https://crmsupport.freshworks.com/support/solutions/articles/50000002984-what-happens-to-deals-when-you-delete-a-pipeline-or-downgrade-plans-",
+          "https://www.zoho.com/crm/features.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "pipedrive",
+    "close-crm",
+    "attio"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Standard plan and a personal or very small-team CRM DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Zoho CRM in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: manage contacts and companies, move deals through a focused pipeline, log interactions, and surface the next action without recreating the wider Zoho suite.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate contacts, companies, opportunities, notes, tasks, and configurable pipeline stages.\nAdd fast global search, duplicate detection, merge, CSV import, and CSV export.\nProvide a chronological interaction timeline with manual email and meeting logging.\nImplement saved views, filters, owner assignment, and a next-action dashboard.\nAdd role-based access, an immutable activity log, backups, and a recovery command.\nSeed a realistic demo workspace and document field mapping for imports.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out automatic mailbox ingestion.\nDeliberately leave out commercial enrichment databases.\nDeliberately leave out enterprise forecasting, integrations, and compliance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

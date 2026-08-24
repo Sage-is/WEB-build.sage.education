@@ -1,0 +1,131 @@
+{
+  "slug": "speak-language",
+  "name": "Speak",
+  "domain": "speak.com",
+  "appURL": "https://speak.com",
+  "category": "education",
+  "subcategory": "learning, flashcards and language practice",
+  "tagline": "Build scripted language roleplay using a user-supplied model and clear lesson objectives",
+  "priceMonthly": 7,
+  "pricing": {
+    "plan": "Speak Premium",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "source": "https://www.speak.com/",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Typical Premium monthly subscription.",
+    "native": "7 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Speak Premium",
+        "monthly": null,
+        "annualPerMonth": 7,
+        "per": "user",
+        "limits": "6 languages on the current US page; core curriculum, Roleplay, Speak Tutor access, and pronunciation coach",
+        "notes": "Official live US campaign/gift checkout shows $83.99 for one year; Speak says standard prices vary by plan, region, and promotion, so no stable month-to-month rate is recorded."
+      },
+      {
+        "name": "Speak Premium Plus",
+        "monthly": null,
+        "annualPerMonth": 13.75,
+        "per": "user",
+        "limits": "Premium plus unlimited personalized lessons, custom review from mistakes, Made for You lessons, and full Speak Tutor",
+        "notes": "Official live US campaign/gift checkout shows $164.99 for one year; no stable month-to-month rate is publicly mapped."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier (7-day free trial)",
+    "billingTerms": "Annual web/gift purchase shown in the US; monthly is app-store only; auto-renews for subscriptions, while gifts last 1 year",
+    "priceChanges": [],
+    "hiddenCosts": "Displayed annual prices can be campaign-specific; actual subscription price varies by region, storefront, and promotion, and the 7-day trial converts unless canceled before renewal.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.speak.com/",
+      "https://www.speak.com/us/bfcm",
+      "https://app.speak.com/us-en/gift",
+      "https://www.speak.com/gift",
+      "https://help.speak.com/en/articles/11396739-what-is-speak-tutor",
+      "https://help.speak.com/en/articles/11565779-what-are-made-for-you-custom-lessons"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Speak, build scripted language roleplay using a user-supplied model and clear lesson objectives. The hard boundary is proprietary speech tutor models, curriculum, mobile experience, and learning data, plus content, pedagogy, and network.",
+  "coreLoopDIY": "Run scripted language roleplay with clear lesson objectives using a user-supplied model, schedule retrieval practice, and show progress without claiming accredited instruction.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "modern browser",
+    "user-supplied study material",
+    "optional speech or language-model API key"
+  ],
+  "whatYouLose": [
+    "proprietary speech tutor models, curriculum, mobile experience, and learning data",
+    "licensed course catalog",
+    "expert curriculum",
+    "human feedback",
+    "large learner network and certification"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "content-rights",
+    "network-effects"
+  ],
+  "moatNotes": "content, pedagogy, and network",
+  "replacementScope": "personal study companion",
+  "ongoingBurden": "curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support",
+  "whyPeopleStillPay": "People still pay for Speak because the learning loop is buildable, while trusted curriculum, instructors, feedback, credentials, and community are not. The recurring cost buys curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Moodle",
+      "url": "https://github.com/moodle/moodle",
+      "desc": "Long-running open-source learning platform with courses, assessments, and progress tracking."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "FreeLingo",
+      "url": "https://freelingo.app/",
+      "type": "open-source",
+      "repo": "https://github.com/ArtCC/freelingo",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Structured lessons and voice exercises backed by local or supplied models; less magical, more inspectable.",
+      "stars": 62,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Moodle",
+      "url": "https://moodle.org/",
+      "type": "open-source",
+      "repo": "https://github.com/moodle/moodle",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Hosts scripted roleplay prompts, recordings and lesson objectives, but the conversational model must come from elsewhere.",
+      "stars": 7300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "duolingo-super",
+    "brilliant",
+    "babbel"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Premium plan and a personal study companion DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Speak in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and a service worker for offline use; do not offer alternative stacks.\nThe core loop is: run scripted language roleplay with clear lesson objectives using a user-supplied model, schedule retrieval practice, and show progress without claiming accredited instruction.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImport Markdown, text, or user-authored notes and split them into editable learning units.\nCreate flashcards and short quizzes only after showing the generated items for approval.\nImplement a transparent spaced-repetition schedule with due, again, hard, good, and easy actions.\nAdd goals, study sessions, streak-free progress charts, notes, and weak-topic review.\nFor language practice, record the learner and compare timing or pronunciation without presenting medical claims.\nSupport offline use, full export, reset, backup, and deletion of all learning data.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out licensed premium courses.\nDeliberately leave out accredited certificates and grading.\nDeliberately leave out live tutors, large classrooms, and a learner marketplace.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

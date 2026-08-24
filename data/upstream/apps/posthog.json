@@ -1,0 +1,127 @@
+{
+  "slug": "posthog",
+  "name": "PostHog",
+  "domain": "posthog.com",
+  "appURL": "https://posthog.com",
+  "category": "analytics",
+  "subcategory": "web and product analytics",
+  "tagline": "Product analytics with session replay, feature flags, and a data warehouse",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Usage based",
+    "basis": "usage-based",
+    "unit": "usage",
+    "source": "https://posthog.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "No stable monthly subscription; pricing is usage based with a free allowance. Page checked 2026-07-31: product analytics free to 1M events/month, then from $0.00005/event.",
+    "native": "usage-based",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "1 project, 1-year retention, unlimited team members; monthly product allowances include 1M analytics events, 5,000 session recordings, 1M feature-flag requests, 100,000 exceptions, 1,500 survey responses, 1M warehouse rows, 10,000 pipeline trigger events plus 1M batch rows, 100,000 AI-observability events, 500 AI credits, 3 PRs, 10,000 workflow messages/channel, 10GB logs, and 2,500 Replay Vision credits",
+        "notes": "Usage is capped at the free allowances; no card required."
+      },
+      {
+        "name": "Pay-as-you-go",
+        "monthly": 0,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Starts at $0 while under the same monthly free allowances; 6 projects, 7-year retention, unlimited team members and tracked users",
+        "notes": "Usage above each product's allowance is metered independently; billing limits can be set per product."
+      },
+      {
+        "name": "Boost platform package",
+        "monthly": 250,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Adds platform-level controls and support features to the separately metered PostHog products",
+        "notes": "This is an optional platform package on top of product usage charges, not an all-inclusive plan."
+      },
+      {
+        "name": "Scale platform package",
+        "monthly": 750,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Higher platform-level controls and support package; product usage remains separately metered",
+        "notes": "This is an optional platform package on top of product usage charges, not an all-inclusive plan."
+      },
+      {
+        "name": "Enterprise platform package",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom platform controls, support and commercial terms; all product usage remains separately priced",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "1 project and 1-year retention; monthly: 1M analytics events, 5,000 session recordings, 1M feature-flag requests, 100,000 exceptions, 1,500 survey responses, 1M warehouse rows, 10,000 pipeline trigger events plus 1M batch rows, 100,000 AI-observability events, 500 AI credits, 3 PRs, 10,000 workflow messages/channel, 10GB logs, and 2,500 Replay Vision credits; unlimited team members",
+    "billingTerms": "monthly usage-based billing only; no annual plan published; free allowances reset monthly and remain after adding a card",
+    "priceChanges": [],
+    "hiddenCosts": "Every product meters separately after its free allowance: analytics from $0.00005/anonymous event or $0.000248/identified event, replay from $0.005/recording, flags from $0.0001/request, surveys from $0.10/response, warehouse rows from $0.000015, pipelines from $0.0005/trigger event, exceptions from $0.00037, AI from $0.01/credit, logs from $0.25/GB, workflows from $0.003/email, Inbox at $15/PR, and Replay Vision at $0.01/credit; optional Boost/Scale packages add $250/$750 per month.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://posthog.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "First-party collection and a dashboard that answers your top five questions is one sitting of work, and PostHog's free tier covers a million events a month before you pay anything. What the bill buys past that is the rest of the platform: session replay, feature flags, SQL over years of events, and ingestion that stays correct while your event schema drifts underneath it.",
+  "coreLoopDIY": "Collect first-party pageviews and custom events from your own sites, keep the raw rows yourself, and answer a handful of product questions from a local dashboard.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Node 22",
+    "a small always-on VPS",
+    "a domain you control, for first-party collection"
+  ],
+  "whatYouLose": [
+    "session replay",
+    "feature flags and experiments",
+    "identity stitching across devices",
+    "SQL over years of events",
+    "ingestion that stays up without you watching it"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "switching-costs"
+  ],
+  "moatNotes": "data pipeline reliability and analytical depth",
+  "replacementScope": "single-product first-party analytics",
+  "ongoingBurden": "event schemas, bot filtering, identity, late data, retention, query cost, privacy, backups, and always-on ingestion",
+  "whyPeopleStillPay": "Teams pay because analytics has to keep collecting and stay trustworthy while the product changes underneath it. The bill buys bot filtering, identity resolution, late-arriving data, retention, query cost, and someone else getting paged when ingestion stops. The charts are the cheap part.",
+  "priorArt": [
+    {
+      "name": "Umami",
+      "url": "https://github.com/umami-software/umami",
+      "desc": "Popular open-source privacy-focused web analytics platform."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "OpenPanel",
+      "url": "https://openpanel.dev",
+      "desc": "Product analytics and replay are here; feature flags and a data warehouse are not."
+    },
+    {
+      "name": "Rybbit",
+      "url": "https://rybbit.com",
+      "desc": "Excellent analytics and replay, but no feature flags or warehouse; two major products are missing."
+    }
+  ],
+  "relatedSlugs": [
+    "matomo-cloud",
+    "mixpanel",
+    "amplitude"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "The charts are the easy part. A pipeline that never quietly stops collecting is the product, and that is the part you inherit when you self-host.",
+  "prompt": "Build me a self-hosted web analytics box to replace PostHog. Requirements:\n\n- One Node 22 + Express process with better-sqlite3, serving the collector and the\n  dashboard on port 8787. No frontend framework, no build step, no Docker.\n- A tracker.js I paste on my sites: pageviews on load and history change, plus\n  window.track('signup', { plan: 'pro' }), POSTed to /e on my own domain so\n  collection stays first-party.\n- One SQLite events table: site, event, path, referrer, UTM fields, country from the\n  proxy header, device class, and a JSON properties blob.\n- Count visitors by a daily-rotating salted hash of IP plus user agent, salt in .env.\n  No cookie, never the raw IP. That is the whole privacy design, keep it.\n- Dashboard at / with a date range picker: visitors and pageviews by day, top pages,\n  referrers, countries, any event split by one property, and a three-step funnel.\n- Nightly rollup into a daily-summary table, raw events pruned past the retention\n  window in .env, /export.csv for the raw rows.\n- Basic auth on the dashboard, collector open. No accounts, no telemetry, my box\n  holds the only copy.\n- Out of scope: session replay, feature flags, and stitching one person across\n  devices. Do not build a plugin system or a warehouse connector.\n- README: the snippet to paste, where the SQLite file lives, and how to back it up.",
+  "promptCurated": true
+}

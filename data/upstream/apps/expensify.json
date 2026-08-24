@@ -1,0 +1,127 @@
+{
+  "slug": "expensify",
+  "name": "Expensify",
+  "domain": "expensify.com",
+  "appURL": "https://expensify.com",
+  "category": "finance-accounting",
+  "subcategory": "expense management",
+  "tagline": "Receipt capture, cards, reimbursements, travel, invoices, and accounting sync",
+  "priceMonthly": 5,
+  "pricing": {
+    "plan": "Collect",
+    "kind": "fixed",
+    "basis": "per member per month",
+    "unit": "per-seat",
+    "currency": "USD",
+    "native": "$5/member/month",
+    "source": "https://expensify.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Personal",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited SmartScans; unlimited manual expenses and mileage; CSV export; 0 workspace categories, tags, accounting integrations, or Expensify Card controls",
+        "notes": null
+      },
+      {
+        "name": "Collect, pay per use",
+        "monthly": 5,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "$5 per unique member used in a month; expense reports, reimbursements, cards, travel, invoicing, and accounting sync",
+        "notes": "Current new-customer model; no annual commitment required."
+      },
+      {
+        "name": "Control, pay per use",
+        "monthly": 36,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "$36 per active member in a month; advanced approvals, compliance, controls, and accounting features",
+        "notes": null
+      },
+      {
+        "name": "Control, annual commitment",
+        "monthly": 36,
+        "annualPerMonth": 18,
+        "per": "user",
+        "limits": "$18 per committed member/month; active members above the commitment are $36 each",
+        "notes": "Expensify Card usage can reduce the included rate as low as $9 and overage as low as $18."
+      }
+    ],
+    "freeTierCaps": "Unlimited SmartScans, manual expenses, mileage, and CSV export for personal use; 0 workspace categories/tags, accounting integrations, or card administration",
+    "billingTerms": "pay-per-use monthly plans; optional 12-month Control commitment billed monthly",
+    "priceChanges": [],
+    "hiddenCosts": "A 12-month commitment can be increased but not decreased during the term; active users over the committed count cost $36 each. The maximum 50% card discount depends on the share of approved USD expenses put on the Expensify Card. Taxes may be added. Legacy subscriptions predating April 1, 2025 can use different $10/$5 structures.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.expensify.com/pricing",
+      "https://help.expensify.com/articles/new-expensify/billing-and-subscriptions/explore-plans-subscriptions-and-pricing/Understand-Expensify-Pricing.html",
+      "https://help.expensify.com/articles/new-expensify/getting-started/Free-Features-in-Expensify.html"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. Expensify's durable value is banking, compliance, trust, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a private expense management ledger that imports user-supplied CSV files, categorizes entries, reconciles balances, and exports reports.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "SQLite",
+    "CSV exports from the user's own accounts",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "tax and accounting rule updates",
+    "audited security and recovery",
+    "multi-user controls and accountant workflows",
+    "bank, payment, tax, and reconciliation integrations",
+    "live bank feeds and payment rails"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "integrations"
+  ],
+  "moatNotes": "banking/compliance/trust",
+  "whyPeopleStillPay": "Expensify: People pay because errors touch real money. Bank connections, reconciliation, tax changes, evidence, security, and support are the product.",
+  "ongoingBurden": "Own data integrity, backups, import mapping, reconciliation, security, audit logs, tax changes, and recovery.",
+  "priorArt": [
+    {
+      "name": "Actual Budget",
+      "url": "https://github.com/actualbudget/actual",
+      "desc": "Local-first open-source personal finance and envelope budgeting."
+    },
+    {
+      "name": "Invoice Ninja",
+      "url": "https://github.com/invoiceninja/invoiceninja",
+      "desc": "Open-source invoicing, payments, and client management."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Frappe HR",
+      "url": "https://frappe.io/hr",
+      "desc": "Expense claims and travel requests are here; corporate cards, booking and two-way accounting sync are not."
+    },
+    {
+      "name": "Zoho Expense Free",
+      "url": "https://www.zoho.com/expense/",
+      "desc": "Free for three users, but corporate cards, direct reimbursements and travel booking live on paid plans."
+    }
+  ],
+  "relatedSlugs": [
+    "hurdlr",
+    "keeper-tax",
+    "invoice2go"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Expensify survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Expensify; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a private expense management ledger that imports user-supplied CSV files, categorizes entries, reconciles balances, and exports reports.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: tax and accounting rule updates; audited security and recovery; multi-user controls and accountant workflows.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

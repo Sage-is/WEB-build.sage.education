@@ -1,0 +1,157 @@
+{
+  "slug": "splice",
+  "name": "Splice",
+  "domain": "splice.com",
+  "appURL": "https://splice.com",
+  "category": "audio",
+  "subcategory": "music services and creator audio tools",
+  "tagline": "Catalog user-owned samples, preview them in key and tempo, and organize collections",
+  "priceMonthly": 12.99,
+  "pricing": {
+    "plan": "Sounds Plus",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://splice.com/plans",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Sounds Plus monthly tier.",
+    "native": "12.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free account",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Browse and preview the catalog and claim selected free drops; no numeric free-download cap is publicly stated.",
+        "notes": null
+      },
+      {
+        "name": "Sounds+",
+        "monthly": 12.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "100 credits/month.",
+        "notes": null
+      },
+      {
+        "name": "Creator",
+        "monthly": 19.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "200 credits/month.",
+        "notes": "Live promotion advertises $4.99 for the first month; standard recurring price is recorded."
+      },
+      {
+        "name": "Creator+",
+        "monthly": 39.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "500 credits/month.",
+        "notes": null
+      },
+      {
+        "name": "INSTRUMENT",
+        "monthly": 12.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Unlimited premium presets; 0 sample credits included.",
+        "notes": null
+      },
+      {
+        "name": "Splice x Ableton Live",
+        "monthly": 12.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Up to 100 samples/day inside Ableton Live; 100 one-time introductory credits after trial; requires Live 12.3+.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "Browse and preview the catalog and claim selected free drops; no numeric free-download cap is publicly stated.",
+    "billingTerms": "Monthly only; no annual Sounds subscription was publicly offered.",
+    "priceChanges": [],
+    "hiddenCosts": "Samples generally cost 1 credit while presets/MIDI can cost up to 3; unused credits roll only while active and expire 28 days after the final billing period; a subscription can be paused for up to 2 months; rent-to-own plugins are separate purchases.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://splice.com/plans"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Splice, catalog user-owned samples, preview them in key and tempo, and organize collections. The hard boundary is licensed sample catalog, creator network, desktop sync, rights clarity, and discovery, plus licensed content, rights, and distribution network.",
+  "coreLoopDIY": "Catalog user-owned samples, analyze local files to preview them in key and tempo, and organize collections for a private production workflow.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "legally owned local audio files",
+    "ffmpeg",
+    "local storage",
+    "optional audio-analysis models"
+  ],
+  "whatYouLose": [
+    "licensed sample catalog, creator network, desktop sync, rights clarity, and discovery",
+    "licensed music catalog",
+    "royalty and distribution relationships",
+    "global streaming infrastructure",
+    "artist network and recommendations"
+  ],
+  "moatTags": [
+    "content-rights",
+    "network-effects",
+    "scale-infra"
+  ],
+  "moatNotes": "licensed content, rights, and distribution network",
+  "replacementScope": "personal library or creator utility",
+  "ongoingBurden": "catalog licensing, royalties, identity, content delivery, moderation, recommendations, payouts, codecs, and rights disputes",
+  "whyPeopleStillPay": "People still pay for Splice because the product is the catalog, rights chain, and distribution network; a player or processing tool is only the visible edge. The recurring cost buys catalog licensing, royalties, identity, content delivery, moderation, recommendations, payouts, codecs, and rights disputes, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Navidrome",
+      "url": "https://github.com/navidrome/navidrome",
+      "desc": "Active open-source personal music server for legally owned libraries."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Ample – Organize Your Samples",
+      "url": "https://apps.apple.com/us/app/ample-organize-your-samples/id1512016255?mt=12",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos"
+      ],
+      "desc": "A local sample librarian that tags key and tempo without charging rent on your own files.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "ADSR Sample Manager",
+      "url": "https://www.adsrsounds.com/product/software/adsr-sample-manager/",
+      "desc": "Old tutorials still call it free; the current store lists it at $9.99."
+    },
+    {
+      "name": "Sononym",
+      "url": "https://www.sononym.net/",
+      "desc": "A 30-day trial followed by $99 is not a free replacement."
+    },
+    {
+      "name": "Waves COSMOS",
+      "url": "https://www.waves.com/plugins/cosmos-sample-finder",
+      "desc": "The ‘free’ sample manager is now $29.99 or bundled with paid CR8."
+    }
+  ],
+  "relatedSlugs": [
+    "spotify-premium",
+    "apple-music",
+    "youtube-music-premium"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Sounds Plus plan and a personal library or creator utility DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Splice in an empty repository.\nUse Python 3.12, FastAPI, SQLite, ffmpeg, and a local web interface; do not offer alternative stacks.\nThe core loop is: catalog user-owned samples, analyze local files to preview them in key and tempo, and organize collections for a private production workflow.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex only user-selected folders and preserve source audio without modification.\nRead tags and artwork, calculate loudness and waveform data, and detect exact duplicates by hash.\nProvide albums, artists, playlists, search, queue, favorites, and resumable local playback.\nAdd optional creator tools for trim, normalize, split stems through a local model, and export new files.\nKeep all rights and source information attached to imported tracks and display it during export.\nDocument that the application does not provide music, licensing, distribution, or royalty collection.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out copyrighted catalog acquisition or sharing.\nDeliberately leave out streaming-service circumvention.\nDeliberately leave out royalty accounting, label distribution, and global content delivery.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

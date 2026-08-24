@@ -1,0 +1,144 @@
+{
+  "slug": "aioseo",
+  "name": "AIOSEO",
+  "domain": "aioseo.com",
+  "appURL": "https://aioseo.com",
+  "category": "seo-marketing",
+  "subcategory": "WordPress SEO plugin",
+  "tagline": "WordPress metadata, schema, sitemaps, redirects, local SEO, and reports",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://aioseo.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "AIOSEO Lite",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "No time limit; numeric site and AI-credit caps are not published for the free plugin.",
+        "notes": "Permanent free WordPress plugin."
+      },
+      {
+        "name": "Basic",
+        "monthly": null,
+        "annualPerMonth": 4.13,
+        "per": "workspace",
+        "limits": "1 site; 10,000 AI credits; 10 tracked keywords; unlimited SEO audits.",
+        "notes": "Introductory first year is $49.50; renews at $99/year."
+      },
+      {
+        "name": "Plus",
+        "monthly": null,
+        "annualPerMonth": 8.29,
+        "per": "workspace",
+        "limits": "3 sites; 25,000 AI credits; 10 tracked keywords; 15 SEO revisions.",
+        "notes": "Introductory first year is $99.50; renews at $199/year."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 16.63,
+        "per": "workspace",
+        "limits": "10 sites; 50,000 AI credits; 10 tracked keywords; 30 SEO revisions.",
+        "notes": "Introductory first year is $199.50; renews at $399/year."
+      },
+      {
+        "name": "Elite",
+        "monthly": null,
+        "annualPerMonth": 24.96,
+        "per": "workspace",
+        "limits": "100 sites; 200,000 AI credits; 10 tracked keywords; unlimited SEO revisions.",
+        "notes": "Introductory first year is $299.50; renews at $599/year."
+      }
+    ],
+    "freeTierCaps": "permanent free plugin with no time limit; numeric site and AI-credit caps are not published",
+    "billingTerms": "annual only for paid licences; displayed prices are first-year promotional totals and auto-renew at the higher regular annual price",
+    "priceChanges": [],
+    "hiddenCosts": "renewal roughly doubles each displayed first-year price; AI-credit top-ups and installation/configuration services cost extra; AI-credit refunds require fewer than 500 credits used",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://aioseo.com/pricing/",
+      "https://aioseo.com/how-to-get-an-unlimited-free-trial-of-aioseo-lite/"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "AIOSEO's solo core is compact: build a focused WordPress SEO plugin audit for user-owned sites that crawls pages, records technical signals, and exports a prioritized CSV and HTML report. A competent builder can reach a useful personal version in one sitting, while the paid product mainly wins on proprietary data, index, crawl scale.",
+  "coreLoopDIY": "Build a focused WordPress SEO plugin audit for user-owned sites that crawls pages, records technical signals, and exports a prioritized CSV and HTML report.",
+  "diyTimeEstimate": "one sitting",
+  "replacementScope": "personal replacement for the core loop",
+  "requirements": [
+    "Python 3.12",
+    "Playwright browsers",
+    "permission to crawl the target site"
+  ],
+  "whatYouLose": [
+    "fresh proprietary keyword, backlink, or ranking data",
+    "proprietary web and keyword indexes",
+    "fresh rank and clickstream data",
+    "large-scale crawling infrastructure",
+    "historical competitor datasets and support"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "scale-infra"
+  ],
+  "moatNotes": "proprietary data/index/crawl scale",
+  "whyPeopleStillPay": "AIOSEO: The dashboard is reproducible; the expensive part is continuously collecting, cleaning, storing, and defending a useful index of the web.",
+  "ongoingBurden": "Maintain crawling etiquette, parsers, rendering, rate limits, search-engine changes, data freshness, storage, and reporting logic.",
+  "priorArt": [
+    {
+      "name": "Lighthouse",
+      "url": "https://github.com/GoogleChrome/lighthouse",
+      "desc": "Open-source automated auditing for performance, accessibility, and SEO."
+    },
+    {
+      "name": "Unlighthouse",
+      "url": "https://github.com/harlan-zw/unlighthouse",
+      "desc": "Open-source site-wide Lighthouse crawler and dashboard."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Rank Math SEO",
+      "url": "https://wordpress.org/plugins/seo-by-rank-math/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Most of the paid checklist for zero dollars; analytics refresh weekly and the upsells never quite leave the room.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Yoast SEO Free",
+      "url": "https://wordpress.org/plugins/wordpress-seo/",
+      "desc": "Metadata and sitemaps are free; redirects, internal links and local SEO are exactly what the paid tiers reserve."
+    }
+  ],
+  "relatedSlugs": [
+    "clearscope",
+    "marketmuse",
+    "yoast-seo-premium"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Strong page because AIOSEO separates a compact personal workflow from the value of long-term polish.",
+  "prompt": "Build a usable personal replacement for the core loop of AIOSEO.\nUse exactly this stack: Python 3.12 + Typer + SQLite + Playwright.\nPrimary job: Build a focused WordPress SEO plugin audit for user-owned sites that crawls pages, records technical signals, and exports a prioritized CSV and HTML report.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: fresh proprietary keyword, backlink, or ranking data; proprietary web and keyword indexes; fresh rank and clickstream data.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

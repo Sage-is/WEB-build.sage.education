@@ -1,0 +1,274 @@
+{
+  "slug": "baserow-cloud",
+  "name": "Baserow Cloud",
+  "domain": "baserow.io",
+  "appURL": "https://baserow.io",
+  "category": "databases",
+  "subcategory": "spreadsheet databases and operational data apps",
+  "tagline": "Use a managed open-source database workspace with grids, forms, and views",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Advanced",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://baserow.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Advanced monthly user price.",
+    "native": "12 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "3,000 rows/workspace; 2 GB storage; 2,000 automation credits/month; 500 external application users; 14-day history.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 12,
+        "annualPerMonth": 10,
+        "per": "user",
+        "limits": "50,000 rows/workspace; 20 GB storage; 100,000 automation credits/month; 500 external users; 90-day history.",
+        "notes": null
+      },
+      {
+        "name": "Advanced",
+        "monthly": 22,
+        "annualPerMonth": 18,
+        "per": "user",
+        "limits": "250,000 rows/workspace; 100 GB storage; 500,000 automation credits/month; 500 external users; 180-day history.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "1,000,000 rows/workspace; 1,000 GB storage; 2,000,000 automation credits/month; unlimited external users; 180-day history.",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "3,000 rows/workspace, 2 GB storage, 2,000 automation credits/month, 500 external application users and 14-day history",
+    "billingTerms": "monthly + annual; Premium and Advanced are billed per user",
+    "priceChanges": [],
+    "hiddenCosts": "Row, storage and automation-credit ceilings apply at workspace level; exceeding them requires reducing usage or upgrading. Enterprise pricing is custom.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://baserow.io/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Baserow Cloud, use a managed open-source database workspace with grids, forms, and views. The hard boundary is managed hosting, upgrades, backups, collaboration, and premium features, plus data model flexibility, collaboration, and integrations.",
+  "coreLoopDIY": "Model structured records in a database workspace, provide grid, form, kanban, and filtered views, and expose a documented API.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "optional object storage for attachments"
+  ],
+  "whatYouLose": [
+    "managed hosting, upgrades, backups, collaboration, and premium features",
+    "real-time multiplayer",
+    "automation and integration breadth",
+    "scale and formula depth",
+    "enterprise permissions"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "switching-costs"
+  ],
+  "moatNotes": "data model flexibility, collaboration, and integrations",
+  "replacementScope": "small-team structured database",
+  "ongoingBurden": "schema changes, formulas, permissions, imports, attachments, views, APIs, concurrency, backups, and migrations",
+  "whyPeopleStillPay": "People still pay for Baserow Cloud because teams pay when a flexible database becomes a shared operational system with integrations and years of accumulated business logic. The recurring cost buys schema changes, formulas, permissions, imports, attachments, views, APIs, concurrency, backups, and migrations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "NocoDB",
+      "url": "https://github.com/nocodb/nocodb",
+      "desc": "Active open-source no-code database interface and Airtable alternative."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Airtable Free",
+      "url": "https://airtable.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "Closed-source, but the free plan still covers a small managed grid-and-forms workspace for five editors.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup; optional macOS or Windows desktop client",
+        "engines": "Airtable Omni/AI is available only subject to plan/workspace settings; underlying models are not specified for the Free alternative",
+        "dataFormat": "Bases and attachments live in Airtable's cloud; each table/view can be exported as CSV, but there is no single-file full-base export",
+        "gapVsPaid": "Airtable gives up Baserow's open-source and self-hosting escape hatch, leaving data in a proprietary cloud with only table-by-table exports.",
+        "setupBlocker": null,
+        "sources": [
+          "https://support.airtable.com/docs/airtable-plans",
+          "https://airtable.com/pricing",
+          "https://support.airtable.com/docs/creating-a-new-empty-base",
+          "https://support.airtable.com/docs/airtable-security-practices",
+          "https://baserow.io/",
+          "https://baserow.io/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Baserow Free",
+      "url": "https://baserow.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "The same managed open-source product, free forever for 3,000 rows, forms, views, automations, and a small app.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Tables, application definitions, uploads, and workspace metadata live in Baserow Cloud; tables can be exported as CSV",
+        "gapVsPaid": "It is the same managed product under free-plan caps, without the paid tier's higher limits, advanced permissions, support, and production headroom.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/baserow/baserow",
+          "https://github.com/baserow/baserow/blob/develop/LICENSE",
+          "https://baserow.io/pricing",
+          "https://baserow.io/user-docs/export-a-view",
+          "https://baserow.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "NocoDB Free",
+      "url": "https://nocodb.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A managed database grid for three editors and 1,000 records; enough for a small workspace, not a growing one.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-Sustainable-Use-1.0",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Free-plan records and attachments live in NocoDB Cloud; records can be exported through the UI/API, but external database connections are not included on the free plan",
+        "gapVsPaid": "NocoDB's free cloud is more tightly capped and no longer uses an OSI-approved license, while its app-building layer is narrower than Baserow's.",
+        "setupBlocker": null,
+        "sources": [
+          "https://nocodb.com/pricing",
+          "https://github.com/nocodb/nocodb",
+          "https://github.com/nocodb/nocodb/blob/develop/LICENSE.md",
+          "https://docs.nocodb.com/getting-started/self-hosted/environment-variables/",
+          "https://baserow.io/",
+          "https://baserow.io/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "SeaTable Free",
+      "url": "https://seatable.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A serious grid with 10,000 rows, forms, automations, scripts, and an app builder before it asks for money.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup for SeaTable Cloud",
+        "engines": null,
+        "dataFormat": "Bases live in SeaTable Cloud and can be exported as proprietary .dtable containers containing JSON plus an asset folder; individual tables or views export to XLSX",
+        "gapVsPaid": "SeaTable Free is a proprietary hosted service, so it sacrifices Baserow's clean open-source path from vendor cloud to a self-hosted deployment.",
+        "setupBlocker": null,
+        "sources": [
+          "https://seatable.com/prices/",
+          "https://seatable.com/help/subscription-plans/",
+          "https://seatable.com/help/dtable-format-export-backup-seatable/",
+          "https://seatable.com/help/data-import-export-seatable/",
+          "https://baserow.io/",
+          "https://baserow.io/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Teable Free",
+      "url": "https://teable.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "An Airtable-shaped database with 1,000 rows, 100 automations, and a real app builder on the free plan.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": "Vendor-hosted AI and App Builder features use Teable's configured model services and free-plan credits; the exact model roster can change",
+        "dataFormat": "Bases, records, attachments, automation state, and app definitions live in Teable Cloud; bases can be backed up as .tea files and tables exported as CSV",
+        "gapVsPaid": "Teable's free cloud is more tightly capped and its app-builder and automation surface is less mature than the paid Baserow workspace being replaced.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/teableio/teable",
+          "https://github.com/teableio/teable/blob/develop/LICENSE",
+          "https://teable.ai/pricing",
+          "https://help.teable.ai/en/base/export",
+          "https://baserow.io/",
+          "https://baserow.io/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "nocodb-cloud",
+    "grist",
+    "rows"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Advanced plan and a small-team structured database DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Baserow Cloud in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: model structured records in a database workspace, provide grid, form, kanban, and filtered views, and expose a documented API.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate workspaces, bases, tables, fields, records, attachments, relations, and saved views.\nSupport text, number, currency, date, boolean, select, formula-lite, and relation field types.\nBuild grid, form, kanban, and record-detail views from one canonical schema.\nAdd role-based permissions, optimistic concurrency checks, audit history, and trash restore.\nProvide CSV import or export and a token-authenticated REST API generated from the schema.\nShip migrations, seed data, backups, health checks, and a schema export format.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out full spreadsheet formula compatibility.\nDeliberately leave out hundreds of automations and integrations.\nDeliberately leave out large-enterprise governance and vendor-managed scale.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

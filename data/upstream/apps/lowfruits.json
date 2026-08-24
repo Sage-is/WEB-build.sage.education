@@ -1,0 +1,114 @@
+{
+  "slug": "lowfruits",
+  "name": "LowFruits",
+  "domain": "lowfruits.io",
+  "appURL": "https://lowfruits.io",
+  "category": "seo-marketing",
+  "subcategory": "keyword research, backlinks and rank tracking",
+  "tagline": "Cluster user-supplied keywords and identify weak-looking SERP patterns from purchased API data",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://lowfruits.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Standard monthly plan; pay-as-you-go credits may also be offered.",
+    "native": "29.9 USD",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Pay As You Go",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "2,000 credits.",
+        "notes": "One-time $25 purchase; credits expire 1 year after purchase."
+      },
+      {
+        "name": "Standard",
+        "monthly": 29.9,
+        "annualPerMonth": 20.75,
+        "per": "workspace",
+        "limits": "3,000 credits/month; 100 rank-tracked keywords; annual plan includes bonus credits and a 10% Pay As You Go discount.",
+        "notes": "Annual total is $249; subscription credits do not roll over."
+      },
+      {
+        "name": "Premium",
+        "monthly": 79.9,
+        "annualPerMonth": 62.45,
+        "per": "workspace",
+        "limits": "10,000 credits/month; 500 tracked keywords; 70 competitor-ranking extractions; 900 competitor-keyword extractions; 300 sitemap extractions.",
+        "notes": "The annual-equivalent amount shown by the vendor is $62.45/month; subscription credits do not roll over."
+      }
+    ],
+    "freeTierCaps": "3 KWFinder searches every 7 days; no full-platform free plan",
+    "billingTerms": "Pay As You Go is one-time; Standard and Premium are monthly + annual",
+    "priceChanges": [],
+    "hiddenCosts": "Subscription credits expire at the end of the billing cycle and do not roll over; Pay As You Go credits expire after 1 year.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://lowfruits.io/pricing/",
+      "https://lowfruits.io/blog/lowfruits-plans-guide/",
+      "https://lowfruits.io/docs/do-pay-as-you-go-credits-expire/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For LowFruits, cluster user-supplied keywords and identify weak-looking SERP patterns from purchased API data. The hard boundary is serp data procurement, weakness heuristics, clustering, and workflow convenience, plus proprietary web index and data acquisition.",
+  "coreLoopDIY": "Cluster a user-supplied keyword set, collect permitted search-result snapshots at low volume from purchased API data, identify weak-looking SERP patterns, and show trends without pretending to recreate a commercial web index.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "self-hosted server",
+    "PostgreSQL",
+    "approved search-data API or manual imports",
+    "scheduled worker"
+  ],
+  "whatYouLose": [
+    "SERP data procurement, weakness heuristics, clustering, and workflow convenience",
+    "planet-scale crawl index",
+    "backlink graph",
+    "clickstream estimates",
+    "high-volume location-specific SERPs"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "execution-polish"
+  ],
+  "moatNotes": "proprietary web index and data acquisition",
+  "replacementScope": "small owned-keyword tracker",
+  "ongoingBurden": "proxy and API costs, crawl freshness, geolocation, anti-bot rules, keyword normalization, storage, and data QA",
+  "whyPeopleStillPay": "People still pay for LowFruits because customers pay for a continuously refreshed web-scale dataset whose collection cost dwarfs the dashboard around it. The recurring cost buys proxy and API costs, crawl freshness, geolocation, anti-bot rules, keyword normalization, storage, and data QA, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "SerpBear",
+      "url": "https://github.com/towfiqi/serpbear",
+      "desc": "Open-source search ranking tracker for owned keyword sets."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "ContentGecko Free SERP Clustering",
+      "url": "https://contentgecko.io/free-serp-keyword-clustering/",
+      "desc": "A useful free clusterer for 200 supplied keywords; it never tells you which SERPs are weak."
+    },
+    {
+      "name": "OpenSEO",
+      "url": "https://openseo.so/",
+      "desc": "Keyword research and clustering, yes; the weak-domain and weak-SERP scoring that makes LowFruits useful, no."
+    }
+  ],
+  "relatedSlugs": [
+    "moz-pro",
+    "se-ranking",
+    "mangools"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Standard plan and a small owned-keyword tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for LowFruits in an empty repository.\nUse Python 3.12, FastAPI, PostgreSQL, Playwright, and a small React frontend; do not offer alternative stacks.\nThe core loop is: cluster a user-supplied keyword set, collect permitted search-result snapshots at low volume from purchased API data, identify weak-looking SERP patterns, and show trends without pretending to recreate a commercial web index.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate projects with domains, keywords, target country, language, device, and tags.\nFetch rankings only through the configured compliant API and enforce a daily budget.\nStore raw result snapshots and normalized positions so every chart is auditable.\nDisplay current rank, movement, best rank, URL changes, and a compact SERP history.\nImport backlink and keyword files from third-party tools without claiming independent coverage.\nAdd scheduled runs, failure alerts, CSV export, retention settings, and database backups.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out building a general web crawler or backlink index.\nDeliberately leave out circumventing search-engine access controls.\nDeliberately leave out traffic estimates presented as observed first-party data.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,221 @@
+{
+  "slug": "integrately",
+  "name": "Integrately",
+  "domain": "integrately.com",
+  "appURL": "https://integrately.com",
+  "category": "automation",
+  "subcategory": "workflow automation and app integrations",
+  "tagline": "Connect two services through a fixed trigger and action with retries",
+  "priceMonthly": 29.99,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://integrately.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Starter monthly tier.",
+    "native": "29.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "100 tasks/month; 5 automations; 15-minute update time; 1-step automations; no webhooks.",
+        "notes": null
+      },
+      {
+        "name": "Starter",
+        "monthly": 29.99,
+        "annualPerMonth": 19.99,
+        "per": "workspace",
+        "limits": "2,000 tasks/month; 20 automations; 1 user; 5-minute update time.",
+        "notes": null
+      },
+      {
+        "name": "Professional",
+        "monthly": 49,
+        "annualPerMonth": 39,
+        "per": "workspace",
+        "limits": "10,000 tasks/month; unlimited automations; 1 user; 2-minute update time.",
+        "notes": null
+      },
+      {
+        "name": "Growth",
+        "monthly": 124,
+        "annualPerMonth": 99,
+        "per": "workspace",
+        "limits": "30,000 tasks/month; unlimited automations and users; 2-minute update time.",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 299,
+        "annualPerMonth": 239,
+        "per": "workspace",
+        "limits": "150,000 tasks/month; unlimited automations and users; 2-minute update time.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "100 tasks/month, 5 automations, 15-minute update time, 1-step automations and no webhooks",
+    "billingTerms": "monthly + annual; displayed annual prices are effective monthly rates",
+    "priceChanges": [],
+    "hiddenCosts": "Only successful external action, search, condition and data-modification steps consume tasks; triggers, failed steps and many internal tools are free. Automations can queue or stop when tasks run out, and applicable taxes are extra.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://integrately.com/pricing",
+      "https://integrately.com/lp/linkedin-offer"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Integrately, connect two services through a fixed trigger and action with retries. The hard boundary is integration catalog, prebuilt recipes, oauth, schema upkeep, and hosted execution, plus connector breadth and execution reliability.",
+  "coreLoopDIY": "Connect two specific services through a fixed trigger and action, execute a small durable workflow, expose retries and logs, and avoid claiming a general integration platform.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "OAuth or API credentials for two chosen services",
+    "PostgreSQL",
+    "Redis",
+    "public HTTPS endpoint",
+    "background worker"
+  ],
+  "whatYouLose": [
+    "integration catalog, prebuilt recipes, OAuth, schema upkeep, and hosted execution",
+    "thousands of connectors",
+    "maintained OAuth applications",
+    "schema-drift handling",
+    "high-scale durable execution and support"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra"
+  ],
+  "moatNotes": "connector breadth and execution reliability",
+  "replacementScope": "two-service personal automation",
+  "ongoingBurden": "OAuth review, token refresh, webhooks, polling, schemas, retries, idempotency, queues, secrets, rate limits, observability, and upgrades",
+  "whyPeopleStillPay": "People still pay for Integrately because one automation is easy; maintaining hundreds of connectors and making every run recoverable is the business. The recurring cost buys OAuth review, token refresh, webhooks, polling, schemas, retries, idempotency, queues, secrets, rate limits, observability, and upgrades, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Activepieces",
+      "url": "https://github.com/activepieces/activepieces",
+      "desc": "Active open-source automation platform with connectors and durable workflow execution."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Activepieces Community Edition",
+      "url": "https://www.activepieces.com/open-source",
+      "type": "open-source",
+      "repo": "https://github.com/activepieces/activepieces",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A fixed trigger, an action, retries, and enough connectors to retire small Integrately flows.",
+      "stars": 23604,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Run one Docker container for personal/testing use, or Docker Compose with PostgreSQL and Redis for production.",
+        "engines": "AI pieces connect to providers such as OpenAI, Anthropic and Google Gemini using user-supplied credentials.",
+        "dataFormat": "Single-container mode stores data under ~/.activepieces; production uses PostgreSQL and Redis, with files/logs optionally in S3-compatible storage.",
+        "gapVsPaid": "Activepieces has fewer one-click prebuilt mappings than Integrately and adds a self-hosted operations burden.",
+        "setupBlocker": "Requires Docker; public webhooks need a reachable HTTPS URL, while production also needs PostgreSQL, Redis and managed secrets.",
+        "sources": [
+          "https://github.com/activepieces/activepieces",
+          "https://github.com/activepieces/activepieces/blob/main/LICENSE",
+          "https://www.activepieces.com/docs/install/options/docker",
+          "https://www.activepieces.com/docs/install/options/docker-compose",
+          "https://www.activepieces.com/docs/install/reference/environment-variables",
+          "https://integrately.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Automatisch",
+      "url": "https://automatisch.io/",
+      "type": "open-source",
+      "repo": "https://github.com/automatisch/automatisch",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Straightforward app automations without the task counter or the connector sprawl.",
+      "stars": 13923,
+      "lastCommit": "2026-01",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "self-hosted",
+        "install": "Clone the repository and run Docker Compose.",
+        "engines": null,
+        "dataFormat": "Application and credential data stays on the user's server in PostgreSQL, with Redis for queues/cache; credentials are encrypted.",
+        "gapVsPaid": "Automatisch's connector and recipe catalog is much narrower than Integrately's one-click automation library.",
+        "setupBlocker": "Requires Docker, PostgreSQL/Redis configuration and secret management; the default sample login must be changed immediately.",
+        "sources": [
+          "https://github.com/automatisch/automatisch",
+          "https://github.com/automatisch/automatisch/blob/main/LICENSE",
+          "https://github.com/automatisch/automatisch/blob/main/LICENSE.agpl",
+          "https://automatisch.io/docs/guide/installation",
+          "https://integrately.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "n8n Community Edition",
+      "url": "https://n8n.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "More canvas than one-click recipe, but the trigger-action job is free on your server.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-n8n-Sustainable-Use-License",
+        "runs": "self-hosted",
+        "install": "Install with Docker or npm; Docker is the recommended production path.",
+        "engines": "AI nodes connect to OpenAI, Anthropic, Google, Ollama and many other model/vector backends.",
+        "dataFormat": "SQLite stores workflows, credentials and executions by default; PostgreSQL is supported, with binary data in the database, filesystem or object storage.",
+        "gapVsPaid": "n8n's flexible canvas is more complex than Integrately's fixed trigger-action recipes and must be operated on your server.",
+        "setupBlocker": "Requires a server, HTTPS and a public webhook URL for many integrations, plus ongoing updates, backups and provider credentials.",
+        "sources": [
+          "https://github.com/n8n-io/n8n",
+          "https://github.com/n8n-io/n8n/blob/master/LICENSE.md",
+          "https://docs.n8n.io/privacy-and-security/sustainable-use-license/",
+          "https://docs.n8n.io/deploy/host-n8n/community-edition-features",
+          "https://docs.n8n.io/deploy/host-n8n/install-options/install-with-docker",
+          "https://docs.n8n.io/deploy/host-n8n/understand-the-architecture/understand-the-database",
+          "https://docs.n8n.io/deploy/host-n8n/configure-n8n/basic-configuration/use-environment-variables/binary-data",
+          "https://docs.n8n.io/build/integrate-ai",
+          "https://integrately.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "pipedream",
+    "ifttt",
+    "relay-app"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a two-service personal automation DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Integrately in an empty repository.\nUse TypeScript, Node.js 22, PostgreSQL, Redis, BullMQ, and Docker Compose; do not offer alternative stacks.\nThe core loop is: connect two specific services through a fixed trigger and action, execute a small durable workflow, expose retries and logs, and avoid claiming a general integration platform.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement a fixed trigger, transform, condition, and action workflow model rather than a general visual language.\nConnect exactly two named services using documented APIs and encrypted credentials.\nStore every run, step input hash, output summary, retry, and final status in PostgreSQL.\nMake side effects idempotent and support retry from the failed step without repeating completed actions.\nAdd rate limits, backoff, dead-letter handling, manual replay, cancellation, and secret rotation.\nShip Docker Compose, health checks, sample workflows, tests, backups, and connector-limit documentation.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a broad connector marketplace.\nDeliberately leave out unreviewed user code execution.\nDeliberately leave out enterprise governance, guaranteed execution, and vendor-operated OAuth apps.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

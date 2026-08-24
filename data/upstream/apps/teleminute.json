@@ -1,0 +1,116 @@
+{
+  "slug": "teleminute",
+  "name": "TeleMinute",
+  "domain": "teleminute.com",
+  "category": "no-code-apps",
+  "subcategory": "telegram bot builder",
+  "tagline": "No-code Telegram bot builder with commands, auto-replies, lead forms, and broadcasts",
+  "priceMonthly": 9.99,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "9.99 USD",
+    "source": "https://teleminute.com/",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Starter is $4.99/month for up to 2 bots; Pro is $9.99/month with unlimited bots, broadcasts to all bot users, and detailed analytics. A free tier exists.",
+    "tiers": [
+      {
+        "name": "Premium",
+        "monthly": 9.99,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited bots, commands, keyword replies, users and traffic; up to 4 images per command",
+        "notes": "Also offered at $3.99/week or as a $49.99 one-time lifetime purchase."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "weekly ($3.99), monthly ($9.99) or one-time lifetime ($49.99); no annual plan",
+    "priceChanges": [],
+    "hiddenCosts": "The nominal subscription is flat with unlimited bots and traffic; payment-processing, Telegram advertising or third-party integrations may create external costs, but no platform overage schedule is published",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://teleminute.com/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A single personal bot with commands, keyword replies, and a basic broadcast is a solid weekend build on Telegram's friendly Bot API. What you are really buying is the hosted no-code layer: a dashboard a non-technical shop owner edits from a phone, scheduled broadcasts, lead-capture forms, analytics, and native iOS/Android apps. If you can run code you can replace your own subscription, but you cannot hand the DIY version to a client who cannot.",
+  "coreLoopDIY": "Register a bot with @BotFather, run a long-polling Node process that answers commands and keyword triggers from a config file, store chats and leads in SQLite, and add an owner-only broadcast command.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "Telegram bot token",
+    "always-on process (VPS or spare machine)",
+    "SQLite",
+    "config file for commands"
+  ],
+  "whatYouLose": [
+    "no-code dashboard",
+    "mobile apps",
+    "scheduled broadcasts",
+    "lead-capture form builder",
+    "analytics"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "hosted convenience/nontechnical UX",
+  "whyPeopleStillPay": "They pay because the target user is a cafe or gym owner who will never open a terminal, and TeleMinute gives them a working bot in minutes from a phone.",
+  "priorArt": [
+    {
+      "name": "grammY",
+      "url": "https://github.com/grammyjs/grammY",
+      "desc": "TypeScript Telegram bot framework that makes the DIY version mostly glue code.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Activepieces",
+      "url": "https://www.activepieces.com/",
+      "type": "open-source",
+      "repo": "https://github.com/activepieces/activepieces",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A visual automation product with Telegram triggers, replies, forms, and broadcasts; you assemble the bot rather than code it.",
+      "stars": 23604,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "n8n Community Edition",
+      "url": "https://n8n.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A visual Telegram workflow engine that can receive commands, branch, collect answers, and broadcast; self-hosting is the price of free.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "grammY",
+      "url": "https://grammy.dev/",
+      "desc": "A very good Telegram bot library, which is precisely why a non-builder should not be sent here."
+    }
+  ],
+  "relatedSlugs": [
+    "chatwoot-cloud",
+    "livechat"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "The bot itself is an afternoon; the product is that a cafe owner never has to see a terminal.",
+  "prompt": "Build me a personal Telegram bot for one business, replacing TeleMinute. Requirements:\n\n- Node 22 + grammY + better-sqlite3, one small project, no build step; data\n  lives in data/bot.db.\n- Long polling, not webhooks, so it runs anywhere with just BOT_TOKEN in\n  .env (create the bot with @BotFather first).\n- Commands are defined in commands.yaml: name, reply text, optional image\n  path, optional inline URL buttons. Hot-reload the file on change.\n- Keyword auto-replies in the same file: trigger words like \"price\" or\n  \"hours\" mapped to reply text.\n- /start sends a greeting listing the available commands.\n- Lead capture: /contact walks the user through name, phone, and message as\n  a short conversation, saves it to a leads table, and notifies me\n  (OWNER_CHAT_ID) immediately.\n- Owner-only /broadcast <text>: send to every chat that has messaged the\n  bot, throttled under Telegram rate limits, then report sent and failed\n  counts.\n- Owner-only /stats: total users, messages per day for the last 14 days,\n  top 5 commands.\n- README: BotFather setup, .env keys (BOT_TOKEN, OWNER_CHAT_ID), and how to\n  keep it running with pm2.\n- Out of scope: multi-bot management, a web dashboard, scheduled\n  broadcasts, and mobile apps; that is what the hosted product is for.",
+  "promptCurated": true
+}

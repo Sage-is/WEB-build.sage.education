@@ -1,0 +1,148 @@
+{
+  "slug": "avoma",
+  "name": "Avoma",
+  "domain": "avoma.com",
+  "appURL": "https://avoma.com",
+  "category": "meeting-notes",
+  "subcategory": "meeting transcription and AI notes",
+  "tagline": "Transcribe calls and maintain a lightweight coaching notebook from user-owned recordings",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Startup",
+    "basis": "annual-equivalent per user",
+    "unit": "per-seat",
+    "source": "https://avoma.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Advertised annual-equivalent startup seat price; monthly billing is higher.",
+    "native": "29 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Startup",
+        "monthly": 29,
+        "annualPerMonth": 19,
+        "per": "user",
+        "limits": "Up to 25 paid recorder seats; unlimited meetings, transcription, and storage; 5 uploaded files per user/month.",
+        "notes": "Only recorder seats are paid."
+      },
+      {
+        "name": "Organization",
+        "monthly": 39,
+        "annualPerMonth": 29,
+        "per": "user",
+        "limits": "Up to 100 paid recorder seats; unlimited meetings, transcription, and storage; 10 uploaded files per user/month.",
+        "notes": "Only recorder seats are paid."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": 39,
+        "per": "user",
+        "limits": "Minimum 10 paid recorder seats; unlimited meetings, transcription, and storage; 20 uploaded files per user/month.",
+        "notes": "Annual price is public; monthly price is not."
+      },
+      {
+        "name": "Conversation Intelligence add-on",
+        "monthly": 35,
+        "annualPerMonth": 29,
+        "per": "user",
+        "limits": "Conversation intelligence for each licensed seat; requires an Avoma meeting-assistant base plan.",
+        "notes": "Charged in addition to the base recorder-seat price."
+      },
+      {
+        "name": "Revenue Intelligence add-on",
+        "monthly": 35,
+        "annualPerMonth": 29,
+        "per": "user",
+        "limits": "Revenue intelligence for each licensed seat; requires an Avoma meeting-assistant base plan.",
+        "notes": "Charged in addition to the base recorder-seat price."
+      },
+      {
+        "name": "Lead Router add-on",
+        "monthly": 25,
+        "annualPerMonth": 19,
+        "per": "user",
+        "limits": "Lead-routing features for each licensed seat; requires an Avoma meeting-assistant base plan.",
+        "notes": "Charged in addition to the base recorder-seat price."
+      }
+    ],
+    "freeTierCaps": "no permanent recorder tier; unlimited view-only/collaborator users are free",
+    "billingTerms": "monthly + annual; 14-day unrestricted Organization trial with all add-ons and no card",
+    "priceChanges": [],
+    "hiddenCosts": "Enterprise starts at 10 recorder seats; add-ons cost $19-$35 per licensed seat on top of the base plan; bulk prerecorded imports can incur a one-time volume fee, and optional expert onboarding is $1,000.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.avoma.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Avoma, transcribe calls and maintain a lightweight coaching notebook from user-owned recordings. The hard boundary is conversation intelligence, crm data, forecasting, coaching, and enterprise integrations, plus capture reliability, integrations, and collaboration.",
+  "coreLoopDIY": "Record or import a meeting, transcribe it locally, identify speakers with manual correction, generate structured notes, and maintain a lightweight coaching notebook from user-owned recordings.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "desktop microphone access",
+    "whisper.cpp model files",
+    "optional OpenAI or Anthropic API key",
+    "local storage"
+  ],
+  "whatYouLose": [
+    "conversation intelligence, CRM data, forecasting, coaching, and enterprise integrations",
+    "calendar auto-join",
+    "reliable speaker diarization",
+    "mobile capture",
+    "team search and sharing"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration",
+    "execution-polish"
+  ],
+  "moatNotes": "capture reliability, integrations, and collaboration",
+  "replacementScope": "personal meeting notebook",
+  "ongoingBurden": "audio permissions, model updates, calendar APIs, storage, speaker correction, and sync",
+  "whyPeopleStillPay": "People still pay for Avoma because a meeting tool must capture every call without surprising anyone, then make the result searchable and shareable across a team. The recurring cost buys audio permissions, model updates, calendar APIs, storage, speaker correction, and sync, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggerganov/whisper.cpp",
+      "desc": "Widely used local Whisper inference implementation suitable for private transcription."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Speakr",
+      "url": "https://murtaza-nasir.github.io/speakr/",
+      "type": "open-source",
+      "repo": "https://github.com/murtaza-nasir/speakr",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Upload or record calls, separate speakers, keep searchable notes and inspect speaker stats; the server is now your problem.",
+      "stars": 3600,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "OpenWhispr",
+      "url": "https://openwhispr.com/",
+      "desc": "Excellent transcription and searchable notes, but no coaching notebook, scorecards or call-review workflow."
+    }
+  ],
+  "relatedSlugs": [
+    "fathom-ai",
+    "read-ai",
+    "meetgeek"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Startup plan and a personal meeting notebook DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Avoma in an empty repository.\nUse Python 3.12, FastAPI, SQLite, whisper.cpp, and a minimal HTMX interface; do not offer alternative stacks.\nThe core loop is: record or import a meeting, transcribe it locally, identify speakers with manual correction, generate structured notes, and maintain a lightweight coaching notebook from user-owned recordings.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nAdd explicit start, pause, resume, and stop controls with a visible recording indicator.\nSupport importing WAV, MP3, M4A, and MP4 files through ffmpeg.\nRun transcription locally and display timestamped editable segments.\nLet the user rename speakers and propagate corrections through the transcript.\nGenerate decisions, action items, questions, and a concise summary from approved text.\nExport Markdown, plain text, and WebVTT beside the original recording.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out silent background capture.\nDeliberately leave out automatic bot attendance in video meetings.\nDeliberately leave out team workspaces and enterprise retention controls.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

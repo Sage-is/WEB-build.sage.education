@@ -1,0 +1,119 @@
+{
+  "slug": "verifieddr",
+  "name": "VerifiedDR",
+  "domain": "verifieddr.com",
+  "category": "seo-marketing",
+  "subcategory": "search and AI visibility",
+  "tagline": "Search and AI visibility platform with TrueDR, monitoring, and verified partnerships",
+  "priceMonthly": 39,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "39 USD",
+    "source": "https://verifieddr.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro is $39/month, Max is $99/month, and Ultra is $199/month.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "1 AI scan total; 4 questions across 3 platforms; unlimited verified sites; 3 keywords/site; 2 link exchanges/month; 25 lifetime API calls.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 39,
+        "annualPerMonth": 26,
+        "per": "workspace",
+        "limits": "25 prompts account-wide; 20 keywords/site; 20 link exchanges/month; 1,000 API calls.",
+        "notes": "Annual plan charges for 8 months ($312/year)."
+      },
+      {
+        "name": "Max",
+        "monthly": 99,
+        "annualPerMonth": 66,
+        "per": "workspace",
+        "limits": "75 prompts account-wide; 50 keywords/site; 50 link exchanges/month; 5,000 API calls.",
+        "notes": "Annual plan charges for 8 months ($792/year)."
+      },
+      {
+        "name": "Ultra",
+        "monthly": 199,
+        "annualPerMonth": 132.67,
+        "per": "workspace",
+        "limits": "200 prompts account-wide; 100 keywords/site; unlimited link exchanges; 10,000 API calls.",
+        "notes": "Annual plan charges for 8 months ($1,592/year)."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom prompts, keywords, API volume, support, and partnership capacity.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "1 AI scan total; 4 questions across 3 platforms; unlimited verified sites; 3 keywords/site; 2 link exchanges/month; 25 lifetime API calls",
+    "billingTerms": "monthly + annual (annual charges for 8 months, effectively 4 months free); cancel or switch anytime; tax may be added",
+    "priceChanges": [],
+    "hiddenCosts": "The advertised 7-day trial costs $9 and is not free. Backlink packages and partnership services can add separate charges.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://verifieddr.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A personal dashboard for an owned site is a weekend build with Search Console and model APIs, but TrueDR, backlink intelligence, historical monitoring, and the partner marketplace depend on paid data, operations, and a live network.",
+  "coreLoopDIY": "Track one site's search performance and sample buyer-question visibility across model APIs, then rank the pages and queries that need work.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google Search Console OAuth",
+    "OpenAI API key",
+    "Perplexity API key",
+    "Gemini API key",
+    "local scheduled process"
+  ],
+  "whatYouLose": [
+    "TrueDR and commercial backlink data",
+    "exact ChatGPT, Perplexity, and Google AI Mode surfaces",
+    "cross-site partner network and marketplace",
+    "managed refresh jobs and alerts",
+    "traffic estimates and competitor data"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "network-effects",
+    "integrations"
+  ],
+  "moatNotes": "data access/network/operations",
+  "whyPeopleStillPay": "They pay for verified backlink and traffic data, cross-model checks, historical monitoring, and a partner network without maintaining API integrations and scheduled jobs.",
+  "priorArt": [],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Elmo",
+      "url": "https://www.elmohq.com/",
+      "desc": "Strong on AI mentions and citations; it has no TrueDR analogue, verified-partnership network or conventional search-visibility layer."
+    },
+    {
+      "name": "OpenSEO",
+      "url": "https://openseo.so/",
+      "desc": "Covers organic data and two AI surfaces; no TrueDR, no verified partnerships and no multi-engine AI benchmark."
+    }
+  ],
+  "relatedSlugs": [
+    "semrush",
+    "ahrefs",
+    "surfer-seo"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "A strong kinda: the solo monitoring loop is reachable, but the external data and partner network are the product.",
+  "prompt": "Build me a local search and AI visibility tracker like VerifiedDR for one site. Requirements:\n\n- Use Node 22, Express, better-sqlite3, and server-rendered HTML with a little\n  vanilla JS; bind the app to localhost:4173.\n- A settings page stores one domain, brand aliases, and 20 buyer questions in\n  SQLite; API secrets stay in .env.\n- Connect Google Search Console with OAuth and import clicks, impressions, CTR,\n  and average position for the last 28 days by query and landing page.\n- On demand, ask the 20 questions through OpenAI Responses, Perplexity, and\n  Gemini APIs; store answers, citations, run date, and brand/domain mentions.\n- Show 7-day and 28-day GSC changes, mention rate per model, cited domains, and\n  a history sparkline for every question on the local dashboard.\n- Crawl the sitemap weekly with undici and cheerio; record status, title,\n  canonical, noindex, and broken internal links for every page.\n- Build an action queue: lost mentions first, falling GSC pages second, and\n  broken or noindex pages third; every item links to its evidence.\n- Schedule checks with node-cron, retain raw JSON, and export every run as\n  Markdown plus CSV in ./exports/.\n- No accounts or telemetry. Keep it local except for OAuth and API calls.\n  Skip TrueDR, external backlink data, competitors, and the partner marketplace.\n- README: Google OAuth setup, required keys, API cost estimates, backup and\n  restore commands, and how to run one manual check.",
+  "promptCurated": true
+}

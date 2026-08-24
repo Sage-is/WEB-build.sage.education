@@ -1,0 +1,120 @@
+{
+  "slug": "topaz-photo-ai",
+  "name": "Topaz Photo AI",
+  "domain": "topazlabs.com",
+  "appURL": "https://topazlabs.com",
+  "category": "design",
+  "subcategory": "AI photo enhancement",
+  "tagline": "Desktop denoising, sharpening, recovery, and image upscaling",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://topazlabs.com/topaz-photo-ai",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Personal",
+        "monthly": 39,
+        "annualPerMonth": 17,
+        "per": "user",
+        "limits": "Unlimited local and cloud image rendering for individual/personal organisations.",
+        "notes": "Other billing option: $25/month with an annual commitment billed monthly; annual prepaid price is $199."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 50,
+        "per": "user",
+        "limits": "Full commercial licence and Pro entitlement; public month-to-month price was not exposed.",
+        "notes": "Other billing option: $63/month with an annual commitment billed monthly; annual prepaid price is $599."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "month-to-month, annual commitment billed monthly, or annual prepaid",
+    "priceChanges": [],
+    "hiddenCosts": "Personal commercial use is restricted to organisations with under $1 million annual revenue; larger commercial use requires Pro. The cheapest displayed rate requires a full year prepaid.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.topazlabs.com/pricing",
+      "https://www.topazlabs.com/topaz-photo-ai"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Do not mistake the interface for the product. Topaz Photo AI's durable value is editor polish, assets, algorithms, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a focused local AI photo enhancement editor with import, a small set of transformations, undo, and standards-based export.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "desktop development machine",
+    "Node.js 22 and Rust toolchain",
+    "sample user-owned assets",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "cloud collaboration and mobile apps",
+    "high-fidelity color, format, and export handling",
+    "pixel-perfect professional tooling",
+    "large template and asset libraries",
+    "color-management edge cases"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "execution-polish"
+  ],
+  "moatNotes": "editor polish/assets/algorithms",
+  "whyPeopleStillPay": "Topaz Photo AI: Creative users pay for speed, output fidelity, nondestructive editing, and years of edge-case work hidden behind direct manipulation.",
+  "ongoingBurden": "Maintain file-format compatibility, GPU and canvas performance, undo history, export quality, and platform-specific rendering.",
+  "priorArt": [
+    {
+      "name": "Penpot",
+      "url": "https://github.com/penpot/penpot",
+      "desc": "Open-source collaborative design and prototyping platform."
+    },
+    {
+      "name": "PhotoPrism",
+      "url": "https://github.com/photoprism/photoprism",
+      "desc": "Self-hosted photo organization and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "QualityScaler",
+      "url": "https://github.com/Djdefrag/QualityScaler",
+      "type": "open-source",
+      "repo": "https://github.com/Djdefrag/QualityScaler",
+      "platforms": [
+        "windows"
+      ],
+      "desc": "A packaged local Windows app for AI upscaling, denoise, and enhancement, including batch work; narrower and less polished than Topaz.",
+      "stars": 3100,
+      "lastCommit": "2026-03",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Upscayl",
+      "url": "https://upscayl.org/",
+      "desc": "Excellent free upscaling and sharpening, but no integrated RAW recovery or serious denoise workflow; one feature is not the whole product."
+    }
+  ],
+  "relatedSlugs": [
+    "sketch",
+    "kittl",
+    "dxo-photolab"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Topaz Photo AI survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Topaz Photo AI; do not claim to replace its structural moat.\nUse exactly this stack: Tauri 2 + React + TypeScript + Canvas API.\nPrimary job: Build a focused local AI photo enhancement editor with import, a small set of transformations, undo, and standards-based export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: cloud collaboration and mobile apps; high-fidelity color, format, and export handling; pixel-perfect professional tooling.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

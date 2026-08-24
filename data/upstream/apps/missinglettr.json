@@ -1,0 +1,123 @@
+{
+  "slug": "missinglettr",
+  "name": "Missinglettr",
+  "domain": "missinglettr.com",
+  "appURL": "https://missinglettr.com",
+  "category": "social-media",
+  "subcategory": "content repurposing",
+  "tagline": "Turns blog content into scheduled social campaigns and curated posts",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://missinglettr.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Solo",
+        "monthly": 15,
+        "annualPerMonth": 12.5,
+        "per": "flat",
+        "limits": "1 workspace, 1 extra user, 3 social profiles, 100 AI post + 100 AI article + 100 AI image generations",
+        "notes": "Annual billing gives 2 months free; effective monthly price calculated from the published monthly price."
+      },
+      {
+        "name": "Pro",
+        "monthly": 39,
+        "annualPerMonth": 32.5,
+        "per": "flat",
+        "limits": "3 workspaces, 10 social profiles, 500 AI post + 500 AI article + 500 AI image generations",
+        "notes": "Annual billing gives 2 months free; effective monthly price calculated from the published monthly price."
+      },
+      {
+        "name": "Agency",
+        "monthly": 147,
+        "annualPerMonth": 122.5,
+        "per": "flat",
+        "limits": "Unlimited workspaces and users, 25 social profiles, 10,000 scheduled posts, unlimited Curate posts",
+        "notes": "Starts at $147/month; extra social profiles are available at an unpublished discounted add-on rate. Annual effective price assumes the page-wide 2-month-free term."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Custom increased capacity, integrations, account management and features",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (2 months free); all paid plans include a free trial with no card required",
+    "priceChanges": [],
+    "hiddenCosts": "Agency includes 25 social profiles, then charges an unpublished add-on rate for more; mid-cycle plan changes are prorated.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://missinglettr.com/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible content repurposing loop is buildable, but a credible replacement needs more than the first screen. Missinglettr earns its keep through platform APIs, distribution, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a personal content repurposing planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "hosted database and worker",
+    "official platform OAuth credentials where available"
+  ],
+  "whatYouLose": [
+    "analytics history and attribution",
+    "team approvals and asset workflows",
+    "protection from API and policy changes",
+    "direct publishing reliability as platform APIs change",
+    "reliable direct publishing across networks"
+  ],
+  "moatTags": [
+    "integrations"
+  ],
+  "moatNotes": "platform APIs/distribution",
+  "whyPeopleStillPay": "Missinglettr: Social tools survive because networks change APIs, permissions, formats, and anti-spam rules constantly.",
+  "ongoingBurden": "Maintain OAuth, token refresh, media constraints, rate limits, scheduling, webhooks, retries, and platform policy compliance.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Open-source social scheduling and publishing platform."
+    },
+    {
+      "name": "Mixpost",
+      "url": "https://github.com/inovector/mixpost",
+      "desc": "Self-hosted social media management software."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Mixpost Lite",
+      "url": "https://mixpost.app/",
+      "desc": "Evergreen queues are present; turning one article into a finished campaign is still manual."
+    },
+    {
+      "name": "Postiz",
+      "url": "https://postiz.com/",
+      "desc": "RSS auto-posting and repeats exist, but not the blog-to-campaign generator or curated-content loop."
+    }
+  ],
+  "relatedSlugs": [
+    "repurpose-io",
+    "taplio",
+    "socialpilot"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Missinglettr is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Missinglettr, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build a personal content repurposing planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: analytics history and attribution; team approvals and asset workflows; protection from API and policy changes.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

@@ -1,0 +1,137 @@
+{
+  "slug": "serpstat",
+  "name": "Serpstat",
+  "domain": "serpstat.com",
+  "appURL": "https://serpstat.com",
+  "category": "seo-marketing",
+  "subcategory": "keyword research, backlinks and rank tracking",
+  "tagline": "Track selected keywords and import competitor research into a local project",
+  "priceMonthly": 69,
+  "pricing": {
+    "plan": "Individual",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://serpstat.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Individual monthly tier.",
+    "native": "69 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Individual",
+        "monthly": 69,
+        "annualPerMonth": 50,
+        "per": "workspace",
+        "limits": "5 projects; 100 searches/day; 10,000 position checks; 30,000 audit pages; 50,000 export rows; 1 user.",
+        "notes": null
+      },
+      {
+        "name": "Team",
+        "monthly": 129,
+        "annualPerMonth": 100,
+        "per": "workspace",
+        "limits": "Unlimited projects; 500 searches/day; 150,000 audit pages; 250,000 export rows; 3 users.",
+        "notes": null
+      },
+      {
+        "name": "Team x2",
+        "monthly": null,
+        "annualPerMonth": 169,
+        "per": "workspace",
+        "limits": "1,000 searches/day; 100,000 position checks; 300,000 audit pages; 500,000 export rows; 6 users; 400,000 API credits.",
+        "notes": "Exact monthly price was not reliably exposed."
+      },
+      {
+        "name": "Agency",
+        "monthly": 499,
+        "annualPerMonth": 410,
+        "per": "workspace",
+        "limits": "5,000 searches/day; 500,000 position checks; 1,500,000 audit pages; 2,500,000 export rows; 30 users.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier (7-day trial on Individual and Team only)",
+    "billingTerms": "monthly + annual (annual saves up to 27%); trials require a refundable $1 card verification and auto-renew unless cancelled",
+    "priceChanges": [],
+    "hiddenCosts": "Team limits can be expanded through paid customization; public unit prices vary by selected capacity.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://serpstat.com/page/pricing-plans/",
+      "https://serpstat.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Serpstat, track selected keywords and import competitor research into a local project. The hard boundary is proprietary search, backlink, advertising, and competitor datasets, plus proprietary web index and data acquisition.",
+  "coreLoopDIY": "Track a user-supplied keyword set, import competitor research into a local project, collect permitted search-result snapshots at low volume, and show trends without pretending to recreate a commercial web index.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "self-hosted server",
+    "PostgreSQL",
+    "approved search-data API or manual imports",
+    "scheduled worker"
+  ],
+  "whatYouLose": [
+    "proprietary search, backlink, advertising, and competitor datasets",
+    "planet-scale crawl index",
+    "backlink graph",
+    "clickstream estimates",
+    "high-volume location-specific SERPs"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "scale-infra"
+  ],
+  "moatNotes": "proprietary web index and data acquisition",
+  "replacementScope": "small owned-keyword tracker",
+  "ongoingBurden": "proxy and API costs, crawl freshness, geolocation, anti-bot rules, keyword normalization, storage, and data QA",
+  "whyPeopleStillPay": "People still pay for Serpstat because customers pay for a continuously refreshed web-scale dataset whose collection cost dwarfs the dashboard around it. The recurring cost buys proxy and API costs, crawl freshness, geolocation, anti-bot rules, keyword normalization, storage, and data QA, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "SerpBear",
+      "url": "https://github.com/towfiqi/serpbear",
+      "desc": "Open-source search ranking tracker for owned keyword sets."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "OpenSEO",
+      "url": "https://openseo.so/",
+      "type": "open-source",
+      "repo": "https://github.com/every-app/open-seo",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Tracks keywords and stores competitor domain research locally; DataForSEO supplies the facts and charges by the spoonful.",
+      "stars": 10614,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "SerpBear",
+      "url": "https://docs.serpbear.com/",
+      "desc": "Excellent at tracking your keywords, entirely uninterested in importing competitor research."
+    },
+    {
+      "name": "Serposcope",
+      "url": "https://www.serposcope.com/",
+      "desc": "Rank tracking only, archived in 2024 and last touched in January 2022."
+    }
+  ],
+  "relatedSlugs": [
+    "moz-pro",
+    "se-ranking",
+    "mangools"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Individual plan and a small owned-keyword tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Serpstat in an empty repository.\nUse Python 3.12, FastAPI, PostgreSQL, Playwright, and a small React frontend; do not offer alternative stacks.\nThe core loop is: track a user-supplied keyword set, import competitor research into a local project, collect permitted search-result snapshots at low volume, and show trends without pretending to recreate a commercial web index.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate projects with domains, keywords, target country, language, device, and tags.\nFetch rankings only through the configured compliant API and enforce a daily budget.\nStore raw result snapshots and normalized positions so every chart is auditable.\nDisplay current rank, movement, best rank, URL changes, and a compact SERP history.\nImport backlink and keyword files from third-party tools without claiming independent coverage.\nAdd scheduled runs, failure alerts, CSV export, retention settings, and database backups.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out building a general web crawler or backlink index.\nDeliberately leave out circumventing search-engine access controls.\nDeliberately leave out traffic estimates presented as observed first-party data.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,196 @@
+{
+  "slug": "factorial-hr",
+  "name": "Factorial",
+  "domain": "factorialhr.com",
+  "appURL": "https://factorialhr.com",
+  "category": "hr",
+  "subcategory": "HR, recruiting, payroll and workforce operations",
+  "tagline": "Track documents, leave, schedules, and onboarding without payroll calculations",
+  "priceMonthly": 8,
+  "pricing": {
+    "plan": "Business",
+    "basis": "monthly per employee starting",
+    "unit": "per-seat",
+    "source": "https://factorialhr.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "Public pricing varies by country and module; recorded starting amount requires recheck.",
+    "native": "8 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Factorial Core",
+        "monthly": 8,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Starts at $8/user/month; employee directory, onboarding/offboarding, payslips, bulk documents, e-signatures, notifications, and fillable PDFs",
+        "notes": null
+      },
+      {
+        "name": "Custom module bundle",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Quote-selected modules can include Time Off, Time Tracking, Performance, Shift Management, Recruitment, Engagement, Projects, Expenses, and Training",
+        "notes": "No public numeric module price or annual rate."
+      }
+    ],
+    "freeTierCaps": "no free tier; demo only",
+    "billingTerms": "contract/annual terms are quote-only; public page states only a starting monthly per-user rate",
+    "priceChanges": [],
+    "hiddenCosts": "The $8/user/month figure is a starting price for Core, not a complete bundle. Operational modules are separately selected and quote-priced, so the final per-user cost is not public.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://factorialhr.com/pricing-plans"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Factorial, track documents, leave, schedules, and onboarding without payroll calculations. The hard boundary is hr workflows, time, payroll integrations, compliance, analytics, and support, plus compliance, payroll, and regulated integrations.",
+  "coreLoopDIY": "Track documents, leave, schedules, and onboarding, maintain approvals and records, and export data without calculating payroll or making employment decisions.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "PostgreSQL",
+    "private self-hosted deployment",
+    "strict admin access",
+    "documented retention policy"
+  ],
+  "whatYouLose": [
+    "HR workflows, time, payroll integrations, compliance, analytics, and support",
+    "payroll rails",
+    "tax and labor-law compliance",
+    "benefits integrations",
+    "identity checks and global employment infrastructure"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "integrations"
+  ],
+  "moatNotes": "compliance, payroll, and regulated integrations",
+  "replacementScope": "internal records tracker without payroll",
+  "ongoingBurden": "sensitive data, access, retention, audit, payroll calculations, filings, benefits, employment law, incident response, and support",
+  "whyPeopleStillPay": "People still pay for Factorial because HR platforms survive because mistakes affect pay, benefits, immigration, and legal obligations, not because forms are difficult to render. The recurring cost buys sensitive data, access, retention, audit, payroll calculations, filings, benefits, employment law, incident response, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Frappe HR",
+      "url": "https://github.com/frappe/hrms",
+      "desc": "Active open-source human-resources and payroll application built on Frappe."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Connecteam Small Business Plan",
+      "url": "https://connecteam.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Documents, leave, schedules and onboarding for ten people; user eleven starts the subscription.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, then invite staff to the web and mobile apps",
+        "engines": null,
+        "dataFormat": "Employee records, documents, schedules and time data in Connecteam's cloud; schedules and timesheets export to Excel, PDF, CSV or payroll-specific files",
+        "gapVsPaid": "The free plan stops at ten total users and has less HR-record and approval depth than Factorial.",
+        "setupBlocker": null,
+        "sources": [
+          "https://connecteam.com/",
+          "https://connecteam.com/pricing/",
+          "https://help.connecteam.com/en/articles/6393056-small-business-plan-frequently-asked-questions",
+          "https://help.connecteam.com/en/articles/6410944-the-small-business-plan",
+          "https://help.connecteam.com/en/articles/9448683-is-there-a-limit-to-the-number-of-users-i-can-add-to-a-plan",
+          "https://help.connecteam.com/en/articles/6453258-can-i-export-my-team-s-schedule",
+          "https://help.connecteam.com/en/articles/5917303-time-clock-export-options",
+          "https://factorialhr.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Horilla HR",
+      "url": "https://www.horilla.com/",
+      "type": "open-source",
+      "repo": "https://github.com/horilla/horilla-hr",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Documents, onboarding, leave and rotating shifts in Docker; administration is the free-plan limit.",
+      "stars": 1400,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LGPL-2.1-only",
+        "runs": "self-hosted",
+        "install": "Clone the stable 2.0 branch and run docker-compose up -d; a manual Django setup is also documented",
+        "engines": null,
+        "dataFormat": "HR records in PostgreSQL by default, with uploaded media on server storage or optional Google Cloud Storage",
+        "gapVsPaid": "Its administration, integrations and polish lag Factorial, and deployment, security, backups and upgrades are yours.",
+        "setupBlocker": "Docker and production configuration: database credentials, secret key, allowed hosts, HTTPS, backups and mail remain the operator's job",
+        "sources": [
+          "https://github.com/horilla/horilla-hr",
+          "https://github.com/horilla/horilla-hr/blob/2.0/LICENSE",
+          "https://github.com/horilla/horilla-hr/blob/2.0/.env.dist",
+          "https://www.horilla.com/",
+          "https://docs.horilla.com/",
+          "https://factorialhr.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Frappe HR",
+      "url": "https://frappe.io/hr",
+      "type": "open-source",
+      "repo": "https://github.com/frappe/hrms",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Employee documents, onboarding, leave and shifts in one full HR stack; you operate the stack.",
+      "stars": 8500,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Launch its Docker Compose stack, or install hrms and ERPNext into an existing Frappe Bench",
+        "engines": null,
+        "dataFormat": "Each Frappe site has its own MariaDB database plus private/public files directories; backups are SQL dumps and file archives under the site",
+        "gapVsPaid": "It replaces Factorial's managed simplicity with a large ERP-adjacent stack whose operations and upgrades are your responsibility.",
+        "setupBlocker": "The full Frappe/ERPNext stack brings Docker, MariaDB, Redis, proxy/TLS and version-compatible app upgrades",
+        "sources": [
+          "https://github.com/frappe/hrms",
+          "https://github.com/frappe/hrms/blob/develop/LICENSE",
+          "https://docs.frappe.io/framework/user/en/basics/sites",
+          "https://docs.frappe.io/framework/user/en/bench/reference/backup",
+          "https://docs.frappe.io/framework/user/en/tutorial/create-a-site",
+          "https://factorialhr.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "gusto",
+    "rippling",
+    "deel"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Business plan and a internal records tracker without payroll DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Factorial in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: track documents, leave, schedules, and onboarding, maintain approvals and records, and export data without calculating payroll or making employment decisions.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement employees, teams, roles, documents, leave requests, equipment, onboarding tasks, and acknowledgements.\nUse least-privilege roles and log every read or change to sensitive records.\nAdd approval workflows, expiry reminders, export, retention, deletion holds, and encrypted backups.\nKeep compensation fields optional and never calculate payroll, taxes, benefits, or statutory filings.\nProvide a data dictionary and explain which fields should not be stored without legal review.\nShip Docker Compose, health checks, disaster recovery, and an emergency-access procedure.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out payroll calculation or money movement.\nDeliberately leave out automated hiring decisions or applicant scoring.\nDeliberately leave out tax, benefits, immigration, identity, and global-employment compliance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

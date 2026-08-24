@@ -1,0 +1,268 @@
+{
+  "slug": "typedream",
+  "name": "Typedream",
+  "domain": "typedream.com",
+  "appURL": "https://typedream.com",
+  "category": "website-builder",
+  "subcategory": "websites and landing pages",
+  "tagline": "Create a simple responsive landing site from text-first blocks and publish it",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Launch",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://typedream.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Launch monthly rate.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "1 published page, 1 seat, Typedream.app domain and badge; 5% transaction fee plus card or PayPal fees",
+        "notes": "All plans are per site."
+      },
+      {
+        "name": "Launch",
+        "monthly": 20,
+        "annualPerMonth": 15,
+        "per": "workspace",
+        "limits": "Unlimited pages, 1 CMS/blog collection, 1,000 form submissions, 1,000 email subscribers and 2 collaborators; 2% transaction fee",
+        "notes": "Includes one free .xyz domain for the first year."
+      },
+      {
+        "name": "Grow",
+        "monthly": 49,
+        "annualPerMonth": 42,
+        "per": "workspace",
+        "limits": "Unlimited pages, CMS/blog collections and form submissions, 5,000 email subscribers, 5 collaborators and password protection; 2% transaction fee",
+        "notes": "Includes one free .xyz domain for the first year."
+      }
+    ],
+    "freeTierCaps": "1 published page, 1 seat, Typedream.app subdomain and badge; selling incurs 5% plus payment-processing fees",
+    "billingTerms": "monthly + annual; subscriptions auto-renew per site and annual prices are effective monthly rates",
+    "priceChanges": [],
+    "hiddenCosts": "Typedream takes 5% of sales on Free and 2% on both paid plans in addition to card/PayPal processing; each site needs its own subscription, and the included .xyz domain is free only for year one.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://typedream.com/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Typedream, create a simple responsive landing site from text-first blocks and publish it. The hard boundary is hosted editing, forms, analytics, domains, and polished templates, plus editor polish, hosting, templates, and ecosystem.",
+  "coreLoopDIY": "Assemble a simple responsive landing site from text-first blocks, edit copy and media, preview breakpoints, and publish a static site to a user-owned target.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Node.js 22",
+    "domain and deploy target",
+    "local images",
+    "optional form-email API key"
+  ],
+  "whatYouLose": [
+    "hosted editing, forms, analytics, domains, and polished templates",
+    "large template marketplace",
+    "managed hosting and CDN",
+    "advanced CMS",
+    "commerce and agency workflows"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish",
+    "content-rights"
+  ],
+  "moatNotes": "editor polish, hosting, templates, and ecosystem",
+  "replacementScope": "single-site builder",
+  "ongoingBurden": "responsive rendering, forms, domains, certificates, deploys, backups, template maintenance, and browser regressions",
+  "whyPeopleStillPay": "People still pay for Typedream because the page renderer is reproducible, but customers pay to avoid becoming their own hosting and browser-compatibility team. The recurring cost buys responsive rendering, forms, domains, certificates, deploys, backups, template maintenance, and browser regressions, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder designed around web standards."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Mobirise AI",
+      "url": "https://ai.mobirise.com",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Prompt-assisted block sites, hosting and code export free for three projects a month.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Browser signup; projects can be hosted by Mobirise or exported as HTML, CSS and JavaScript",
+        "engines": "Proprietary text-to-site, copy, image and video generation; the underlying model providers are not disclosed",
+        "dataFormat": "Projects are saved in the hosted builder; export downloads ordinary HTML, CSS, JavaScript and asset files",
+        "gapVsPaid": "Mobirise AI is prompt-and-block driven rather than a clean text-first editor, and free creation is capped at three new sites monthly.",
+        "setupBlocker": "The permanent free allowance is capped at three distinct generated/exported projects per month",
+        "sources": [
+          "https://ai.mobirise.com/",
+          "https://mobirise.com/",
+          "https://typedream.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plasmic",
+      "url": "https://www.plasmic.app",
+      "type": "open-source",
+      "repo": "https://github.com/plasmicapp/plasmic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Hosted blocks, responsive design and custom domains free; dramatically more knobs than Typedream.",
+      "stars": 6900,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT AND AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup; optional npm-installed Plasmic CLI for React code generation and deployment in your own repository",
+        "engines": "Plasmic AI (beta); the official site does not name its underlying model provider",
+        "dataFormat": "Hosted projects and CMS records in Plasmic Cloud; codegen writes React components plus plasmic.json and plasmic.lock into the user's repository",
+        "gapVsPaid": "Plasmic is dramatically more complex than Typedream's text-first editor, so a simple landing page takes more decisions.",
+        "setupBlocker": "Free hosted output keeps Plasmic branding; codegen/self-deployment requires a Node/React project and deployment workflow",
+        "sources": [
+          "https://github.com/plasmicapp/plasmic",
+          "https://github.com/plasmicapp/plasmic/blob/master/LICENSE",
+          "https://www.plasmic.app/pricing",
+          "https://docs.plasmic.app/learn/codegen-guide/",
+          "https://typedream.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Publii",
+      "url": "https://getpublii.com",
+      "type": "open-source",
+      "repo": "https://github.com/GetPublii/Publii",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A desktop block editor that publishes a static site; simple, portable and resolutely not collaborative.",
+      "stars": 7300,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Install the native Windows/macOS package or Linux AppImage",
+        "engines": null,
+        "dataFormat": "Source content and media in a user-selected local Sites Location; publishing generates static HTML, CSS and assets, with optional local backup archives",
+        "gapVsPaid": "Publii is a single-user desktop publisher, so it lacks Typedream's instant browser collaboration and text-first flow.",
+        "setupBlocker": "Publishing still needs separate hosting plus SFTP, GitHub or Netlify credentials/configuration",
+        "sources": [
+          "https://github.com/GetPublii/Publii",
+          "https://github.com/GetPublii/Publii/blob/master/LICENSE",
+          "https://getpublii.com/docs/install-publii.html",
+          "https://getpublii.com/docs/publii-global-settings.html",
+          "https://typedream.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Silex",
+      "url": "https://www.silex.me",
+      "type": "open-source",
+      "repo": "https://github.com/silexlabs/Silex",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A simple visual site builder with static export; not text-first, but still understandable without a developer.",
+      "stars": 2919,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the hosted editor with a GitLab login, install the desktop alpha, or run the official Docker setup",
+        "engines": "Optional desktop MCP workflow can connect to Ollama, OpenCode, Goose or Claude Code",
+        "dataFormat": "Project JSON and assets in GitLab, FTP or local storage; publishing produces ordinary static HTML, CSS and JavaScript",
+        "gapVsPaid": "Silex is canvas-first rather than text-first, making quick document-like landing pages slower to compose.",
+        "setupBlocker": "The stable hosted route starts with a GitLab account; the desktop build is still labelled alpha",
+        "sources": [
+          "https://github.com/silexlabs/Silex",
+          "https://github.com/silexlabs/Silex/blob/develop/LICENSE",
+          "https://docs.silex.me/en/dev/run",
+          "https://docs.silex.me/en/user/register",
+          "https://docs.silex.me/en/user/faq",
+          "https://typedream.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Webstudio",
+      "url": "https://webstudio.is",
+      "type": "open-source",
+      "repo": "https://github.com/webstudio-is/webstudio",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A polished visual builder for simple sites if you can tolerate self-hosting for a free custom domain.",
+      "stars": 8800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Hosted signup or desktop app; alternatively export the project or deploy the self-hosted builder/site",
+        "engines": "Webstudio Inception AI and MCP integrations; the hosted model provider is not named in official documentation",
+        "dataFormat": "Projects and assets live in Webstudio Cloud when hosted there; export/self-host routes produce source or static assets under the user's deployment",
+        "gapVsPaid": "Webstudio is much more CSS-heavy than Typedream's text-first blocks and requires self-deployment for a free custom domain.",
+        "setupBlocker": "The free cloud plan publishes only to a Webstudio subdomain; a free custom domain requires export or self-hosting",
+        "sources": [
+          "https://github.com/webstudio-is/webstudio",
+          "https://github.com/webstudio-is/webstudio/blob/main/LICENSE",
+          "https://webstudio.is/pricing",
+          "https://docs.webstudio.is/university/self-hosting",
+          "https://typedream.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "A toolkit for someone building Typedream, not Typedream for someone building a site."
+    }
+  ],
+  "relatedSlugs": [
+    "duda",
+    "tilda",
+    "leadpages"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Launch plan and a single-site builder DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Typedream in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and static export; do not offer alternative stacks.\nThe core loop is: assemble a simple responsive landing site from text-first blocks, edit copy and media, preview breakpoints, and publish a static site to a user-owned target.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nProvide a section library for hero, proof, features, pricing, FAQ, and footer blocks.\nUse a constrained design-token system rather than arbitrary CSS controls.\nAllow inline text editing and local image upload with responsive optimization.\nPreview desktop, tablet, and mobile widths and surface overflow errors.\nPersist projects in SQLite and support a portable JSON export.\nGenerate a clean static Next.js output and document deployment to one target.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a plugin marketplace.\nDeliberately leave out multi-tenant managed hosting.\nDeliberately leave out advanced ecommerce, memberships, and agency billing.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

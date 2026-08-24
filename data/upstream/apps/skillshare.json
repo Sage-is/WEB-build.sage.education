@@ -1,0 +1,204 @@
+{
+  "slug": "skillshare",
+  "name": "Skillshare",
+  "domain": "skillshare.com",
+  "appURL": "https://skillshare.com",
+  "category": "education",
+  "subcategory": "learning, flashcards and language practice",
+  "tagline": "Organize user-owned tutorial videos and learning projects in a private library",
+  "priceMonthly": 13.99,
+  "pricing": {
+    "plan": "Individual",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://skillshare.com/en/membership/",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Annual individual membership divided by 12; billing can vary.",
+    "native": "13.99 USD",
+    "kind": "fixed",
+    "currency": "USD"
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Skillshare, organize user-owned tutorial videos and learning projects in a private library. The hard boundary is licensed creator catalog, teacher marketplace, community, discovery, and apps, plus content, pedagogy, and network.",
+  "coreLoopDIY": "Organize user-owned tutorial videos and learning projects in a private library, turn them into a study plan, schedule retrieval practice, and show progress without claiming accredited instruction.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "modern browser",
+    "user-supplied study material",
+    "optional speech or language-model API key"
+  ],
+  "whatYouLose": [
+    "licensed creator catalog, teacher marketplace, community, discovery, and apps",
+    "licensed course catalog",
+    "expert curriculum",
+    "human feedback",
+    "large learner network and certification"
+  ],
+  "moatTags": [
+    "content-rights",
+    "network-effects"
+  ],
+  "moatNotes": "content, pedagogy, and network",
+  "replacementScope": "personal study companion",
+  "ongoingBurden": "curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support",
+  "whyPeopleStillPay": "People still pay for Skillshare because the learning loop is buildable, while trusted curriculum, instructors, feedback, credentials, and community are not. The recurring cost buys curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Moodle",
+      "url": "https://github.com/moodle/moodle",
+      "desc": "Long-running open-source learning platform with courses, assessments, and progress tracking."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "LearnHouse",
+      "url": "https://www.learnhouse.app/",
+      "type": "open-source",
+      "repo": "https://github.com/learnhouse/learnhouse",
+      "platforms": [
+        "web",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "A private course library for videos, files, quizzes, assignments and discussion, with no creator marketplace attached.",
+      "stars": 2100,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Run npx learnhouse@latest setup; its CLI generates Docker Compose configuration and starts the services",
+        "engines": "Provider-agnostic AI with Google, OpenAI, Anthropic, DeepSeek, Moonshot, Mistral, OpenRouter, Amazon Bedrock or Ollama",
+        "dataFormat": "Courses and users in PostgreSQL with pgvector, Redis for transient state, and files in local or S3-compatible storage",
+        "gapVsPaid": "LearnHouse has no marketplace or supplied tutorial catalog, and self-hosting turns the library owner into the platform operator.",
+        "setupBlocker": "Self-hosting requires Docker and Node, then domain/DNS/SSL plus storage and email configuration",
+        "sources": [
+          "https://github.com/learnhouse/learnhouse",
+          "https://github.com/learnhouse/learnhouse/blob/main/LICENSE",
+          "https://docs.learnhouse.app/self-hosting/installation/requirements",
+          "https://docs.learnhouse.app/self-hosting/configuration/ai-setup",
+          "https://docs.learnhouse.app/developers/architecture/services",
+          "https://www.skillshare.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Kolibri",
+      "url": "https://learningequality.org/kolibri/",
+      "type": "open-source",
+      "repo": "https://github.com/learningequality/kolibri",
+      "platforms": [
+        "web",
+        "windows",
+        "linux",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "An offline-first library for owned videos, audio and documents, plus lessons, assignments and progress.",
+      "stars": 1100,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Install the Windows package, Debian package or Python/PEX build; one device can serve learners over a local network",
+        "engines": null,
+        "dataFormat": "Application data in a local SQLite database (normally ~/.kolibri/db.sqlite3) plus downloaded channel/content storage on the device",
+        "gapVsPaid": "Kolibri feels like an offline school/library rather than a polished streaming service, and importing or authoring channels takes real work.",
+        "setupBlocker": "The first real task is importing or provisioning content channels; authoring original channels uses the separate Kolibri Studio workflow",
+        "sources": [
+          "https://github.com/learningequality/kolibri",
+          "https://github.com/learningequality/kolibri/blob/develop/LICENSE",
+          "https://learningequality.org/kolibri/download/",
+          "https://kolibri.readthedocs.io/en/latest/install/windows.html",
+          "https://kolibri.readthedocs.io/en/latest/manage/command_line.html",
+          "https://www.skillshare.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Frappe Learning",
+      "url": "https://frappe.io/learning",
+      "type": "open-source",
+      "repo": "https://github.com/frappe/lms",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Courses, videos, PDFs, quizzes, assignments and cohorts in a capable stack that expects you to meet Frappe.",
+      "stars": 3100,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Run Frappe's easy-install script or the official Docker Compose deployment",
+        "engines": null,
+        "dataFormat": "Course and user records in the Frappe/MariaDB site database; public/private site files on disk, while video lessons commonly embed external hosts",
+        "gapVsPaid": "Frappe Learning organizes owned content well but has no Skillshare marketplace or ready-made catalog, and the owner runs the platform.",
+        "setupBlocker": "Self-hosting still needs Docker or a Frappe server, DNS/SSL and email; payments require separate gateway configuration",
+        "sources": [
+          "https://github.com/frappe/lms",
+          "https://github.com/frappe/lms/blob/develop/LICENSE",
+          "https://docs.frappe.io/learning/introduction",
+          "https://docs.frappe.io/learning/course-creation/adding-a-lesson/add-video-content",
+          "https://docs.frappe.io/learning/setting-up-payment-gateway",
+          "https://www.skillshare.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Moodle",
+      "url": "https://moodle.org/",
+      "type": "open-source",
+      "repo": "https://github.com/moodle/moodle",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Organizes owned tutorial videos and projects with completion tracking; a private school where you are also IT.",
+      "stars": 7300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Upload the PHP release to a web server, create a database and moodledata directory, then complete the browser installer",
+        "engines": null,
+        "dataFormat": "Courses, users, grades and settings in SQL; uploaded files in the separate moodledata directory",
+        "gapVsPaid": "Moodle supplies no ready-made tutorial marketplace or content library, and a private installation makes the owner the school's IT department.",
+        "setupBlocker": "PHP and database requirements, protected writable storage, cron, SMTP, backups and upgrades are all the operator's responsibility",
+        "sources": [
+          "https://github.com/moodle/moodle",
+          "https://github.com/moodle/moodle/blob/main/COPYING.txt",
+          "https://docs.moodle.org/501/en/Installing_Moodle",
+          "https://docs.moodle.org/501/en/Moodledata_directory",
+          "https://www.skillshare.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "duolingo-super",
+    "brilliant",
+    "babbel"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Individual plan and a personal study companion DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Skillshare in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and a service worker for offline use; do not offer alternative stacks.\nThe core loop is: organize user-owned tutorial videos and learning projects in a private library, turn them into a study plan, schedule retrieval practice, and show progress without claiming accredited instruction.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImport Markdown, text, or user-authored notes and split them into editable learning units.\nCreate flashcards and short quizzes only after showing the generated items for approval.\nImplement a transparent spaced-repetition schedule with due, again, hard, good, and easy actions.\nAdd goals, study sessions, streak-free progress charts, notes, and weak-topic review.\nFor language practice, record the learner and compare timing or pronunciation without presenting medical claims.\nSupport offline use, full export, reset, backup, and deletion of all learning data.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out licensed premium courses.\nDeliberately leave out accredited certificates and grading.\nDeliberately leave out live tutors, large classrooms, and a learner marketplace.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

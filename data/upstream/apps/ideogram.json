@@ -1,0 +1,351 @@
+{
+  "slug": "ideogram",
+  "name": "Ideogram",
+  "domain": "ideogram.ai",
+  "appURL": "https://ideogram.ai",
+  "category": "generative-media",
+  "subcategory": "AI image and video generation",
+  "tagline": "Run reproducible prompt experiments with a user-selected model and compare outputs",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Plus",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://ideogram.ai/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Plus monthly tier.",
+    "native": "20 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "10 slow credits/week; public generations; no priority credits.",
+        "notes": null
+      },
+      {
+        "name": "Plus",
+        "monthly": 20,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "1,000 priority credits/month, unlimited slow credits, private generation and unlimited character consistency.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 60,
+        "annualPerMonth": 42,
+        "per": "user",
+        "limits": "3,500 priority credits/month, unlimited slow credits and the best listed subscription credit rate.",
+        "notes": null
+      },
+      {
+        "name": "Team",
+        "monthly": 30,
+        "annualPerMonth": 20,
+        "per": "user",
+        "limits": "1,500 priority credits/user/month, central billing/admin and early collaboration access.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "10 slow credits per week and 0 priority credits.",
+    "billingTerms": "monthly + annual; Team is per user",
+    "priceChanges": [],
+    "hiddenCosts": "Top-up priority credits are sold separately, and API usage is billed separately per image. Custom model training is separately metered at $40 per training run.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://ideogram.ai/pricing",
+      "https://docs.ideogram.ai/using-ideogram/getting-started/signup-and-registration",
+      "https://ideogram.ai/api-pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Ideogram, run reproducible prompt experiments with a user-selected model and compare outputs. The hard boundary is proprietary model quality, typography capability, compute, and rapid iteration, plus frontier models, compute, and data.",
+  "coreLoopDIY": "Organize prompts, submit generation jobs to a user-owned model server, compare outputs across experiments, and keep results reproducible.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "GPU-capable machine or user-supplied generation API",
+    "ComfyUI",
+    "model files with appropriate licenses",
+    "local storage"
+  ],
+  "whatYouLose": [
+    "proprietary model quality, typography capability, compute, and rapid iteration",
+    "frontier proprietary models",
+    "hosted GPU capacity",
+    "licensed training data",
+    "moderation and fast global delivery"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "scale-infra"
+  ],
+  "moatNotes": "frontier models, compute, and data",
+  "replacementScope": "local workflow manager, not a model replacement",
+  "ongoingBurden": "GPU procurement, model licensing, safety filters, queueing, storage, and rapid model replacement",
+  "whyPeopleStillPay": "People still pay for Ideogram because the product value is the model and compute fleet, not the prompt box around it. The recurring cost buys GPU procurement, model licensing, safety filters, queueing, storage, and rapid model replacement, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "ComfyUI",
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "desc": "Node-based open-source diffusion workflow engine with a large ecosystem."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "ComfyUI",
+      "url": "https://comfy.org/",
+      "type": "open-source",
+      "repo": "https://github.com/Comfy-Org/ComfyUI",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Every parameter is explicit and every graph rerunnable; comparison is rigorous, if not elegant.",
+      "stars": 124207,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Desktop app, Windows portable archive or Python source installation",
+        "engines": "Stable Diffusion, SDXL, SD3 and SD3.5, FLUX, Qwen Image, Hunyuan, Wan and many other local or custom-node backends",
+        "dataFormat": "Model weights under the local models directories, outputs on disk, and reproducible workflows as JSON or embedded PNG metadata",
+        "gapVsPaid": "Its graph workflow makes controlled experiments explicit but cumbersome, and typography quality depends on the selected model and workflow rather than an integrated Ideogram model.",
+        "setupBlocker": "Large model downloads and a compatible GPU; custom nodes add dependency, security and workflow complexity",
+        "sources": [
+          "https://github.com/Comfy-Org/ComfyUI",
+          "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE",
+          "https://docs.comfy.org/installation/desktop",
+          "https://docs.comfy.org/installation/manual_install",
+          "https://ideogram.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Draw Things",
+      "url": "https://drawthings.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "ios"
+      ],
+      "desc": "A local gallery with retained settings, seeds and reruns; excellent for experiments on Apple hardware.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Install from the Apple App Store",
+        "engines": "Downloadable local diffusion models and adapters supported by Draw Things",
+        "dataFormat": "Models and generated images live in the app's local sandbox or selected local folder; core generation can run offline",
+        "gapVsPaid": "It is Apple-only and comparison is more manual, while text rendering and style consistency depend on the model you install.",
+        "setupBlocker": "Apple hardware only, plus large model downloads and enough device memory",
+        "sources": [
+          "https://drawthings.ai/",
+          "https://docs.drawthings.ai/documentation/documentation/2.models/",
+          "https://apps.apple.com/app/draw-things-ai-generation/id6444050820",
+          "https://github.com/drawthingsai/draw-things-community",
+          "https://ideogram.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Easy Diffusion",
+      "url": "https://easydiffusion.github.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Prompt matrices, queues and saved settings make controlled comparisons possible without a subscription.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-Easy-Diffusion",
+        "runs": "local",
+        "install": "Download and run the one-click Windows installer, or unpack and run the Linux or macOS start script",
+        "engines": "Local diffusion checkpoints including Stable Diffusion, FLUX, Qwen, Z-Image and other supported architectures, with custom model files",
+        "dataFormat": "Model files and generated images are stored in the Easy Diffusion installation folders on the computer",
+        "gapVsPaid": "It can queue and vary prompts, but its experiment history and typography quality are less polished and dependable than Ideogram's.",
+        "setupBlocker": "A compatible GPU or slow CPU fallback, at least roughly 25 GB of disk, model downloads, and possible Windows SmartScreen approval",
+        "sources": [
+          "https://github.com/easydiffusion/easydiffusion",
+          "https://github.com/easydiffusion/easydiffusion/blob/main/LICENSE",
+          "https://github.com/easydiffusion/easydiffusion/releases",
+          "https://easydiffusion.github.io/",
+          "https://ideogram.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "InvokeAI",
+      "url": "https://invoke.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/invoke-ai/InvokeAI",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Choose a model, keep every parameter, compare a board of outputs and rerun the winner without guesswork.",
+      "stars": 27776,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "Install the Invoke launcher, then launch its local web application",
+        "engines": "Stable Diffusion 1.5, 2, XL and 3.5, FLUX, Qwen Image and supported API-backed image models",
+        "dataFormat": "Model weights, application database, gallery boards, images and generation metadata live on the local instance",
+        "gapVsPaid": "It preserves parameters well, but model setup is heavier and effortless high-quality typography depends on which local or API model you choose.",
+        "setupBlocker": "A compatible GPU, launcher setup and large model downloads; API-backed models also need keys",
+        "sources": [
+          "https://github.com/invoke-ai/InvokeAI",
+          "https://github.com/invoke-ai/InvokeAI/blob/main/LICENSE",
+          "https://invoke-ai.github.io/InvokeAI/installation/quick_start/",
+          "https://invoke.ai/",
+          "https://ideogram.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Krita AI Diffusion",
+      "url": "https://www.interstice.cloud/",
+      "type": "open-source",
+      "repo": "https://github.com/Acly/krita-ai-diffusion",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Queue variants, inspect history and refine selected results inside a real editor.",
+      "stars": 10432,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Install Krita, import the plugin ZIP, then auto-install a local backend or connect to a ComfyUI or cloud server",
+        "engines": "ComfyUI backends running FLUX, Z-Image, Stable Diffusion 1.5, SDXL, Illustrious and supported edit or control models",
+        "dataFormat": "Artwork remains in Krita documents and local history or output storage; prompts and images go to a remote backend only when one is selected",
+        "gapVsPaid": "It is editor-first rather than a clean prompt-comparison lab, and text quality depends on the connected model.",
+        "setupBlocker": "Krita plus the plugin, backend and model downloads, and preferably a GPU with around 6 GB or more VRAM for local use",
+        "sources": [
+          "https://github.com/Acly/krita-ai-diffusion",
+          "https://github.com/Acly/krita-ai-diffusion/blob/main/LICENSE",
+          "https://docs.interstice.cloud/",
+          "https://www.interstice.cloud/",
+          "https://ideogram.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "RuinedFooocus",
+      "url": "https://github.com/runew0lf/RuinedFooocus",
+      "type": "open-source",
+      "repo": "https://github.com/runew0lf/RuinedFooocus",
+      "platforms": [
+        "web",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Saved metadata, batches and reruns make it a decent prompt lab without making it feel like one.",
+      "stars": 680,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Download the Windows archive and run run.bat, or install a Python virtual environment on Linux",
+        "engines": "SDXL and compatible local checkpoints, including newer FLUX, Krea and other supported model families, plus LoRAs and styles",
+        "dataFormat": "Models and outputs are stored in local application folders; generation settings can be embedded in image metadata",
+        "gapVsPaid": "It is easy to rerun and batch, but systematic parameter sweeps and reliable typography are weaker than Ideogram's hosted workflow.",
+        "setupBlocker": "Large automatic model downloads and a capable GPU; Linux installation is source and virtual-environment based",
+        "sources": [
+          "https://github.com/runew0lf/RuinedFooocus",
+          "https://github.com/runew0lf/RuinedFooocus/blob/main/LICENSE",
+          "https://github.com/runew0lf/RuinedFooocus/blob/main/update_log.md",
+          "https://ideogram.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "SwarmUI",
+      "url": "https://swarmui.net/",
+      "type": "open-source",
+      "repo": "https://github.com/mcmonkeyprojects/SwarmUI",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Its grid generator turns prompt and parameter sweeps into an actual experiment instead of a scrolling feed.",
+      "stars": 4423,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Run the Windows install batch file or Linux or macOS install script",
+        "engines": "ComfyUI-backed local models including Stable Diffusion, FLUX and newer image or video models, plus supported remote backends",
+        "dataFormat": "Models, configuration, generation history and output images live in the local SwarmUI installation",
+        "gapVsPaid": "Its grid tools are strong, but the beta interface and model setup are less elegant, and typography quality depends on the backend you supply.",
+        "setupBlocker": "A compatible GPU and model downloads; the application is still labeled beta and first launch installs its backend",
+        "sources": [
+          "https://github.com/mcmonkeyprojects/SwarmUI",
+          "https://github.com/mcmonkeyprojects/SwarmUI/blob/master/LICENSE.txt",
+          "https://github.com/mcmonkeyprojects/SwarmUI/blob/master/docs/Model%20Support.md",
+          "https://swarmui.net/",
+          "https://ideogram.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "recraft",
+    "photoroom",
+    "leonardo-ai"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Plus plan and a local workflow manager, not a model replacement DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Ideogram in an empty repository.\nUse Python 3.12, FastAPI, SQLite, ComfyUI as a local worker, and a small React frontend; do not offer alternative stacks.\nThe core loop is: organize prompts, submit generation jobs to a user-owned model server, compare outputs across experiments, and keep results reproducible.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate prompt, negative-prompt, seed, dimensions, model, and workflow controls.\nSubmit jobs only to the local ComfyUI endpoint configured in .env.\nRecord exact generation parameters and workflow JSON beside every output.\nBuild a searchable contact sheet with compare, favorite, annotate, and rerun actions.\nSupport local image-to-image and mask inputs without uploading them elsewhere.\nShow estimated VRAM needs and fail clearly when a workflow or model is missing.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out training a new frontier model.\nDeliberately leave out copying a vendor's proprietary model or dataset.\nDeliberately leave out public generation hosting and moderation.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

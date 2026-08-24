@@ -1,0 +1,131 @@
+{
+  "slug": "heartbeat-community",
+  "name": "Heartbeat",
+  "domain": "heartbeat.chat",
+  "appURL": "https://heartbeat.chat",
+  "category": "community",
+  "subcategory": "online communities and team communication",
+  "tagline": "Run a private community with channels, events, courses, and lightweight workflows",
+  "priceMonthly": 49,
+  "pricing": {
+    "plan": "Build",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://heartbeat.chat/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Build monthly plan.",
+    "native": "49 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Build",
+        "monthly": 49,
+        "annualPerMonth": 40.83,
+        "per": "workspace",
+        "limits": "Up to 350 members; 5 workflows; 1 landing page; 256 video-room attendees; unlimited room hours; 5% platform transaction fee",
+        "notes": "$490 billed annually."
+      },
+      {
+        "name": "Grow",
+        "monthly": 149,
+        "annualPerMonth": 124.17,
+        "per": "workspace",
+        "limits": "Up to 5,000 members; unlimited workflows; 15 landing pages; 50 native-video hours/month; 256 video-room attendees; 2.5% platform transaction fee",
+        "notes": "$1,490 billed annually."
+      },
+      {
+        "name": "Scale",
+        "monthly": 849,
+        "annualPerMonth": 766.67,
+        "per": "workspace",
+        "limits": "Unlimited members; 50 landing pages; 200 native-video hours/month; 256 video-room attendees; 1.25% platform transaction fee",
+        "notes": "$9,200 billed annually."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day trial with no credit card",
+    "billingTerms": "monthly + annual; annual totals are $490, $1,490 and $9,200",
+    "priceChanges": [],
+    "hiddenCosts": "Platform transaction fees of 5%/2.5%/1.25% are added to payment-processor fees (Heartbeat illustrates Stripe at about 2.9% + $0.30). Build can add 50 native-video hours for $19/month. Admins and moderators count toward the member cap.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.heartbeat.chat/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Heartbeat, run a private community with channels, events, courses, and lightweight workflows. The hard boundary is mobile apps, automations, analytics, payments, and community onboarding, plus network, moderation, and communication infrastructure.",
+  "coreLoopDIY": "Host a private community with channels, events, courses, and lightweight workflows, organize discussion by topic, and keep membership and moderation under the owner's control.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "email provider",
+    "object storage for attachments"
+  ],
+  "whatYouLose": [
+    "mobile apps, automations, analytics, payments, and community onboarding",
+    "network effects",
+    "native mobile apps",
+    "video and voice infrastructure",
+    "enterprise moderation and discovery"
+  ],
+  "moatTags": [
+    "network-effects",
+    "scale-infra"
+  ],
+  "moatNotes": "network, moderation, and communication infrastructure",
+  "replacementScope": "single private community",
+  "ongoingBurden": "realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations",
+  "whyPeopleStillPay": "People still pay for Heartbeat because community software is valuable when members are already there and the operator does not have to own realtime reliability and abuse response. The recurring cost buys realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Discourse",
+      "url": "https://github.com/discourse/discourse",
+      "desc": "Mature open-source community discussion platform with strong moderation and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Moodle",
+      "url": "https://moodle.org/",
+      "type": "open-source",
+      "repo": "https://github.com/moodle/moodle",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Courses, forums, events and completion rules in one mature system; it feels like a school because it is one.",
+      "stars": 7300,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "HumHub",
+      "url": "https://www.humhub.com/",
+      "desc": "Spaces, events and workflows are real, but courses and creator payments are not part of the free core."
+    },
+    {
+      "name": "Odoo Community",
+      "url": "https://www.odoo.com/",
+      "desc": "The required modules exist, but asking a member to join your ERP is not a community strategy."
+    }
+  ],
+  "relatedSlugs": [
+    "slack-pro",
+    "discord-nitro",
+    "circle"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Build plan and a single private community DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Heartbeat in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, WebSockets, and Docker Compose; do not offer alternative stacks.\nThe core loop is: host a private community with channels, events, courses, and lightweight workflows, organize discussion by topic, and keep membership and moderation under the owner's control.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement spaces, channels, topics, replies, reactions, mentions, profiles, roles, and invitations.\nUse WebSockets for live updates but preserve every message transactionally in PostgreSQL.\nAdd moderation queues, reports, blocks, rate limits, attachment limits, and an audit log.\nProvide email digests, browser notifications, search, pinned content, and member export.\nAdd owner-controlled retention, account deletion, backup, restore, and health checks.\nShip Docker Compose with a seeded demo, migrations, and an emergency admin command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out public-network discovery and existing member liquidity.\nDeliberately leave out production voice or video rooms.\nDeliberately leave out native mobile applications, enterprise SSO, and 24-hour abuse operations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

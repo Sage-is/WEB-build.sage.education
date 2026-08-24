@@ -1,0 +1,232 @@
+{
+  "slug": "sketch",
+  "name": "Sketch",
+  "domain": "sketch.com",
+  "appURL": "https://sketch.com",
+  "category": "design",
+  "subcategory": "interface design",
+  "tagline": "Native Mac interface design with prototypes, libraries, and collaboration",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Standard",
+    "kind": "fixed",
+    "basis": "per editor per month",
+    "unit": "per-seat",
+    "currency": "USD",
+    "native": "$12/editor/month",
+    "source": "https://sketch.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Standard",
+        "monthly": null,
+        "annualPerMonth": 12,
+        "per": "user",
+        "limits": "1 workspace and 50 GB storage/editor.",
+        "notes": "Published annual-effective rate; current monthly USD amount was not exposed."
+      },
+      {
+        "name": "Professional",
+        "monthly": null,
+        "annualPerMonth": 24,
+        "per": "user",
+        "limits": "1 workspace, 50 GB/editor and SSO.",
+        "notes": "Published annual-effective rate; current monthly USD amount was not exposed."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": 44,
+        "per": "user",
+        "limits": "1 workspace, unlimited storage, SCIM and BYOK; custom review for 15+ editors.",
+        "notes": "Published annual-effective rate."
+      },
+      {
+        "name": "Private Cloud",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited workspaces/storage with private deployment; custom price plus one-time setup/requirements charges.",
+        "notes": null
+      },
+      {
+        "name": "Mac-only License",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Perpetual Mac app licence for 1 seat with 1 year of updates; no web collaboration, sharing or iOS preview.",
+        "notes": "One-time price: $120 per seat."
+      }
+    ],
+    "freeTierCaps": "no free tier; a 30-day trial is offered and viewers are free",
+    "billingTerms": "monthly + annual subscriptions; Mac-only licence is a one-time purchase",
+    "priceChanges": [],
+    "hiddenCosts": "After subscription cancellation, a workspace becomes read-only and is available for download for 90 days before deletion. Private Cloud adds setup/custom-requirement charges. Direct purchases in India are unavailable from July 15, 2026 and require a partner.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.sketch.com/pricing/",
+      "https://www.sketch.com/docs/account-and-billing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible interface design loop is buildable, but a credible replacement needs more than the first screen. Sketch earns its keep through editor polish, assets, algorithms, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a focused local interface design editor with import, a small set of transformations, undo, and standards-based export.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "desktop development machine",
+    "Node.js 22 and Rust toolchain",
+    "sample user-owned assets"
+  ],
+  "whatYouLose": [
+    "color-management edge cases",
+    "cloud collaboration and mobile apps",
+    "pixel-perfect professional tooling",
+    "large template and asset libraries"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "content-rights",
+    "collaboration"
+  ],
+  "moatNotes": "editor polish/assets/algorithms",
+  "whyPeopleStillPay": "Sketch: Creative users pay for speed, output fidelity, nondestructive editing, and years of edge-case work hidden behind direct manipulation.",
+  "ongoingBurden": "Maintain file-format compatibility, GPU and canvas performance, undo history, export quality, and platform-specific rendering.",
+  "priorArt": [
+    {
+      "name": "Penpot",
+      "url": "https://github.com/penpot/penpot",
+      "desc": "Open-source collaborative design and prototyping platform."
+    },
+    {
+      "name": "PhotoPrism",
+      "url": "https://github.com/photoprism/photoprism",
+      "desc": "Self-hosted photo organization and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Lunacy",
+      "url": "https://icons8.com/lunacy",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A polished native desktop UI editor with components, prototypes, cloud files, and small-team collaboration, free indefinitely.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "both",
+        "install": "Install a native Windows, macOS or Linux package, or open Lunacy in a browser",
+        "engines": "Icons8-hosted AI tools for background removal, upscaling, generated text and avatars; avatar generation integrates Generated Photos, while underlying model names are not disclosed",
+        "dataFormat": "Local designs are .sketch files on disk; cloud documents live on Icons8 servers and can be saved back as local .sketch files",
+        "gapVsPaid": "It does not reproduce Sketch's native Mac workflow, plugin ecosystem and library/document fidelity exactly, and free cloud collaboration is capped.",
+        "setupBlocker": null,
+        "sources": [
+          "https://icons8.com/lunacy",
+          "https://lunacy.docs.icons8.com/about/",
+          "https://lunacy.docs.icons8.com/clouddocs/",
+          "https://lunacy.docs.icons8.com/subscriptions/",
+          "https://lunacy.docs.icons8.com/faq/",
+          "https://www.sketch.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Penpot",
+      "url": "https://penpot.app/",
+      "type": "open-source",
+      "repo": "https://github.com/penpot/penpot",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Browser-based interface design, components, libraries, prototypes, comments, and multiplayer, with a credible import-and-self-host story.",
+      "stars": 58200,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MPL-2.0",
+        "runs": "both",
+        "install": "Use the hosted signup, or download the official Docker Compose file and run docker compose up -d",
+        "engines": null,
+        "dataFormat": "Hosted files in Penpot Cloud; self-hosted data in Docker volumes for PostgreSQL and uploaded assets, with exports based on SVG/CSS/HTML/JSON and open standards",
+        "gapVsPaid": "It is browser-first rather than a native offline Mac editor, with a much smaller plugin ecosystem than Sketch.",
+        "setupBlocker": "Self-hosting requires Docker Compose, DNS and reverse-proxy/TLS knowledge; hosted signup has no setup blocker",
+        "sources": [
+          "https://github.com/penpot/penpot",
+          "https://github.com/penpot/penpot/blob/develop/LICENSE",
+          "https://help.penpot.app/technical-guide/getting-started/",
+          "https://help.penpot.app/technical-guide/getting-started/docker/",
+          "https://penpot.app/pricing",
+          "https://www.sketch.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Quant-UX",
+      "url": "https://www.quant-ux.com/",
+      "type": "open-source",
+      "repo": "https://github.com/KlausSchaefers/quant-ux",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A useful free prototype-and-test workspace with collaboration and analytics; less capable for production-grade visual systems.",
+      "stars": 2700,
+      "lastCommit": "2026-05",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "both",
+        "install": "Use the hosted Quant-UX signup, or run its multi-container Docker Compose stack",
+        "engines": null,
+        "dataFormat": "Hosted projects in Quant-UX's service; self-hosted prototypes and tests in MongoDB with uploaded images in mapped data directories",
+        "gapVsPaid": "It is a prototype-and-research workspace, not a full native vector design and reusable-library replacement for Sketch.",
+        "setupBlocker": "Self-hosting needs several containers plus MongoDB, SMTP, a JWT secret, WebSocket URL and reverse-proxy/TLS configuration",
+        "sources": [
+          "https://www.quant-ux.com/",
+          "https://github.com/KlausSchaefers/quant-ux",
+          "https://github.com/KlausSchaefers/quant-ux/blob/master/LICENSE",
+          "https://www.sketch.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "OpenPencil",
+      "url": "https://openpencil.dev/",
+      "desc": "It looks like the exciting new answer, but the maintainers explicitly say it is not ready for production use."
+    },
+    {
+      "name": "Pencil Project",
+      "url": "https://pencil.evolus.vn/",
+      "desc": "Still appears in every listicle; the repository has not moved since January 2023 and misses the maintenance requirement."
+    }
+  ],
+  "relatedSlugs": [
+    "kittl",
+    "picmonkey",
+    "topaz-photo-ai"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Sketch is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Sketch, not a full clone.\nUse exactly this stack: Tauri 2 + React + TypeScript + Canvas API.\nPrimary job: Build a focused local interface design editor with import, a small set of transformations, undo, and standards-based export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: color-management edge cases; cloud collaboration and mobile apps; pixel-perfect professional tooling.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

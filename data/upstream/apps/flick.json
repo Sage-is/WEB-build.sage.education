@@ -1,0 +1,124 @@
+{
+  "slug": "flick",
+  "name": "Flick",
+  "domain": "flick.social",
+  "appURL": "https://flick.social",
+  "category": "social-media",
+  "subcategory": "social content + analytics",
+  "tagline": "AI social writing, scheduling, hashtag research, and analytics",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://flick.social/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Solo",
+        "monthly": 18.89,
+        "annualPerMonth": 14.84,
+        "per": "workspace",
+        "limits": "4 social profiles; 1 user; 30 scheduled posts/social profile/month; 30 tracked Instagram posts/month.",
+        "notes": "Published in GBP; converted at the ECB 2026-08-13 cross-rate of GBP 1 = USD 1.35."
+      },
+      {
+        "name": "Pro",
+        "monthly": 40.47,
+        "annualPerMonth": 32.38,
+        "per": "workspace",
+        "limits": "8 social profiles; 2 users; unlimited scheduled posts and tracked Instagram posts.",
+        "notes": "Published in GBP; converted at the ECB 2026-08-13 cross-rate of GBP 1 = USD 1.35."
+      },
+      {
+        "name": "Agency",
+        "monthly": 91.74,
+        "annualPerMonth": 74.2,
+        "per": "workspace",
+        "limits": "20 social profiles; 5 users; unlimited scheduled posts and tracked Instagram posts.",
+        "notes": "Published in GBP; converted at the ECB 2026-08-13 cross-rate of GBP 1 = USD 1.35."
+      }
+    ],
+    "freeTierCaps": "no free tier (7-day trial only)",
+    "billingTerms": "monthly + annual (about 20% lower on annual billing); trial auto-activates a paid plan unless cancelled",
+    "priceChanges": [],
+    "hiddenCosts": "Extra social profiles cost about $5.4/month; extra users on eligible plans cost about $10.79/month; tax may be added.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.flick.social/learn/pricing",
+      "https://flick.social/pricing",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible social content + analytics loop is buildable, but a credible replacement needs more than the first screen. Flick earns its keep through platform APIs, distribution, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a personal social content + analytics planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "hosted database and worker",
+    "official platform OAuth credentials where available"
+  ],
+  "whatYouLose": [
+    "reliable direct publishing across networks",
+    "analytics history and attribution",
+    "team approvals and asset workflows",
+    "protection from API and policy changes",
+    "calendar-provider edge cases and timezone correctness"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "platform APIs/distribution",
+  "whyPeopleStillPay": "Flick: Social tools survive because networks change APIs, permissions, formats, and anti-spam rules constantly.",
+  "ongoingBurden": "Maintain OAuth, token refresh, media constraints, rate limits, scheduling, webhooks, retries, and platform policy compliance.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Open-source social scheduling and publishing platform."
+    },
+    {
+      "name": "Mixpost",
+      "url": "https://github.com/inovector/mixpost",
+      "desc": "Self-hosted social media management software."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Plann Free",
+      "url": "https://www.plannthat.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "One Instagram account gets thirty posts, five videos, AI captions, hashtag help and thin analytics each month.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "hypefury",
+    "publer",
+    "predis-ai"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Flick is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Flick, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build a personal social content + analytics planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: reliable direct publishing across networks; analytics history and attribution; team approvals and asset workflows.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

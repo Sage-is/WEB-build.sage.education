@@ -1,0 +1,255 @@
+{
+  "slug": "fathom-analytics",
+  "name": "Fathom Analytics",
+  "domain": "usefathom.com",
+  "category": "analytics",
+  "subcategory": "privacy web analytics",
+  "tagline": "Privacy-focused website analytics with simple dashboards",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "15 USD",
+    "source": "https://usefathom.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; public 2026 references list plans starting around $15/month, but official crawler did not expose all tiers cleanly.",
+    "tiers": [
+      {
+        "name": "100k pageviews",
+        "monthly": 15,
+        "annualPerMonth": 12.5,
+        "per": "workspace",
+        "limits": "Up to 100,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $150; custom events and API requests count as pageviews."
+      },
+      {
+        "name": "200k pageviews",
+        "monthly": 25,
+        "annualPerMonth": 20.83,
+        "per": "workspace",
+        "limits": "Up to 200,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $250; custom events and API requests count as pageviews."
+      },
+      {
+        "name": "500k pageviews",
+        "monthly": 45,
+        "annualPerMonth": 37.5,
+        "per": "workspace",
+        "limits": "Up to 500,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $450; custom events and API requests count as pageviews."
+      },
+      {
+        "name": "1M pageviews",
+        "monthly": 60,
+        "annualPerMonth": 50,
+        "per": "workspace",
+        "limits": "Up to 1,000,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $600; custom events and API requests count as pageviews."
+      },
+      {
+        "name": "2M pageviews",
+        "monthly": 100,
+        "annualPerMonth": 83.33,
+        "per": "workspace",
+        "limits": "Up to 2,000,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $1,000; custom events and API requests count as pageviews."
+      },
+      {
+        "name": "5M pageviews",
+        "monthly": 140,
+        "annualPerMonth": 116.67,
+        "per": "workspace",
+        "limits": "Up to 5,000,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $1,400; custom events and API requests count as pageviews."
+      },
+      {
+        "name": "10M pageviews",
+        "monthly": 200,
+        "annualPerMonth": 166.67,
+        "per": "workspace",
+        "limits": "Up to 10,000,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $2,000; custom events and API requests count as pageviews."
+      },
+      {
+        "name": "15M pageviews",
+        "monthly": 290,
+        "annualPerMonth": 241.67,
+        "per": "workspace",
+        "limits": "Up to 15,000,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $2,900; custom events and API requests count as pageviews."
+      },
+      {
+        "name": "20M pageviews",
+        "monthly": 380,
+        "annualPerMonth": 316.67,
+        "per": "workspace",
+        "limits": "Up to 20,000,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $3,800; custom events and API requests count as pageviews."
+      },
+      {
+        "name": "25M pageviews",
+        "monthly": 470,
+        "annualPerMonth": 391.67,
+        "per": "workspace",
+        "limits": "Up to 25,000,000 monthly pageviews; up to 50 sites included",
+        "notes": "Annual total is $4,700; custom events and API requests count as pageviews."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (2 months free); 7-day trial; auto-renews until canceled",
+    "priceChanges": [],
+    "hiddenCosts": "Custom events and API calls count toward pageviews; extra sites cost an additional unpublished fee. Two consecutive months over the limit trigger an offered upgrade rather than immediate throttling.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://usefathom.com/pricing",
+      "https://app.usefathom.com/register"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A simple privacy analytics clone is very buildable; the paid service is hosted compliance posture, uptime, data retention, and polished reporting.",
+  "coreLoopDIY": "Collect pageviews/events via JS, aggregate metrics, show simple dashboards, and send reports.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "hosted backend",
+    "tracker script",
+    "database",
+    "domain/SSL",
+    "backups",
+    "bot filtering"
+  ],
+  "whatYouLose": [
+    "managed infrastructure",
+    "privacy/compliance messaging",
+    "email reports",
+    "uptime",
+    "support",
+    "billing"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "brand-trust"
+  ],
+  "moatNotes": "hosting/compliance positioning",
+  "whyPeopleStillPay": "They pay to avoid maintaining analytics infrastructure and privacy copy themselves.",
+  "priorArt": [
+    {
+      "name": "Umami",
+      "url": "https://github.com/umami-software/umami",
+      "desc": "Open-source privacy-focused analytics platform and practical DIY alternative.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "GoatCounter",
+      "url": "https://www.goatcounter.com",
+      "type": "open-source",
+      "repo": "https://github.com/arp242/goatcounter",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A smaller privacy dashboard for people who truly meant simple.",
+      "stars": 5800,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": null,
+        "runs": "both",
+        "install": "Create a hosted account or run the single static binary or Docker image",
+        "engines": null,
+        "dataFormat": "A self-hosted instance uses SQLite by default or PostgreSQL; the hosted service stores analytics on GoatCounter's infrastructure and supports JSON and CSV exports",
+        "gapVsPaid": "It offers fewer polished goals, events, reports, team controls and support than Fathom's managed product.",
+        "setupBlocker": "None for hosted use; self-hosting needs a reachable binary or container plus a public URL and TLS",
+        "sources": [
+          "https://raw.githubusercontent.com/arp242/goatcounter/master/LICENSE",
+          "https://github.com/arp242/goatcounter",
+          "https://www.goatcounter.com/help/terms",
+          "https://www.goatcounter.com/help/events",
+          "https://usefathom.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plausible Community Edition",
+      "url": "https://plausible.io/self-hosted-web-analytics",
+      "type": "open-source",
+      "repo": "https://github.com/plausible/analytics",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The closest philosophical match, except you operate the Compose file.",
+      "stars": 28377,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Deploy the Community Edition with the official Docker Compose installer",
+        "engines": null,
+        "dataFormat": "Account and configuration records live in PostgreSQL and analytics events live in ClickHouse on the user's server",
+        "gapVsPaid": "The philosophy is close, but the user must run PostgreSQL and ClickHouse and loses Fathom's managed operations and support.",
+        "setupBlocker": "Docker Compose, roughly 2 GB of RAM, a domain with DNS and TLS, and backups for PostgreSQL and ClickHouse",
+        "sources": [
+          "https://github.com/plausible/analytics",
+          "https://github.com/plausible/analytics/blob/master/LICENSE.md",
+          "https://github.com/plausible/community-edition",
+          "https://plausible.io/self-hosted-web-analytics",
+          "https://usefathom.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Umami",
+      "url": "https://umami.is",
+      "type": "open-source",
+      "repo": "https://github.com/umami-software/umami",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Simple privacy analytics with enough events and goals to avoid paying for simplicity.",
+      "stars": 38073,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Create an Umami Cloud account or deploy the Node application with Docker Compose and PostgreSQL",
+        "engines": null,
+        "dataFormat": "A self-hosted deployment stores analytics and account data in PostgreSQL; Umami Cloud stores it in Umami's managed service",
+        "gapVsPaid": "It is less deliberately minimal and, when self-hosted, lacks Fathom's managed reliability and support.",
+        "setupBlocker": "None for hosted signup; self-hosting requires Docker or Node hosting and a PostgreSQL database",
+        "sources": [
+          "https://github.com/umami-software/umami",
+          "https://github.com/umami-software/umami/blob/master/LICENSE",
+          "https://umami.is/docs/install",
+          "https://umami.is/docs/hosting",
+          "https://umami.is/pricing",
+          "https://usefathom.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "simple-analytics",
+    "umami-cloud",
+    "squarespace"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful because several analytics apps are genuinely cloneable now.",
+  "prompt": "Build me a privacy-first web analytics service to replace Fathom Analytics. Requirements:\n\n- Node + Express + better-sqlite3, one small app I deploy on my VPS behind\n  Caddy or nginx.\n- The tracker: a single script tag under 2 KB that sends pageview beacons\n  (path, referrer, screen width) with navigator.sendBeacon. No cookies.\n- Count unique visitors without storing personal data: hash IP + user agent\n  with a salt that rotates daily, then drop the raw values.\n- Filter obvious bots against a user-agent blocklist before counting.\n- Dashboard page: pageviews, uniques, top pages, top referrers over 7/30/365\n  days, one Chart.js line chart plus tables. Protected by a single bearer\n  token from .env, no user accounts.\n- Retention: raw events kept 30 days, daily rollups kept forever, pruned by a\n  nightly node-cron job.\n- No cookies, no personal data at rest, no telemetry of its own.\n- Out of scope: email reports, team seats, billing. One site, or a short site\n  list in config.\n- README: deploy steps, adding the script tag, and a plain note that this is\n  polite analytics, not a legal compliance product.",
+  "promptCurated": false
+}

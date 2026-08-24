@@ -1,0 +1,374 @@
+{
+  "slug": "front",
+  "name": "Front",
+  "domain": "front.com",
+  "appURL": "https://front.com",
+  "category": "customer-support",
+  "subcategory": "help desks, live chat and support knowledge",
+  "tagline": "Operate a shared mailbox with assignments, comments, and simple rules",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "source": "https://front.com/pricing",
+    "checkedOn": "2026-08-12",
+    "confidence": "high",
+    "notes": "Official Starter monthly seat price.",
+    "native": "25 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": null,
+        "annualPerMonth": 25,
+        "per": "user",
+        "limits": "Up to 10 seats; 1 workspace; 1 channel type; up to 10 channels/license; 10 automation rules; 200 AI compose/translate/summarize actions per teammate/day",
+        "notes": "Billed annually; month-to-month USD rate was not published in the retrieved official page."
+      },
+      {
+        "name": "Professional",
+        "monthly": null,
+        "annualPerMonth": 65,
+        "per": "user",
+        "limits": "Up to 50 seats; 5 workspaces; omnichannel; up to 30 channels/license; 20 automation rules; 200 basic AI actions/teammate/day",
+        "notes": "Billed annually; month-to-month USD rate was not published in the retrieved official page."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": 105,
+        "per": "user",
+        "limits": "Unlimited workspaces/rules/macros; up to 50 channels/license; Copilot, Smart QA and Smart CSAT included",
+        "notes": "Billed annually; no maximum seat count stated."
+      }
+    ],
+    "freeTierCaps": "no free tier (14-day Professional trial; no credit card required)",
+    "billingTerms": "annual pricing published (24% saving); monthly billing control exists but current month-to-month USD figures were not exposed in official page text",
+    "priceChanges": [],
+    "hiddenCosts": "Starter and Professional AI add-ons: Copilot $20/seat/month, Smart QA $20, Smart CSAT $10, QA+CSAT $25; Autopilot starts at $0.05/conversation. Native WhatsApp adds Meta charges plus a 20% admin fee; API capacity costs $200 per extra 100 requests/minute/month; contracts over $25,000 require paid onboarding.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://front.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Front, operate a shared mailbox with assignments, comments, and simple rules. The hard boundary is email infrastructure, many channels, workflow automation, crm context, and enterprise governance, plus channel integrations and support operations.",
+  "coreLoopDIY": "Receive customer messages into a shared mailbox, assign conversations, comment internally, apply simple rules, reply from one place, and retain a searchable conversation history.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "email or chat channel credentials"
+  ],
+  "whatYouLose": [
+    "email infrastructure, many channels, workflow automation, CRM context, and enterprise governance",
+    "omnichannel integrations",
+    "large-scale deliverability",
+    "AI resolution tuning",
+    "enterprise routing and compliance"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "channel integrations and support operations",
+  "replacementScope": "small-team shared inbox",
+  "ongoingBurden": "message delivery, webhooks, threading, identity, permissions, attachments, notifications, spam, search, uptime, and retention",
+  "whyPeopleStillPay": "People still pay for Front because support software survives because missing or misrouting one customer message is expensive and every channel behaves differently. The recurring cost buys message delivery, webhooks, threading, identity, permissions, attachments, notifications, spam, search, uptime, and retention, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Chatwoot",
+      "url": "https://github.com/chatwoot/chatwoot",
+      "desc": "Mature open-source customer engagement and shared-inbox platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Chatwoot",
+      "url": "https://www.chatwoot.com/",
+      "type": "open-source",
+      "repo": "https://github.com/chatwoot/chatwoot",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A proper support inbox with chat, email and a help center; free software, billable server chores.",
+      "stars": 35534,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Hosted signup or Docker Compose",
+        "engines": null,
+        "dataFormat": "Conversations, contacts and configuration in PostgreSQL; Redis handles jobs and cache; attachments use local disk or configured object storage",
+        "gapVsPaid": "It is support-inbox oriented and weaker than Front for email-first shared drafting, internal collaboration, routing rules and multi-inbox operations.",
+        "setupBlocker": "Self-hosting requires a VM or Docker, PostgreSQL, Redis, SMTP, persistent or object storage, HTTPS, backups and upgrades",
+        "sources": [
+          "https://github.com/chatwoot/chatwoot",
+          "https://github.com/chatwoot/chatwoot/blob/develop/LICENSE",
+          "https://developers.chatwoot.com/self-hosted/deployment/docker",
+          "https://developers.chatwoot.com/self-hosted/deployment/architecture",
+          "https://developers.chatwoot.com/self-hosted/configuration/environment-variables",
+          "https://front.com/product"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "FreeScout",
+      "url": "https://freescout.net/",
+      "type": "open-source",
+      "repo": "https://github.com/freescout-help-desk/freescout",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Email becomes an assigned team inbox with notes and collision warnings; the nicer modules open a wallet.",
+      "stars": 4400,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Upload the PHP application and run its Laravel web installer",
+        "engines": null,
+        "dataFormat": "Mailbox, ticket and contact data in MySQL or MariaDB; attachments in application storage",
+        "gapVsPaid": "Its rules, integrations, mobile experience and collaboration are less polished than Front's, and several useful modules are separately paid.",
+        "setupBlocker": "PHP and a web server, MySQL or MariaDB, cron, IMAP or SMTP or OAuth, backups and separately paid modules for several extras",
+        "sources": [
+          "https://github.com/freescout-help-desk/freescout",
+          "https://github.com/freescout-help-desk/freescout/blob/dist/LICENSE",
+          "https://github.com/freescout-help-desk/freescout/wiki/Installation-Guide",
+          "https://github.com/freescout-help-desk/freescout/wiki/FreeScout-Modules",
+          "https://front.com/product"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "HubSpot Free CRM",
+      "url": "https://www.hubspot.com/products/crm/conversations",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A two-seat shared inbox and live chat bolted to a CRM; free until the limits become colleagues.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Records and files live in HubSpot's cloud; CRM records can be exported as CSV or XLSX",
+        "gapVsPaid": "Its shared inbox is a basic CRM feature, not Front's mature email-first assignment, commenting, drafting, rules and multi-inbox workspace.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.hubspot.com/products/crm",
+          "https://knowledge.hubspot.com/import-and-export/export-records",
+          "https://legal.hubspot.com/privacy-policy",
+          "https://front.com/product"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Zammad",
+      "url": "https://zammad.org/",
+      "type": "open-source",
+      "repo": "https://github.com/zammad/zammad",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A serious ticket desk with email, chat, SLAs and a knowledge base; setup is the first ticket.",
+      "stars": 5800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup or Docker Compose, Portainer or OS package",
+        "engines": null,
+        "dataFormat": "Tickets and users in PostgreSQL, queue and cache in Redis, search in Elasticsearch or OpenSearch, and attachments in filesystem or object storage",
+        "gapVsPaid": "It treats messages as help-desk tickets rather than preserving Front's lighter, email-native team collaboration model.",
+        "setupBlocker": "Self-hosting normally means Docker plus PostgreSQL, Redis, Elasticsearch or OpenSearch, mail channels, a domain and backups",
+        "sources": [
+          "https://github.com/zammad/zammad",
+          "https://github.com/zammad/zammad/blob/develop/LICENSE",
+          "https://docs.zammad.org/en/latest/install/docker-compose.html",
+          "https://docs.zammad.org/en/latest/prerequisites/software.html",
+          "https://docs.zammad.org/en/latest/install/elasticsearch.html",
+          "https://front.com/product"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "tawk.to",
+      "url": "https://www.tawk.to/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "Live chat, tickets, email, and a help centre for zero dollars; the tiny tawk.to badge pays the rent.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup plus a JavaScript snippet or CMS plugin",
+        "engines": "tawk.to AI Assist; underlying models are not disclosed",
+        "dataFormat": "Chats, tickets and contacts live in tawk.to's cloud database until deleted; chat and ticket data can be exported",
+        "gapVsPaid": "It is chat-first and much weaker for shared email drafting, comments, assignments and rules than Front.",
+        "setupBlocker": "The website widget or plugin must be installed; removing tawk.to branding is paid",
+        "sources": [
+          "https://www.tawk.to/",
+          "https://www.tawk.to/why-free/",
+          "https://help.tawk.to/article/viewing-deleting-and-exporting-your-chat-history",
+          "https://help.tawk.to/article/exporting-tickets",
+          "https://front.com/product"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "HubSpot Free Help Desk",
+      "url": "https://www.hubspot.com/products/service/help-desk",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A hosted shared inbox, live chat, and ticket queue for two users; the knowledge base lives upstairs.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Tickets, inbox messages and contact records live in HubSpot's cloud; records can be exported as CSV or XLSX",
+        "gapVsPaid": "It is a basic ticket and inbox queue rather than Front's polished email-first collaboration, shared drafting and rule system.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.hubspot.com/products/service/help-desk",
+          "https://knowledge.hubspot.com/import-and-export/export-records",
+          "https://legal.hubspot.com/privacy-policy",
+          "https://front.com/product"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Odoo Helpdesk One App Free",
+      "url": "https://www.odoo.com/app/helpdesk",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A real hosted ticket desk for unlimited users, as long as Helpdesk is your one free Odoo app.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Tickets, messages and attachments live in Odoo Online's managed database and filestore",
+        "gapVsPaid": "It is ticket-centric and lacks Front's fluid shared-mailbox collaboration, drafting, comments and email automation.",
+        "setupBlocker": "None for Helpdesk alone; installing another Odoo app ends the one-app-free arrangement",
+        "sources": [
+          "https://www.odoo.com/pricing-plan",
+          "https://www.odoo.com/app/helpdesk",
+          "https://front.com/product"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "LibreDesk",
+      "url": "https://libredesk.io/",
+      "type": "open-source",
+      "repo": "https://github.com/abhinavxd/libredesk",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A modern email-and-live-chat desk in one compact stack, because apparently that was allowed.",
+      "stars": 2682,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Docker or prebuilt binary with PostgreSQL",
+        "engines": null,
+        "dataFormat": "Conversations, contacts, rules and settings in PostgreSQL; attachments live on the self-hosted instance or configured storage",
+        "gapVsPaid": "It is a much younger product with a smaller integration, mobile, reporting and administration ecosystem than Front.",
+        "setupBlocker": "Docker or a binary plus PostgreSQL, mail channels, a domain, HTTPS, persistent storage and backups",
+        "sources": [
+          "https://github.com/abhinavxd/libredesk",
+          "https://github.com/abhinavxd/libredesk/blob/main/LICENSE",
+          "https://docs.libredesk.io/",
+          "https://libredesk.io/",
+          "https://front.com/product"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "FreeScout",
+      "url": "https://freescout.net/",
+      "desc": "The shared mailbox is free; the rules that make it Front-like are a paid module."
+    },
+    {
+      "name": "Freshdesk Free Program",
+      "url": "https://www.freshworks.com/freshdesk/pricing/",
+      "desc": "The no-cost program expires after six months; that is a trial with better manners."
+    }
+  ],
+  "relatedSlugs": [
+    "intercom",
+    "zendesk",
+    "help-scout"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a small-team shared inbox DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Front in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, WebSockets, and Docker Compose; do not offer alternative stacks.\nThe core loop is: receive customer messages into a shared mailbox, assign conversations, comment internally, apply simple rules, reply from one place, and retain a searchable conversation history.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement one workspace, agents, contacts, inboxes, conversations, messages, labels, and assignment.\nProvide a website chat widget with reconnect, unread counts, file limits, and clear availability state.\nCreate a shared inbox with filters, collision warnings, notes, canned replies, and searchable history.\nAdd email notifications, browser notifications, and an immutable assignment and status log.\nImplement spam controls, attachment scanning hooks, retention settings, export, and contact deletion.\nShip Docker Compose, backups, health checks, migrations, and a documented admin recovery flow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out many social and messaging channels.\nDeliberately leave out AI agents trained on proprietary support data.\nDeliberately leave out enterprise workforce management, SSO, and compliance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

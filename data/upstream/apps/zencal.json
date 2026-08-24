@@ -1,0 +1,238 @@
+{
+  "slug": "zencal",
+  "name": "Zencal",
+  "domain": "zencal.io",
+  "appURL": "https://zencal.io",
+  "category": "scheduling",
+  "subcategory": "booking links and calendar automation",
+  "tagline": "Publish booking pages and collect optional payments through a simple workflow",
+  "priceMonthly": 28,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://zencal.io/pricing/",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Pro monthly equivalent; vendor billing may be in EUR.",
+    "native": "28 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Light",
+        "monthly": 10,
+        "annualPerMonth": 8.33,
+        "per": "user",
+        "limits": "Maximum 1 user; unlimited meetings, topics, and calendars.",
+        "notes": "Annual plan gives 2 months free; Clients module is +$10/month."
+      },
+      {
+        "name": "Pro",
+        "monthly": 28,
+        "annualPerMonth": 23.33,
+        "per": "user",
+        "limits": "Unlimited meetings, topics, and calendars; 1 user included.",
+        "notes": "Annual plan gives 2 months free."
+      },
+      {
+        "name": "Team",
+        "monthly": 349,
+        "annualPerMonth": 290.83,
+        "per": "flat",
+        "limits": "Up to 20 users; unlimited meetings, topics, and calendars.",
+        "notes": "Annual plan gives 2 months free."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "20+ users; custom limits and onboarding.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (2 months free); 14-day trial; Enterprise custom",
+    "priceChanges": [],
+    "hiddenCosts": "Optional modules are separately priced: Events +$10/month, Bundles +$10, Analytics +$10, Clients +$10, Client Portal +$28, Conversions +$8; SMS costs $0.08 each outside Enterprise; displayed prices are gross.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://zencal.io/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Zencal, publish booking pages and collect optional payments through a simple workflow. The hard boundary is calendar connections, payments, reminders, team access, and hosted reliability, plus calendar integrations and reliability.",
+  "coreLoopDIY": "Read one calendar, publish booking pages with availability, collect optional payments, create conflict-safe bookings, and send confirmations and reminders.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google Calendar OAuth credentials",
+    "PostgreSQL",
+    "public deploy target",
+    "Resend API key",
+    "domain with HTTPS"
+  ],
+  "whatYouLose": [
+    "calendar connections, payments, reminders, team access, and hosted reliability",
+    "multiple calendar providers",
+    "team routing and round-robin",
+    "payments",
+    "timezone edge-case maturity"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "calendar integrations and reliability",
+  "replacementScope": "single-user booking service",
+  "ongoingBurden": "OAuth refresh, webhooks, timezone databases, race conditions, reminders, deliverability, privacy, and uptime",
+  "whyPeopleStillPay": "People still pay for Zencal because people pay because one double booking or missed invite can cost more than years of subscription fees. The recurring cost buys OAuth refresh, webhooks, timezone databases, race conditions, reminders, deliverability, privacy, and uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.com",
+      "desc": "Mature open-source scheduling platform with calendar integrations and booking workflows."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Cal.com Free",
+      "url": "https://cal.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Unlimited solo event types, calendars and bookings, with payments and notifications; team routing costs money.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account, availability, booking and integration records live in Cal.com's cloud and in the connected calendar, conferencing and payment providers",
+        "gapVsPaid": "The free plan is built for one person, while team routing and shared scheduling cost extra and the workflow is less payment-service-focused than Zencal.",
+        "setupBlocker": null,
+        "sources": [
+          "https://cal.com/pricing",
+          "https://cal.com/privacy",
+          "https://zencal.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "TidyCal Free",
+      "url": "https://tidycal.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Unlimited one-person booking types and paid bookings on one calendar; group meetings and fancy emails cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account, connected-calendar, appointment and payment-integration records live in TidyCal and AppSumo's cloud services",
+        "gapVsPaid": "It connects one calendar and omits custom intake questions, reminders and group bookings on the free plan.",
+        "setupBlocker": null,
+        "sources": [
+          "https://help.tidycal.com/article/739-faq",
+          "https://tidycal.com/privacy-policy",
+          "https://tidycal.com/",
+          "https://zencal.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "YouCanBookMe Free",
+      "url": "https://youcanbook.me/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "One booking page, but it keeps forms, payments, confirmations, polls and the calendar-overlay trick.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup followed by connecting a supported calendar",
+        "engines": null,
+        "dataFormat": "Booking and account records live in YouCanBookMe's cloud, while availability is read from and events are written to the connected Google, Microsoft or Apple calendar",
+        "gapVsPaid": "It is limited to one booking page and one calendar, retains branding and requires a connected external calendar.",
+        "setupBlocker": "A supported external calendar must be connected before a booking page can work",
+        "sources": [
+          "https://youcanbook.me/pricing",
+          "https://support.youcanbook.me/hc/en-us/articles/17321656824471-Why-connect-my-calendar-to-YouCanBookMe",
+          "https://youcanbook.me/privacy",
+          "https://zencal.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "zcal Free",
+      "url": "https://zcal.co/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Unlimited links and calendars, custom questions, email reminders and Stripe payments; teams are paid and zcal takes 3%.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account and booking records live in zcal's cloud; Stripe processes and stores payment details for paid bookings",
+        "gapVsPaid": "Stripe payments carry a 3% commission and teams are paid, with less service-client workflow depth than Zencal.",
+        "setupBlocker": null,
+        "sources": [
+          "https://zcal.co/pricing",
+          "https://help.zcal.co/pricing/free-forever-plan",
+          "https://help.zcal.co/integrations/stripe",
+          "https://zcal.co/privacy",
+          "https://zencal.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "cal-com-teams",
+    "fantastical",
+    "tidycal"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a single-user booking service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Zencal in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, Google Calendar OAuth, and Resend; do not offer alternative stacks.\nThe core loop is: read one calendar, publish booking pages with availability, collect optional payments, create conflict-safe bookings, and send confirmations and reminders.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement one account with configurable working hours, buffers, minimum notice, and booking horizon.\nConnect Google Calendar using OAuth and store refresh tokens encrypted at rest.\nCalculate availability in UTC and render it in the visitor's detected timezone.\nReserve slots transactionally, create calendar events, and prevent concurrent double booking.\nSend confirmation, cancellation, and reminder email with signed management links.\nAdd an admin booking list, event-type editor, audit log, and calendar reconnect flow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out Microsoft and Apple calendar support.\nDeliberately leave out team round-robin routing.\nDeliberately leave out payments, CRM workflows, and enterprise controls.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

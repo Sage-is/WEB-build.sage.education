@@ -1,0 +1,136 @@
+{
+  "slug": "ocoya",
+  "name": "Ocoya",
+  "domain": "ocoya.com",
+  "appURL": "https://ocoya.com",
+  "category": "social-media",
+  "subcategory": "AI social marketing",
+  "tagline": "AI copy, design, scheduling, ecommerce integrations, and analytics",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://ocoya.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Bronze",
+        "monthly": 15,
+        "annualPerMonth": 12,
+        "per": "flat",
+        "limits": "1 workspace, 1 user, 5 social profiles, 100 credits",
+        "notes": "Annual price calculated from the published 20% annual discount."
+      },
+      {
+        "name": "Silver",
+        "monthly": 39,
+        "annualPerMonth": 31.2,
+        "per": "flat",
+        "limits": "5 workspaces, 5 users, 20 social profiles, 500 credits",
+        "notes": "Annual price calculated from the published 20% annual discount."
+      },
+      {
+        "name": "Gold",
+        "monthly": 79,
+        "annualPerMonth": 63.2,
+        "per": "flat",
+        "limits": "20 workspaces, 20 users, 50 social profiles, 1,500 credits",
+        "notes": "Annual price calculated from the published 20% annual discount."
+      },
+      {
+        "name": "Diamond",
+        "monthly": 159,
+        "annualPerMonth": 127.2,
+        "per": "flat",
+        "limits": "Unlimited workspaces, 50 users, 150 social profiles, unlimited credits",
+        "notes": "Annual price calculated from the published 20% annual discount."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Custom plan for large businesses",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (-20%); 7-day free trial",
+    "priceChanges": [],
+    "hiddenCosts": "VAT may be added; lower plans have hard monthly credit, workspace, user and social-profile caps, and the page does not publish overage prices.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.ocoya.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible AI social marketing loop is buildable, but a credible replacement needs more than the first screen. Ocoya earns its keep through platform APIs, distribution, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a personal AI social marketing planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "hosted database and worker",
+    "official platform OAuth credentials where available"
+  ],
+  "whatYouLose": [
+    "protection from API and policy changes",
+    "calendar-provider edge cases and timezone correctness",
+    "reliable direct publishing across networks",
+    "analytics history and attribution",
+    "team approvals and asset workflows"
+  ],
+  "moatTags": [
+    "integrations"
+  ],
+  "moatNotes": "platform APIs/distribution",
+  "whyPeopleStillPay": "Ocoya: Social tools survive because networks change APIs, permissions, formats, and anti-spam rules constantly.",
+  "ongoingBurden": "Maintain OAuth, token refresh, media constraints, rate limits, scheduling, webhooks, retries, and platform policy compliance.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Open-source social scheduling and publishing platform."
+    },
+    {
+      "name": "Mixpost",
+      "url": "https://github.com/inovector/mixpost",
+      "desc": "Self-hosted social media management software."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Adobe Express Free",
+      "url": "https://www.adobe.com/express/",
+      "desc": "Design, limited AI generation and scheduling are covered; ecommerce integrations and account analytics are not."
+    },
+    {
+      "name": "BrightBean Studio",
+      "url": "https://brightbean.xyz/studio/",
+      "desc": "Scheduling and analytics without AI design or ecommerce plumbing."
+    },
+    {
+      "name": "Postiz",
+      "url": "https://postiz.com/",
+      "desc": "AI captions and scheduling are not the same thing as an integrated design and ecommerce studio."
+    }
+  ],
+  "relatedSlugs": [
+    "predis-ai",
+    "flick",
+    "feedhive"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Ocoya is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Ocoya, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build a personal AI social marketing planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: protection from API and policy changes; calendar-provider edge cases and timezone correctness; reliable direct publishing across networks.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

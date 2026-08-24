@@ -1,0 +1,98 @@
+{
+  "slug": "hey-email",
+  "name": "HEY",
+  "domain": "hey.com",
+  "category": "email",
+  "subcategory": "consumer email service",
+  "tagline": "Opinionated paid email service with screening, bundles, and privacy defaults",
+  "priceMonthly": 8.25,
+  "pricing": {
+    "plan": "Personal address",
+    "basis": "annual effective per month",
+    "unit": "flat",
+    "native": "8.25 USD",
+    "source": "https://www.hey.com/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; 4+ character personal address is $99/year, equivalent to $8.25/month.",
+    "tiers": [
+      {
+        "name": "HEY for You",
+        "monthly": null,
+        "annualPerMonth": 8.25,
+        "per": "user",
+        "limits": "1 person; 1 @hey.com address; 100 GB storage.",
+        "notes": "$99/year; no monthly plan."
+      },
+      {
+        "name": "HEY for Families",
+        "monthly": null,
+        "annualPerMonth": 14.9167,
+        "per": "flat",
+        "limits": "Up to 5 people total (account holder + 4 additional people), each with a separate @hey.com address and account.",
+        "notes": "$179/year total; no monthly plan."
+      },
+      {
+        "name": "HEY for Domains",
+        "monthly": 12,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom-domain email with central billing; first user is $10/month and each additional user is $12/month.",
+        "notes": "Monthly only; no annual plan and no free trial."
+      }
+    ],
+    "freeTierCaps": "no free tier; HEY for You and Families have a 30-day trial, while HEY for Domains has no free trial",
+    "billingTerms": "HEY for You and Families are annual only; HEY for Domains is monthly only; prices are USD and taxes may be added",
+    "priceChanges": [],
+    "hiddenCosts": "Ultra-short @hey.com addresses cost extra each year: $999/year for 2 characters and $349/year for 3 characters; 4+ characters are included with the normal personal plan.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.hey.com/pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build an email client, but replacing HEY means running a trustworthy email service: deliverability, spam filtering, abuse handling, storage, mobile apps, and reputation.",
+  "coreLoopDIY": "Build a personal mail client on top of IMAP/SMTP or a hosted mailbox; do not try to replace the global email service layer casually.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "existing email provider or mailbox",
+    "IMAP/SMTP APIs",
+    "spam filtering if hosting",
+    "domain/DNS if custom email"
+  ],
+  "whatYouLose": [
+    "email deliverability",
+    "spam/abuse systems",
+    "storage reliability",
+    "mobile apps",
+    "identity/reputation",
+    "support"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "brand-trust"
+  ],
+  "moatNotes": "deliverability/compliance/infrastructure",
+  "whyPeopleStillPay": "They pay because email is infrastructure; deliverability and trust are the product.",
+  "priorArt": [
+    {
+      "name": "Mail-in-a-Box",
+      "url": "https://github.com/mail-in-a-box/mailinabox",
+      "desc": "Open-source personal mail server stack; useful prior art but deliverability remains the mo",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "1password",
+    "bitwarden",
+    "dashlane"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Valuable no: the UI is cloneable, but email infrastructure is not an afternoon project.",
+  "prompt": "Build me an email client with HEY's screening and bundling ideas, running on\ntop of a mailbox I already pay for (Fastmail, Gmail, anything with IMAP).\nRequirements:\n\n- A local web app: Node + Express + better-sqlite3, binds to localhost;\n  imapflow for reading, nodemailer for sending, creds in .env.\n- The screener: mail from first-time senders lands in a screening view where I\n  approve or block; decisions persist in SQLite and apply to all future mail.\n- Bundles: approved senders get a category; newsletters render in a batched\n  feed view, receipts in a paper-trail list; only approved humans hit the\n  inbox.\n- Reply-later: mark a thread and it sits in a persistent to-answer stack until\n  cleared.\n- Write decisions back as IMAP folders and labels so my phone's mail app\n  roughly mirrors the sorting.\n- Strip remote images in the reading pane by default.\n- No accounts of its own, no telemetry; mail stays at my provider.\n- Out of scope: running an SMTP server, custom domains, and mobile apps. Do not\n  replace the mail service itself; deliverability and spam reputation are the\n  product and cannot be rebuilt solo.\n- README: per-provider app-password setup, and a warning that Gmail OAuth is a\n  project of its own, use an app password or Fastmail to keep this a weekend.",
+  "promptCurated": false
+}

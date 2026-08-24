@@ -1,0 +1,203 @@
+{
+  "slug": "webex-meet",
+  "name": "Webex Meet",
+  "domain": "webex.com",
+  "appURL": "https://webex.com",
+  "category": "video-conferencing",
+  "subcategory": "video meetings and webinars",
+  "tagline": "Host basic private calls without reproducing enterprise media and telephony infrastructure",
+  "priceMonthly": 14.5,
+  "pricing": {
+    "plan": "Meet",
+    "basis": "monthly per license",
+    "unit": "per-seat",
+    "source": "https://webex.com/pricing/index.html",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Meet monthly licence price.",
+    "native": "14.5 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Webex Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Meetings up to 40 minutes and 100 attendees; unlimited meetings; local recording",
+        "notes": null
+      },
+      {
+        "name": "Webex Meet",
+        "monthly": 14.5,
+        "annualPerMonth": 12,
+        "per": "user",
+        "limits": "Meetings up to 24 hours and 200 attendees; 10 GB cloud recording storage",
+        "notes": null
+      },
+      {
+        "name": "Webex Suite, Meet + Call",
+        "monthly": 25,
+        "annualPerMonth": 22.5,
+        "per": "user",
+        "limits": "Meetings up to 24 hours and 200 attendees; 10 GB cloud recording storage; cloud calling",
+        "notes": null
+      },
+      {
+        "name": "Webex Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Meetings up to 24 hours and 1,000 attendees; unlimited cloud recording storage",
+        "notes": "Contact sales"
+      }
+    ],
+    "freeTierCaps": "40 minutes per meeting; 100 attendees; unlimited meetings; local recording",
+    "billingTerms": "monthly + annual; annual Webex Meet is $144 per license and Meet + Call is $270 per license; annual plans are unavailable in Germany",
+    "priceChanges": [],
+    "hiddenCosts": "Each concurrent hosted meeting needs another host license. Real-Time Translation is $300/license/year; Call Me Domestic is $48/user/year and Call Me International is $429/user/year. International long-distance calling can also be metered per minute.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://pricing.webex.com/us/en/",
+      "https://pricing.webex.com/us/en/hybrid-work/meetings/all-features/",
+      "https://help.webex.com/en-us/article/nc4xp2eb/Upgrade-your-free-account-to-a-paid-plan"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Webex Meet, host basic private calls without reproducing enterprise media and telephony infrastructure. The hard boundary is global conferencing, devices, calling, security, compliance, and support, plus real-time media infrastructure and reliability.",
+  "coreLoopDIY": "Host basic private video calls in modest rooms, issue signed room links, and keep recordings only when every participant is clearly informed, without reproducing enterprise media and telephony infrastructure.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "public server with strong bandwidth",
+    "domain and TLS",
+    "TURN server",
+    "Docker",
+    "explicit participant consent for recording"
+  ],
+  "whatYouLose": [
+    "global conferencing, devices, calling, security, compliance, and support",
+    "global low-latency media network",
+    "dial-in and telephony",
+    "large webinars",
+    "transcription, support, and compliance"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "real-time media infrastructure and reliability",
+  "replacementScope": "small private meeting service",
+  "ongoingBurden": "TURN capacity, codecs, browsers, packet loss, scaling, recording, consent, abuse, monitoring, and incident response",
+  "whyPeopleStillPay": "People still pay for Webex Meet because video products survive because real-time media quality and global reliability are infrastructure businesses, not weekend interface projects. The recurring cost buys TURN capacity, codecs, browsers, packet loss, scaling, recording, consent, abuse, monitoring, and incident response, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Jitsi Meet",
+      "url": "https://github.com/jitsi/jitsi-meet",
+      "desc": "Widely deployed open-source video-conferencing platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Jitsi Meet",
+      "url": "https://meet.jit.si",
+      "type": "open-source",
+      "repo": "https://github.com/jitsi/jitsi-meet",
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Click a room link and meet; enterprise telephony sensibly stays behind.",
+      "stars": 29700,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "MiroTalk SFU",
+      "url": "https://sfu.mirotalk.com",
+      "type": "open-source",
+      "repo": "https://github.com/miroslavpejic85/mirotalksfu",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A capable WebRTC room in one Docker stack, with lobby, whiteboard and recording.",
+      "stars": 3100,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Use the public browser demo, or deploy the Ubuntu/Docker Compose stack with a domain, TLS, and exposed WebRTC ports",
+        "engines": null,
+        "dataFormat": "Live media is forwarded through the selected SFU and is not stored by default; optional recordings are WebM files in the configured recording directory or an S3-compatible bucket.",
+        "gapVsPaid": "MiroTalk SFU is capable for browser meetings, but enterprise identity, telephony, compliance, native-client maturity, service guarantees, and managed media operations remain missing.",
+        "setupBlocker": "Self-hosting requires a public Ubuntu server, DNS/TLS, Docker or Node.js, a wide TCP/UDP media-port range, and usually TURN; free AGPL use also does not include unrestricted rebranding.",
+        "sources": [
+          "https://github.com/miroslavpejic85/mirotalksfu",
+          "https://github.com/miroslavpejic85/mirotalksfu/blob/main/LICENSE",
+          "https://docs.mirotalk.com/mirotalk-sfu/self-hosting/",
+          "https://docs.mirotalk.com/faq/",
+          "https://docs.mirotalk.com/overview/",
+          "https://github.com/miroslavpejic85/mirotalksfu/blob/main/.env.template",
+          "https://docs.mirotalk.com/mirotalk-sfu/rebranding/",
+          "https://www.webex.com/meetings.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Nextcloud Talk",
+      "url": "https://nextcloud.com/talk",
+      "type": "open-source",
+      "repo": "https://github.com/nextcloud/spreed",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Calls and chat inside Nextcloud; scaling it turns into a TURN-server hobby.",
+      "stars": 2200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Enable the Talk app from the app store inside an existing Nextcloud server; add TURN and the High Performance Backend for harder networks or larger calls",
+        "engines": "Optional Nextcloud Assistant backends provide transcription, translation, and summaries; ordinary chat and calls do not require an AI model.",
+        "dataFormat": "Messages and call metadata live in the Nextcloud database, shared files live in the Nextcloud data store, and recordings/transcripts remain on the administrator's configured Nextcloud infrastructure.",
+        "gapVsPaid": "Nextcloud Talk keeps calls and files under your control, but an existing Nextcloud server plus TURN and scaling infrastructure is far less turnkey than Webex's enterprise service.",
+        "setupBlocker": "The apparent one-click install assumes a working Nextcloud server; reliable external calls then require TURN, while larger calls and webinars add the High Performance Backend and substantial networking work.",
+        "sources": [
+          "https://github.com/nextcloud/spreed",
+          "https://github.com/nextcloud/spreed/blob/main/COPYING",
+          "https://github.com/nextcloud/spreed#installing-for-production",
+          "https://nextcloud-talk.readthedocs.io/en/latest/TURN/",
+          "https://nextcloud-talk.readthedocs.io/en/latest/scalability/",
+          "https://nextcloud.com/talk/",
+          "https://www.webex.com/meetings.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "zoom-pro",
+    "google-workspace-business-starter",
+    "microsoft-teams-essentials"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Meet plan and a small private meeting service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Webex Meet in an empty repository.\nUse Docker Compose, Jitsi Meet, a small Next.js 15 control panel, PostgreSQL, and TURN; do not offer alternative stacks.\nThe core loop is: host basic private video calls in modest rooms, issue signed room links, and keep recordings only when every participant is clearly informed, without reproducing enterprise media and telephony infrastructure.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nDeploy Jitsi Meet through pinned Docker images and configure a dedicated TURN service.\nBuild an owner panel for rooms, signed invitations, expiry, lobby mode, and participant limits.\nShow connection diagnostics for camera, microphone, browser, bandwidth, and TURN reachability.\nMake recording disabled by default and require an on-screen consent state for every participant.\nStore room metadata and audit events, but do not store media unless explicitly enabled.\nAdd health checks, bandwidth dashboards, backup, restore, upgrade, and incident instructions.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a global media edge network.\nDeliberately leave out public webinar scale and telephony.\nDeliberately leave out regulated recording, enterprise compliance, and guaranteed support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

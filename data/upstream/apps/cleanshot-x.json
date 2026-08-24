@@ -1,0 +1,109 @@
+{
+  "slug": "cleanshot-x",
+  "name": "CleanShot X",
+  "domain": "cleanshot.com",
+  "appURL": "https://cleanshot.com",
+  "category": "screen-recording",
+  "subcategory": "screen recording, walkthroughs and product demos",
+  "tagline": "Capture screenshots or screen video, annotate them, and copy or save locally",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "One-time license",
+    "basis": "one-time",
+    "unit": "one-time",
+    "source": "https://cleanshot.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Primary purchase is a one-time Mac license; optional cloud plans are separate.",
+    "native": "one-time",
+    "kind": "one-time",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "App + Cloud Basic",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "CleanShot X app; 1 year of updates; 1 GB cloud storage",
+        "notes": "One-time purchase: $29; optional update/cloud renewal is $19/year."
+      },
+      {
+        "name": "App + Cloud Pro",
+        "monthly": 10,
+        "annualPerMonth": 8,
+        "per": "user",
+        "limits": "Latest app updates; unlimited cloud storage; custom domain, branding, security and team features",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier and no direct CleanShot trial; Setapp offers a separate 7-day trial",
+    "billingTerms": "one-time Basic license plus optional $19/year renewal, or monthly/annual Pro subscription",
+    "priceChanges": [],
+    "hiddenCosts": "The $29 purchase includes updates for only one year and just 1 GB of cloud; continued updates/cloud service costs $19/year, while Pro is per user and subject to fair-use limits.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://cleanshot.com/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For CleanShot X, capture screenshots or screen video, annotate them, and copy or save locally. The hard boundary is deep macos integration, scrolling capture, cloud sharing, and years of polish, plus capture polish, hosting, and collaboration.",
+  "coreLoopDIY": "Capture screenshots or screen video with microphone audio, trim the result, annotate key moments, copy or save locally, and export a shareable local video.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS or Windows screen-recording permission",
+    "microphone permission",
+    "ffmpeg",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "deep macOS integration, scrolling capture, cloud sharing, and years of polish",
+    "instant hosted sharing",
+    "viewer analytics",
+    "team libraries",
+    "cross-device capture"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra",
+    "collaboration"
+  ],
+  "moatNotes": "capture polish, hosting, and collaboration",
+  "replacementScope": "personal desktop recorder",
+  "ongoingBurden": "OS permissions, codecs, rendering performance, uploads, storage, links, and viewer analytics",
+  "whyPeopleStillPay": "People still pay for CleanShot X because the recording itself is easy; the subscription removes upload, transcoding, sharing, organization, and support work. The recurring cost buys OS permissions, codecs, rendering performance, uploads, storage, links, and viewer analytics, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Cap",
+      "url": "https://github.com/CapSoftware/Cap",
+      "desc": "Open-source screen recording and sharing product with modern desktop architecture."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "ShareX",
+      "url": "https://getsharex.com",
+      "type": "open-source",
+      "repo": "https://github.com/ShareX/ShareX",
+      "platforms": [
+        "windows"
+      ],
+      "desc": "CleanShot after a Windows power user designed every menu.",
+      "stars": 38994,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "screen-studio",
+    "scribe",
+    "vidyard"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the One-time license plan and a personal desktop recorder DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for CleanShot X in an empty repository.\nUse Tauri 2, React, TypeScript, ffmpeg, and SQLite; do not offer alternative stacks.\nThe core loop is: capture screenshots or screen video with microphone audio, trim the result, annotate key moments, copy or save locally, and export a shareable local video.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nOffer screen, window, or region capture plus optional microphone audio.\nShow an always-visible recording timer and make stop available from the tray.\nCreate a non-destructive trim view with crop, zoom, cursor highlight, and text callouts.\nRender locally through ffmpeg with sensible H.264 and WebM presets.\nGenerate a poster frame, transcript, and Markdown summary beside each video.\nProvide copy-file-path and reveal-in-folder actions instead of mandatory cloud upload.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out public cloud hosting.\nDeliberately leave out viewer identity and engagement analytics.\nDeliberately leave out enterprise workspaces and SSO.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

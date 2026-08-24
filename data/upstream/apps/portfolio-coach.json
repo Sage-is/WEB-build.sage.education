@@ -1,0 +1,111 @@
+{
+  "slug": "portfolio-coach",
+  "name": "Portfolio Coach",
+  "domain": "portfoliocoach.co.uk",
+  "category": "personal-finance",
+  "subcategory": "family wealth tracking + UK tax planning",
+  "tagline": "Family portfolio tracker with live valuations, UK planning tools, and AI reviews",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "AI credits",
+    "basis": "usage-based top-up",
+    "unit": "usage",
+    "native": "minimum 5 GBP top-up",
+    "source": "https://portfoliocoach.co.uk",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "The portfolio tracker is free to start; AI use is funded with prepaid credits rather than a monthly subscription.",
+    "tiers": [
+      {
+        "name": "Free portfolio tracking",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Portfolio tracking/planning do not consume credit; £2 AI credit included (about $2.71 at the ECB 2026-08-12 reference rate); no card required",
+        "notes": "Vendor does not publish numeric account, profile or holding caps."
+      },
+      {
+        "name": "AI credit top-ups",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Prepaid top-ups start at £5 (about $6.76); AI usage is charged at the selected model provider's cost +20%",
+        "notes": "Usage-based, not a subscription. GBP amounts converted using the ECB 2026-08-12 reference rates."
+      }
+    ],
+    "freeTierCaps": "£2 of AI credit (about $2.71); portfolio tracking and planning do not consume credit; no card required",
+    "billingTerms": "no subscription; prepaid AI credit top-ups from £5 (about $6.76)",
+    "priceChanges": [],
+    "hiddenCosts": "AI usage is variable and charged at the selected model provider's cost plus 20%; minimum top-up is £5 (about $6.76).",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://portfoliocoach.co.uk/",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A private dashboard for holdings, family members, projections, and CSV imports is a credible weekend build. Reliable live pricing for UK funds, a ledger-correct Vanguard importer, household data boundaries, maintained tax rules, and AI advice grounded in every account turn the complete product into a multi-day project.",
+  "coreLoopDIY": "Import or enter family holdings, value them, inspect allocation and projections, then ask an AI for a portfolio review grounded in that data.",
+  "diyTimeEstimate": "weekend for a local version, multi-day for the hosted product",
+  "requirements": [
+    "Node 22",
+    "OpenAI-compatible API key for AI reviews",
+    "optional market-data API key",
+    "local SQLite database"
+  ],
+  "whatYouLose": [
+    "reliable live pricing and UK fund symbol mapping",
+    "ledger-backed Vanguard history import",
+    "secure cloud accounts, family sharing, and support access",
+    "maintained UK tax and estate-planning assumptions",
+    "hosted AI reviews with current web context"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "compliance-regulatory",
+    "execution-polish"
+  ],
+  "moatNotes": "financial data correctness + maintained UK rules + hosted convenience",
+  "whyPeopleStillPay": "The core tracker is free to start. Paid AI credits cover the convenient part: a hosted coach already connected to the household's live holdings, while the product maintains pricing, imports, security boundaries, and UK planning logic.",
+  "priorArt": [
+    {
+      "name": "Ghostfolio",
+      "url": "https://github.com/ghostfolio/ghostfolio",
+      "desc": "Open-source wealth management software with portfolio analytics"
+    },
+    {
+      "name": "Portfolio Performance",
+      "url": "https://github.com/portfolio-performance/portfolio",
+      "desc": "Open-source desktop portfolio tracker with detailed performance analysis"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Ghostfolio",
+      "url": "https://ghostfol.io/",
+      "desc": "A strong private portfolio dashboard, but it has neither UK planning tools nor AI reviews."
+    },
+    {
+      "name": "Portfolio Performance",
+      "url": "https://www.portfolio-performance.info/en/",
+      "desc": "Live valuations and deep analysis are excellent; UK planning and AI reviews are absent."
+    },
+    {
+      "name": "Wealthfolio",
+      "url": "https://wealthfolio.app/",
+      "desc": "Portfolio tracking and optional AI are here; UK planning tools are not."
+    }
+  ],
+  "relatedSlugs": [
+    "monarch-money",
+    "copilot-money",
+    "ynab"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Submitted by the maker · the complete hosted product is beyond a one-shot local tracker.",
+  "prompt": "Build me a local-first UK family portfolio tracker like Portfolio Coach. Requirements:\n\n- Next.js 16 App Router + TypeScript, Tailwind, better-sqlite3, and Recharts;\n  run locally with `npm run dev` and bind to localhost only.\n- Model household members, accounts, and UK wrappers: ISA, SIPP, GIA, pension,\n  cash, bonds, and property with mortgages.\n- Holdings need ticker, units, cost basis, currency, manual price, and optional\n  market price. Always show the quote source and last-updated time.\n- Add a CSV importer with saved column mappings and dedupe on a stable row hash.\n  Include a mapping for a documented Vanguard transaction CSV example.\n- Dashboard: household net worth, value by person, allocation, wrapper split,\n  concentration warnings, gain/loss, and stale-price warnings.\n- Add editable monthly contributions and a projection chart with retirement age,\n  growth, inflation, withdrawals, and planned gifts as explicit assumptions.\n- Add a UK planning page for ISA/SIPP/GIA balances and an indicative inheritance-\n  tax snapshot. Keep thresholds in one dated config file and label this as\n  informational, not financial or tax advice.\n- Add an AI review that sends only the calculated portfolio summary to an\n  OpenAI-compatible API. Put secrets in `.env.local`; work without AI too.\n- Store everything in one local SQLite file and add an encrypted JSON export plus\n  a dated backup command. Include a realistic seeded demo household.\n- No accounts, telemetry, broker logins, automatic bank sync, or cloud sharing.\n  Out of scope: regulated advice and production-grade real-time fund pricing.\n- README with setup, CSV format, backup/restore, data limitations, and the exact\n  assumptions used by projections and tax estimates.",
+  "promptCurated": true
+}

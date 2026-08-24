@@ -1,0 +1,207 @@
+{
+  "subcategory": null,
+  "tagline": "A static page",
+  "pricing": {
+    "plan": null,
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "15 USD",
+    "source": null,
+    "checkedOn": "2026-08-07",
+    "confidence": "medium",
+    "notes": "Official pricing checked 2026-08-07; Pro at $15/month monthly, $12/month annually.",
+    "freeTier": "The free plan allows unlimited links with basic analytics.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Unlimited basic links; current public page does not state a numeric analytics-history limit.",
+        "notes": null
+      },
+      {
+        "name": "Starter",
+        "monthly": 8,
+        "annualPerMonth": 6,
+        "per": "flat",
+        "limits": "1 Linktree profile; unlimited basic links; basic analytics; 9% seller fee on digital products.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 15,
+        "annualPerMonth": 12,
+        "per": "flat",
+        "limits": "1 Linktree profile; advanced analytics and integrations; 7-day trial.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 35,
+        "annualPerMonth": 30,
+        "per": "flat",
+        "limits": "1 Linktree profile; advanced analytics/export, social scheduling and unlimited Instagram auto-replies; 7-day trial.",
+        "notes": null
+      },
+      {
+        "name": "Agency / Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom team seats and contract; numeric limits are not public.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "Unlimited basic links; numeric analytics-retention and audience limits are not published on the live plan card.",
+    "billingTerms": "monthly + annual; Pro and Premium include 7-day trials; cancel anytime",
+    "priceChanges": [],
+    "hiddenCosts": "Starter takes a 9% seller fee; Premium lists 0%, while transaction/payment-processing fees can still apply. Other plan-level seller fees were not exposed in the live comparison.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://linktr.ee/s/pricing"
+    ]
+  },
+  "verdictConfidence": "high",
+  "verdictSummary": "A static page. The most obviously one-shottable thing on this list.",
+  "coreLoopDIY": null,
+  "diyTimeEstimate": "one sitting",
+  "requirements": [],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": null,
+  "whyPeopleStillPay": null,
+  "relatedSlugs": [],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "promptCurated": true,
+  "slug": "linktree",
+  "name": "Linktree Pro",
+  "domain": "linktr.ee",
+  "category": "link-in-bio",
+  "priceMonthly": 15,
+  "verdict": "yes",
+  "notes": "A static page. The most obviously one-shottable thing on this list.",
+  "whatYouLose": [
+    "the drag-and-drop editor",
+    "their analytics dashboard",
+    "hosted-for-you convenience",
+    "integrations you probably weren't using"
+  ],
+  "priorArt": [
+    {
+      "name": "LittleLink",
+      "url": "https://github.com/sethcottle/littlelink",
+      "desc": "open-source link page, 100+ branded buttons"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Carrd",
+      "url": "https://carrd.co/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Three free one-page sites; your custom domain and the last scrap of vanity still cost money.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted browser signup and visual editor",
+        "engines": null,
+        "dataFormat": "Site definitions and uploaded media live in Carrd's cloud and are published to a Carrd URL; downloading unminified site source is a Pro Plus feature rather than part of the free account.",
+        "gapVsPaid": "Carrd's free plan has a 50-element limit, Carrd branding, no custom domain, and no built-in click analytics or forms, so it cannot reproduce the useful Pro extras without paying.",
+        "setupBlocker": null,
+        "sources": [
+          "https://carrd.co/",
+          "https://carrd.co/docs/building/troubleshooting",
+          "https://carrd.co/docs/pro/plans",
+          "https://carrd.co/docs/general/privacy",
+          "https://linktr.ee/",
+          "https://linktr.ee/s/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "LinkStack",
+      "url": "https://linkstack.org/",
+      "type": "open-source",
+      "repo": "https://github.com/LinkStackOrg/LinkStack",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Linktree without the landlord: editor, themes and click stats, all in one Docker stack.",
+      "stars": 3700,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Upload the release to a PHP 8.1+ web host and run browser setup, or use the official Docker image",
+        "engines": null,
+        "dataFormat": "Profiles, links, themes, users, and click data live in SQLite by default or MySQL; uploaded images, configuration, and the database live under writable persistent application directories.",
+        "gapVsPaid": "LinkStack can reproduce the page and click counts, but the user must host, secure, back up, and update it and loses Linktree's integrations, marketplace, and managed reliability.",
+        "setupBlocker": "The first obstacle is supplying a PHP/Docker host with writable storage, HTTPS, backups, and upgrades; public community instances remove setup but put the data on someone else's server.",
+        "sources": [
+          "https://linkstack.org/",
+          "https://github.com/LinkStackOrg/LinkStack",
+          "https://github.com/LinkStackOrg/LinkStack/blob/main/LICENSE.md",
+          "https://docs.linkstack.org/getting-started/requirements/",
+          "https://docs.linkstack.org/getting-started/setup/",
+          "https://linktr.ee/",
+          "https://linktr.ee/s/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Linktree Free",
+      "url": "https://linktr.ee/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "The same static page with unlimited basic links for zero dollars; branding and serious analytics remain the rent.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser or the official mobile app",
+        "engines": null,
+        "dataFormat": "Links, profile content, uploads, audience events, and analytics live in Linktree's cloud; exports are limited to the functions Linktree exposes rather than a portable site bundle.",
+        "gapVsPaid": "The free plan keeps Linktree branding and materially weaker analytics, customization, marketing integrations, and custom-domain control than Linktree Pro.",
+        "setupBlocker": null,
+        "sources": [
+          "https://linktr.ee/",
+          "https://linktr.ee/s/pricing",
+          "https://linktr.ee/s/privacy",
+          "https://linktr.ee/help/en/articles/5434142-what-is-included-in-the-free-plan"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "LittleLink",
+      "url": "https://littlelink.io/",
+      "desc": "Popular, healthy and still a template: a non-builder must edit files to change a link."
+    }
+  ],
+  "prompt": "Build me a link-in-bio page to replace Linktree. Requirements:\n\n- A single static page: avatar, name, short bio, and a list of link buttons defined\n  in one links.json file (title, url, optional emoji). Editing the JSON is the CMS.\n- Clean mobile-first design, dark mode via prefers-color-scheme, subtle hover states.\n  No framework needed · one HTML file with embedded CSS is fine, or Astro if you must.\n- Add click tracking with zero third parties: each link goes through a /go/:slug\n  redirect that appends a line to a local clicks.log (or a SQLite row) then 302s.\n  Add a /stats page (basic-auth from .env) showing clicks per link.\n- Proper OG tags + generated OG image so the page previews well when shared.\n- Include deploy instructions for a plain VPS with Caddy or nginx."
+}

@@ -1,0 +1,204 @@
+{
+  "slug": "elsa-speak",
+  "name": "ELSA Speak",
+  "domain": "elsaspeak.com",
+  "appURL": "https://elsaspeak.com",
+  "category": "education",
+  "subcategory": "learning, flashcards and language practice",
+  "tagline": "Record pronunciation practice and provide limited acoustic feedback without diagnostic claims",
+  "priceMonthly": 7.5,
+  "pricing": {
+    "plan": "ELSA Pro",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "source": "https://elsaspeak.com/en/elsa-subscription",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Typical Premium monthly price.",
+    "native": "7.5 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "30 practice lessons/exercises on official comparison pages; limited AI role-play, coaching, and feedback",
+        "notes": "ELSA's main page labels several free features only as limited; 30 is the clearest numeric cap published on its own comparison pages."
+      },
+      {
+        "name": "ELSA Pro",
+        "monthly": null,
+        "annualPerMonth": 7.5,
+        "per": "user",
+        "limits": "9,000+ lessons on the current shop comparison; personalized learning path; pronunciation feedback; 25,000+ exercises across 220+ topics on the product page",
+        "notes": "Standard one-year web price is $89.99; official pages conflict on the exact lesson count (5,000+, 8,000+, or 9,000+), so the current shop headline is used."
+      },
+      {
+        "name": "ELSA Premium",
+        "monthly": null,
+        "annualPerMonth": 8.33,
+        "per": "user",
+        "limits": "10,000+ targeted lessons and 25,000+ exercises on the current shop; unlimited AI role-play; Speech Analyzer; certificate courses",
+        "notes": "Standard one-year web price is $99.99; other official campaign pages show lower or region-specific first-term offers."
+      }
+    ],
+    "freeTierCaps": "30 practice lessons/exercises; AI role-play, coaching, and feedback are limited",
+    "billingTerms": "Annual web subscriptions shown at standard rates; mobile and campaign pages also sell monthly/multi-month terms; 7-day trial; auto-renewal varies by storefront",
+    "priceChanges": [],
+    "hiddenCosts": "ELSA runs many first-cycle, affiliate, regional, and app-store promotions with materially different prices; promotional rates may renew at a higher standard rate and lesson-count claims conflict across its own live pages.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://elsaspeak.com/en/elsa-subscription",
+      "https://elsaspeak.com/en/elsa-shop",
+      "https://elsaspeak.com/en/product-detail/elsa-pro-one-year",
+      "https://elsaspeak.com/en/product-detail/elsa-premium-one-year",
+      "https://elsaspeak.com/inf/ieltspodcast/",
+      "https://elsaspeak.com/en/faqs-en/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For ELSA Speak, record pronunciation practice and provide limited acoustic feedback without diagnostic claims. The hard boundary is proprietary speech models, curriculum, scoring data, mobile polish, and coaching, plus content, pedagogy, and network.",
+  "coreLoopDIY": "Record pronunciation practice from user-supplied material, provide limited acoustic feedback, schedule retrieval practice, and show progress without diagnostic claims or claiming accredited instruction.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "modern browser",
+    "user-supplied study material",
+    "optional speech or language-model API key"
+  ],
+  "whatYouLose": [
+    "proprietary speech models, curriculum, scoring data, mobile polish, and coaching",
+    "licensed course catalog",
+    "expert curriculum",
+    "human feedback",
+    "large learner network and certification"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "content-rights"
+  ],
+  "moatNotes": "content, pedagogy, and network",
+  "replacementScope": "personal study companion",
+  "ongoingBurden": "curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support",
+  "whyPeopleStillPay": "People still pay for ELSA Speak because the learning loop is buildable, while trusted curriculum, instructors, feedback, credentials, and community are not. The recurring cost buys curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Moodle",
+      "url": "https://github.com/moodle/moodle",
+      "desc": "Long-running open-source learning platform with courses, assessments, and progress tracking."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Speechling",
+      "url": "https://speechling.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Native-audio imitation, side-by-side recordings and a small monthly ration of human pronunciation coaching.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup or mobile-app install",
+        "engines": "Human pronunciation coaches plus proprietary speech processing; no acoustic model or backend is named publicly",
+        "dataFormat": "Recordings, practice history and coach feedback in the user's Speechling cloud account/audio journal; the underlying storage format is not published",
+        "gapVsPaid": "Speechling's strongest feedback is human and therefore delayed and rationed on the free service, not instant phoneme-level AI scoring after every attempt.",
+        "setupBlocker": null,
+        "sources": [
+          "https://speechling.com/",
+          "https://speechling.com/blog/speechling-white-paper/",
+          "https://speechling.com/blog/remote-workers-guide-on-how-to-improve-english-speaking-skills/",
+          "https://elsaspeak.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Anki",
+      "url": "https://apps.ankiweb.net/",
+      "type": "open-source",
+      "repo": "https://github.com/ankitects/anki",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Records your voice beside reference audio for honest comparison, but does not invent a dubious pronunciation diagnosis.",
+      "stars": 29600,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the Windows installer, macOS DMG or official Linux launcher",
+        "engines": null,
+        "dataFormat": "Local profile files including collection.anki2, collection.media and backups; exports use .apkg/.colpkg, with optional AnkiWeb sync",
+        "gapVsPaid": "Anki can record and compare speech but provides no automatic phoneme-level diagnosis, personalized scoring or corrective coaching.",
+        "setupBlocker": null,
+        "sources": [
+          "https://apps.ankiweb.net/",
+          "https://github.com/ankitects/anki",
+          "https://github.com/ankitects/anki/blob/main/LICENSE",
+          "https://docs.ankiweb.net/files.html",
+          "https://docs.ankiweb.net/backups.html",
+          "https://elsaspeak.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "AnkiDroid",
+      "url": "https://ankidroid.org/",
+      "type": "open-source",
+      "repo": "https://github.com/ankidroid/Anki-Android",
+      "platforms": [
+        "android"
+      ],
+      "desc": "Mobile listen-and-record practice using your own cards; feedback comes from your ears rather than an AI score.",
+      "stars": 11499,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Install from Google Play or F-Droid, or sideload the official APK",
+        "engines": null,
+        "dataFormat": "An Anki collection and media on the Android device, with .apkg import/export and optional AnkiWeb sync",
+        "gapVsPaid": "AnkiDroid records and replays speech but supplies no automatic phoneme diagnosis, score or corrective coaching.",
+        "setupBlocker": null,
+        "sources": [
+          "https://ankidroid.org/",
+          "https://github.com/ankidroid/Anki-Android",
+          "https://github.com/ankidroid/Anki-Android/blob/main/COPYING",
+          "https://docs.ankidroid.org/",
+          "https://elsaspeak.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "duolingo-super",
+    "brilliant",
+    "babbel"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Premium plan and a personal study companion DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for ELSA Speak in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and a service worker for offline use; do not offer alternative stacks.\nThe core loop is: record pronunciation practice from user-supplied material, provide limited acoustic feedback, schedule retrieval practice, and show progress without diagnostic claims or claiming accredited instruction.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImport Markdown, text, or user-authored notes and split them into editable learning units.\nCreate flashcards and short quizzes only after showing the generated items for approval.\nImplement a transparent spaced-repetition schedule with due, again, hard, good, and easy actions.\nAdd goals, study sessions, streak-free progress charts, notes, and weak-topic review.\nFor language practice, record the learner and compare timing or pronunciation without presenting medical claims.\nSupport offline use, full export, reset, backup, and deletion of all learning data.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out licensed premium courses.\nDeliberately leave out accredited certificates and grading.\nDeliberately leave out live tutors, large classrooms, and a learner marketplace.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

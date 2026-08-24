@@ -1,0 +1,159 @@
+{
+  "slug": "monday-com",
+  "name": "monday.com",
+  "domain": "monday.com",
+  "appURL": "https://monday.com",
+  "category": "project-management",
+  "subcategory": "team projects, issues and delivery planning",
+  "tagline": "Configure boards, fields, views, and automations for one team's workflow",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly per seat",
+    "unit": "per-seat",
+    "source": "https://monday.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Basic monthly seat price; minimum seat counts can apply.",
+    "native": "12 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Up to 2 seats, 3 boards, 3 docs, 200 items initially (referrals can raise this to 1,000), 500 MB storage; no automations/integrations",
+        "notes": null
+      },
+      {
+        "name": "Basic",
+        "monthly": 12,
+        "annualPerMonth": 9,
+        "per": "user",
+        "limits": "Unlimited items/viewers, 5 GB storage and 1,000 AI credits/month",
+        "notes": "Paid plans have a 3-seat minimum."
+      },
+      {
+        "name": "Standard",
+        "monthly": 14,
+        "annualPerMonth": 12,
+        "per": "user",
+        "limits": "3 workflows, 250 automation actions/month, 250 integration actions/month, 1,000 API calls/day and 2,000 AI credits/month",
+        "notes": "Paid plans have a 3-seat minimum."
+      },
+      {
+        "name": "Pro",
+        "monthly": 24,
+        "annualPerMonth": 19,
+        "per": "user",
+        "limits": "20 workflows, 25,000 automation + 25,000 integration actions/month, 10,000 API calls/day, 3,000 AI credits/month and 100 GB storage",
+        "notes": "Paid plans have a 3-seat minimum."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "250 workflows, up to 250,000 automation + 250,000 integration actions/month, 25,000 API calls/day and custom AI credits",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "2 seats, 3 boards, 3 docs, 200 items initially (up to 1,000 through referrals), 500 MB storage, and no automations/integrations",
+    "billingTerms": "monthly + annual (about 18% off); 14-day trial, no card",
+    "priceChanges": [],
+    "hiddenCosts": "Paid plans start at 3 seats and then use seat buckets (3, 5, 10, etc.), so small teams can pay for unused seats. On Standard, the first 3 guests are free and each further block of 4 guests counts as 1 billed seat. New customers after 2026-05-06 may face a required AI-credit purchase during setup, and extra AI-credit top-ups use dynamic pricing.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://monday.com/pricing",
+      "https://support.monday.com/hc/en-us/articles/4405633151634-Plans-and-pricing-for-monday-com",
+      "https://support.monday.com/hc/en-us/articles/360010487220-Understanding-the-Free-Plan",
+      "https://support.monday.com/hc/en-us/articles/360000305419-Pricing-for-guests",
+      "https://monday.com/blog/ai-agents/best-ai-agent-builder/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For monday.com, configure boards, fields, views, and automations for one team's workflow. The hard boundary is flexible data model, integrations, templates, dashboards, and enterprise governance, plus collaboration, integrations, and organizational trust.",
+  "coreLoopDIY": "Plan and track a small team's work through configurable boards, fields, views, and simple automations, with milestones, comments, and a searchable activity history.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "email credentials for invitations"
+  ],
+  "whatYouLose": [
+    "flexible data model, integrations, templates, dashboards, and enterprise governance",
+    "deep integrations",
+    "enterprise permissions",
+    "large-scale reporting",
+    "battle-tested notifications and mobile apps"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "switching-costs"
+  ],
+  "moatNotes": "collaboration, integrations, and organizational trust",
+  "replacementScope": "small-team tracker",
+  "ongoingBurden": "auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime",
+  "whyPeopleStillPay": "People still pay for monday.com because teams pay because project state has to remain authoritative through staff changes, outages, and years of accumulated workflow exceptions. The recurring cost buys auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Plane",
+      "url": "https://github.com/makeplane/plane",
+      "desc": "Active open-source project and issue tracking platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Teable",
+      "url": "https://teable.ai",
+      "type": "open-source",
+      "repo": "https://github.com/teableio/teable",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Airtable-shaped tables, forms, kanban, and automation; AI is where the upsell begins",
+      "stars": 21300,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Budibase",
+      "url": "https://budibase.com",
+      "type": "open-source",
+      "repo": "https://github.com/Budibase/budibase",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Configurable data, forms, views, approvals, and automations in one box; you supply the box",
+      "stars": 28000,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Baserow",
+      "url": "https://baserow.io",
+      "desc": "The free edition stops at grid, gallery, and form views; kanban and timeline are paid"
+    }
+  ],
+  "relatedSlugs": [
+    "asana",
+    "clickup",
+    "linear"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Basic plan and a small-team tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for monday.com in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: plan and track a small team's work through configurable boards, fields, views, and simple automations, with milestones, comments, and a searchable activity history.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement organizations, projects, members, issues, labels, cycles, and milestones.\nProvide list, kanban, and simple timeline views backed by one canonical issue model.\nAdd comments, mentions, assignments, watchers, and a complete activity log.\nImplement project roles for owner, member, and viewer and test every mutation.\nAdd search, CSV import or export, email notifications, and daily database backups.\nShip Docker Compose, health checks, migrations, seed data, and an admin recovery command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out hundreds of external integrations.\nDeliberately leave out enterprise portfolio planning and SSO.\nDeliberately leave out native mobile clients and vendor-operated uptime.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

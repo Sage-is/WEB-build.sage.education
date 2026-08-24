@@ -1,0 +1,137 @@
+{
+  "slug": "paperpile",
+  "name": "Paperpile",
+  "domain": "paperpile.com",
+  "appURL": "https://paperpile.com",
+  "category": "read-it-later",
+  "subcategory": "reference manager",
+  "tagline": "Reference manager with browser capture, PDF annotation, and Google Docs citations",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Regular",
+    "kind": "annual-only",
+    "basis": "annual individual licence",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Annual price is dynamically rendered",
+    "source": "https://paperpile.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Official page confirms annual-only billing but the amount was not exposed in the parsed page. Recheck checkout before publishing.",
+    "tiers": [
+      {
+        "name": "Regular",
+        "monthly": null,
+        "annualPerMonth": 8.3,
+        "per": "user",
+        "limits": "Unlimited references and PDF storage; no full-text PDF search, shared libraries or advanced notes.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Regular Academic",
+        "monthly": null,
+        "annualPerMonth": 4.15,
+        "per": "user",
+        "limits": "Unlimited references and PDF storage; academic eligibility required.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Expert",
+        "monthly": null,
+        "annualPerMonth": 11.5,
+        "per": "user",
+        "limits": "Unlimited references/storage plus full-text PDF search, notes, annotations and shared libraries.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Expert Academic",
+        "monthly": null,
+        "annualPerMonth": 5.75,
+        "per": "user",
+        "limits": "Expert features; academic eligibility required.",
+        "notes": "Annual-only."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Organization-wide licensing and administration; price and seat minimum are quote-based.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier; 30-day trial",
+    "billingTerms": "annual only; no month-to-month plan",
+    "priceChanges": [],
+    "hiddenCosts": "tax may be added; group Expert discounts reach up to 20%; every user on one multi-user licence must use the same plan, so Regular and Expert seats cannot be mixed",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://paperpile.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Do not mistake the interface for the product. Paperpile's durable value is data, import reliability, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a private reference manager workspace that imports user-supplied URLs or files, extracts metadata, supports notes, and searches the local corpus.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "browser automation for user-authorized imports",
+    "optional OpenAI API key stored in .env",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "citation graph scale",
+    "team libraries and institutional access",
+    "licensed scholarly metadata",
+    "publisher-specific import reliability"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "data/import reliability",
+  "whyPeopleStillPay": "Paperpile: Researchers pay for correct metadata, resilient importers, citation coverage, and workflows that survive publisher and browser changes.",
+  "ongoingBurden": "Maintain parsers, deduplication, PDF extraction, citation styles, and legal access boundaries.",
+  "priorArt": [
+    {
+      "name": "Zotero",
+      "url": "https://github.com/zotero/zotero",
+      "desc": "Mature open-source research and citation manager."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Zotero",
+      "url": "https://www.zotero.org",
+      "type": "open-source",
+      "repo": "https://github.com/zotero/zotero",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "The reference manager everyone keeps recommending because it actually earns it.",
+      "stars": 14890,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "readcube-papers",
+    "zotero-storage",
+    "bazqux-reader"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Paperpile survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Paperpile; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite + Playwright.\nPrimary job: Build a private reference manager workspace that imports user-supplied URLs or files, extracts metadata, supports notes, and searches the local corpus.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: citation graph scale; team libraries and institutional access; licensed scholarly metadata.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

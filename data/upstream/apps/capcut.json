@@ -1,0 +1,243 @@
+{
+  "slug": "capcut",
+  "name": "CapCut",
+  "domain": "capcut.com",
+  "category": "audio-video",
+  "subcategory": "short-form video editor",
+  "tagline": "Consumer video editor with templates, captions, effects, and AI tools",
+  "priceMonthly": 19.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "19.99 USD",
+    "source": "https://www.capcut.com/resource/capcut-standard-vs-pro",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official resource checked 2026-07-30 lists Pro at $19.99/month and $179.99/year; pricing can vary by region/app store."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A captioner/trimmer/exporter is buildable, but CapCut's value is mobile editing polish, effects/templates, asset library, TikTok workflow, and real-time rendering.",
+  "coreLoopDIY": "Upload video, auto-caption, cut/trim, add simple templates/effects, and export social aspect ratios.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "ffmpeg",
+    "speech-to-text",
+    "video rendering queue",
+    "client editor",
+    "storage",
+    "optional image/video AI APIs"
+  ],
+  "whatYouLose": [
+    "mobile app quality",
+    "effects/templates",
+    "asset library",
+    "timeline editor",
+    "platform integrations",
+    "rendering performance"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "content-rights",
+    "integrations"
+  ],
+  "moatNotes": "media pipeline/templates/platform ecosystem",
+  "whyPeopleStillPay": "They pay because short-form editing is fast on a phone and full of reusable trends/effects.",
+  "priorArt": [
+    {
+      "name": "Shotcut",
+      "url": "https://github.com/mltframework/shotcut",
+      "desc": "Open-source video editor; powerful prior art but not mobile/template-first like CapCut.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Adobe Express",
+      "url": "https://www.adobe.com/express/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Browser editing, captions, graphics and templates without a watermark; premium stock and clever tricks still wave from behind glass.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install the Adobe Express desktop/mobile app.",
+        "engines": "Adobe Firefly models power the generative features.",
+        "dataFormat": "Projects, uploads, libraries and brand assets live in Adobe's cloud; exports include image, PDF and video files.",
+        "gapVsPaid": "Adobe Express has a shallower timeline, fewer trend-driven effects and templates, and fewer advanced mobile-video tools than CapCut.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.adobe.com/express/pricing",
+          "https://helpx.adobe.com/express/web/adobe-express-subscription/free.html",
+          "https://www.adobe.com/express/feature",
+          "https://helpx.adobe.com/express/web/brands-libraries-projects/create-manage-brands/projects.html",
+          "https://www.capcut.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Clipchamp",
+      "url": "https://clipchamp.com/en/video-editor/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "windows"
+      ],
+      "desc": "CapCut’s less chaotic browser cousin; free exports stop at 1080p, not at a watermark.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "both",
+        "install": "Use the browser editor or the bundled Windows app after signing in with a Microsoft account.",
+        "engines": "Microsoft-hosted AI services provide captions, voiceovers and silence removal; exact model names are not published.",
+        "dataFormat": "Original media stays local by default; project metadata is cloud-synced, optional content backup uploads media, and exports are MP4 or audio files.",
+        "gapVsPaid": "Clipchamp Free tops out at 1080p and has a smaller effects, template and mobile-creation ecosystem than CapCut.",
+        "setupBlocker": null,
+        "sources": [
+          "https://clipchamp.com/en/pricing/",
+          "https://support.microsoft.com/en-us/clipchamp/what-clipchamp-products-are-there-and-what-s-their-cost",
+          "https://support.microsoft.com/en-us/clipchamp/how-clipchamp-stores-and-processes-media-files-in-editing-projects",
+          "https://support.microsoft.com/en-us/clipchamp/using-content-backup",
+          "https://support.microsoft.com/en-us/clipchamp/exporting-and-saving-a-video-in-clipchamp",
+          "https://www.capcut.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "DaVinci Resolve",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A film studio hiding behind a free download; the cleverest AI toys stay in Studio.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Download the macOS, Windows or Linux installer after completing Blackmagic Design's registration form.",
+        "engines": "The DaVinci Neural Engine powers AI-assisted features; many of the most advanced tools are reserved for Resolve Studio.",
+        "dataFormat": "Project libraries/databases and referenced media live locally by default; Blackmagic Cloud project libraries are optional.",
+        "gapVsPaid": "Resolve has a steep professional learning curve and lacks CapCut's instant social templates and trend-driven mobile workflow.",
+        "setupBlocker": "The download requires registration, and useful performance generally needs a capable GPU and substantial disk space.",
+        "sources": [
+          "https://www.blackmagicdesign.com/products/davinciresolve",
+          "https://www.blackmagicdesign.com/products/davinciresolve/studio",
+          "https://www.blackmagicdesign.com/products/davinciresolve/techspecs",
+          "https://www.blackmagicdesign.com/event/davinciresolvedownload",
+          "https://www.capcut.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Kdenlive",
+      "url": "https://kdenlive.org",
+      "type": "open-source",
+      "repo": "https://github.com/KDE/kdenlive",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A real multitrack editor with local captions, minus the template casino.",
+      "stars": 5400,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Install the official Windows, macOS or Linux package.",
+        "engines": "Speech-to-text can run local VOSK or OpenAI Whisper models.",
+        "dataFormat": ".kdenlive project files are MLT/XML references to local media; proxies, thumbnails and backups live in project folders.",
+        "gapVsPaid": "Kdenlive lacks CapCut's large template/effect ecosystem, mobile workflow and one-click consumer AI tools.",
+        "setupBlocker": "Core editing installs cleanly; local captioning requires downloading and configuring a speech model.",
+        "sources": [
+          "https://github.com/KDE/kdenlive",
+          "https://github.com/KDE/kdenlive/blob/master/COPYING",
+          "https://kdenlive.org/en/download/",
+          "https://docs.kdenlive.org/en/effects_and_filters/speech_to_text.html",
+          "https://docs.kdenlive.org/en/project_and_asset_management/file_management/project_files.html",
+          "https://docs.kdenlive.org/en/project_and_asset_management/file_management/folder_structure.html",
+          "https://www.capcut.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Shotcut",
+      "url": "https://shotcut.org",
+      "type": "open-source",
+      "repo": "https://github.com/mltframework/shotcut",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A sturdy desktop editor that would rather give you controls than trends.",
+      "stars": 14800,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Install an official Windows, macOS or Linux build; portable builds are also offered.",
+        "engines": "Speech-to-text runs local Whisper through whisper.cpp with downloadable GGML models.",
+        "dataFormat": ".mlt project files are MLT XML references to local media, with rendered files written wherever the user chooses.",
+        "gapVsPaid": "Shotcut provides editing controls rather than CapCut's trend templates, polished mobile workflow and automated social effects.",
+        "setupBlocker": "Core editing installs cleanly; speech-to-text requires downloading a compatible Whisper model.",
+        "sources": [
+          "https://github.com/mltframework/shotcut",
+          "https://github.com/mltframework/shotcut/blob/master/COPYING",
+          "https://www.shotcut.org/download/",
+          "https://www.shotcut.org/features/",
+          "https://forum.shotcut.org/t/project-management/12574",
+          "https://forum.shotcut.org/t/subtitles-speech-to-text/46306",
+          "https://www.capcut.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "OpenCut",
+      "url": "https://opencut.app",
+      "desc": "The famous answer is between codebases: classic is archived and the replacement is still a rewrite."
+    }
+  ],
+  "relatedSlugs": [
+    "granola",
+    "otter-ai",
+    "fireflies-ai"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good category because 'AI captions' are trivial, but editor/template depth is not.",
+  "prompt": "Build me a video captioning and clipping tool to replace CapCut Pro.\nRequirements:\n\n- A CLI: Python + ffmpeg + faster-whisper. clip input.mp4 transcribes and\n  burns captions; --cut 0:12-0:58 trims first; a folder as input batches\n  every video in it.\n- Captions from word-level timestamps, grouped 3-5 words per line, rendered\n  as ASS subtitles: bold font, white fill, black outline, centered in the\n  lower third, burned in with ffmpeg.\n- style.json controls the look in one place: font, size, colors, margin.\n- Aspect exports: --format 9x16 (blur-pad or center-crop, chosen by flag),\n  1x1, and 16x9, with bitrate defaults sane for phone playback.\n- --srt writes the plain subtitle file next to the video so I can fix\n  typos, then --from-srt re-burns without re-transcribing.\n- Output is <name>-<format>.mp4 beside the input; never overwrite a source\n  file.\n- Fully local and offline after the model download: no accounts, no uploads,\n  no telemetry. Use the GPU when present, CPU still works.\n- Out of scope: a timeline editor, effects and templates, and a music\n  library; CapCut's editor polish is the product. This is for talking-head\n  clips.\n- README: installing ffmpeg and choosing a whisper model size.",
+  "promptCurated": false
+}

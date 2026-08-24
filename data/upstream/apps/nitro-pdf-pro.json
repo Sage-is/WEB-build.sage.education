@@ -1,0 +1,211 @@
+{
+  "slug": "nitro-pdf-pro",
+  "name": "Nitro PDF Pro",
+  "domain": "gonitro.com",
+  "appURL": "https://gonitro.com",
+  "category": "documents",
+  "subcategory": "PDF editing, document workflows and electronic signatures",
+  "tagline": "Edit, convert, combine, and sign ordinary business PDFs locally",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Nitro PDF Standard",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "source": "https://www.gonitro.com/pricing",
+    "checkedOn": "2026-08-13",
+    "confidence": "medium",
+    "notes": "Annual individual subscription converted to a monthly equivalent; verify current package.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Nitro PDF Standard",
+        "monthly": null,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "Windows, Mac and iOS PDF editing, OCR, conversion, AI tools, admin portal and integrations; 14-day no-card trial",
+        "notes": "Billed $180/year; all subscriptions are annual"
+      },
+      {
+        "name": "Nitro PDF Plus",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Standard plus SSO, domain control, Azure Information Protection, Nitro Analytics and eligible dedicated success manager",
+        "notes": "Quote-only with volume discounts"
+      },
+      {
+        "name": "Nitro PDF Classic",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Windows-only core editing, conversion, combine/split and password protection; one upfront payment for a 3-year term",
+        "notes": "Live official page did not expose the one-time USD amount"
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day full-feature trial with no credit card and no watermarks",
+    "billingTerms": "Standard is annual only ($180/year); Plus quote-only; Classic is one payment for a 3-year license",
+    "priceChanges": [],
+    "hiddenCosts": "Taxes are calculated at checkout; online subscription purchases are capped at 20 licenses before sales contact; Plus is quote-only and Classic expires after 3 years",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://www.gonitro.com/pricing",
+      "https://www.gonitro.com/pdf"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Nitro PDF Pro, edit, convert, combine, and sign ordinary business PDFs locally. The hard boundary is format fidelity, office integration, ocr, support, and enterprise deployment, plus document fidelity, identity, and compliance.",
+  "coreLoopDIY": "Edit, convert, combine, and sign ordinary business PDFs locally, preserve originals, generate auditable outputs, and keep files in a user-owned store.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "LibreOffice headless",
+    "local or S3-compatible storage",
+    "public HTTPS for signature links"
+  ],
+  "whatYouLose": [
+    "format fidelity, Office integration, OCR, support, and enterprise deployment",
+    "pixel-perfect proprietary PDF engine",
+    "identity verification",
+    "qualified trust services",
+    "large template and integration ecosystem"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "compliance-regulatory"
+  ],
+  "moatNotes": "document fidelity, identity, and compliance",
+  "replacementScope": "personal document tool or low-stakes signature flow",
+  "ongoingBurden": "format edge cases, fonts, rendering, encryption, signatures, evidence, retention, storage, backups, and legal requirements",
+  "whyPeopleStillPay": "People still pay for Nitro PDF Pro because the visible editor is reproducible, but reliable rendering and legally defensible signature workflows are not a casual side project. The recurring cost buys format edge cases, fonts, rendering, encryption, signatures, evidence, retention, storage, backups, and legal requirements, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Stirling PDF",
+      "url": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "desc": "Active open-source web application for a broad set of PDF operations."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "PDF24",
+      "url": "https://tools.pdf24.org/en/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "windows"
+      ],
+      "desc": "A sprawling free Windows and web PDF suite covering conversion, assembly, editing, OCR, signing, and compression without usage limits.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "both",
+        "install": "Use the hosted tools in a browser, or install PDF24 Creator for offline use on Windows",
+        "engines": null,
+        "dataFormat": "PDF24 Creator processes documents locally on Windows; web-tool uploads are encrypted in transit, processed on PDF24's servers in Germany, and automatically deleted after about one hour",
+        "gapVsPaid": "It covers routine conversion and assembly, but Nitro is better at precise business-document editing, enterprise deployment, managed e-signatures, and administration.",
+        "setupBlocker": "The private offline desktop suite is Windows-only; other operating systems must use the upload-based web tools",
+        "sources": [
+          "https://www.pdf24.org/en/",
+          "https://tools.pdf24.org/en/",
+          "https://tools.pdf24.org/en/creator",
+          "https://tools.pdf24.org/en/edit-pdf",
+          "https://tools.pdf24.org/en/privacy",
+          "https://www.gonitro.com/pdf"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "PDFgear",
+      "url": "https://www.pdfgear.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "The closest zero-cost desktop substitute for editing, conversion, combining, forms, and ordinary signatures; Nitro's business administration features stay behind.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "both",
+        "install": "Install the Windows, macOS, iOS, or Android app, or open the browser-based secure tools",
+        "engines": "Ordinary PDF editing and OCR are local; the optional PDF Copilot uses OpenAI/ChatGPT-family language models",
+        "dataFormat": "Desktop documents remain local, and the secure browser tools say processing happens client-side; using PDF Copilot sends the document content and questions needed for the answer to OpenAI",
+        "gapVsPaid": "It is the closest free desktop substitute, but lacks Nitro's mature enterprise deployment controls, managed e-signature service, and organization-level administration.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.pdfgear.com/",
+          "https://www.pdfgear.com/pdfgear-for-windows/",
+          "https://www.pdfgear.com/pdfgear-for-mac/",
+          "https://www.pdfgear.com/secure-pdf-tools/",
+          "https://www.pdfgear.com/privacy/",
+          "https://www.pdfgear.com/windows-user-guide/chat-with-pdf.htm",
+          "https://www.gonitro.com/pdf"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Stirling PDF",
+      "url": "https://stirling.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "The self-hosted option when privacy and batch operations matter more than desktop-app gloss.",
+      "stars": 88969,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Install the native Windows/macOS desktop build, run the Linux JAR, or deploy the documented Docker image/Compose stack; a hosted cloud edition also exists",
+        "engines": null,
+        "dataFormat": "Desktop and self-hosted deployments process files on the user's machine/server and can use mounted local storage; the cloud edition uploads files for transient server processing",
+        "gapVsPaid": "It excels at private batch operations, but its direct page editing, collaboration, managed e-signing, and desktop polish are weaker than Nitro's.",
+        "setupBlocker": "The native desktop app is simple, but a full private cross-platform service and automation setup is most reliably deployed with Docker",
+        "sources": [
+          "https://stirling.com/",
+          "https://www.stirling.com/download",
+          "https://www.stirling.com/pricing",
+          "https://github.com/Stirling-Tools/Stirling-PDF",
+          "https://github.com/Stirling-Tools/Stirling-PDF/blob/main/LICENSE",
+          "https://docs.stirlingpdf.com/FAQ/",
+          "https://www.gonitro.com/pdf"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "adobe-acrobat-pro",
+    "pdf-expert",
+    "smallpdf"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Nitro PDF Pro plan and a personal document tool or low-stakes signature flow DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Nitro PDF Pro in an empty repository.\nUse Next.js 15, TypeScript, Python 3.12, FastAPI, pikepdf, LibreOffice headless, and PostgreSQL; do not offer alternative stacks.\nThe core loop is: edit, convert, combine, and sign ordinary business PDFs locally, preserve originals, generate auditable outputs, and keep files in a user-owned store.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nKeep every original immutable and write each operation to a versioned output file.\nSupport merge, split, reorder, rotate, compress, watermark, redact, OCR, and Office-to-PDF conversion.\nRender page previews and warn when fonts, forms, signatures, or encryption may be altered.\nFor signature mode, place fields, invite signers, record consent, and seal a final PDF hash.\nMaintain an append-only event log with timestamps, document hashes, and delivery outcomes.\nAdd file expiry, download, deletion, backup, and a prominent low-stakes-use warning.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out qualified or regulated electronic signatures.\nDeliberately leave out government identity verification.\nDeliberately leave out full Acrobat-level editing and enterprise document governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

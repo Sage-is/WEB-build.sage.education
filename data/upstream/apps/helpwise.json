@@ -1,0 +1,134 @@
+{
+  "slug": "helpwise",
+  "name": "Helpwise",
+  "domain": "helpwise.io",
+  "appURL": "https://helpwise.io",
+  "category": "email",
+  "subcategory": "shared inbox",
+  "tagline": "Shared inbox for email, chat, messaging, assignments, and automation",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://helpwise.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Standard",
+        "monthly": 15,
+        "annualPerMonth": 12,
+        "per": "user",
+        "limits": "2-user minimum, 10-user maximum; 3 shared inboxes; 15 saved replies; 3 automation rules; 1 help center.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 29,
+        "annualPerMonth": 23,
+        "per": "user",
+        "limits": "2-user minimum; 10 shared inboxes; unlimited saved replies; 25 automation rules; 2 help centers.",
+        "notes": null
+      },
+      {
+        "name": "Advanced",
+        "monthly": 49,
+        "annualPerMonth": 39,
+        "per": "user",
+        "limits": "3-user minimum; 30 shared inboxes; unlimited saved replies and automation rules; 5 help centers.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier; 7-day trial with no credit card",
+    "billingTerms": "monthly + annual (annual prices are about 20% lower)",
+    "priceChanges": [],
+    "hiddenCosts": "Seat minimums apply; 3 additional inboxes cost $49/month, the chatbot add-on costs $10/user/month, and the cloud phone system costs $5/active user/month.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://helpwise.io/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. Helpwise's durable value is deliverability, security, integration, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a local email companion for shared inbox that works on exported mail or one user-authorized IMAP account.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "desktop development machine",
+    "IMAP or Gmail OAuth credentials where supported",
+    "secure local keychain access",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "sender reputation, deliverability, and suppression handling",
+    "provider-grade deliverability",
+    "push reliability across devices",
+    "team routing and shared inbox rules",
+    "abuse response and security operations"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "collaboration"
+  ],
+  "moatNotes": "deliverability/security/integration",
+  "whyPeopleStillPay": "Helpwise: Email is infrastructure. Customers pay to avoid lost messages, broken auth, spam problems, and the reputational cost of a flaky inbox.",
+  "ongoingBurden": "Own OAuth refresh, IMAP quirks, encryption, spam handling, notification delivery, and provider policy changes.",
+  "priorArt": [
+    {
+      "name": "Mailspring",
+      "url": "https://github.com/Foundry376/Mailspring",
+      "desc": "Open-source desktop mail client and useful IMAP prior art."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Chatwoot",
+      "url": "https://www.chatwoot.com/",
+      "type": "open-source",
+      "repo": "https://github.com/chatwoot/chatwoot",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Email, live chat and messaging with assignments, notes and automations; self-hosting adds a small Rails estate.",
+      "stars": 35528,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Zammad",
+      "url": "https://zammad.org/",
+      "type": "open-source",
+      "repo": "https://github.com/zammad/zammad",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Email, chat, phone and social tickets in one mature desk; Elasticsearch joins the payroll in server chores.",
+      "stars": 5800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "gmelius",
+    "mimestream",
+    "hiver"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Helpwise survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Helpwise; do not claim to replace its structural moat.\nUse exactly this stack: Tauri 2 + React + TypeScript + SQLite.\nPrimary job: Build a local email companion for shared inbox that works on exported mail or one user-authorized IMAP account.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: sender reputation, deliverability, and suppression handling; provider-grade deliverability; push reliability across devices.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

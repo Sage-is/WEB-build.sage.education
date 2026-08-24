@@ -1,0 +1,266 @@
+{
+  "slug": "plan-to-eat",
+  "name": "Plan to Eat",
+  "domain": "plantoeat.com",
+  "appURL": "https://plantoeat.com",
+  "category": "home",
+  "subcategory": "family organization, recipes and household inventory",
+  "tagline": "Store recipes, drag them onto a calendar, and generate a shopping list",
+  "priceMonthly": 5.95,
+  "pricing": {
+    "plan": "Plan to Eat",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://plantoeat.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official monthly subscription.",
+    "native": "5.95 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Plan to Eat",
+        "monthly": 5.95,
+        "annualPerMonth": 4.08,
+        "per": "flat",
+        "limits": "One household account with recipe storage, meal calendar, shopping lists, and use across all supported devices.",
+        "notes": "$49 billed yearly; 14-day full trial with no card."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual; annual is $49/year (about 4 months cheaper than monthly); 14-day trial",
+    "priceChanges": [],
+    "hiddenCosts": "An annual subscription bought through Apple's App Store is $54.99 rather than the $49 direct-web price.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.plantoeat.com/pricing",
+      "https://learn.plantoeat.com/help/how-much-does-plan-to-eat-cost"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Plan to Eat, store recipes, drag them onto a calendar, and generate a shopping list. The hard boundary is browser clipping, mobile apps, sync, household sharing, and workflow polish, plus sync, integrations, and household adoption.",
+  "coreLoopDIY": "Store recipes, drag them onto a meal calendar, generate a shopping list, share or print the plan, and keep data portable and owner-controlled.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "modern browser",
+    "local or self-hosted storage",
+    "optional email notifications"
+  ],
+  "whatYouLose": [
+    "browser clipping, mobile apps, sync, household sharing, and workflow polish",
+    "frictionless family sync",
+    "retailer and smart-home integrations",
+    "large recipe or product database",
+    "mobile polish"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "sync, integrations, and household adoption",
+  "replacementScope": "single-household organizer",
+  "ongoingBurden": "multi-user conflicts, reminders, notifications, imports, barcode data, smart-home APIs, backups, and long-term maintenance",
+  "whyPeopleStillPay": "People still pay for Plan to Eat because household apps survive when every family member actually uses them and the data stays current across devices. The recurring cost buys multi-user conflicts, reminders, notifications, imports, barcode data, smart-home APIs, backups, and long-term maintenance, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Mealie",
+      "url": "https://github.com/mealie-recipes/mealie",
+      "desc": "Active open-source recipe manager and meal planner for households."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Grocy",
+      "url": "https://grocy.info/",
+      "type": "open-source",
+      "repo": "https://github.com/grocy/grocy",
+      "platforms": [
+        "web",
+        "windows",
+        "self-hosted"
+      ],
+      "desc": "Meal plans and groceries run through a tiny home ERP, because apparently the fridge needed one.",
+      "stars": 9358,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker container/Compose, or install the PHP application on a web server",
+        "engines": null,
+        "dataFormat": "Products, stock, chores, recipes, meal plans, shopping lists, and history live in Grocy's SQLite database inside its data directory; configuration, uploaded pictures, and generated files are stored alongside it on the host volume.",
+        "gapVsPaid": "Grocy can calendar meals and generate groceries, but its inventory-first ERP interface makes the simple drag-recipe-to-calendar loop much slower and more complicated than Plan to Eat.",
+        "setupBlocker": "The first obstacle is deploying and exposing a PHP/Docker web app; the larger practical hurdle is configuring locations, units, products, barcodes, and household routines before its ERP-like screens become useful.",
+        "sources": [
+          "https://grocy.info/",
+          "https://github.com/grocy/grocy",
+          "https://github.com/grocy/grocy/blob/master/LICENSE",
+          "https://github.com/grocy/grocy/blob/master/README.md",
+          "https://github.com/grocy/grocy-docker",
+          "https://github.com/grocy/grocy/blob/master/config-dist.php"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mealie",
+      "url": "https://mealie.io/",
+      "type": "open-source",
+      "repo": "https://github.com/mealie-recipes/mealie",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A household recipe server with meal plans and grocery lists; you supply the server and patience.",
+      "stars": 12900,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Docker Compose",
+        "engines": null,
+        "dataFormat": "Recipes, users, groups, meal plans, and shopping-list records live in SQLite by default or PostgreSQL when configured; recipe images and application assets live in the mounted data directory, and Mealie's backup/export archives keep portable copies of the database and media.",
+        "gapVsPaid": "Mealie covers the core loop, but its calendar interaction, browser importer, mobile responsiveness, and maintenance burden are less polished than Plan to Eat's managed planner.",
+        "setupBlocker": "A non-expert needs Docker, persistent volumes, an update/backup routine, and usually a domain plus HTTPS; importing recipe sites also produces parsing failures that must be cleaned up manually.",
+        "sources": [
+          "https://mealie.io/",
+          "https://github.com/mealie-recipes/mealie",
+          "https://github.com/mealie-recipes/mealie/blob/mealie-next/LICENSE",
+          "https://docs.mealie.io/documentation/getting-started/installation/",
+          "https://docs.mealie.io/documentation/getting-started/installation/backend-config/",
+          "https://docs.mealie.io/documentation/getting-started/usage/backups-and-restoring/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "RecipeSage",
+      "url": "https://recipesage.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Recipes, a calendar meal planner, and generated shopping lists, without the annual renewal.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup at RecipeSage, or Docker Compose for self-hosting",
+        "engines": null,
+        "dataFormat": "The hosted service stores recipes, images, labels, meal plans, shopping lists, households, and account data in RecipeSage's infrastructure; self-hosting keeps the relational application database and uploaded media in operator-controlled containers/volumes, with built-in export for portability.",
+        "gapVsPaid": "RecipeSage is close functionally, but Plan to Eat has the more refined drag-and-drop calendar, recipe clipper, mobile workflow, and long-established support.",
+        "setupBlocker": "The public service has no setup blocker; self-hosting adds Docker, a database, mail, storage, HTTPS, and backups, while both versions have less refined native-mobile interaction than Paprika or AnyList.",
+        "sources": [
+          "https://recipesage.com/",
+          "https://github.com/julianpoy/RecipeSage",
+          "https://github.com/julianpoy/RecipeSage/blob/master/LICENSE",
+          "https://github.com/julianpoy/RecipeSage/blob/master/README.md",
+          "https://github.com/julianpoy/RecipeSage/tree/master/docker"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Samsung Food",
+      "url": "https://samsungfood.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Drag recipes onto a weekly plan and turn it into groceries; ads replace the annual invoice.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Install the mobile app or use the web app, then create a Samsung Food account",
+        "engines": null,
+        "dataFormat": "Saved and imported recipes, meal plans, grocery lists, household-sharing records, profile data, and recommendations live in Samsung Food's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "Samsung Food removes the invoice but adds ads, recommendations, and vendor-cloud dependence, with less control and portability than Plan to Eat's focused personal recipe planner.",
+        "setupBlocker": null,
+        "sources": [
+          "https://samsungfood.com/",
+          "https://samsungfood.com/food/",
+          "https://samsungfood.com/privacy-policy/",
+          "https://support.samsungfood.com/hc/en-us/categories/360002061954-Samsung-Food",
+          "https://samsungfood.com/premium/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Tandoor Recipes",
+      "url": "https://tandoor.dev/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The full recipe-plan-shopping loop; free for personal self-hosting, but the license is not actually open source.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": null,
+        "runs": "self-hosted",
+        "install": "Docker Compose with PostgreSQL; manual Django deployment is also documented",
+        "engines": null,
+        "dataFormat": "Recipes, users, meal plans, shopping lists, books, and permissions live in PostgreSQL in the standard Docker deployment; uploaded images and static/media files live in mounted volumes, and recipe data can be exported through Tandoor's export tools.",
+        "gapVsPaid": "Tandoor does the recipe-plan-list loop, but self-hosting and its denser web UI are a large downgrade from Plan to Eat's simple hosted calendar and importer.",
+        "setupBlocker": "The first obstacle is a multi-container Django/PostgreSQL deployment with secrets, volumes, HTTPS, email, and backups; its Commons-Clause-modified AGPL license is also not an OSI-approved open-source license.",
+        "sources": [
+          "https://tandoor.dev/",
+          "https://github.com/TandoorRecipes/recipes",
+          "https://github.com/TandoorRecipes/recipes/blob/develop/LICENSE.md",
+          "https://docs.tandoor.dev/install/docker/",
+          "https://docs.tandoor.dev/system/configuration/",
+          "https://docs.tandoor.dev/features/export/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Copy Me That",
+      "url": "https://www.copymethat.com/",
+      "desc": "A direct fit until recipe 41; the free tier now stops at 40 recipes."
+    },
+    {
+      "name": "KitchenOwl",
+      "url": "https://kitchenowl.org/",
+      "desc": "Polished enough to tempt you; the project still labels itself Public Alpha."
+    }
+  ],
+  "relatedSlugs": [
+    "paprika-recipe-manager",
+    "home-assistant-cloud",
+    "cozi-gold"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Plan to Eat plan and a single-household organizer DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Plan to Eat in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and a local-first PWA; do not offer alternative stacks.\nThe core loop is: store recipes, drag them onto a meal calendar, generate a shopping list, share or print the plan, and keep data portable and owner-controlled.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate household members, shared lists, calendar items, recipes or inventory records, and assignments.\nProvide fast mobile-first capture with large controls, offline queueing, and conflict-safe sync to one server.\nSupport recurring chores or events, reminders, completion history, and printable views.\nAdd CSV or JSON import and export plus photo attachments with clear size limits.\nAllow private and shared items and make every change attributable and undoable.\nAdd backups, household export, member removal, and a simple invite code.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out retailer ordering and proprietary product catalogs.\nDeliberately leave out broad smart-home integrations.\nDeliberately leave out large public recipe libraries and polished native mobile clients.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

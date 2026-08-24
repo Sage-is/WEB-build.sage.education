@@ -1,0 +1,157 @@
+{
+  "slug": "firstbase",
+  "name": "Firstbase",
+  "domain": "firstbase.io",
+  "appURL": "https://firstbase.io",
+  "category": "legal",
+  "subcategory": "legal documents, privacy compliance and business administration",
+  "tagline": "Track company-formation tasks and documents without filing or acting as an agent",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Start",
+    "basis": "one-time",
+    "unit": "one-time",
+    "source": "https://firstbase.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Primary formation package is a one-time fee; recurring services are separate.",
+    "native": "one-time",
+    "kind": "one-time",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Start",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "$399 one-time company-formation package",
+        "notes": "Government and other pass-through charges may apply."
+      },
+      {
+        "name": "Firstbase One",
+        "monthly": null,
+        "annualPerMonth": 199,
+        "per": "workspace",
+        "limits": "$2,388 billed annually; formation, compliance, mail, agent, and operational services bundle",
+        "notes": "Annual-only despite the monthly-equivalent display."
+      },
+      {
+        "name": "Accounting, $50k–$75k monthly-expense example",
+        "monthly": 599,
+        "annualPerMonth": 499.17,
+        "per": "workspace",
+        "limits": "Bookkeeping price for the displayed $50,000–$75,000 monthly-expense band",
+        "notes": "Annual bill is $5,990; actual price changes with the selected monthly-expense band."
+      },
+      {
+        "name": "Mailroom Basic",
+        "monthly": 35,
+        "annualPerMonth": 26.25,
+        "per": "workspace",
+        "limits": "Business-address and mail handling; annual bill $315",
+        "notes": null
+      },
+      {
+        "name": "Mailroom Premium",
+        "monthly": 50,
+        "annualPerMonth": 29.17,
+        "per": "workspace",
+        "limits": "Expanded mail handling; annual bill $350",
+        "notes": null
+      },
+      {
+        "name": "Registered Agent",
+        "monthly": null,
+        "annualPerMonth": 24.92,
+        "per": "flat",
+        "limits": "$299/year per state",
+        "notes": null
+      },
+      {
+        "name": "Tax Filing, C-Corp or multi-member",
+        "monthly": null,
+        "annualPerMonth": 149.92,
+        "per": "flat",
+        "limits": "$1,799 per annual filing",
+        "notes": null
+      },
+      {
+        "name": "Tax Filing, non-US single-member",
+        "monthly": null,
+        "annualPerMonth": 74.92,
+        "per": "flat",
+        "limits": "$899 per annual filing",
+        "notes": null
+      },
+      {
+        "name": "R&D Tax Credit",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "15% of the tax credit obtained",
+        "notes": "Percentage-based, so no fixed USD subscription price."
+      },
+      {
+        "name": "Sales Tax",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom recurring price based on filing footprint and volume",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "mix of one-time, monthly, annual, per-state, per-filing, and percentage-based charges",
+    "priceChanges": [],
+    "hiddenCosts": "State fees and taxes are extra; registered-agent service is priced per state; accounting scales with monthly expenses; catch-up bookkeeping can add cost; R&D service takes 15% of the credit.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.firstbase.io/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Firstbase, track company-formation tasks and documents without filing or acting as an agent. The hard boundary is formation, registered agent, banking partners, tax workflows, mail, and support, plus expert judgment, compliance, and regulated services.",
+  "coreLoopDIY": "Track company-formation tasks and documents, fill clearly labeled templates from collected facts, track versions and approvals, and state that outputs require qualified review, without filing or acting as an agent.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "self-hosted deployment",
+    "PostgreSQL",
+    "jurisdiction-specific templates supplied by the user or counsel",
+    "secure backup"
+  ],
+  "whatYouLose": [
+    "formation, registered agent, banking partners, tax workflows, mail, and support",
+    "legal advice",
+    "jurisdictional assurance",
+    "filing and registered-agent network",
+    "continuous regulatory monitoring and liability"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "brand-trust"
+  ],
+  "moatNotes": "expert judgment, compliance, and regulated services",
+  "replacementScope": "internal questionnaire and template tracker",
+  "ongoingBurden": "law changes, jurisdiction, template provenance, access, signatures, filings, deadlines, evidence, retention, security, and professional liability",
+  "whyPeopleStillPay": "People still pay for Firstbase because the durable value is expert accountability and regulated execution; document generation alone cannot supply either. The recurring cost buys law changes, jurisdiction, template provenance, access, signatures, filings, deadlines, evidence, retention, security, and professional liability, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "docassemble",
+      "url": "https://github.com/jhpyle/docassemble",
+      "desc": "Open-source expert-system platform for guided interviews and document assembly."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "legalzoom",
+    "rocket-lawyer",
+    "clerky"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Start plan and a internal questionnaire and template tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Firstbase in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and a versioned Markdown template engine; do not offer alternative stacks.\nThe core loop is: track company-formation tasks and documents, fill clearly labeled templates from collected facts, track versions and approvals, and state that outputs require qualified review, without filing or acting as an agent.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate versioned questionnaires, reusable fact fields, conditional sections, templates, and approval states.\nShow the source, jurisdiction, owner, reviewed date, and expiry date for every template.\nGenerate DOCX and PDF drafts with prominent draft and review-required labels.\nKeep an immutable audit log of answers, template version, generation time, downloads, and approvals.\nAdd role-based access, retention, export, encrypted backups, and a deadline calendar.\nDisplay legal-review warnings before generation and again before any final download.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out legal advice or guaranteed compliance.\nDeliberately leave out government filings, identity verification, and registered-agent services.\nDeliberately leave out automatic consent decisions or deployment without qualified review.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

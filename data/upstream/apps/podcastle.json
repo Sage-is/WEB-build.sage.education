@@ -1,0 +1,131 @@
+{
+  "slug": "podcastle",
+  "name": "Podcastle",
+  "domain": "podcastle.ai",
+  "appURL": "https://podcastle.ai",
+  "category": "podcasting",
+  "subcategory": "podcast recording, cleanup and publishing",
+  "tagline": "Record or import spoken audio, clean it, transcribe it, and assemble a simple episode",
+  "priceMonthly": 19.99,
+  "pricing": {
+    "plan": "Essentials",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://podcastle.ai/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Storyteller monthly amount.",
+    "native": "19.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 creator; 10 lifetime AI credits on the live comparison versus 150 in the Apr-2026 billing guide; 3 video-recording hours in the legacy panel versus 1 lifetime remote-recording hour in the all-features table; 1 versus 2 lifetime transcription hours; 2 GB storage; 1 export",
+        "notes": "Async's current official pricing and billing pages contradict one another on several Basic allowances; all conflicting numbers are preserved."
+      },
+      {
+        "name": "Essentials",
+        "monthly": 19.99,
+        "annualPerMonth": 11.99,
+        "per": "user",
+        "limits": "450 AI credits/month; 2 audio/video recording hours; 10 transcription hours/month; about 2 TTS hours/120,000 characters; 20 GB storage",
+        "notes": "The current legacy comparison still calls this Storyteller and shows 8 video-recording hours, while the Apr-2026 billing guide and all-features table use Essentials with 2 remote-recording hours. The supplied snapshot's $14.99 Storyteller headline no longer matches the current plan name or rates."
+      },
+      {
+        "name": "Pro",
+        "monthly": 39.99,
+        "annualPerMonth": 23.99,
+        "per": "user",
+        "limits": "1,200 AI credits/month; 20 audio/video recording hours; 25 transcription hours/month; about 10 TTS hours/500,000 characters; 120 GB storage; up to 4K",
+        "notes": null
+      },
+      {
+        "name": "Teams",
+        "monthly": 84.99,
+        "annualPerMonth": 49.99,
+        "per": "user",
+        "limits": "3,000 AI credits/month; 50 audio/video recording hours; 100 transcription hours/month; about 40 TTS hours/2 million characters; 1 TB storage; collaboration for 2–5 users",
+        "notes": "The published price is per creator."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom AI credits, recording hours, storage, security, compliance, onboarding and support",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "1 creator; official pages conflict between 10 and 150 lifetime AI credits, 3 video-recording hours and 1 lifetime remote-recording hour, and 1 versus 2 lifetime transcription hours; 2 GB storage and 1 export",
+    "billingTerms": "monthly + annual (40% lower); annual credits are still added monthly; new subscriptions have a 7-day refund window excluding used AI credits",
+    "priceChanges": [],
+    "hiddenCosts": "Monthly subscription credits do not roll over; top-up credits expire after 2 months on monthly plans or at the end of an annual term; generated-credit usage is non-refundable, and the vendor's own current pages conflict on Basic and Essentials allowances.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://podcastle.ai/pricing",
+      "https://async.com/pricing",
+      "https://help.async.com/en/articles/6535067-how-does-async-creator-pricing-work"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Podcastle, record or import spoken audio, clean it, transcribe it, and assemble a simple episode. The hard boundary is hosted studio, ai voices, collaboration, asset library, and cloud rendering, plus audio infrastructure, distribution, and production polish.",
+  "coreLoopDIY": "Record or import spoken audio, perform practical cleanup, transcribe it, assemble a simple episode, and export production files plus show notes.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "ffmpeg",
+    "local audio files",
+    "optional transcription API key",
+    "sufficient disk space"
+  ],
+  "whatYouLose": [
+    "hosted studio, AI voices, collaboration, asset library, and cloud rendering",
+    "remote studio reliability",
+    "licensed music libraries",
+    "hosting distribution",
+    "advanced mastering and support"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish",
+    "content-rights"
+  ],
+  "moatNotes": "audio infrastructure, distribution, and production polish",
+  "replacementScope": "single-creator production tool",
+  "ongoingBurden": "codec support, loudness standards, transcription, storage, feeds, analytics, and deliverability to directories",
+  "whyPeopleStillPay": "People still pay for Podcastle because creators pay to remove fragile audio plumbing and publishing chores from a release schedule. The recurring cost buys codec support, loudness standards, transcription, storage, feeds, analytics, and deliverability to directories, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Audacity",
+      "url": "https://github.com/audacity/audacity",
+      "desc": "Long-running open-source multitrack audio editor and useful implementation prior art."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Audacity",
+      "url": "https://www.audacityteam.org/",
+      "desc": "Records and cleans audio, but does not transcribe it."
+    },
+    {
+      "name": "Rescript",
+      "url": "https://app.getrescript.com/",
+      "desc": "Slick and active, but the source is noncommercial; a monetized podcast needs permission."
+    }
+  ],
+  "relatedSlugs": [
+    "riverside",
+    "alitu",
+    "auphonic"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Storyteller plan and a single-creator production tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Podcastle in an empty repository.\nUse Python 3.12, FastAPI, ffmpeg, SQLite, and an HTMX interface; do not offer alternative stacks.\nThe core loop is: record or import spoken audio, perform practical cleanup, transcribe it, assemble a simple episode, and export production files plus show notes.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate an upload queue and preserve originals in a read-only media folder.\nGenerate waveforms and non-destructive edit markers instead of rewriting source files.\nImplement silence trimming, loudness normalization to -16 LUFS, fades, and noise-gate presets.\nAdd chapter markers, intro and outro slots, and a simple two-track timeline.\nProduce a transcript and draft title, description, chapters, and social excerpts.\nExport MP3, WAV, transcript, chapters JSON, and a complete project manifest.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out real-time remote recording.\nDeliberately leave out podcast hosting and directory analytics.\nDeliberately leave out licensed stock music and voice cloning.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

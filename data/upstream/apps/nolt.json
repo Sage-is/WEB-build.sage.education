@@ -1,0 +1,226 @@
+{
+  "slug": "nolt",
+  "name": "Nolt",
+  "domain": "nolt.io",
+  "appURL": "https://nolt.io",
+  "category": "user-research",
+  "subcategory": "feedback boards, interviews and product research",
+  "tagline": "Publish a feedback board with voting, comments, statuses, and a roadmap",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Essential",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://nolt.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Essential monthly tier.",
+    "native": "29 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Essential",
+        "monthly": null,
+        "annualPerMonth": 29,
+        "per": "workspace",
+        "limits": "1 board; unlimited users, content and admins.",
+        "notes": "Billed $348/year."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 69,
+        "per": "workspace",
+        "limits": "5 boards; unlimited users, content and admins.",
+        "notes": "Billed $828/year."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited boards plus custom security, support and procurement terms.",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "Annual prices are public and save more than 20%; a monthly toggle exists, but exact month-to-month prices were not exposed. A 10-day Pro trial needs no card.",
+    "priceChanges": [],
+    "hiddenCosts": "Switching plans is prorated; refunds are not offered.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://nolt.io/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Nolt, publish a feedback board with voting, comments, statuses, and a roadmap. The hard boundary is hosted simplicity, custom domains, integrations, and low maintenance, plus participant network, synthesis workflow, and collaboration.",
+  "coreLoopDIY": "Collect structured feedback on a public board with voting and comments, merge duplicates, connect evidence to themes, and publish a transparent roadmap with statuses.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "Resend API key",
+    "optional video-call links"
+  ],
+  "whatYouLose": [
+    "hosted simplicity, custom domains, integrations, and low maintenance",
+    "large participant panel",
+    "recording and transcription infrastructure",
+    "advanced research repository",
+    "enterprise governance"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "participant network, synthesis workflow, and collaboration",
+  "replacementScope": "small-team feedback repository",
+  "ongoingBurden": "recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention",
+  "whyPeopleStillPay": "People still pay for Nolt because people pay either for access to participants or for a research repository that keeps evidence usable across an organization. The recurring cost buys recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Fider",
+      "url": "https://github.com/getfider/fider",
+      "desc": "Open-source customer-feedback portal with voting and status workflows."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "ClearFlask",
+      "url": "https://clearflask.com",
+      "type": "open-source",
+      "repo": "https://github.com/clearflask/clearflask",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The full board-and-roadmap job, self-hosted with more infrastructure than Nolt ever mentions.",
+      "stars": 446,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Hosted signup, or Docker Compose with the project's bundled dependencies",
+        "engines": null,
+        "dataFormat": "In a self-hosted deployment the source-of-truth records live in a DynamoDB-compatible store, search/filter indexes live in MySQL/MariaDB or Elasticsearch/OpenSearch, and uploads live in S3-compatible storage; the bundled Compose profile persists these services under the deployment's data directory. The hosted edition keeps the equivalent data in ClearFlask's cloud.",
+        "gapVsPaid": "ClearFlask can do more than Nolt, but its multi-service deployment and denser administration are disproportionate overhead for a simple public voting board.",
+        "setupBlocker": "The simple Compose command starts a large dependency stack; a public deployment still needs environment configuration, a domain/TLS, outbound email, backups, and several stateful services.",
+        "sources": [
+          "https://clearflask.com/",
+          "https://github.com/clearflask/clearflask",
+          "https://github.com/clearflask/clearflask/blob/master/COPYING",
+          "https://github.com/clearflask/clearflask/blob/master/INSTALLATION.md",
+          "https://github.com/clearflask/clearflask/blob/master/docker-compose.yml"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Quackback",
+      "url": "https://quackback.io",
+      "type": "open-source",
+      "repo": "https://github.com/QuackbackIO/quackback",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Voting, comments, statuses and a public roadmap in one Compose stack.",
+      "stars": 216,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": null,
+        "runs": "self-hosted",
+        "install": "Docker Compose",
+        "engines": null,
+        "dataFormat": "Feedback posts, votes, comments, users, roadmap items, and changelog entries live in the deployment's PostgreSQL database; uploaded assets and generated files remain in the Docker-hosted storage configured by the deployment.",
+        "gapVsPaid": "Quackback closely covers voting, comments, statuses, and roadmap, but it trades Nolt's managed simplicity and maturity for a young Docker service the user must operate.",
+        "setupBlocker": "A non-expert must supply environment secrets, run and update Docker Compose, expose the service behind HTTPS, configure email, and back up its database.",
+        "sources": [
+          "https://quackback.io/",
+          "https://github.com/QuackbackIO/quackback",
+          "https://github.com/QuackbackIO/quackback/blob/main/LICENSE",
+          "https://github.com/QuackbackIO/quackback/blob/main/docker-compose.yml",
+          "https://github.com/QuackbackIO/quackback/blob/main/README.md"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Sleekplan Indie",
+      "url": "https://sleekplan.com/pricing/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Unlimited feedback, voting and a roadmap for one admin; custom workflow controls are paid.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, then embed the widget or publish the hosted feedback portal",
+        "engines": null,
+        "dataFormat": "Feedback, votes, comments, roadmap items, changelog posts, user records, and widget configuration live in Sleekplan's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "Sleekplan Indie is free for one administrator, but branded pages and paid-only workflow customization make the board less controllable than Nolt.",
+        "setupBlocker": "There is no technical install hurdle, but the free Indie plan is limited to one administrator, carries Sleekplan branding, and reserves deeper workflow and customization controls for paid plans.",
+        "sources": [
+          "https://sleekplan.com/pricing/",
+          "https://sleekplan.com/",
+          "https://sleekplan.com/help/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "UserJot",
+      "url": "https://userjot.com",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A free voting board with comments, statuses and a roadmap, plus a changelog Nolt never added.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, create a board, and optionally add the widget or identify users",
+        "engines": null,
+        "dataFormat": "Feedback, votes, comments, statuses, roadmap and changelog entries, user identity data, and configuration live in UserJot's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "UserJot adds a changelog and stays free, but its two-board limit and smaller record of integrations, moderation, and enterprise support are the main downgrade from Nolt.",
+        "setupBlocker": "Setup is clean, but the permanent free plan is bounded to two boards and omits paid branding, domain, segmentation, and advanced administration options.",
+        "sources": [
+          "https://userjot.com/",
+          "https://userjot.com/pricing",
+          "https://docs.userjot.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "canny",
+    "productboard",
+    "dovetail"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Essential plan and a small-team feedback repository DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Nolt in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Resend; do not offer alternative stacks.\nThe core loop is: collect structured feedback on a public board with voting and comments, merge duplicates, connect evidence to themes, and publish a transparent roadmap with statuses.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate public and private feedback intake with consent text and optional contact details.\nSupport posts, votes, comments, tags, statuses, owners, and duplicate merging.\nAdd a research note type with evidence links, quotes, themes, and confidence.\nBuild search and filters across feedback, customers, segments, themes, and status.\nProvide email notifications, moderation, export, deletion, and an audit log.\nPublish a read-only roadmap or findings page using only explicitly public items.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a paid research-participant marketplace.\nDeliberately leave out unlimited video storage and automated transcription.\nDeliberately leave out enterprise repositories, SSO, and governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

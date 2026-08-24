@@ -1,0 +1,282 @@
+{
+  "slug": "todoist",
+  "name": "Todoist",
+  "domain": "todoist.com",
+  "category": "tasks",
+  "subcategory": "task manager",
+  "tagline": "Cross-platform task manager for projects, reminders, and recurring tasks",
+  "priceMonthly": 7,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "7 USD",
+    "source": "https://todoist.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing/help checked 2026-07-30; Pro monthly changed to $7/month and $5/month annually from Dec 10, 2025.",
+    "tiers": [
+      {
+        "name": "Beginner",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "5 personal projects; 3 filters; 1 week of activity history; 5 MB files; 5 people/project.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 7,
+        "annualPerMonth": 5,
+        "per": "user",
+        "limits": "300 personal projects; 150 filters; 100 MB files; unlimited activity history; 5 people/project.",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 10,
+        "annualPerMonth": 8,
+        "per": "user",
+        "limits": "300 personal projects/member; 500 team projects; 250 people/team project; 1,000 members + 1,000 guests.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "5 personal projects; 3 filters; 1 week of activity history; 5 MB files; 5 people/project.",
+    "billingTerms": "monthly + annual",
+    "priceChanges": [
+      {
+        "what": "Pro monthly",
+        "fromUsd": 5,
+        "toUsd": 7,
+        "when": "2025-12",
+        "source": "https://www.todoist.com/help/articles/todoist-pro-pricing-update-in-2025-bxBvHZuJZ"
+      },
+      {
+        "what": "Pro annual per month",
+        "fromUsd": 4,
+        "toUsd": 5,
+        "when": "2025-12",
+        "source": "https://www.todoist.com/help/articles/todoist-pro-pricing-update-in-2025-bxBvHZuJZ"
+      },
+      {
+        "what": "Business monthly",
+        "fromUsd": 8,
+        "toUsd": 10,
+        "when": "2025-12",
+        "source": "https://www.todoist.com/help/articles/todoist-business-plan-pricing-update-dF5in65YM"
+      },
+      {
+        "what": "Business annual per month",
+        "fromUsd": 6,
+        "toUsd": 8,
+        "when": "2025-12",
+        "source": "https://www.todoist.com/help/articles/todoist-business-plan-pricing-update-dF5in65YM"
+      }
+    ],
+    "hiddenCosts": "Business charges per member; taxes can apply.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://todoist.com/pricing",
+      "https://www.todoist.com/help/articles/todoist-pro-pricing-update-in-2025-bxBvHZuJZ",
+      "https://www.todoist.com/help/articles/todoist-business-plan-pricing-update-dF5in65YM"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "A personal task app with projects, recurring due dates, filters, and reminders is a one-sitting/weekend build; collaboration and sync polish are the product moat.",
+  "coreLoopDIY": "Create task/project tables, natural-language due date parsing, recurring rules, reminders, filters, and local notifications.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "local or hosted database",
+    "date parser",
+    "notification channel",
+    "optional mobile/desktop wrappers"
+  ],
+  "whatYouLose": [
+    "native apps",
+    "offline sync",
+    "collaboration",
+    "reminders reliability",
+    "integrations",
+    "years of UX polish"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "sync/polish",
+  "whyPeopleStillPay": "They pay because task capture must be fast everywhere and reminders cannot miss.",
+  "priorArt": [
+    {
+      "name": "Vikunja",
+      "url": "https://github.com/go-vikunja/vikunja",
+      "desc": "Open-source task/project management app suitable as a Todoist-style alternative.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Microsoft To Do",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/microsoft-to-do-list-app",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "A polished free task manager, paid for with a Microsoft account rather than money",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Install the Windows, macOS, iOS, or Android app, or use the web app, and sign in with a Microsoft account",
+        "engines": null,
+        "dataFormat": "Tasks are stored as structured records on Microsoft's Exchange Online servers and surface in Outlook Tasks across synchronized clients",
+        "gapVsPaid": "Microsoft To Do is weaker than Todoist on labels, custom filters, natural-language recurrence, integrations, and collaborative project workflows.",
+        "setupBlocker": "Requires a Microsoft account",
+        "sources": [
+          "https://support.microsoft.com/en-us/todo/welcome-to-microsoft-to-do",
+          "https://support.microsoft.com/en-us/todo/using-microsoft-to-do-with-outlook-tasks",
+          "https://www.microsoft.com/en-us/microsoft-365/microsoft-to-do-list-app",
+          "https://www.todoist.com/",
+          "https://www.todoist.com/pricing",
+          "https://www.todoist.com/help/articles/introduction-to-recurring-dates-YUYVJJAV",
+          "https://www.todoist.com/help/articles/introduction-to-reminders-9PezfU"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Vikunja",
+      "url": "https://vikunja.io",
+      "type": "open-source",
+      "repo": "https://github.com/go-vikunja/vikunja",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A capable Todoist replacement once you accept becoming its hosting department",
+      "stars": 5000,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the paid hosted service or deploy the free server with Docker Compose, a package, or the standalone binary",
+        "engines": null,
+        "dataFormat": "Tasks, projects, users, and settings live in SQLite, MySQL/MariaDB, or PostgreSQL, with attachments in a persistent files directory, on the selected host",
+        "gapVsPaid": "Vikunja adds hosting administration and has less polished native mobile, offline, natural-language, and integration support than Todoist.",
+        "setupBlocker": "The free path requires a server or Docker, persistent volumes, secrets, and normally a reverse proxy with TLS",
+        "sources": [
+          "https://github.com/go-vikunja/vikunja",
+          "https://github.com/go-vikunja/vikunja/blob/main/LICENSE",
+          "https://vikunja.io/docs/installing/",
+          "https://vikunja.io/docs/docker-walkthrough/",
+          "https://vikunja.io/docs/full-docker-example/",
+          "https://vikunja.io/docs/config-options/",
+          "https://www.todoist.com/",
+          "https://www.todoist.com/pricing",
+          "https://www.todoist.com/help/articles/introduction-to-recurring-dates-YUYVJJAV",
+          "https://www.todoist.com/help/articles/introduction-to-reminders-9PezfU"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Super Productivity",
+      "url": "https://super-productivity.com",
+      "type": "open-source",
+      "repo": "https://github.com/super-productivity/super-productivity",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "A local task manager with timeboxing, Pomodoro, and no account begging to be created",
+      "stars": 21156,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Use the browser/PWA or install a packaged desktop or mobile build",
+        "engines": null,
+        "dataFormat": "Tasks, projects, time records, and settings are local-first in browser or app storage; optional synchronization and backups use the user's chosen WebDAV or Dropbox account",
+        "gapVsPaid": "Super Productivity is primarily a local personal tool and is weaker than Todoist for shared projects, mobile capture, recurring-date language, and integrations.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/super-productivity/super-productivity",
+          "https://github.com/super-productivity/super-productivity/blob/master/LICENSE",
+          "https://super-productivity.com/",
+          "https://www.todoist.com/",
+          "https://www.todoist.com/pricing",
+          "https://www.todoist.com/help/articles/introduction-to-recurring-dates-YUYVJJAV",
+          "https://www.todoist.com/help/articles/introduction-to-reminders-9PezfU"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Apple Reminders",
+      "url": "https://apps.apple.com/us/app/reminders/id1108187841",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "ios"
+      ],
+      "desc": "Things minus the polish tax, provided every device in sight has an Apple logo",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Preinstalled on iPhone, iPad, and Mac; enable iCloud or another supported reminders account for synchronization",
+        "engines": "Optional Apple Intelligence can suggest or auto-categorize reminders on supported devices; ordinary task management does not require AI",
+        "dataFormat": "Structured reminder records live in iCloud or another configured reminders account and are cached on Apple devices; iCloud provides account-level restore rather than user-visible task files",
+        "gapVsPaid": "Apple Reminders is confined to Apple’s ecosystem and is less capable than Todoist for cross-platform collaboration, integrations, and complex filters.",
+        "setupBlocker": null,
+        "sources": [
+          "https://apps.apple.com/us/app/reminders/id1108187841",
+          "https://support.apple.com/en-in/102484",
+          "https://support.apple.com/en-hk/guide/icloud/mmc591432bd9/icloud",
+          "https://support.apple.com/en-hk/guide/icloud/mmbf52194b5a/icloud",
+          "https://support.apple.com/en-in/guide/reminders/remndc729e28/mac",
+          "https://support.apple.com/en-us/119953",
+          "https://www.todoist.com/",
+          "https://www.todoist.com/pricing",
+          "https://www.todoist.com/help/articles/introduction-to-recurring-dates-YUYVJJAV",
+          "https://www.todoist.com/help/articles/introduction-to-reminders-9PezfU"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "sunsama",
+    "akiflow",
+    "motion"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Strong yes; familiar product where feature creep is the real limit.",
+  "prompt": "Build me a personal task manager to replace Todoist. Requirements:\n\n- A local web app: Node + Express + better-sqlite3, server-rendered, binds to\n  localhost only. Keyboard-first: n for new task, x to complete, / to search.\n- Quick-add parses natural language with chrono-node: \"call Sam tomorrow 4pm\n  #home p2\" sets due date, project, and priority in one line.\n- Projects via #tags, priorities p1-p3, free-text notes on any task.\n- Recurring tasks stored as rrule strings (\"every 1st\", \"every mon,thu\");\n  completing one schedules the next occurrence.\n- Views: Today, Upcoming (next 7 days grouped by day), and per-project. Overdue\n  tasks pinned red at the top of Today.\n- Reminders: node-cron checks each minute and pushes due tasks to my phone via ntfy\n  (topic in .env), plus a 7am digest of today's list.\n- A t add \"...\" CLI for capture from any terminal.\n- No accounts, no telemetry, everything in one SQLite file I can back up.\n- Out of scope: collaboration, native mobile apps, and offline sync. Phone access\n  is ntfy notifications, that is the trade.\n- README: ntfy app setup on the phone and where the DB lives.",
+  "promptCurated": false
+}

@@ -1,0 +1,183 @@
+{
+  "slug": "thumblifyai",
+  "name": "ThumblifyAI",
+  "domain": "thumblifyai.com",
+  "category": "design",
+  "subcategory": "AI thumbnail generation",
+  "tagline": "Create Thumbnails That Make People Click",
+  "priceMonthly": 9.99,
+  "pricing": {
+    "plan": "Credits",
+    "basis": "pay as you go",
+    "unit": "usage",
+    "source": "https://thumblifyai.com/#pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": null,
+    "native": "credit-based pricing"
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A basic AI thumbnail generator can be built quickly using existing image models, but recreating ThumblifyAI requires much more than connecting an image API. The product's advantage comes from specialized thumbnail-focused system prompts, AI workflows, creator-focused features, thumbnail inspiration, style matching, AI customization features, and continuous iteration around generating clickable YouTube thumbnails.",
+  "coreLoopDIY": "Generate YouTube thumbnail concepts and images using AI models with custom prompts and creator-focused workflows.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Image generation API key",
+    "LLM API key"
+  ],
+  "whatYouLose": [
+    "specialized thumbnail-specific system prompts",
+    "style matching and recreation features",
+    "custom AI training and personalization features",
+    "creator-focused workflow and UI/UX",
+    "thumbnail inspiration system"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "proprietary-models"
+  ],
+  "moatNotes": "AI workflows/prompt systems/domain expertise/creator data",
+  "whyPeopleStillPay": "Creators are not only paying for AI image generation. The biggest value is creating high-quality thumbnails without needing to become prompt experts. ThumblifyAI's tuned prompts and workflows, and generation process are tuned specifically for creating catchy YouTube thumbnails. Users get a faster and more consistent path from video idea to thumbnail instead of spending hours experimenting with prompts, styles, and settings.",
+  "priorArt": [],
+  "alternatives": [
+    {
+      "name": "Adobe Express Free",
+      "url": "https://www.adobe.com/express/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A free thumbnail maker with templates, background removal allowances, and ordinary exports; the AI is assistance, not an oracle.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install the Adobe Express desktop/mobile app.",
+        "engines": "Adobe Firefly models power the generative features.",
+        "dataFormat": "Projects, uploads, libraries and brand assets live in Adobe's cloud; exports include image, PDF and video files.",
+        "gapVsPaid": "Adobe Express supplies design tools but no specialized thumbnail ideation or click-oriented scoring comparable to ThumblifyAI.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.adobe.com/express/pricing",
+          "https://helpx.adobe.com/express/web/adobe-express-subscription/free.html",
+          "https://www.adobe.com/express/feature",
+          "https://helpx.adobe.com/express/web/brands-libraries-projects/create-manage-brands/projects.html",
+          "https://thumblifyai.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Canva Free",
+      "url": "https://www.canva.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Thousands of thumbnail templates and enough text, cutout, and image tools to do the job; it will not pretend to predict clicks.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install Canva's desktop/mobile app.",
+        "engines": "Canva AI and Magic Studio provide generative tools; Canva does not publish a complete provider/model map for the free editor.",
+        "dataFormat": "Designs, uploads, folders and brand assets live in Canva's cloud; users export common image, PDF, presentation and video formats.",
+        "gapVsPaid": "Canva makes thumbnails well but does not provide ThumblifyAI's specialized AI guidance aimed at click-through performance.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.canva.com/pricing/",
+          "https://www.canva.com/help/upload-media/",
+          "https://www.canva.com/help/manage-uploads/",
+          "https://www.canva.com/policies/privacy-policy/",
+          "https://www.canva.com/ai-assistant/",
+          "https://thumblifyai.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Desygner Free",
+      "url": "https://desygner.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Template-driven thumbnails, photo tools, and a small monthly AI allowance; less hype, roughly the same actual work.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install the mobile app.",
+        "engines": "Desygner's terms identify OpenAI-backed AI features.",
+        "dataFormat": "Projects, uploads, fonts and brand assets live in Desygner's cloud; designs export as image or PDF files.",
+        "gapVsPaid": "Desygner still leaves thumbnail concepts and performance judgment to the user rather than providing a dedicated click-focused AI workflow.",
+        "setupBlocker": null,
+        "sources": [
+          "https://desygner.com/pricing/",
+          "https://desygner.com/",
+          "https://desygner.com/terms/",
+          "https://thumblifyai.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "VistaCreate Starter",
+      "url": "https://create.vista.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Fast thumbnail layouts from stock, local images, text effects, and reusable styles, with unlimited downloads.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install the mobile app.",
+        "engines": null,
+        "dataFormat": "Projects, uploads and the single Brand Kit live in VistaCreate's cloud; exports include image, GIF and video files.",
+        "gapVsPaid": "VistaCreate is a general template editor and offers no specialized thumbnail performance guidance.",
+        "setupBlocker": null,
+        "sources": [
+          "https://support.create.vista.com/hc/en-us/articles/360021367319-VistaCreate-Free-Starter-Plan",
+          "https://create.vista.com/",
+          "https://support.create.vista.com/hc/en-us/articles/6347917526940-What-VistaCreate-plans-are-available",
+          "https://create.vista.com/features/brand-kit/",
+          "https://thumblifyai.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "AI thumbnail maker platform built for YouTube creators.",
+  "prompt": "Build me a personal YouTube thumbnail generator inspired by ThumblifyAI. Requirements:\n\n- Node + Express, one localhost page; no accounts, no telemetry, keys in .env.\n- Input: video title, a face/subject photo upload, and a style picker with 5\n  presets (bold MrBeast-style, minimal tech, tutorial, vlog, gaming).\n- Generation: send the title + style prompt to an image model API (key in\n  .env; support OpenAI Images or Replicate, one flag to choose). Composite\n  the uploaded face onto the generated background with sharp: auto-cutout\n  via an rembg CLI call, drop shadow, rim light.\n- Text layer: the title (or a punchier 3-5 word hook the LLM suggests)\n  rendered with sharp over the composite, thick outline, 2 font choices.\n- Output 1280x720 PNG under 2MB, plus a 3-variant grid so I can pick; save\n  every result to thumbnails/ with the prompt used, so styles are repeatable.\n- A history page of past generations with one-click re-run.\n- Out of scope: accounts, teams, A/B testing against YouTube analytics, and\n  bulk generation. This is one thumbnail at a time for my own channel.\n- README: which API keys I need, rembg install, and rough per-image cost.",
+  "promptCurated": false
+}

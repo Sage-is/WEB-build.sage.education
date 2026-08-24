@@ -1,0 +1,125 @@
+{
+  "slug": "feedhive",
+  "name": "FeedHive",
+  "domain": "feedhive.com",
+  "appURL": "https://feedhive.com",
+  "category": "social-media",
+  "subcategory": "AI social scheduling",
+  "tagline": "AI-assisted writing, scheduling, recycling, analytics, and collaboration",
+  "priceMonthly": 33.45,
+  "pricing": {
+    "plan": "Brand",
+    "kind": "fixed",
+    "basis": "monthly",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "33.45 USD",
+    "source": "https://www.feedhive.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Creator is 19 USD/month, Brand 29, Business 99, Agency 299; yearly billing discounts apply. The pricing page geo-localizes currency (shows EUR from Europe), which is why an earlier pass failed to pin a number.",
+    "tiers": [
+      {
+        "name": "Creator",
+        "monthly": 21.91,
+        "annualPerMonth": 17.3,
+        "per": "workspace",
+        "limits": "4 social accounts; 30 scheduled posts; scheduling up to 14 days ahead; 20 days of history; 25 drafts; 15 templates; 500 automations/month; 2,500 base AI credits/month.",
+        "notes": "Launch bonus doubles AI credits for the first 3 months. Published in EUR; converted at the ECB 2026-08-13 reference rate of EUR 1 = USD 1.1534."
+      },
+      {
+        "name": "Brand",
+        "monthly": 33.45,
+        "annualPerMonth": 25.37,
+        "per": "workspace",
+        "limits": "10 social accounts; 5 workspaces; 500 scheduled posts; scheduling up to 60 days ahead; 200 days of history; 500 drafts; 50 templates; 2,000 automations/month; 10,000 base AI credits/month.",
+        "notes": "Launch bonus doubles AI credits for the first 3 months. Published in EUR; converted at the ECB 2026-08-13 reference rate of EUR 1 = USD 1.1534."
+      },
+      {
+        "name": "Business",
+        "monthly": 114.19,
+        "annualPerMonth": 79.58,
+        "per": "workspace",
+        "limits": "100 social accounts; 50 workspaces; unlimited scheduled posts, history, drafts, and templates; 10,000 automations/month; 50,000 base AI credits/month.",
+        "notes": "Launch bonus doubles AI credits for the first 3 months. Published in EUR; converted at the ECB 2026-08-13 reference rate of EUR 1 = USD 1.1534."
+      },
+      {
+        "name": "Agency",
+        "monthly": 344.87,
+        "annualPerMonth": 275.66,
+        "per": "workspace",
+        "limits": "500 social accounts; 100 workspaces; unlimited scheduled posts, history, drafts, and templates; 100,000 automations/month; 100,000 base AI credits/month.",
+        "notes": "Launch bonus doubles AI credits for the first 3 months. Published in EUR; converted at the ECB 2026-08-13 reference rate of EUR 1 = USD 1.1534."
+      }
+    ],
+    "freeTierCaps": "no free tier (7-day trial only)",
+    "billingTerms": "monthly + annual (annual saves up to 30%)",
+    "priceChanges": [],
+    "hiddenCosts": "The doubled AI-credit allowance is a 3-month launch bonus, not the ongoing quota; public overage-credit prices were not disclosed.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.feedhive.com/pricing",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible AI social scheduling loop is buildable, but a credible replacement needs more than the first screen. FeedHive earns its keep through platform APIs, distribution, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a personal AI social scheduling planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "hosted database and worker",
+    "official platform OAuth credentials where available"
+  ],
+  "whatYouLose": [
+    "analytics history and attribution",
+    "team approvals and asset workflows",
+    "protection from API and policy changes",
+    "calendar-provider edge cases and timezone correctness",
+    "reliable direct publishing across networks"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "platform APIs/distribution",
+  "whyPeopleStillPay": "FeedHive: Social tools survive because networks change APIs, permissions, formats, and anti-spam rules constantly.",
+  "ongoingBurden": "Maintain OAuth, token refresh, media constraints, rate limits, scheduling, webhooks, retries, and platform policy compliance.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Open-source social scheduling and publishing platform."
+    },
+    {
+      "name": "Mixpost",
+      "url": "https://github.com/inovector/mixpost",
+      "desc": "Self-hosted social media management software."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "BrightBean Studio",
+      "url": "https://brightbean.xyz/studio/",
+      "desc": "Scheduler, inbox and analytics: yes. AI writing and automatic content recycling: no."
+    },
+    {
+      "name": "TryPost",
+      "url": "https://trypost.it/",
+      "desc": "Scheduling and recycling are free, but the AI writer needs a model account and somebody still receives that bill."
+    }
+  ],
+  "relatedSlugs": [
+    "ocoya",
+    "predis-ai",
+    "authoredup"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of FeedHive is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for FeedHive, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build a personal AI social scheduling planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: analytics history and attribution; team approvals and asset workflows; protection from API and policy changes.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

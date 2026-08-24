@@ -1,0 +1,137 @@
+{
+  "slug": "gamma",
+  "name": "Gamma",
+  "domain": "gamma.app",
+  "category": "presentations",
+  "subcategory": "AI decks/docs/webpages",
+  "tagline": "AI presentation and document builder for decks, docs, and sites",
+  "priceMonthly": 9,
+  "pricing": {
+    "plan": "Plus",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "native": "9 USD",
+    "source": "https://gamma.app/pricing",
+    "checkedOn": "2026-08-13",
+    "confidence": "medium",
+    "notes": "Official pricing page checked; public 2026 coverage lists Plus at $12/month, while official crawler exposed annual-effective $9/seat/month.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "400 starting AI credits with no monthly refresh; 10 slides/prompt; 50,000 input tokens; 2,000-credit balance cap; +200 credits/referral.",
+        "notes": null
+      },
+      {
+        "name": "Plus",
+        "monthly": null,
+        "annualPerMonth": 9,
+        "per": "user",
+        "limits": "1,000 credits/month; 75 slides/prompt; 100,000 input tokens.",
+        "notes": "Annual charge is $108/user. Gamma confirms a monthly option, but the current public page did not expose its exact price."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 18,
+        "per": "user",
+        "limits": "4,000 credits/month; 75 slides/prompt; up to 10 custom domains; API access.",
+        "notes": "Annual charge is $216/user. Gamma confirms a monthly option, but the current public page did not expose its exact price."
+      },
+      {
+        "name": "Ultra",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "20,000 credits/month; 75 slides/prompt; up to 100 custom domains.",
+        "notes": "Currently monthly-only, but the exact introductory monthly price was not exposed in the accessible public page."
+      },
+      {
+        "name": "Team",
+        "monthly": null,
+        "annualPerMonth": 20,
+        "per": "user",
+        "limits": "6,000 credits/seat/month; 75 slides/prompt; up to 10 custom domains; 2-seat minimum.",
+        "notes": "Annual charge is $240/seat."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": 40,
+        "per": "user",
+        "limits": "10,000 credits/seat/month; up to 100 custom domains; 10-seat minimum.",
+        "notes": "Annual charge is $480/seat."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Annual agreement; flexible team size and custom organization-wide credits.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "400 one-time starting AI credits; no automatic refresh; 10 slides/prompt; 50,000 input tokens; balance capped at 2,000 credits; +200 credits per referral",
+    "billingTerms": "Plus and Pro offer monthly + annual; annual is advertised as 28% cheaper; Ultra is monthly-only; Team and Business are annual-only; Enterprise uses an annual agreement",
+    "priceChanges": [],
+    "hiddenCosts": "1,500 extra credits cost $6; multi-user auto-recharge charges separately for each user who triggers it; credits are not pooled; unused paid credits expire after the subscription ends; Team requires 2 seats and Business 10",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://gamma.app/pricing",
+      "https://gamma.app/pricing/teams",
+      "https://help.gamma.app/en/articles/8077107-how-can-i-upgrade-my-gamma-subscription",
+      "https://help.gamma.app/en/articles/12466653-how-do-i-purchase-more-credits",
+      "https://help.gamma.app/en/articles/11594955-what-options-does-gamma-offer-for-teams-and-business"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "An AI slide generator is buildable, but Gamma's strength is layouts, editing model, exports, hosting, analytics, and shareable deck/site UX.",
+  "coreLoopDIY": "Prompt an LLM for outline, generate slide/cards JSON, render with templates, export PDF/PPTX, and host a share page.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "LLM API",
+    "slide renderer",
+    "template system",
+    "export pipeline",
+    "hosted app",
+    "optional image API"
+  ],
+  "whatYouLose": [
+    "polished editor",
+    "responsive card model",
+    "exports",
+    "analytics",
+    "custom domains",
+    "template quality",
+    "collaboration"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "content-rights"
+  ],
+  "moatNotes": "editor/templates/hosting",
+  "whyPeopleStillPay": "They pay because the output looks acceptable without wrestling with PowerPoint.",
+  "priorArt": [
+    {
+      "name": "Slidev",
+      "url": "https://github.com/slidevjs/slidev",
+      "desc": "Open-source Markdown/HTML slide deck generator; good foundation for a developer-oriented c",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "beautiful-ai",
+    "jasper",
+    "quillbot"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A strong modern yes/kinda: a viral category with open-source and API primitives.",
+  "prompt": "Build me an AI slide-deck generator to replace Gamma. Requirements:\n\n- A Node CLI around Slidev. `deck new \"<topic>\"` asks an LLM (key in .env) for\n  an outline, then slide-by-slide content as JSON: title, bullets, speaker\n  notes, layout name.\n- Render that JSON to a Slidev slides.md; `deck preview` runs the Slidev dev\n  server, `deck export` writes PDF and PPTX.\n- Five layouts: title, bullets, two-column, big-quote, image-right. Images are\n  optional via an image API key in .env; skip them cleanly when absent.\n- One theme file for fonts and colors so every deck matches without redesign.\n- `deck redo <n>` regenerates a single slide by number and leaves the rest\n  untouched.\n- Decks are files in ./decks/<slug>/ (slides.md plus assets), kept in git and\n  hand-editable after generation. No database.\n- No accounts, no telemetry; the only network calls are the LLM and optional\n  image API.\n- Out of scope: a web editor, share links with analytics, collaboration.\n  slides.md in my editor is the editor.\n- README: keys, export commands, and how to add a layout.",
+  "promptCurated": false
+}

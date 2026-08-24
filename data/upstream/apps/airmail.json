@@ -1,0 +1,215 @@
+{
+  "slug": "airmail",
+  "name": "Airmail",
+  "domain": "airmailapp.com",
+  "appURL": "https://airmailapp.com",
+  "category": "email",
+  "subcategory": "email clients and hosted mail",
+  "tagline": "Create a configurable Apple email client with actions, snooze, and send later",
+  "priceMonthly": 7.99,
+  "pricing": {
+    "plan": "Airmail Pro",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://apps.apple.com/us/app/airmail-for-gmail-outlook-imap/id993160329",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Typical monthly subscription in USD storefronts.",
+    "native": "7.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 email account; basic inbox management only",
+        "notes": "Airmail's current help center describes the free version as limited to one account."
+      },
+      {
+        "name": "Airmail Pro",
+        "monthly": 7.99,
+        "annualPerMonth": 3.3325,
+        "per": "user",
+        "limits": "Multiple accounts; subscription shared across Apple devices on the same Apple ID",
+        "notes": "USD prices are from the live US Apple App Store listing. Airmail's own help pages publish conflicting promotional/regional figures, and the vendor says prices vary by country and promotion."
+      }
+    ],
+    "freeTierCaps": "1 email account; basic inbox management",
+    "billingTerms": "monthly + annual; auto-renews through the Apple App Store unless canceled at least 24 hours before renewal",
+    "priceChanges": [],
+    "hiddenCosts": "Storefront and promotional pricing varies. A separate AI Composer in-app purchase is listed in some storefronts and is not reliably priced on the US product page.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://apps.apple.com/us/app/airmail-for-gmail-outlook-imap/id993160329",
+      "https://help.airmailapp.com/en-us/article/airmail-pro-pricing-and-subscription-plans-189o6bh/",
+      "https://help.airmailapp.com/en-us/article/faq-1j9ztiz/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Airmail, create a configurable Apple email client with actions, snooze, and send later. The hard boundary is native apps, provider quirks, automation, push, and years of compatibility work, plus mail infrastructure, integrations, and client polish.",
+  "coreLoopDIY": "Connect an existing mailbox, index messages locally, provide a fast focused inbox with actions, snooze, and send later, and send through the account's normal SMTP service.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "existing IMAP and SMTP mailbox",
+    "OAuth client credentials where required",
+    "desktop keychain access",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "native apps, provider quirks, automation, push, and years of compatibility work",
+    "mail hosting and deliverability",
+    "push on every platform",
+    "advanced team collaboration",
+    "provider-specific AI and search"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "mail infrastructure, integrations, and client polish",
+  "replacementScope": "personal desktop mail client",
+  "ongoingBurden": "IMAP quirks, OAuth, MIME, threading, search, attachments, offline sync, notifications, secure storage, and provider changes",
+  "whyPeopleStillPay": "People still pay for Airmail because an email client can be rebuilt; operating a trusted mail service with excellent deliverability cannot. The recurring cost buys IMAP quirks, OAuth, MIME, threading, search, attachments, offline sync, notifications, secure storage, and provider changes, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "mailcow",
+      "url": "https://github.com/mailcow/mailcow-dockerized",
+      "desc": "Popular open-source mail-server suite that demonstrates the operational complexity of hosted mail."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Apple Mail",
+      "url": "https://support.apple.com/guide/mail/welcome/mac",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "ios"
+      ],
+      "desc": "The client already on the Mac has send-later, reminders and swipe actions; customization stops where Apple says.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Preinstalled on macOS, iPhone, and iPad; add an IMAP, Exchange, iCloud, Google, or other supported mailbox",
+        "engines": "Optional Apple Intelligence writing tools, priority-message features, and summaries on supported hardware; ordinary mail does not require an AI backend",
+        "dataFormat": "Messages remain in the connected mail provider and are cached or indexed in the local Mail profile; local mailboxes can be exported as mbox files",
+        "gapVsPaid": "Apple Mail does not expose Airmail’s deep custom-action, URL-scheme, and third-party workflow flexibility.",
+        "setupBlocker": null,
+        "sources": [
+          "https://support.apple.com/guide/mail/welcome/mac",
+          "https://support.apple.com/guide/mail/add-email-accounts-mail35803/mac",
+          "https://support.apple.com/guide/mail/import-or-export-mailboxes-mlhlp1030/mac",
+          "https://support.apple.com/guide/mail/use-apple-intelligence-in-mail-mlhla9f7c0e5/mac",
+          "https://support.apple.com/guide/mail/protect-email-privacy-mlhlp1205/mac",
+          "https://airmailapp.com/",
+          "https://help.airmailapp.com/en-us/article/airmail-pro-pricing-and-subscription-plans-189o6bh/",
+          "https://help.airmailapp.com/en-us/article/custom-actions-airmail-for-iphone-1yz08b9/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Edison Mail",
+      "url": "https://www.edisonmail.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "Custom swipes, snooze and scheduled sending without a subscription; optional shopping-data research pays the bill.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Install the desktop or mobile app and add existing email accounts",
+        "engines": "Edison’s proprietary AI-based Assistant/search and smart-folder system; the model or backend is not disclosed on the checked official pages",
+        "dataFormat": "Messages remain with the mailbox provider and are cached in the client; Edison also processes account and message-derived data through its services, with separate controls for optional commerce-research participation",
+        "gapVsPaid": "Edison offers configurable swipes but not Airmail’s much deeper custom actions, services, and automation surface.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.edisonmail.com/",
+          "https://www.edisonmail.com/features",
+          "https://www.edisonmail.com/privacy-policy-7-1-23",
+          "https://airmailapp.com/",
+          "https://help.airmailapp.com/en-us/article/airmail-pro-pricing-and-subscription-plans-189o6bh/",
+          "https://help.airmailapp.com/en-us/article/custom-actions-airmail-for-iphone-1yz08b9/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Spark Free",
+      "url": "https://sparkmailapp.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "Snooze, scheduled sends and configurable actions for free; read receipts and team features still collect rent.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Install Spark on macOS, Windows, iOS, or Android, create a Spark account, and connect existing mailboxes",
+        "engines": "Optional Spark +AI and AI Assistant features use third-party large-language-model providers; the ordinary free mail client does not require AI",
+        "dataFormat": "Mail remains at the provider and is indexed locally; encrypted synchronization and notification metadata, and temporarily queued send-later messages, can live on Spark's servers; AI excerpts may be sent to a disclosed provider when AI is used",
+        "gapVsPaid": "Spark Free is polished but offers less granular action and automation customization than Airmail and requires a Spark account for synchronization.",
+        "setupBlocker": "Requires a Spark account and mailbox OAuth or credentials, but no server administration",
+        "sources": [
+          "https://sparkmailapp.com/pricing",
+          "https://sparkmailapp.com/download",
+          "https://sparkmailapp.com/help/general/email-storage-and-backups",
+          "https://sparkmailapp.com/help/privacy-data/spark-email-privacy-everything-you-need-to-know",
+          "https://sparkmailapp.com/legal/archives/privacy-app-20260519",
+          "https://sparkmailapp.com/features/ai-assistant",
+          "https://airmailapp.com/",
+          "https://help.airmailapp.com/en-us/article/airmail-pro-pricing-and-subscription-plans-189o6bh/",
+          "https://help.airmailapp.com/en-us/article/custom-actions-airmail-for-iphone-1yz08b9/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "eM Client Free",
+      "url": "https://www.emclient.com/",
+      "desc": "The perpetual license is real, but snooze and send-later are paid and business use is forbidden."
+    },
+    {
+      "name": "Mailspring",
+      "url": "https://www.getmailspring.com/",
+      "desc": "A polished Mac client, but free snooze and send-later are deliberately rationed."
+    }
+  ],
+  "relatedSlugs": [
+    "superhuman",
+    "front",
+    "fastmail"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal desktop mail client DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Airmail in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, IMAP, SMTP, and OAuth where available; do not offer alternative stacks.\nThe core loop is: connect an existing mailbox, index messages locally, provide a fast focused inbox with actions, snooze, and send later, and send through the account's normal SMTP service.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nSupport one IMAP and SMTP account with credentials stored only in the OS keychain.\nIndex headers and message bodies locally with resumable sync and a visible status page.\nImplement standards-based threading, folders, labels, archive, snooze, drafts, and search.\nRender HTML email in a locked-down sandbox and block remote images by default.\nSend multipart messages with attachments and preserve a local copy of every draft.\nAdd export, local cache reset, account reconnect, diagnostics, and safe logging.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out running a public mail server.\nDeliberately leave out shared team inboxes and sales workflows.\nDeliberately leave out mobile push services and provider-scale spam filtering.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

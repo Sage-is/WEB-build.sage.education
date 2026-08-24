@@ -1,0 +1,195 @@
+{
+  "slug": "umami-cloud",
+  "name": "Umami Cloud",
+  "domain": "umami.is",
+  "category": "analytics",
+  "subcategory": "privacy web analytics",
+  "tagline": "Open-source privacy analytics with a hosted cloud option",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "20 USD",
+    "source": "https://umami.is/docs/cloud",
+    "checkedOn": "2026-08-07",
+    "confidence": "medium",
+    "notes": "Official pricing checked 2026-08-07; free Hobby tier, paid is Pro at $20/month for 1M events.",
+    "freeTier": "The free Hobby plan covers 100k events a month on 3 sites with 6 months retention."
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The software is open source, so the cloud subscription is mostly paying for managed hosting, upgrades, and not touching a server.",
+  "coreLoopDIY": "Self-host Umami, install the tracking script, create websites/events, and maintain database backups.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "VPS/Docker",
+    "database",
+    "domain/SSL",
+    "backups",
+    "update routine"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "upgrades",
+    "reliability",
+    "team/billing convenience",
+    "support"
+  ],
+  "moatTags": [
+    "scale-infra"
+  ],
+  "moatNotes": "open-source core/hosting",
+  "whyPeopleStillPay": "They pay because analytics is not worth waking up to fix.",
+  "priorArt": [
+    {
+      "name": "Umami",
+      "url": "https://github.com/umami-software/umami",
+      "desc": "The product's own open-source analytics platform.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "GoatCounter",
+      "url": "https://www.goatcounter.com",
+      "type": "open-source",
+      "repo": "https://github.com/arp242/goatcounter",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The lighter self-hosted substitute when page traffic is the whole question.",
+      "stars": 5800,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": null,
+        "runs": "both",
+        "install": "Create a hosted account or run the single static binary or Docker image",
+        "engines": null,
+        "dataFormat": "A self-hosted instance uses SQLite by default or PostgreSQL; the hosted service stores analytics on GoatCounter's infrastructure and supports JSON and CSV exports",
+        "gapVsPaid": "It is lighter but much narrower in events, funnels, journeys and team analysis than Umami Cloud.",
+        "setupBlocker": "None for hosted use; self-hosting needs a reachable binary or container plus a public URL and TLS",
+        "sources": [
+          "https://raw.githubusercontent.com/arp242/goatcounter/master/LICENSE",
+          "https://github.com/arp242/goatcounter",
+          "https://www.goatcounter.com/help/terms",
+          "https://www.goatcounter.com/help/events",
+          "https://umami.is/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plausible Community Edition",
+      "url": "https://plausible.io/self-hosted-web-analytics",
+      "type": "open-source",
+      "repo": "https://github.com/plausible/analytics",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A similarly restrained privacy dashboard with a mature self-hosted edition.",
+      "stars": 28377,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Deploy the Community Edition with the official Docker Compose installer",
+        "engines": null,
+        "dataFormat": "Account and configuration records live in PostgreSQL and analytics events live in ClickHouse on the user's server",
+        "gapVsPaid": "It is similarly privacy-focused, but less flexible for journeys and product analytics and requires the user to operate the stack.",
+        "setupBlocker": "Docker Compose, roughly 2 GB of RAM, a domain with DNS and TLS, and backups for PostgreSQL and ClickHouse",
+        "sources": [
+          "https://github.com/plausible/analytics",
+          "https://github.com/plausible/analytics/blob/master/LICENSE.md",
+          "https://github.com/plausible/community-edition",
+          "https://plausible.io/self-hosted-web-analytics",
+          "https://umami.is/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Rybbit",
+      "url": "https://rybbit.com",
+      "type": "open-source",
+      "repo": "https://github.com/rybbit-io/rybbit",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A broader self-hosted alternative with replay and funnels, at the cost of more moving parts.",
+      "stars": 12600,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Use the hosted service or deploy the free self-hosted edition with Docker Compose",
+        "engines": null,
+        "dataFormat": "The self-hosted stack uses PostgreSQL for application data, ClickHouse for analytics and Redis for queues and cache; hosted data lives in Rybbit's cloud",
+        "gapVsPaid": "It is newer and heavier, with less proven hosted reliability and more moving parts than Umami Cloud.",
+        "setupBlocker": "The indefinitely free path is self-hosting, which requires Docker Compose, a domain, secrets and enough resources for three data services",
+        "sources": [
+          "https://github.com/rybbit-io/rybbit",
+          "https://github.com/rybbit-io/rybbit/blob/master/LICENSE",
+          "https://rybbit.com/docs/self-hosting-guides/self-hosting-manual",
+          "https://rybbit.com/",
+          "https://umami.is/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Umami",
+      "url": "https://umami.is",
+      "type": "open-source",
+      "repo": "https://github.com/umami-software/umami",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Exactly Umami, except the cloud engineer is now you and Docker gets a vote.",
+      "stars": 38073,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Create an Umami Cloud account or deploy the Node application with Docker Compose and PostgreSQL",
+        "engines": null,
+        "dataFormat": "A self-hosted deployment stores analytics and account data in PostgreSQL; Umami Cloud stores it in Umami's managed service",
+        "gapVsPaid": "It is the same open-source core, but uptime, backups, upgrades and capacity planning move from Umami's team to the user.",
+        "setupBlocker": "None for hosted signup; self-hosting requires Docker or Node hosting and a PostgreSQL database",
+        "sources": [
+          "https://github.com/umami-software/umami",
+          "https://github.com/umami-software/umami/blob/master/LICENSE",
+          "https://umami.is/docs/install",
+          "https://umami.is/docs/hosting",
+          "https://umami.is/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "squarespace",
+    "wix",
+    "github-copilot"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Clean yes; good example of hosted open-source economics.",
+  "prompt": "Build me a self-hosted analytics stack to replace Umami Cloud. Requirements:\n\n- Do not write analytics code. Umami is open source, deploy the real thing: a\n  docker-compose.yml with the official umami image + postgres:15, data in a named\n  volume. The subscription pays for hosting, so the build is a deployment.\n- All secrets in .env: postgres password and Umami APP_SECRET. Umami binds to\n  localhost; Caddy reverse-proxies stats.<mydomain> to it with automatic HTTPS.\n- backup.sh on a nightly cron: pg_dump to ~/backups/umami-YYYY-MM-DD.sql.gz, keep\n  14, with the restore command documented next to it.\n- update.sh: pull the new image, restart, and print the release-notes URL so I can\n  check for breaking changes before upgrading.\n- Add the tracking script tag to my sites and verify pageviews arrive; create one\n  custom event as proof the event pipeline works.\n- No third-party telemetry; visitor data stays in my postgres.\n- Out of scope: modifying Umami itself or building custom dashboards on top. And\n  accept the honest cost: uptime, upgrades, and 2am breakage are mine now.\n- README: DNS record for the stats subdomain, first-login default credentials, and\n  change the admin password immediately.",
+  "promptCurated": false
+}

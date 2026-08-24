@@ -1,0 +1,142 @@
+{
+  "slug": "krisp",
+  "name": "Krisp",
+  "domain": "krisp.ai",
+  "category": "audio-video",
+  "subcategory": "noise cancellation",
+  "tagline": "Real-time AI noise cancellation and meeting voice enhancement",
+  "priceMonthly": 16,
+  "pricing": {
+    "plan": "Pro/Core",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "native": "16 USD",
+    "source": "https://krisp.ai/pricing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Core/Pro is listed at $16/user/month monthly and $8/user/month annually.",
+    "tiers": [
+      {
+        "name": "Core",
+        "monthly": 16,
+        "annualPerMonth": 8,
+        "per": "user",
+        "limits": "Unlimited transcription, recording, meeting notes and noise cancellation; accent conversion 1 hour/day; 10 GB storage",
+        "notes": null
+      },
+      {
+        "name": "Advanced",
+        "monthly": 30,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "Unlimited meeting AI; speaker accent conversion 4 hours/day; listener accent conversion unlimited; 60 GB storage",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom seats; unlimited storage; enterprise security, deployment and support",
+        "notes": "A BAA is offered only for organizations with 100+ seats."
+      },
+      {
+        "name": "Call Center Core",
+        "monthly": null,
+        "annualPerMonth": 10,
+        "per": "user",
+        "limits": "Starts at $10/agent/month billed annually; public numeric usage caps are not disclosed",
+        "notes": null
+      },
+      {
+        "name": "Call Center Advanced",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom agent count, deployment, integrations and support",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier; 7-day trial includes unlimited transcription, noise cancellation, recording and AI notes, with accent conversion limited",
+    "billingTerms": "monthly + annual for Meeting AI; Call Center starts on annual billing",
+    "priceChanges": [],
+    "hiddenCosts": "Each user or agent is billed; BAA eligibility starts at 100 seats, while volume pricing is negotiated above roughly 50 seats.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://krisp.ai/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build post-processing and maybe route audio through open models, but real-time low-latency virtual-device noise cancellation is not a one-sitting web app.",
+  "coreLoopDIY": "Use an open noise-suppression model as a virtual microphone or post-process recordings before sending them to calls or files.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "audio DSP library",
+    "OS-level virtual audio device",
+    "model/runtime optimized for low latency",
+    "macOS/Windows audio permissions"
+  ],
+  "whatYouLose": [
+    "low-latency virtual microphone",
+    "polished app switching",
+    "model quality",
+    "meeting integrations",
+    "admin controls"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "proprietary-models"
+  ],
+  "moatNotes": "hardware/OS integration",
+  "whyPeopleStillPay": "They pay because audio cleanup must be instant and invisible during real calls.",
+  "priorArt": [
+    {
+      "name": "RNNoise",
+      "url": "https://github.com/xiph/rnnoise",
+      "desc": "Open-source recurrent noise suppression model; useful but not a full Krisp replacement.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "EasyEffects",
+      "url": "https://wwmm.github.io/easyeffects/",
+      "type": "open-source",
+      "repo": "https://github.com/wwmm/easyeffects",
+      "platforms": [
+        "linux"
+      ],
+      "desc": "Krisp for Linux tinkerers: system-wide cleanup, zero magic account, several knobs.",
+      "stars": 9500,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "NVIDIA Broadcast",
+      "url": "https://www.nvidia.com/en-us/geforce/broadcasting/broadcast-app/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "windows"
+      ],
+      "desc": "Excellent noise removal, free in money and expensive in RTX silicon.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "superwhisper",
+    "descript",
+    "loom"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Interesting because AI model availability does not remove OS/audio-driver product complexity.",
+  "prompt": "Build me a noise-cleanup tool to replace Krisp for recordings, not live calls. Requirements:\n\n- Be honest in the README up front: real-time suppression as a virtual microphone\n  needs an OS-level audio driver and millisecond latency. That is Krisp's actual\n  product and it is out of scope here. This tool cleans audio files after the fact.\n- A CLI: `denoise in.wav` (mp3/m4a accepted, decoded via ffmpeg) writes\n  in.clean.wav next to the original, original untouched.\n- Use RNNoise for the suppression pass (ffmpeg's arnndn filter with a downloaded\n  model file is the easy route), then a loudnorm pass so voice levels come out\n  consistent.\n- A watch mode with chokidar: drop files into ~/Denoise/in/ and cleaned versions\n  appear in ~/Denoise/out/ with the same names.\n- Batch mode for whole folders, with a printed before/after noise estimate per file.\n- Node wrapping ffmpeg, or a plain bash script if that ships simpler. No server,\n  no GUI.\n- Fully local and offline: no accounts, no telemetry, no API calls.\n- Out of scope: live call processing and a virtual audio device. For live calls the\n  README should point me at the OS's built-in voice isolation instead.\n- README: ffmpeg and RNNoise model install, one-line usage examples.",
+  "promptCurated": false
+}

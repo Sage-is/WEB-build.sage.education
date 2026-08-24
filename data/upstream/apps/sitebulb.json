@@ -1,0 +1,299 @@
+{
+  "slug": "sitebulb",
+  "name": "Sitebulb",
+  "domain": "sitebulb.com",
+  "appURL": "https://sitebulb.com",
+  "category": "seo-marketing",
+  "subcategory": "technical audits and on-page optimization",
+  "tagline": "Crawl an owned site and turn technical findings into prioritized, evidenced hints",
+  "priceMonthly": 18,
+  "pricing": {
+    "plan": "Lite",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://sitebulb.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Lite monthly subscription.",
+    "native": "18 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Desktop Lite",
+        "monthly": 18,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "1 user; 10,000 URLs/audit; 100+ audit hints.",
+        "notes": "Annual total is $180."
+      },
+      {
+        "name": "Desktop Pro",
+        "monthly": 42,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 user; 500,000 URLs/audit by default, configurable up to 2,000,000; 300+ audit hints.",
+        "notes": "An annual option and 15% discount are advertised, but the exact billed annual amount was not reliably exposed."
+      },
+      {
+        "name": "Cloud Mini",
+        "monthly": 125,
+        "annualPerMonth": 125,
+        "per": "workspace",
+        "limits": "2 users; 50,000 total URLs/month; 50,000 URLs/audit; no concurrent audits; unlimited projects and connected accounts; 0 desktop licences.",
+        "notes": "Annual total is $1,500."
+      },
+      {
+        "name": "Cloud Small",
+        "monthly": 245,
+        "annualPerMonth": 245,
+        "per": "workspace",
+        "limits": "5 users; 1,000,000 total URLs/month; 250,000 URLs/audit; no concurrent audits; unlimited projects and connected accounts; 5 desktop licences.",
+        "notes": "Annual total is $2,940."
+      },
+      {
+        "name": "Cloud Medium",
+        "monthly": 495,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "10 users; 2,500,000 total URLs/month; 1,000,000 URLs/audit; concurrent audits; 10 desktop licences.",
+        "notes": "Monthly price verified; exact annual billed amount was not reliably exposed."
+      },
+      {
+        "name": "Cloud Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "10+ users; 5,000,000+ total URLs/month; 2,500,000+ URLs/audit; custom concurrency and desktop licences.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no standing free tier; Desktop has a 14-day no-card trial, while Cloud has no free trial",
+    "billingTerms": "monthly + annual; invoice/PO payment is yearly only, and custom Cloud packages are annual-only",
+    "priceChanges": [],
+    "hiddenCosts": "Extra Desktop users start at about $9.44/month or $7.31/month equivalent when billed £65/year. Cloud does not add project or JavaScript-rendering fees.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://sitebulb.com/subscriptions/pricing/index/",
+      "https://sitebulb.com/subscriptions/pricing/index/?annual=true",
+      "https://sitebulb.com/subscriptions/pricing/server/",
+      "https://sitebulb.com/subscriptions/pricing/server/?annual=true",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Sitebulb, crawl an owned site and turn technical findings into prioritized, evidenced hints. The hard boundary is rule depth, visualization, reporting, javascript crawling, and agency workflow, plus crawl scale, rule depth, and operational polish.",
+  "coreLoopDIY": "Crawl a user-owned site, inspect HTML and rendered pages, turn technical findings into prioritized and evidenced hints, and export a reproducible audit.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Python 3.12",
+    "Playwright browsers",
+    "permission to crawl the target site",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "rule depth, visualization, reporting, JavaScript crawling, and agency workflow",
+    "massive hosted crawl capacity",
+    "proprietary scoring",
+    "continuous monitoring",
+    "agency reporting and support"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "crawl scale, rule depth, and operational polish",
+  "replacementScope": "single-site audit tool",
+  "ongoingBurden": "robots handling, rendering, canonicalization, deduplication, crawl traps, rule maintenance, scheduling, storage, and false positives",
+  "whyPeopleStillPay": "People still pay for Sitebulb because a crawler is buildable; professionals pay for years of edge-case handling and reports they can trust with clients. The recurring cost buys robots handling, rendering, canonicalization, deduplication, crawl traps, rule maintenance, scheduling, storage, and false positives, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "SEOnaut",
+      "url": "https://github.com/stjudewashere/seonaut",
+      "desc": "Open-source technical SEO auditing application."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Crawly",
+      "url": "https://www.getcrawly.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos"
+      ],
+      "desc": "A free Mac crawler that turns nineteen issue types into a clean findings list and keeps crawl diffs.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Download and install the native universal macOS app",
+        "engines": "A local MCP server connects to Claude Code, Cursor, Codex, Windsurf and other MCP clients",
+        "dataFormat": "Crawl projects and history live in a local SQLite database on the Mac; there is no hosted account or cloud sync",
+        "gapVsPaid": "Its nineteen checks and simple findings list are much narrower than Sitebulb's visual hints, prioritization and evidence-rich reporting.",
+        "setupBlocker": "macOS only",
+        "sources": [
+          "https://www.getcrawly.com/",
+          "https://www.getcrawly.com/features",
+          "https://www.getcrawly.com/about",
+          "https://www.getcrawly.com/seo-tool-for-developers",
+          "https://www.getcrawly.com/learn/crawl-websites-with-claude-code",
+          "https://sitebulb.com/pricing/",
+          "https://sitebulb.com/product/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "FreeCrawl",
+      "url": "https://freecrawl.net/",
+      "type": "open-source",
+      "repo": "https://github.com/kemalai/FreeCrawl-SEO-Tool",
+      "platforms": [
+        "windows",
+        "macos",
+        "linux",
+        "cli"
+      ],
+      "desc": "A desktop crawler with 200 checks, issue evidence and project comparisons; the hint engine is younger, not imaginary.",
+      "stars": 87,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Windows installer or portable build, macOS DMG, or Linux AppImage, deb or rpm",
+        "engines": "Optional OpenAI, Anthropic and local Ollama; optional GSC, GA4, PageSpeed, Ahrefs, Moz, Semrush, Majestic and MCP connections",
+        "dataFormat": "Local SQLite WAL project files (.seoproject), optionally AES-256-GCM encrypted; exports include Excel, CSV, JSON, XML, HTML, sitemaps, Google Sheets and BigQuery",
+        "gapVsPaid": "Its hint engine and visual prioritization are younger and less proven than Sitebulb's mature audit guidance.",
+        "setupBlocker": "The prebuilt apps install normally, but the macOS build may require bypassing Gatekeeper for an unsigned application",
+        "sources": [
+          "https://freecrawl.net/",
+          "https://github.com/kemalai/FreeCrawl-SEO-Tool",
+          "https://github.com/kemalai/FreeCrawl-SEO-Tool/releases",
+          "https://sitebulb.com/pricing/",
+          "https://sitebulb.com/product/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "LibreCrawl",
+      "url": "https://librecrawl.com/",
+      "type": "open-source",
+      "repo": "https://github.com/PhialsBasement/LibreCrawl",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Unlimited crawls and a browser dashboard with audits; prioritization is plainer, but the evidence is there.",
+      "stars": 827,
+      "lastCommit": "2026-06",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose, or a Python environment plus Playwright",
+        "engines": null,
+        "dataFormat": "Settings live in browser localStorage; each browser session has isolated crawl data that expires after one hour unless exported as CSV, JSON or XML",
+        "gapVsPaid": "It has no durable project history and presents much plainer prioritization and evidence than Sitebulb.",
+        "setupBlocker": "Docker or Python plus Playwright is required, and local mode has no authentication unless the operator adds it",
+        "sources": [
+          "https://librecrawl.com/",
+          "https://github.com/PhialsBasement/LibreCrawl",
+          "https://sitebulb.com/pricing/",
+          "https://sitebulb.com/product/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "SEOnaut",
+      "url": "https://seonaut.org/",
+      "type": "open-source",
+      "repo": "https://github.com/StJudeWasHere/seonaut",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Stores audits and sorts issues by severity; not as pretty as Sitebulb, equally capable of ruining your afternoon.",
+      "stars": 751,
+      "lastCommit": "2026-05",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose with MySQL 8.4, then expose the web UI behind HTTPS",
+        "engines": null,
+        "dataFormat": "Sites, crawl results and audit history live in the self-hosted MySQL database",
+        "gapVsPaid": "It produces a simpler severity list without Sitebulb's rich visual hints, explanations and guided investigation.",
+        "setupBlocker": "Docker, MySQL and a reverse proxy are required; its default exposed port is plain HTTP",
+        "sources": [
+          "https://seonaut.org/",
+          "https://github.com/StJudeWasHere/seonaut",
+          "https://sitebulb.com/pricing/",
+          "https://sitebulb.com/product/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "SiteOne Crawler",
+      "url": "https://crawler.siteone.io/",
+      "type": "open-source",
+      "repo": "https://github.com/janreges/siteone-crawler",
+      "platforms": [
+        "windows",
+        "macos",
+        "linux",
+        "cli"
+      ],
+      "desc": "Crawls locally, calculates a quality score and tells you what to fix first; almost suspiciously on brief.",
+      "stars": 841,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Download a prebuilt desktop or CLI binary for Windows, macOS or Linux",
+        "engines": "Optional OpenAI, Anthropic, Gemini, vLLM, Ollama, LM Studio or any OpenAI-compatible endpoint",
+        "dataFormat": "Runs locally and writes project results plus HTML, JSON or text reports and exports to the user's disk",
+        "gapVsPaid": "Its fix-first scoring is useful, but its prioritization and guided evidence are less polished than Sitebulb's.",
+        "setupBlocker": "None for ordinary crawling; JavaScript rendering needs Chrome or Chromium, or the one-time headless-shell download",
+        "sources": [
+          "https://crawler.siteone.io/",
+          "https://github.com/janreges/siteone-crawler",
+          "https://github.com/janreges/siteone-crawler/releases",
+          "https://sitebulb.com/pricing/",
+          "https://sitebulb.com/product/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "RustySEO",
+      "url": "https://www.rustyseo.com/",
+      "desc": "Looks like the obvious new answer; v0.3.9 and its own buggy warning say not for readers yet."
+    }
+  ],
+  "relatedSlugs": [
+    "screaming-frog-seo-spider",
+    "contentking",
+    "clearscope"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Lite plan and a single-site audit tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Sitebulb in an empty repository.\nUse Python 3.12, FastAPI, SQLite, Playwright, and an HTMX interface; do not offer alternative stacks.\nThe core loop is: crawl a user-owned site, inspect HTML and rendered pages, turn technical findings into prioritized and evidenced hints, and export a reproducible audit.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nRequire an explicit ownership or permission acknowledgement before a crawl starts.\nRespect robots.txt, rate limits, canonical URLs, nofollow, redirects, and a configurable URL cap.\nCollect status, title, description, headings, canonical, robots, links, images, structured data, and rendered text.\nDetect duplicates, orphan candidates, broken links, redirect chains, missing metadata, and indexability conflicts.\nShow every issue with affected URLs, evidence, severity, and a concrete remediation note.\nExport crawl data and issues to CSV plus a self-contained HTML report.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out crawling sites without permission.\nDeliberately leave out web-scale backlink or keyword datasets.\nDeliberately leave out automated changes to production websites.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

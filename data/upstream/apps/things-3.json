@@ -1,0 +1,264 @@
+{
+  "slug": "things-3",
+  "name": "Things 3",
+  "domain": "culturedcode.com",
+  "appURL": "https://culturedcode.com",
+  "category": "tasks",
+  "subcategory": "personal tasks, routines and daily planning",
+  "tagline": "Build a polished personal task manager with areas, projects, tags, deadlines, and a today view",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Mac license",
+    "basis": "one-time",
+    "unit": "one-time",
+    "source": "https://culturedcode.com/things/",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Sold as separate one-time app purchases; canonical monthly price is null.",
+    "native": "one-time",
+    "kind": "one-time",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Things for Mac",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 Mac App Store license; 15-day direct-download trial.",
+        "notes": "$49.99 one-time."
+      },
+      {
+        "name": "Things for iPhone & Apple Watch",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 iPhone/Apple Watch App Store purchase.",
+        "notes": "$9.99 one-time."
+      },
+      {
+        "name": "Things for iPad",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 iPad App Store purchase.",
+        "notes": "$19.99 one-time."
+      },
+      {
+        "name": "Things for Apple Vision",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 Apple Vision App Store purchase.",
+        "notes": "$29.99 one-time."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "one-time purchase per Apple platform; no subscription or annual plan",
+    "priceChanges": [],
+    "hiddenCosts": "Mac, iPhone/Watch, iPad, and Vision are separate purchases; there is no cross-platform bundle, though Things Cloud sync is free.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://culturedcode.com/things/pricing/",
+      "https://culturedcode.com/things/mac/appstore/",
+      "https://culturedcode.com/things/iphone/appstore/",
+      "https://culturedcode.com/things/ipad/appstore/",
+      "https://culturedcode.com/things/vision/appstore/"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Things 3, build a polished personal task manager with areas, projects, tags, deadlines, and a today view. The hard boundary is exceptional native design, apple-device sync, shortcuts, and long-term maintenance, plus cross-device reliability and workflow polish.",
+  "coreLoopDIY": "Capture tasks into areas and projects with tags and deadlines, schedule or repeat them, work from a focused today view, and keep history locally.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS, Windows, or Linux",
+    "notification permission",
+    "local SQLite database"
+  ],
+  "whatYouLose": [
+    "exceptional native design, Apple-device sync, shortcuts, and long-term maintenance",
+    "perfect mobile sync",
+    "calendar and email integrations",
+    "shared workspaces",
+    "behavioral coaching polish"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "cross-device reliability and workflow polish",
+  "replacementScope": "personal desktop task manager",
+  "ongoingBurden": "recurrence edge cases, notifications, sync conflicts, calendar APIs, mobile capture, and backups",
+  "whyPeopleStillPay": "People still pay for Things 3 because task software is sticky because trust, speed, and ubiquitous capture matter more than the database schema. The recurring cost buys recurrence edge cases, notifications, sync conflicts, calendar APIs, mobile capture, and backups, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Vikunja",
+      "url": "https://github.com/go-vikunja/vikunja",
+      "desc": "Mature open-source task and project manager with lists, kanban, and recurring work."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Apple Reminders",
+      "url": "https://apps.apple.com/us/app/reminders/id1108187841",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "ios"
+      ],
+      "desc": "Things minus the polish tax, provided every device in sight has an Apple logo",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Preinstalled on iPhone, iPad, and Mac; enable iCloud or another supported reminders account for synchronization",
+        "engines": "Optional Apple Intelligence can suggest or auto-categorize reminders on supported devices; ordinary task management does not require AI",
+        "dataFormat": "Structured reminder records live in iCloud or another configured reminders account and are cached on Apple devices; iCloud provides account-level restore rather than user-visible task files",
+        "gapVsPaid": "Apple Reminders is less coherent and polished than Things for organizing Areas, multi-step projects, headings, start dates, deadlines, and the Today-to-Upcoming flow.",
+        "setupBlocker": null,
+        "sources": [
+          "https://apps.apple.com/us/app/reminders/id1108187841",
+          "https://support.apple.com/en-in/102484",
+          "https://support.apple.com/en-hk/guide/icloud/mmc591432bd9/icloud",
+          "https://support.apple.com/en-hk/guide/icloud/mmbf52194b5a/icloud",
+          "https://support.apple.com/en-in/guide/reminders/remndc729e28/mac",
+          "https://support.apple.com/en-us/119953",
+          "https://culturedcode.com/things/",
+          "https://culturedcode.com/things/features/",
+          "https://culturedcode.com/things/guide/",
+          "https://culturedcode.com/things/support/articles/4001304/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Microsoft To Do",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/microsoft-to-do-list-app",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "A polished free task manager, paid for with a Microsoft account rather than money",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Install the Windows, macOS, iOS, or Android app, or use the web app, and sign in with a Microsoft account",
+        "engines": null,
+        "dataFormat": "Tasks are stored as structured records on Microsoft's Exchange Online servers and surface in Outlook Tasks across synchronized clients",
+        "gapVsPaid": "Microsoft To Do lacks Things’ refined Areas-and-project hierarchy, headings, start-versus-deadline distinction, and Apple-native interaction polish.",
+        "setupBlocker": "Requires a Microsoft account",
+        "sources": [
+          "https://support.microsoft.com/en-us/todo/welcome-to-microsoft-to-do",
+          "https://support.microsoft.com/en-us/todo/using-microsoft-to-do-with-outlook-tasks",
+          "https://www.microsoft.com/en-us/microsoft-365/microsoft-to-do-list-app",
+          "https://culturedcode.com/things/",
+          "https://culturedcode.com/things/features/",
+          "https://culturedcode.com/things/guide/",
+          "https://culturedcode.com/things/support/articles/4001304/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Super Productivity",
+      "url": "https://super-productivity.com",
+      "type": "open-source",
+      "repo": "https://github.com/super-productivity/super-productivity",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "A local task manager with timeboxing, Pomodoro, and no account begging to be created",
+      "stars": 21156,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Use the browser/PWA or install a packaged desktop or mobile build",
+        "engines": null,
+        "dataFormat": "Tasks, projects, time records, and settings are local-first in browser or app storage; optional synchronization and backups use the user's chosen WebDAV or Dropbox account",
+        "gapVsPaid": "Super Productivity is busier and more time-tracking-oriented than Things and lacks its exceptionally polished native Apple quick-capture and planning flow.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/super-productivity/super-productivity",
+          "https://github.com/super-productivity/super-productivity/blob/master/LICENSE",
+          "https://super-productivity.com/",
+          "https://culturedcode.com/things/",
+          "https://culturedcode.com/things/features/",
+          "https://culturedcode.com/things/guide/",
+          "https://culturedcode.com/things/support/articles/4001304/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Vikunja",
+      "url": "https://vikunja.io",
+      "type": "open-source",
+      "repo": "https://github.com/go-vikunja/vikunja",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A capable Todoist replacement once you accept becoming its hosting department",
+      "stars": 5000,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the paid hosted service or deploy the free server with Docker Compose, a package, or the standalone binary",
+        "engines": null,
+        "dataFormat": "Tasks, projects, users, and settings live in SQLite, MySQL/MariaDB, or PostgreSQL, with attachments in a persistent files directory, on the selected host",
+        "gapVsPaid": "Vikunja feels like a hosted web task system and cannot match Things’ native offline polish, frictionless capture, or elegant Today and Upcoming experience.",
+        "setupBlocker": "The free path requires a server or Docker, persistent volumes, secrets, and normally a reverse proxy with TLS",
+        "sources": [
+          "https://github.com/go-vikunja/vikunja",
+          "https://github.com/go-vikunja/vikunja/blob/main/LICENSE",
+          "https://vikunja.io/docs/installing/",
+          "https://vikunja.io/docs/docker-walkthrough/",
+          "https://vikunja.io/docs/full-docker-example/",
+          "https://vikunja.io/docs/config-options/",
+          "https://culturedcode.com/things/",
+          "https://culturedcode.com/things/features/",
+          "https://culturedcode.com/things/guide/",
+          "https://culturedcode.com/things/support/articles/4001304/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "ticktick",
+    "routine",
+    "morgen"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Mac license plan and a personal desktop task manager DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Things 3 in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, and desktop notifications; do not offer alternative stacks.\nThe core loop is: capture tasks into areas and projects with tags and deadlines, schedule or repeat them, work from a focused today view, and keep history locally.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate inbox, today, upcoming, someday, and completed views with fast keyboard capture.\nSupport projects, tags, due dates, start dates, priorities, notes, subtasks, and attachments.\nImplement robust daily, weekly, monthly, and custom recurring rules with tests.\nAdd a focus view with one active task, timer, and optional desktop notification.\nProvide search, saved filters, undo, and a completed-task archive.\nExport and import a documented JSON format and make automatic local backups.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out team assignment and comments.\nDeliberately leave out two-way calendar or email synchronization.\nDeliberately leave out native mobile apps and cloud accounts.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

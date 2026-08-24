@@ -1,0 +1,131 @@
+{
+  "slug": "pixpa",
+  "name": "Pixpa",
+  "domain": "pixpa.com",
+  "appURL": "https://pixpa.com",
+  "category": "website-builder",
+  "subcategory": "portfolio website builder",
+  "tagline": "Portfolio websites, galleries, ecommerce, proofing, and client delivery",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://pixpa.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 9,
+        "annualPerMonth": 5.4,
+        "per": "flat",
+        "limits": "10 pages/galleries, 200 website gallery images, 3 store products, 3 GB original-file storage, 3 gallery links",
+        "notes": "The $5.40 annual equivalent is the current first-term promotion (40% off monthly); the pricing page says standard yearly renewal is 20% off, or $7.20/month equivalent."
+      },
+      {
+        "name": "Creator",
+        "monthly": 15,
+        "annualPerMonth": 9,
+        "per": "flat",
+        "limits": "Unlimited pages and website images, 2 contributors, 10 store products, 5 GB original-file storage, 10 gallery links",
+        "notes": "Current first-term yearly promotion; standard yearly renewal is $12/month equivalent."
+      },
+      {
+        "name": "Professional",
+        "monthly": 20,
+        "annualPerMonth": 12,
+        "per": "flat",
+        "limits": "Unlimited pages/images/contributors, 100 store products, 25 GB original-file storage, 25 gallery links",
+        "notes": "Current first-term yearly promotion; standard yearly renewal is $16/month equivalent."
+      },
+      {
+        "name": "Advanced",
+        "monthly": 25,
+        "annualPerMonth": 15,
+        "per": "flat",
+        "limits": "Unlimited pages/images/contributors/products/gallery links, 100 GB original-file storage",
+        "notes": "Current first-term yearly promotion; standard yearly renewal is $20/month equivalent."
+      }
+    ],
+    "freeTierCaps": "no free tier; 15-day trial with full plan features, no credit card",
+    "billingTerms": "monthly + annual; current first annual term -40%, then renews at -20%; 2-year term currently -55%, then renews at -40%",
+    "priceChanges": [],
+    "hiddenCosts": "VAT/local tax is added at checkout; the free domain is only for year one on qualifying plans and renews at Ionos rates; extra storage is sold separately; optional setup service is $199 promotional ($399 regular); payment processors still charge their own fees.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.pixpa.com/pricing",
+      "https://www.pixpa.com/blog/best-website-builder-for-artists",
+      "https://www.pixpa.com/blog/best-figma-sites-alternatives"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible portfolio website builder loop is buildable, but a credible replacement needs more than the first screen. Pixpa earns its keep through editor, CMS, hosting, polish, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a focused portfolio website builder generator that edits structured page sections, previews responsive layouts, and publishes static files.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "deploy target or static hosting",
+    "user-owned domain for publishing"
+  ],
+  "whatYouLose": [
+    "CMS collaboration and client handoff",
+    "managed hosting, forms, and analytics",
+    "general-purpose visual editing",
+    "large template and component libraries"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra",
+    "content-rights"
+  ],
+  "moatNotes": "editor/CMS/hosting/polish",
+  "whyPeopleStillPay": "Pixpa: A single site is easy to code. People pay for safe ongoing edits, templates, publishing, domains, collaboration, and no-maintenance hosting.",
+  "ongoingBurden": "Maintain responsive rendering, browser compatibility, deployment, domains, forms, spam protection, backups, and editor migrations.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder."
+    },
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web-builder framework."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "A visual-editor framework with none of the photographer business workflow Pixpa sells."
+    },
+    {
+      "name": "Publii",
+      "url": "https://getpublii.com",
+      "desc": "A good portfolio and gallery publisher, but no proofing, client delivery workflow or native ecommerce."
+    },
+    {
+      "name": "Webstudio",
+      "url": "https://webstudio.is",
+      "desc": "The website is covered; galleries, proofing, client delivery and store operations are not."
+    }
+  ],
+  "relatedSlugs": [
+    "format",
+    "carbonmade",
+    "simvoly"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Pixpa is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Pixpa, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a focused portfolio website builder generator that edits structured page sections, previews responsive layouts, and publishes static files.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: CMS collaboration and client handoff; managed hosting, forms, and analytics; general-purpose visual editing.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

@@ -1,0 +1,141 @@
+{
+  "slug": "alltrails-plus",
+  "name": "AllTrails Plus",
+  "domain": "alltrails.com",
+  "appURL": "https://alltrails.com",
+  "category": "travel",
+  "subcategory": "trip planning, navigation and travel intelligence",
+  "tagline": "Organize user-imported GPX routes and offline trip notes without copying trail data",
+  "priceMonthly": 3,
+  "pricing": {
+    "plan": "Plus",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://alltrails.com/plus",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Annual Plus fee divided by 12.",
+    "native": "3 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Base",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Search and save from 500,000+ trails; record, review, and share activities; 0 offline map downloads",
+        "notes": null
+      },
+      {
+        "name": "Plus",
+        "monthly": null,
+        "annualPerMonth": 3,
+        "per": "user",
+        "limits": "Offline maps, wrong-turn alerts, trail conditions, Garmin integration, and no ads; 7-day trial",
+        "notes": "$35.99 billed annually; the site displays the rounded equivalent as $2.99/month."
+      },
+      {
+        "name": "Peak",
+        "monthly": null,
+        "annualPerMonth": 6.67,
+        "per": "user",
+        "limits": "Everything in Plus plus custom route creation/editing, heatmaps, Outdoor Lens, and backpacking tools; 7-day trial for eligible new users",
+        "notes": "$79.99 billed annually; existing Plus subscribers are charged a new 12-month Peak term and receive platform-specific credit/refund treatment."
+      }
+    ],
+    "freeTierCaps": "Free Base plan: 500,000+ searchable trails and unlimited-looking save/record access with no published numeric save cap; 0 offline maps, 0 custom route editing, and 0 heatmaps.",
+    "billingTerms": "annual only; no monthly plan; eligible subscriptions begin with a 7-day trial",
+    "priceChanges": [],
+    "hiddenCosts": "A card is required for the trial and billing starts on day 7; prior trial users may be charged immediately. Plus-to-Peak upgrades can trigger a full new annual charge before the old-plan credit or refund is applied.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.alltrails.com/plans",
+      "https://support.alltrails.com/hc/en-us/articles/37204002259220-Upgrading-from-Plus-to-Peak",
+      "https://support.alltrails.com/hc/en-us/articles/37214868202900-How-to-sign-up-for-a-free-trial",
+      "https://apps.apple.com/us/app/alltrails-hike-bike-run/id405075943"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For AllTrails Plus, organize user-imported GPX routes and offline trip notes without copying trail data. The hard boundary is massive trail database, reviews, conditions, maps, community, and mobile navigation, plus proprietary live data and network coverage.",
+  "coreLoopDIY": "Organize user-imported GPX routes and trip notes, map user-entered places and reservations, and keep an offline itinerary without copying proprietary trail data or claiming live availability.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "modern browser",
+    "MapTiler or compatible map key",
+    "user-entered reservations",
+    "optional public transit or weather API"
+  ],
+  "whatYouLose": [
+    "massive trail database, reviews, conditions, maps, community, and mobile navigation",
+    "live fare and inventory data",
+    "global routing dataset",
+    "crowdsourced trail intelligence",
+    "booking, disruption support, and offline map fleet"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "network-effects",
+    "scale-infra"
+  ],
+  "moatNotes": "proprietary live data and network coverage",
+  "replacementScope": "personal itinerary organizer",
+  "ongoingBurden": "map licensing, fare feeds, reservation access, route freshness, disruptions, geocoding, caching, offline data, and support",
+  "whyPeopleStillPay": "People still pay for AllTrails Plus because travel subscriptions sell current data and confidence during disruption, not just an itinerary list. The recurring cost buys map licensing, fare feeds, reservation access, route freshness, disruptions, geocoding, caching, offline data, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Wanderer",
+      "url": "https://github.com/Flomp/wanderer",
+      "desc": "Open-source self-hosted trail database and route explorer using open map data."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "OsmAnd~",
+      "url": "https://f-droid.org/packages/net.osmand.plus/",
+      "type": "open-source",
+      "repo": "https://github.com/osmandapp/OsmAnd",
+      "platforms": [
+        "android"
+      ],
+      "desc": "Offline topo maps, routes and GPX on Android; trail discovery is OpenStreetMap, not AllTrails.",
+      "stars": 5900,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Organic Maps",
+      "url": "https://organicmaps.app/",
+      "type": "open-source",
+      "repo": "https://github.com/organicmaps/organicmaps",
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "desc": "Offline OSM maps, bookmarks and GPX files with no account and no subscription.",
+      "stars": 14989,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Wanderer",
+      "url": "https://wanderer.to/",
+      "desc": "A fine GPX route library, but it does not provide offline trip notes on the trail."
+    }
+  ],
+  "relatedSlugs": [
+    "tripit-pro",
+    "wanderlog-pro",
+    "flighty-pro"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Plus plan and a personal itinerary organizer DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for AllTrails Plus in an empty repository.\nUse Next.js 15, TypeScript, SQLite, MapLibre GL, and user-supplied map and travel APIs; do not offer alternative stacks.\nThe core loop is: organize user-imported GPX routes and trip notes, map user-entered places and reservations, and keep an offline itinerary without copying proprietary trail data or claiming live availability.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate trips, days, places, reservations, notes, documents, packing items, and emergency contacts.\nGeocode only user-entered places and display them through MapLibre with cached trip-area tiles where allowed.\nParse forwarded reservation text locally into editable fields without logging message content.\nBuild a day timeline, route overview, conflict warnings, timezone display, and offline printable itinerary.\nAllow manual updates for delays and reservations and label all external data with source and timestamp.\nExport a complete trip bundle as JSON, calendar file, Markdown, and PDF.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out live flight, hotel, award, or ticket inventory.\nDeliberately leave out commercial turn-by-turn navigation and global offline maps.\nDeliberately leave out booking guarantees, disruption rebooking, and traveler support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

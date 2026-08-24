@@ -1,0 +1,299 @@
+{
+  "slug": "appsmith-cloud",
+  "name": "Appsmith Cloud",
+  "domain": "appsmith.com",
+  "appURL": "https://appsmith.com",
+  "category": "no-code-apps",
+  "subcategory": "internal tools and application builders",
+  "tagline": "Compose an internal dashboard from a database and a fixed widget library",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Business",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://www.appsmith.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Business seat rate; verify current cloud packaging.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Up to 5 cloud users; 5 workspaces; 3 Git repositories; unlimited apps",
+        "notes": "Permanent cloud free tier."
+      },
+      {
+        "name": "Business",
+        "monthly": 15,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Up to 99 users; unlimited workspaces, Git repositories, environments and apps",
+        "notes": "Cloud bills a user for the full month if that user exists at any point in the month."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 2500,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Starts at 100 users; unlimited workspaces, Git repositories, environments and apps",
+        "notes": "Published starting minimum; managed or air-gapped hosting can cost extra."
+      }
+    ],
+    "freeTierCaps": "5 cloud users; 5 workspaces; 3 Git repositories; unlimited apps",
+    "billingTerms": "monthly self-serve Business; Enterprise starts at 100 users and is generally contract/annual billed",
+    "priceChanges": [],
+    "hiddenCosts": "Business is per user and a user present at any point in a billing month is charged for the whole month; Enterprise has a 100-user/$2,500 monthly floor, while air-gapped, dedicated or managed-hosting services are add-ons",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.appsmith.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Appsmith Cloud, compose an internal dashboard from a database and a fixed widget library. The hard boundary is connectors, enterprise permissions, workflows, support, and managed hosting, plus connectors, runtime reliability, and governance.",
+  "coreLoopDIY": "Define tables and views, compose an internal dashboard from a database and a fixed widget library, connect one approved data source, and deploy it for a small trusted team.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted deploy target",
+    "API credentials for one selected integration"
+  ],
+  "whatYouLose": [
+    "connectors, enterprise permissions, workflows, support, and managed hosting",
+    "hundreds of connectors",
+    "pixel-perfect app design",
+    "mobile app-store builds",
+    "enterprise permissions and scale"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "connectors, runtime reliability, and governance",
+  "replacementScope": "small-team internal app",
+  "ongoingBurden": "schema migration, auth, permissions, connector drift, queues, deployments, backups, and auditability",
+  "whyPeopleStillPay": "People still pay for Appsmith Cloud because the builder is only useful when its runtime, connectors, permissions, and deployments remain boring for years. The recurring cost buys schema migration, auth, permissions, connector drift, queues, deployments, backups, and auditability, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Appsmith",
+      "url": "https://github.com/appsmithorg/appsmith",
+      "desc": "Large open-source low-code platform for internal applications and data sources."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Appsmith Free",
+      "url": "https://www.appsmith.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "The same hosted builder is free for five users, five workspaces, public apps, Git, Google sign-in, and standard roles.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "cloud",
+        "install": "Hosted signup for Appsmith Cloud Free",
+        "engines": "Appsmith's AI/agent features use Appsmith-managed AI services; exact model availability is product-controlled rather than a local backend",
+        "dataFormat": "App definitions, users, and secrets live in Appsmith Cloud; connected business data remains in the source database/API, while query results pass through Appsmith",
+        "gapVsPaid": "It is the same hosted builder with free-tier limits and without the paid plan's advanced roles, audit controls, support, and capacity for a larger production team.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.appsmith.com/pricing",
+          "https://github.com/appsmithorg/appsmith",
+          "https://github.com/appsmithorg/appsmith/blob/release/LICENSE",
+          "https://docs.appsmith.com/getting-started/setup/deployment-architecture",
+          "https://www.appsmith.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Budibase",
+      "url": "https://budibase.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Budibase/budibase",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Internal apps, forms, automations, and portals in one box; much closer to Knack than its developer branding suggests.",
+      "stars": 27902,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Docker image or Docker Compose; Kubernetes is also supported",
+        "engines": "Model-agnostic; the agent builder supports bring-your-own AI provider credentials",
+        "dataFormat": "Built-in app data and app definitions are stored in CouchDB, files in MinIO/S3-compatible object storage, and connected external data remains in its source system",
+        "gapVsPaid": "Budibase's opinionated CRUD components and automations are less flexible than Appsmith's JavaScript-heavy canvas for bespoke dashboards and interactions.",
+        "setupBlocker": "Requires Docker and persistent storage; production use also means owning upgrades, TLS, backups, and database/network access",
+        "sources": [
+          "https://github.com/Budibase/budibase",
+          "https://github.com/Budibase/budibase/blob/master/LICENSE",
+          "https://docs.budibase.com/docs/docker",
+          "https://docs.budibase.com/docs/budibase-architecture",
+          "https://budibase.com/pricing/",
+          "https://www.appsmith.com/",
+          "https://www.appsmith.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Directus Self-Hosted",
+      "url": "https://directus.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A polished data studio with tables, forms, dashboards, flows, and APIs; free only below its organization-size ceiling.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-MSCL-1.0",
+        "runs": "self-hosted",
+        "install": "Docker Compose with SQLite for a test install, or a supported SQL database and persistent file storage for production",
+        "engines": "Optional AI Assistant supports OpenAI, Anthropic, Google, and OpenAI-compatible endpoints with the operator's API key",
+        "dataFormat": "Business records stay in the connected SQL database; assets live in configured local or object storage; Directus metadata is stored alongside the database",
+        "gapVsPaid": "Directus provides an excellent database administration studio but not Appsmith's general-purpose widget canvas for composing arbitrary multi-source dashboards.",
+        "setupBlocker": "Requires Docker, a secret, persistent database/uploads, backups, TLS, and attention to Directus's non-OSI license and free-tier limits",
+        "sources": [
+          "https://github.com/directus/directus",
+          "https://directus.io/docs/getting-started/create-a-project",
+          "https://directus.io/docs/getting-started/overview",
+          "https://directus.io/docs/guides/ai/assistant",
+          "https://directus.io/pricing",
+          "https://www.appsmith.com/",
+          "https://www.appsmith.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Lowcoder",
+      "url": "https://www.lowcoder.cloud/",
+      "type": "open-source",
+      "repo": "https://github.com/lowcoder-org/lowcoder",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A self-hosted internal-tool canvas with a broad widget set; less polished, but not a toy.",
+      "stars": 1600,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "self-hosted",
+        "install": "Single Docker image for evaluation, or Docker Compose/Helm with separate MongoDB and Redis services for production",
+        "engines": "Connectors include OpenAI and other APIs; the operator supplies provider credentials",
+        "dataFormat": "Users, app definitions, data-source configuration, and assets live in the deployment's MongoDB and mounted lowcoder-stacks volume; Redis holds sessions/state; external business data stays in its source",
+        "gapVsPaid": "Lowcoder offers a broad canvas but is less polished, less consistently documented, and supported by a smaller connector and community ecosystem than Appsmith Cloud.",
+        "setupBlocker": "Docker is required; a production deployment needs MongoDB, Redis, secrets, backups, TLS, and more care than the all-in-one demo image",
+        "sources": [
+          "https://github.com/lowcoder-org/lowcoder",
+          "https://github.com/lowcoder-org/lowcoder/blob/main/LICENSE",
+          "https://docs.lowcoder.cloud/lowcoder-documentation/setup-and-run/self-hosting",
+          "https://docs.lowcoder.cloud/lowcoder-documentation/setup-and-run/self-hosting/lowcoder-version-update",
+          "https://www.lowcoder.cloud/pricing",
+          "https://www.appsmith.com/",
+          "https://www.appsmith.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Retool Free",
+      "url": "https://retool.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "The paid app's real builder, database, mobile apps, and 500 workflow runs for up to five people at $0.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in Retool Cloud",
+        "engines": "Retool-managed AI models and agents; Free includes pooled AI credits and limited agent hours, while bring-your-own model keys are plan-dependent",
+        "dataFormat": "App definitions, Retool Database rows, and Retool file storage live in Retool Cloud; connected source data remains in the user's databases/APIs, although query results transit Retool",
+        "gapVsPaid": "Retool Free is proprietary and capped for a very small team, so it loses Appsmith's open-source escape hatch and paid-team capacity.",
+        "setupBlocker": null,
+        "sources": [
+          "https://retool.com/pricing",
+          "https://retool.com/blog/new-free-plan-2022",
+          "https://www.appsmith.com/",
+          "https://www.appsmith.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "ToolJet Free",
+      "url": "https://www.tooljet.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Two builders, 50 users, two apps, and the actual database and API connectors, not a screenshot-only trial.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "cloud",
+        "install": "Hosted signup for ToolJet Cloud Free",
+        "engines": "ToolJet AI uses vendor-hosted AI services and plan credits; bring-your-own LLM keys are an Enterprise add-on",
+        "dataFormat": "App metadata, ToolJet Database tables, secrets, and files live in ToolJet Cloud; connected source records remain in their external database/API",
+        "gapVsPaid": "ToolJet Free's builder and app caps make it a narrower replacement, and its component/debugging experience is less mature than paid Appsmith Cloud.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.tooljet.ai/pricing",
+          "https://github.com/ToolJet/ToolJet",
+          "https://github.com/ToolJet/ToolJet/blob/develop/LICENSE",
+          "https://tooljet.com/database",
+          "https://www.appsmith.com/",
+          "https://www.appsmith.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "flutterflow",
+    "retool",
+    "weweb"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Business plan and a small-team internal app DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Appsmith Cloud in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: define tables and views, compose an internal dashboard from a database and a fixed widget library, connect one approved data source, and deploy it for a small trusted team.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a schema editor for text, number, boolean, date, enum, and relation fields.\nGenerate list, detail, create, edit, and kanban views from the schema.\nImplement role-based read and write rules for admin and member roles.\nSupport one REST connector with encrypted credentials and explicit field mapping.\nAdd an activity log, CSV import or export, backups, and health checks.\nShip Docker Compose with migrations and a seeded example workspace.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out arbitrary user-authored code execution.\nDeliberately leave out a broad integration marketplace.\nDeliberately leave out native mobile binaries and enterprise compliance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

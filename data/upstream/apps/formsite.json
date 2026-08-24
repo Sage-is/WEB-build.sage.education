@@ -1,0 +1,145 @@
+{
+  "slug": "formsite",
+  "name": "Formsite",
+  "domain": "formsite.com",
+  "appURL": "https://formsite.com",
+  "category": "forms",
+  "subcategory": "online forms",
+  "tagline": "Hosted forms, surveys, payments, reports, and secure workflows",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://formsite.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "5 forms, 10 results per form, and 50MB file space",
+        "notes": "New accounts receive a 14-day Professional trial and then revert to Free."
+      },
+      {
+        "name": "Personal",
+        "monthly": null,
+        "annualPerMonth": 20.83,
+        "per": "workspace",
+        "limits": "5 forms, 500 results per form, and 500MB file space",
+        "notes": "Annual price is $249.95/year; the page rounds this to $21/month billed yearly."
+      },
+      {
+        "name": "Professional",
+        "monthly": null,
+        "annualPerMonth": 33.33,
+        "per": "workspace",
+        "limits": "10 forms, 1,000 results per form, and 1GB file space",
+        "notes": "Annual price is $399.95/year; the page rounds this to $34/month billed yearly."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": 58.33,
+        "per": "workspace",
+        "limits": "25 forms, 2,500 results per form, 2GB file space, and 1 sub-user",
+        "notes": "Annual price is $699.95/year; the page rounds this to $59/month billed yearly."
+      },
+      {
+        "name": "Business+",
+        "monthly": null,
+        "annualPerMonth": 83.33,
+        "per": "workspace",
+        "limits": "100 forms, 10,000 results per form, 4GB file space, and 5 sub-users",
+        "notes": "Annual price is $999.95/year; the page rounds this to $84/month billed yearly."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": 208.33,
+        "per": "workspace",
+        "limits": "1,000 forms, 50,000 results per form, 10GB file space, and 20 sub-users",
+        "notes": "Annual price is $2,499.95/year; the page rounds this to $209/month billed yearly."
+      }
+    ],
+    "freeTierCaps": "5 forms; 10 results per form; 50MB file space; starts with a 14-day Professional trial and then reverts to Free",
+    "billingTerms": "monthly and annual auto-renewing plans exist; exact monthly prices were not exposed in the accessible live pricing page, while annual totals were published",
+    "priceChanges": [],
+    "hiddenCosts": "Results Docs costs $50/month, extra sub-users cost $10/user/month, and added file storage costs $10/GB/month.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.formsite.com/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible online forms loop is buildable, but a credible replacement needs more than the first screen. Formsite earns its keep through delivery, integrations, compliance, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a online forms tool with a schema-based form editor, public share link, validation, response table, CSV export, and webhook.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "deploy target",
+    "SMTP or transactional email key in .env"
+  ],
+  "whatYouLose": [
+    "spam and abuse defense at scale",
+    "large integration and template catalog",
+    "compliance controls and guaranteed delivery",
+    "enterprise workflow logic"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations",
+    "compliance-regulatory"
+  ],
+  "moatNotes": "delivery/integrations/compliance",
+  "whyPeopleStillPay": "Formsite: Customers pay for dependable collection, spam control, notifications, integrations, and confidence that responses will not disappear.",
+  "ongoingBurden": "Own storage, webhooks, email delivery, spam, file uploads, privacy requests, schema changes, and uptime.",
+  "priorArt": [
+    {
+      "name": "Formbricks",
+      "url": "https://github.com/formbricks/formbricks",
+      "desc": "Open-source surveys and experience management."
+    },
+    {
+      "name": "HeyForm",
+      "url": "https://github.com/heyform/heyform",
+      "desc": "Open-source form builder and collection backend."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Budibase",
+      "url": "https://budibase.com",
+      "desc": "It handles workflows, but native payments and PDF report output are missing or paid"
+    },
+    {
+      "name": "Forminator",
+      "url": "https://wordpress.org/plugins/forminator/",
+      "desc": "It handles forms and payments, but not Formsite-style approval workflows or secure case handling"
+    },
+    {
+      "name": "Microsoft Forms",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/online-surveys-polls-quizzes",
+      "desc": "The personal free tier stops at 200 responses per form, so it is a demo with better branding"
+    }
+  ],
+  "relatedSlugs": [
+    "feathery",
+    "reform",
+    "cognito-forms"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Formsite is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Formsite, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a online forms tool with a schema-based form editor, public share link, validation, response table, CSV export, and webhook.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: spam and abuse defense at scale; large integration and template catalog; compliance controls and guaranteed delivery.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

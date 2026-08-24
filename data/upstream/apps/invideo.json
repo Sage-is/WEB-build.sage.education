@@ -1,0 +1,158 @@
+{
+  "slug": "invideo",
+  "name": "InVideo",
+  "domain": "invideo.io",
+  "appURL": "https://invideo.io",
+  "category": "audio-video",
+  "subcategory": "AI video creation",
+  "tagline": "Creates and edits marketing videos from prompts, scripts, and templates",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://invideo.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Limited credits reset weekly; exact numeric credit allowance is not publicly disclosed on the current official help page",
+        "notes": "No card required; free exports are watermarked."
+      },
+      {
+        "name": "Plus",
+        "monthly": null,
+        "annualPerMonth": 16.67,
+        "per": "flat",
+        "limits": "75 credits/month",
+        "notes": "Official page displays about $17/month and bills $200 yearly; month-to-month price was not exposed in the page text."
+      },
+      {
+        "name": "Max",
+        "monthly": null,
+        "annualPerMonth": 83.33,
+        "per": "flat",
+        "limits": "390 credits/month",
+        "notes": "Official page displays about $85/month and bills $1,000 yearly; month-to-month price was not exposed in the page text."
+      },
+      {
+        "name": "Generative",
+        "monthly": null,
+        "annualPerMonth": 166.67,
+        "per": "flat",
+        "limits": "800 credits/month",
+        "notes": "Official page displays about $170/month and bills $2,000 yearly; month-to-month price was not exposed in the page text."
+      },
+      {
+        "name": "Elite",
+        "monthly": null,
+        "annualPerMonth": 900,
+        "per": "flat",
+        "limits": "4,250 credits/month",
+        "notes": "Billed $10,800 yearly; the page also exposes higher credit selections."
+      },
+      {
+        "name": "Team & Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom seats, credits, security and support",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "permanent free account with a weekly-resetting but numerically undisclosed credit allowance; watermarked exports",
+    "billingTerms": "public paid prices shown as annual commitments; unused monthly credits do not roll over",
+    "priceChanges": [],
+    "hiddenCosts": "On-demand credit top-ups are sold; unused plan credits expire, purchased extras are time-limited, and model/agent credit costs may change without notice.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://invideo.io/pricing/",
+      "https://help.invideo.io/en/articles/11528140-invideo-plans-and-credits-everything-you-need-to-know",
+      "https://help.invideo.io/en/articles/9380226-can-i-use-invideo-ai-for-free"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible AI video creation loop is buildable, but a credible replacement needs more than the first screen. InVideo earns its keep through media pipeline, hosting, distribution, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a local AI video creation workflow that imports user-owned media, applies the core edit or transformation, previews it, and exports a standard file.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Python 3.12",
+    "FFmpeg",
+    "desktop with sufficient storage",
+    "optional model or API key in .env"
+  ],
+  "whatYouLose": [
+    "production codecs, rendering speed, and media templates",
+    "hosted recording reliability",
+    "large-scale rendering",
+    "distribution and podcast hosting",
+    "professional codecs, effects, and collaboration"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "media pipeline/hosting/distribution",
+  "whyPeopleStillPay": "InVideo: People pay to avoid codec failures, upload limits, rendering surprises, lost recordings, and distribution chores.",
+  "ongoingBurden": "Maintain codecs, media probing, resumable processing, storage cleanup, exports, device permissions, and performance.",
+  "priorArt": [
+    {
+      "name": "Kdenlive",
+      "url": "https://github.com/KDE/kdenlive",
+      "desc": "Open-source non-linear video editor."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "MoneyPrinterTurbo",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "type": "open-source",
+      "repo": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "Give it a topic and it assembles stock footage, voice, music and captions; you supply the model keys and patience.",
+      "stars": 66000,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "OpenMontage",
+      "url": "https://www.openmontage.video",
+      "desc": "Impressive engine, but the non-builder desktop app is still private alpha; today it expects an AI coding assistant."
+    },
+    {
+      "name": "YumCut",
+      "url": "https://yumcut.com",
+      "desc": "Source-available under a noncommercial licence, while the usable hosted workflow is credit-metered; neither story qualifies."
+    }
+  ],
+  "relatedSlugs": [
+    "pictory",
+    "screenflow",
+    "kapwing"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of InVideo is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for InVideo, not a full clone.\nUse exactly this stack: Python 3.12 + FastAPI + FFmpeg + React.\nPrimary job: Build a local AI video creation workflow that imports user-owned media, applies the core edit or transformation, previews it, and exports a standard file.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: production codecs, rendering speed, and media templates; hosted recording reliability; large-scale rendering.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

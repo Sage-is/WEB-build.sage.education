@@ -1,0 +1,329 @@
+{
+  "slug": "spotify-premium",
+  "name": "Spotify Premium",
+  "domain": "spotify.com",
+  "appURL": "https://spotify.com",
+  "category": "audio",
+  "subcategory": "music services and creator audio tools",
+  "tagline": "Index and stream a legally owned personal music library with playlists and search",
+  "priceMonthly": 12.99,
+  "pricing": {
+    "plan": "Premium Individual",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://www.spotify.com/us/premium/",
+    "checkedOn": "2026-08-12",
+    "confidence": "high",
+    "notes": "Official US monthly Individual subscription; regional pricing differs.",
+    "native": "12.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 account; ad-supported listening; no numeric listening or skip cap is publicly stated.",
+        "notes": null
+      },
+      {
+        "name": "Premium Individual",
+        "monthly": 12.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 account; 15 audiobook hours/month.",
+        "notes": null
+      },
+      {
+        "name": "Premium Student",
+        "monthly": 6.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 verified student account; Hulu included; 0 included audiobook hours are stated on the public card.",
+        "notes": null
+      },
+      {
+        "name": "Premium Duo",
+        "monthly": 18.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "2 accounts for people at the same address; 15 audiobook hours/month for the plan manager only.",
+        "notes": null
+      },
+      {
+        "name": "Premium Family",
+        "monthly": 21.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Up to 6 accounts for people at the same address; 15 audiobook hours/month for the plan manager only.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "1 account; ad-supported listening; no numeric listening or skip cap is publicly stated.",
+    "billingTerms": "Monthly only; no annual U.S. Premium plan is publicly offered.",
+    "priceChanges": [],
+    "hiddenCosts": "Audiobook-hour top-ups cost extra; only the Duo/Family plan manager receives the included audiobook hours; Duo and Family members must live at the same address.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.spotify.com/us/premium/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Spotify Premium, index and stream a legally owned personal music library with playlists and search. The hard boundary is licensed global catalog, royalties, recommendations, social graph, and delivery infrastructure, plus licensed content, rights, and distribution network.",
+  "coreLoopDIY": "Index and stream a legally owned personal music library, analyze local files, and provide playlists and search for private playback.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "legally owned local audio files",
+    "ffmpeg",
+    "local storage",
+    "optional audio-analysis models"
+  ],
+  "whatYouLose": [
+    "licensed global catalog, royalties, recommendations, social graph, and delivery infrastructure",
+    "licensed music catalog",
+    "royalty and distribution relationships",
+    "global streaming infrastructure",
+    "artist network and recommendations"
+  ],
+  "moatTags": [
+    "content-rights",
+    "network-effects",
+    "scale-infra"
+  ],
+  "moatNotes": "licensed content, rights, and distribution network",
+  "replacementScope": "personal library or creator utility",
+  "ongoingBurden": "catalog licensing, royalties, identity, content delivery, moderation, recommendations, payouts, codecs, and rights disputes",
+  "whyPeopleStillPay": "People still pay for Spotify Premium because the product is the catalog, rights chain, and distribution network; a player or processing tool is only the visible edge. The recurring cost buys catalog licensing, royalties, identity, content delivery, moderation, recommendations, payouts, codecs, and rights disputes, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Navidrome",
+      "url": "https://github.com/navidrome/navidrome",
+      "desc": "Active open-source personal music server for legally owned libraries."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Navidrome",
+      "url": "https://www.navidrome.org/",
+      "type": "open-source",
+      "repo": "https://github.com/navidrome/navidrome",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Your music, your disk, your streaming server; the licensed catalogue is the part it cannot clone.",
+      "stars": 22700,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "both",
+        "install": "Docker Compose or a prebuilt Windows/macOS/Linux binary; install ffmpeg",
+        "engines": null,
+        "dataFormat": "Music remains as audio files in the configured music folder; users, playlists and indexed metadata live in Navidrome's application database under its data folder, with cache files beside it",
+        "gapVsPaid": "It cannot provide Spotify's licensed catalogue, algorithmic discovery, social graph, podcasts, or ubiquitous Spotify Connect targets; it serves only music you own.",
+        "setupBlocker": "You need an always-on host, ffmpeg, and your own secure remote-access/TLS setup unless you pay a managed host",
+        "sources": [
+          "https://github.com/navidrome/navidrome",
+          "https://github.com/navidrome/navidrome/blob/master/LICENSE",
+          "https://www.navidrome.org/docs/installation/",
+          "https://www.navidrome.org/docs/usage/configuration/options/",
+          "https://www.spotify.com/premium/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Jellyfin",
+      "url": "https://jellyfin.org/",
+      "type": "open-source",
+      "repo": "https://github.com/jellyfin/jellyfin",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A media server that also handles music, because apparently your albums can live beside your films.",
+      "stars": 54980,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-only",
+        "runs": "self-hosted",
+        "install": "Native server package for Windows/macOS/Linux/NAS, or Docker/Podman",
+        "engines": null,
+        "dataFormat": "Media stays in mounted filesystem folders; Jellyfin stores settings, users and indexed metadata in its local server data directory, including a SQLite database",
+        "gapVsPaid": "It lacks Spotify's catalogue, recommendations, social features, podcasts, and Connect ecosystem, while its music interface is less focused because it is built for every kind of media.",
+        "setupBlocker": "You must keep a server running, map media and config storage correctly, and configure networking/TLS for access outside the home",
+        "sources": [
+          "https://github.com/jellyfin/jellyfin",
+          "https://github.com/jellyfin/jellyfin/blob/master/LICENSE",
+          "https://jellyfin.org/docs/general/installation/",
+          "https://jellyfin.org/docs/general/administration/storage/",
+          "https://www.spotify.com/premium/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Koel",
+      "url": "https://koel.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/koel/koel",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A clean personal jukebox; solo listening is free, team features are not.",
+      "stars": 17200,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Download and extract the standalone Koel/FrankenPHP archive, then run the bundled server; Docker is also available",
+        "engines": null,
+        "dataFormat": "Music stays at the configured media path; the standalone build keeps configuration, a SQLite database, logs, cache, images and transcodes under ~/.koel/",
+        "gapVsPaid": "It replaces personal-library playback, not Spotify's catalogue, recommendation engine, collaborative playlists, podcasts, or Spotify Connect device handoff.",
+        "setupBlocker": "The macOS standalone binary is not code-signed and needs its quarantine flag removed; public access still needs a stable host and domain/reverse-proxy setup",
+        "sources": [
+          "https://github.com/koel/koel",
+          "https://github.com/koel/koel/blob/master/LICENSE.md",
+          "https://docs.koel.dev/guide/getting-started",
+          "https://docs.koel.dev/guide/standalone-binary",
+          "https://www.spotify.com/premium/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "mStream",
+      "url": "https://mstream.io/",
+      "type": "open-source",
+      "repo": "https://github.com/IrosTheBeggar/mStream",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "The small, installable music server for people who do not want a media empire.",
+      "stars": 2400,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Prebuilt Windows/macOS/Linux server binary or Docker image",
+        "engines": null,
+        "dataFormat": "Audio stays in folders on the host; mStream keeps its server configuration, index and generated caches in local application directories or mapped Docker volumes",
+        "gapVsPaid": "It serves owned files but gives up Spotify's global catalogue, discovery algorithms, social playlists, podcasts, and broad connected-device ecosystem.",
+        "setupBlocker": "Browser access away from home still requires DNS, TLS and port forwarding; the easier Quick Sync path currently works only with its native clients",
+        "sources": [
+          "https://github.com/IrosTheBeggar/mStream",
+          "https://github.com/IrosTheBeggar/mStream/blob/master/LICENSE",
+          "https://mstream.io/",
+          "https://www.spotify.com/premium/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Swing Music",
+      "url": "https://github.com/swingmx/swingmusic",
+      "type": "open-source",
+      "repo": "https://github.com/swingmx/swingmusic",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A prettier private jukebox with daily mixes; remote access still becomes your networking hobby.",
+      "stars": 2000,
+      "lastCommit": "2026-05",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "One-line Linux/macOS shell installer, Windows portable build, or Docker Compose",
+        "engines": null,
+        "dataFormat": "Audio remains in the mounted music directory; Swing Music writes its configuration and indexed library data to a separate local config directory",
+        "gapVsPaid": "It has attractive personal-library discovery but no Spotify catalogue, social graph, podcasts, or Connect ecosystem, and you must operate remote access yourself.",
+        "setupBlocker": "The local installer is easy, but secure listening outside your LAN still means exposing and protecting a web service yourself",
+        "sources": [
+          "https://github.com/swingmx/swingmusic",
+          "https://github.com/swingmx/swingmusic/blob/master/LICENSE",
+          "https://www.spotify.com/premium/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Ampache",
+      "url": "https://ampache.org/",
+      "type": "open-source",
+      "repo": "https://github.com/ampache/ampache",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A mature web jukebox with enough knobs to remind you it predates subscription fatigue.",
+      "stars": 3800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Docker image followed by a browser-based installer, or a PHP web stack with MySQL/MariaDB",
+        "engines": null,
+        "dataFormat": "Audio/video files remain in server-side catalog folders; users, playlists and indexed metadata live in a MySQL/MariaDB database with a PHP configuration file",
+        "gapVsPaid": "It lacks Spotify's catalogue, recommendations, social layer, podcasts, and device ecosystem, and its interface and administration feel substantially less polished.",
+        "setupBlocker": "The first-run wizard asks for database-admin credentials and writable config/catalog paths, so permissions and MySQL setup arrive before music playback",
+        "sources": [
+          "https://github.com/ampache/ampache",
+          "https://github.com/ampache/ampache/blob/develop/LICENSE.md",
+          "https://github.com/ampache/ampache/wiki/Installation",
+          "https://github.com/ampache/ampache-docker",
+          "https://www.spotify.com/premium/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "apple-music",
+    "youtube-music-premium",
+    "audible-premium-plus"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Premium Individual plan and a personal library or creator utility DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Spotify Premium in an empty repository.\nUse Python 3.12, FastAPI, SQLite, ffmpeg, and a local web interface; do not offer alternative stacks.\nThe core loop is: index and stream a legally owned personal music library, analyze local files, and provide playlists and search for private playback.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex only user-selected folders and preserve source audio without modification.\nRead tags and artwork, calculate loudness and waveform data, and detect exact duplicates by hash.\nProvide albums, artists, playlists, search, queue, favorites, and resumable local playback.\nAdd optional creator tools for trim, normalize, split stems through a local model, and export new files.\nKeep all rights and source information attached to imported tracks and display it during export.\nDocument that the application does not provide music, licensing, distribution, or royalty collection.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out copyrighted catalog acquisition or sharing.\nDeliberately leave out streaming-service circumvention.\nDeliberately leave out royalty accounting, label distribution, and global content delivery.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

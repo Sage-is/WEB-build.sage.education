@@ -1,0 +1,147 @@
+{
+  "slug": "ulysses",
+  "name": "Ulysses",
+  "domain": "ulysses.app",
+  "appURL": "https://ulysses.app",
+  "category": "writing-assistant",
+  "subcategory": "grammar, editing and long-form writing",
+  "tagline": "Write in a focused Markdown library, organize sheets, set goals, and export polished documents",
+  "priceMonthly": 5.99,
+  "pricing": {
+    "plan": "Personal",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://ulysses.app/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official monthly option; annual billing has a lower monthly equivalent.",
+    "native": "5.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Monthly",
+        "monthly": 5.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "All Macs, iPads and iPhones on the subscriber's Apple Account",
+        "notes": "App Store subscription; local pricing can differ."
+      },
+      {
+        "name": "Yearly",
+        "monthly": null,
+        "annualPerMonth": 3.33,
+        "per": "user",
+        "limits": "All Macs, iPads and iPhones; Apple Family Sharing with up to 5 other family members",
+        "notes": "$39.99/year in the US."
+      },
+      {
+        "name": "Student",
+        "monthly": null,
+        "annualPerMonth": 1.83,
+        "per": "user",
+        "limits": "All Macs, iPads and iPhones for 6 months; no Family Sharing",
+        "notes": "$10.99 per 6 months; one-time purchase that expires automatically and can be repurchased while eligible."
+      },
+      {
+        "name": "Business / Volume Licensing",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom seat count for organizations",
+        "notes": "Sold outside the App Store; public price not published."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "$5.99 monthly or $39.99 yearly, both auto-renew; student option is $10.99 per 6 months and does not auto-renew",
+    "priceChanges": [],
+    "hiddenCosts": "US prices can differ by App Store region; student pricing excludes Family Sharing, and business volume pricing is quote-only.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://ulysses.app/pricing/",
+      "https://ulysses.app/students/",
+      "https://help.ulysses.app/en_US/subscription-synchronization/subscription-options-"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Ulysses, write in a focused Markdown library, organize sheets, set goals, and export polished documents. The hard boundary is native apple polish, icloud sync, mobile apps, and publishing integrations, plus polish, integrations, and proprietary language models.",
+  "coreLoopDIY": "Write in a focused local Markdown library, organize sheets, set goals, apply editing passes with a visible diff, and export polished documents without uploading them.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS, Windows, or Linux",
+    "local files",
+    "optional OpenAI or Anthropic API key for semantic rewrites"
+  ],
+  "whatYouLose": [
+    "native Apple polish, iCloud sync, mobile apps, and publishing integrations",
+    "cross-device sync",
+    "large proprietary style models",
+    "browser and office-suite extensions",
+    "team style guides"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "proprietary-models",
+    "integrations"
+  ],
+  "moatNotes": "polish, integrations, and proprietary language models",
+  "replacementScope": "personal local editor",
+  "ongoingBurden": "model quality, extension compatibility, dictionaries, releases, and sync",
+  "whyPeopleStillPay": "People still pay for Ulysses because the paid tool is already present everywhere they write and its suggestions have been tuned across millions of documents. The recurring cost buys model quality, extension compatibility, dictionaries, releases, and sync, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "LanguageTool",
+      "url": "https://github.com/languagetool-org/languagetool",
+      "desc": "Mature open-source grammar and style checker with desktop and server components."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "SiYuan",
+      "url": "https://b3log.org/siyuan/",
+      "type": "open-source",
+      "repo": "https://github.com/siyuan-note/siyuan",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A local-first writing library with blocks, links, huge documents, and real exports; less monastic than Ulysses, much harder to lose.",
+      "stars": 45641,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Zettlr",
+      "url": "https://www.zettlr.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Zettlr/Zettlr",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A serious Markdown desk with folders, writing targets, citations, and export machinery that occasionally admits Pandoc is under the hood.",
+      "stars": 13300,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "sudowrite",
+    "prowritingaid",
+    "languagetool"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Personal plan and a personal local editor DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Ulysses in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, and a small Rust filesystem layer; do not offer alternative stacks.\nThe core loop is: write in a focused local Markdown library, organize sheets, set goals, apply editing passes with a visible diff, and export polished documents without uploading them.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a three-pane editor with source text, suggestion list, and accepted-result preview.\nImplement deterministic checks for repeated words, sentence length, passive constructions, and typography.\nAdd an optional API-backed rewrite action that sends only the selected passage.\nShow every change as an accept-or-reject diff and support undo.\nImport and export .txt and .md while preserving headings and lists.\nPersist user rules, ignored terms, and recent documents in SQLite.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a browser extension.\nDeliberately leave out Office or Google Docs plugins.\nDeliberately leave out collaborative editing and cloud sync.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

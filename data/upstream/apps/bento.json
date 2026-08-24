@@ -1,0 +1,254 @@
+{
+  "slug": "bento",
+  "name": "Bento",
+  "domain": "bentonow.com",
+  "appURL": "https://bentonow.com",
+  "category": "newsletter",
+  "subcategory": "email + customer data",
+  "tagline": "Email marketing, behavioral tracking, segmentation, and automation",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Paid plan",
+    "kind": "usage-based",
+    "basis": "contacts and sends",
+    "unit": "usage",
+    "currency": "USD",
+    "native": "Pricing varies with contacts and sending",
+    "source": "https://bentonow.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The pricing model is not safely comparable as one fixed monthly USD amount. Review the official source before publication.",
+    "tiers": [
+      {
+        "name": "Marketing Platform",
+        "monthly": 29,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Up to 5,000 active users included; unlimited marketing sends; team seats included.",
+        "notes": "Overage pricing applies above 5,000 active users."
+      },
+      {
+        "name": "Transactional Email Free",
+        "monthly": 0,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "First 100 transactional emails free.",
+        "notes": "Transactional email is separate from marketing platform pricing."
+      },
+      {
+        "name": "Transactional Email",
+        "monthly": 5,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Up to 12,500 transactional emails/month; then $0.09 per 1,000 emails.",
+        "notes": null
+      },
+      {
+        "name": "Bento Chat add-on",
+        "monthly": 30,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Chat add-on; numeric usage caps not published in pricing text.",
+        "notes": "Optional add-on."
+      }
+    ],
+    "freeTierCaps": "no free marketing tier; 30-day trial; transactional email includes first 100 emails free.",
+    "billingTerms": "monthly only public pricing; no annual plan verified",
+    "priceChanges": [],
+    "hiddenCosts": "Marketing active-user overages: $0.01/user for 5,001-50,000, $0.009 for 50,001-250,000, $0.008 for 250,001+; transactional overage $0.09/1,000 emails.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://bentonow.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible email + customer data loop is buildable, but a credible replacement needs more than the first screen. Bento earns its keep through deliverability, reputation, network, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a small email + customer data editor and subscriber database that exports clean HTML and sends only through a reputable user-supplied email provider.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "PostgreSQL",
+    "transactional or bulk email provider key in .env",
+    "verified sending domain"
+  ],
+  "whatYouLose": [
+    "sender reputation and deliverability operations",
+    "bounce, complaint, and suppression handling",
+    "large-scale segmentation and automation",
+    "payments, recommendations, and audience network",
+    "sender reputation, deliverability, and suppression handling"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "network-effects"
+  ],
+  "moatNotes": "deliverability/reputation/network",
+  "whyPeopleStillPay": "Bento: The editor is trivial compared with inbox placement, compliance, reputation, unsubscribe handling, analytics, and audience growth infrastructure.",
+  "ongoingBurden": "Own consent records, suppression lists, bounces, complaints, DNS, templates, accessibility, segmentation, and privacy requests.",
+  "priorArt": [
+    {
+      "name": "listmonk",
+      "url": "https://github.com/knadh/listmonk",
+      "desc": "High-performance self-hosted newsletter and mailing-list manager."
+    },
+    {
+      "name": "Mautic",
+      "url": "https://github.com/mautic/mautic",
+      "desc": "Open-source marketing automation platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Dittofeed",
+      "url": "https://www.dittofeed.com/",
+      "type": "open-source",
+      "repo": "https://github.com/dittofeed/dittofeed",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Event-driven segments and multichannel journeys with a marketer-facing UI; the infrastructure diagram is not decorative.",
+      "stars": 2887,
+      "lastCommit": "2026-03",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Dittofeed Cloud or Docker Compose/Kubernetes self-host",
+        "engines": null,
+        "dataFormat": "Self-hosted identity and configuration data lives in PostgreSQL and event/segment data in ClickHouse; optional blob data can use object storage.",
+        "gapVsPaid": "Dittofeed handles event-driven segments and journeys, but its Postgres-and-ClickHouse operating burden and narrower all-in-one analytics experience are worse than Bento's managed stack.",
+        "setupBlocker": "Docker Compose brings Postgres and ClickHouse, but the harder first step is instrumenting product events and connecting an email provider.",
+        "sources": [
+          "https://github.com/dittofeed/dittofeed",
+          "https://docs.dittofeed.com/deployment/self-hosted/docker-compose",
+          "https://docs.dittofeed.com/deployment/self-hosted/blob-storage",
+          "https://bentonow.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Loops Free",
+      "url": "https://loops.so/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Hosted lifecycle email with events and automation for 1,000 contacts; advanced data work still needs another tool.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Contacts, custom properties, events, workflows, and message history live in Loops' cloud; contacts can be imported/exported as CSV.",
+        "gapVsPaid": "Loops Free is simple and event-aware, but its free contact/send ceilings and lighter advanced segmentation and data tooling cannot match Bento's behavioral-marketing depth.",
+        "setupBlocker": "You must authenticate a sending domain and instrument your app or API before lifecycle emails become useful.",
+        "sources": [
+          "https://loops.so/pricing",
+          "https://loops.so/docs/account/billing",
+          "https://loops.so/docs/contacts/import-export",
+          "https://bentonow.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mautic",
+      "url": "https://mautic.org/",
+      "type": "open-source",
+      "repo": "https://github.com/mautic/mautic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Behavior tracking, segments and campaigns with years of battle scars; operating it is also a campaign.",
+      "stars": 10300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Notifuse",
+      "url": "https://www.notifuse.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Notifuse/notifuse",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Contact events, segments and branching automations in a modern self-hosted app; behavioral plumbing is still yours.",
+      "stars": 2038,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Notifuse Cloud signup or self-host with Docker",
+        "engines": null,
+        "dataFormat": "Self-hosted contact, campaign, event, and analytics data lives in PostgreSQL; uploaded assets use S3-compatible storage.",
+        "gapVsPaid": "Notifuse supports contacts, events, segments, and branching automations, but you still have to build the behavioral event plumbing and it offers less mature analysis than Bento.",
+        "setupBlocker": "Self-hosting needs Docker, PostgreSQL, object storage, a public domain, and a separately configured SMTP or email API provider.",
+        "sources": [
+          "https://github.com/Notifuse/notifuse",
+          "https://docs.notifuse.com/",
+          "https://www.notifuse.com/",
+          "https://bentonow.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plunk",
+      "url": "https://www.useplunk.com/",
+      "type": "open-source",
+      "repo": "https://github.com/useplunk/plunk",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Events, conditions and automated email in one open platform; analytics are leaner than Bento's.",
+      "stars": 5300,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup or Docker Compose",
+        "engines": null,
+        "dataFormat": "Self-hosted data lives in PostgreSQL, queues in Redis, and uploads in bundled MinIO or another S3-compatible store.",
+        "gapVsPaid": "Plunk can react to events and run conditional email workflows, but its behavioral analytics and segmentation are substantially leaner than Bento's.",
+        "setupBlocker": "The self-host path needs Docker, several subdomains, DNS/TLS, and an AWS SES account with credentials and domain verification.",
+        "sources": [
+          "https://github.com/useplunk/plunk",
+          "https://docs.useplunk.com/self-hosting/introduction",
+          "https://docs.useplunk.com/self-hosting/docker",
+          "https://docs.useplunk.com/self-hosting/environment-variables",
+          "https://bentonow.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "customer-io",
+    "drip",
+    "mailcoach-cloud"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Bento is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Bento, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL.\nPrimary job: Build a small email + customer data editor and subscriber database that exports clean HTML and sends only through a reputable user-supplied email provider.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: sender reputation and deliverability operations; bounce, complaint, and suppression handling; large-scale segmentation and automation.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

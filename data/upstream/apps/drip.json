@@ -1,0 +1,196 @@
+{
+  "slug": "drip",
+  "name": "Drip",
+  "domain": "drip.com",
+  "appURL": "https://drip.com",
+  "category": "newsletter",
+  "subcategory": "email newsletters and creator publishing",
+  "tagline": "Send event-triggered ecommerce email from a small user-owned event stream",
+  "priceMonthly": 39,
+  "pricing": {
+    "plan": "Email marketing",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://drip.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official starting monthly tier for a small contact count.",
+    "native": "39 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Email marketing",
+        "monthly": 39,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Starting plan includes 1-2,500 people; paid customers get unlimited email sends; support included.",
+        "notes": "Price scales with active people and email volume."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day free trial, no credit card, unlimited emails not available during trial.",
+    "billingTerms": "monthly pricing shown; annual plan not verified",
+    "priceChanges": [],
+    "hiddenCosts": "Cost rises with active people and email volume; live chat support only on $99/mo+ plans.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.drip.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Drip, send event-triggered ecommerce email from a small user-owned event stream. The hard boundary is commerce integrations, identity resolution, deliverability, segmentation, and revenue analytics, plus deliverability, growth network, and integrations.",
+  "coreLoopDIY": "Collect subscribers, send compliant event-triggered ecommerce email from a small user-owned event stream, publish a web archive, and report basic delivery and click events.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Amazon SES account",
+    "verified sending domain",
+    "PostgreSQL",
+    "public HTTPS deploy target",
+    "DNS access"
+  ],
+  "whatYouLose": [
+    "commerce integrations, identity resolution, deliverability, segmentation, and revenue analytics",
+    "inbox-placement expertise",
+    "advanced automations",
+    "commerce integrations",
+    "recommendation and ad networks"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations"
+  ],
+  "moatNotes": "deliverability, growth network, and integrations",
+  "replacementScope": "single-publication newsletter",
+  "ongoingBurden": "DNS authentication, reputation, bounces, complaints, unsubscribe compliance, templates, queues, analytics, backups, and support",
+  "whyPeopleStillPay": "People still pay for Drip because newsletter operators pay for inbox placement, growth mechanics, and operational confidence on publication day. The recurring cost buys DNS authentication, reputation, bounces, complaints, unsubscribe compliance, templates, queues, analytics, backups, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Listmonk",
+      "url": "https://github.com/knadh/listmonk",
+      "desc": "Mature open-source newsletter and mailing-list manager."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Dittofeed",
+      "url": "https://www.dittofeed.com/",
+      "type": "open-source",
+      "repo": "https://github.com/dittofeed/dittofeed",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Cart and product events can trigger branching email journeys; ecommerce integrations are yours to wire.",
+      "stars": 2887,
+      "lastCommit": "2026-03",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Dittofeed Cloud or Docker Compose/Kubernetes self-host",
+        "engines": null,
+        "dataFormat": "Self-hosted identity and configuration data lives in PostgreSQL and event/segment data in ClickHouse; optional blob data can use object storage.",
+        "gapVsPaid": "Dittofeed can trigger journeys from cart and product events, but it lacks Drip's turnkey ecommerce integrations, store-aware reporting, and revenue attribution unless you build them.",
+        "setupBlocker": "Docker Compose brings Postgres and ClickHouse, but the harder first step is instrumenting product events and connecting an email provider.",
+        "sources": [
+          "https://github.com/dittofeed/dittofeed",
+          "https://docs.dittofeed.com/deployment/self-hosted/docker-compose",
+          "https://docs.dittofeed.com/deployment/self-hosted/blob-storage",
+          "https://www.drip.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mautic",
+      "url": "https://mautic.org/",
+      "type": "open-source",
+      "repo": "https://github.com/mautic/mautic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Tracks behavior and fires campaigns from events; modern ecommerce niceties require integration work.",
+      "stars": 10300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Notifuse",
+      "url": "https://www.notifuse.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Notifuse/notifuse",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Event-triggered campaigns and segmentation without contact pricing; store-specific reporting is absent.",
+      "stars": 2038,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Notifuse Cloud signup or self-host with Docker",
+        "engines": null,
+        "dataFormat": "Self-hosted contact, campaign, event, and analytics data lives in PostgreSQL; uploaded assets use S3-compatible storage.",
+        "gapVsPaid": "Notifuse supports event-triggered campaigns and segmentation, but it does not provide Drip's store-specific dashboards, revenue attribution, or ready-made ecommerce integrations.",
+        "setupBlocker": "Self-hosting needs Docker, PostgreSQL, object storage, a public domain, and a separately configured SMTP or email API provider.",
+        "sources": [
+          "https://github.com/Notifuse/notifuse",
+          "https://docs.notifuse.com/",
+          "https://www.notifuse.com/",
+          "https://www.drip.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plunk",
+      "url": "https://www.useplunk.com/",
+      "type": "open-source",
+      "repo": "https://github.com/useplunk/plunk",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A small event stream can drive conditional email workflows; ecommerce dashboards do not appear by wishing.",
+      "stars": 5300,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup or Docker Compose",
+        "engines": null,
+        "dataFormat": "Self-hosted data lives in PostgreSQL, queues in Redis, and uploads in bundled MinIO or another S3-compatible store.",
+        "gapVsPaid": "Plunk can drive conditional email from a small event stream, but it lacks Drip's ecommerce dashboards, product-aware templates, and native store plumbing.",
+        "setupBlocker": "The self-host path needs Docker, several subdomains, DNS/TLS, and an AWS SES account with credentials and domain verification.",
+        "sources": [
+          "https://github.com/useplunk/plunk",
+          "https://docs.useplunk.com/self-hosting/introduction",
+          "https://docs.useplunk.com/self-hosting/docker",
+          "https://docs.useplunk.com/self-hosting/environment-variables",
+          "https://www.drip.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "substack",
+    "mailerlite",
+    "activecampaign"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Email marketing plan and a single-publication newsletter DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Drip in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Amazon SES; do not offer alternative stacks.\nThe core loop is: collect subscribers, send compliant event-triggered ecommerce email from a small user-owned event stream, publish a web archive, and report basic delivery and click events.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement subscriber import, double opt-in, unsubscribe, suppression, tags, and consent timestamps.\nCreate a Markdown campaign editor with HTML and plain-text previews.\nQueue sends through SES with retries, rate limits, idempotency, and resumable batches.\nProcess delivery, bounce, complaint, open, and click webhooks without logging message content.\nPublish a simple issue archive and subscriber preference page.\nAdd test sends, seed-list checks, DNS setup guidance, exports, and backups.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a newsletter recommendation marketplace.\nDeliberately leave out ad sales and payment infrastructure.\nDeliberately leave out complex lifecycle automation and enterprise deliverability support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

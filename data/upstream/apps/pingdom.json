@@ -1,0 +1,164 @@
+{
+  "slug": "pingdom",
+  "name": "Pingdom",
+  "domain": "pingdom.com",
+  "appURL": "https://pingdom.com",
+  "category": "monitoring",
+  "subcategory": "uptime, errors, logs and status pages",
+  "tagline": "Run independent uptime and transaction checks with a simple status view",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Synthetic Monitoring",
+    "basis": "monthly starting",
+    "unit": "flat",
+    "source": "https://pingdom.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical starting monthly package.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD"
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Pingdom, run independent uptime and transaction checks with a simple status view. The hard boundary is global probes, transaction infrastructure, alerts, reporting, and solarwinds operations, plus independent infrastructure and reliable alerting.",
+  "coreLoopDIY": "Run independent uptime and transaction checks, receive bounded error or log events, alert through one channel, and publish an honest status page.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "server outside the monitored failure domain",
+    "PostgreSQL",
+    "optional ClickHouse",
+    "email or webhook destination",
+    "public HTTPS"
+  ],
+  "whatYouLose": [
+    "global probes, transaction infrastructure, alerts, reporting, and SolarWinds operations",
+    "global probe network",
+    "phone and SMS delivery",
+    "massive retention",
+    "advanced incident response and support"
+  ],
+  "moatTags": [
+    "scale-infra"
+  ],
+  "moatNotes": "independent infrastructure and reliable alerting",
+  "replacementScope": "small independent monitoring service",
+  "ongoingBurden": "probe geography, clocks, retries, deduplication, sampling, storage, paging, notification delivery, on-call rules, and its own uptime",
+  "whyPeopleStillPay": "People still pay for Pingdom because monitoring must continue working during the exact outage it reports, which makes independent infrastructure and alert delivery the real product. The recurring cost buys probe geography, clocks, retries, deduplication, sampling, storage, paging, notification delivery, on-call rules, and its own uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Uptime Kuma",
+      "url": "https://github.com/louislam/uptime-kuma",
+      "desc": "Popular open-source uptime monitoring dashboard with many check types."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Gatus",
+      "url": "https://gatus.io/",
+      "type": "open-source",
+      "repo": "https://github.com/TwiN/gatus",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A YAML file, a status board and enough protocol checks to annoy most outages.",
+      "stars": 11800,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "self-hosted",
+        "install": "Run one binary or Docker container and supply a YAML configuration; Helm is available",
+        "engines": null,
+        "dataFormat": "Monitor definitions live in YAML; results are in memory by default or persist in SQLite or PostgreSQL when storage is configured.",
+        "gapVsPaid": "It is configuration-driven and normally probes from one place, so Pingdom's global probe network and recorder-style transaction checks are the major losses.",
+        "setupBlocker": "The first hurdle is writing YAML for endpoints, conditions, alerts, and secrets; without configuring a database, history disappears on restart.",
+        "sources": [
+          "https://github.com/TwiN/gatus",
+          "https://github.com/TwiN/gatus/blob/master/LICENSE",
+          "https://gatus.io/docs/guide",
+          "https://gatus.io/docs/storage",
+          "https://www.pingdom.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "OneUptime",
+      "url": "https://oneuptime.com/",
+      "type": "open-source",
+      "repo": "https://github.com/oneuptime/oneuptime",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Uptime and browser transactions with incidents attached; deployment is not tiny.",
+      "stars": 7400,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Hosted signup, or the release-branch Docker Compose stack; Helm is the production path",
+        "engines": "Its AI features can connect to OpenAI, Azure OpenAI, Anthropic, Groq, Mistral, Ollama, and OpenAI-compatible servers such as vLLM, LocalAI, or LM Studio.",
+        "dataFormat": "Self-hosted telemetry is stored in ClickHouse, application state and configuration in PostgreSQL, and cache, queues, and sessions in Redis.",
+        "gapVsPaid": "It can run uptime and browser checks, but deployment is much heavier and it does not deliver Pingdom's effortless managed global checking footprint.",
+        "setupBlocker": "The recommended self-hosted footprint is large and production requires secrets, TLS, backups, database care, and frequent upgrades rather than a single lightweight monitor.",
+        "sources": [
+          "https://github.com/OneUptime/oneuptime",
+          "https://github.com/OneUptime/oneuptime/blob/master/LICENSE",
+          "https://oneuptime.com/docs/enterprise/self-hosted/",
+          "https://oneuptime.com/docs/enterprise/self-hosted/system-requirements",
+          "https://oneuptime.com/docs/ai/",
+          "https://www.pingdom.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Uptime Kuma",
+      "url": "https://uptime.kuma.pet/",
+      "type": "open-source",
+      "repo": "https://github.com/louislam/uptime-kuma",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A cheerful dashboard for asking URLs whether they are dead yet.",
+      "stars": 87300,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose with a persistent `/app/data` volume, or a manual Node.js plus PM2 install",
+        "engines": null,
+        "dataFormat": "Monitor configuration, users, status pages, certificates, and history live in the application database under the mounted `/app/data` directory.",
+        "gapVsPaid": "It is excellent for checks from your own server, but has no built-in worldwide probe fleet or polished synthetic transaction recorder.",
+        "setupBlocker": "It still needs an always-on host, Docker volume discipline, and outbound notification credentials; network filesystems are explicitly unsupported for the data directory.",
+        "sources": [
+          "https://github.com/louislam/uptime-kuma",
+          "https://github.com/louislam/uptime-kuma/blob/master/LICENSE",
+          "https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install",
+          "https://github.com/louislam/uptime-kuma/wiki/How-to-Update",
+          "https://www.pingdom.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "sentry",
+    "uptime"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Synthetic Monitoring plan and a small independent monitoring service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Pingdom in an empty repository.\nUse Go, PostgreSQL, ClickHouse, a Next.js 15 dashboard, and Docker Compose; do not offer alternative stacks.\nThe core loop is: run independent uptime and transaction checks, receive bounded error or log events, alert through one channel, and publish an honest status page.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement HTTP, TCP, DNS, TLS-expiry, and heartbeat checks with explicit timeout and retry policies.\nRun checks from one independently hosted worker and store raw results plus incident state transitions.\nSend deduplicated alerts to email or one webhook destination with recovery notifications.\nCreate services, maintenance windows, incidents, subscribers, and a public status page.\nAdd bounded event ingestion for application errors with sampling and sensitive-field scrubbing.\nProvide health checks, retention settings, exports, backups, and a test-alert function.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a worldwide probe network.\nDeliberately leave out phone, SMS, and managed on-call escalation.\nDeliberately leave out unbounded logs, enterprise observability, and vendor-operated incident response.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,169 @@
+{
+  "slug": "content-at-scale",
+  "name": "Content at Scale",
+  "domain": "contentatscale.ai",
+  "appURL": "https://contentatscale.ai",
+  "category": "ai-writing",
+  "subcategory": "AI drafting, research and content optimization",
+  "tagline": "Assemble a rigorous source-grounded content workflow without claiming its proprietary optimization s",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Self-serve plan",
+    "basis": "custom",
+    "unit": "custom",
+    "source": "https://contentatscale.ai/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "Public pricing is sales-led or changes by package; priceMonthly is intentionally left null in canonical data.",
+    "native": "custom",
+    "kind": "custom",
+    "currency": "USD"
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Content at Scale, assemble a rigorous source-grounded content workflow without claiming its proprietary optimization stack. The hard boundary is opaque enterprise packaging, proprietary models, and managed content operations, plus workflow, data, and model tuning.",
+  "coreLoopDIY": "Take a brief, gather user-supplied source material, generate a structured source-grounded draft, and keep citations and revisions attached to each section without claiming a proprietary optimization stack.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "OpenAI API key",
+    "Node.js 22",
+    "local or self-hosted deployment",
+    "user-supplied sources"
+  ],
+  "whatYouLose": [
+    "opaque enterprise packaging, proprietary models, and managed content operations",
+    "proprietary ranking data",
+    "brand-trained models",
+    "team workflows",
+    "large template libraries"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "proprietary-data"
+  ],
+  "moatNotes": "workflow, data, and model tuning",
+  "replacementScope": "personal content workstation",
+  "ongoingBurden": "prompt maintenance, retrieval quality, source handling, provider changes, and editorial QA",
+  "whyPeopleStillPay": "People still pay for Content at Scale because the subscription bundles a refined workflow, proprietary signals, templates, and predictable output quality for a team. The recurring cost buys prompt maintenance, retrieval quality, source handling, provider changes, and editorial QA, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Open WebUI",
+      "url": "https://github.com/open-webui/open-webui",
+      "desc": "Active open-source interface for local and API-backed language models with retrieval features."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "AnythingLLM",
+      "url": "https://anythingllm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Mintplex-Labs/anything-llm",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A local AI workspace that keeps sources beside the draft, cites uploaded material, and turns recurring prompts into reusable agents.",
+      "stars": 64416,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Desktop installer for macOS/Windows/Linux, or Docker for a self-hosted web instance",
+        "engines": "Local llama.cpp models plus Ollama, LM Studio, LocalAI and many cloud APIs including OpenAI, Anthropic, Gemini, Bedrock, Azure, OpenRouter and Mistral",
+        "dataFormat": "Desktop data stays in the app's local storage; self-hosted data is stored in the mounted server storage and chosen vector database (LanceDB by default), while prompts sent to cloud models leave the machine",
+        "gapVsPaid": "It can produce source-grounded drafts, but it lacks Content at Scale's proprietary SEO scoring, automated article pipeline, and publishing operations.",
+        "setupBlocker": "The installer is easy, but useful results still require downloading a local model or supplying a model-provider API key",
+        "sources": [
+          "https://github.com/Mintplex-Labs/anything-llm",
+          "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE",
+          "https://docs.anythingllm.com/installation-desktop/overview",
+          "https://docs.anythingllm.com/features/privacy-and-data-handling",
+          "https://contentatscale.ai/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Gemini Notebook",
+      "url": "https://notebooklm.google/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Upload the sources, ask for the draft, and click the citations when the machine gets confident.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Sign in with a Google account at notebooklm.google.com or install the official mobile app",
+        "engines": "Google Gemini models; Google says Gemini 3.1 Pro is available in NotebookLM/Gemini Notebook, with other media features using additional Google models",
+        "dataFormat": "Each notebook and its copied or auto-synced source files live in the user's Google account/cloud and now sync with Gemini; imported Drive files remain linked for refresh, while direct uploads are stored as notebook sources",
+        "gapVsPaid": "It researches and cites sources well, but it does not provide an SEO content-production workflow, optimization score, or publishing automation.",
+        "setupBlocker": "Setup is clean, but every source must be uploaded or imported and sensitive material is entrusted to Google's cloud",
+        "sources": [
+          "https://notebooklm.google.com/",
+          "https://support.google.com/notebooklm/answer/16215270",
+          "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/",
+          "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/",
+          "https://contentatscale.ai/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Vane",
+      "url": "https://github.com/ItzCrazyKns/Vane",
+      "type": "open-source",
+      "repo": "https://github.com/ItzCrazyKns/Vane",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A self-hosted answer engine that searches the live web and shows its receipts; it researches better than it manages content.",
+      "stars": 36009,
+      "lastCommit": "2026-04",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Run the official Docker image with one command; it bundles Vane and SearXNG",
+        "engines": "Local models through Ollama plus OpenAI, Anthropic Claude, Google Gemini, Groq and other cloud providers; web search through bundled SearXNG",
+        "dataFormat": "Search history and uploads are stored in the mounted local Docker volume; prompts leave the host only when a cloud model is selected",
+        "gapVsPaid": "It can research the live web with citations, but it stops before Content at Scale's keyword workflow, optimization scoring, editorial controls, and publishing pipeline.",
+        "setupBlocker": "Requires Docker, a persistent volume and either Ollama with a downloaded model or at least one cloud-model API key",
+        "sources": [
+          "https://github.com/ItzCrazyKns/Vane",
+          "https://github.com/ItzCrazyKns/Vane/blob/master/LICENSE",
+          "https://github.com/ItzCrazyKns/Vane/blob/master/README.md",
+          "https://contentatscale.ai/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "brandwell",
+    "writesonic",
+    "copy-ai",
+    "anyword"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Self-serve plan plan and a personal content workstation DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Content at Scale in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and the OpenAI Responses API; do not offer alternative stacks.\nThe core loop is: take a brief, gather user-supplied source material, generate a structured source-grounded draft, and keep citations and revisions attached to each section without claiming a proprietary optimization stack.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nBuild a brief form with audience, objective, tone, source URLs, and prohibited claims.\nStore imported source text locally and chunk it for retrieval with SQLite FTS5.\nGenerate an outline first and require approval before drafting sections.\nAttach source references to generated paragraphs and flag unsupported claims.\nProvide rewrite controls for shorten, clarify, change tone, and add evidence.\nExport clean Markdown plus a JSON research bundle.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out live search-engine rank data.\nDeliberately leave out automatic publishing to third-party CMSs.\nDeliberately leave out multi-user approvals and brand governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false,
+  "discontinued": "rebranded into BrandWell: the legacy pricing page now redirects there and the self-serve Content at Scale product is no longer sold"
+}

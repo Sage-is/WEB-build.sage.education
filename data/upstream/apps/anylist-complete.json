@@ -1,0 +1,281 @@
+{
+  "slug": "anylist-complete",
+  "name": "AnyList Complete",
+  "domain": "anylist.com",
+  "appURL": "https://anylist.com",
+  "category": "home",
+  "subcategory": "family organization, recipes and household inventory",
+  "tagline": "Manage shared grocery lists, recipes, and meal plans with a simple household sync server",
+  "priceMonthly": 0.83,
+  "pricing": {
+    "plan": "Complete",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://anylist.com/complete",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Annual individual subscription divided by 12.",
+    "native": "0.83 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "AnyList Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Free list/recipe app; exact numeric caps not disclosed on pricing page.",
+        "notes": "Premium comparison exists but numeric free caps were not exposed in crawled text."
+      },
+      {
+        "name": "AnyList Complete Individual",
+        "monthly": null,
+        "annualPerMonth": 0.83,
+        "per": "user",
+        "limits": "Unlocks web/Mac access, recipe import, meal planning calendar, Apple Watch, item photos, location reminders, passcode lock, priority support and photo backup.",
+        "notes": "$9.99/year; no monthly price published."
+      },
+      {
+        "name": "AnyList Complete Household",
+        "monthly": null,
+        "annualPerMonth": 1.25,
+        "per": "flat",
+        "limits": "Household plan for the same Complete features shared by the household.",
+        "notes": "$14.99/year; no monthly price published."
+      }
+    ],
+    "freeTierCaps": "free plan exists; official page did not disclose numeric caps.",
+    "billingTerms": "annual only on public page; no monthly plan published",
+    "priceChanges": [],
+    "hiddenCosts": "Individual and household annual subscriptions are separate; no monthly alternative shown.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.anylist.com/complete"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For AnyList Complete, manage shared grocery lists, recipes, and meal plans with a simple household sync server. The hard boundary is excellent mobile capture, retailer integrations, voice assistants, and polished sharing, plus sync, integrations, and household adoption.",
+  "coreLoopDIY": "Organize shared grocery lists, recipes, and meal plans on a simple household sync server, share or print a plan, and keep data portable and owner-controlled.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "modern browser",
+    "local or self-hosted storage",
+    "optional email notifications"
+  ],
+  "whatYouLose": [
+    "excellent mobile capture, retailer integrations, voice assistants, and polished sharing",
+    "frictionless family sync",
+    "retailer and smart-home integrations",
+    "large recipe or product database",
+    "mobile polish"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "sync, integrations, and household adoption",
+  "replacementScope": "single-household organizer",
+  "ongoingBurden": "multi-user conflicts, reminders, notifications, imports, barcode data, smart-home APIs, backups, and long-term maintenance",
+  "whyPeopleStillPay": "People still pay for AnyList Complete because household apps survive when every family member actually uses them and the data stays current across devices. The recurring cost buys multi-user conflicts, reminders, notifications, imports, barcode data, smart-home APIs, backups, and long-term maintenance, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Mealie",
+      "url": "https://github.com/mealie-recipes/mealie",
+      "desc": "Active open-source recipe manager and meal planner for households."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Grocy",
+      "url": "https://grocy.info/",
+      "type": "open-source",
+      "repo": "https://github.com/grocy/grocy",
+      "platforms": [
+        "web",
+        "windows",
+        "self-hosted"
+      ],
+      "desc": "Meal plans and groceries run through a tiny home ERP, because apparently the fridge needed one.",
+      "stars": 9358,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker container/Compose, or install the PHP application on a web server",
+        "engines": null,
+        "dataFormat": "Products, stock, chores, recipes, meal plans, shopping lists, and history live in Grocy's SQLite database inside its data directory; configuration, uploaded pictures, and generated files are stored alongside it on the host volume.",
+        "gapVsPaid": "Grocy is vastly more complex than a grocery list and lacks AnyList's fast native capture, voice-assistant integration, location-aware reminders, and polished household mobile sync.",
+        "setupBlocker": "The first obstacle is deploying and exposing a PHP/Docker web app; the larger practical hurdle is configuring locations, units, products, barcodes, and household routines before its ERP-like screens become useful.",
+        "sources": [
+          "https://grocy.info/",
+          "https://github.com/grocy/grocy",
+          "https://github.com/grocy/grocy/blob/master/LICENSE",
+          "https://github.com/grocy/grocy/blob/master/README.md",
+          "https://github.com/grocy/grocy-docker",
+          "https://github.com/grocy/grocy/blob/master/config-dist.php"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mealie",
+      "url": "https://mealie.io/",
+      "type": "open-source",
+      "repo": "https://github.com/mealie-recipes/mealie",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A household recipe server with meal plans and grocery lists; you supply the server and patience.",
+      "stars": 12900,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Docker Compose",
+        "engines": null,
+        "dataFormat": "Recipes, users, groups, meal plans, and shopping-list records live in SQLite by default or PostgreSQL when configured; recipe images and application assets live in the mounted data directory, and Mealie's backup/export archives keep portable copies of the database and media.",
+        "gapVsPaid": "Mealie shares recipes and shopping lists, but its web-first recipe-server workflow is slower for aisle-side list entry, notifications, Siri/Alexa capture, and offline mobile use than AnyList.",
+        "setupBlocker": "A non-expert needs Docker, persistent volumes, an update/backup routine, and usually a domain plus HTTPS; importing recipe sites also produces parsing failures that must be cleaned up manually.",
+        "sources": [
+          "https://mealie.io/",
+          "https://github.com/mealie-recipes/mealie",
+          "https://github.com/mealie-recipes/mealie/blob/mealie-next/LICENSE",
+          "https://docs.mealie.io/documentation/getting-started/installation/",
+          "https://docs.mealie.io/documentation/getting-started/installation/backend-config/",
+          "https://docs.mealie.io/documentation/getting-started/usage/backups-and-restoring/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "RecipeSage",
+      "url": "https://recipesage.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Shared recipes, meal plans, and shopping lists with no recipe cap; the polish budget is smaller.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup at RecipeSage, or Docker Compose for self-hosting",
+        "engines": null,
+        "dataFormat": "The hosted service stores recipes, images, labels, meal plans, shopping lists, households, and account data in RecipeSage's infrastructure; self-hosting keeps the relational application database and uploaded media in operator-controlled containers/volumes, with built-in export for portability.",
+        "gapVsPaid": "RecipeSage covers shared recipes, plans, and lists, but its mobile polish, instant grocery entry, voice integration, offline behavior, and location reminders are weaker than AnyList's.",
+        "setupBlocker": "The public service has no setup blocker; self-hosting adds Docker, a database, mail, storage, HTTPS, and backups, while both versions have less refined native-mobile interaction than Paprika or AnyList.",
+        "sources": [
+          "https://recipesage.com/",
+          "https://github.com/julianpoy/RecipeSage",
+          "https://github.com/julianpoy/RecipeSage/blob/master/LICENSE",
+          "https://github.com/julianpoy/RecipeSage/blob/master/README.md",
+          "https://github.com/julianpoy/RecipeSage/tree/master/docker"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Samsung Food",
+      "url": "https://samsungfood.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Shared recipes, meal plans, and grocery lists for $0; Samsung gets the kitchen data instead.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Install the mobile app or use the web app, then create a Samsung Food account",
+        "engines": null,
+        "dataFormat": "Saved and imported recipes, meal plans, grocery lists, household-sharing records, profile data, and recommendations live in Samsung Food's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "Samsung Food is free and polished, but ads and recommendation tracking replace AnyList's focused paid utility, and its grocery capture and voice/reminder workflow are less disciplined.",
+        "setupBlocker": null,
+        "sources": [
+          "https://samsungfood.com/",
+          "https://samsungfood.com/food/",
+          "https://samsungfood.com/privacy-policy/",
+          "https://support.samsungfood.com/hc/en-us/categories/360002061954-Samsung-Food",
+          "https://samsungfood.com/premium/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Tandoor Recipes",
+      "url": "https://tandoor.dev/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The full recipe-plan-shopping loop; free for personal self-hosting, but the license is not actually open source.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": null,
+        "runs": "self-hosted",
+        "install": "Docker Compose with PostgreSQL; manual Django deployment is also documented",
+        "engines": null,
+        "dataFormat": "Recipes, users, meal plans, shopping lists, books, and permissions live in PostgreSQL in the standard Docker deployment; uploaded images and static/media files live in mounted volumes, and recipe data can be exported through Tandoor's export tools.",
+        "gapVsPaid": "Tandoor replaces a tiny household sync service with a Docker/PostgreSQL web app and lacks AnyList's frictionless native list entry, voice capture, reminders, and managed reliability.",
+        "setupBlocker": "The first obstacle is a multi-container Django/PostgreSQL deployment with secrets, volumes, HTTPS, email, and backups; its Commons-Clause-modified AGPL license is also not an OSI-approved open-source license.",
+        "sources": [
+          "https://tandoor.dev/",
+          "https://github.com/TandoorRecipes/recipes",
+          "https://github.com/TandoorRecipes/recipes/blob/develop/LICENSE.md",
+          "https://docs.tandoor.dev/install/docker/",
+          "https://docs.tandoor.dev/system/configuration/",
+          "https://docs.tandoor.dev/features/export/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "AnyList Free",
+      "url": "https://www.anylist.com/",
+      "desc": "Shared grocery lists are free; recipes and meal planning are exactly what Complete sells."
+    },
+    {
+      "name": "KitchenOwl",
+      "url": "https://kitchenowl.org/",
+      "desc": "Polished enough to tempt you; the project still labels itself Public Alpha."
+    }
+  ],
+  "relatedSlugs": [
+    "paprika-recipe-manager",
+    "home-assistant-cloud",
+    "cozi-gold"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Complete plan and a single-household organizer DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for AnyList Complete in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and a local-first PWA; do not offer alternative stacks.\nThe core loop is: organize shared grocery lists, recipes, and meal plans on a simple household sync server, share or print a plan, and keep data portable and owner-controlled.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate household members, shared lists, calendar items, recipes or inventory records, and assignments.\nProvide fast mobile-first capture with large controls, offline queueing, and conflict-safe sync to one server.\nSupport recurring chores or events, reminders, completion history, and printable views.\nAdd CSV or JSON import and export plus photo attachments with clear size limits.\nAllow private and shared items and make every change attributable and undoable.\nAdd backups, household export, member removal, and a simple invite code.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out retailer ordering and proprietary product catalogs.\nDeliberately leave out broad smart-home integrations.\nDeliberately leave out large public recipe libraries and polished native mobile clients.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

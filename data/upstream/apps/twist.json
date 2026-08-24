@@ -1,0 +1,246 @@
+{
+  "slug": "twist",
+  "name": "Twist",
+  "domain": "twist.com",
+  "appURL": "https://twist.com",
+  "category": "community",
+  "subcategory": "online communities and team communication",
+  "tagline": "Host asynchronous team threads organized by channel and topic",
+  "priceMonthly": 8,
+  "pricing": {
+    "plan": "Unlimited",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://twist.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Unlimited monthly seat price.",
+    "native": "8 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "1 month of message history; 5 integrations; 5 GB storage; up to 500 internal members and 500 external guests",
+        "notes": null
+      },
+      {
+        "name": "Unlimited",
+        "monthly": 8,
+        "annualPerMonth": 6,
+        "per": "user",
+        "limits": "Unlimited message history, integrations and storage; up to 500 internal members and 500 external guests",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "1 month of history; 5 integrations; 5 GB storage; up to 500 internal members plus 500 external guests",
+    "billingTerms": "monthly + annual",
+    "priceChanges": [],
+    "hiddenCosts": "All internal team members and multi-channel guests are billable on Unlimited; single-channel guests are free. New users are prorated and removals create account credit after the refund window; a workspace cannot mix Free and Unlimited members.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://twist.com/pricing",
+      "https://twist.com/help/articles/what-is-twist-unlimited-mehD6bnu",
+      "https://twist.com/help/articles/how-guests-work-in-twist-pPt1PKPY"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Twist, host asynchronous team threads organized by channel and topic. The hard boundary is cross-platform apps, notifications, email integration, search, and doist reliability, plus network, moderation, and communication infrastructure.",
+  "coreLoopDIY": "Host a private space for asynchronous team threads, organize discussion into channels and topics, and keep membership and moderation under the owner's control.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "email provider",
+    "object storage for attachments"
+  ],
+  "whatYouLose": [
+    "cross-platform apps, notifications, email integration, search, and Doist reliability",
+    "network effects",
+    "native mobile apps",
+    "video and voice infrastructure",
+    "enterprise moderation and discovery"
+  ],
+  "moatTags": [
+    "collaboration",
+    "scale-infra"
+  ],
+  "moatNotes": "network, moderation, and communication infrastructure",
+  "replacementScope": "single private community",
+  "ongoingBurden": "realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations",
+  "whyPeopleStillPay": "People still pay for Twist because community software is valuable when members are already there and the operator does not have to own realtime reliability and abuse response. The recurring cost buys realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Discourse",
+      "url": "https://github.com/discourse/discourse",
+      "desc": "Mature open-source community discussion platform with strong moderation and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Discourse",
+      "url": "https://www.discourse.org/",
+      "type": "open-source",
+      "repo": "https://github.com/discourse/discourse",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Long-lived topic threads with search and notifications; more public-forum-shaped than workplace-shaped.",
+      "stars": 47600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "both",
+        "install": "Use the official Docker installer on a 64-bit Linux server; managed Discourse hosting is the paid alternative",
+        "engines": null,
+        "dataFormat": "Persistent records in PostgreSQL, Redis for cache/queues, and uploads/backups/logs in the Docker volume or S3-compatible storage",
+        "gapVsPaid": "Discourse is public-forum shaped and lacks Twist's workplace-native channel organization, calm team onboarding and managed integrations.",
+        "setupBlocker": "Self-hosting needs a Linux VPS, Docker, DNS, TLS, working SMTP and regular upgrades",
+        "sources": [
+          "https://github.com/discourse/discourse",
+          "https://github.com/discourse/discourse/blob/main/LICENSE.txt",
+          "https://github.com/discourse/discourse/blob/main/docs/INSTALL.md",
+          "https://meta.discourse.org/t/self-hosting-index/308035",
+          "https://meta.discourse.org/t/configure-an-s3-compatible-object-storage-provider-for-uploads/148916",
+          "https://twist.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mattermost Team Edition",
+      "url": "https://mattermost.com/",
+      "type": "open-source",
+      "repo": "https://github.com/mattermost/mattermost",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Channels and threads work, but Mattermost still rewards live chat more than Twist's deliberate silence.",
+      "stars": 38700,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Deploy the official Linux Docker Compose stack or install the compiled server binary with PostgreSQL",
+        "engines": null,
+        "dataFormat": "Messages and metadata in PostgreSQL; uploaded files in the server data directory or configured S3-compatible storage",
+        "gapVsPaid": "Mattermost remains live-chat-first rather than deliberately async, and the current free edition's message-history visibility limit weakens it as a long-term searchable archive.",
+        "setupBlocker": "A Linux server, Docker/PostgreSQL, DNS, TLS and SMTP are required; current free Team Edition also limits long-term message-history visibility",
+        "sources": [
+          "https://github.com/mattermost/mattermost",
+          "https://github.com/mattermost/mattermost/blob/master/LICENSE.txt",
+          "https://docs.mattermost.com/product-overview/editions-and-offerings.html",
+          "https://docs.mattermost.com/deployment-guide/server/containers/install-docker.html",
+          "https://docs.mattermost.com/deployment-guide/server/deploy-linux.html",
+          "https://twist.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Pumble Free",
+      "url": "https://pumble.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "Unlimited threaded history for free; topic structure is looser, so humans must supply the discipline.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, with optional desktop and mobile apps",
+        "engines": null,
+        "dataFormat": "Messages, channels and files in Pumble's managed cloud; the free workspace includes 10 GB of shared storage and supports workspace export",
+        "gapVsPaid": "Pumble has channels and threads but no strong topic taxonomy, so teams must enforce the organization that Twist builds into every conversation.",
+        "setupBlocker": null,
+        "sources": [
+          "https://pumble.com/pricing",
+          "https://pumble.com/help/workspace-administration/pricing/pumble-subscription-plans-and-extra-features/",
+          "https://pumble.com/help/faq/",
+          "https://pumble.com/help/using-pumble/sharing-files/file-storage/",
+          "https://twist.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Zulip",
+      "url": "https://zulip.com/",
+      "type": "open-source",
+      "repo": "https://github.com/zulip/zulip",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "The closest free answer: streams hold channels, topics hold threads, and every reply lands somewhere deliberate.",
+      "stars": 25600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Hosted signup, or run the official install script/Docker deployment on supported Ubuntu or Debian",
+        "engines": null,
+        "dataFormat": "Persistent messages and organization data in PostgreSQL; uploads locally or in S3-compatible storage; exports are tar.gz archives containing JSON and files",
+        "gapVsPaid": "Zulip is the closest structural match, but its free cloud search stops at 10,000 messages and self-hosting replaces Twist's managed operations with a Linux service.",
+        "setupBlocker": "Free cloud search stops at 10,000 messages; self-hosting needs a Linux VM, DNS/TLS, outgoing email and at least about 2 GB RAM",
+        "sources": [
+          "https://github.com/zulip/zulip",
+          "https://github.com/zulip/zulip/blob/main/LICENSE",
+          "https://zulip.com/plans/",
+          "https://zulip.readthedocs.io/en/stable/production/install.html",
+          "https://zulip.readthedocs.io/en/latest/production/upload-backends.html",
+          "https://zulip.readthedocs.io/en/latest/production/export-and-import.html",
+          "https://zulip.com/history/",
+          "https://twist.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "slack-pro",
+    "discord-nitro",
+    "circle"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Unlimited plan and a single private community DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Twist in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, WebSockets, and Docker Compose; do not offer alternative stacks.\nThe core loop is: host a private space for asynchronous team threads, organize discussion into channels and topics, and keep membership and moderation under the owner's control.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement spaces, channels, topics, replies, reactions, mentions, profiles, roles, and invitations.\nUse WebSockets for live updates but preserve every message transactionally in PostgreSQL.\nAdd moderation queues, reports, blocks, rate limits, attachment limits, and an audit log.\nProvide email digests, browser notifications, search, pinned content, and member export.\nAdd owner-controlled retention, account deletion, backup, restore, and health checks.\nShip Docker Compose with a seeded demo, migrations, and an emergency admin command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out public-network discovery and existing member liquidity.\nDeliberately leave out production voice or video rooms.\nDeliberately leave out native mobile applications, enterprise SSO, and 24-hour abuse operations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

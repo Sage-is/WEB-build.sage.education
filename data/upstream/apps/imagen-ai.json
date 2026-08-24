@@ -1,0 +1,215 @@
+{
+  "slug": "imagen-ai",
+  "name": "Imagen AI",
+  "domain": "imagen-ai.com",
+  "appURL": "https://imagen-ai.com",
+  "category": "photo-editing",
+  "subcategory": "photo organization, culling and editing",
+  "tagline": "Apply reusable local adjustment presets and keep every edit reversible",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Pay as you go",
+    "basis": "usage-based",
+    "unit": "usage",
+    "source": "https://imagen-ai.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Pricing is usage based per photo; canonical monthly amount is null.",
+    "native": "usage-based",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Pay-as-you-go",
+        "monthly": 7,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "No edit-volume cap; 2 computers; base color editing starts at $0.05 per photo.",
+        "notes": "The $7 monthly minimum becomes editing credit and rolls over; there is no annual PAYG option for new self-serve subscribers."
+      },
+      {
+        "name": "Limitless",
+        "monthly": null,
+        "annualPerMonth": 179,
+        "per": "user",
+        "limits": "Unlimited editing, retouching, AI tools and AI culling for 1 individual photographer; 2 computers.",
+        "notes": "Published annual rate is $179/month billed upfront for the year; a monthly option exists, but its current USD price did not render."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Multiple photographers/computers, API access and high-volume capacity; 0 self-serve prices published.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier; 1,000-edit free trial with no credit card",
+    "billingTerms": "PAYG monthly; Limitless monthly or annual prepaid (annual saves about 20%); Business custom",
+    "priceChanges": [],
+    "hiddenCosts": "On PAYG, straighten/crop/portrait crop/headshot crop/smooth skin/subject mask are $0.20 per photo each; culling starts at $29/month and cloud backup starts at $29/month. PAYG credits are non-refundable; Limitless excludes teams and the separate Imagen for Real Estate product.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://imagen-ai.com/pricing/",
+      "https://support.imagen-ai.com/hc/en-us/articles/4544978323857-Imagen-pricing-and-plans"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Imagen AI, apply reusable local adjustment presets and keep every edit reversible. The hard boundary is proprietary photographer-trained models, cloud processing, profiles, and workflow integration, plus image pipeline quality, models, and workflow polish.",
+  "coreLoopDIY": "Catalog local photos, generate previews, apply reusable non-destructive adjustment presets, keep every edit reversible, and export selected originals or rendered copies.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "desktop computer",
+    "local photo library",
+    "sufficient disk space",
+    "optional GPU for AI features"
+  ],
+  "whatYouLose": [
+    "proprietary photographer-trained models, cloud processing, profiles, and workflow integration",
+    "proprietary raw-processing quality",
+    "cloud sync and sharing",
+    "large AI models",
+    "camera and print ecosystem"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "execution-polish"
+  ],
+  "moatNotes": "image pipeline quality, models, and workflow polish",
+  "replacementScope": "personal local photo catalog",
+  "ongoingBurden": "raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity",
+  "whyPeopleStillPay": "People still pay for Imagen AI because photographers pay because image quality, catalog safety, and fast handling of huge libraries matter more than cloning sliders. The recurring cost buys raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Immich",
+      "url": "https://github.com/immich-app/immich",
+      "desc": "Active open-source self-hosted photo and video management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "darktable",
+      "url": "https://www.darktable.org/",
+      "type": "open-source",
+      "repo": "https://github.com/darktable-org/darktable",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Reusable styles, presets, history, sidecars, and fully reversible local adjustments; it learns nothing about your taste, which is both flaw and feature.",
+      "stars": 12900,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "local",
+        "install": "Install the Windows executable, macOS disk image, Linux package, Flatpak, or AppImage",
+        "engines": "A local non-generative imaging pipeline; current releases can use ONNX models for subject masking, denoising, and image upscaling without a cloud account",
+        "dataFormat": "Original photos stay untouched; edits, ratings, tags, and history are stored in a local SQLite library and portable XMP sidecar files, with thumbnails and cache data in the user profile",
+        "gapVsPaid": "Styles and presets are deterministic rather than learned from the photographer's prior edits, so they cannot adapt each image in the personalized way Imagen does.",
+        "setupBlocker": "macOS may require a Gatekeeper right-click Open or xattr step; the larger obstacle is learning darktable's module-heavy workflow rather than installation",
+        "sources": [
+          "https://www.darktable.org/",
+          "https://www.darktable.org/install/",
+          "https://github.com/darktable-org/darktable",
+          "https://github.com/darktable-org/darktable/blob/master/LICENSE",
+          "https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/",
+          "https://docs.darktable.org/usermanual/development/en/special-topics/ai/overview/",
+          "https://imagen-ai.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "RapidRAW",
+      "url": "https://www.getrapidraw.com/",
+      "type": "open-source",
+      "repo": "https://github.com/CyberTimon/RapidRAW",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "android"
+      ],
+      "desc": "Non-destructive presets, masks, batch edits, and local processing in a modern app; no personalized AI style model, no recurring bill.",
+      "stars": 9200,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "local",
+        "install": "Install the Windows .exe, macOS .dmg, or Linux AppImage/DEB/Flatpak; Android is an experimental sideload",
+        "engines": "Local subject, sky, and foreground masking, NIND denoising, LaMa inpainting, and optional handoff to a user-run ComfyUI backend",
+        "dataFormat": "Photos are never moved; non-destructive adjustments are stored in a documented .rrdata sidecar next to each image, while thumbnails, logs, and downloaded models live in local application data",
+        "gapVsPaid": "Its presets and masks stay reversible, but it does not train a personal editing profile or adapt batch decisions to each photograph.",
+        "setupBlocker": "Desktop binaries are unsigned, so Windows SmartScreen and macOS Gatekeeper need manual bypass steps; Linux AppImage users may also need libfuse2",
+        "sources": [
+          "https://www.getrapidraw.com/",
+          "https://github.com/CyberTimon/RapidRAW",
+          "https://github.com/CyberTimon/RapidRAW/blob/main/LICENSE",
+          "https://www.getrapidraw.com/docs/getting-started/installation",
+          "https://www.getrapidraw.com/docs/",
+          "https://www.getrapidraw.com/docs/other-panels/inpaint",
+          "https://imagen-ai.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "RawTherapee",
+      "url": "https://www.rawtherapee.com/",
+      "type": "open-source",
+      "repo": "https://github.com/RawTherapee/RawTherapee",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Processing profiles and sidecars make repeatable RAW adjustments completely reversible; automation is deterministic, not psychic.",
+      "stars": 4100,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "local",
+        "install": "Install the Windows installer, macOS disk image, or Linux AppImage/distribution package",
+        "engines": null,
+        "dataFormat": "Original RAW files remain unchanged; processing settings are saved as human-readable .pp3 sidecars beside the image or in the local cache, and rendered exports go to a chosen folder",
+        "gapVsPaid": "Processing profiles repeat exact settings, but they do not learn taste or make image-specific personalized adjustments the way Imagen does.",
+        "setupBlocker": null,
+        "sources": [
+          "https://rawtherapee.com/",
+          "https://rawtherapee.com/downloads/5.13/",
+          "https://github.com/RawTherapee/RawTherapee",
+          "https://github.com/RawTherapee/RawTherapee/blob/dev/LICENSE",
+          "https://rawpedia.rawtherapee.com/Sidecar_Files_-_Processing_Profiles",
+          "https://rawpedia.rawtherapee.com/File_Paths",
+          "https://imagen-ai.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Immich",
+      "url": "https://immich.app/",
+      "desc": "It preserves originals and metadata, but it is a photo backup system, not a reversible preset-and-adjustment engine."
+    }
+  ],
+  "relatedSlugs": [
+    "adobe-lightroom",
+    "capture-one",
+    "ente-photos"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pay as you go plan and a personal local photo catalog DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Imagen AI in an empty repository.\nUse Tauri 2, React, TypeScript, Rust image libraries, SQLite, and local filesystem access; do not offer alternative stacks.\nThe core loop is: catalog local photos, generate previews, apply reusable non-destructive adjustment presets, keep every edit reversible, and export selected originals or rendered copies.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex selected folders without moving or rewriting originals and store only catalog data in SQLite.\nGenerate thumbnails and previews, read EXIF, detect duplicates by hash, and monitor file changes.\nProvide timeline, folders, albums, ratings, flags, tags, search, and side-by-side compare.\nStore edits as reversible parameters for crop, rotate, exposure, contrast, white balance, and saturation.\nRender exports to a new folder with explicit color space, quality, size, and metadata choices.\nAdd catalog backup, missing-file repair, integrity scan, and a clear original-safety guarantee.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a proprietary raw-rendering engine.\nDeliberately leave out hosted cross-device photo sync and client galleries.\nDeliberately leave out frontier culling, retouching, and generative models.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

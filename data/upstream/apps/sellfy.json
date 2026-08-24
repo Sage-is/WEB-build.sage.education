@@ -1,0 +1,222 @@
+{
+  "slug": "sellfy",
+  "name": "Sellfy",
+  "domain": "sellfy.com",
+  "appURL": "https://sellfy.com",
+  "category": "creator-commerce",
+  "subcategory": "digital products, courses and memberships",
+  "tagline": "Sell digital files and simple subscriptions from a user-owned storefront",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://sellfy.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Starter monthly tier.",
+    "native": "29 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 39,
+        "annualPerMonth": 29,
+        "per": "workspace",
+        "limits": "$10,000 annual sales cap; unlimited products; files up to 10 GB.",
+        "notes": "Annual price is $348."
+      },
+      {
+        "name": "Business",
+        "monthly": 79,
+        "annualPerMonth": 59,
+        "per": "workspace",
+        "limits": "$50,000 annual sales cap; files up to 15 GB; 10,000 email credits.",
+        "notes": "Annual price is $708."
+      },
+      {
+        "name": "Premium",
+        "monthly": 159,
+        "annualPerMonth": 119,
+        "per": "workspace",
+        "limits": "$200,000 annual sales cap; files up to 20 GB; 50,000 email credits.",
+        "notes": "Annual price is $1,428."
+      },
+      {
+        "name": "High Volume",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "For more than $200,000 annual sales; custom price and limits.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day trial, but a paid plan is required to sell",
+    "billingTerms": "monthly + annual; official help also mentions 2-year billing, but current 2-year prices are not published",
+    "priceChanges": [],
+    "hiddenCosts": "Exceeding a plan's annual-sales cap requires an upgrade or triggers a 2% fee on further sales; Stripe/PayPal processing remains separate even though Sellfy charges 0 standard transaction fee.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://sellfy.com/pricing/",
+      "https://docs.sellfy.com/article/211-how-much-does-sellfy-cost"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Sellfy, sell digital files and simple subscriptions from a user-owned storefront. The hard boundary is payments, hosted delivery, email, print-on-demand, upsells, and support, plus payments, tax, distribution, and operations.",
+  "coreLoopDIY": "Sell a small catalog of digital files and simple subscriptions from a user-owned storefront, deliver purchased files, and manage customers.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Stripe account",
+    "PostgreSQL",
+    "S3-compatible storage",
+    "public HTTPS deployment",
+    "email provider"
+  ],
+  "whatYouLose": [
+    "payments, hosted delivery, email, print-on-demand, upsells, and support",
+    "marketplace discovery",
+    "tax remittance",
+    "fraud operations",
+    "advanced course and community tooling"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "scale-infra"
+  ],
+  "moatNotes": "payments, tax, distribution, and operations",
+  "replacementScope": "single-creator storefront",
+  "ongoingBurden": "checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support",
+  "whyPeopleStillPay": "People still pay for Sellfy because creators pay to outsource the dangerous and tedious parts around money, delivery, tax, and customer access. The recurring cost buys checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "desc": "Active open-source commerce platform with modular checkout and fulfillment primitives."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "CourseLit",
+      "url": "https://courselit.app",
+      "type": "open-source",
+      "repo": "https://github.com/codelitdev/courselit",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A self-hosted storefront for downloads and memberships; commerce is simpler than Sellfy and operations are not.",
+      "stars": 1200,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Docker Compose, with SUPER_ADMIN_EMAIL set before first start",
+        "engines": null,
+        "dataFormat": "Application records in MongoDB; production media uploads use MediaLit plus S3-compatible object storage",
+        "gapVsPaid": "CourseLit is course-and-community oriented rather than a polished digital-file storefront, and the seller must operate Docker, mail and media storage.",
+        "setupBlocker": "Docker starts the app, but a production setup also needs SMTP for email login and MediaLit/S3-compatible storage for uploads",
+        "sources": [
+          "https://github.com/codelitdev/courselit",
+          "https://github.com/codelitdev/courselit/blob/main/LICENSE",
+          "https://docs.courselit.app/self-hosting/self-host/",
+          "https://github.com/codelitdev/courselit/blob/main/deployment/docker/docker-compose.yml",
+          "https://sellfy.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Hosted downloads and recurring offers on a permanent free plan; one-course limits do not matter to a file shop.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Contacts, funnels, course/community content, orders, emails and uploaded files in systeme.io's vendor-managed cloud; the underlying storage format is not published",
+        "gapVsPaid": "systeme.io's general funnel storefront is less polished for browsing and managing a catalog of digital files than Sellfy.",
+        "setupBlocker": "Selling requires connecting a payment gateway; the free plan is capped at 2,000 contacts, three funnels, one course, one community and one custom domain",
+        "sources": [
+          "https://systeme.io/pricing",
+          "https://help.systeme.io/article/4455-how-to-manage-files-on-systeme-io",
+          "https://help.systeme.io/article/300-host-videos",
+          "https://sellfy.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Vvveb",
+      "url": "https://www.vvveb.com",
+      "type": "open-source",
+      "repo": "https://github.com/givanz/Vvveb",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Digital delivery and subscriptions share one storefront; you also inherit PHP updates.",
+      "stars": 1200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Download and upload the PHP release, open the site URL, and complete the browser installer",
+        "engines": null,
+        "dataFormat": "Content, products, orders and settings in MySQL/MariaDB, SQLite or PostgreSQL; media and downloadable files on the server filesystem",
+        "gapVsPaid": "Vvveb is a general self-hosted shop rather than a creator storefront, so file sales require server, mail, payment and update administration.",
+        "setupBlocker": "PHP hosting, a database, writable files, mail and payment configuration, plus ongoing server updates",
+        "sources": [
+          "https://github.com/givanz/Vvveb",
+          "https://github.com/givanz/Vvveb/blob/master/LICENSE",
+          "https://www.vvveb.com",
+          "https://docs.vvveb.com/",
+          "https://sellfy.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Easy Digital Downloads",
+      "url": "https://easydigitaldownloads.com",
+      "desc": "The free core handles files, but recurring subscriptions live in paid extensions."
+    },
+    {
+      "name": "FOSSBilling",
+      "url": "https://fossbilling.org",
+      "desc": "Subscriptions and downloads fit, but the project still calls itself beta and warns of rough edges."
+    },
+    {
+      "name": "Medusa",
+      "url": "https://medusajs.com",
+      "desc": "A headless commerce toolkit is not a user-owned digital storefront for non-builders."
+    }
+  ],
+  "relatedSlugs": [
+    "gumroad",
+    "lemon-squeezy",
+    "paddle"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a single-creator storefront DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Sellfy in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, Stripe Checkout, and S3-compatible storage; do not offer alternative stacks.\nThe core loop is: sell a small catalog of digital files and simple subscriptions from a user-owned storefront, deliver purchased files, and manage customers.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement products, variants, prices, files or lessons, coupons, customers, orders, and entitlements.\nUse Stripe-hosted Checkout and verify every webhook signature and idempotency key.\nGrant access only after confirmed payment and revoke it on refund or chargeback.\nCreate a customer library with signed short-lived download or lesson URLs.\nAdd order search, resend receipt, refund handoff, export, and an immutable event log.\nDocument taxes as the creator's responsibility and do not calculate unsupported jurisdictions.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out merchant-of-record tax remittance.\nDeliberately leave out a buyer marketplace or affiliate network.\nDeliberately leave out advanced communities, certificates, mobile apps, and enterprise learning features.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

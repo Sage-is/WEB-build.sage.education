@@ -1,0 +1,136 @@
+{
+  "slug": "hexomatic",
+  "name": "Hexomatic",
+  "domain": "hexomatic.com",
+  "appURL": "https://hexomatic.com",
+  "category": "automation",
+  "subcategory": "web scraping + automation",
+  "tagline": "Cloud scraping, monitoring, and automation with prebuilt actions",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "usage-based",
+    "basis": "usage or capacity based",
+    "unit": "usage",
+    "currency": "USD",
+    "native": "Usage or capacity pricing; exact monthly cost varies",
+    "source": "https://hexomatic.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Silver",
+        "monthly": 49,
+        "annualPerMonth": 40.83,
+        "per": "workspace",
+        "limits": "4,500 automation credits/month; 10 simultaneous running workflows; unlimited custom scraping recipes and scheduled workflows",
+        "notes": "Annual billing is $490 upfront."
+      },
+      {
+        "name": "Gold",
+        "monthly": 99,
+        "annualPerMonth": 82.5,
+        "per": "workspace",
+        "limits": "10,000 automation credits/month; unlimited simultaneous workflows; residential-proxy access through premium credits",
+        "notes": "Annual billing is $990 upfront."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom credits, onboarding, team training, campaign management, scraping templates, automations and strategy support",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier; 7-day trial",
+    "billingTerms": "monthly or annual paid plans; annual is equivalent to 2 months free; 7-day trial",
+    "priceChanges": [],
+    "hiddenCosts": "Automation credits renew monthly; premium features such as ChatGPT, translation, Google/Maps data, email enrichment, residential proxies, Amazon data and backlink data require a premium-credit add-on starting at $9.99/month; Hexomatic Second Brain is a separate subscription",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://hexomatic.com/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible web scraping + automation loop is buildable, but a credible replacement needs more than the first screen. Hexomatic earns its keep through connectors, auth, reliability, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build one explicit web scraping + automation workflow with a trigger, validated steps, retries, logs, and a manual replay button.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "hosted PostgreSQL and Redis",
+    "API credentials for the two chosen services",
+    "Node.js 22"
+  ],
+  "whatYouLose": [
+    "durable execution at scale",
+    "schema drift handling and enterprise controls",
+    "hundreds of maintained connectors",
+    "OAuth app verification"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra"
+  ],
+  "moatNotes": "connectors/auth/reliability",
+  "whyPeopleStillPay": "Hexomatic: One automation is easy. Subscribers pay for maintained integrations, credentials, retries, observability, and someone else owning breakage.",
+  "ongoingBurden": "Maintain OAuth, rate limits, webhooks, retries, queues, idempotency, logs, secret rotation, and third-party API changes.",
+  "priorArt": [
+    {
+      "name": "Activepieces",
+      "url": "https://github.com/activepieces/activepieces",
+      "desc": "Open-source automation builder with connectors and self-hosting."
+    },
+    {
+      "name": "n8n",
+      "url": "https://github.com/n8n-io/n8n",
+      "desc": "Source-available workflow automation engine and connector reference."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "EasySpider",
+      "url": "https://github.com/NaiboWang/EasySpider",
+      "type": "open-source",
+      "repo": "https://github.com/NaiboWang/EasySpider",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Point-and-click extraction and pagination on the desktop; cloud workers are what disappear.",
+      "stars": 44125,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Maxun",
+      "url": "https://maxun.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/getmaxun/maxun",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "No-code scraping, scheduled runs, and change monitoring, provided you bring the server.",
+      "stars": 17100,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "robomotion",
+    "parabola",
+    "diffbot"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Hexomatic is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Hexomatic, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build one explicit web scraping + automation workflow with a trigger, validated steps, retries, logs, and a manual replay button.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: durable execution at scale; schema drift handling and enterprise controls; hundreds of maintained connectors.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

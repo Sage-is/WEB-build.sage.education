@@ -1,0 +1,313 @@
+{
+  "slug": "youcanbookme",
+  "name": "YouCanBookMe",
+  "domain": "youcanbook.me",
+  "appURL": "https://youcanbook.me",
+  "category": "scheduling",
+  "subcategory": "booking links and calendar automation",
+  "tagline": "Offer booking pages with availability rules, confirmations, and rescheduling",
+  "priceMonthly": 9,
+  "pricing": {
+    "plan": "Individual",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://youcanbook.me/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical individual monthly rate.",
+    "native": "9 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 connected calendar; 1 booking page.",
+        "notes": null
+      },
+      {
+        "name": "Individual",
+        "monthly": 9,
+        "annualPerMonth": 8.1,
+        "per": "user",
+        "limits": "2 connected calendars; 2 booking pages.",
+        "notes": "Two-year rate is $7.20/user/month."
+      },
+      {
+        "name": "Professional",
+        "monthly": 13,
+        "annualPerMonth": 11.7,
+        "per": "user",
+        "limits": "6 connected calendars; 10 booking pages.",
+        "notes": "Two-year rate is $10.40/user/month."
+      },
+      {
+        "name": "Team",
+        "monthly": 18,
+        "annualPerMonth": 16.2,
+        "per": "user",
+        "limits": "10 connected calendars/user; 15+ booking pages/user.",
+        "notes": "Two-year rate is $14.40/user/month."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom plan for 50+ users.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "1 connected calendar; 1 booking page.",
+    "billingTerms": "monthly + annual (-10%) + 2-year (-20%); Enterprise custom",
+    "priceChanges": [],
+    "hiddenCosts": "Added seats are prorated; Stripe/payment fees remain separate; UK customers may owe 20% VAT.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://youcanbook.me/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For YouCanBookMe, offer booking pages with availability rules, confirmations, and rescheduling. The hard boundary is calendar integration maturity, forms, reminders, payments, and support, plus calendar integrations and reliability.",
+  "coreLoopDIY": "Read one calendar, publish booking pages with availability rules, create conflict-safe bookings, support rescheduling, and send confirmations and reminders.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google Calendar OAuth credentials",
+    "PostgreSQL",
+    "public deploy target",
+    "Resend API key",
+    "domain with HTTPS"
+  ],
+  "whatYouLose": [
+    "calendar integration maturity, forms, reminders, payments, and support",
+    "multiple calendar providers",
+    "team routing and round-robin",
+    "payments",
+    "timezone edge-case maturity"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "calendar integrations and reliability",
+  "replacementScope": "single-user booking service",
+  "ongoingBurden": "OAuth refresh, webhooks, timezone databases, race conditions, reminders, deliverability, privacy, and uptime",
+  "whyPeopleStillPay": "People still pay for YouCanBookMe because people pay because one double booking or missed invite can cost more than years of subscription fees. The recurring cost buys OAuth refresh, webhooks, timezone databases, race conditions, reminders, deliverability, privacy, and uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.com",
+      "desc": "Mature open-source scheduling platform with calendar integrations and booking workflows."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Cal.com Free",
+      "url": "https://cal.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Unlimited solo event types, calendars and bookings, with payments and notifications; team routing costs money.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account, availability, booking and integration records live in Cal.com's cloud and in the connected calendar, conferencing and payment providers",
+        "gapVsPaid": "The free plan is solo-only; shared routing, round-robin scheduling and team administration cost extra.",
+        "setupBlocker": null,
+        "sources": [
+          "https://cal.com/pricing",
+          "https://cal.com/privacy",
+          "https://youcanbook.me/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Calendly Free",
+      "url": "https://calendly.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "One active event type and unlimited bookings; meeting polls survive, workflows and teams do not.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account, booking and calendar-integration records live in Calendly's cloud and connected calendar or conferencing providers",
+        "gapVsPaid": "The free plan permits only one event type and one calendar and omits payments and automated reminders.",
+        "setupBlocker": null,
+        "sources": [
+          "https://calendly.com/pricing",
+          "https://calendly.com/privacy",
+          "https://help.calendly.com/hc/en-us/articles/223145627-Getting-started-with-Calendly",
+          "https://youcanbook.me/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Koalendar Free",
+      "url": "https://koalendar.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "Unlimited booking pages and two calendar connections; payments, forms, reminders and team routing are paid.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account, booking and availability records live in Koalendar's cloud and connected calendar or conferencing providers",
+        "gapVsPaid": "Payments, booking-form questions, custom reminders, group sessions and team routing are paid features.",
+        "setupBlocker": null,
+        "sources": [
+          "https://koalendar.com/pricing",
+          "https://koalendar.com/pricing/free-forever-vs-pro-plan-guide",
+          "https://koalendar.com/privacy",
+          "https://koalendar.com/security",
+          "https://youcanbook.me/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "TidyCal Free",
+      "url": "https://tidycal.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Unlimited one-person booking types and paid bookings on one calendar; group meetings and fancy emails cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account, connected-calendar, appointment and payment-integration records live in TidyCal and AppSumo's cloud services",
+        "gapVsPaid": "It connects one calendar and omits custom intake questions, advanced reminders, polls and approval workflows on the free plan.",
+        "setupBlocker": null,
+        "sources": [
+          "https://help.tidycal.com/article/739-faq",
+          "https://tidycal.com/privacy-policy",
+          "https://tidycal.com/",
+          "https://youcanbook.me/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "zcal Free",
+      "url": "https://zcal.co/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Unlimited links and calendars, custom questions, email reminders and Stripe payments; teams are paid and zcal takes 3%.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account and booking records live in zcal's cloud; Stripe processes and stores payment details for paid bookings",
+        "gapVsPaid": "Team scheduling is paid and zcal takes a 3% commission on Stripe payments.",
+        "setupBlocker": null,
+        "sources": [
+          "https://zcal.co/pricing",
+          "https://help.zcal.co/pricing/free-forever-plan",
+          "https://help.zcal.co/integrations/stripe",
+          "https://zcal.co/privacy",
+          "https://youcanbook.me/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Zoho Bookings Free",
+      "url": "https://www.zoho.com/bookings/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "A real one-person booking desk with forms, reminders and two-way sync; staff and payment plumbing cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account, booking and customer records live in Zoho's data centres and are synchronized with connected calendar and meeting providers",
+        "gapVsPaid": "The free plan offers one service and no payments and is less flexible for custom booking-page and polling workflows.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.zoho.com/bookings/pricing.html",
+          "https://www.zoho.com/bookings/free-appointment-scheduling-software.html",
+          "https://www.zoho.com/privacy.html",
+          "https://youcanbook.me/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "cal-com-teams",
+    "fantastical",
+    "tidycal"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Individual plan and a single-user booking service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for YouCanBookMe in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, Google Calendar OAuth, and Resend; do not offer alternative stacks.\nThe core loop is: read one calendar, publish booking pages with availability rules, create conflict-safe bookings, support rescheduling, and send confirmations and reminders.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement one account with configurable working hours, buffers, minimum notice, and booking horizon.\nConnect Google Calendar using OAuth and store refresh tokens encrypted at rest.\nCalculate availability in UTC and render it in the visitor's detected timezone.\nReserve slots transactionally, create calendar events, and prevent concurrent double booking.\nSend confirmation, cancellation, and reminder email with signed management links.\nAdd an admin booking list, event-type editor, audit log, and calendar reconnect flow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out Microsoft and Apple calendar support.\nDeliberately leave out team round-robin routing.\nDeliberately leave out payments, CRM workflows, and enterprise controls.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

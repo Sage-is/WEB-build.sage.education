@@ -1,0 +1,144 @@
+{
+  "slug": "simvoly",
+  "name": "Simvoly",
+  "domain": "simvoly.com",
+  "appURL": "https://simvoly.com",
+  "category": "website-builder",
+  "subcategory": "website + funnel builder",
+  "tagline": "Websites, funnels, ecommerce, memberships, and CRM in one platform",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://simvoly.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 18,
+        "annualPerMonth": 12,
+        "per": "workspace",
+        "limits": "1 website, 0 funnels, 1 domain, unlimited pages, 20 GB bandwidth, 100 community members, 100 subscribers/1,200 emails, 5 hosted videos",
+        "notes": "E-commerce is not included by default; it is offered as an add-on."
+      },
+      {
+        "name": "Business",
+        "monthly": 36,
+        "annualPerMonth": 29,
+        "per": "workspace",
+        "limits": "1 website, 5 funnels, 6 domains, 60 GB bandwidth, 100 products, 100 members, 100 subscribers/1,200 emails, 5 videos",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 49,
+        "annualPerMonth": 39,
+        "per": "workspace",
+        "limits": "1 website, 10 funnels, 11 domains, 100 GB bandwidth, unlimited products, 1,000 community members, 1,000 subscribers/12,000 emails, 20 videos",
+        "notes": null
+      },
+      {
+        "name": "Elite",
+        "monthly": 97,
+        "annualPerMonth": 79,
+        "per": "workspace",
+        "limits": "5 websites, unlimited funnels/domains, 200 GB bandwidth, unlimited products, 5,000 community members, 2,500 subscribers/30,000 emails, 50 videos",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day free trial",
+    "billingTerms": "monthly + annual (annual equivalents shown by vendor)",
+    "priceChanges": [],
+    "hiddenCosts": "Websites, funnels, bandwidth, communities, ecommerce, videos, admins and marketing subscribers can require add-ons. Subscriber add-ons run from $9/month for +500 to $1,499/month for +500,000; email overage is $0.80 per 1,000.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://simvoly.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible website + funnel builder loop is buildable, but a credible replacement needs more than the first screen. Simvoly earns its keep through editor, CMS, hosting, polish, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a focused website + funnel builder generator that edits structured page sections, previews responsive layouts, and publishes static files.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "deploy target or static hosting",
+    "user-owned domain for publishing"
+  ],
+  "whatYouLose": [
+    "managed hosting, forms, and analytics",
+    "general-purpose visual editing",
+    "large template and component libraries",
+    "CMS collaboration and client handoff"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra",
+    "collaboration"
+  ],
+  "moatNotes": "editor/CMS/hosting/polish",
+  "whyPeopleStillPay": "Simvoly: A single site is easy to code. People pay for safe ongoing edits, templates, publishing, domains, collaboration, and no-maintenance hosting.",
+  "ongoingBurden": "Maintain responsive rendering, browser compatibility, deployment, domains, forms, spam protection, backups, and editor migrations.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder."
+    },
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web-builder framework."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Websites, funnels, products, memberships, email and CRM on a real free plan; one custom domain and one course.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "A page-editor framework, not an all-in-one site, funnel, store and CRM."
+    },
+    {
+      "name": "Odoo Community",
+      "url": "https://www.odoo.com/page/community",
+      "desc": "Website, store and CRM are present; creator funnels and simple membership delivery are not a clean free workflow."
+    },
+    {
+      "name": "Vvveb",
+      "url": "https://www.vvveb.com",
+      "desc": "The site, store and subscriptions fit; funnels and CRM do not."
+    }
+  ],
+  "relatedSlugs": [
+    "pixpa",
+    "format",
+    "duda"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Simvoly is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Simvoly, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a focused website + funnel builder generator that edits structured page sections, previews responsive layouts, and publishes static files.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: managed hosting, forms, and analytics; general-purpose visual editing; large template and component libraries.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

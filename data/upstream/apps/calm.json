@@ -1,0 +1,121 @@
+{
+  "slug": "calm",
+  "name": "Calm",
+  "domain": "calm.com",
+  "appURL": "https://calm.com",
+  "category": "wellness",
+  "subcategory": "fitness, activity and general wellbeing",
+  "tagline": "Organize user-owned relaxation audio, timers, and a private routine tracker",
+  "priceMonthly": 14.99,
+  "pricing": {
+    "plan": "Calm Premium",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://calm.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical monthly Premium subscription.",
+    "native": "14.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited unguided timed meditations; Day 1 of every multi-day program; 1 guided breathing exercise; 1 named Sleep Story",
+        "notes": "The number of free ambient scenes/sounds is not published."
+      },
+      {
+        "name": "Calm Premium",
+        "monthly": 14.99,
+        "annualPerMonth": 6.67,
+        "per": "user",
+        "limits": "Full meditation, music, and 500+ Sleep Stories catalog",
+        "notes": "$79.99 billed annually; the direct web annual flow advertises a 14-day trial, while some app-store flows may use 7 days."
+      },
+      {
+        "name": "Calm Family",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Up to 6 total accounts",
+        "notes": "Official support lists $99.99/year ($8.33/month equivalent), while a live Calm family marketing page simultaneously displayed $119.99/year ($10.00/month equivalent); the numeric field is null because Calm's own current pages conflict."
+      },
+      {
+        "name": "Calm Lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 account with lifetime access to Calm Premium content",
+        "notes": "$499.99 one-time; generally nonrefundable and does not automatically cancel an existing recurring subscription."
+      }
+    ],
+    "freeTierCaps": "Free access: unlimited unguided timers, Day 1 of every multi-day program, 1 guided breathing exercise, and 1 named Sleep Story; no published numeric cap for ambient scenes.",
+    "billingTerms": "Premium monthly + annual; Family annual only; Lifetime one-time; annual web trial commonly 14 days",
+    "priceChanges": [],
+    "hiddenCosts": "Family pricing conflicts across Calm's own live pages ($99.99 support vs $119.99 marketing). Buying Lifetime does not cancel an existing subscription, creating a double-billing risk; web annual trial converts to the full annual charge unless canceled.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.calm.com/freetrial/plans",
+      "https://support.calm.com/hc/en-us/articles/360008240934-How-to-Check-Calm-Premium-Subscription-Pricing",
+      "https://support.calm.com/hc/en-us/articles/115002587948-How-Calm-Subscriptions-Are-Billed-Renewed",
+      "https://support.calm.com/hc/en-us/articles/360008536834-Calm-Premium-vs-Free-Features-Content-List-Benefits",
+      "https://support.calm.com/hc/en-us/articles/360044707294-What-Free-Content-is-Available-on-the-Calm-App",
+      "https://support.calm.com/hc/en-us/articles/4405882978331-Calm-Family-Plan-Price-Invites-How-to-Share-Premium",
+      "https://support.calm.com/hc/en-us/articles/30958037515419-Calm-Lifetime-Membership-Cost-Benefits-Is-it-worth-it"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Calm, organize user-owned relaxation audio, timers, and a private routine tracker. The hard boundary is large licensed content catalog, celebrity audio, production, mobile apps, and brand, plus hardware data, content, coaching, and trust.",
+  "coreLoopDIY": "Organize user-owned relaxation audio and timers, log user-chosen wellbeing signals in a private routine tracker, plan moderate routines, and show trends without diagnosing, shaming, or enforcing restrictive goals.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "iOS or Android device",
+    "optional HealthKit or Health Connect permission",
+    "local storage"
+  ],
+  "whatYouLose": [
+    "large licensed content catalog, celebrity audio, production, mobile apps, and brand",
+    "wearable hardware data",
+    "coach network",
+    "clinical validation",
+    "large content library and social network"
+  ],
+  "moatTags": [
+    "content-rights",
+    "hardware",
+    "brand-trust"
+  ],
+  "moatNotes": "hardware data, content, coaching, and trust",
+  "replacementScope": "personal general-wellbeing tracker",
+  "ongoingBurden": "sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support",
+  "whyPeopleStillPay": "People still pay for Calm because people pay for polished mobile capture, trusted content, hardware integration, and coaching rather than the basic logbook. The recurring cost buys sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "wger",
+      "url": "https://github.com/wger-project/wger",
+      "desc": "Active open-source fitness and workout management application."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Medito",
+      "url": "https://meditofoundation.org/medito-app",
+      "desc": "Everything is genuinely free, but it plays Medito’s library rather than organizing your audio."
+    }
+  ],
+  "relatedSlugs": [
+    "strava",
+    "myfitnesspal-premium",
+    "macrofactor"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Calm Premium plan and a personal general-wellbeing tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Calm in an empty repository.\nUse React Native with Expo, TypeScript, SQLite, and HealthKit or Health Connect only when explicitly enabled; do not offer alternative stacks.\nThe core loop is: organize user-owned relaxation audio and timers, log user-chosen wellbeing signals in a private routine tracker, plan moderate routines, and show trends without diagnosing, shaming, or enforcing restrictive goals.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate optional logs for activity, sleep, mood, energy, and personal notes with editable units.\nLet the user build moderate routines and rest days without weight-loss targets, punishment, or competitive pressure.\nRequest health-platform permissions per data type and work fully without granting them.\nShow weekly patterns and consistency with neutral language and no diagnostic or body-image judgments.\nAdd reminders that can be muted, data export, account-free local use, and full deletion.\nInclude a clear statement that the app is not medical care and should not replace qualified advice.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out medical diagnosis or treatment.\nDeliberately leave out extreme exercise or restrictive-eating coaching.\nDeliberately leave out wearable hardware, human coaching, and a large social network.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

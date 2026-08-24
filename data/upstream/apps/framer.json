@@ -1,0 +1,144 @@
+{
+  "slug": "framer",
+  "name": "Framer",
+  "domain": "framer.com",
+  "category": "website-builder",
+  "subcategory": "visual website builder",
+  "tagline": "Design-forward website builder with CMS, animations, and hosting",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "annual effective per month",
+    "unit": "flat",
+    "native": "10 USD",
+    "source": "https://www.framer.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Basic listed at $10/month billed yearly, with higher tiers and monthly billing options.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Framer subdomain; 1 GB bandwidth; 10 CMS collections; 1,000 pages; 5 MB file uploads; 1 free locale; up to 3 editors; 500 AI credits to try",
+        "notes": "Custom domains require a paid site plan."
+      },
+      {
+        "name": "Basic",
+        "monthly": null,
+        "annualPerMonth": 10,
+        "per": "flat",
+        "limits": "30 pages; 2 CMS collections; 1,000 CMS items; 50 GB bandwidth/month; 1,000 AI credits/month; up to 10 editors",
+        "notes": "Pricing page was displaying yearly billing at $10/month; the exact monthly-billed site price was not exposed in accessible page text."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 30,
+        "per": "flat",
+        "limits": "150 pages; 10 CMS collections; 2,500 CMS items; 100 GB bandwidth/month; 3,000 AI credits/month; up to 10 editors",
+        "notes": "Pricing page was displaying yearly billing at $30/month; the exact monthly-billed site price was not exposed in accessible page text."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom limits; unlimited editors; enterprise security, uptime guarantee, SCIM and SSO",
+        "notes": "Custom annual billing."
+      }
+    ],
+    "freeTierCaps": "Framer subdomain; 1 GB bandwidth; 10 CMS collections; 1,000 pages; 5 MB upload limit; 1 locale; up to 3 editors; 500 trial AI credits",
+    "billingTerms": "monthly + annual for Basic and Pro; annual billed upfront, while added editors and usage on annual plans are billed monthly",
+    "priceChanges": [],
+    "hiddenCosts": "Extra design editors are $20/month each and content editors $10/month each; locales cost $20/month each; Pro expansion is metered ($20 per extra 100 pages, $40 per 10 CMS collections, $20 per 10,000 CMS items, $40 per 100 GB bandwidth), Convert starts at $50 per 500,000 events, and Advanced Hosting costs $200/month.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.framer.com/pricing",
+      "https://www.framer.com/help/articles/subscriptions-and-charges/",
+      "https://www.framer.com/help/articles/how-ai-credits-and-agents-pricing-work/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build a simple AI/site generator and host static pages, but Framer's animation/design editor, CMS, hosting, templates, and publishing polish are real product depth.",
+  "coreLoopDIY": "Generate site sections, edit them visually, save JSON/page data, and deploy static output to a host.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "React/site builder",
+    "CMS/storage",
+    "static exporter",
+    "hosting",
+    "domain/DNS",
+    "optional LLM API"
+  ],
+  "whatYouLose": [
+    "visual design polish",
+    "animations",
+    "templates",
+    "CMS",
+    "hosting",
+    "preview/publish flow",
+    "forms"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra",
+    "content-rights"
+  ],
+  "moatNotes": "editor/templates/hosting",
+  "whyPeopleStillPay": "They pay because polished landing pages ship quickly with minimal design-engineering friction.",
+  "priorArt": [
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web builder framework useful for a DIY site editor.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Plasmic",
+      "url": "https://www.plasmic.app",
+      "type": "open-source",
+      "repo": "https://github.com/plasmicapp/plasmic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A hosted visual builder with CMS, interactions, Figma import and a custom domain free; the badge remains.",
+      "stars": 6900,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "A framework for making visual editors, not a hosted animated site builder."
+    },
+    {
+      "name": "TeleportHQ",
+      "url": "https://teleporthq.io",
+      "desc": "The old free-plan advice is stale: current pricing gives a seven-day trial and then asks for an editor subscription."
+    },
+    {
+      "name": "Webstudio",
+      "url": "https://webstudio.is",
+      "desc": "The open core builds excellent sites and CMS pages, but Framer-grade animation is not a complete free equivalent."
+    }
+  ],
+  "relatedSlugs": [
+    "carrd",
+    "airtable",
+    "coda"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good modern website-builder target with a plausible DIY core.",
+  "prompt": "Build me a landing-page workshop to replace Framer. Requirements:\n\n- A static site setup: Astro with Tailwind, building to plain files. No\n  database, no server at runtime.\n- A section library as components with props: hero, feature grid, testimonial,\n  pricing table, FAQ, footer. All copy for a site lives in one content.json.\n- New-site flow: I describe the product, an LLM (key in .env) drafts\n  content.json, then I edit copy by hand from there. Generation is a helper\n  script, not a runtime dependency.\n- One theme file for fonts, colors, and spacing so every page looks consistent\n  without per-page design work.\n- Live preview via `astro dev`; `npm run build` emits dist/ ready to host.\n- deploy.sh that rsyncs dist/ to my VPS (or any static host).\n- Sites live in ./sites/<name>/ under git; no accounts, no telemetry, the only\n  network call is the optional LLM draft.\n- Out of scope: a visual drag-and-drop editor, scroll animations, a CMS UI,\n  and forms. I edit files; the section library is the product here.\n- README: setup, deploy config, and how to add a new section component.",
+  "promptCurated": false
+}

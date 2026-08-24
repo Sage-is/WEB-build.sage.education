@@ -1,0 +1,181 @@
+{
+  "slug": "capture-one",
+  "name": "Capture One",
+  "domain": "captureone.com",
+  "appURL": "https://captureone.com",
+  "category": "photo-editing",
+  "subcategory": "photo organization, culling and editing",
+  "tagline": "Catalog and adjust local raw files with a deliberately limited editing pipeline",
+  "priceMonthly": 24,
+  "pricing": {
+    "plan": "Capture One Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://captureone.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical month-to-month Pro subscription.",
+    "native": "24 USD",
+    "kind": "fixed",
+    "currency": "USD"
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Capture One, catalog and adjust local raw files with a deliberately limited editing pipeline. The hard boundary is proprietary raw rendering, tethering, color tools, camera profiles, and studio workflow, plus image pipeline quality, models, and workflow polish.",
+  "coreLoopDIY": "Catalog local raw files, generate previews, apply non-destructive adjustments through a deliberately limited editing pipeline, and export selected originals or rendered copies.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "desktop computer",
+    "local photo library",
+    "sufficient disk space",
+    "optional GPU for AI features"
+  ],
+  "whatYouLose": [
+    "proprietary raw rendering, tethering, color tools, camera profiles, and studio workflow",
+    "proprietary raw-processing quality",
+    "cloud sync and sharing",
+    "large AI models",
+    "camera and print ecosystem"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "proprietary-models"
+  ],
+  "moatNotes": "image pipeline quality, models, and workflow polish",
+  "replacementScope": "personal local photo catalog",
+  "ongoingBurden": "raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity",
+  "whyPeopleStillPay": "People still pay for Capture One because photographers pay because image quality, catalog safety, and fast handling of huge libraries matter more than cloning sliders. The recurring cost buys raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Immich",
+      "url": "https://github.com/immich-app/immich",
+      "desc": "Active open-source self-hosted photo and video management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "darktable",
+      "url": "https://www.darktable.org/",
+      "type": "open-source",
+      "repo": "https://github.com/darktable-org/darktable",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Local cataloging plus a deep non-destructive RAW pipeline, masks, tether-aware workflows, and batch export; less studio polish, no bill.",
+      "stars": 12900,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "local",
+        "install": "Install the Windows executable, macOS disk image, Linux package, Flatpak, or AppImage",
+        "engines": "A local non-generative imaging pipeline; current releases can use ONNX models for subject masking, denoising, and image upscaling without a cloud account",
+        "dataFormat": "Original photos stay untouched; edits, ratings, tags, and history are stored in a local SQLite library and portable XMP sidecar files, with thumbnails and cache data in the user profile",
+        "gapVsPaid": "Its RAW pipeline is deep, but tethered capture, Sessions, live-view studio operation, and camera-specific color workflows are less polished than Capture One's.",
+        "setupBlocker": "macOS may require a Gatekeeper right-click Open or xattr step; the larger obstacle is learning darktable's module-heavy workflow rather than installation",
+        "sources": [
+          "https://www.darktable.org/",
+          "https://www.darktable.org/install/",
+          "https://github.com/darktable-org/darktable",
+          "https://github.com/darktable-org/darktable/blob/master/LICENSE",
+          "https://docs.darktable.org/usermanual/development/en/overview/sidecar-files/sidecar/",
+          "https://docs.darktable.org/usermanual/development/en/special-topics/ai/overview/",
+          "https://www.captureone.com/en"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "digiKam",
+      "url": "https://www.digikam.org/",
+      "type": "open-source",
+      "repo": "https://invent.kde.org/graphics/digikam",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A mature local and network catalog with metadata, ratings, RAW import, batch tools, and a serviceable editor.",
+      "stars": 32,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "local",
+        "install": "Install the Windows installer/portable build, macOS package, or a Linux AppImage, Flatpak, Snap, or distribution package",
+        "engines": "Local OpenCV and packaged machine-learning models for face recognition, automatic tagging, image-quality scoring, similarity search, red-eye detection, and related catalog analysis",
+        "dataFormat": "Photos remain in selected local or network collection folders; catalog, thumbnails, faces, and similarity data live in SQLite by default or MariaDB, with metadata and ratings optionally written into files or XMP sidecars",
+        "gapVsPaid": "It is a capable catalog, not a professional tethered-capture and studio-session editor comparable to Capture One.",
+        "setupBlocker": "First-run collection and database choices are technical, and scanning a large library plus downloading recognition models can take a long time",
+        "sources": [
+          "https://www.digikam.org/",
+          "https://www.digikam.org/download/",
+          "https://invent.kde.org/graphics/digikam",
+          "https://invent.kde.org/graphics/digikam/-/blob/master/COPYING",
+          "https://docs.digikam.org/en/getting_started/quick_start.html",
+          "https://docs.digikam.org/en/asset_management/organize_find.html",
+          "https://docs.digikam.org/en/maintenance_tools/maintenance_quality.html",
+          "https://www.captureone.com/en"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "RapidRAW",
+      "url": "https://www.getrapidraw.com/",
+      "type": "open-source",
+      "repo": "https://github.com/CyberTimon/RapidRAW",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "android"
+      ],
+      "desc": "A deliberately simpler catalog and RAW editor with presets, masks, ratings, culling, and batch work; young but genuinely installable.",
+      "stars": 9200,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "local",
+        "install": "Install the Windows .exe, macOS .dmg, or Linux AppImage/DEB/Flatpak; Android is an experimental sideload",
+        "engines": "Local subject, sky, and foreground masking, NIND denoising, LaMa inpainting, and optional handoff to a user-run ComfyUI backend",
+        "dataFormat": "Photos are never moved; non-destructive adjustments are stored in a documented .rrdata sidecar next to each image, while thumbnails, logs, and downloaded models live in local application data",
+        "gapVsPaid": "It lacks Capture One's professional tethering, Sessions workflow, mature camera profiles, and proven high-volume studio reliability.",
+        "setupBlocker": "Desktop binaries are unsigned, so Windows SmartScreen and macOS Gatekeeper need manual bypass steps; Linux AppImage users may also need libfuse2",
+        "sources": [
+          "https://www.getrapidraw.com/",
+          "https://github.com/CyberTimon/RapidRAW",
+          "https://github.com/CyberTimon/RapidRAW/blob/main/LICENSE",
+          "https://www.getrapidraw.com/docs/getting-started/installation",
+          "https://www.getrapidraw.com/docs/",
+          "https://www.getrapidraw.com/docs/other-panels/inpaint",
+          "https://www.captureone.com/en"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Immich",
+      "url": "https://immich.app/",
+      "desc": "Central photo backup and browsing do not replace desktop RAW adjustments, sessions, masks, or controlled exports."
+    }
+  ],
+  "relatedSlugs": [
+    "adobe-lightroom",
+    "ente-photos",
+    "smugmug"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Capture One Pro plan and a personal local photo catalog DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Capture One in an empty repository.\nUse Tauri 2, React, TypeScript, Rust image libraries, SQLite, and local filesystem access; do not offer alternative stacks.\nThe core loop is: catalog local raw files, generate previews, apply non-destructive adjustments through a deliberately limited editing pipeline, and export selected originals or rendered copies.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex selected folders without moving or rewriting originals and store only catalog data in SQLite.\nGenerate thumbnails and previews, read EXIF, detect duplicates by hash, and monitor file changes.\nProvide timeline, folders, albums, ratings, flags, tags, search, and side-by-side compare.\nStore edits as reversible parameters for crop, rotate, exposure, contrast, white balance, and saturation.\nRender exports to a new folder with explicit color space, quality, size, and metadata choices.\nAdd catalog backup, missing-file repair, integrity scan, and a clear original-safety guarantee.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a proprietary raw-rendering engine.\nDeliberately leave out hosted cross-device photo sync and client galleries.\nDeliberately leave out frontier culling, retouching, and generative models.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

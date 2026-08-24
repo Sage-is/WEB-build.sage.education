@@ -1,0 +1,111 @@
+{
+  "slug": "dashlane",
+  "name": "Dashlane",
+  "domain": "dashlane.com",
+  "category": "security",
+  "subcategory": "password manager",
+  "tagline": "Password manager with autofill, passkeys, sharing, and security alerts",
+  "priceMonthly": 5,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "native": "5 USD",
+    "source": "https://www.dashlane.com/pricing-personal",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Dashlane no longer emphasizes monthly consumer billing in all regions; public 2026 pricing references list Premium around $4.99/month billed annually.",
+    "tiers": [
+      {
+        "name": "Premium",
+        "monthly": null,
+        "annualPerMonth": 5,
+        "per": "user",
+        "limits": "1 account; unlimited passwords and devices; 1 GB encrypted file storage; VPN",
+        "notes": "$60/year; Dashlane no longer sells monthly personal subscriptions."
+      },
+      {
+        "name": "Friends & Family",
+        "monthly": null,
+        "annualPerMonth": 7.5,
+        "per": "workspace",
+        "limits": "Up to 10 accounts; 1 GB encrypted storage/account; VPN entitlement for the plan manager only",
+        "notes": "$90/year; annual only."
+      }
+    ],
+    "freeTierCaps": "no free tier; the former Free plan was discontinued; 14-day Premium trial",
+    "billingTerms": "annual only; no monthly personal plan",
+    "priceChanges": [],
+    "hiddenCosts": "When a paid plan expires the account becomes export-only rather than a usable free password manager; the Family VPN is limited to the plan manager, and taxes or app-store pricing can differ",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.dashlane.com/pricing-personal",
+      "https://support.dashlane.com/hc/en-us/articles/360001166969-Compare-Dashlane-personal-plans",
+      "https://support.dashlane.com/hc/en-us/articles/18922732709138-Change-your-Dashlane-plan",
+      "https://www.dashlane.com/resources/dashlane-family-plan-for-non-sso"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A simple vault is buildable, but matching Dashlane's extension/mobile autofill, passkey support, breach monitoring, sharing, and trust posture is not a casual clone.",
+  "coreLoopDIY": "Build or adopt an encrypted vault, generate passwords, and sync encrypted data across devices.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "encrypted storage",
+    "browser extension",
+    "mobile autofill support",
+    "secure backup",
+    "optional breach data source"
+  ],
+  "whatYouLose": [
+    "autofill polish",
+    "passkeys",
+    "security alerts",
+    "account recovery",
+    "audited security",
+    "sharing",
+    "support"
+  ],
+  "moatTags": [
+    "brand-trust",
+    "execution-polish"
+  ],
+  "moatNotes": "security/trust/cross-platform",
+  "whyPeopleStillPay": "They pay for low-friction secure autofill and confidence that the vault will not be lost.",
+  "priorArt": [
+    {
+      "name": "KeePassXC",
+      "url": "https://github.com/KeePassXreboot/keepassxc",
+      "desc": "Open-source local password manager prior art; not a Dashlane clone but covers the core vau",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Bitwarden Free",
+      "url": "https://bitwarden.com/pricing/",
+      "desc": "Autofill, passkeys, and one-person sharing are free; the full security-report layer is paid."
+    },
+    {
+      "name": "Proton Pass Free",
+      "url": "https://proton.me/pass",
+      "desc": "Passkeys and weak-password alerts are free; secure sharing and dark-web monitoring are paid."
+    },
+    {
+      "name": "Vaultwarden",
+      "url": "https://github.com/dani-garcia/vaultwarden",
+      "desc": "Autofill, passkeys, sharing, and reports are there; managed breach alerts are not a finished replacement."
+    }
+  ],
+  "relatedSlugs": [
+    "hey-email",
+    "1password",
+    "bitwarden"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Another high-trust category where 'can build' must not become reckless advice.",
+  "prompt": "Build me a personal password vault to replace Dashlane. Requirements:\n\n- A Node CLI: `vault add <name>`, `vault get <name>`, `vault list`, `vault gen`.\n  `get` copies the secret to the clipboard with clipboardy and clears it after\n  20 seconds.\n- The vault is one encrypted file at ~/.vault/store.age, encrypted with age\n  (shell out to the age binary), key derived from a master passphrase prompted\n  at runtime and never written to disk.\n- Each entry: name, username, password, URL, notes, updated timestamp. JSON\n  inside the encrypted file, decrypted only in memory.\n- `vault gen` produces a 24-char random password via crypto.randomBytes, plus a\n  4-word diceware option for passphrases.\n- `vault backup` writes a datestamped encrypted copy to ~/.vault/backups/ so I\n  can sync it with any file-sync tool I already trust.\n- Fully local: no accounts, no telemetry, zero network calls.\n- Out of scope: browser-extension autofill, passkeys, breach alerts, sharing.\n  Do not invent any crypto, use age exactly as shipped.\n- README: state plainly that KeePassXC or Bitwarden is the sane choice for most\n  people, and that a forgotten master passphrase means the vault is gone.",
+  "promptCurated": false
+}

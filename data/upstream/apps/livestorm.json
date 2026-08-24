@@ -1,0 +1,146 @@
+{
+  "slug": "livestorm",
+  "name": "Livestorm",
+  "domain": "livestorm.co",
+  "appURL": "https://livestorm.co",
+  "category": "video-conferencing",
+  "subcategory": "video meetings and webinars",
+  "tagline": "Run a small browser webinar with registrations and a simple replay page",
+  "priceMonthly": 100,
+  "pricing": {
+    "plan": "Pro, 400 attendee credits/year",
+    "basis": "annual billing, per month",
+    "unit": "flat",
+    "source": "https://livestorm.co/pricing",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Typical Pro monthly plan; active-contact limits apply.",
+    "native": "100 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "30 attendee credits per year; 30-minute sessions; 10 events per organization; 20 sessions per event; 10 automated actions per event",
+        "notes": null
+      },
+      {
+        "name": "Pro, 400 attendee credits/year",
+        "monthly": null,
+        "annualPerMonth": 100,
+        "per": "workspace",
+        "limits": "400 attendee credits per year; unlimited events and team members; sessions up to 4 hours",
+        "notes": "$1,200 billed annually"
+      },
+      {
+        "name": "Pro, 1,000 attendee credits/year",
+        "monthly": null,
+        "annualPerMonth": 241.67,
+        "per": "workspace",
+        "limits": "1,000 attendee credits per year; unlimited events and team members; sessions up to 4 hours",
+        "notes": "$2,900 billed annually"
+      },
+      {
+        "name": "Pro, 1,500 attendee credits/year",
+        "monthly": null,
+        "annualPerMonth": 343.75,
+        "per": "workspace",
+        "limits": "1,500 attendee credits per year; unlimited events and team members; sessions up to 4 hours",
+        "notes": "$4,125 billed annually"
+      },
+      {
+        "name": "Pro, 2,500 attendee credits/year",
+        "monthly": null,
+        "annualPerMonth": 541.67,
+        "per": "workspace",
+        "limits": "2,500 attendee credits per year; unlimited events and team members; sessions up to 4 hours",
+        "notes": "$6,500 billed annually"
+      },
+      {
+        "name": "Pro, 4,000 attendee credits/year",
+        "monthly": null,
+        "annualPerMonth": 800,
+        "per": "workspace",
+        "limits": "4,000 attendee credits per year; unlimited events and team members; sessions up to 4 hours",
+        "notes": "$9,600 billed annually"
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom attendee-credit allowance; sessions up to 12 hours",
+        "notes": "Contact sales"
+      }
+    ],
+    "freeTierCaps": "30 attendee credits per year; 30-minute sessions; 10 events per organization; 20 sessions per event; 10 automated actions per event",
+    "billingTerms": "annual only under the current attendee-credit model; auto-renews yearly",
+    "priceChanges": [],
+    "hiddenCosts": "One credit is consumed whenever one external attendee joins one session, including replay/on-demand viewing; the same person consumes another credit in a different session. New attendees are blocked when credits run out unless an Enterprise contract permits overage. AI Studio, live translation, extra workspaces, regional hosting, SSO, restreaming, RTMP input and extra API calls are add-ons.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://livestorm.co/pricing",
+      "https://support.livestorm.co/article/attendee-based-pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Livestorm, run a small browser webinar with registrations and a simple replay page. The hard boundary is global media, email delivery, engagement, integrations, analytics, and reliability, plus real-time media infrastructure and reliability.",
+  "coreLoopDIY": "Run a small browser webinar with registrations, issue signed room links, publish a simple replay page, and keep recordings only when every participant is clearly informed.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "public server with strong bandwidth",
+    "domain and TLS",
+    "TURN server",
+    "Docker",
+    "explicit participant consent for recording"
+  ],
+  "whatYouLose": [
+    "global media, email delivery, engagement, integrations, analytics, and reliability",
+    "global low-latency media network",
+    "dial-in and telephony",
+    "large webinars",
+    "transcription, support, and compliance"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations"
+  ],
+  "moatNotes": "real-time media infrastructure and reliability",
+  "replacementScope": "small private meeting service",
+  "ongoingBurden": "TURN capacity, codecs, browsers, packet loss, scaling, recording, consent, abuse, monitoring, and incident response",
+  "whyPeopleStillPay": "People still pay for Livestorm because video products survive because real-time media quality and global reliability are infrastructure businesses, not weekend interface projects. The recurring cost buys TURN capacity, codecs, browsers, packet loss, scaling, recording, consent, abuse, monitoring, and incident response, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Jitsi Meet",
+      "url": "https://github.com/jitsi/jitsi-meet",
+      "desc": "Widely deployed open-source video-conferencing platform."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "BigBlueButton",
+      "url": "https://bigbluebutton.org",
+      "desc": "Good live room, wrong product: registration pages and replay marketing are still your job."
+    },
+    {
+      "name": "Jitsi Meet",
+      "url": "https://meet.jit.si",
+      "desc": "A meeting room is not a webinar platform; registrations, reminders and replay pages are absent."
+    }
+  ],
+  "relatedSlugs": [
+    "zoom-pro",
+    "google-workspace-business-starter",
+    "microsoft-teams-essentials"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a small private meeting service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Livestorm in an empty repository.\nUse Docker Compose, Jitsi Meet, a small Next.js 15 control panel, PostgreSQL, and TURN; do not offer alternative stacks.\nThe core loop is: run a small browser webinar with registrations, issue signed room links, publish a simple replay page, and keep recordings only when every participant is clearly informed.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nDeploy Jitsi Meet through pinned Docker images and configure a dedicated TURN service.\nBuild an owner panel for rooms, signed invitations, expiry, lobby mode, and participant limits.\nShow connection diagnostics for camera, microphone, browser, bandwidth, and TURN reachability.\nMake recording disabled by default and require an on-screen consent state for every participant.\nStore room metadata and audit events, but do not store media unless explicitly enabled.\nAdd health checks, bandwidth dashboards, backup, restore, upgrade, and incident instructions.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a global media edge network.\nDeliberately leave out public webinar scale and telephony.\nDeliberately leave out regulated recording, enterprise compliance, and guaranteed support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

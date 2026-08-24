@@ -1,0 +1,135 @@
+{
+  "slug": "vimcal",
+  "name": "Vimcal",
+  "domain": "vimcal.com",
+  "appURL": "https://vimcal.com",
+  "category": "scheduling",
+  "subcategory": "booking links and calendar automation",
+  "tagline": "Build a fast keyboard-first calendar client with scheduling links",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Vimcal iOS & Desktop",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://www.vimcal.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical monthly subscription.",
+    "native": "20 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free (iOS only)",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 user; iOS-only calendar; no numeric event or calendar-account cap published.",
+        "notes": null
+      },
+      {
+        "name": "Vimcal iOS & Desktop",
+        "monthly": 20,
+        "annualPerMonth": 16.67,
+        "per": "user",
+        "limits": "Unlimited personal booking links; group polls; desktop apps; team scheduling.",
+        "notes": "Annual total is $200."
+      },
+      {
+        "name": "Vimcal EA",
+        "monthly": 75,
+        "annualPerMonth": 62.5,
+        "per": "user",
+        "limits": "5 simultaneous time zones; delegated scheduling; calendar audits and weekly metrics.",
+        "notes": "Annual total is $750."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom billing; SAML SSO; advanced security; dedicated support.",
+        "notes": "Custom quote for Vimcal or Vimcal EA."
+      }
+    ],
+    "freeTierCaps": "1 user; iOS-only calendar; no numeric event or calendar-account cap published.",
+    "billingTerms": "monthly + annual (up to -16%); Enterprise custom",
+    "priceChanges": [],
+    "hiddenCosts": null,
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.vimcal.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Vimcal, build a fast keyboard-first calendar client with scheduling links. The hard boundary is native client polish, multiple accounts, mobile apps, time-zone tools, and reliability, plus calendar integrations and reliability.",
+  "coreLoopDIY": "Read one calendar in a fast keyboard-first client, publish availability through scheduling links, create conflict-safe bookings, and send confirmations and reminders.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google Calendar OAuth credentials",
+    "PostgreSQL",
+    "public deploy target",
+    "Resend API key",
+    "domain with HTTPS"
+  ],
+  "whatYouLose": [
+    "native client polish, multiple accounts, mobile apps, time-zone tools, and reliability",
+    "multiple calendar providers",
+    "team routing and round-robin",
+    "payments",
+    "timezone edge-case maturity"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "calendar integrations and reliability",
+  "replacementScope": "single-user booking service",
+  "ongoingBurden": "OAuth refresh, webhooks, timezone databases, race conditions, reminders, deliverability, privacy, and uptime",
+  "whyPeopleStillPay": "People still pay for Vimcal because people pay because one double booking or missed invite can cost more than years of subscription fees. The recurring cost buys OAuth refresh, webhooks, timezone databases, race conditions, reminders, deliverability, privacy, and uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.com",
+      "desc": "Mature open-source scheduling platform with calendar integrations and booking workflows."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Notion Calendar",
+      "url": "https://www.notion.com/product/calendar",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "Cron with a Notion badge: quick keyboarding, multiple calendars and availability sharing, but no contact brain.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Apple Calendar",
+      "url": "https://support.apple.com/guide/calendar/welcome/mac",
+      "desc": "Fast and free on Apple hardware, but it has no scheduling-link workflow."
+    }
+  ],
+  "relatedSlugs": [
+    "cal-com-teams",
+    "fantastical",
+    "tidycal"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Vimcal plan and a single-user booking service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Vimcal in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, Google Calendar OAuth, and Resend; do not offer alternative stacks.\nThe core loop is: read one calendar in a fast keyboard-first client, publish availability through scheduling links, create conflict-safe bookings, and send confirmations and reminders.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement one account with configurable working hours, buffers, minimum notice, and booking horizon.\nConnect Google Calendar using OAuth and store refresh tokens encrypted at rest.\nCalculate availability in UTC and render it in the visitor's detected timezone.\nReserve slots transactionally, create calendar events, and prevent concurrent double booking.\nSend confirmation, cancellation, and reminder email with signed management links.\nAdd an admin booking list, event-type editor, audit log, and calendar reconnect flow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out Microsoft and Apple calendar support.\nDeliberately leave out team round-robin routing.\nDeliberately leave out payments, CRM workflows, and enterprise controls.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

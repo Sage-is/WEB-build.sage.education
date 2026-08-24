@@ -1,0 +1,138 @@
+{
+  "slug": "alfred-powerpack",
+  "name": "Alfred Powerpack",
+  "domain": "alfredapp.com",
+  "appURL": "https://alfredapp.com",
+  "category": "productivity-utilities",
+  "subcategory": "macOS automation and desktop utilities",
+  "tagline": "Build a local launcher with search, snippets, clipboard history, and workflows",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Powerpack Single User",
+    "basis": "one-time",
+    "unit": "one-time",
+    "source": "https://alfredapp.com/powerpack/buy/",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Sold as a one-time licence; canonical monthly amount is null.",
+    "native": "one-time",
+    "kind": "one-time",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Single Licence",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 user on up to 2 Macs; includes Alfred 5 Powerpack features and Alfred 5 updates.",
+        "notes": "One-time £34, converted to $45.87 at ECB reference rates on 2026-08-13; future major versions are not included."
+      },
+      {
+        "name": "Mega Supporter",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 user on all personally owned Macs; lifetime upgrades to future Alfred versions.",
+        "notes": "One-time £59, converted to $79.60 at ECB reference rates on 2026-08-13."
+      },
+      {
+        "name": "Corporate",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Multiple activations; public numeric price and activation counts are not stated.",
+        "notes": "Contact Alfred for volume licensing."
+      }
+    ],
+    "freeTierCaps": "No free Powerpack tier; the Alfred core app is free and has no published numeric usage cap.",
+    "billingTerms": "one-time licences; no monthly or annual plan",
+    "priceChanges": [],
+    "hiddenCosts": "The cheaper Single Licence covers only 2 Macs and excludes future major-version upgrades; Mega Supporter is required for all personal Macs and lifetime upgrades.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.alfredapp.com/powerpack/buy/",
+      "https://www.alfredapp.com/help/powerpack/license-types/",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Alfred Powerpack, build a local launcher with search, snippets, clipboard history, and workflows. The hard boundary is years of macos integration, workflow ecosystem, reliability, and community, plus os integration polish and maintenance.",
+  "coreLoopDIY": "Build a local launcher with search, snippets, clipboard history, and workflows, expose keyboard-first controls, and store settings locally.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS 14 or later",
+    "Xcode",
+    "only the permissions required by the selected feature"
+  ],
+  "whatYouLose": [
+    "years of macOS integration, workflow ecosystem, reliability, and community",
+    "years of OS-version edge cases",
+    "large extension ecosystem",
+    "cross-device sync",
+    "commercial support and rapid compatibility fixes"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "network-effects"
+  ],
+  "moatNotes": "OS integration polish and maintenance",
+  "replacementScope": "single-purpose local Mac app",
+  "ongoingBurden": "permissions, accessibility APIs, sandboxing, signing, notarization, OS regressions, updates, backups, and support",
+  "whyPeopleStillPay": "People still pay for Alfred Powerpack because small utilities are technically reproducible, but customers pay for polish and immediate fixes when an OS update breaks a daily habit. The recurring cost buys permissions, accessibility APIs, sandboxing, signing, notarization, OS regressions, updates, backups, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Espanso",
+      "url": "https://github.com/espanso/espanso",
+      "desc": "Active open-source cross-platform text expansion utility with system integration."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Raycast Free",
+      "url": "https://www.raycast.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "desc": "Alfred's launcher, snippets, clipboard, and extension store are free; sync and hosted AI are where the invoice starts.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "SuperCmd v1",
+      "url": "https://github.com/SuperCmdLabs/SuperCmd",
+      "type": "open-source",
+      "repo": "https://github.com/SuperCmdLabs/SuperCmd",
+      "platforms": [
+        "macos"
+      ],
+      "desc": "The still-maintained open-source v1 has extensions, clipboard, snippets, windows, and bring-your-own AI; v2 is paid.",
+      "stars": 3062,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Sol",
+      "url": "https://sol.ospfranco.com/",
+      "desc": "A good launcher with clipboard and scripts, but no text-snippet expansion."
+    }
+  ],
+  "relatedSlugs": [
+    "setapp",
+    "bartender",
+    "bettertouchtool"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Powerpack Single User plan and a single-purpose local Mac app DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Alfred Powerpack in an empty repository.\nUse Swift 6, SwiftUI, AppKit where necessary, SQLite, and the macOS Keychain; do not offer alternative stacks.\nThe core loop is: build a local launcher with search, snippets, clipboard history, and workflows, expose keyboard-first controls, and store settings locally.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a menu-bar app with a searchable command window and global hotkey.\nImplement only the primary feature and one settings screen instead of a plugin platform.\nRequest permissions just in time and explain why each is needed before opening System Settings.\nStore configuration locally, support export or import, and never capture unrelated user content.\nAdd launch-at-login, update-check opt-in, diagnostics export, and a complete uninstall note.\nWrite unit tests for transformation logic and one UI test for the core keyboard workflow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a third-party extension marketplace.\nDeliberately leave out cloud accounts and cross-device sync.\nDeliberately leave out broad automation that executes untrusted scripts.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

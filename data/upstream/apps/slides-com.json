@@ -1,0 +1,146 @@
+{
+  "slug": "slides-com",
+  "name": "Slides.com",
+  "domain": "slides.com",
+  "appURL": "https://slides.com",
+  "category": "presentations",
+  "subcategory": "web presentations",
+  "tagline": "Hosted HTML presentations with collaboration, embeds, and developer controls",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://slides.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Permanent free account; numeric deck and storage caps are not published on the live pricing page.",
+        "notes": "Free work is public."
+      },
+      {
+        "name": "Lite",
+        "monthly": 7,
+        "annualPerMonth": 5,
+        "per": "user",
+        "limits": "1 GB storage; 1 collaborator/deck; 50 AI credits/month.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 14,
+        "annualPerMonth": 10,
+        "per": "user",
+        "limits": "Unlimited storage; 3 collaborators/deck; 400 AI credits/month.",
+        "notes": null
+      },
+      {
+        "name": "Team",
+        "monthly": 28,
+        "annualPerMonth": 20,
+        "per": "workspace",
+        "limits": "Includes 2 users; unlimited collaborators; 400 AI credits/user/month.",
+        "notes": "Extra users cost $14/month each or $10/month each on annual billing."
+      },
+      {
+        "name": "Custom",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom users, SSO and support; numeric limits and price are quote-based.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "permanent free account; numeric deck/storage caps not published; presentations are public",
+    "billingTerms": "monthly + annual; annual rates are more than 25% lower",
+    "priceChanges": [],
+    "hiddenCosts": "Team includes only 2 users, then charges $14/user/month or $10/user/month annually for each additional user",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://slides.com/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Slides.com's solo core is compact: build a browser-based web presentations editor with drag, resize, connect, keyboard shortcuts, autosave, and SVG or PNG export. A competent builder can reach a useful personal version in one sitting, while the paid product mainly wins on interaction polish, collaboration.",
+  "coreLoopDIY": "Build a browser-based web presentations editor with drag, resize, connect, keyboard shortcuts, autosave, and SVG or PNG export.",
+  "diyTimeEstimate": "one sitting",
+  "replacementScope": "personal replacement for the core loop",
+  "requirements": [
+    "Node.js 22",
+    "modern browser",
+    "no account required"
+  ],
+  "whatYouLose": [
+    "multiplayer cursors and comments",
+    "large template libraries",
+    "high-fidelity import and export",
+    "presentation and enterprise controls"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "collaboration"
+  ],
+  "moatNotes": "interaction polish/collaboration",
+  "whyPeopleStillPay": "Slides.com: The shapes are easy; customers pay for low-friction editing, reliable exports, collaboration, and a canvas that never fights them.",
+  "ongoingBurden": "Own geometry, selection behavior, undo, clipboard interoperability, export fidelity, accessibility, and browser performance.",
+  "priorArt": [
+    {
+      "name": "Excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "desc": "Open-source diagram canvas with an approachable interaction model."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "CryptPad",
+      "url": "https://cryptpad.org/",
+      "type": "open-source",
+      "repo": "https://github.com/cryptpad/cryptpad",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Collaborative browser presentations with sharing, embeds, source editing, and privacy-first storage; fewer designer templates and developer niceties.",
+      "stars": 7825,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "HedgeDoc",
+      "url": "https://hedgedoc.org/",
+      "type": "open-source",
+      "repo": "https://github.com/hedgedoc/hedgedoc",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Write collaborative Markdown and present it through reveal.js, with diagrams, revisions, and exports; ideal when slides are text and code rather than decorative masonry.",
+      "stars": 7355,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "decktopus",
+    "visme",
+    "prezi"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Strong page because Slides.com separates a compact personal workflow from the value of long-term polish.",
+  "prompt": "Build a usable personal replacement for the core loop of Slides.com.\nUse exactly this stack: React + TypeScript + Vite + IndexedDB.\nPrimary job: Build a browser-based web presentations editor with drag, resize, connect, keyboard shortcuts, autosave, and SVG or PNG export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: multiplayer cursors and comments; large template libraries; high-fidelity import and export.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

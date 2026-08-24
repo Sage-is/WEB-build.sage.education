@@ -1,0 +1,122 @@
+{
+  "slug": "artbreeder",
+  "name": "Artbreeder",
+  "domain": "artbreeder.com",
+  "appURL": "https://artbreeder.com",
+  "category": "ai-image",
+  "subcategory": "collaborative generative art",
+  "tagline": "Image mixing, character creation, and generative art exploration",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://artbreeder.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Free core creation access; the official page does not publish a numeric monthly credit allotment",
+        "notes": null
+      },
+      {
+        "name": "Starter",
+        "monthly": null,
+        "annualPerMonth": 7.49,
+        "per": "user",
+        "limits": "1,200 credits/year, estimated by Artbreeder as about 12,000 SDXL images; no ads and private images",
+        "notes": "Annual price is displayed as $7.49/month billed for 12 months; monthly checkout price was not exposed."
+      },
+      {
+        "name": "Advanced",
+        "monthly": null,
+        "annualPerMonth": 15.99,
+        "per": "user",
+        "limits": "3,300 credits/year, estimated as about 33,000 SDXL images; no ads and private images",
+        "notes": "Annual billing."
+      },
+      {
+        "name": "Champion",
+        "monthly": null,
+        "annualPerMonth": 30.99,
+        "per": "user",
+        "limits": "8,400 credits/year, estimated as about 84,000 SDXL images; no ads and private images",
+        "notes": "Annual billing."
+      }
+    ],
+    "freeTierCaps": "Free core access exists, but the current official page does not publish a numeric recurring free-credit cap.",
+    "billingTerms": "annual pricing verified; a monthly toggle exists, but exact monthly USD prices were not exposed publicly",
+    "priceChanges": [],
+    "hiddenCosts": "Claimed/bonus credits can expire at the next subscription rollover. Credit cost varies by operation; enhancements cost 0.1 credit while base generation treatment differs for subscribers.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.artbreeder.com/pricing",
+      "https://www.artbreeder.com/achievements",
+      "https://www.artbreeder.com/updates"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. Artbreeder's durable value is proprietary model, inference, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build the closest honest personal collaborative generative art console around a locally available image model, with prompt history and file export.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "GPU-capable machine or user-provided inference API",
+    "Python 3.12",
+    "model weights obtained under their own licence",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "the vendor's proprietary model quality",
+    "licensed training data and style tuning",
+    "fast elastic inference",
+    "safety, moderation, and mobile distribution",
+    "high-fidelity color, format, and export handling"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "scale-infra"
+  ],
+  "moatNotes": "proprietary model/inference",
+  "whyPeopleStillPay": "Artbreeder: The interface is replaceable. The subscription buys the model, aesthetic tuning, inference fleet, safety work, and rapid improvement.",
+  "ongoingBurden": "Own model downloads, GPU compatibility, queueing, safety choices, storage, and changing model licences.",
+  "priorArt": [
+    {
+      "name": "ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "desc": "Node-based open-source generative image workflow engine."
+    },
+    {
+      "name": "Stable Diffusion WebUI",
+      "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+      "desc": "Widely used local Stable Diffusion interface and extension ecosystem."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "ComfyUI",
+      "url": "https://comfy.org/",
+      "desc": "It can blend images if you build the graph; there is no finished gene-slider, lineage, or exploration product here."
+    }
+  ],
+  "relatedSlugs": [
+    "openart",
+    "seaart",
+    "getimg-ai"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Artbreeder survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Artbreeder; do not claim to replace its structural moat.\nUse exactly this stack: Python 3.12 + FastAPI + ComfyUI API + React.\nPrimary job: Build the closest honest personal collaborative generative art console around a locally available image model, with prompt history and file export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: the vendor's proprietary model quality; licensed training data and style tuning; fast elastic inference.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

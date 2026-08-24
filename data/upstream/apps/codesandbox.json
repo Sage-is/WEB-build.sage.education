@@ -1,0 +1,170 @@
+{
+  "slug": "codesandbox",
+  "name": "CodeSandbox",
+  "domain": "codesandbox.io",
+  "category": "dev-tools",
+  "subcategory": "cloud dev environments",
+  "tagline": "Cloud development environments and browser-based coding sandboxes",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "12 USD",
+    "source": "https://codesandbox.io/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; public pricing references list Pro around $12/month with annual options lower."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can self-host a browser IDE, but fast templates, previews, cloud VMs, collaboration, and workflow integrations are the product.",
+  "coreLoopDIY": "Run code-server or dev containers, expose preview URLs, sync git repos, and add templates.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "container host",
+    "code-server/devcontainer tooling",
+    "reverse proxy",
+    "git integration",
+    "auth"
+  ],
+  "whatYouLose": [
+    "instant templates",
+    "cloud sandboxes",
+    "preview URLs",
+    "collaboration",
+    "managed infrastructure",
+    "integration polish"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "collaboration"
+  ],
+  "moatNotes": "cloud platform/collaboration",
+  "whyPeopleStillPay": "They pay to avoid managing dev machines for experiments and previews.",
+  "priorArt": [
+    {
+      "name": "code-server",
+      "url": "https://github.com/coder/code-server",
+      "desc": "Open-source VS Code in browser; building block for a self-hosted sandbox.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "code-server",
+      "url": "https://coder.com/docs/code-server",
+      "type": "open-source",
+      "repo": "https://github.com/coder/code-server",
+      "platforms": [
+        "web",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "VS Code in a browser; the cloud part is your server.",
+      "stars": 78643,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Official install script, package, Docker image, or Helm chart on a Linux server",
+        "engines": null,
+        "dataFormat": "Repositories, terminals, extensions, and VS Code user data live on the host/server filesystem and mounted home directories",
+        "gapVsPaid": "It is only VS Code running on a server you operate, without CodeSandbox's instant disposable sandboxes, automatic previews, forks, share links, and managed collaboration.",
+        "setupBlocker": "Requires a server with roughly 1 GB RAM and two CPU cores, plus WebSocket-capable HTTPS/reverse-proxy and authentication configuration before exposing it publicly",
+        "sources": [
+          "https://github.com/coder/code-server",
+          "https://github.com/coder/code-server/blob/main/LICENSE",
+          "https://coder.com/docs/code-server/install",
+          "https://coder.com/docs/code-server/guide",
+          "https://codesandbox.io/",
+          "https://codesandbox.io/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Coder",
+      "url": "https://coder.com/",
+      "type": "open-source",
+      "repo": "https://github.com/coder/coder",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Full cloud workspaces on your infrastructure; Terraform and PostgreSQL come along for the ride.",
+      "stars": 13300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Install the Coder control plane, connect PostgreSQL, then provision workspaces from Terraform templates; Helm is available for Kubernetes",
+        "engines": "Coder's AI agent integrations support Anthropic, OpenAI, Google, Azure OpenAI, AWS Bedrock, OpenAI-compatible endpoints, OpenRouter, and Vercel AI Gateway",
+        "dataFormat": "Users' source and build artifacts live in the provisioned workspace disks, volumes, or cloud resources; Coder configuration, users, audit/control-plane state, and template/Terraform state live in PostgreSQL",
+        "gapVsPaid": "Coder is an infrastructure platform for durable workspaces, not an instant public browser sandbox, so setup, templates, and cloud resources replace CodeSandbox's one-click experience.",
+        "setupBlocker": "The first obstacle is infrastructure, not the IDE: PostgreSQL, Terraform templates, cloud or cluster credentials, persistent workspace storage, and a reachable TLS URL are required",
+        "sources": [
+          "https://github.com/coder/coder",
+          "https://github.com/coder/coder/blob/main/LICENSE",
+          "https://coder.com/docs/install",
+          "https://coder.com/docs/admin/infrastructure/architecture",
+          "https://coder.com/docs/ai-coder/agents/getting-started",
+          "https://codesandbox.io/",
+          "https://codesandbox.io/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Eclipse Che",
+      "url": "https://www.eclipse.org/che/",
+      "type": "open-source",
+      "repo": "https://github.com/eclipse-che/che",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A real browser IDE platform, assuming Kubernetes already counts as normal in your house.",
+      "stars": 7200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "EPL-2.0",
+        "runs": "self-hosted",
+        "install": "Install the Che Operator on an existing Kubernetes or OpenShift cluster",
+        "engines": null,
+        "dataFormat": "Source normally lives in Git and checked-out workspace containers; persistent workspace data uses Kubernetes persistent volumes, while devfiles and platform configuration live in the cluster",
+        "gapVsPaid": "Che requires Kubernetes and substantial platform administration, and it cannot match CodeSandbox's quick shareable playgrounds, automatic previews, and low-friction onboarding.",
+        "setupBlocker": "A functioning Kubernetes/OpenShift cluster is a prerequisite, followed by operator, ingress, storage class, TLS, identity, quotas, and devfile administration",
+        "sources": [
+          "https://github.com/eclipse-che/che",
+          "https://github.com/eclipse-che/che/blob/main/LICENSE",
+          "https://eclipse.dev/che/docs/stable/administration-guide/installing-che/",
+          "https://eclipse.dev/che/docs/stable/overview/introduction-to-eclipse-che/",
+          "https://codesandbox.io/",
+          "https://codesandbox.io/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "vercel",
+    "netlify",
+    "webflow"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful for builders deciding whether to roll a cloud IDE stack.",
+  "prompt": "Build me a personal cloud dev environment to replace CodeSandbox.\nRequirements:\n\n- Do not write an IDE. Set up code-server (VS Code in the browser) on my\n  VPS via its official install script, running under systemd, bound to\n  localhost.\n- Access over Tailscale or an SSH tunnel only; no public exposure, built-in\n  password auth switched off. That is the whole security model, keep it\n  that simple.\n- A sandbox CLI: sandbox new <name> --template node|python|static copies a\n  folder from templates/ into ~/sandboxes/<name>, runs its install step,\n  and prints the code-server URL opened to it.\n- Three templates: node (Express hello world + nodemon), python (venv +\n  Flask), static (index.html served with live-server).\n- Previews: each sandbox's dev server gets its own port, reachable through\n  the same tunnel; a tiny index page lists sandboxes and their ports.\n- sandbox rm <name> archives the folder to a tarball before deleting it.\n- No accounts, no telemetry; everything lives on my own server.\n- Out of scope: multi-user collaboration, instant VM forking, and public\n  preview URLs; managed infrastructure is the hosted product.\n- README: install steps, tunnel setup, and how to add a template.",
+  "promptCurated": false
+}

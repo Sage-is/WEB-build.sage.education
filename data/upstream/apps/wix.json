@@ -1,0 +1,285 @@
+{
+  "slug": "wix",
+  "name": "Wix",
+  "domain": "wix.com",
+  "category": "website-builder",
+  "subcategory": "hosted websites",
+  "tagline": "Website builder with templates, AI tools, ecommerce, bookings, and apps",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Core",
+    "basis": "annual effective per month",
+    "unit": "flat",
+    "native": "29 USD",
+    "source": "https://www.wix.com/plans",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official plan URL checked; 2026 public coverage lists Core around $29/month annual-effective, with monthly pricing/promos varying.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Up to 999 free sites; each site has 500 MB storage and 1 GB bandwidth on a wixsite.com URL, with Wix branding; no custom domain or online payments",
+        "notes": "Free sites are indefinite and include hosting, templates, CMS and basic business tools."
+      },
+      {
+        "name": "Light",
+        "monthly": 24,
+        "annualPerMonth": 17,
+        "per": "workspace",
+        "limits": "1 site; 2 GB storage; 2 site collaborators; custom domain and Wix-branding removal; no payment acceptance",
+        "notes": "Per-site subscription. The annual plan is prepaid; a domain voucher is included for the first year."
+      },
+      {
+        "name": "Core",
+        "monthly": 36,
+        "annualPerMonth": 29,
+        "per": "workspace",
+        "limits": "1 site; 50 GB storage; 5 collaborators; payments, basic ecommerce, scheduling and basic marketing suite",
+        "notes": "Per-site subscription."
+      },
+      {
+        "name": "Business",
+        "monthly": 46,
+        "annualPerMonth": 39,
+        "per": "workspace",
+        "limits": "1 site; 100 GB storage; 10 collaborators; standard ecommerce, scheduling and marketing suite",
+        "notes": "Per-site subscription."
+      },
+      {
+        "name": "Business Elite",
+        "monthly": 172,
+        "annualPerMonth": 159,
+        "per": "workspace",
+        "limits": "1 site; unlimited storage; 100 collaborators; advanced ecommerce, marketing, scheduling and developer-platform features",
+        "notes": "Per-site subscription."
+      }
+    ],
+    "freeTierCaps": "Up to 999 free sites; 500 MB storage and 1 GB bandwidth per site; wixsite.com URL and Wix branding; no custom domain or online payments",
+    "billingTerms": "free + monthly, annual and longer paid terms; annual prices are monthly equivalents charged upfront; 14-day money-back guarantee",
+    "priceChanges": [],
+    "hiddenCosts": "Each paid plan covers 1 site; domain renewal after the first-year voucher, business email, email-marketing allowances and many App Market products cost extra; payment processing, cross-border, currency-conversion, refund and chargeback fees apply by country; taxes are extra",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.wix.com/plans",
+      "https://www.wix.com/blog/is-wix-free",
+      "https://support.wix.com/en/article/wix-payments-service-fees"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A custom site is buildable; Wix as a platform includes editor, templates, apps, ecommerce/bookings, hosting, domains, and a huge long-tail feature surface.",
+  "coreLoopDIY": "Build the specific site directly with a framework or static generator and deploy it with forms/bookings/payments as needed.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "hosting",
+    "domain/DNS",
+    "template/theme",
+    "CMS",
+    "form/payment/booking APIs if required"
+  ],
+  "whatYouLose": [
+    "drag-and-drop editor",
+    "app marketplace",
+    "ecommerce/bookings",
+    "templates",
+    "hosting/domains",
+    "support",
+    "mobile apps"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish",
+    "content-rights"
+  ],
+  "moatNotes": "templates/platform/hosting",
+  "whyPeopleStillPay": "They pay because one website project tends to become ten maintenance requests.",
+  "priorArt": [
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web builder library for visual page editing.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Microweber",
+      "url": "https://microweber.org",
+      "type": "open-source",
+      "repo": "https://github.com/microweber/microweber",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Drag-and-drop websites and ecommerce with a real installer; the app market is smaller and the server is yours.",
+      "stars": 3431,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Hosted signup, or upload the PHP package to a web host and complete its browser installer",
+        "engines": null,
+        "dataFormat": "Site content and settings in a supported SQL database; images and other uploads in server storage",
+        "gapVsPaid": "Microweber has a much smaller app and template ecosystem and none of Wix's managed AI-and-operations convenience.",
+        "setupBlocker": "Self-hosting needs compatible PHP extensions, URL rewriting, a database and correct filesystem permissions",
+        "sources": [
+          "https://github.com/microweber/microweber",
+          "https://github.com/microweber/microweber/blob/master/LICENSE",
+          "https://github.com/microweber/microweber/blob/master/composer.json",
+          "https://microweber.com/download",
+          "https://github.com/microweber/microweber-user-guide",
+          "https://www.wix.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Odoo Community",
+      "url": "https://www.odoo.com/page/community",
+      "type": "open-source",
+      "repo": "https://github.com/odoo/odoo",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Website, ecommerce, CRM and business apps in one free suite; bookings and AI polish are less straightforward.",
+      "stars": 53527,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Use Odoo's packaged installer, source install or Docker image, backed by PostgreSQL",
+        "engines": null,
+        "dataFormat": "Business and website records in PostgreSQL; uploaded attachments in Odoo's filestore",
+        "gapVsPaid": "Odoo's website builder, templates, bookings and AI assistance are less polished and approachable than Wix's, while the suite is far more complex.",
+        "setupBlocker": "A production deployment needs PostgreSQL, workers/reverse proxy configuration, backups and ongoing administration of a very large suite",
+        "sources": [
+          "https://github.com/odoo/odoo",
+          "https://github.com/odoo/odoo/blob/19.0/LICENSE",
+          "https://www.odoo.com/documentation/19.0/administration/on_premise/packages.html",
+          "https://www.odoo.com/documentation/19.0/administration/on_premise/source.html",
+          "https://www.wix.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Square Online",
+      "url": "https://squareup.com/us/en/online-store",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A hosted site, unlimited-product store and solo booking system free; design freedom and country coverage are narrower.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a Square account and website from Square Dashboard",
+        "engines": null,
+        "dataFormat": "Catalog, site content, customers, orders and payments in Square's managed cloud",
+        "gapVsPaid": "Square Online offers much narrower design freedom and app coverage than Wix and locks checkout and availability to Square's supported markets.",
+        "setupBlocker": "A verified Square business account in a supported country is required, and checkout remains tied to Square",
+        "sources": [
+          "https://squareup.com/us/en/online-store",
+          "https://squareup.com/help/us/en/article/6852-get-started-with-square-online-store",
+          "https://squareup.com/help/us/en/article/7014-accept-payments",
+          "https://www.wix.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Vvveb",
+      "url": "https://www.vvveb.com",
+      "type": "open-source",
+      "repo": "https://github.com/givanz/Vvveb",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A visual CMS, forms, blog, shop and extensions in one install; AI hand-holding and managed operations are gone.",
+      "stars": 1200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Download and upload the PHP release, open the site URL, and complete the browser installer",
+        "engines": null,
+        "dataFormat": "Content, products, orders and settings in MySQL/MariaDB, SQLite or PostgreSQL; media and downloadable files on the server filesystem",
+        "gapVsPaid": "Vvveb has a far smaller extension/template ecosystem and no Wix-style managed AI, bookings or operational hand-holding.",
+        "setupBlocker": "PHP hosting, a database, writable files, mail and payment configuration, plus ongoing server updates",
+        "sources": [
+          "https://github.com/givanz/Vvveb",
+          "https://github.com/givanz/Vvveb/blob/master/LICENSE",
+          "https://www.vvveb.com",
+          "https://docs.vvveb.com/",
+          "https://www.wix.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "WordPress",
+      "url": "https://wordpress.org",
+      "type": "open-source",
+      "repo": "https://github.com/WordPress/wordpress-develop",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The universal site platform with themes, plugins and an editor; bookings and commerce mean choosing more plugins.",
+      "stars": 3400,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "self-hosted",
+        "install": "Use a host's one-click installer or upload WordPress and connect it to MySQL/MariaDB",
+        "engines": null,
+        "dataFormat": "Posts, users, settings and metadata in SQL; themes, plugins and media in wp-content on the server filesystem",
+        "gapVsPaid": "WordPress does not bundle Wix's managed AI, app marketplace, bookings, commerce and support; reproducing them means choosing and maintaining plugins.",
+        "setupBlocker": "The reader must choose hosting, domain, theme and plugins, then own security, backups and updates",
+        "sources": [
+          "https://wordpress.org/",
+          "https://wordpress.org/download/",
+          "https://github.com/WordPress/wordpress-develop",
+          "https://github.com/WordPress/wordpress-develop/blob/trunk/src/license.txt",
+          "https://www.wix.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "A library used to build visual editors, not a Wix replacement a normal person can sign up for."
+    }
+  ],
+  "relatedSlugs": [
+    "github-copilot",
+    "cursor",
+    "replit"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good to compare with Webflow/Framer and show the DIY site-vs-builder distinction.",
+  "prompt": "Build me a website for my business to replace Wix · the one site I need, not a site builder. Requirements:\n\n- An Astro static site: home, services, about, contact. Copy lives in Markdown and\n  YAML data files so text edits never touch layout code.\n- One mobile-first stylesheet with CSS custom properties for brand colors and type.\n  No CSS framework, no page-builder abstraction.\n- Contact form POSTs to a small Express handler: emails me via SMTP creds in .env\n  and appends to data/messages.jsonl. Honeypot for spam.\n- SEO basics at build time: sitemap.xml, robots.txt, per-page title/meta/OG tags,\n  and a JSON-LD LocalBusiness block with hours and address.\n- npm run build then rsync dist/ to my VPS, served by Caddy with automatic HTTPS.\n- No accounts, no telemetry, no admin panel; content edits are git commits.\n- If I need appointment booking, link to my scheduling tool; do not build a booking\n  engine into this site.\n- Out of scope: drag-and-drop editing, the app marketplace, and ecommerce. If the\n  business needs a real store, that is a Shopify problem, not this build.\n- README: DNS records, Caddy snippet, and exactly which files to edit for common\n  copy changes.",
+  "promptCurated": false
+}

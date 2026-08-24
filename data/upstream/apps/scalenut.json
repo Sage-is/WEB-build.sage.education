@@ -1,0 +1,120 @@
+{
+  "slug": "scalenut",
+  "name": "Scalenut",
+  "domain": "scalenut.com",
+  "appURL": "https://scalenut.com",
+  "category": "ai-writing",
+  "subcategory": "AI drafting, research and content optimization",
+  "tagline": "Research a topic, build a content brief, and draft against selected SERP concepts",
+  "priceMonthly": 59,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://www.scalenut.com/pricing",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Entry plan amount; annual billing is commonly discounted.",
+    "native": "59 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 59,
+        "annualPerMonth": 24,
+        "per": "workspace",
+        "limits": "10 prompts tracked weekly; 1 workspace/domain; monthly: 5 GEO articles, 5 optimizations, 5 clusters, 25 images.",
+        "notes": "Annual price is a live limited-time offer; annual limits are doubled."
+      },
+      {
+        "name": "Plus",
+        "monthly": 89,
+        "annualPerMonth": 36,
+        "per": "workspace",
+        "limits": "25 prompts tracked weekly; 2 workspaces; monthly: 30 articles, 30 optimizations, 30 clusters, 200 audited pages, 4 members, 100 images, 50,000 humanizer words.",
+        "notes": "Annual price is a live limited-time offer; annual limits are doubled."
+      },
+      {
+        "name": "Professional",
+        "monthly": 199,
+        "annualPerMonth": 80,
+        "per": "workspace",
+        "limits": "100 prompts tracked weekly; unlimited workspaces/members; monthly: 75 articles, 75 optimizations, 75 clusters, 1,000 audited pages, 300 images, 50,000 humanizer words.",
+        "notes": "Annual price is a live limited-time offer. One pricing-card line conflicts on cluster count; 75 is taken from the comparison table."
+      },
+      {
+        "name": "VIP Service",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Managed/custom service scope and limits.",
+        "notes": "Custom price."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; 7-day free trial",
+    "billingTerms": "monthly + annual; annual toggle currently shows a limited-time 60%-off offer",
+    "priceChanges": [],
+    "hiddenCosts": "The annual prices are promotional and can change. Usage is capped by articles, optimizations, clusters, prompts, audits, images, and team/workspace allowances; promotional purchases may have stricter refund terms.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.scalenut.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Scalenut, research a topic, build a content brief, and draft against selected SERP concepts. The hard boundary is seo datasets, topic clustering, workflow automation, and team features, plus workflow, data, and model tuning.",
+  "coreLoopDIY": "Research a topic, build a content brief, draft against selected SERP concepts and user-supplied sources, and keep citations and revisions attached to each section.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "OpenAI API key",
+    "Node.js 22",
+    "local or self-hosted deployment",
+    "user-supplied sources"
+  ],
+  "whatYouLose": [
+    "SEO datasets, topic clustering, workflow automation, and team features",
+    "proprietary ranking data",
+    "brand-trained models",
+    "team workflows",
+    "large template libraries"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "execution-polish"
+  ],
+  "moatNotes": "workflow, data, and model tuning",
+  "replacementScope": "personal content workstation",
+  "ongoingBurden": "prompt maintenance, retrieval quality, source handling, provider changes, and editorial QA",
+  "whyPeopleStillPay": "People still pay for Scalenut because the subscription bundles a refined workflow, proprietary signals, templates, and predictable output quality for a team. The recurring cost buys prompt maintenance, retrieval quality, source handling, provider changes, and editorial QA, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Open WebUI",
+      "url": "https://github.com/open-webui/open-webui",
+      "desc": "Active open-source interface for local and API-backed language models with retrieval features."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Open WebUI",
+      "url": "https://openwebui.com/",
+      "desc": "A general AI workbench with web search, not a SERP-concept research and brief-optimization product."
+    },
+    {
+      "name": "Vane",
+      "url": "https://github.com/ItzCrazyKns/Vane",
+      "desc": "It searches and cites the web, but it does not inspect SERPs, score concepts, or turn them into an SEO content brief."
+    }
+  ],
+  "relatedSlugs": [
+    "writesonic",
+    "copy-ai",
+    "anyword"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Essential plan and a personal content workstation DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Scalenut in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and the OpenAI Responses API; do not offer alternative stacks.\nThe core loop is: research a topic, build a content brief, draft against selected SERP concepts and user-supplied sources, and keep citations and revisions attached to each section.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nBuild a brief form with audience, objective, tone, source URLs, and prohibited claims.\nStore imported source text locally and chunk it for retrieval with SQLite FTS5.\nGenerate an outline first and require approval before drafting sections.\nAttach source references to generated paragraphs and flag unsupported claims.\nProvide rewrite controls for shorten, clarify, change tone, and add evidence.\nExport clean Markdown plus a JSON research bundle.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out live search-engine rank data.\nDeliberately leave out automatic publishing to third-party CMSs.\nDeliberately leave out multi-user approvals and brand governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

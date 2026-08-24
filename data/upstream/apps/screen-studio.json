@@ -1,0 +1,109 @@
+{
+  "slug": "screen-studio",
+  "name": "Screen Studio",
+  "domain": "screen.studio",
+  "appURL": "https://screen.studio",
+  "category": "screen-recording",
+  "subcategory": "screen recording, walkthroughs and product demos",
+  "tagline": "Record a Mac screen and automatically apply cursor zoom, padding, and smooth framing",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Lifetime license",
+    "basis": "one-time",
+    "unit": "one-time",
+    "source": "https://screen.studio/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Sold primarily as a one-time license; priceMonthly is null by design.",
+    "native": "one-time",
+    "kind": "one-time",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Screen Studio",
+        "monthly": 29,
+        "annualPerMonth": 9,
+        "per": "user",
+        "limits": "All recording and editing features; share links; exports up to 4K/60fps",
+        "notes": "The live page now sells a subscription; previously purchased one-time licenses remain governed by their original terms."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; a download/trial is offered but its numeric limits and duration are not publicly stated",
+    "billingTerms": "monthly + annual; annual rate displayed as $9/month",
+    "priceChanges": [],
+    "hiddenCosts": "Current access is subscription-based rather than a new lifetime license; the public page does not state storage or fair-use caps for hosted share links.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://screen.studio/",
+      "https://screen.studio/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Screen Studio, record a Mac screen and automatically apply cursor zoom, padding, and smooth framing. The hard boundary is exceptional macos capture polish, motion design, and ongoing compatibility, plus capture polish, hosting, and collaboration.",
+  "coreLoopDIY": "Record a Mac screen with microphone audio, automatically apply cursor zoom, padding, and smooth framing, trim the result, and export a shareable local video.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS or Windows screen-recording permission",
+    "microphone permission",
+    "ffmpeg",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "exceptional macOS capture polish, motion design, and ongoing compatibility",
+    "instant hosted sharing",
+    "viewer analytics",
+    "team libraries",
+    "cross-device capture"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra"
+  ],
+  "moatNotes": "capture polish, hosting, and collaboration",
+  "replacementScope": "personal desktop recorder",
+  "ongoingBurden": "OS permissions, codecs, rendering performance, uploads, storage, links, and viewer analytics",
+  "whyPeopleStillPay": "People still pay for Screen Studio because the recording itself is easy; the subscription removes upload, transcoding, sharing, organization, and support work. The recurring cost buys OS permissions, codecs, rendering performance, uploads, storage, links, and viewer analytics, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Cap",
+      "url": "https://github.com/CapSoftware/Cap",
+      "desc": "Open-source screen recording and sharing product with modern desktop architecture."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Recordly",
+      "url": "https://recordly.dev",
+      "type": "open-source",
+      "repo": "https://github.com/webadderallorg/Recordly",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Auto-zoom demos with styled frames and installers; young enough that audio still occasionally picks a fight.",
+      "stars": 20439,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Screenize",
+      "url": "https://github.com/syi0808/screenize",
+      "desc": "Promising Screen Studio clone whose maintainer explicitly paused development in May 2026."
+    }
+  ],
+  "relatedSlugs": [
+    "cleanshot-x",
+    "scribe",
+    "vidyard"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Lifetime license plan and a personal desktop recorder DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Screen Studio in an empty repository.\nUse Tauri 2, React, TypeScript, ffmpeg, and SQLite; do not offer alternative stacks.\nThe core loop is: record a Mac screen with microphone audio, automatically apply cursor zoom, padding, and smooth framing, trim the result, and export a shareable local video.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nOffer screen, window, or region capture plus optional microphone audio.\nShow an always-visible recording timer and make stop available from the tray.\nCreate a non-destructive trim view with crop, zoom, cursor highlight, and text callouts.\nRender locally through ffmpeg with sensible H.264 and WebM presets.\nGenerate a poster frame, transcript, and Markdown summary beside each video.\nProvide copy-file-path and reveal-in-folder actions instead of mandatory cloud upload.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out public cloud hosting.\nDeliberately leave out viewer identity and engagement analytics.\nDeliberately leave out enterprise workspaces and SSO.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

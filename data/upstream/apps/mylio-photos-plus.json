@@ -1,0 +1,126 @@
+{
+  "slug": "mylio-photos-plus",
+  "name": "Mylio Photos Plus",
+  "domain": "mylio.com",
+  "appURL": "https://mylio.com",
+  "category": "photo-editing",
+  "subcategory": "photo organization, culling and editing",
+  "tagline": "Catalog local and network photos with duplicates, tags, and device-aware storage",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Individual",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://mylio.com/signup-personal/",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical month-to-month Photos Plus price.",
+    "native": "25 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "1 device; unlimited files; no storage or time limit.",
+        "notes": null
+      },
+      {
+        "name": "Individual",
+        "monthly": 25,
+        "annualPerMonth": 20,
+        "per": "flat",
+        "limits": "1 user; unlimited devices and files.",
+        "notes": "Annual is $240; 2-year prepaid option is $360 ($15/month equivalent)."
+      },
+      {
+        "name": "Duo",
+        "monthly": 40,
+        "annualPerMonth": 32,
+        "per": "flat",
+        "limits": "2 users; unlimited devices and files.",
+        "notes": "Annual is $384; 2-year prepaid option is $576 ($24/month equivalent)."
+      },
+      {
+        "name": "Family",
+        "monthly": 50,
+        "annualPerMonth": 40,
+        "per": "flat",
+        "limits": "Up to 5 users; unlimited devices and files.",
+        "notes": "Annual is $480; 2-year prepaid option is $720 ($30/month equivalent)."
+      }
+    ],
+    "freeTierCaps": "1 device with unlimited local files and no time limit",
+    "billingTerms": "monthly + annual + 2-year prepaid",
+    "priceChanges": [],
+    "hiddenCosts": "The subscription does not include hosted cloud photo capacity; users supply their own drives, NAS or compatible cloud storage.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://mylio.com/signup-personal/",
+      "https://community.mylio.com/posts/faq-how-much-does-mylio-photos-cost",
+      "https://news.mylio.com/mylio-photo-collaborate-share-without-the-cloud/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Mylio Photos Plus, catalog local and network photos with duplicates, tags, and device-aware storage. The hard boundary is multi-device private sync, face recognition, vault strategy, and polished photo workflow, plus image pipeline quality, models, and workflow polish.",
+  "coreLoopDIY": "Catalog local and network photos with duplicate detection, tags, and device-aware storage, generate previews, apply non-destructive adjustments, and export selected originals or rendered copies.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "desktop computer",
+    "local photo library",
+    "sufficient disk space",
+    "optional GPU for AI features"
+  ],
+  "whatYouLose": [
+    "multi-device private sync, face recognition, vault strategy, and polished photo workflow",
+    "proprietary raw-processing quality",
+    "cloud sync and sharing",
+    "large AI models",
+    "camera and print ecosystem"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "image pipeline quality, models, and workflow polish",
+  "replacementScope": "personal local photo catalog",
+  "ongoingBurden": "raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity",
+  "whyPeopleStillPay": "People still pay for Mylio Photos Plus because photographers pay because image quality, catalog safety, and fast handling of huge libraries matter more than cloning sliders. The recurring cost buys raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Immich",
+      "url": "https://github.com/immich-app/immich",
+      "desc": "Active open-source self-hosted photo and video management platform."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "digiKam",
+      "url": "https://www.digikam.org/",
+      "desc": "It nails local and network catalogs, duplicates, tags, and metadata, but has no Mylio-style multi-device vault or storage policy."
+    },
+    {
+      "name": "Immich",
+      "url": "https://immich.app/",
+      "desc": "It syncs devices into one central server; it does not provide Mylio's peer-like device graph, local vaults, or space-aware originals."
+    },
+    {
+      "name": "PhotoPrism",
+      "url": "https://www.photoprism.app/",
+      "desc": "A capable server library, not a device-aware distributed catalog; every device is merely a client of the box."
+    }
+  ],
+  "relatedSlugs": [
+    "adobe-lightroom",
+    "capture-one",
+    "ente-photos"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Photos Plus plan and a personal local photo catalog DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Mylio Photos Plus in an empty repository.\nUse Tauri 2, React, TypeScript, Rust image libraries, SQLite, and local filesystem access; do not offer alternative stacks.\nThe core loop is: catalog local and network photos with duplicate detection, tags, and device-aware storage, generate previews, apply non-destructive adjustments, and export selected originals or rendered copies.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex selected folders without moving or rewriting originals and store only catalog data in SQLite.\nGenerate thumbnails and previews, read EXIF, detect duplicates by hash, and monitor file changes.\nProvide timeline, folders, albums, ratings, flags, tags, search, and side-by-side compare.\nStore edits as reversible parameters for crop, rotate, exposure, contrast, white balance, and saturation.\nRender exports to a new folder with explicit color space, quality, size, and metadata choices.\nAdd catalog backup, missing-file repair, integrity scan, and a clear original-safety guarantee.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a proprietary raw-rendering engine.\nDeliberately leave out hosted cross-device photo sync and client galleries.\nDeliberately leave out frontier culling, retouching, and generative models.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

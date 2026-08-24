@@ -1,0 +1,224 @@
+{
+  "slug": "timely",
+  "name": "Timely",
+  "domain": "timelyapp.com",
+  "appURL": "https://timelyapp.com",
+  "category": "time-tracking",
+  "subcategory": "time tracking, focus and attention",
+  "tagline": "Record opt-in app names locally and turn them into suggested time entries",
+  "priceMonthly": 11,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://timelyapp.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Starter monthly seat price.",
+    "native": "11 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 11,
+        "annualPerMonth": 9,
+        "per": "user",
+        "limits": "20 projects; maximum 5 users.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 20,
+        "annualPerMonth": 16,
+        "per": "user",
+        "limits": "Unlimited projects; maximum 50 users.",
+        "notes": null
+      },
+      {
+        "name": "Unlimited",
+        "monthly": 28,
+        "annualPerMonth": 22,
+        "per": "user",
+        "limits": "Unlimited projects and users.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom seats, security, onboarding, and support.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (about -20%); trial; Enterprise custom",
+    "priceChanges": [],
+    "hiddenCosts": "Tasks is a separate add-on starting at $5/person/month.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://timelyapp.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Timely, record opt-in app names locally and turn them into suggested time entries. The hard boundary is automatic memory timeline, model tuning, cross-device clients, team reporting, and privacy operations, plus ubiquitous capture, coaching, and team workflow.",
+  "coreLoopDIY": "Record opt-in app names locally, turn them into suggested time entries, review patterns locally, and export a transparent activity record.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "desktop OS",
+    "notification permission",
+    "optional accessibility permission for app-name tracking",
+    "local SQLite"
+  ],
+  "whatYouLose": [
+    "automatic memory timeline, model tuning, cross-device clients, team reporting, and privacy operations",
+    "cross-device history",
+    "team timesheets and payroll",
+    "behavioral datasets",
+    "blocking across every platform"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "collaboration"
+  ],
+  "moatNotes": "ubiquitous capture, coaching, and team workflow",
+  "replacementScope": "personal desktop tracker",
+  "ongoingBurden": "idle detection, permissions, app metadata, privacy, notifications, sync, reports, integrations, and backups",
+  "whyPeopleStillPay": "People still pay for Timely because the timer is simple, but people pay for frictionless capture and a history they trust enough to invoice or change habits from. The recurring cost buys idle detection, permissions, app metadata, privacy, notifications, sync, reports, integrations, and backups, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Kimai",
+      "url": "https://github.com/kimai/kimai",
+      "desc": "Mature open-source time-tracking application with projects, reports, and exports."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Clockify Free",
+      "url": "https://clockify.me/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Five users get timers and a private auto-tracker; reports stop at 31-day windows and CSV export is paid.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup; install the Windows/macOS/Linux desktop app for automatic activity tracking",
+        "engines": null,
+        "dataFormat": "Saved time entries, projects and reports live in Clockify's cloud; raw auto-tracker app and website activity stays in a local desktop database and is uploaded only when converted into a time entry",
+        "gapVsPaid": "It records timers and a local activity trail, but it does not match Timely's automatic Memory timeline and AI-assisted conversion of observed work into suggested project entries.",
+        "setupBlocker": "An account is required, and automatic tracking needs the desktop app plus operating-system activity permissions",
+        "sources": [
+          "https://clockify.me/pricing",
+          "https://clockify.me/apps",
+          "https://clockify.me/help/track-time-and-expenses/auto-tracker",
+          "https://clockify.me/help/troubleshooting/how-clockify-handles-your-data",
+          "https://www.timely.com/",
+          "https://www.timely.com/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "ManicTime Free",
+      "url": "https://www.manictime.com/solutions/individual",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "One computer gets automatic app, site and document history, tags and timesheet export; cloud sync is the billable part.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Install the native Windows, macOS or Linux desktop package",
+        "engines": null,
+        "dataFormat": "Activity history, tags and reports stay on the computer in local SQLite databases; the Windows client uses ManicTimeCore.db and ManicTimeReports.db",
+        "gapVsPaid": "It shows detailed local activity, but assigning that history to projects is more manual and lacks Timely's polished cloud calendar, planning and AI suggestion workflow.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.manictime.com/solutions/individual",
+          "https://www.manictime.com/download",
+          "https://docs.manictime.com/win-client/faq/database-location",
+          "https://www.timely.com/",
+          "https://www.timely.com/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Toggl Track Free",
+      "url": "https://toggl.com/track/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Fast timers plus a private desktop activity trail you can promote into entries; formal approvals cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup; optionally install the Windows/macOS desktop app, browser extension or mobile app",
+        "engines": null,
+        "dataFormat": "Time entries, projects and reports sync to the Toggl Track cloud account; the private desktop Timeline activity remains on that device unless the user turns it into a time entry",
+        "gapVsPaid": "Its private Timeline is useful evidence rather than Timely-style automatic memory, so reconstructing and categorizing a forgotten day takes more manual work.",
+        "setupBlocker": "An account is required, and passive app/site history needs the desktop app and operating-system permissions",
+        "sources": [
+          "https://toggl.com/track/pricing/",
+          "https://support.toggl.com/en/articles/6163175-timeline",
+          "https://support.toggl.com/en/articles/6163166-toggl-track-desktop-apps",
+          "https://toggl.com/legal/privacy/",
+          "https://www.timely.com/",
+          "https://www.timely.com/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "ActivityWatch",
+      "url": "https://activitywatch.net/",
+      "desc": "It records the raw local history, but leaves the conversion into suggested billable entries to you."
+    }
+  ],
+  "relatedSlugs": [
+    "toggl-track",
+    "harvest",
+    "clockify"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a personal desktop tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Timely in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, and optional OS accessibility APIs; do not offer alternative stacks.\nThe core loop is: record opt-in app names locally, turn them into suggested time entries, review patterns locally, and export a transparent activity record.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate one-click start and stop, manual entries, idle detection, tags, projects, and notes.\nKeep any application-name tracking opt-in and never record window contents or keystrokes.\nAdd Pomodoro-style focus sessions, break reminders, and an optional allowlist blocker.\nProvide daily, weekly, project, and category reports with editable corrections.\nExport CSV and JSON and make the underlying event log inspectable.\nAdd automatic local backups and a privacy screen explaining every collected field.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out employee surveillance.\nDeliberately leave out payroll and billing automation.\nDeliberately leave out cross-device blocking and behavioral coaching services.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

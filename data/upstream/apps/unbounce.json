@@ -1,0 +1,170 @@
+{
+  "slug": "unbounce",
+  "name": "Unbounce",
+  "domain": "unbounce.com",
+  "appURL": "https://unbounce.com",
+  "category": "website-builder",
+  "subcategory": "websites and landing pages",
+  "tagline": "Create a focused landing-page builder and run a small user-controlled A or B test",
+  "priceMonthly": 99,
+  "pricing": {
+    "plan": "Build",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://unbounce.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical entry monthly tier; packaging changes periodically.",
+    "native": "99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 29,
+        "annualPerMonth": 22,
+        "per": "workspace",
+        "limits": "5 landing pages; 500 unique visitors/month; 1 user; 1 root domain; unlimited conversions and subdomains",
+        "notes": "Regular recurring price. Annual billing is charged upfront and advertised as 25% less."
+      },
+      {
+        "name": "Build",
+        "monthly": 99,
+        "annualPerMonth": 74,
+        "per": "workspace",
+        "limits": "Unlimited landing pages; 20,000 unique visitors/month; 1 user; 1 root domain; unlimited conversions and subdomains",
+        "notes": "Regular recurring price."
+      },
+      {
+        "name": "Experiment",
+        "monthly": 149,
+        "annualPerMonth": 112,
+        "per": "workspace",
+        "limits": "Unlimited pages, A/B tests and variants; 30,000 unique visitors/month; 3 users; 2 root domains",
+        "notes": "Regular recurring price."
+      },
+      {
+        "name": "Optimize",
+        "monthly": 249,
+        "annualPerMonth": 187,
+        "per": "workspace",
+        "limits": "Unlimited pages; 50,000 unique visitors/month; 5 users; 3 root domains",
+        "notes": "Regular recurring price."
+      },
+      {
+        "name": "Concierge",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Starts at 100,000 unique visitors/month, 15 users and 5 root domains; dedicated implementation and success support",
+        "notes": "Custom quote and a minimum 12-month commitment, even where installments are monthly."
+      },
+      {
+        "name": "Agency",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Starts at 50,000 unique visitors/month, 5 users and 10 root domains; client-account and agency controls",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day trial, generally 1 user with no custom domain and trial traffic restrictions",
+    "billingTerms": "monthly + annual (-25%); Concierge has a 12-month minimum commitment",
+    "priceChanges": [],
+    "hiddenCosts": "$80 for every extra 10,000 unique visitors, or any part of that block, after the included allowance; professional services are separate, and Concierge remains an annual commitment even when paid in installments",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://unbounce.com/pricing/",
+      "https://unbounce.com/compare-plan-features/",
+      "https://documentation.unbounce.com/hc/en-us/articles/360044911872-What-Happens-if-I-Exceed-The-Traffic-Limit-on-My-Plan",
+      "https://unbounce.com/terms-of-service/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Unbounce, create a focused landing-page builder and run a small user-controlled A or B test. The hard boundary is managed traffic routing, experimentation, integrations, templates, and conversion intelligence, plus editor polish, hosting, templates, and ecosystem.",
+  "coreLoopDIY": "Assemble responsive landing pages, edit copy and media, preview breakpoints, run a small user-controlled A or B test, and publish a static site to a user-owned target.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Node.js 22",
+    "domain and deploy target",
+    "local images",
+    "optional form-email API key"
+  ],
+  "whatYouLose": [
+    "managed traffic routing, experimentation, integrations, templates, and conversion intelligence",
+    "large template marketplace",
+    "managed hosting and CDN",
+    "advanced CMS",
+    "commerce and agency workflows"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish",
+    "content-rights"
+  ],
+  "moatNotes": "editor polish, hosting, templates, and ecosystem",
+  "replacementScope": "single-site builder",
+  "ongoingBurden": "responsive rendering, forms, domains, certificates, deploys, backups, template maintenance, and browser regressions",
+  "whyPeopleStillPay": "People still pay for Unbounce because the page renderer is reproducible, but customers pay to avoid becoming their own hosting and browser-compatibility team. The recurring cost buys responsive rendering, forms, domains, certificates, deploys, backups, template maintenance, and browser regressions, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder designed around web standards."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Mautic",
+      "url": "https://mautic.org",
+      "type": "open-source",
+      "repo": "https://github.com/mautic/mautic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A focused landing-page stack with forms, analytics and user-controlled A/B tests; you operate every moving part.",
+      "stars": 9800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Hosted pages, forms and one A/B test free; enough for a small experiment, not an optimization department.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "The editor framework is free; the experiment runner, analytics and hosting are imaginary."
+    },
+    {
+      "name": "Webstudio",
+      "url": "https://webstudio.is",
+      "desc": "A strong page builder with no built-in free experimentation product."
+    }
+  ],
+  "relatedSlugs": [
+    "duda",
+    "tilda",
+    "typedream"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Build plan and a single-site builder DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Unbounce in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and static export; do not offer alternative stacks.\nThe core loop is: assemble responsive landing pages, edit copy and media, preview breakpoints, run a small user-controlled A or B test, and publish a static site to a user-owned target.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nProvide a section library for hero, proof, features, pricing, FAQ, and footer blocks.\nUse a constrained design-token system rather than arbitrary CSS controls.\nAllow inline text editing and local image upload with responsive optimization.\nPreview desktop, tablet, and mobile widths and surface overflow errors.\nPersist projects in SQLite and support a portable JSON export.\nGenerate a clean static Next.js output and document deployment to one target.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a plugin marketplace.\nDeliberately leave out multi-tenant managed hosting.\nDeliberately leave out advanced ecommerce, memberships, and agency billing.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

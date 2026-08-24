@@ -1,0 +1,254 @@
+{
+  "slug": "lemon-squeezy",
+  "name": "Lemon Squeezy",
+  "domain": "lemonsqueezy.com",
+  "appURL": "https://lemonsqueezy.com",
+  "category": "creator-commerce",
+  "subcategory": "digital products, courses and memberships",
+  "tagline": "Sell a digital product with Stripe while explicitly leaving tax remittance to the creator",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Merchant of record",
+    "basis": "transaction-based",
+    "unit": "usage",
+    "source": "https://lemonsqueezy.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "No fixed monthly subscription; fees are transaction based.",
+    "native": "transaction-based",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Ecommerce",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "No published product or revenue cap; 5% + $0.50 per transaction as merchant of record.",
+        "notes": null
+      },
+      {
+        "name": "Email 0-500 subscribers",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Up to 500 subscribers and 5,000 email sends per calendar month.",
+        "notes": null
+      },
+      {
+        "name": "Email 501+ subscribers",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Pricing scales with total subscriber count above 500; numeric brackets did not render in the live calculator.",
+        "notes": "Monthly and annual billing are offered."
+      },
+      {
+        "name": "Custom / Volume",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom high-volume commerce terms; 0 self-serve prices published.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "Ecommerce has no monthly fee or published usage cap; Email is free up to 500 subscribers and 5,000 sends per calendar month",
+    "billingTerms": "ecommerce is transaction-only; Email offers monthly + annual billing",
+    "priceChanges": [],
+    "hiddenCosts": "Base commerce fee is 5% + $0.50, with +1.5% for international payments, +1.5% for PayPal and +0.5% for subscriptions; non-US Stripe payouts add 1%, PayPal payouts add $0.50 in the US or 3% capped at $30 elsewhere; recovered carts add 5%, merchant affiliate referrals add 3%, and affiliate payouts add 2%; Email send limits are 10× the plan's subscriber allowance, and exceeding the subscriber cap triggers an automatic plan upgrade.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.lemonsqueezy.com/pricing",
+      "https://docs.lemonsqueezy.com/help/getting-started/fees",
+      "https://docs.lemonsqueezy.com/help/email/sending-limits",
+      "https://docs.lemonsqueezy.com/help/email/importing-subscribers"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Lemon Squeezy, sell a digital product with Stripe while explicitly leaving tax remittance to the creator. The hard boundary is merchant-of-record tax, payments, fraud, licensing, subscriptions, and global compliance, plus payments, tax, distribution, and operations.",
+  "coreLoopDIY": "Sell a small catalog of digital products through Stripe, deliver purchased files or lessons, and manage customers from a user-owned storefront, leaving tax remittance explicitly to the creator.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Stripe account",
+    "PostgreSQL",
+    "S3-compatible storage",
+    "public HTTPS deployment",
+    "email provider"
+  ],
+  "whatYouLose": [
+    "merchant-of-record tax, payments, fraud, licensing, subscriptions, and global compliance",
+    "marketplace discovery",
+    "tax remittance",
+    "fraud operations",
+    "advanced course and community tooling"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "scale-infra"
+  ],
+  "moatNotes": "payments, tax, distribution, and operations",
+  "replacementScope": "single-creator storefront",
+  "ongoingBurden": "checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support",
+  "whyPeopleStillPay": "People still pay for Lemon Squeezy because creators pay to outsource the dangerous and tedious parts around money, delivery, tax, and customer access. The recurring cost buys checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "desc": "Active open-source commerce platform with modular checkout and fulfillment primitives."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "CourseLit",
+      "url": "https://courselit.app",
+      "type": "open-source",
+      "repo": "https://github.com/codelitdev/courselit",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Download sales and payment pages without a platform cut; email, storage and tax administration remain on your list.",
+      "stars": 1200,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Docker Compose, with SUPER_ADMIN_EMAIL set before first start",
+        "engines": null,
+        "dataFormat": "Application records in MongoDB; production media uploads use MediaLit plus S3-compatible object storage",
+        "gapVsPaid": "CourseLit does not remit sales tax or provide merchant-of-record operations, and production media/email require separate services.",
+        "setupBlocker": "Docker starts the app, but a production setup also needs SMTP for email login and MediaLit/S3-compatible storage for uploads",
+        "sources": [
+          "https://github.com/codelitdev/courselit",
+          "https://github.com/codelitdev/courselit/blob/main/LICENSE",
+          "https://docs.courselit.app/self-hosting/self-host/",
+          "https://github.com/codelitdev/courselit/blob/main/deployment/docker/docker-compose.yml",
+          "https://www.lemonsqueezy.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Easy Digital Downloads",
+      "url": "https://easydigitaldownloads.com",
+      "type": "open-source",
+      "repo": "https://github.com/awesomemotive/easy-digital-downloads",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A free WordPress download shop using ordinary payment gateways; tax remittance remains your character-building exercise.",
+      "stars": 893,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Digital products, hosted checkout and delivery on a permanent free plan; taxes stay emphatically yours.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Contacts, funnels, course/community content, orders, emails and uploaded files in systeme.io's vendor-managed cloud; the underlying storage format is not published",
+        "gapVsPaid": "systeme.io does not assume merchant-of-record duties or tax remittance, and its checkout is less developer/product focused.",
+        "setupBlocker": "Selling requires connecting a payment gateway; the free plan is capped at 2,000 contacts, three funnels, one course, one community and one custom domain",
+        "sources": [
+          "https://systeme.io/pricing",
+          "https://help.systeme.io/article/4455-how-to-manage-files-on-systeme-io",
+          "https://help.systeme.io/article/300-host-videos",
+          "https://www.lemonsqueezy.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Vvveb",
+      "url": "https://www.vvveb.com",
+      "type": "open-source",
+      "repo": "https://github.com/givanz/Vvveb",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Digital products, licence files and checkout in one self-hosted shop; it will not remit taxes or run itself.",
+      "stars": 1200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Download and upload the PHP release, open the site URL, and complete the browser installer",
+        "engines": null,
+        "dataFormat": "Content, products, orders and settings in MySQL/MariaDB, SQLite or PostgreSQL; media and downloadable files on the server filesystem",
+        "gapVsPaid": "Vvveb does not provide merchant-of-record tax handling, fraud operations or managed checkout; the seller remains the merchant.",
+        "setupBlocker": "PHP hosting, a database, writable files, mail and payment configuration, plus ongoing server updates",
+        "sources": [
+          "https://github.com/givanz/Vvveb",
+          "https://github.com/givanz/Vvveb/blob/master/LICENSE",
+          "https://www.vvveb.com",
+          "https://docs.vvveb.com/",
+          "https://www.lemonsqueezy.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "WooCommerce",
+      "url": "https://woocommerce.com",
+      "type": "open-source",
+      "repo": "https://github.com/woocommerce/woocommerce",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A user-owned digital storefront with no merchant-of-record magic and no platform rent.",
+      "stars": 10400,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "FOSSBilling",
+      "url": "https://fossbilling.org",
+      "desc": "Downloads, licences and billing fit, but the maintainers still call it beta and warn about rough edges."
+    },
+    {
+      "name": "Medusa",
+      "url": "https://medusajs.com",
+      "desc": "A developer commerce platform, not a finished digital-product checkout and delivery product."
+    },
+    {
+      "name": "Polar",
+      "url": "https://polar.sh",
+      "desc": "The hosted version charges 5% plus 50 cents per sale; the free self-hosted route is built for developers."
+    }
+  ],
+  "relatedSlugs": [
+    "gumroad",
+    "paddle",
+    "bigcommerce"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Merchant of record plan and a single-creator storefront DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Lemon Squeezy in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, Stripe Checkout, and S3-compatible storage; do not offer alternative stacks.\nThe core loop is: sell a small catalog of digital products through Stripe, deliver purchased files or lessons, and manage customers from a user-owned storefront, leaving tax remittance explicitly to the creator.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement products, variants, prices, files or lessons, coupons, customers, orders, and entitlements.\nUse Stripe-hosted Checkout and verify every webhook signature and idempotency key.\nGrant access only after confirmed payment and revoke it on refund or chargeback.\nCreate a customer library with signed short-lived download or lesson URLs.\nAdd order search, resend receipt, refund handoff, export, and an immutable event log.\nDocument taxes as the creator's responsibility and do not calculate unsupported jurisdictions.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out merchant-of-record tax remittance.\nDeliberately leave out a buyer marketplace or affiliate network.\nDeliberately leave out advanced communities, certificates, mobile apps, and enterprise learning features.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

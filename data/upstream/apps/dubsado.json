@@ -1,0 +1,142 @@
+{
+  "slug": "dubsado",
+  "name": "Dubsado",
+  "domain": "dubsado.com",
+  "appURL": "https://dubsado.com",
+  "category": "finance-accounting",
+  "subcategory": "client management",
+  "tagline": "Forms, contracts, invoices, scheduling, portals, and business workflows",
+  "priceMonthly": 35,
+  "pricing": {
+    "plan": "Starter",
+    "kind": "fixed",
+    "basis": "monthly",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "35 USD",
+    "source": "https://www.dubsado.com/pricing",
+    "checkedOn": "2026-08-10",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 35,
+        "annualPerMonth": 27.92,
+        "per": "workspace",
+        "limits": "Unlimited clients and projects; 1 active lead-capture form; invoicing, contracts, proposals, and client portals",
+        "notes": "Annual bill is $335."
+      },
+      {
+        "name": "Premier",
+        "monthly": 55,
+        "annualPerMonth": 43.75,
+        "per": "workspace",
+        "limits": "Unlimited clients, projects, and lead-capture forms; workflows and scheduling included",
+        "notes": "Annual bill is $525."
+      }
+    ],
+    "freeTierCaps": "no free tier; 21-day Premier trial with no card required",
+    "billingTerms": "monthly + annual (annual bills of $335 Starter and $525 Premier, roughly 2 months free)",
+    "priceChanges": [],
+    "hiddenCosts": "Each additional brand is $10/month. The first 3 additional users are included; total team-user add-ons are $25/month for 4–10 users, $45 for 11–20, $60 for 21–30, and quote-only above 30.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.dubsado.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. Dubsado's durable value is banking, compliance, trust, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a private client management ledger that imports user-supplied CSV files, categorizes entries, reconciles balances, and exports reports.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "SQLite",
+    "CSV exports from the user's own accounts",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "audited security and recovery",
+    "multi-user controls and accountant workflows",
+    "calendar-provider edge cases and timezone correctness",
+    "live bank feeds and payment rails",
+    "tax and accounting rule updates"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "integrations"
+  ],
+  "moatNotes": "banking/compliance/trust",
+  "whyPeopleStillPay": "Dubsado: People pay because errors touch real money. Bank connections, reconciliation, tax changes, evidence, security, and support are the product.",
+  "ongoingBurden": "Own data integrity, backups, import mapping, reconciliation, security, audit logs, tax changes, and recovery.",
+  "priorArt": [
+    {
+      "name": "Actual Budget",
+      "url": "https://github.com/actualbudget/actual",
+      "desc": "Local-first open-source personal finance and envelope budgeting."
+    },
+    {
+      "name": "Invoice Ninja",
+      "url": "https://github.com/invoiceninja/invoiceninja",
+      "desc": "Open-source invoicing, payments, and client management."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "ERPNext",
+      "url": "https://frappe.io/erpnext",
+      "type": "open-source",
+      "repo": "https://github.com/frappe/erpnext",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Forms, contracts, appointments, payments and client workflows in one ERP; elegance was traded for depth.",
+      "stars": 37700,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Dolibarr",
+      "url": "https://www.dolibarr.org/",
+      "type": "open-source",
+      "repo": "https://github.com/Dolibarr/dolibarr",
+      "platforms": [
+        "web",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Proposals, contracts, agenda, billing and an extranet; configuring the modules is the onboarding sequence.",
+      "stars": 7500,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Agiled Free",
+      "url": "https://agiled.app/",
+      "desc": "Its pricing page admits a free plan exists but never publishes its limits, while its own pages disagree on contracts, proposals and client caps."
+    },
+    {
+      "name": "Fiverr Workspace / AND.CO",
+      "url": "https://www.and.co/",
+      "desc": "The old free freelancer suite now redirects to Fiverr's marketplace; the product page is gone."
+    }
+  ],
+  "relatedSlugs": [
+    "moxie",
+    "indy",
+    "honeybook"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Dubsado survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Dubsado; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a private client management ledger that imports user-supplied CSV files, categorizes entries, reconciles balances, and exports reports.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: audited security and recovery; multi-user controls and accountant workflows; calendar-provider edge cases and timezone correctness.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

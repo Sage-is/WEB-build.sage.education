@@ -1,0 +1,137 @@
+{
+  "slug": "logrocket",
+  "name": "LogRocket",
+  "domain": "logrocket.com",
+  "appURL": "https://logrocket.com",
+  "category": "monitoring",
+  "subcategory": "uptime, errors, logs and status pages",
+  "tagline": "Collect explicit product events and small consented debug snapshots with privacy controls",
+  "priceMonthly": 176,
+  "pricing": {
+    "plan": "Core",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://logrocket.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Team monthly starting price; session volume changes cost.",
+    "native": "176 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Core",
+        "monthly": 176,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Published calculator starting point at 25,000 sessions/month; exact retention and seat limits vary with configuration",
+        "notes": "The $176 figure is the live calculator result for the 25,000-session starting selection, not a universal flat price."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Core session replay plus advanced product analytics and Galileo AI features; volume configured in calculator",
+        "notes": "Quote/calculator priced."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom sessions, retention, support, security and data controls",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day trial only",
+    "billingTerms": "contract/calculator pricing; annual contracts are offered, but no public annual-equivalent amount was exposed",
+    "priceChanges": [],
+    "hiddenCosts": "The bill scales with captured sessions, seats, retention and add-ons; Streaming Export and other enterprise capabilities cost extra, and the base calculator price is not an unlimited-session subscription",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://logrocket.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For LogRocket, collect explicit product events and small consented debug snapshots with privacy controls. The hard boundary is session replay, dom capture, redaction, storage, analytics, and integrations, plus independent infrastructure and reliable alerting.",
+  "coreLoopDIY": "Collect explicit product events and small consented debug snapshots with privacy controls, receive bounded error or log events, alert through one channel, and publish an honest status page.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "server outside the monitored failure domain",
+    "PostgreSQL",
+    "optional ClickHouse",
+    "email or webhook destination",
+    "public HTTPS"
+  ],
+  "whatYouLose": [
+    "session replay, DOM capture, redaction, storage, analytics, and integrations",
+    "global probe network",
+    "phone and SMS delivery",
+    "massive retention",
+    "advanced incident response and support"
+  ],
+  "moatTags": [
+    "scale-infra"
+  ],
+  "moatNotes": "independent infrastructure and reliable alerting",
+  "replacementScope": "small independent monitoring service",
+  "ongoingBurden": "probe geography, clocks, retries, deduplication, sampling, storage, paging, notification delivery, on-call rules, and its own uptime",
+  "whyPeopleStillPay": "People still pay for LogRocket because monitoring must continue working during the exact outage it reports, which makes independent infrastructure and alert delivery the real product. The recurring cost buys probe geography, clocks, retries, deduplication, sampling, storage, paging, notification delivery, on-call rules, and its own uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Uptime Kuma",
+      "url": "https://github.com/louislam/uptime-kuma",
+      "desc": "Popular open-source uptime monitoring dashboard with many check types."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "HyperDX",
+      "url": "https://www.hyperdx.io/",
+      "type": "open-source",
+      "repo": "https://github.com/hyperdxio/hyperdx",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Session replay plus the logs and errors that explain the bad movie.",
+      "stars": 9798,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "PostHog",
+      "url": "https://posthog.com/",
+      "type": "open-source",
+      "repo": "https://github.com/PostHog/posthog",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Product analytics and session replay with a lot of other products attached.",
+      "stars": 37500,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Uptime Kuma",
+      "url": "https://uptime.kuma.pet/",
+      "desc": "It tells you the site is up; it does not replay what the user did before it broke."
+    }
+  ],
+  "relatedSlugs": [
+    "sentry",
+    "uptime"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Team plan and a small independent monitoring service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for LogRocket in an empty repository.\nUse Go, PostgreSQL, ClickHouse, a Next.js 15 dashboard, and Docker Compose; do not offer alternative stacks.\nThe core loop is: collect explicit product events and small consented debug snapshots with privacy controls, receive bounded error or log events, alert through one channel, and publish an honest status page.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement HTTP, TCP, DNS, TLS-expiry, and heartbeat checks with explicit timeout and retry policies.\nRun checks from one independently hosted worker and store raw results plus incident state transitions.\nSend deduplicated alerts to email or one webhook destination with recovery notifications.\nCreate services, maintenance windows, incidents, subscribers, and a public status page.\nAdd bounded event ingestion for application errors with sampling and sensitive-field scrubbing.\nProvide health checks, retention settings, exports, backups, and a test-alert function.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a worldwide probe network.\nDeliberately leave out phone, SMS, and managed on-call escalation.\nDeliberately leave out unbounded logs, enterprise observability, and vendor-operated incident response.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

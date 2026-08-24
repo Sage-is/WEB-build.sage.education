@@ -1,0 +1,132 @@
+{
+  "slug": "taskade",
+  "name": "Taskade",
+  "domain": "taskade.com",
+  "appURL": "https://taskade.com",
+  "category": "tasks",
+  "subcategory": "personal tasks, routines and daily planning",
+  "tagline": "Combine tasks, outlines, simple agents, and collaborative project spaces",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://taskade.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Pro monthly subscription; usage allowances may vary.",
+    "native": "20 USD",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "1 user; 6,000 one-time credits (1,000 verification + 5,000 first build); 3 apps; 1 agent; 3 automations.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 10,
+        "per": "workspace",
+        "limits": "Up to 10 users; 50,000 credits/month; unlimited apps, agents, workspaces, and automations; 100 GB storage.",
+        "notes": "Annual/default price; monthly amount not exposed by the static live page."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": 25,
+        "per": "workspace",
+        "limits": "Unlimited users; 150,000 credits/month; 1 TB storage.",
+        "notes": "Annual/default price; monthly amount not exposed by the static live page."
+      },
+      {
+        "name": "Max",
+        "monthly": null,
+        "annualPerMonth": 100,
+        "per": "workspace",
+        "limits": "Unlimited users and teams; 400,000 credits/month.",
+        "notes": "Annual/default price; monthly amount not exposed by the static live page."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": 250,
+        "per": "workspace",
+        "limits": "Unlimited/custom users; 1.1 million credits/month.",
+        "notes": "Annual/default public price; contact sales for custom terms."
+      }
+    ],
+    "freeTierCaps": "1 user; 6,000 one-time credits (1,000 verification + 5,000 first build); 3 apps; 1 agent; 3 automations; free credits do not renew.",
+    "billingTerms": "monthly + annual (-50% advertised); exact monthly dollar amounts were not exposed by the live static page",
+    "priceChanges": [],
+    "hiddenCosts": "Free credits are one-time and do not renew; additional pay-as-you-go credit packs cost extra, although purchased pack credits do not expire.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.taskade.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Taskade, combine tasks, outlines, simple agents, and collaborative project spaces. The hard boundary is multiplayer, templates, integrations, ai agents, and cross-platform apps, plus cross-device reliability and workflow polish.",
+  "coreLoopDIY": "Capture tasks and outlines in collaborative project spaces, schedule or repeat them, run simple agents, work from a focused today view, and keep history locally.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS, Windows, or Linux",
+    "notification permission",
+    "local SQLite database"
+  ],
+  "whatYouLose": [
+    "multiplayer, templates, integrations, AI agents, and cross-platform apps",
+    "perfect mobile sync",
+    "calendar and email integrations",
+    "shared workspaces",
+    "behavioral coaching polish"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "collaboration"
+  ],
+  "moatNotes": "cross-device reliability and workflow polish",
+  "replacementScope": "personal desktop task manager",
+  "ongoingBurden": "recurrence edge cases, notifications, sync conflicts, calendar APIs, mobile capture, and backups",
+  "whyPeopleStillPay": "People still pay for Taskade because task software is sticky because trust, speed, and ubiquitous capture matter more than the database schema. The recurring cost buys recurrence edge cases, notifications, sync conflicts, calendar APIs, mobile capture, and backups, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Vikunja",
+      "url": "https://github.com/go-vikunja/vikunja",
+      "desc": "Mature open-source task and project manager with lists, kanban, and recurring work."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "AFFiNE",
+      "url": "https://affine.pro",
+      "desc": "Collaborative outlines, documents, and canvases are there; the agent layer is not"
+    },
+    {
+      "name": "AppFlowy",
+      "url": "https://www.appflowy.io",
+      "desc": "The workspace is usable, but free self-hosted collaboration is capped at one member plus guests"
+    },
+    {
+      "name": "Huly",
+      "url": "https://huly.io",
+      "desc": "Tasks and docs are there; the agent layer is not, and hosted Huly is shutting down"
+    }
+  ],
+  "relatedSlugs": [
+    "ticktick",
+    "things-3",
+    "routine"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal desktop task manager DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Taskade in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, and desktop notifications; do not offer alternative stacks.\nThe core loop is: capture tasks and outlines in collaborative project spaces, schedule or repeat them, run simple agents, work from a focused today view, and keep history locally.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate inbox, today, upcoming, someday, and completed views with fast keyboard capture.\nSupport projects, tags, due dates, start dates, priorities, notes, subtasks, and attachments.\nImplement robust daily, weekly, monthly, and custom recurring rules with tests.\nAdd a focus view with one active task, timer, and optional desktop notification.\nProvide search, saved filters, undo, and a completed-task archive.\nExport and import a documented JSON format and make automatic local backups.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out team assignment and comments.\nDeliberately leave out two-way calendar or email synchronization.\nDeliberately leave out native mobile apps and cloud accounts.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,140 @@
+{
+  "slug": "mighty-networks",
+  "name": "Mighty Networks",
+  "domain": "mightynetworks.com",
+  "category": "community",
+  "subcategory": "community + courses",
+  "tagline": "Community, course, membership, and event platform for creators",
+  "priceMonthly": 95,
+  "pricing": {
+    "plan": "Launch",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "95 USD",
+    "source": "https://www.mightynetworks.com/pricing",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Official site checked 2026-07-30; Launch plan shown at $950/year, equivalent to about $79.17/month; monthly billing may differ.",
+    "tiers": [
+      {
+        "name": "Launch",
+        "monthly": 95,
+        "annualPerMonth": 79,
+        "per": "workspace",
+        "limits": "Unlimited members and spaces; 3 hosts; 10 moderators; 200 GB storage; 20 streaming hours/month; 100 viewers/stream; 5 profile fields; 1 landing page; 2 scheduled promotions; 2% transaction fee",
+        "notes": "$79/month when paid annually; $95 month-to-month. The separate pricing calculator rounds the annual investment to $950/year."
+      },
+      {
+        "name": "Scale",
+        "monthly": 215,
+        "annualPerMonth": 179,
+        "per": "workspace",
+        "limits": "Unlimited members/spaces; 5 hosts; 15 moderators; 500 GB; 30 streaming hours/month; 200 viewers/stream; 10 profile fields; 1 landing page; 5 promotions; 5,000 Admin API calls/month; 1% transaction fee",
+        "notes": "$179/month when paid annually; $215 month-to-month; annual investment shown as $2,150/year."
+      },
+      {
+        "name": "Growth",
+        "monthly": null,
+        "annualPerMonth": 354.17,
+        "per": "workspace",
+        "limits": "Growth support, advanced automations and AI; numeric platform limits were not fully exposed on the public Growth page",
+        "notes": "$4,250/year, billed annually; no public month-to-month option verified."
+      },
+      {
+        "name": "Mighty Pro",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited hosts/moderators; 4 TB storage; 50 streaming hours/month; 3,000 viewers/stream; 10 landing pages; 15 promotions; 0.5% transaction fee",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day Growth-plan trial with no credit card",
+    "billingTerms": "Launch and Scale monthly + annual (2 months free annually); Growth annual only; Mighty Pro custom",
+    "priceChanges": [],
+    "hiddenCosts": "Transaction fees of 2%/1%/0.5% are added to payment processing. Extra storage, livestream hours and participant capacity use paid Engagement Boosts; up to 10,000 livestream viewers costs extra. Branded apps, SSO, email white-labeling, strategy, community management and advanced reports are optional paid additions.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.mightynetworks.com/pricing",
+      "https://docs.mightynetworks.com/for-hosts/meet-mighty/whats-included-in-the-mighty-networks-courses-plan",
+      "https://docs.mightynetworks.com/for-hosts/meet-mighty/whats-included-in-the-mighty-networks-business-plan",
+      "https://www.mightynetworks.com/pricing/growth"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A private community/course site is possible, but Mighty sells the integrated community, payments, events, AI setup, mobile, and branded-app path.",
+  "coreLoopDIY": "Build or self-host community software, gate access with payments, add courses/events, and send notifications.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "community/forum platform",
+    "payments",
+    "auth",
+    "hosting",
+    "email/push notifications",
+    "content storage"
+  ],
+  "whatYouLose": [
+    "mobile apps",
+    "community discovery/engagement features",
+    "payments",
+    "events",
+    "branded-app upgrade path",
+    "support"
+  ],
+  "moatTags": [
+    "network-effects",
+    "execution-polish"
+  ],
+  "moatNotes": "community/platform/mobile distribution",
+  "whyPeopleStillPay": "They pay because successful communities require ongoing admin, engagement, and mobile access.",
+  "priorArt": [
+    {
+      "name": "Discourse",
+      "url": "https://github.com/discourse/discourse",
+      "desc": "Open-source community platform; can replace discussion/community parts but not every creat",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Moodle",
+      "url": "https://moodle.org/",
+      "type": "open-source",
+      "repo": "https://github.com/moodle/moodle",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Courses, forums, events, badges and paid enrolment are all here; the creator-brand gloss emphatically is not.",
+      "stars": 7300,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "HumHub",
+      "url": "https://www.humhub.com/",
+      "desc": "A capable community and event hub, minus the course-selling and subscription machinery."
+    },
+    {
+      "name": "Odoo Community",
+      "url": "https://www.odoo.com/",
+      "desc": "Its modules cover the nouns, but the result is an ERP portal rather than a membership community."
+    }
+  ],
+  "relatedSlugs": [
+    "buffer",
+    "later",
+    "typefully"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful community comparison; not a no because open-source can cover the core forum.",
+  "prompt": "Build me a small paid-membership community site to replace Mighty Networks. Requirements:\n\n- Node + Express + better-sqlite3 on my VPS behind a reverse proxy, server-rendered\n  pages, no frontend framework. Built for a community of dozens, not thousands;\n  note in the README that self-hosted Discourse is the heavyweight alternative.\n- Stripe subscription (keys in .env) gates membership: a webhook activates access\n  on payment and revokes it on cancellation. Sign-in by emailed magic link, no\n  passwords.\n- One chronological feed of member posts (Markdown, images to an uploads/ folder)\n  with threaded comments and like counts.\n- An events page: title, date, location or call link, RSVP list of member names.\n- A weekly digest email of new posts and upcoming events via Resend or SMTP (creds\n  in .env), with one-click digest unsubscribe.\n- Admin page for my account only: remove posts, comp memberships, member list with\n  payment status.\n- All member data in one SQLite file. No analytics, no telemetry.\n- Out of scope: mobile apps, courses, live streaming, and algorithmic discovery\n  feeds. Chronological posts from paying members is the product.\n- README: Stripe webhook setup, .env keys, and backup steps for the DB plus\n  uploads folder.",
+  "promptCurated": false
+}

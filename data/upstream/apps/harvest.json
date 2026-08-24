@@ -1,0 +1,221 @@
+{
+  "slug": "harvest",
+  "name": "Harvest",
+  "domain": "harvestapp.com",
+  "appURL": "https://harvestapp.com",
+  "category": "time-tracking",
+  "subcategory": "time tracking, focus and attention",
+  "tagline": "Track project time, turn approved entries into simple invoices, and export reports",
+  "priceMonthly": 11,
+  "pricing": {
+    "plan": "Teams",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://www.getharvest.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official Pro monthly seat price.",
+    "native": "11 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 seat; 2 projects.",
+        "notes": null
+      },
+      {
+        "name": "Teams",
+        "monthly": 11,
+        "annualPerMonth": 9,
+        "per": "user",
+        "limits": "Unlimited seats; base plan includes time tracking and invoicing; additional invoices, projects, clients, and tasks are usage-billed.",
+        "notes": "Live page now calls the paid plan Teams rather than the on-file Pro plan."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 17.5,
+        "annualPerMonth": 14,
+        "per": "user",
+        "limits": "Unlimited seats; enterprise controls and support; additional invoices, projects, clients, and tasks are usage-billed.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise Plus",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom limits, security, and support.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "1 seat; 2 projects.",
+    "billingTerms": "monthly + annual (about -18% to -20%); 30-day trial; Enterprise Plus custom",
+    "priceChanges": [],
+    "hiddenCosts": "Usage beyond included invoices/projects/clients/tasks is billed separately at rates not published on the public card; added seats are prorated, while removed annual seats generally do not create a refund until renewal.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.getharvest.com/pricing",
+      "https://www.harvestapp.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Harvest, track project time, turn approved entries into simple invoices, and export reports. The hard boundary is team timesheets, integrations, invoicing, reminders, support, and reliability, plus ubiquitous capture, coaching, and team workflow.",
+  "coreLoopDIY": "Track project time and focused sessions, turn approved entries into simple invoices, review patterns locally, and export reports and a transparent activity record.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "desktop OS",
+    "notification permission",
+    "optional accessibility permission for app-name tracking",
+    "local SQLite"
+  ],
+  "whatYouLose": [
+    "team timesheets, integrations, invoicing, reminders, support, and reliability",
+    "cross-device history",
+    "team timesheets and payroll",
+    "behavioral datasets",
+    "blocking across every platform"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "collaboration",
+    "integrations"
+  ],
+  "moatNotes": "ubiquitous capture, coaching, and team workflow",
+  "replacementScope": "personal desktop tracker",
+  "ongoingBurden": "idle detection, permissions, app metadata, privacy, notifications, sync, reports, integrations, and backups",
+  "whyPeopleStillPay": "People still pay for Harvest because the timer is simple, but people pay for frictionless capture and a history they trust enough to invoice or change habits from. The recurring cost buys idle detection, permissions, app metadata, privacy, notifications, sync, reports, integrations, and backups, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Kimai",
+      "url": "https://github.com/kimai/kimai",
+      "desc": "Mature open-source time-tracking application with projects, reports, and exports."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Dolibarr",
+      "url": "https://www.dolibarr.org/",
+      "type": "open-source",
+      "repo": "https://github.com/Dolibarr/dolibarr",
+      "platforms": [
+        "web",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Harvest is in there somewhere, behind an entire ERP; the price is zero and the setup vocabulary is not.",
+      "stars": 7500,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "DoliWamp, DoliDeb, DoliRPM, Docker, or a conventional PHP web-server installation",
+        "engines": null,
+        "dataFormat": "Business records live in MySQL, MariaDB, or PostgreSQL, while uploaded and generated documents live in Dolibarr's documents directory or mounted volume.",
+        "gapVsPaid": "Dolibarr buries a simple timer-to-invoice job inside an ERP and lacks Harvest's focused timer experience, polished native apps, reminders, approvals, and integration breadth.",
+        "setupBlocker": "A packaged desktop-style installer exists on some platforms, but a durable deployment still needs a web server or Docker, database, HTTPS, backups, updates, and localization.",
+        "sources": [
+          "https://www.dolibarr.org/",
+          "https://github.com/Dolibarr/dolibarr",
+          "https://github.com/Dolibarr/dolibarr/blob/develop/COPYING",
+          "https://github.com/Dolibarr/dolibarr-docker",
+          "https://wiki.dolibarr.org/index.php/Installation_-_Upgrade",
+          "https://www.getharvest.com/",
+          "https://www.getharvest.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "ERPNext",
+      "url": "https://erpnext.com/",
+      "type": "open-source",
+      "repo": "https://github.com/frappe/erpnext",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Timesheets become invoices cleanly; unfortunately the replacement arrives attached to an entire ERP and its operations manual.",
+      "stars": 35700,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "both",
+        "install": "Managed Frappe Cloud signup, or the supported Frappe Docker/Bench deployment",
+        "engines": null,
+        "dataFormat": "Self-hosted companies live in MariaDB site databases with site files and attachments on the server; managed-hosting data lives in the selected Frappe Cloud site.",
+        "gapVsPaid": "ERPNext can turn timesheets into invoices, but its ERP-sized setup and interface are much heavier than Harvest's fast timers, approvals, native apps, and project reporting.",
+        "setupBlocker": "Self-hosting is an ERP deployment rather than a desktop install: Docker or Bench, MariaDB, Redis, workers, a reverse proxy, backups, upgrades, and country-specific accounting setup.",
+        "sources": [
+          "https://frappe.io/erpnext",
+          "https://github.com/frappe/erpnext",
+          "https://github.com/frappe/erpnext/blob/develop/license.txt",
+          "https://docs.frappe.io/erpnext/getting-started-with-erpnext",
+          "https://github.com/frappe/frappe_docker",
+          "https://www.getharvest.com/",
+          "https://www.getharvest.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Kimai",
+      "url": "https://www.kimai.org/",
+      "type": "open-source",
+      "repo": "https://github.com/kimai/kimai",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Timesheets, rates, reports and invoices are all there; approvals need its free plugin and the server still needs an adult.",
+      "stars": 4900,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Official Docker Compose stack",
+        "engines": null,
+        "dataFormat": "Users, projects, activities, rates, and timesheets live in MySQL or MariaDB; plugins, configuration, and generated files live in persistent server volumes.",
+        "gapVsPaid": "Kimai matches timesheets and billing well, but its native-client, offline-mobile, approval, integration, and zero-administration experience is less polished than Harvest's.",
+        "setupBlocker": "A non-expert needs Docker, a domain and TLS, database and application secrets, email configuration, backups, upgrades, and optional plugins for some workflows.",
+        "sources": [
+          "https://www.kimai.org/",
+          "https://github.com/kimai/kimai",
+          "https://github.com/kimai/kimai/blob/main/LICENSE",
+          "https://www.kimai.org/documentation/docker.html",
+          "https://www.getharvest.com/",
+          "https://www.getharvest.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Invoice Ninja Free",
+      "url": "https://invoiceninja.com/",
+      "desc": "It turns time into invoices, but the free plan stops at five clients and the code is Elastic-licensed, not open source."
+    }
+  ],
+  "relatedSlugs": [
+    "toggl-track",
+    "clockify",
+    "timely"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal desktop tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Harvest in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, and optional OS accessibility APIs; do not offer alternative stacks.\nThe core loop is: track project time and focused sessions, turn approved entries into simple invoices, review patterns locally, and export reports and a transparent activity record.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate one-click start and stop, manual entries, idle detection, tags, projects, and notes.\nKeep any application-name tracking opt-in and never record window contents or keystrokes.\nAdd Pomodoro-style focus sessions, break reminders, and an optional allowlist blocker.\nProvide daily, weekly, project, and category reports with editable corrections.\nExport CSV and JSON and make the underlying event log inspectable.\nAdd automatic local backups and a privacy screen explaining every collected field.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out employee surveillance.\nDeliberately leave out payroll and billing automation.\nDeliberately leave out cross-device blocking and behavioral coaching services.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

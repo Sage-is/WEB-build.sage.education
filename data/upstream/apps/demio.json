@@ -1,0 +1,120 @@
+{
+  "slug": "demio",
+  "name": "Demio",
+  "domain": "demio.com",
+  "appURL": "https://demio.com",
+  "category": "video-conferencing",
+  "subcategory": "video meetings and webinars",
+  "tagline": "Run a small live webinar on self-managed video and collect registrations",
+  "priceMonthly": 63,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://www.demio.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official Starter monthly tier.",
+    "native": "63 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 63,
+        "annualPerMonth": 45,
+        "per": "user",
+        "limits": "1 host; 50-attendee room; 3-hour sessions; 4 people on stage; 15 event admins",
+        "notes": "The supplied snapshot said $59/month; the live Starter rate is $63 monthly or $45/month annually."
+      },
+      {
+        "name": "Growth",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "150, 500, 1,000 or 3,000-attendee rooms; 8-hour sessions; 6 people on stage; 25 event admins",
+        "notes": "Price changes dynamically by room size and billing period; current dollar values were not exposed in page text."
+      },
+      {
+        "name": "Premium",
+        "monthly": null,
+        "annualPerMonth": 196,
+        "per": "user",
+        "limits": "150, 500, 1,000 or 3,000-attendee rooms; 10-hour sessions; 10 people on stage; 50 event admins",
+        "notes": "Official page displayed $196/host/month paid yearly, but did not expose which attendee-room selection produced it."
+      },
+      {
+        "name": "Unlimited",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom hosts, room size, service and contract terms",
+        "notes": "Referenced in the current pricing FAQ; public price is not disclosed."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day Growth trial is capped at 20 attendees and 1-hour sessions and includes HubSpot integration",
+    "billingTerms": "monthly + annual (30% lower); Premium and Unlimited plan changes require 30 days' notice",
+    "priceChanges": [],
+    "hiddenCosts": "Concurrent sessions require multiple paid host seats; Zapier setup services cost $150, concierge onboarding is paid, and the Boost add-on auto-converts after its 14-day trial at an undisclosed price.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.demio.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Demio, run a small live webinar on self-managed video and collect registrations. The hard boundary is webinar media infrastructure, registration, engagement, replay hosting, analytics, and support, plus real-time media infrastructure and reliability.",
+  "coreLoopDIY": "Run a small live webinar on self-managed video, collect registrations, issue signed room links, and keep recordings only when every participant is clearly informed.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "public server with strong bandwidth",
+    "domain and TLS",
+    "TURN server",
+    "Docker",
+    "explicit participant consent for recording"
+  ],
+  "whatYouLose": [
+    "webinar media infrastructure, registration, engagement, replay hosting, analytics, and support",
+    "global low-latency media network",
+    "dial-in and telephony",
+    "large webinars",
+    "transcription, support, and compliance"
+  ],
+  "moatTags": [
+    "scale-infra"
+  ],
+  "moatNotes": "real-time media infrastructure and reliability",
+  "replacementScope": "small private meeting service",
+  "ongoingBurden": "TURN capacity, codecs, browsers, packet loss, scaling, recording, consent, abuse, monitoring, and incident response",
+  "whyPeopleStillPay": "People still pay for Demio because video products survive because real-time media quality and global reliability are infrastructure businesses, not weekend interface projects. The recurring cost buys TURN capacity, codecs, browsers, packet loss, scaling, recording, consent, abuse, monitoring, and incident response, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Jitsi Meet",
+      "url": "https://github.com/jitsi/jitsi-meet",
+      "desc": "Widely deployed open-source video-conferencing platform."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "BigBlueButton",
+      "url": "https://bigbluebutton.org",
+      "desc": "Good live room, wrong product: registration pages and replay marketing are still your job."
+    },
+    {
+      "name": "Jitsi Meet",
+      "url": "https://meet.jit.si",
+      "desc": "A meeting room is not a webinar funnel; registrations, reminders and replay pages are absent."
+    }
+  ],
+  "relatedSlugs": [
+    "zoom-pro",
+    "google-workspace-business-starter",
+    "microsoft-teams-essentials"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a small private meeting service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Demio in an empty repository.\nUse Docker Compose, Jitsi Meet, a small Next.js 15 control panel, PostgreSQL, and TURN; do not offer alternative stacks.\nThe core loop is: run a small live webinar on self-managed video, collect registrations, issue signed room links, and keep recordings only when every participant is clearly informed.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nDeploy Jitsi Meet through pinned Docker images and configure a dedicated TURN service.\nBuild an owner panel for rooms, signed invitations, expiry, lobby mode, and participant limits.\nShow connection diagnostics for camera, microphone, browser, bandwidth, and TURN reachability.\nMake recording disabled by default and require an on-screen consent state for every participant.\nStore room metadata and audit events, but do not store media unless explicitly enabled.\nAdd health checks, bandwidth dashboards, backup, restore, upgrade, and incident instructions.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a global media edge network.\nDeliberately leave out public webinar scale and telephony.\nDeliberately leave out regulated recording, enterprise compliance, and guaranteed support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

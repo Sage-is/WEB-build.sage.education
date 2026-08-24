@@ -1,0 +1,233 @@
+{
+  "slug": "bolt-new",
+  "name": "Bolt.new",
+  "domain": "bolt.new",
+  "appURL": "https://bolt.new",
+  "category": "dev-tools",
+  "subcategory": "AI coding agents and developer workspaces",
+  "tagline": "Generate and edit a small web project in a local sandbox from structured prompts",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Pro 10M",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://bolt.new/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official Pro monthly subscription.",
+    "native": "25 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "300,000 tokens/day and 1,000,000 tokens/month; 10 MB file uploads; up to 333,000 web requests/month; unlimited databases.",
+        "notes": null
+      },
+      {
+        "name": "Pro 10M",
+        "monthly": 25,
+        "annualPerMonth": 18,
+        "per": "workspace",
+        "limits": "10,000,000 subscription tokens/month; no daily token cap; 100 MB uploads; up to 1,000,000 web requests/month.",
+        "notes": "Published annual example is $216/year, or $18/month effective."
+      },
+      {
+        "name": "Pro 26M",
+        "monthly": 50,
+        "annualPerMonth": 45,
+        "per": "workspace",
+        "limits": "26,000,000 subscription tokens/month; no daily token cap; 100 MB uploads; up to 1,000,000 web requests/month.",
+        "notes": "Published annual example is $540/year, or $45/month effective."
+      },
+      {
+        "name": "Pro 55M",
+        "monthly": 100,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "55,000,000 subscription tokens/month; no daily token cap.",
+        "notes": "This bundle is documented in Bolt's own billing examples; an exact annual checkout price was not publicly exposed."
+      },
+      {
+        "name": "Teams",
+        "monthly": 30,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Per-member workspace plan; exact per-member token allowance is not publicly stated.",
+        "notes": "The public page does not expose a dependable annual sticker price."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom seats, usage, security and support.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "300,000 tokens/day and 1,000,000/month; 10 MB uploads; up to 333,000 web requests/month; unlimited databases",
+    "billingTerms": "monthly and annual options for some Pro bundles; annual discount varies by bundle; Teams annual price not publicly exposed",
+    "priceChanges": [],
+    "hiddenCosts": "Monthly subscription tokens roll over for at most 2 months and become unavailable if the paid subscription lapses; reload-token purchases are separate and do not expire.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://bolt.new/pricing",
+      "https://support.bolt.new/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Bolt.new, generate and edit a small web project in a local sandbox from structured prompts. The hard boundary is browser sandbox, model orchestration, package execution, deployment, and hosted compute, plus frontier models, context infrastructure, and execution safety.",
+  "coreLoopDIY": "Generate and edit a small web project in a local sandbox from structured prompts, index the repository, propose patches, run approved commands, and preserve an auditable session log.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "VS Code",
+    "OpenAI or Anthropic API key",
+    "Git repository",
+    "local command sandbox"
+  ],
+  "whatYouLose": [
+    "browser sandbox, model orchestration, package execution, deployment, and hosted compute",
+    "frontier proprietary model",
+    "large-scale code retrieval",
+    "cloud sandbox fleet",
+    "enterprise policy and support"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "scale-infra"
+  ],
+  "moatNotes": "frontier models, context infrastructure, and execution safety",
+  "replacementScope": "single-repository coding assistant",
+  "ongoingBurden": "model changes, indexing, prompt injection, tool permissions, sandboxing, evaluation, telemetry choices, and IDE compatibility",
+  "whyPeopleStillPay": "People still pay for Bolt.new because the UI can be copied, but high-quality code models, context ranking, safe execution, and constant evaluation are the product. The recurring cost buys model changes, indexing, prompt injection, tool permissions, sandboxing, evaluation, telemetry choices, and IDE compatibility, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Continue",
+      "url": "https://github.com/continuedev/continue",
+      "desc": "Active open-source coding-assistant framework for IDEs and multiple model providers."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Dyad",
+      "url": "https://dyad.sh/",
+      "type": "open-source",
+      "repo": "https://github.com/dyad-sh/dyad",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "desc": "Bolt on your laptop, minus the hosting fairy.",
+      "stars": 21100,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "Desktop installer",
+        "engines": "OpenAI, Anthropic, Google Gemini, OpenRouter-compatible providers and local Ollama",
+        "dataFormat": "Generated project source and app metadata stay on the computer; prompts and selected context go to the chosen provider unless a local model is used",
+        "gapVsPaid": "It has no managed browser sandbox, instant public hosting or one-click deployment comparable to Bolt, so you own the local environment and deployment.",
+        "setupBlocker": "A model-provider API key or a separately installed and configured local Ollama model",
+        "sources": [
+          "https://github.com/dyad-sh/dyad",
+          "https://github.com/dyad-sh/dyad/blob/main/LICENSE",
+          "https://github.com/dyad-sh/dyad/tree/main/src/pro",
+          "https://www.dyad.sh/docs",
+          "https://bolt.new/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Onlook",
+      "url": "https://onlook.com",
+      "type": "open-source",
+      "repo": "https://github.com/onlook-dev/onlook",
+      "stars": 26433,
+      "lastCommit": "2026-07",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Open source visual builder on a real React codebase; the grown-up sibling of the browser sandbox.",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Hosted signup, or self-host with Bun or Docker plus Supabase configuration",
+        "engines": "OpenRouter plus configurable code-edit services such as Morph or Relace",
+        "dataFormat": "Project code lives in the workspace or sandbox; application metadata and assets use the configured Supabase instance",
+        "gapVsPaid": "It is narrower and more design-first, with less mature prompt-to-full-stack generation and deployment than Bolt's browser workspace.",
+        "setupBlocker": "Hosted access may be gated; self-hosting needs Bun or Docker, Supabase and several environment variables",
+        "sources": [
+          "https://github.com/onlook-dev/onlook",
+          "https://github.com/onlook-dev/onlook/blob/main/LICENSE",
+          "https://docs.onlook.com/",
+          "https://onlook.com/",
+          "https://bolt.new/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "open-lovable",
+      "url": "https://github.com/firecrawl/open-lovable",
+      "type": "open-source",
+      "repo": "https://github.com/firecrawl/open-lovable",
+      "stars": 28217,
+      "lastCommit": "2025-11",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Same prompt-to-app loop in a cloud sandbox, powered by your own model keys.",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Clone the repo, install with pnpm, add service keys to .env and run the Next.js development server",
+        "engines": "Gemini, Anthropic, OpenAI or Groq; Firecrawl for extraction; Vercel or E2B sandboxes; optional Morph",
+        "dataFormat": "Generated React source lives in the selected cloud sandbox; local configuration is in .env, and prompts or site content go to the selected services",
+        "gapVsPaid": "It is a developer-run example requiring several service keys, without Bolt's managed account, persistent workspace and integrated deploy experience.",
+        "setupBlocker": "Several model, extraction and sandbox service keys are needed before the complete workflow works",
+        "sources": [
+          "https://github.com/firecrawl/open-lovable",
+          "https://github.com/firecrawl/open-lovable/blob/main/LICENSE",
+          "https://github.com/firecrawl/open-lovable/blob/main/README.md",
+          "https://bolt.new/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "bolt.diy",
+      "url": "https://bolt.diy/",
+      "desc": "MIT source, but its WebContainers runtime needs a commercial licence for production business use."
+    },
+    {
+      "name": "Continue",
+      "url": "https://continue.dev/",
+      "desc": "Acquired and read-only, and an editor agent was never a local prompt-to-app sandbox."
+    }
+  ],
+  "relatedSlugs": [
+    "windsurf",
+    "replit",
+    "lovable"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a single-repository coding assistant DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Bolt.new in an empty repository.\nUse TypeScript, Node.js 22, a VS Code extension, SQLite, and one user-supplied model API; do not offer alternative stacks.\nThe core loop is: generate and edit a small web project in a local sandbox from structured prompts, index the repository, propose patches, run approved commands, and preserve an auditable session log.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a VS Code sidebar with chat, selected-code actions, repository search, and a patch preview.\nIndex only the open repository and respect .gitignore plus a separate assistant ignore file.\nRequire explicit approval before reading outside the workspace or running any command.\nRepresent edits as unified diffs with accept, reject, partial apply, undo, and Git status checks.\nCapture tool calls, model requests, command output, and patch decisions in a local session log.\nAdd token and cost estimates, provider errors, cancellation, tests, and an offline data-flow diagram.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out training or reproducing a frontier coding model.\nDeliberately leave out unattended command execution outside a sandbox.\nDeliberately leave out cloud workspaces, team policy, and enterprise support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

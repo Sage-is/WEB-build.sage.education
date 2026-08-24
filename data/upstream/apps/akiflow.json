@@ -1,0 +1,211 @@
+{
+  "slug": "akiflow",
+  "name": "Akiflow",
+  "domain": "akiflow.com",
+  "category": "tasks-calendar",
+  "subcategory": "unified tasks + calendar",
+  "tagline": "Command-center planner that merges tasks, calendar, and time blocking",
+  "priceMonthly": 34,
+  "pricing": {
+    "plan": "Pro Monthly",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "34 USD",
+    "source": "https://akiflow.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro Monthly listed at $34/month and annual at $19/month.",
+    "tiers": [
+      {
+        "name": "Pro",
+        "monthly": 34,
+        "annualPerMonth": 19,
+        "per": "user",
+        "limits": "1 user; tasks, calendars, integrations, and time blocking; no numeric task/calendar cap published.",
+        "notes": "Annual price is a promoted 44% discount."
+      },
+      {
+        "name": "Teams",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom seats, onboarding, and team controls.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (-44% advertised); 7-day trial; Teams custom",
+    "priceChanges": [],
+    "hiddenCosts": "The $19 annual equivalent is promotional; renewal terms beyond the displayed offer are not stated publicly.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://akiflow.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "The planner UI can be built, but bringing every task source into one reliable, two-way calendar workflow means OAuth, APIs, sync conflicts, and maintenance.",
+  "coreLoopDIY": "Ingest tasks from selected tools, show an inbox, drag into a calendar, create time blocks, and push updates back.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google/Microsoft OAuth",
+    "integrations to task apps",
+    "hosted backend",
+    "background sync",
+    "notifications"
+  ],
+  "whatYouLose": [
+    "wide integrations",
+    "two-way sync",
+    "keyboard UX",
+    "mobile/desktop apps",
+    "support for API breakage"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "integrations/sync",
+  "whyPeopleStillPay": "They pay to stop context-switching between task apps and calendars.",
+  "priorArt": [
+    {
+      "name": "Super Productivity",
+      "url": "https://github.com/johannesjo/super-productivity",
+      "desc": "Open-source personal productivity app that covers portions of time blocking and task plann",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "FlowSavvy Free",
+      "url": "https://flowsavvy.app/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "It auto-plans unlimited tasks for the next two weeks; priorities and dependencies are how the paid plan gets you.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a hosted account in the web app or install the iOS or Android app",
+        "engines": "A deterministic scheduling algorithm; FlowSavvy explicitly says it does not use machine learning to build schedules",
+        "dataFormat": "Tasks, events, and settings live in FlowSavvy's cloud database and synchronize with connected Google, Outlook, or iCloud calendars; the service currently provides no general calendar import or export",
+        "gapVsPaid": "FlowSavvy auto-schedules tasks but lacks Akiflow’s universal inbox, broad task-source integrations, command bar, and free priority and dependency controls.",
+        "setupBlocker": "Requires an internet connection; calendar synchronization requires OAuth or app-specific credentials",
+        "sources": [
+          "https://flowsavvy.app/",
+          "https://flowsavvy.app/pricing",
+          "https://help.flowsavvy.app/en/articles/8009170-miscellaneous-faqs",
+          "https://flowsavvy.app/privacy",
+          "https://help.flowsavvy.app/en/articles/6982421-can-i-import-or-export-my-calendar",
+          "https://help.flowsavvy.app/en/articles/13339919-sync-with-google-outlook-and-icloud-calendar",
+          "https://akiflow.com/",
+          "https://akiflow.com/features"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Super Productivity",
+      "url": "https://super-productivity.com/",
+      "type": "open-source",
+      "repo": "https://github.com/super-productivity/super-productivity",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "A local task planner with timeboxes, focus mode and its own stopwatch; less glossy, less interested in your wallet.",
+      "stars": 21156,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Use the browser/PWA or install a packaged desktop or mobile build",
+        "engines": null,
+        "dataFormat": "Tasks, projects, time records, and settings are local-first in browser or app storage; optional synchronization and backups use the user's chosen WebDAV or Dropbox account",
+        "gapVsPaid": "Super Productivity timeboxes local tasks well but does not pull a broad set of external task systems into one inbox or automatically place them on the calendar like Akiflow.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/super-productivity/super-productivity",
+          "https://github.com/super-productivity/super-productivity/blob/master/LICENSE",
+          "https://super-productivity.com/",
+          "https://akiflow.com/",
+          "https://akiflow.com/features"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Trevor AI Free",
+      "url": "https://www.trevorai.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "One calendar gets task-to-time-block planning and some AI suggestions; multiple calendars and deeper automation cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a hosted web account and connect one supported calendar; the web app can be installed to a home screen",
+        "engines": "A private per-user deep-learning scheduling model; some language features use OpenAI, according to Trevor's documentation",
+        "dataFormat": "Tasks, calendar events, and scheduling state are processed and stored in Trevor's hosted infrastructure, with connected calendar data synchronized through provider APIs",
+        "gapVsPaid": "Trevor’s free plan supports one calendar and a web-only planner, without Akiflow’s native command center, universal inbox, and integration breadth.",
+        "setupBlocker": "No native desktop or mobile app; calendar integrations require OAuth, and the free tier is limited to one calendar account",
+        "sources": [
+          "https://www.trevorai.com/",
+          "https://www.trevorai.com/docs",
+          "https://www.trevorai.com/integrations/microsoft-calendars",
+          "https://www.trevorai.com/privacy-policy",
+          "https://akiflow.com/",
+          "https://akiflow.com/features"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Amplenote Free",
+      "url": "https://www.amplenote.com/",
+      "desc": "The free plan has an internal calendar, but syncing the external calendar you already use requires Pro."
+    },
+    {
+      "name": "Ellie Free",
+      "url": "https://ellieplanner.com/",
+      "desc": "The free task list is pleasant; timebox mode and calendar integrations are both Pro."
+    },
+    {
+      "name": "Routine Free",
+      "url": "https://routine.co/",
+      "desc": "The free plan stops before time blocking and time boxing; the feature this comparison is about starts paid."
+    }
+  ],
+  "relatedSlugs": [
+    "motion",
+    "reclaim-ai",
+    "calendly"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Expensive enough to make DIY tempting; integration upkeep keeps it kinda.",
+  "prompt": "Build me a daily planner with time blocking to replace Akiflow. Requirements:\n\n- Local web app: Node + Express + better-sqlite3; the day/week grid is\n  FullCalendar with vanilla JS, no build step.\n- A capture inbox: one text box, Enter saves a task; tasks have title,\n  minutes estimate (default 30), and a done flag.\n- Drag a task from the inbox sidebar onto the grid to create a time block;\n  drag to move or resize; block and task stay linked, completing one\n  completes the other.\n- My real calendar shows behind the blocks as a read-only overlay of ICS\n  feed URLs from .env; Google Calendar's secret ICS address works and needs\n  no OAuth.\n- Keyboard-first: n for new task, t for today, arrows move selection, Enter\n  schedules the selected task into the next free slot.\n- Morning rollover: unfinished blocks from yesterday return to the inbox\n  with a reschedule counter, so chronically avoided tasks are visible.\n- SQLite storage, localhost only, no accounts, no telemetry.\n- Out of scope: two-way Google/Outlook sync and pulling tasks in from other\n  apps. Read-only overlay only; OAuth plus sync-conflict handling is exactly\n  the maintenance that makes Akiflow worth paying for.\n- README: how to find a calendar's secret ICS URL.",
+  "promptCurated": false
+}

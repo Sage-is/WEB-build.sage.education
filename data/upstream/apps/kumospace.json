@@ -1,0 +1,266 @@
+{
+  "slug": "kumospace",
+  "name": "Kumospace",
+  "domain": "kumospace.com",
+  "appURL": "https://kumospace.com",
+  "category": "community",
+  "subcategory": "online communities and team communication",
+  "tagline": "Host a lightweight spatial room for a small team without production media guarantees",
+  "priceMonthly": 16,
+  "pricing": {
+    "plan": "Business",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://kumospace.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Business monthly seat price.",
+    "native": "16 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "5 registered members; 1 floor; unlimited rooms; up to 50 concurrent guests; each guest may use the workspace up to 4 hours/week",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": 16,
+        "per": "user",
+        "limits": "Minimum 5 paid members; unlimited floors and rooms; up to 50 concurrent guests; recording and analytics",
+        "notes": "Billed annually; minimum annualized base is 5 × $16 = $80/month. Annual billing saves 20%; exact month-to-month rate was not exposed."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Unlimited guests plus custom security, onboarding and support",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "5 registered members; 1 floor; unlimited rooms; 50 concurrent guests; each guest limited to 4 hours/week",
+    "billingTerms": "monthly + annual (-20% annually); public Business price is $16/member/month billed annually; 5-seat minimum",
+    "priceChanges": [],
+    "hiddenCosts": "Business has a 5-paid-member minimum. A 14-day paid-plan trial can auto-convert to a subscription; added members are prorated, while removals generally affect the next invoice.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.kumospace.com/pricing",
+      "https://www.kumospace.com/help/pricing-faq"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Kumospace, host a lightweight spatial room for a small team without production media guarantees. The hard boundary is real-time video infrastructure, office presence, moderation, analytics, and support, plus network, moderation, and communication infrastructure.",
+  "coreLoopDIY": "Host a lightweight spatial room for a small team without production media guarantees, organize discussion into channels or topics, and keep membership and moderation under the owner's control.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "email provider",
+    "object storage for attachments"
+  ],
+  "whatYouLose": [
+    "real-time video infrastructure, office presence, moderation, analytics, and support",
+    "network effects",
+    "native mobile apps",
+    "video and voice infrastructure",
+    "enterprise moderation and discovery"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "network-effects"
+  ],
+  "moatNotes": "network, moderation, and communication infrastructure",
+  "replacementScope": "single private community",
+  "ongoingBurden": "realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations",
+  "whyPeopleStillPay": "People still pay for Kumospace because community software is valuable when members are already there and the operator does not have to own realtime reliability and abuse response. The recurring cost buys realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Discourse",
+      "url": "https://github.com/discourse/discourse",
+      "desc": "Mature open-source community discussion platform with strong moderation and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Cosmos Free",
+      "url": "https://cosmos.video/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "Four concurrent people get an always-on spatial office, chat and unlimited calls.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in the browser, with optional native desktop and mobile apps",
+        "engines": "Built-in transcription and AI meeting summaries; the provider and model are not disclosed in public first-party documentation",
+        "dataFormat": "Account, messages and files live in Cosmos's cloud; calls are transmitted encrypted, while user-started recordings are stored on Cosmos servers and some recording or message data is handled by US processors",
+        "gapVsPaid": "The four-person concurrent cap and lighter office customization, administration, chat and integrations make it a smaller team workspace than Kumospace.",
+        "setupBlocker": null,
+        "sources": [
+          "https://cosmos.video/",
+          "https://cosmos.video/pricing",
+          "https://cosmos.video/privacy_policy",
+          "https://cosmos.video/zoom-alternative",
+          "https://www.kumospace.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "flat.social Free",
+      "url": "https://flat.social/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Five people, unlimited sessions and custom rooms; enough office for a genuinely small team.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted browser signup; guests join by link",
+        "engines": null,
+        "dataFormat": "Accounts, room definitions and shared content live in flat.social's hosted service; device and usage data is collected by the service, while live media is handled in the browser",
+        "gapVsPaid": "Its five-person cap and simpler office management, chat integrations and whiteboard or document workflow are the main step down.",
+        "setupBlocker": null,
+        "sources": [
+          "https://flat.social/",
+          "https://flat.social/pricing",
+          "https://flat.social/privacy",
+          "https://flat.social/blog/free-alternatives-to-zoom",
+          "https://www.kumospace.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Kumospace Free",
+      "url": "https://www.kumospace.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "The actual product is free for five registered members, with customizable rooms and basic chat intact.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser; desktop and mobile apps are optional",
+        "engines": null,
+        "dataFormat": "Rooms, chat and files live in Kumospace's cloud; audio and video is relayed through Daily or Agora and is not persistently recorded by Kumospace",
+        "gapVsPaid": "The free plan is the same product, but it stops at five registered members, one floor and a public space, without paid security, admin, integrations or advanced analytics.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.kumospace.com/pricing",
+          "https://www.kumospace.com/help/pricing-faq",
+          "https://www.kumospace.com/help/data-privacy-faq"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "SpatialChat Free",
+      "url": "https://spatial.chat/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Twelve people fit, but only for two hours a day; permanent free does not mean permanently open.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted browser signup; guests join by link",
+        "engines": null,
+        "dataFormat": "Spaces, uploaded files and account data live in SpatialChat's hosted service; calls occur in the browser",
+        "gapVsPaid": "The two-hour daily limit is a deal-breaker for an always-on team office.",
+        "setupBlocker": null,
+        "sources": [
+          "https://spatial.chat/",
+          "https://spatial.chat/pricing",
+          "https://how.spatial.chat/changelog/",
+          "https://www.kumospace.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "WorkAdventure Free",
+      "url": "https://workadventu.re/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A pixel office for ten simultaneous people; less boardroom, more tiny RPG.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "both",
+        "install": "Create a hosted space in the browser, or self-host with Docker Compose or the Helm and Kubernetes stack",
+        "engines": "Calls can use Jitsi or LiveKit; optional virtual-agent bots can connect to OpenAI or Azure OpenAI",
+        "dataFormat": "Hosted maps and account or room data live on WorkAdventure's EU service; self-hosted maps live on persistent volumes or S3-compatible storage, with original map sources kept separately by the user",
+        "gapVsPaid": "Its pixel-world aesthetic and Tiled-based map editing are less boardroom-friendly and harder for nontechnical office admins than Kumospace.",
+        "setupBlocker": "Hosted use is clean; self-hosting needs Docker or Helm, domain/TLS, TURN and conferencing services, and serious map customization often starts in Tiled",
+        "sources": [
+          "https://workadventu.re/pricing/",
+          "https://workadventu.re/faq/what-is-the-license-of-the-self-hosted-version-of-workadventure/",
+          "https://github.com/workadventure/workadventure",
+          "https://docs.workadventu.re/admin/admin-self-hosting/",
+          "https://docs.workadventu.re/map-building/tiled-editor/publish/wa-hosted/",
+          "https://workadventu.re/privacy-policy/",
+          "https://www.kumospace.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "slack-pro",
+    "discord-nitro",
+    "circle"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Business plan and a single private community DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Kumospace in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, WebSockets, and Docker Compose; do not offer alternative stacks.\nThe core loop is: host a lightweight spatial room for a small team without production media guarantees, organize discussion into channels or topics, and keep membership and moderation under the owner's control.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement spaces, channels, topics, replies, reactions, mentions, profiles, roles, and invitations.\nUse WebSockets for live updates but preserve every message transactionally in PostgreSQL.\nAdd moderation queues, reports, blocks, rate limits, attachment limits, and an audit log.\nProvide email digests, browser notifications, search, pinned content, and member export.\nAdd owner-controlled retention, account deletion, backup, restore, and health checks.\nShip Docker Compose with a seeded demo, migrations, and an emergency admin command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out public-network discovery and existing member liquidity.\nDeliberately leave out production voice or video rooms.\nDeliberately leave out native mobile applications, enterprise SSO, and 24-hour abuse operations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

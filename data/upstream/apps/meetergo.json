@@ -1,0 +1,123 @@
+{
+  "slug": "meetergo",
+  "name": "meetergo",
+  "domain": "meetergo.com",
+  "category": "scheduling",
+  "subcategory": "scheduling and customer-interaction suite",
+  "tagline": "EU-hosted scheduling with built-in video, CRM sync, workflows, client portals, and a wider product suite",
+  "priceMonthly": 11.44,
+  "pricing": {
+    "plan": "Light",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "native": "11.44 USD",
+    "source": "https://meetergo.com/en/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Light is €9.90 per user/month billed yearly, about $11 at the ECB reference rate. It includes unlocked scheduling, unlimited meetergo Connect video calls, HubSpot and Pipedrive sync, up to three workflows, a client portal, REST API, and webhooks.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited users; 3 active booking types; 1 connected calendar/user; 10 CRM deals; 100 form submissions/month; 3 simple signatures, 3 invoices, and 3 client spaces; 45-minute 1:1 video.",
+        "notes": "Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      },
+      {
+        "name": "Light",
+        "monthly": null,
+        "annualPerMonth": 11.44,
+        "per": "user",
+        "limits": "Unlimited booking types; 6 calendars/user; 3 workflows; 10 CRM deals; 100 form submissions/month; 3 simple signatures, 3 invoices, and 3 client spaces.",
+        "notes": "€9.90/user/month billed yearly. Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      },
+      {
+        "name": "Suite",
+        "monthly": null,
+        "annualPerMonth": 34.54,
+        "per": "user",
+        "limits": "Unlimited CRM deals, form submissions, invoices, and client spaces; 50 advanced signatures/month.",
+        "notes": "Introductory annual rate €29.90/user/month for 12 months; renews at €34.90 ($40.32). Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      },
+      {
+        "name": "Premium",
+        "monthly": null,
+        "annualPerMonth": 57.65,
+        "per": "user",
+        "limits": "WhatsApp workflows and Premium support; no single numeric WhatsApp allowance is published.",
+        "notes": "Introductory annual rate €49.90/user/month for 12 months; renews at €59.90 ($69.21). Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      }
+    ],
+    "freeTierCaps": "Unlimited users; 3 active booking types; 1 connected calendar/user; 10 CRM deals; 100 form submissions/month; 3 simple signatures, 3 invoices, and 3 client spaces; 45-minute 1:1 video.",
+    "billingTerms": "monthly + annual (-20% advertised); exact monthly prices were not exposed by the live static page; Suite and Premium introductory annual rates renew higher after 12 months",
+    "priceChanges": [],
+    "hiddenCosts": "One plan applies account-wide; regular users and bookable resources consume seats; Suite/Premium renew at higher rates after year 1; WhatsApp/Meta conversation charges can be passed through.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://meetergo.com/en/pricing",
+      "https://wise.com/gb/currency-converter/eur-to-usd-rate/history"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "The public booking loop is weekend-buildable. The honest replacement, however, stops being a scheduler almost immediately: meetergo combines maintained multi-calendar sync, time-zone and conflict handling, round-robin and conditional routing, resource and multi-location booking, automated reminders, payments, video, CRM, client portals, e-signatures, invoicing, and AI across one EU-hosted system. An agent can reproduce the solo front door; replacing the operating layer behind customer meetings is an ongoing product and compliance job.",
+  "coreLoopDIY": "Publish a booking page, subtract calendar conflicts from configured availability, let a guest reserve a slot, create the calendar event, and send confirmation and rescheduling links.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "Google Calendar OAuth credentials",
+    "hosted app with HTTPS",
+    "SMTP credentials",
+    "database and backups",
+    "timezone test cases"
+  ],
+  "whatYouLose": [
+    "managed Google, Microsoft, and Apple calendar sync with conflict protection",
+    "round robin, routing forms, collective events, resource booking, and multi-location scheduling",
+    "built-in video, payments, coupons, reminders, and multi-step workflows",
+    "shared CRM context, client portals, e-signatures, invoicing, meeting notes, and the built-in AI assistant",
+    "EU hosting, support, integration maintenance, and compliance operations"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish",
+    "compliance-regulatory"
+  ],
+  "moatNotes": "integration reliability/workflow depth/EU compliance operations",
+  "whyPeopleStillPay": "They pay because meetergo bundles what would otherwise be a stack of separate tools. Calendar reliability, routing, reminders, video, payments, CRM context, signed documents, and client follow-up share the same customer and meeting record, while EU hosting and ongoing integration maintenance remove operational risk. A DIY booking page can save a solo user money; a team pays to avoid rebuilding and operating the system around every customer meeting.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.com",
+      "desc": "open-source scheduling platform that can be self-hosted"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Cal.com Free",
+      "url": "https://cal.com/",
+      "desc": "Strong solo scheduling; team routing, workflows and the surrounding suite are paid or absent."
+    },
+    {
+      "name": "Cal.diy",
+      "url": "https://www.cal.diy/",
+      "desc": "The self-hosted fork removed workflows and team features, then warns against production use."
+    },
+    {
+      "name": "HubSpot Meeting Scheduler",
+      "url": "https://www.hubspot.com/products/sales/schedule-meeting",
+      "desc": "Free CRM-linked scheduling, but no built-in video, client portal or equivalent workflow suite."
+    }
+  ],
+  "relatedSlugs": [
+    "calendly",
+    "savvycal",
+    "reclaim-ai"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Submitted by the meetergo team and judged against the same rubric: the booking UI is vibe-codeable; the maintained EU-hosted operating layer around customer meetings is the product.",
+  "prompt": "Build me a personal appointment scheduler to replace meetergo's solo booking loop. Requirements:\n\n- One Node 22 + TypeScript app using Fastify, Nunjucks, Luxon, and\n  better-sqlite3; server-rendered pages with a little vanilla JS.\n- A public /book/:slug page for 30- and 60-minute meeting types. Guests see\n  the next 21 days locally, then submit name, email, and an optional note.\n- An /admin page behind one ADMIN_TOKEN edits weekly availability, date\n  overrides, minimum notice, daily limits, and buffers. Store timestamps in UTC.\n- Google Calendar OAuth credentials stay in .env. Read busy intervals before\n  showing slots, then recheck inside a BEGIN IMMEDIATE transaction and create\n  the calendar event with the guest invited so two people cannot take one slot.\n- Send confirmation, cancellation, rescheduling, and one reminder email through\n  SMTP. Links use signed expiring tokens; node-cron reminders are idempotent.\n- The admin agenda shows upcoming bookings, status, guest details, and manual\n  cancellation, with a CSV export. Keep a nightly 14-day SQLite backup.\n- No public accounts or telemetry. Run as one process behind HTTPS; all OAuth,\n  SMTP, signing, and admin secrets live in .env.\n- Out of scope: Microsoft and Apple sync, team routing, payments, built-in video,\n  CRM, e-signatures, AI, and formal compliance claims. Do not stub fake versions.\n- Add Vitest coverage for DST changes, buffers, concurrent booking, cancellation,\n  and reminder retries. README the Google console setup and warn that OAuth is\n  the fiddly part, plus deployment, backup, and restore commands.",
+  "promptCurated": true
+}

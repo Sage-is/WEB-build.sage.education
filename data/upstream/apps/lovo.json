@@ -1,0 +1,119 @@
+{
+  "slug": "lovo",
+  "name": "LOVO",
+  "domain": "lovo.ai",
+  "appURL": "https://lovo.ai",
+  "category": "voice-ai",
+  "subcategory": "synthetic voice, dubbing and AI avatars",
+  "tagline": "Produce labeled voiceovers from licensed local voices and user-authored scripts",
+  "priceMonthly": 24,
+  "discontinued": "filed for Chapter 7 bankruptcy in May 2026 and is offline",
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://lovo.ai/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Basic monthly tier.",
+    "native": "24 USD",
+    "kind": "fixed",
+    "currency": "USD"
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For LOVO, produce labeled voiceovers from licensed local voices and user-authored scripts. The hard boundary is large proprietary voice catalog, editor, cloning, rights, and hosted rendering, plus models, compute, rights, and safety operations.",
+  "coreLoopDIY": "Turn user-authored scripts into clearly labeled synthetic voiceovers using licensed local voices and a local model, retaining provenance for every output.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "local TTS model",
+    "ffmpeg",
+    "GPU recommended",
+    "voices the user has rights and consent to use"
+  ],
+  "whatYouLose": [
+    "large proprietary voice catalog, editor, cloning, rights, and hosted rendering",
+    "frontier voice or avatar model",
+    "licensed voice catalog",
+    "real-time rendering fleet",
+    "moderation, consent verification, and enterprise rights"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "content-rights",
+    "scale-infra"
+  ],
+  "moatNotes": "models, compute, rights, and safety operations",
+  "replacementScope": "clearly labeled local synthetic-media tool",
+  "ongoingBurden": "model licensing, consent records, impersonation risk, watermarking, GPU queues, media storage, abuse response, and rapid model changes",
+  "whyPeopleStillPay": "People paid for LOVO because customers paid for output quality, production speed, licensed voices, consent workflows, and a provider that carried the operational risk. The recurring cost bought model licensing, consent records, impersonation risk, watermarking, GPU queues, media storage, abuse response, and rapid model changes, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Piper",
+      "url": "https://github.com/OHF-Voice/piper1-gpl",
+      "desc": "Active community continuation of the fast local Piper text-to-speech engine."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Balabolka",
+      "url": "https://www.cross-plus-a.com/balabolka.htm",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "windows"
+      ],
+      "desc": "Paste a script, choose a Windows voice, export MP3; the interface peaked before subscriptions did.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "TTS WebUI",
+      "url": "https://ttswebui.com/",
+      "type": "open-source",
+      "repo": "https://github.com/rsxdalv/TTS-WebUI",
+      "platforms": [
+        "windows"
+      ],
+      "desc": "A Windows voice lab with cloning, generation and a project-like audio library; polished is not the word.",
+      "stars": 3200,
+      "lastCommit": "2026-03",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Voicebox",
+      "url": "https://voicebox.sh/",
+      "type": "open-source",
+      "repo": "https://github.com/jamiepine/voicebox",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "desc": "Clone or choose a local voice, feed it a script and export long-form audio; the Mac build may need a Gatekeeper nudge.",
+      "stars": 49500,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "AllTalk TTS",
+      "url": "https://github.com/erew123/alltalk_tts",
+      "desc": "Frequently recommended, but the current path is a beta branch and installation remains a developer exercise."
+    }
+  ],
+  "relatedSlugs": [
+    "speechify",
+    "synthesia",
+    "heygen"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Basic plan and a clearly labeled local synthetic-media tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for LOVO in an empty repository.\nUse Python 3.12, FastAPI, SQLite, ffmpeg, and a user-owned local TTS model; do not offer alternative stacks.\nThe core loop is: turn user-authored scripts into clearly labeled synthetic voiceovers using licensed local voices and a local model, retaining provenance for every output.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nRequire a project-level rights and consent acknowledgement before generating audio.\nShip with no celebrity, public-figure, or scraped voice assets and accept only explicitly licensed models.\nGenerate speech from text with voice, speed, pause, pronunciation, and segment controls.\nCreate a timeline for audio, captions, uploaded visuals, and simple transitions.\nEmbed project metadata and a visible synthetic-media disclosure in exported assets.\nStore prompts, model identifiers, consent notes, and output hashes in a local provenance log.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out cloning a voice without clear consent.\nDeliberately leave out impersonation or deceptive unlabeled media.\nDeliberately leave out a frontier avatar model, public hosting, or enterprise rights clearance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

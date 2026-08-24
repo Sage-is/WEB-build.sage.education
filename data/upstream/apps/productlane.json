@@ -1,0 +1,120 @@
+{
+  "slug": "productlane",
+  "name": "Productlane",
+  "domain": "productlane.com",
+  "appURL": "https://productlane.com",
+  "category": "user-research",
+  "subcategory": "feedback boards, interviews and product research",
+  "tagline": "Connect interview notes and support feedback to product issues and decisions",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://productlane.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Pro seat price.",
+    "native": "29 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": null,
+        "annualPerMonth": 29,
+        "per": "user",
+        "limits": "25 AI resolutions/month included; additional resolutions cost $0.79 each.",
+        "notes": "Billed yearly."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 59,
+        "per": "user",
+        "limits": "50 AI resolutions/month included; additional resolutions cost $0.79 each.",
+        "notes": "Billed yearly."
+      },
+      {
+        "name": "Scale",
+        "monthly": null,
+        "annualPerMonth": 99,
+        "per": "user",
+        "limits": "100 AI resolutions/month included; additional resolutions cost $0.79 each.",
+        "notes": "Billed yearly."
+      },
+      {
+        "name": "Early Stage program, Year 1",
+        "monthly": null,
+        "annualPerMonth": 65,
+        "per": "workspace",
+        "limits": "6 full seats + 20 viewer seats; 200 AI resolutions/month.",
+        "notes": "12-month contract billed monthly. Published step-up is $451/month in Year 2 and $594/month in Year 3; eligibility includes fewer than 15 employees, under $10 million funding and no prior paid subscription."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "Annual public seat pricing; a monthly toggle exists but exact month-to-month prices were not exposed. The Early Stage program is a non-cancelable annual contract billed monthly. A 7-day trial is offered.",
+    "priceChanges": [],
+    "hiddenCosts": "AI resolutions above the included allowance cost $0.79 each; the Early Stage contract cannot be canceled before its annual term ends and rises from $65/month in Year 1 to $451/month in Year 2 and $594/month in Year 3.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://productlane.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Productlane, connect interview notes and support feedback to product issues and decisions. The hard boundary is linear integration, call workflows, customer portal, sync, and team collaboration, plus participant network, synthesis workflow, and collaboration.",
+  "coreLoopDIY": "Collect interview notes and support feedback, merge duplicates, connect evidence to product issues and decisions, and publish a transparent status or research view.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "Resend API key",
+    "optional video-call links"
+  ],
+  "whatYouLose": [
+    "Linear integration, call workflows, customer portal, sync, and team collaboration",
+    "large participant panel",
+    "recording and transcription infrastructure",
+    "advanced research repository",
+    "enterprise governance"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations"
+  ],
+  "moatNotes": "participant network, synthesis workflow, and collaboration",
+  "replacementScope": "small-team feedback repository",
+  "ongoingBurden": "recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention",
+  "whyPeopleStillPay": "People still pay for Productlane because people pay either for access to participants or for a research repository that keeps evidence usable across an organization. The recurring cost buys recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Fider",
+      "url": "https://github.com/getfider/fider",
+      "desc": "Open-source customer-feedback portal with voting and status workflows."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Quackback",
+      "url": "https://quackback.io",
+      "desc": "Connects support feedback to issues, but has no interview-note research workspace."
+    },
+    {
+      "name": "QualCoder",
+      "url": "https://qualcoder.org",
+      "desc": "Handles interview coding well, but has no support ingestion or product-issue linkage."
+    }
+  ],
+  "relatedSlugs": [
+    "canny",
+    "productboard",
+    "dovetail"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a small-team feedback repository DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Productlane in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Resend; do not offer alternative stacks.\nThe core loop is: collect interview notes and support feedback, merge duplicates, connect evidence to product issues and decisions, and publish a transparent status or research view.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate public and private feedback intake with consent text and optional contact details.\nSupport posts, votes, comments, tags, statuses, owners, and duplicate merging.\nAdd a research note type with evidence links, quotes, themes, and confidence.\nBuild search and filters across feedback, customers, segments, themes, and status.\nProvide email notifications, moderation, export, deletion, and an audit log.\nPublish a read-only roadmap or findings page using only explicitly public items.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a paid research-participant marketplace.\nDeliberately leave out unlimited video storage and automated transcription.\nDeliberately leave out enterprise repositories, SSO, and governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

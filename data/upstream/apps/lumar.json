@@ -1,0 +1,254 @@
+{
+  "slug": "lumar",
+  "name": "Lumar",
+  "domain": "lumar.io",
+  "appURL": "https://lumar.io",
+  "category": "seo-marketing",
+  "subcategory": "technical audits and on-page optimization",
+  "tagline": "Run a limited technical crawl and maintain an auditable issue history",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Enterprise",
+    "basis": "custom",
+    "unit": "custom",
+    "source": "https://lumar.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Pricing is sales-led; canonical price is null.",
+    "native": "custom",
+    "kind": "custom",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Custom",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom crawl volume, projects, data retention, modules, support, and security; no public numeric allowance.",
+        "notes": "Modules include Analyze, Monitor, Protect, and Impact."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "custom quote; public monthly and annual rates are not published",
+    "priceChanges": [],
+    "hiddenCosts": "Price scales with URL volume and selected modules.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.lumar.io/pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Lumar, run a limited technical crawl and maintain an auditable issue history. The hard boundary is enterprise crawl scale, monitoring, analytics, governance, and consulting support, plus crawl scale, rule depth, and operational polish.",
+  "coreLoopDIY": "Run a limited technical crawl of a user-owned site, inspect HTML and rendered pages, explain prioritized issues, maintain an auditable issue history, and export a reproducible audit.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Python 3.12",
+    "Playwright browsers",
+    "permission to crawl the target site",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "enterprise crawl scale, monitoring, analytics, governance, and consulting support",
+    "massive hosted crawl capacity",
+    "proprietary scoring",
+    "continuous monitoring",
+    "agency reporting and support"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "crawl scale, rule depth, and operational polish",
+  "replacementScope": "single-site audit tool",
+  "ongoingBurden": "robots handling, rendering, canonicalization, deduplication, crawl traps, rule maintenance, scheduling, storage, and false positives",
+  "whyPeopleStillPay": "People still pay for Lumar because a crawler is buildable; professionals pay for years of edge-case handling and reports they can trust with clients. The recurring cost buys robots handling, rendering, canonicalization, deduplication, crawl traps, rule maintenance, scheduling, storage, and false positives, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "SEOnaut",
+      "url": "https://github.com/stjudewashere/seonaut",
+      "desc": "Open-source technical SEO auditing application."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "CrawlSEO",
+      "url": "https://github.com/crawlseo/crawlseo",
+      "type": "open-source",
+      "repo": "https://github.com/crawlseo/crawlseo",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Rankings, crawl history and alerts in one dashboard; free code, but Google OAuth and Postgres make setup a small infrastructure hobby.",
+      "stars": 507,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose with PostgreSQL, then Google OAuth setup",
+        "engines": "Google Search Console and PageSpeed Insights; optional DataForSEO; MCP clients such as Claude Desktop, Claude Code and Cursor",
+        "dataFormat": "Projects, crawl runs, rankings and alerts live in a self-hosted PostgreSQL database; credentials and OAuth secrets live in environment configuration",
+        "gapVsPaid": "It targets small sites and lacks Lumar's distributed crawl scale, enterprise governance, log analysis and managed operations.",
+        "setupBlocker": "Google Cloud OAuth plus Docker/PostgreSQL; competitor data also needs a paid DataForSEO key",
+        "sources": [
+          "https://github.com/crawlseo/crawlseo",
+          "https://www.lumar.io/platform/",
+          "https://www.lumar.io/pricing/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Crawly",
+      "url": "https://www.getcrawly.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos"
+      ],
+      "desc": "A native Mac crawler with unlimited pages and crawl diffs; Windows users are invited to admire it from afar.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Download and install the native universal macOS app",
+        "engines": "A local MCP server connects to Claude Code, Cursor, Codex, Windsurf and other MCP clients",
+        "dataFormat": "Crawl projects and history live in a local SQLite database on the Mac; there is no hosted account or cloud sync",
+        "gapVsPaid": "It is Mac-only, has no JavaScript rendering and lacks Lumar's managed scheduling, collaboration, log analysis and enterprise-scale crawling.",
+        "setupBlocker": "macOS only",
+        "sources": [
+          "https://www.getcrawly.com/",
+          "https://www.getcrawly.com/features",
+          "https://www.getcrawly.com/about",
+          "https://www.getcrawly.com/seo-tool-for-developers",
+          "https://www.getcrawly.com/learn/crawl-websites-with-claude-code",
+          "https://www.lumar.io/platform/",
+          "https://www.lumar.io/pricing/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "FreeCrawl",
+      "url": "https://freecrawl.net/",
+      "type": "open-source",
+      "repo": "https://github.com/kemalai/FreeCrawl-SEO-Tool",
+      "platforms": [
+        "windows",
+        "macos",
+        "linux",
+        "cli"
+      ],
+      "desc": "A young but finished desktop crawler with 200 checks, project diffs and every export in the cupboard; the star count has not caught up yet.",
+      "stars": 87,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Windows installer or portable build, macOS DMG, or Linux AppImage, deb or rpm",
+        "engines": "Optional OpenAI, Anthropic and local Ollama; optional GSC, GA4, PageSpeed, Ahrefs, Moz, Semrush, Majestic and MCP connections",
+        "dataFormat": "Local SQLite WAL project files (.seoproject), optionally AES-256-GCM encrypted; exports include Excel, CSV, JSON, XML, HTML, sitemaps, Google Sheets and BigQuery",
+        "gapVsPaid": "It is a single-machine desktop tool without Lumar's distributed scale, team governance, SLA or managed audit operations.",
+        "setupBlocker": "The prebuilt apps install normally, but the macOS build may require bypassing Gatekeeper for an unsigned application",
+        "sources": [
+          "https://freecrawl.net/",
+          "https://github.com/kemalai/FreeCrawl-SEO-Tool",
+          "https://github.com/kemalai/FreeCrawl-SEO-Tool/releases",
+          "https://www.lumar.io/platform/",
+          "https://www.lumar.io/pricing/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "SEOnaut",
+      "url": "https://seonaut.org/",
+      "type": "open-source",
+      "repo": "https://github.com/StJudeWasHere/seonaut",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A no-frills crawler that stores audits and sorts broken SEO plumbing by severity; bring Docker and MySQL.",
+      "stars": 751,
+      "lastCommit": "2026-05",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose with MySQL 8.4, then expose the web UI behind HTTPS",
+        "engines": null,
+        "dataFormat": "Sites, crawl results and audit history live in the self-hosted MySQL database",
+        "gapVsPaid": "It provides a straightforward self-hosted audit history but not Lumar's enterprise orchestration, distributed crawling or governance.",
+        "setupBlocker": "Docker, MySQL and a reverse proxy are required; its default exposed port is plain HTTP",
+        "sources": [
+          "https://seonaut.org/",
+          "https://github.com/StJudeWasHere/seonaut",
+          "https://www.lumar.io/platform/",
+          "https://www.lumar.io/pricing/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "SiteOne Crawler",
+      "url": "https://crawler.siteone.io/",
+      "type": "open-source",
+      "repo": "https://github.com/janreges/siteone-crawler",
+      "platforms": [
+        "windows",
+        "macos",
+        "linux",
+        "cli"
+      ],
+      "desc": "A proper desktop crawler with reports and a fix-first queue; no server, no URL tax, no frog.",
+      "stars": 841,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Download a prebuilt desktop or CLI binary for Windows, macOS or Linux",
+        "engines": "Optional OpenAI, Anthropic, Gemini, vLLM, Ollama, LM Studio or any OpenAI-compatible endpoint",
+        "dataFormat": "Runs locally and writes project results plus HTML, JSON or text reports and exports to the user's disk",
+        "gapVsPaid": "It is a local single-machine crawler with no managed team collaboration, durable cloud history or enterprise operations layer.",
+        "setupBlocker": "None for ordinary crawling; JavaScript rendering needs Chrome or Chromium, or the one-time headless-shell download",
+        "sources": [
+          "https://crawler.siteone.io/",
+          "https://github.com/janreges/siteone-crawler",
+          "https://github.com/janreges/siteone-crawler/releases",
+          "https://www.lumar.io/platform/",
+          "https://www.lumar.io/pricing/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "RustySEO",
+      "url": "https://www.rustyseo.com/",
+      "desc": "Busy and promising, but still v0.3.9, unsigned, and its own README says it is new, buggy and use-at-your-own-risk."
+    }
+  ],
+  "relatedSlugs": [
+    "screaming-frog-seo-spider",
+    "sitebulb",
+    "contentking"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Enterprise plan and a single-site audit tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Lumar in an empty repository.\nUse Python 3.12, FastAPI, SQLite, Playwright, and an HTMX interface; do not offer alternative stacks.\nThe core loop is: run a limited technical crawl of a user-owned site, inspect HTML and rendered pages, explain prioritized issues, maintain an auditable issue history, and export a reproducible audit.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nRequire an explicit ownership or permission acknowledgement before a crawl starts.\nRespect robots.txt, rate limits, canonical URLs, nofollow, redirects, and a configurable URL cap.\nCollect status, title, description, headings, canonical, robots, links, images, structured data, and rendered text.\nDetect duplicates, orphan candidates, broken links, redirect chains, missing metadata, and indexability conflicts.\nShow every issue with affected URLs, evidence, severity, and a concrete remediation note.\nExport crawl data and issues to CSV plus a self-contained HTML report.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out crawling sites without permission.\nDeliberately leave out web-scale backlink or keyword datasets.\nDeliberately leave out automated changes to production websites.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

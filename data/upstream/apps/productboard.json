@@ -1,0 +1,128 @@
+{
+  "slug": "productboard",
+  "name": "Productboard",
+  "domain": "productboard.com",
+  "appURL": "https://productboard.com",
+  "category": "user-research",
+  "subcategory": "feedback boards, interviews and product research",
+  "tagline": "Link manually imported feedback to features and a small roadmap",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Essentials",
+    "basis": "monthly per maker",
+    "unit": "per-seat",
+    "source": "https://productboard.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Essentials maker price; billing and viewer terms vary.",
+    "native": "25 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "50 AI credits/month/workspace; 500 feedback items; 25 contributors; 1 teamspace; 1 portal; minimum 1 maker.",
+        "notes": null
+      },
+      {
+        "name": "Plus",
+        "monthly": 25,
+        "annualPerMonth": 19,
+        "per": "user",
+        "limits": "250 AI credits/maker/month; 500 feedback items; 25 contributors; 1 teamspace; 1 portal; minimum 1 maker.",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 75,
+        "annualPerMonth": 59,
+        "per": "user",
+        "limits": "500 AI credits/maker/month; unlimited feedback and teamspaces; 2 portals; 25 contributors; minimum 2 makers online.",
+        "notes": "Contract purchases can require a 5-maker minimum."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Minimum 5 makers annually; custom feedback, portals, contributors, security and support.",
+        "notes": "The live card says 800 AI credits/maker/month, while an official FAQ describes 1,500 base credits plus 800 per additional maker; the conflict is retained rather than reconciled."
+      }
+    ],
+    "freeTierCaps": "50 AI credits/month/workspace; 500 feedback items; 25 contributors; 1 teamspace; 1 portal; minimum 1 maker.",
+    "billingTerms": "Monthly + annual on self-serve plans; annual rates are roughly 21% lower; Enterprise is annual contract pricing.",
+    "priceChanges": [],
+    "hiddenCosts": "AI top-ups cost $5/month for 50 credits on monthly billing or $60/year for 600 credits on annual billing; different AI tasks consume different credit quantities; credits reset monthly and mid-cycle upgrades are prorated.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.productboard.com/pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Productboard, link manually imported feedback to features and a small roadmap. The hard boundary is customer-insight integrations, prioritization, roadmap governance, and organizational adoption, plus participant network, synthesis workflow, and collaboration.",
+  "coreLoopDIY": "Collect manually imported feedback, merge duplicates, link evidence to features and a small roadmap, and publish a transparent status view.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "Resend API key",
+    "optional video-call links"
+  ],
+  "whatYouLose": [
+    "customer-insight integrations, prioritization, roadmap governance, and organizational adoption",
+    "large participant panel",
+    "recording and transcription infrastructure",
+    "advanced research repository",
+    "enterprise governance"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "switching-costs"
+  ],
+  "moatNotes": "participant network, synthesis workflow, and collaboration",
+  "replacementScope": "small-team feedback repository",
+  "ongoingBurden": "recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention",
+  "whyPeopleStillPay": "People still pay for Productboard because people pay either for access to participants or for a research repository that keeps evidence usable across an organization. The recurring cost buys recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Fider",
+      "url": "https://github.com/getfider/fider",
+      "desc": "Open-source customer-feedback portal with voting and status workflows."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Quackback",
+      "url": "https://quackback.io",
+      "type": "open-source",
+      "repo": "https://github.com/QuackbackIO/quackback",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Import feedback, merge the evidence, connect it to roadmap work and sync issues without buying a product suite.",
+      "stars": 216,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "canny",
+    "dovetail",
+    "maze"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Essentials plan and a small-team feedback repository DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Productboard in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Resend; do not offer alternative stacks.\nThe core loop is: collect manually imported feedback, merge duplicates, link evidence to features and a small roadmap, and publish a transparent status view.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate public and private feedback intake with consent text and optional contact details.\nSupport posts, votes, comments, tags, statuses, owners, and duplicate merging.\nAdd a research note type with evidence links, quotes, themes, and confidence.\nBuild search and filters across feedback, customers, segments, themes, and status.\nProvide email notifications, moderation, export, deletion, and an audit log.\nPublish a read-only roadmap or findings page using only explicitly public items.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a paid research-participant marketplace.\nDeliberately leave out unlimited video storage and automated transcription.\nDeliberately leave out enterprise repositories, SSO, and governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

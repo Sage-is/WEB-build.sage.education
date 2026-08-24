@@ -1,0 +1,120 @@
+{
+  "slug": "screenshotone",
+  "name": "ScreenshotOne",
+  "domain": "screenshotone.com",
+  "category": "dev-tools",
+  "subcategory": "website screenshot API",
+  "tagline": "Managed API for rendering websites, HTML, and Markdown as images or PDFs",
+  "priceMonthly": 17,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly with 2,000 screenshots included",
+    "unit": "usage",
+    "native": "17 USD",
+    "source": "https://screenshotone.com/pricing/",
+    "checkedOn": "2026-08-03",
+    "confidence": "high",
+    "notes": "$0.009 per successful screenshot beyond the included allowance. A free tier includes 100 screenshots per month.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "100 successful, non-cached screenshots/month.",
+        "notes": null
+      },
+      {
+        "name": "Basic",
+        "monthly": 17,
+        "annualPerMonth": 14.17,
+        "per": "flat",
+        "limits": "2,000 screenshots/month; 40 requests/minute; $0.009 per extra screenshot.",
+        "notes": "Annual billing gives 2 months free."
+      },
+      {
+        "name": "Growth",
+        "monthly": 79,
+        "annualPerMonth": 65.83,
+        "per": "flat",
+        "limits": "10,000 screenshots/month; 80 requests/minute; $0.006 per extra screenshot.",
+        "notes": "Annual billing gives 2 months free."
+      },
+      {
+        "name": "Scale",
+        "monthly": 259,
+        "annualPerMonth": 215.83,
+        "per": "flat",
+        "limits": "50,000 screenshots/month; 150 requests/minute; $0.004 per extra screenshot.",
+        "notes": "Annual billing gives 2 months free."
+      }
+    ],
+    "freeTierCaps": "100 successful, non-cached screenshots/month",
+    "billingTerms": "monthly or annual; annual billing gives 2 months free",
+    "priceChanges": [],
+    "hiddenCosts": "Overage is rounded up to the nearest 1,000 screenshots, so one extra request can trigger a 1,000-request block; monthly allowances do not roll over even on annual billing; VAT is excluded; new accounts can face a 100,000/month hard limit without support approval.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://screenshotone.com/pricing/",
+      "https://screenshotone.com/docs/llms-full.txt"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A competent coding agent can build a useful self-hosted screenshot endpoint around Playwright in a weekend. Matching ScreenshotOne's reliable browser fleet, proxy locations, stealth behavior, maintained blocking rules, videos, and production edge-case handling is a much larger infrastructure product.",
+  "coreLoopDIY": "Send a URL or HTML to an authenticated HTTP endpoint and receive a cached PNG, JPEG, WebP, or PDF rendered by a local Chrome/Chromium worker.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "Docker",
+    "a machine with enough memory to run Chrome/Chromium"
+  ],
+  "whatYouLose": [
+    "managed browser capacity, rate limiting, and high availability",
+    "maintained ad, cookie banner, chat widget, and popup blocking rules",
+    "residential proxies, selectable IP locations, and stealth tuning",
+    "scrolling screenshots, video generation, and GPU rendering",
+    "production support for difficult sites and browser edge cases"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "proprietary-data",
+    "execution-polish"
+  ],
+  "moatNotes": "browser fleet, blocking-rule corpus, proxies, and rendering reliability",
+  "whyPeopleStillPay": "They want a screenshot API that stays reliable across hostile, slow, dynamic, and consent-heavy sites without operating Chrome/Chromium workers, updating blocking rules, managing proxies, or debugging browser failures.",
+  "priorArt": [],
+  "alternatives": [
+    {
+      "name": "Gotenberg",
+      "url": "https://gotenberg.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/gotenberg/gotenberg",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A single Docker API for screenshots and PDFs; no anti-bot magic included.",
+      "stars": 12800,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Browserless",
+      "url": "https://www.browserless.io/",
+      "desc": "Free only for non-commercial use; production proprietary work needs a paid licence."
+    }
+  ],
+  "relatedSlugs": [
+    "shotomatic",
+    "apify",
+    "browse-ai"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "The basic API is buildable; dependable rendering at scale and the maintained cleanup data are the paid product.",
+  "prompt": "Build me a self-hosted website screenshot API to replace ScreenshotOne for personal use. Requirements:\n\n- Node 22 + Fastify + Playwright (Chromium) + better-sqlite3, one process, no queue system.\n- GET /take?url=&format=png|jpeg|webp|pdf&width=&height=&full_page=&delay_ms= renders the\n  page in a pooled Chromium context and returns the image bytes directly.\n- POST /take accepts raw HTML or Markdown in the body and renders that instead\n  (Markdown through marked into a plain template).\n- Auth is one API key from .env, checked on every request; 401 without it.\n- Cache by hash of the normalized options: metadata in SQLite, files under data/cache/,\n  with a cache_ttl option and a fresh=true bypass.\n- Block ads and cookie banners the honest way: load EasyList and the\n  \"I don't care about cookies\" filter list at startup, apply them via request\n  interception, plus a small CSS hide-list for common consent overlays. Do not\n  promise it catches everything.\n- Hard 15-second navigation timeout, one retry, then a JSON error with the reason;\n  never a hanging request.\n- Concurrency capped at a small context pool (default 2) with an in-memory queue,\n  so the box does not fall over.\n- Out of scope: proxies and IP locations, stealth evasion, scrolling video capture,\n  GPU rendering, dashboards, usage billing. That fleet is the paid product.\n- README: npx playwright install chromium, .env keys, Chromium memory expectations,\n  and a one-line warning that hostile sites will beat this build.",
+  "promptCurated": true
+}

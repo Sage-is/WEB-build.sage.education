@@ -1,0 +1,134 @@
+{
+  "slug": "oncehub",
+  "name": "OnceHub",
+  "domain": "oncehub.com",
+  "appURL": "https://oncehub.com",
+  "category": "scheduling",
+  "subcategory": "booking links and calendar automation",
+  "tagline": "Publish booking pages with routing rules, forms, and reminders",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Schedule",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://oncehub.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Schedule monthly seat price.",
+    "native": "12 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 user; 1 calendar; 1 booking link; 6 weeks of analytics/activity history.",
+        "notes": null
+      },
+      {
+        "name": "Schedule",
+        "monthly": 12,
+        "annualPerMonth": 10,
+        "per": "user",
+        "limits": "Unlimited booking links, calendars, and meetings; 1 phone number.",
+        "notes": null
+      },
+      {
+        "name": "Route",
+        "monthly": 23,
+        "annualPerMonth": 19,
+        "per": "user",
+        "limits": "Unlimited routing forms and responses; 2 phone numbers.",
+        "notes": null
+      },
+      {
+        "name": "Engage",
+        "monthly": 47,
+        "annualPerMonth": 39,
+        "per": "user",
+        "limits": "Unlimited chatbots and conversations; 3 phone numbers.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Designed for 30+ users; Security & Compliance add-on included.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "1 user; 1 calendar; 1 booking link; 6 weeks of analytics/activity history.",
+    "billingTerms": "monthly + annual (about -17%); Enterprise custom",
+    "priceChanges": [],
+    "hiddenCosts": "Security & Compliance costs $6/user/month monthly or $5/user/month annually outside Enterprise; extra phone numbers cost $4/month; SMS uses separately purchased credits.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.oncehub.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For OnceHub, publish booking pages with routing rules, forms, and reminders. The hard boundary is routing depth, calendar integrations, crm workflows, and dependable scheduling, plus calendar integrations and reliability.",
+  "coreLoopDIY": "Read one calendar, publish booking pages with availability, routing rules, and forms, create conflict-safe bookings, and send confirmations and reminders.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google Calendar OAuth credentials",
+    "PostgreSQL",
+    "public deploy target",
+    "Resend API key",
+    "domain with HTTPS"
+  ],
+  "whatYouLose": [
+    "routing depth, calendar integrations, CRM workflows, and dependable scheduling",
+    "multiple calendar providers",
+    "team routing and round-robin",
+    "payments",
+    "timezone edge-case maturity"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "calendar integrations and reliability",
+  "replacementScope": "single-user booking service",
+  "ongoingBurden": "OAuth refresh, webhooks, timezone databases, race conditions, reminders, deliverability, privacy, and uptime",
+  "whyPeopleStillPay": "People still pay for OnceHub because people pay because one double booking or missed invite can cost more than years of subscription fees. The recurring cost buys OAuth refresh, webhooks, timezone databases, race conditions, reminders, deliverability, privacy, and uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.com",
+      "desc": "Mature open-source scheduling platform with calendar integrations and booking workflows."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Cal.com Free",
+      "url": "https://cal.com/",
+      "desc": "The free tier covers one person; routing forms and team assignment are paid."
+    },
+    {
+      "name": "Cal.diy",
+      "url": "https://www.cal.diy/",
+      "desc": "The open-source fork removed the very Teams and Workflows features this comparison needs."
+    },
+    {
+      "name": "YouCanBookMe Free",
+      "url": "https://youcanbook.me/",
+      "desc": "Forms and confirmations survive on free, but routing rules do not."
+    }
+  ],
+  "relatedSlugs": [
+    "cal-com-teams",
+    "fantastical",
+    "tidycal"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Schedule plan and a single-user booking service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for OnceHub in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, Google Calendar OAuth, and Resend; do not offer alternative stacks.\nThe core loop is: read one calendar, publish booking pages with availability, routing rules, and forms, create conflict-safe bookings, and send confirmations and reminders.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement one account with configurable working hours, buffers, minimum notice, and booking horizon.\nConnect Google Calendar using OAuth and store refresh tokens encrypted at rest.\nCalculate availability in UTC and render it in the visitor's detected timezone.\nReserve slots transactionally, create calendar events, and prevent concurrent double booking.\nSend confirmation, cancellation, and reminder email with signed management links.\nAdd an admin booking list, event-type editor, audit log, and calendar reconnect flow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out Microsoft and Apple calendar support.\nDeliberately leave out team round-robin routing.\nDeliberately leave out payments, CRM workflows, and enterprise controls.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

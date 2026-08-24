@@ -1,0 +1,144 @@
+{
+  "slug": "pocketsmith",
+  "name": "PocketSmith",
+  "domain": "pocketsmith.com",
+  "appURL": "https://pocketsmith.com",
+  "category": "personal-finance",
+  "subcategory": "budgeting, invoicing and small-business finance",
+  "tagline": "Import transactions, categorize them, and forecast cash flow on a calendar",
+  "priceMonthly": 14.95,
+  "pricing": {
+    "plan": "Foundation",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://my.pocketsmith.com/plans",
+    "checkedOn": "2026-08-13",
+    "confidence": "medium",
+    "notes": "Typical Foundation monthly price.",
+    "native": "14.95 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "2 accounts; 12 budgets; 2 dashboards; 6-month forecast; 250 MB file storage",
+        "notes": null
+      },
+      {
+        "name": "Foundation",
+        "monthly": 14.95,
+        "annualPerMonth": 9.99,
+        "per": "flat",
+        "limits": "6 connected banks in 1 country; 6 dashboards; 10-year forecast; unlimited accounts and budgets; 3 GB files",
+        "notes": "Annual equivalent shown as $9.99/month; annual total not separately printed."
+      },
+      {
+        "name": "Flourish",
+        "monthly": 24.95,
+        "annualPerMonth": 16.66,
+        "per": "flat",
+        "limits": "18 connected banks across countries; 18 dashboards; 30-year forecast; unlimited accounts and budgets; 15 GB files",
+        "notes": null
+      },
+      {
+        "name": "Fortune",
+        "monthly": 39.95,
+        "annualPerMonth": 26.66,
+        "per": "flat",
+        "limits": "Unlimited connected banks, dashboards, accounts and budgets; 60-year forecast; 50 GB files; priority email support",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "2 accounts; 12 budgets; 2 dashboards; 6-month forecast; 250 MB file storage",
+    "billingTerms": "monthly + annual (annual plans advertised as 33% lower); 14-day money-back guarantee",
+    "priceChanges": [],
+    "hiddenCosts": "No conventional free trial is stated; the paid-plan safety net is a 14-day money-back guarantee. Downgrading to Free takes effect immediately unless paid features are re-enabled through term end.",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://my.pocketsmith.com/plans",
+      "https://learn.pocketsmith.com/article/1583-files-overview"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For PocketSmith, import transactions, categorize them, and forecast cash flow on a calendar. The hard boundary is bank feeds, multi-currency data, forecasting depth, sync, and support, plus financial integrations, compliance, and trust.",
+  "coreLoopDIY": "Import transactions, categorize them with transparent rules, forecast cash flow on a calendar, reconcile balances, and export clean reports without moving money.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "CSV or OFX exports from financial institutions",
+    "local encrypted storage",
+    "optional exchange-rate API key"
+  ],
+  "whatYouLose": [
+    "bank feeds, multi-currency data, forecasting depth, sync, and support",
+    "direct bank feeds",
+    "tax filing guarantees",
+    "payroll and payments",
+    "accountant ecosystem and support"
+  ],
+  "moatTags": [
+    "integrations",
+    "compliance-regulatory"
+  ],
+  "moatNotes": "financial integrations, compliance, and trust",
+  "replacementScope": "personal ledger or simple invoicing tool",
+  "ongoingBurden": "import normalization, reconciliation, rule drift, exchange rates, backups, audit trails, tax changes, bank APIs, and support",
+  "whyPeopleStillPay": "People still pay for PocketSmith because people pay because accurate money records and dependable institution connections are worth more than the visible charts. The recurring cost buys import normalization, reconciliation, rule drift, exchange rates, backups, audit trails, tax changes, bank APIs, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Actual Budget",
+      "url": "https://github.com/actualbudget/actual",
+      "desc": "Active local-first open-source personal finance application."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "KMyMoney",
+      "url": "https://kmymoney.org/",
+      "type": "open-source",
+      "repo": "https://github.com/KDE/kmymoney",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Imports, categorisation and cash-flow forecasting on the desktop; the forecast is not dressed as a calendar.",
+      "stars": 202,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Money Manager Ex",
+      "url": "https://moneymanagerex.org/",
+      "type": "open-source",
+      "repo": "https://github.com/moneymanagerex/moneymanagerex",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "Imported transactions, categories and cash-flow forecasts without a subscription; calendar presentation is the loss.",
+      "stars": 2200,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "rocket-money",
+    "quicken-simplifi",
+    "tiller-money"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Foundation plan and a personal ledger or simple invoicing tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for PocketSmith in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and local-first encryption; do not offer alternative stacks.\nThe core loop is: import transactions, categorize them with transparent rules, forecast cash flow on a calendar, reconcile balances, and export clean reports without moving money.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nSupport CSV and OFX import with saved column mappings and duplicate detection.\nImplement accounts, transactions, transfers, categories, payees, notes, and split transactions.\nAdd deterministic categorization rules whose matches can be inspected and undone.\nProvide reconciliation, monthly budget, cash-flow, net-worth, and export views.\nKeep an immutable import log and require explicit confirmation before destructive changes.\nEncrypt local data, create automatic backups, and document restore on a fresh machine.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out initiating payments or moving money.\nDeliberately leave out tax, payroll, or accounting compliance guarantees.\nDeliberately leave out screen-scraped bank access and commercial institution aggregation.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

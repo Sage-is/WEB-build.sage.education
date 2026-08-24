@@ -1,0 +1,136 @@
+{
+  "slug": "iconik",
+  "name": "Iconik",
+  "domain": "iconik.io",
+  "category": "audio-video",
+  "subcategory": "cloud media asset management",
+  "tagline": "Backlight's cloud MAM: indexes on-prem, LTO, and cloud storage into one searchable, permissioned media library",
+  "priceMonthly": 65,
+  "pricing": {
+    "plan": "Starter · Standard User",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "native": "65 USD",
+    "source": "https://www.iconik.io/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Starter is usage-based and priced per user role, checked 2026-07-30: Collaborator 0, Browse User 9, Standard User 65, Power User 120 USD/month, no minimum commitment. Professional and Enterprise are quote-only. Storage, transfer, transcode, and AI credits bill on top of seats, so the real invoice is always above the seat price.",
+    "tiers": [
+      {
+        "name": "Collaborator user",
+        "monthly": 0,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Review, approve, comment and share; cannot operate as a standalone free account",
+        "notes": "A $0 Collaborator seat still belongs to a paid, credit-funded iconik workspace."
+      },
+      {
+        "name": "Browse user",
+        "monthly": 9,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Browse and search assets with restricted production permissions",
+        "notes": "Starter pricing is usage-credit based in addition to user seats."
+      },
+      {
+        "name": "Standard user",
+        "monthly": 65,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Standard media-management permissions and workflows",
+        "notes": "Starter pricing is usage-credit based in addition to user seats."
+      },
+      {
+        "name": "Power user",
+        "monthly": 120,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Expanded administration and production permissions",
+        "notes": "Starter pricing is usage-credit based in addition to user seats."
+      },
+      {
+        "name": "Professional",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom users, storage, services and enterprise media-management features",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom users, storage, services, security and support",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier; a $0 Collaborator seat still requires a paid iconik workspace and usage credits",
+    "billingTerms": "monthly usage-based Starter pricing; no public annual rate or annual commitment verified",
+    "priceChanges": [],
+    "hiddenCosts": "Seat charges sit on top of usage credits for storage, AI and services; publishing and bring-your-own-storage proxy workflows can require add-ons.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.iconik.io/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Iconik is not a search box, it is a storage gateway network. Its job is to make an on-prem NAS in one building, an LTO library in another, and three cloud buckets behave like one library, generate proxies for all of it, and then let a producer in another timezone browse the parts they are allowed to see without ever touching the original storage. Every hard part of that is infrastructure and permissions, and none of it gets easier because an agent writes the code. A solo editor can absolutely build a personal catalog of their own drives, and that is worth doing. It is not a MAM, and the moment a second person or a second site is involved you are staffing a product, not running a script.",
+  "coreLoopDIY": "For one person on their own drives: walk the volumes, make ffmpeg proxies, extract metadata, and search it locally. A catalog, not a MAM.",
+  "diyTimeEstimate": "not realistically solo",
+  "requirements": [
+    "ffmpeg",
+    "a machine that can see every volume you want indexed",
+    "SQLite plus FTS5",
+    "storage for proxies",
+    "a lot of patience for the first index"
+  ],
+  "whatYouLose": [
+    "storage gateways that index on-prem NAS, LTO, and cloud buckets as one library",
+    "per-user and per-collection permissions with an audit trail",
+    "proxy transcoding that keeps up with petabyte ingest",
+    "Adobe and Resolve panels plus the desktop player",
+    "shared collections and review for clients who never see your storage",
+    "archive and restore lifecycle out to deep cloud storage"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "storage federation/permissions/scale",
+  "whyPeopleStillPay": "They pay because the alternative is an intern and a spreadsheet, and because the asset you cannot find is functionally deleted. A facility's media outlives its staff, its NLE versions, and usually its storage vendor. Iconik's actual product is being the index that survives all three, with permissions solid enough to put a client in front of and an audit trail solid enough to put in a contract.",
+  "priorArt": [
+    {
+      "name": "ResourceSpace",
+      "url": "https://github.com/resourcespace/resourcespace",
+      "desc": "Genuine open-source DAM with metadata, collections, and user permissions. Development lives on the project's own repo, the GitHub copy tracks it.",
+      "status": "alive"
+    },
+    {
+      "name": "Kitsu",
+      "url": "https://github.com/cgwire/kitsu",
+      "desc": "Open-source production platform with versioned media, review, and per-project access. Closer to a facility tool than a personal catalog.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "ResourceSpace",
+      "url": "https://www.resourcespace.com",
+      "desc": "A serious DAM, but it does not federate your NAS, LTO and cloud into Iconik’s one index."
+    }
+  ],
+  "relatedSlugs": [
+    "shade",
+    "frame-io",
+    "descript"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "A useful no for post people: the searchable index is the easy half, the storage gateways are the product.",
+  "prompt": "Build me a single-user local media catalog for my own drives, the honest\npersonal floor of iconik. It is for exactly one person; facility-scale asset\nmanagement is what iconik is for. Requirements:\n\n- A Node CLI plus a local web app: better-sqlite3 for the index, Express serving on\n  localhost, plain server-rendered pages.\n- `scan <volume>` walks the drive, records path, size, mtime, and volume label, then\n  runs ffprobe for duration, codec, resolution, frame rate, and embedded timecode.\n  Re-running it is incremental, keyed on path plus mtime plus size.\n- Every video gets a 480p H.264 proxy and a contact sheet of 9 frames written to\n  ~/MediaCatalog/proxies/<hash>/, so I can identify a clip without mounting the drive\n  it lives on.\n- Search across filename, path, codec, and my own notes with SQLite FTS5, plus filters\n  for duration, resolution, and volume. Results play the proxy inline.\n- Offline drives stay in the index and are marked offline when the volume is not\n  mounted, with the volume label shown so I know which shelf to go to.\n- Free-text notes and tags per clip, and a starred collection I can export as a JSON\n  or CSV shot list.\n- Everything is local: no accounts, no cloud, no telemetry. The SQLite file plus the\n  proxies folder is the entire product and both are backupable.\n- Out of scope: multi-user access, permissions, cloud storage gateways, and AI tagging.\n  Do not build a login system. If a second person needs this, buy iconik.\n- README: installing ffmpeg, expected first-scan time for a 20TB volume, and a warning\n  to run the proxy pass overnight.",
+  "promptCurated": true
+}

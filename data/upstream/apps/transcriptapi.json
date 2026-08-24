@@ -1,0 +1,96 @@
+{
+  "slug": "transcriptapi",
+  "name": "TranscriptAPI",
+  "domain": "transcriptapi.com",
+  "category": "dev-tools",
+  "subcategory": "YouTube transcript API",
+  "tagline": "YouTube video transcripts as JSON with timestamps, search and playlist endpoints.",
+  "priceMonthly": 5,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly subscription, credit-based",
+    "unit": "usage",
+    "source": "https://transcriptapi.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "1,000 credits per month on the base subscription; top-up credits available.",
+    "native": "5 USD",
+    "tiers": [
+      {
+        "name": "Free signup",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "100 credits; no card; credits expire after 90 days.",
+        "notes": null
+      },
+      {
+        "name": "Starter",
+        "monthly": 5,
+        "annualPerMonth": 4.5,
+        "per": "flat",
+        "limits": "1,000 credits/month; 200 requests/minute on monthly billing or 300 requests/minute on annual billing.",
+        "notes": "Annual price is $54/year."
+      },
+      {
+        "name": "Custom",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Custom credits, rate limits and support.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "100 signup credits; no card; expire after 90 days",
+    "billingTerms": "monthly or annual; annual Starter is $54/year",
+    "priceChanges": [],
+    "hiddenCosts": "Base subscription credits do not roll over. Top-ups cost $2.50/1,000 credits on monthly Starter or $1.50/1,000 on annual Starter, require an active subscription, and pause if the subscription lapses.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://transcriptapi.com/pricing",
+      "https://transcriptapi.com/terms"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "The happy path is genuinely a one-sitting build: the open-source youtube-transcript-api library fetches a caption track in a few lines, and wrapping it in FastAPI gives you a working personal endpoint. The honest gap is reliability. YouTube rate-limits and IP-blocks caption scraping at any real volume, so the DIY version works until it suddenly does not, and there is no fix without a rotating proxy pool you must rent and operate. The paid product is not selling the parsing; it is selling the unblocked pipe, plus search and playlist endpoints on top.",
+  "coreLoopDIY": "A FastAPI endpoint that takes a YouTube URL and returns the caption track as timestamped JSON.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "Python 3.11",
+    "a rotating proxy pool if you use it at any volume"
+  ],
+  "whatYouLose": [
+    "staying unblocked when YouTube rate-limits caption fetches",
+    "search, channel and playlist endpoints",
+    "reliability at bulk volume",
+    "an SLA and support when YouTube changes something"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "rotating proxy fleet and anti-blocking operations at volume",
+  "whyPeopleStillPay": "The parse was never the hard part. Holding a durable, unblocked pipe into YouTube captions at volume is an operations problem that costs real money to run, and buying it for 5 USD a month is cheaper than renting proxies and babysitting them.",
+  "priorArt": [
+    {
+      "name": "youtube-transcript-api",
+      "url": "https://github.com/jdepoix/youtube-transcript-api",
+      "desc": "open-source Python library for the core caption fetch"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "youtube-transcript-api",
+      "url": "https://github.com/jdepoix/youtube-transcript-api",
+      "desc": "A Python package and CLI, not a hosted JSON API with search and playlist endpoints."
+    }
+  ],
+  "relatedSlugs": [],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "The one-sitting build is real; the reliability at volume is the product.",
+  "prompt": "Build me a small YouTube transcript API service, a personal stand-in for TranscriptAPI.\nRequirements:\n- Python 3.11 stack: FastAPI, uvicorn, and the youtube-transcript-api library; no\n  database, one file plus a README is fine.\n- GET /transcript?video=<id-or-url>: extract the video id, fetch the caption track,\n  return JSON with the full text plus timestamped segments.\n- Support lang= with a sensible fallback to the first available track, and report\n  which track was actually used in the response.\n- Clean JSON errors: 404 when captions are disabled or missing, 502 when YouTube\n  blocks the fetch; never a bare 500.\n- Read an optional comma-separated PROXIES var from .env and rotate per request;\n  with none set, run direct.\n- GET /health returning version and uptime.\n- A tiny CLI example in the README: curl the endpoint, jq out the text.\n- Keep it stateless and private: no accounts, no API keys, no telemetry, no storage.\n- README must be honest about the failure mode: at any real volume YouTube\n  rate-limits and IP-blocks caption fetches, and this build has no defense.\n- Out of scope, deliberately: the rotating proxy pool and anti-blocking\n  infrastructure, channel/playlist/search endpoints, bulk throughput, and SLAs.\n  That reliability layer is the thing the paid product actually sells.",
+  "promptCurated": true
+}

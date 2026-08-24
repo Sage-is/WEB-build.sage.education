@@ -1,0 +1,259 @@
+{
+  "slug": "nsketch-ai",
+  "name": "Nsketch AI",
+  "domain": "nsketch.ai",
+  "appURL": "https://nsketch.ai",
+  "category": "generative-media",
+  "subcategory": "AI image, video, and voice generation",
+  "tagline": "One studio for generating images, videos, voices, motion, and creator-ready effects",
+  "priceMonthly": 9,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://nsketch.ai/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Starter monthly tier with 300 credits per month.",
+    "native": "9 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 9,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "300 credits/month; about 400 low-cost image generations or 40 video generations; 40 minutes TTS/voice cloning; 2 concurrent generations.",
+        "notes": null
+      },
+      {
+        "name": "Basic",
+        "monthly": 29,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1,100 credits/month; about 1,200 images or 120 videos; 2 hours TTS/voice cloning; 4 concurrent generations.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 49,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "2,000 credits/month; about 1,600 images or 150 videos; 4 hours 10 minutes TTS/voice cloning; 6 concurrent generations.",
+        "notes": null
+      },
+      {
+        "name": "Max",
+        "monthly": 99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "4,200 credits/month; about 4,000 images or 280 videos; 7 hours 35 minutes TTS/voice cloning; 8 concurrent generations.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "A free sign-up is offered, but the official pricing page does not publish a recurring free-credit allowance.",
+    "billingTerms": "monthly + annual (page advertises savings up to 43%, but exact annual USD amounts were not exposed)",
+    "priceChanges": [],
+    "hiddenCosts": "Subscription credits reset without rollover. Credit packs require a subscription and never expire: $5/90 credits, $10/250, $30/900 or $90/3,000. Refunds are only available if no more than 50 credits were used in the billing period.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://nsketch.ai/pricing",
+      "https://nsketch.ai/credits",
+      "https://nsketch.ai/terms"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "The personal core is a focused prompt-to-media workbench over one or two user-supplied model APIs, and that is a credible weekend build. A true Nsketch AI replacement is not: the subscription bundles a fast-changing model catalog, credits, queues, media storage, templates, voice and motion workflows, safety, and failure recovery.",
+  "coreLoopDIY": "Submit a prompt to one user-supplied media API, track the image or video job, review outputs in a private gallery, and export files with reproducible settings.",
+  "diyTimeEstimate": "weekend project",
+  "requirements": [
+    "Node.js 22",
+    "fal.ai API key",
+    "SQLite",
+    "local media storage",
+    "FFmpeg"
+  ],
+  "whatYouLose": [
+    "a broad, continuously updated catalog of image, video, voice, and motion models",
+    "managed queues, concurrency, credits, retries, and provider failover",
+    "hosted media storage, delivery, and cross-device asset history",
+    "ready-made viral templates, editing utilities, and creator workflows",
+    "production moderation, consent controls, support, and commercial operations"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "model aggregation, workflow breadth, and managed inference operations",
+  "replacementScope": "private single-provider image and video workbench",
+  "ongoingBurden": "provider API changes, model churn, cost tracking, failed jobs, media storage, safety controls, and output licensing",
+  "whyPeopleStillPay": "People pay for Nsketch AI because one subscription turns many changing model providers into a coherent creator workflow. The recurring cost buys maintained integrations, predictable credits, queues, templates, storage, retries, safety work, and support, not just the prompt box.",
+  "priorArt": [
+    {
+      "name": "ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "desc": "Open-source node-based workflows for local and hosted generative media models."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "ComfyUI",
+      "url": "https://comfy.org/",
+      "type": "open-source",
+      "repo": "https://github.com/Comfy-Org/ComfyUI",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Image, video and audio models in one reusable graph; creator-ready only after you survive the nodes.",
+      "stars": 124207,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "both",
+        "install": "Windows or macOS desktop installer, Windows portable archive, or manual Python install on Windows, macOS, or Linux",
+        "engines": "Local and downloadable image, video, audio, 3D, and text models including Stable Diffusion/SDXL/SD3.5, FLUX, Wan, LTX-Video, HunyuanVideo, CogVideoX, and Mochi; optional API nodes connect to hosted providers",
+        "dataFormat": "Models, inputs, outputs, and workflow JSON live in the local ComfyUI data tree; generated media can embed workflow and seed metadata, while API nodes transmit selected inputs to their provider",
+        "gapVsPaid": "It can wire image, video, and audio models together, but lacks Nsketch's one-studio presets and creator-ready voice, motion, and effect packaging.",
+        "setupBlocker": "A compatible GPU, enough VRAM and disk for multi-gigabyte models, and a working model/workflow must be chosen before useful output appears",
+        "sources": [
+          "https://github.com/Comfy-Org/ComfyUI",
+          "https://github.com/Comfy-Org/ComfyUI/blob/master/LICENSE",
+          "https://docs.comfy.org/installation/desktop/overview",
+          "https://docs.comfy.org/installation/manual_install",
+          "https://docs.comfy.org/interface/features/workflows",
+          "https://nsketch.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "NodeTool",
+      "url": "https://nodetool.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/nodetool-ai/nodetool",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "Images, video, speech, audio effects and motion share one local canvas and timeline; cloud models are optional BYOK.",
+      "stars": 450,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Install the macOS .dmg, signed Windows .exe, or Linux AppImage; Docker Compose is available for self-hosting",
+        "engines": "Local Ollama, llama.cpp/GGUF, MLX, Nunchaku, Hugging Face, and diffusion/media models, plus BYOK providers such as OpenAI, Anthropic, Gemini, FAL, Replicate, KIE, ElevenLabs, and Hugging Face",
+        "dataFormat": "Workflows, projects, assets, files, provider settings, and vector indexes live locally in YAML, SQLite/SQLite-vec, and application storage; optional S3 or Supabase storage is supported, and cloud nodes transmit their inputs",
+        "gapVsPaid": "It covers the same media types, but the user must configure each model or provider and build the finished effects Nsketch presents as ready-made tools.",
+        "setupBlocker": "No useful model or provider is bundled: the user must add an API key or download a multi-gigabyte local model, and some local backends add a large Python/Conda environment",
+        "sources": [
+          "https://github.com/nodetool-ai/nodetool",
+          "https://github.com/nodetool-ai/nodetool/blob/main/LICENSE.txt",
+          "https://docs.nodetool.ai/installation.html",
+          "https://docs.nodetool.ai/models-and-providers.html",
+          "https://docs.nodetool.ai/storage.html",
+          "https://nsketch.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "SwarmUI",
+      "url": "https://swarmui.net/",
+      "type": "open-source",
+      "repo": "https://github.com/mcmonkeyprojects/SwarmUI",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A friendlier local studio for image, video and audio models, with deeper workflows one tab away.",
+      "stars": 4423,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Run the Windows installer script, the Linux launch script, or install .NET/Python/Homebrew prerequisites and run launch-macos.sh on macOS; Docker is optional",
+        "engines": "Uses ComfyUI as its main backend for Stable Diffusion, SDXL, FLUX, Wan, LTX, MiniMax, ACE-Step, and other image/video/audio workflows; an Automatic1111-compatible backend is optional",
+        "dataFormat": "Configuration, users, models, workflows, generated media, and history live in the local SwarmUI installation and configured model/output directories",
+        "gapVsPaid": "It is strongest as a generation UI and workflow graph, with less packaged voice, motion, and creator-export polish than Nsketch.",
+        "setupBlocker": "The backend and models still have to be downloaded, and non-Windows installs require command-line prerequisites such as .NET, Python, and Git",
+        "sources": [
+          "https://swarmui.net/",
+          "https://github.com/mcmonkeyprojects/SwarmUI",
+          "https://github.com/mcmonkeyprojects/SwarmUI/blob/master/LICENSE.txt",
+          "https://github.com/mcmonkeyprojects/SwarmUI/blob/master/README.md",
+          "https://github.com/mcmonkeyprojects/SwarmUI/blob/master/docs/Model%20Support.md",
+          "https://nsketch.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "WanGP",
+      "url": "https://wangp.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "A local image, video, audio and speech workbench; free compute means using your own machine.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Run the supplied Windows install.bat or Linux/macOS install.sh script; community launchers such as Pinokio are optional",
+        "engines": "Local video, image, music, speech, and restoration models including Wan, MiniMax/Hailuo-family weights where available, LTX, Hunyuan, LongCat, Qwen Image, Z-Image, FLUX, ACE-Step, and Qwen TTS",
+        "dataFormat": "Downloaded models, presets, queues, galleries, generated media, and metadata live in the local installation tree and chosen output folders",
+        "gapVsPaid": "It runs many relevant local models, but its technical workbench does not match Nsketch's guided, unified creator experience.",
+        "setupBlocker": "Installation must match the GPU and PyTorch/CUDA/ROCm stack, and useful models consume many gigabytes of disk and substantial VRAM",
+        "sources": [
+          "https://wangp.ai/",
+          "https://github.com/deepbeepmeep/Wan2GP",
+          "https://github.com/deepbeepmeep/Wan2GP/blob/main/LICENSE.txt",
+          "https://github.com/deepbeepmeep/Wan2GP/blob/main/docs/INSTALLATION.md",
+          "https://nsketch.ai/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "krea",
+    "runway",
+    "openart"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a private single-provider workbench, not the full hosted platform.",
+  "prompt": "Build me a private AI media workbench to replace Nsketch AI. Requirements:\n\n- A local web app on port 4317: Node.js 22, TypeScript, Fastify, React, and Vite.\n  The server owns @fal-ai/client; the browser never receives the provider key.\n- Implement exactly two workflows: text-to-image with fal-ai/nano-banana-2 and\n  text-to-video with fal-ai/ltx-2.3/text-to-video/fast. Accept prompt and aspect ratio.\n- Submit queued jobs server-side and save the provider request ID before polling.\n  Resume unfinished jobs after restart; show queued, running, success, failed, and canceled.\n- Store prompts, endpoints, parameters, state changes, cost estimates, errors, and local\n  output paths in SQLite via better-sqlite3. Download files to media/YYYY-MM-DD/.\n- The local page has a submission form and searchable gallery with compare, favorite,\n  rerun, download, delete, and JSON metadata export actions.\n- Read FAL_KEY from .env and ship .env.example. Validate inputs, use safe filenames,\n  and show estimated per-job plus month-to-date API spend before a submission.\n- Bind to localhost only. No accounts, billing, telemetry, or analytics; everything stays\n  on my machine except prompts sent to fal.ai. Tests use a fake provider and spend nothing.\n- Out of scope: the full model catalog, voice cloning, lip sync, motion transfer, social\n  templates, hosted storage, public galleries, provider failover, and mobile apps.\n- Include a README with setup, current endpoint costs, data and backup paths, provider\n  safety policies, and a plain warning that every real generation spends money.",
+  "promptCurated": true
+}

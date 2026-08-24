@@ -1,0 +1,136 @@
+{
+  "slug": "textexpander",
+  "name": "TextExpander",
+  "domain": "textexpander.com",
+  "appURL": "https://textexpander.com",
+  "category": "productivity-utilities",
+  "subcategory": "macOS automation and desktop utilities",
+  "tagline": "Expand local text snippets from abbreviations with forms and simple variables",
+  "priceMonthly": 4.16,
+  "pricing": {
+    "plan": "Individual",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://textexpander.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Annual individual plan divided by 12; monthly billing is higher.",
+    "native": "4.16 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Individual",
+        "monthly": 4.16,
+        "annualPerMonth": 3.33,
+        "per": "user",
+        "limits": "Individual snippet expansion and syncing; public page states no numeric snippet cap.",
+        "notes": "$39.96 billed yearly."
+      },
+      {
+        "name": "Business",
+        "monthly": 10.41,
+        "annualPerMonth": 8.33,
+        "per": "user",
+        "limits": "Shared snippets and administration; snippet activity history limited to 7 days.",
+        "notes": "$99.96 per user billed yearly."
+      },
+      {
+        "name": "Growth",
+        "monthly": 13.54,
+        "annualPerMonth": 10.83,
+        "per": "user",
+        "limits": "Advanced administration, permissions, and data/analytics.",
+        "notes": "$129.96 per user billed yearly."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom administration and security with usage-based active-user billing.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (annual advertised 20% lower); 30-day trial with no card",
+    "priceChanges": [],
+    "hiddenCosts": "Enterprise bills by active-user usage rather than a fixed public seat price. VAT/GST and local-currency conversion through Paddle can raise the checkout total.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://textexpander.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For TextExpander, expand local text snippets from abbreviations with forms and simple variables. The hard boundary is cross-platform apps, team libraries, sync, analytics, and enterprise administration, plus os integration polish and maintenance.",
+  "coreLoopDIY": "Build one focused macOS utility that expands local text snippets from abbreviations with forms and simple variables, exposes keyboard-first controls, and stores settings locally.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS 14 or later",
+    "Xcode",
+    "only the permissions required by the selected feature"
+  ],
+  "whatYouLose": [
+    "cross-platform apps, team libraries, sync, analytics, and enterprise administration",
+    "years of OS-version edge cases",
+    "large extension ecosystem",
+    "cross-device sync",
+    "commercial support and rapid compatibility fixes"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "collaboration"
+  ],
+  "moatNotes": "OS integration polish and maintenance",
+  "replacementScope": "single-purpose local Mac app",
+  "ongoingBurden": "permissions, accessibility APIs, sandboxing, signing, notarization, OS regressions, updates, backups, and support",
+  "whyPeopleStillPay": "People still pay for TextExpander because small utilities are technically reproducible, but customers pay for polish and immediate fixes when an OS update breaks a daily habit. The recurring cost buys permissions, accessibility APIs, sandboxing, signing, notarization, OS regressions, updates, backups, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Espanso",
+      "url": "https://github.com/espanso/espanso",
+      "desc": "Active open-source cross-platform text expansion utility with system integration."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Espanso",
+      "url": "https://espanso.org/",
+      "type": "open-source",
+      "repo": "https://github.com/espanso/espanso",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "TextExpander's forms, variables, dates, and scripts are here; the snippet editor is a YAML file.",
+      "stars": 13900,
+      "lastCommit": "2025-10",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Raycast Free",
+      "url": "https://www.raycast.com/",
+      "desc": "A fine free snippet expander, but forms and richer fill-ins are not really there."
+    },
+    {
+      "name": "Text Blaze",
+      "url": "https://blaze.today/",
+      "desc": "The free tier is a demo-sized snippet set; full forms and dynamic rules are paid."
+    }
+  ],
+  "relatedSlugs": [
+    "alfred-powerpack",
+    "setapp",
+    "bartender"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Individual plan and a single-purpose local Mac app DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for TextExpander in an empty repository.\nUse Swift 6, SwiftUI, AppKit where necessary, SQLite, and the macOS Keychain; do not offer alternative stacks.\nThe core loop is: build one focused macOS utility that expands local text snippets from abbreviations with forms and simple variables, exposes keyboard-first controls, and stores settings locally.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a menu-bar app with a searchable command window and global hotkey.\nImplement only the primary feature and one settings screen instead of a plugin platform.\nRequest permissions just in time and explain why each is needed before opening System Settings.\nStore configuration locally, support export or import, and never capture unrelated user content.\nAdd launch-at-login, update-check opt-in, diagnostics export, and a complete uninstall note.\nWrite unit tests for transformation logic and one UI test for the core keyboard workflow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a third-party extension marketplace.\nDeliberately leave out cloud accounts and cross-device sync.\nDeliberately leave out broad automation that executes untrusted scripts.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,122 @@
+{
+  "slug": "legalzoom",
+  "name": "LegalZoom",
+  "domain": "legalzoom.com",
+  "appURL": "https://legalzoom.com",
+  "category": "legal",
+  "subcategory": "legal documents, privacy compliance and business administration",
+  "tagline": "Collect business facts and fill clearly labeled draft templates for lawyer review",
+  "priceMonthly": 39.09,
+  "pricing": {
+    "plan": "Business Attorney Plan, 12 months",
+    "basis": "annual billing, per month",
+    "unit": "flat",
+    "source": "https://www.legalzoom.com/attorneys/legal-plans/business.html",
+    "checkedOn": "2026-08-10",
+    "confidence": "medium",
+    "notes": "Typical monthly Business Advisory plan; package details vary by state.",
+    "native": "39.09 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Business Attorney Plan, 6 months",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "$259 prepaid every 6 months; equivalent to $43.17/month; unlimited 30-minute consultations on new matters; document review up to 10 pages/document",
+        "notes": "Not available month to month, so recurring monthly field is null."
+      },
+      {
+        "name": "Business Attorney Plan, 12 months",
+        "monthly": null,
+        "annualPerMonth": 39.09,
+        "per": "flat",
+        "limits": "$469.08 prepaid for 12 months; unlimited 30-minute consultations on new matters; document review up to 10 pages/document; 1 annual 1-hour consultation after 6 months",
+        "notes": "Annual effective price shown by LegalZoom."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "6-month or 12-month prepayment; no month-to-month plan",
+    "priceChanges": [],
+    "hiddenCosts": "Ongoing representation, court matters, documents over 10 pages, and work beyond included consultations/review are extra; participating-attorney work is discounted 25%, not included. Filing and government fees remain separate.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.legalzoom.com/attorneys/legal-plans/business.html"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For LegalZoom, collect business facts and fill clearly labeled draft templates for lawyer review. The hard boundary is licensed attorneys, filings, registered agents, support, and legal responsibility, plus expert judgment, compliance, and regulated services.",
+  "coreLoopDIY": "Collect business facts, fill clearly labeled draft templates, track versions and approvals, and repeatedly state that the output requires review by a qualified lawyer.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "self-hosted deployment",
+    "PostgreSQL",
+    "jurisdiction-specific templates supplied by the user or counsel",
+    "secure backup"
+  ],
+  "whatYouLose": [
+    "licensed attorneys, filings, registered agents, support, and legal responsibility",
+    "legal advice",
+    "jurisdictional assurance",
+    "filing and registered-agent network",
+    "continuous regulatory monitoring and liability"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "brand-trust"
+  ],
+  "moatNotes": "expert judgment, compliance, and regulated services",
+  "replacementScope": "internal questionnaire and template tracker",
+  "ongoingBurden": "law changes, jurisdiction, template provenance, access, signatures, filings, deadlines, evidence, retention, security, and professional liability",
+  "whyPeopleStillPay": "People still pay for LegalZoom because the durable value is expert accountability and regulated execution; document generation alone cannot supply either. The recurring cost buys law changes, jurisdiction, template provenance, access, signatures, filings, deadlines, evidence, retention, security, and professional liability, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "docassemble",
+      "url": "https://github.com/jhpyle/docassemble",
+      "desc": "Open-source expert-system platform for guided interviews and document assembly."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Cooley GO Docs",
+      "url": "https://www.cooleygo.com/documents/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Free guided generators for common startup formation, financing, employment, and governance documents; narrow business scope and mandatory human review included at no extra charge.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Orrick Tech Studio",
+      "url": "https://www.orrick.com/en/tech-studio/resources/forms",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "More than fifty free startup forms and generators from a law firm; excellent for common company paperwork, irrelevant for divorce, wills, and most consumer law.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "rocket-lawyer",
+    "clerky",
+    "stripe-atlas"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Business Advisory Plan plan and a internal questionnaire and template tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for LegalZoom in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and a versioned Markdown template engine; do not offer alternative stacks.\nThe core loop is: collect business facts, fill clearly labeled draft templates, track versions and approvals, and repeatedly state that the output requires review by a qualified lawyer.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate versioned questionnaires, reusable fact fields, conditional sections, templates, and approval states.\nShow the source, jurisdiction, owner, reviewed date, and expiry date for every template.\nGenerate DOCX and PDF drafts with prominent draft and review-required labels.\nKeep an immutable audit log of answers, template version, generation time, downloads, and approvals.\nAdd role-based access, retention, export, encrypted backups, and a deadline calendar.\nDisplay legal-review warnings before generation and again before any final download.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out legal advice or guaranteed compliance.\nDeliberately leave out government filings, identity verification, and registered-agent services.\nDeliberately leave out automatic consent decisions or deployment without qualified review.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

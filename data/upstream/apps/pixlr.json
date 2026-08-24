@@ -1,0 +1,291 @@
+{
+  "slug": "pixlr",
+  "name": "Pixlr",
+  "domain": "pixlr.com",
+  "appURL": "https://pixlr.com",
+  "category": "design",
+  "subcategory": "browser photo editor",
+  "tagline": "Browser image editing, design templates, generative tools, and assets",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://pixlr.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Free editor access; the official page does not publish a numeric recurring AI-credit allowance.",
+        "notes": null
+      },
+      {
+        "name": "Plus",
+        "monthly": 2.49,
+        "annualPerMonth": 1.99,
+        "per": "flat",
+        "limits": "80 AI credits/month or 960/year; 1 concurrent generation.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 9.99,
+        "annualPerMonth": 7.99,
+        "per": "flat",
+        "limits": "1,000 AI credits/month or 12,000/year; 4 concurrent generations.",
+        "notes": null
+      },
+      {
+        "name": "Ultra",
+        "monthly": 24.99,
+        "annualPerMonth": 19.99,
+        "per": "flat",
+        "limits": "5,000 AI credits/month plus fair-use unlimited fast generations; 8 concurrent generations.",
+        "notes": null
+      },
+      {
+        "name": "Ultra MAX",
+        "monthly": 49.99,
+        "annualPerMonth": 39.99,
+        "per": "flat",
+        "limits": "10,000 AI credits/month or 120,000/year; 8 concurrent generations.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "Free editor access; the recurring AI-credit amount is not published.",
+    "billingTerms": "monthly + annual (-20%)",
+    "priceChanges": [],
+    "hiddenCosts": "Included subscription credits reset and expire; canceling can reset the subscription balance to zero. Separate credit packs do not expire. 'Unlimited' generation is subject to fair-use and demand controls.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://pixlr.com/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible browser photo editor loop is buildable, but a credible replacement needs more than the first screen. Pixlr earns its keep through editor polish, assets, algorithms, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a focused local browser photo editor editor with import, a small set of transformations, undo, and standards-based export.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "desktop development machine",
+    "Node.js 22 and Rust toolchain",
+    "sample user-owned assets"
+  ],
+  "whatYouLose": [
+    "cloud collaboration and mobile apps",
+    "high-fidelity color, format, and export handling",
+    "pixel-perfect professional tooling",
+    "large template and asset libraries",
+    "color-management edge cases"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "content-rights"
+  ],
+  "moatNotes": "editor polish/assets/algorithms",
+  "whyPeopleStillPay": "Pixlr: Creative users pay for speed, output fidelity, nondestructive editing, and years of edge-case work hidden behind direct manipulation.",
+  "ongoingBurden": "Maintain file-format compatibility, GPU and canvas performance, undo history, export quality, and platform-specific rendering.",
+  "priorArt": [
+    {
+      "name": "Penpot",
+      "url": "https://github.com/penpot/penpot",
+      "desc": "Open-source collaborative design and prototyping platform."
+    },
+    {
+      "name": "PhotoPrism",
+      "url": "https://github.com/photoprism/photoprism",
+      "desc": "Self-hosted photo organization and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Adobe Express Free",
+      "url": "https://www.adobe.com/express/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Better for templates, quick effects, generative credits, and social assets; weaker for deep layer-by-layer image surgery.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install the Adobe Express desktop/mobile app.",
+        "engines": "Adobe Firefly models power the generative features.",
+        "dataFormat": "Projects, uploads, libraries and brand assets live in Adobe's cloud; exports include image, PDF and video files.",
+        "gapVsPaid": "Adobe Express is much shallower for layers, masks, selections and PSD-style raster editing than Pixlr.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.adobe.com/express/pricing",
+          "https://helpx.adobe.com/express/web/adobe-express-subscription/free.html",
+          "https://www.adobe.com/express/feature",
+          "https://helpx.adobe.com/express/web/brands-libraries-projects/create-manage-brands/projects.html",
+          "https://pixlr.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Canva Free",
+      "url": "https://www.canva.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A broad free template and asset library with lightweight photo editing and limited AI; not a serious PSD workstation.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install Canva's desktop/mobile app.",
+        "engines": "Canva AI and Magic Studio provide generative tools; Canva does not publish a complete provider/model map for the free editor.",
+        "dataFormat": "Designs, uploads, folders and brand assets live in Canva's cloud; users export common image, PDF, presentation and video formats.",
+        "gapVsPaid": "Canva is a layout tool rather than a serious layer-based image editor, so detailed raster surgery is a substantial downgrade.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.canva.com/pricing/",
+          "https://www.canva.com/help/upload-media/",
+          "https://www.canva.com/help/manage-uploads/",
+          "https://www.canva.com/policies/privacy-policy/",
+          "https://www.canva.com/ai-assistant/",
+          "https://pixlr.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Desygner Free",
+      "url": "https://desygner.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Templates, photo tools, stock assets, and monthly AI credits in a durable free plan; the editor feels less slick.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install the mobile app.",
+        "engines": "Desygner's terms identify OpenAI-backed AI features.",
+        "dataFormat": "Projects, uploads, fonts and brand assets live in Desygner's cloud; designs export as image or PDF files.",
+        "gapVsPaid": "Desygner lacks Pixlr's deeper layer, selection, masking and filter workflow.",
+        "setupBlocker": null,
+        "sources": [
+          "https://desygner.com/pricing/",
+          "https://desygner.com/",
+          "https://desygner.com/terms/",
+          "https://pixlr.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Photopea Free",
+      "url": "https://www.photopea.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "The closest free browser editor: layers, masks, PSD files, vectors, filters, and local processing, with ads instead of a subscription.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Open the web app; an optional PWA can be installed from Photopea's More menu.",
+        "engines": null,
+        "dataFormat": "Editable files stay on the user's device; PSD is the primary project format, with broad raster and vector import/export support.",
+        "gapVsPaid": "Photopea is the closest editor but lacks Pixlr's integrated template, cloud-asset and generative-content ecosystem and shows ads.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.photopea.com/",
+          "https://www.photopea.com/learn/",
+          "https://www.photopea.com/tuts/install-photopea-to-your-device/",
+          "https://github.com/photopea/photopea",
+          "https://pixlr.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "VistaCreate Starter",
+      "url": "https://create.vista.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Strong for stock-backed social designs and effects, with unlimited exports; advanced raster editing is shallow.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install the mobile app.",
+        "engines": null,
+        "dataFormat": "Projects, uploads and the single Brand Kit live in VistaCreate's cloud; exports include image, GIF and video files.",
+        "gapVsPaid": "VistaCreate's raster editing is shallow and cannot replace Pixlr's layer-by-layer image work.",
+        "setupBlocker": null,
+        "sources": [
+          "https://support.create.vista.com/hc/en-us/articles/360021367319-VistaCreate-Free-Starter-Plan",
+          "https://create.vista.com/",
+          "https://support.create.vista.com/hc/en-us/articles/6347917526940-What-VistaCreate-plans-are-available",
+          "https://create.vista.com/features/brand-kit/",
+          "https://pixlr.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "PhotoPrism",
+      "url": "https://www.photoprism.app/",
+      "desc": "A photo server can store the result, but it cannot perform layered edits, generate assets, or build the design."
+    }
+  ],
+  "relatedSlugs": [
+    "polarr",
+    "fotor",
+    "pixelcut"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Pixlr is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Pixlr, not a full clone.\nUse exactly this stack: Tauri 2 + React + TypeScript + Canvas API.\nPrimary job: Build a focused local browser photo editor editor with import, a small set of transformations, undo, and standards-based export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: cloud collaboration and mobile apps; high-fidelity color, format, and export handling; pixel-perfect professional tooling.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

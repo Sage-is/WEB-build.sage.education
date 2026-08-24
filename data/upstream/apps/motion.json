@@ -1,0 +1,182 @@
+{
+  "slug": "motion",
+  "name": "Motion",
+  "domain": "usemotion.com",
+  "category": "tasks-calendar",
+  "subcategory": "AI scheduling",
+  "tagline": "AI calendar and task scheduler that auto-plans your workday",
+  "priceMonthly": 19,
+  "pricing": {
+    "plan": "Pro AI",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "native": "19 USD",
+    "source": "https://www.usemotion.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Official pricing URL checked; public 2026 references list Individual at $34/month monthly and lower annual pricing.",
+    "tiers": [
+      {
+        "name": "Pro AI",
+        "monthly": null,
+        "annualPerMonth": 19,
+        "per": "user",
+        "limits": "7,500 AI credits/seat/month; unlimited storage; AI chat, projects, tasks, calendar, meetings, docs, wiki, and notes.",
+        "notes": "Annual/default rate; monthly billing exists but its exact toggled amount was not exposed."
+      },
+      {
+        "name": "Business AI",
+        "monthly": null,
+        "annualPerMonth": 29,
+        "per": "user",
+        "limits": "15,000 AI credits/seat/month; capacity planning, dashboards, Gantt, time tracking, permissions, and priority support.",
+        "notes": "Annual/default rate; monthly billing exists but its exact toggled amount was not exposed."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (-33% advertised); exact monthly dollar amounts were not exposed; free trial",
+    "priceChanges": [],
+    "hiddenCosts": "AI overages cost $0.25 per 100 credits on Pro AI and $0.19 per 100 credits on Business AI.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.usemotion.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build an auto-scheduler for your own tasks, but robust calendar conflict handling, integrations, and productized rescheduling take real engineering.",
+  "coreLoopDIY": "Create tasks with duration/deadline/priority, read calendar availability, solve a schedule, and write time blocks back.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google/Microsoft calendar OAuth",
+    "scheduling algorithm",
+    "hosted backend",
+    "notifications",
+    "task database"
+  ],
+  "whatYouLose": [
+    "multi-calendar sync",
+    "recurring work rules",
+    "mobile apps",
+    "team scheduling",
+    "polished rescheduling",
+    "support"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "algorithm/integrations",
+  "whyPeopleStillPay": "They pay because the calendar stays organized without manual drag-and-drop.",
+  "priorArt": [],
+  "alternatives": [
+    {
+      "name": "FlowSavvy Free",
+      "url": "https://flowsavvy.app/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "It auto-plans unlimited tasks for the next two weeks; priorities and dependencies are how the paid plan gets you.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a hosted account in the web app or install the iOS or Android app",
+        "engines": "A deterministic scheduling algorithm; FlowSavvy explicitly says it does not use machine learning to build schedules",
+        "dataFormat": "Tasks, events, and settings live in FlowSavvy's cloud database and synchronize with connected Google, Outlook, or iCloud calendars; the service currently provides no general calendar import or export",
+        "gapVsPaid": "FlowSavvy can auto-place personal tasks but lacks Motion’s team project management, workload coordination, and free priority and dependency controls.",
+        "setupBlocker": "Requires an internet connection; calendar synchronization requires OAuth or app-specific credentials",
+        "sources": [
+          "https://flowsavvy.app/",
+          "https://flowsavvy.app/pricing",
+          "https://help.flowsavvy.app/en/articles/8009170-miscellaneous-faqs",
+          "https://flowsavvy.app/privacy",
+          "https://help.flowsavvy.app/en/articles/6982421-can-i-import-or-export-my-calendar",
+          "https://help.flowsavvy.app/en/articles/13339919-sync-with-google-outlook-and-icloud-calendar",
+          "https://www.usemotion.com/",
+          "https://www.usemotion.com/pricing",
+          "https://www.usemotion.com/features/ai-task-manager",
+          "https://www.usemotion.com/features/ai-calendar.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Reclaim Lite",
+      "url": "https://reclaim.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "The free solo plan moves focus, habits, breaks and meetings around; the planning horizon is one week.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Trevor AI Free",
+      "url": "https://www.trevorai.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "One calendar gets task-to-time-block planning and some AI suggestions; multiple calendars and deeper automation cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a hosted web account and connect one supported calendar; the web app can be installed to a home screen",
+        "engines": "A private per-user deep-learning scheduling model; some language features use OpenAI, according to Trevor's documentation",
+        "dataFormat": "Tasks, calendar events, and scheduling state are processed and stored in Trevor's hosted infrastructure, with connected calendar data synchronized through provider APIs",
+        "gapVsPaid": "Trevor’s free one-calendar planner does not include Motion’s project management, team collaboration, workload planning, or broader automation.",
+        "setupBlocker": "No native desktop or mobile app; calendar integrations require OAuth, and the free tier is limited to one calendar account",
+        "sources": [
+          "https://www.trevorai.com/",
+          "https://www.trevorai.com/docs",
+          "https://www.trevorai.com/integrations/microsoft-calendars",
+          "https://www.trevorai.com/privacy-policy",
+          "https://www.usemotion.com/",
+          "https://www.usemotion.com/pricing",
+          "https://www.usemotion.com/features/ai-task-manager",
+          "https://www.usemotion.com/features/ai-calendar.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Morgen",
+      "url": "https://www.morgen.so/",
+      "desc": "A polished recommendation with no permanent free plan, only a 14-day trial."
+    },
+    {
+      "name": "Structured Free",
+      "url": "https://structured.app/",
+      "desc": "The free timeline looks right, but calendar import and automatic replanning are paid."
+    }
+  ],
+  "relatedSlugs": [
+    "reclaim-ai",
+    "calendly",
+    "savvycal"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "A good 'kinda' because the core algorithm is doable but the product promise is ongoing automation.",
+  "prompt": "Build me a personal task auto-scheduler to replace Motion. Requirements:\n\n- Node + better-sqlite3 + googleapis. Tasks in SQLite: title, duration estimate,\n  deadline, priority, done. A small Express page on localhost:4920 to add and edit\n  tasks, plus a `plan` CLI command.\n- Read my Google Calendar free/busy for the next 14 days (OAuth token cached\n  locally); respect working hours 09:00-18:00 and a lunch block, both set in\n  config.json.\n- The planner is greedy, not clever: earliest deadline first, weighted by priority,\n  packing tasks into free slots in 30-minute increments and splitting anything over\n  90 minutes into chunks.\n- Write the plan back as calendar events with a [plan] prefix. Replanning deletes\n  only [plan] events and relays them, never touching real meetings.\n- Overdue or unschedulable tasks show in red on the web page instead of being\n  silently dropped.\n- A 07:30 node-cron run replans the day and emails me the schedule (SMTP in .env).\n- Single user, local only, no accounts, no telemetry beyond the Google API calls.\n- Out of scope: team scheduling, mobile apps, and meeting-invite handling. It plans\n  my solo work around a calendar it treats as read-only truth.\n- README: the Google Cloud console OAuth setup. Budget an hour for that alone.",
+  "promptCurated": false
+}

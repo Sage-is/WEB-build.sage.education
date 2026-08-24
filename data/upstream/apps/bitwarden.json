@@ -1,0 +1,316 @@
+{
+  "slug": "bitwarden",
+  "name": "Bitwarden",
+  "domain": "bitwarden.com",
+  "category": "security",
+  "subcategory": "password manager",
+  "tagline": "Open-source password manager with hosted and self-hosted options",
+  "priceMonthly": 1.65,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "annual effective per month",
+    "unit": "flat",
+    "native": "1.65 USD",
+    "source": "https://bitwarden.com/pricing/",
+    "checkedOn": "2026-08-07",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Premium listed at $1.65/month billed annually ($19.80/year).",
+    "freeTier": "Free covers unlimited passwords, devices and passkeys; Premium adds TOTP and reports.",
+    "tiers": [
+      {
+        "name": "Free (individual)",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "1 user; unlimited passwords, passkeys and devices; share with 1 other Bitwarden user; text-only Send.",
+        "notes": null
+      },
+      {
+        "name": "Free organization",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "2 users and 2 collections; unlimited vault items.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": null,
+        "annualPerMonth": 1.65,
+        "per": "flat",
+        "limits": "1 user; unlimited passwords/devices; 5 GB personal attachment storage; up to 10 hardware security keys.",
+        "notes": "Annual-only public price: $19.80/year; taxes excluded."
+      },
+      {
+        "name": "Families",
+        "monthly": null,
+        "annualPerMonth": 3.99,
+        "per": "flat",
+        "limits": "Up to 6 users; unlimited collections; 5 GB personal storage plus 5 GB organization storage.",
+        "notes": "Annual-only public price: $47.88/year; taxes excluded."
+      },
+      {
+        "name": "Teams",
+        "monthly": null,
+        "annualPerMonth": 4,
+        "per": "user",
+        "limits": "Unlimited users and collections; Premium features for every seat; 5 GB personal plus 5 GB organization storage.",
+        "notes": "Published price is per user/month billed annually; 7-day business trial."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": 6,
+        "per": "user",
+        "limits": "Unlimited users and collections; includes SSO, account recovery, self-hosting and 1 Families sponsorship per user.",
+        "notes": "Published price is per user/month billed annually; 7-day business trial."
+      }
+    ],
+    "freeTierCaps": "Free individual: 1 user, unlimited passwords/passkeys/devices, sharing with 1 other user; Free organization: 2 users and 2 collections.",
+    "billingTerms": "published prices are annual subscriptions; no public month-to-month prices displayed; taxes excluded",
+    "priceChanges": [],
+    "hiddenCosts": "Extra encrypted storage costs $0.33/GB/month; organization seats added by invitations are prorated, and unused purchased seats remain billable until the subscription seat count is reduced.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://bitwarden.com/pricing/",
+      "https://bitwarden.com/pricing/business/",
+      "https://bitwarden.com/help/password-manager-plans/",
+      "https://bitwarden.com/help/attachments/",
+      "https://bitwarden.com/help/manage-subscription-seats-in-your-organization/"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "If your goal is to stop paying hosted Bitwarden Premium, the core vault can be self-hosted or replaced with KeePass-style local storage; the caveat is security responsibility.",
+  "coreLoopDIY": "Use KeePassXC locally or self-host a Bitwarden-compatible server, keep encrypted backups, and use browser/mobile clients.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "server or local vault",
+    "domain/HTTPS if self-hosting",
+    "secure backup",
+    "browser/mobile clients"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "premium support",
+    "emergency access",
+    "polished admin",
+    "reduced security maintenance risk"
+  ],
+  "moatTags": [
+    "brand-trust",
+    "scale-infra"
+  ],
+  "moatNotes": "security/trust/hosting",
+  "whyPeopleStillPay": "They pay because a professionally maintained security service is cheap relative to the downside of mistakes.",
+  "priorArt": [
+    {
+      "name": "vaultwarden",
+      "url": "https://github.com/dani-garcia/vaultwarden",
+      "desc": "Unofficial Bitwarden-compatible self-hosted server used by many technical users.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "AliasVault",
+      "url": "https://www.aliasvault.net/",
+      "type": "open-source",
+      "repo": "https://github.com/aliasvault/aliasvault",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted",
+        "browser-extension"
+      ],
+      "desc": "Passwords, passkeys, and disposable inboxes in one vault; self-host it and mail delivery joins your chores.",
+      "stars": 2400,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup and browser/mobile apps, or a Linux Docker Compose install script for self-hosting",
+        "engines": null,
+        "dataFormat": "Vault secrets and received-email contents are encrypted client-side; the hosted or self-hosted server stores ciphertext, with an offline cache on clients",
+        "gapVsPaid": "It does not yet match Bitwarden's mature Organizations, broad client ecosystem and recovery and sharing workflows.",
+        "setupBlocker": "None for the hosted service; self-hosting needs a Linux server, Docker, DNS/TLS and mail routing",
+        "sources": [
+          "https://www.aliasvault.net/",
+          "https://www.aliasvault.com/",
+          "https://github.com/aliasvault/aliasvault",
+          "https://docs.aliasvault.net/installation/",
+          "https://docs.aliasvault.net/architecture/security/",
+          "https://bitwarden.com/pricing/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Bitwarden Free",
+      "url": "https://bitwarden.com/pricing/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "The core password manager is already free: unlimited vault items, devices, passkeys, and autofill.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "both",
+        "install": "Create a hosted account and install an official app or extension; optional self-hosting uses Bitwarden's Docker deployment",
+        "engines": null,
+        "dataFormat": "Vault items are encrypted locally before sync; Bitwarden's cloud or a self-hosted server stores encrypted vault data, while clients keep an encrypted local cache",
+        "gapVsPaid": "It is the same core product, but canceling Premium means losing integrated TOTP, file attachments, emergency access and several reports.",
+        "setupBlocker": "None for hosted use; self-hosting requires Docker, a domain/TLS, SMTP and ongoing server maintenance",
+        "sources": [
+          "https://bitwarden.com/pricing/",
+          "https://bitwarden.com/help/bitwarden-security-white-paper/",
+          "https://bitwarden.com/help/what-encryption-is-used/",
+          "https://github.com/bitwarden/clients",
+          "https://github.com/bitwarden/server/blob/main/LICENSE_FAQ.md"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "KeePassXC",
+      "url": "https://keepassxc.org/",
+      "type": "open-source",
+      "repo": "https://github.com/KeePassXreboot/keepassxc",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "browser-extension"
+      ],
+      "desc": "A vault file on your disk with excellent autofill; syncing and sharing are deliberately somebody else’s job.",
+      "stars": 28300,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "local",
+        "install": "Native Windows, macOS and Linux package",
+        "engines": null,
+        "dataFormat": "One encrypted KDBX database file on disk; syncing means placing that file in a separate cloud or shared-folder service",
+        "gapVsPaid": "It trades Bitwarden's built-in sync, sharing and account recovery for a single vault file that you must synchronize and back up safely yourself.",
+        "setupBlocker": "There is no built-in sync, sharing or recovery, so the user must choose a sync method and manage conflicts and backups",
+        "sources": [
+          "https://keepassxc.org/",
+          "https://github.com/KeePassXreboot/keepassxc",
+          "https://keepassxc.org/docs/",
+          "https://keepassxc.org/docs/KeePassXC_GettingStarted",
+          "https://bitwarden.com/pricing/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Passbolt Community Edition",
+      "url": "https://www.passbolt.com/",
+      "type": "open-source",
+      "repo": "https://github.com/passbolt/passbolt_api",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted",
+        "cli",
+        "browser-extension"
+      ],
+      "desc": "A team password vault with real sharing and a server stack that expects an adult in the room.",
+      "stars": 6100,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "self-hosted",
+        "install": "Ubuntu or Debian package, or Docker deployment, followed by browser-extension setup",
+        "engines": null,
+        "dataFormat": "Password secrets are OpenPGP-encrypted; account, sharing and audit metadata live in SQL, while users' private keys and recovery kits remain client-side",
+        "gapVsPaid": "It requires substantially more server and OpenPGP key administration while offering a narrower, team-first experience than Bitwarden.",
+        "setupBlocker": "A server, database, domain, TLS, SMTP and key-recovery process are required before anyone can use it",
+        "sources": [
+          "https://www.passbolt.com/",
+          "https://github.com/passbolt/passbolt_api",
+          "https://www.passbolt.com/docs/hosting/install/ce/ubuntu/",
+          "https://www.passbolt.com/docs/hosting/install/ce/debian/",
+          "https://www.passbolt.com/docs/security/",
+          "https://bitwarden.com/pricing/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Vaultwarden",
+      "url": "https://github.com/dani-garcia/vaultwarden",
+      "type": "open-source",
+      "repo": "https://github.com/dani-garcia/vaultwarden",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted",
+        "browser-extension"
+      ],
+      "desc": "Bitwarden’s clients pointed at your own server; unofficial, capable, and now you are the outage.",
+      "stars": 65000,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "self-hosted",
+        "install": "Docker or Podman container with a persistent /data volume and a reverse proxy for HTTPS",
+        "engines": null,
+        "dataFormat": "Client-encrypted Bitwarden-compatible vault data stored in SQLite by default, or MySQL/PostgreSQL, with attachments and configuration in the persistent volume",
+        "gapVsPaid": "It is unofficial and may lag Bitwarden's proprietary or enterprise features, while support, backups and uptime move to you.",
+        "setupBlocker": "Docker, a domain and HTTPS reverse proxy are the easy part; backups, upgrades and outages become the user's responsibility",
+        "sources": [
+          "https://github.com/dani-garcia/vaultwarden",
+          "https://github.com/dani-garcia/vaultwarden/wiki/Which-container-image-to-use",
+          "https://github.com/dani-garcia/vaultwarden/wiki/Enabling-HTTPS",
+          "https://github.com/dani-garcia/vaultwarden/wiki/Backing-up-your-vault",
+          "https://bitwarden.com/help/what-encryption-is-used/",
+          "https://bitwarden.com/pricing/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Padloc",
+      "url": "https://padloc.app/",
+      "desc": "The live site hides a stalled repo: last commit March 2025 and production self-hosting docs never really arrived."
+    }
+  ],
+  "relatedSlugs": [
+    "dashlane",
+    "hey-email",
+    "1password"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Interesting because the paid app itself has strong open-source/self-host lineage.",
+  "prompt": "Build me a self-hosted password vault to replace hosted Bitwarden Premium.\nRequirements:\n\n- Do not write a password manager. Deploy vaultwarden (the Bitwarden-compatible\n  server) on my VPS: a docker-compose.yml with the vaultwarden/server image\n  and a data volume at ./vw-data.\n- Front it with Caddy for automatic HTTPS on a subdomain I give you; the\n  browser and mobile clients require HTTPS to work at all.\n- Lock it down after I register my one account: SIGNUPS_ALLOWED=false, admin\n  token in .env, nothing else exposed.\n- Clients are the official Bitwarden apps and extensions pointed at my server\n  URL. That is the point: autofill, mobile, and passkeys keep working.\n- Nightly backup cron job: tar vw-data, encrypt it with age, copy it off the\n  box. Write restore.sh and make me run one restore drill before trusting it.\n- Import my existing vault with the standard Bitwarden export/import flow.\n- Out of scope: emergency access, org and family sharing, and pretending I\n  have a security team. Note in the README: clients cache the vault, so a\n  dead server locks me out of nothing, but I now own updates and patching\n  forever.\n- README: compose up, first-account creation, update procedure, and the\n  restore drill.",
+  "promptCurated": false
+}

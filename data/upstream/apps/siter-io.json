@@ -1,0 +1,141 @@
+{
+  "slug": "siter-io",
+  "name": "Siter.io",
+  "domain": "siter.io",
+  "appURL": "https://siter.io",
+  "category": "website-builder",
+  "subcategory": "collaborative website builder",
+  "tagline": "Visual website design and publishing with Figma import and collaboration",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://siter.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "10 pages and 3 forms; pricing page displays unlimited websites and teammates, with Figma plugin and SSL",
+        "notes": "The page's free-plan wording is unusually broad; custom-domain and published-site restrictions are not numerically explained there."
+      },
+      {
+        "name": "Solo",
+        "monthly": 7,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "1 website, 2 editors included, 10 pages, 3 forms, Figma plugin and SSL",
+        "notes": "Annual billing exists, but its current numeric effective price was not exposed by the accessible pricing HTML."
+      },
+      {
+        "name": "Plus",
+        "monthly": 12,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "3 websites, 4 editors included, 50 pages, 5 forms, Figma plugin and SSL",
+        "notes": "Annual price not exposed in accessible first-party HTML."
+      },
+      {
+        "name": "Pro",
+        "monthly": 24,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "5 websites, 6 editors included, unlimited pages and forms, Figma plugin and SSL",
+        "notes": "Annual price not exposed in accessible first-party HTML."
+      }
+    ],
+    "freeTierCaps": "10 pages and 3 forms; the live table labels websites and teammates unlimited, but does not clearly state publication/domain limits",
+    "billingTerms": "monthly + annual; exact annual prices not exposed in accessible first-party HTML",
+    "priceChanges": [],
+    "hiddenCosts": "Additional websites and teammates beyond a paid plan's allowance are billed monthly, but the public help page does not publish their unit prices.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://siter.io/pricing",
+      "https://help.siter.io/article/165-upgrade-switch-cancel-subscription"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible collaborative website builder loop is buildable, but a credible replacement needs more than the first screen. Siter.io earns its keep through editor, CMS, hosting, polish, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a focused collaborative website builder generator that edits structured page sections, previews responsive layouts, and publishes static files.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "deploy target or static hosting",
+    "user-owned domain for publishing"
+  ],
+  "whatYouLose": [
+    "general-purpose visual editing",
+    "large template and component libraries",
+    "CMS collaboration and client handoff",
+    "managed hosting, forms, and analytics"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra",
+    "collaboration"
+  ],
+  "moatNotes": "editor/CMS/hosting/polish",
+  "whyPeopleStillPay": "Siter.io: A single site is easy to code. People pay for safe ongoing edits, templates, publishing, domains, collaboration, and no-maintenance hosting.",
+  "ongoingBurden": "Maintain responsive rendering, browser compatibility, deployment, domains, forms, spam protection, backups, and editor migrations.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder."
+    },
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web-builder framework."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Plasmic",
+      "url": "https://www.plasmic.app",
+      "type": "open-source",
+      "repo": "https://github.com/plasmicapp/plasmic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A collaborative visual builder with Figma import, hosting and custom domains on the free plan; the badge stays.",
+      "stars": 6900,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "An editor framework with no finished collaboration, import and publishing product."
+    },
+    {
+      "name": "TeleportHQ",
+      "url": "https://teleporthq.io",
+      "desc": "Figma import looks promising until the current seven-day editor trial ends."
+    }
+  ],
+  "relatedSlugs": [
+    "umso",
+    "swipe-pages",
+    "readymag"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Siter.io is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Siter.io, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a focused collaborative website builder generator that edits structured page sections, previews responsive layouts, and publishes static files.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: general-purpose visual editing; large template and component libraries; CMS collaboration and client handoff.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

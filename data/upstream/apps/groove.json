@@ -1,0 +1,290 @@
+{
+  "slug": "groove",
+  "name": "Groove",
+  "domain": "groovehq.com",
+  "appURL": "https://groovehq.com",
+  "category": "customer-support",
+  "subcategory": "help desks, live chat and support knowledge",
+  "tagline": "Turn one support mailbox into an assigned team inbox with a knowledge base",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://groovehq.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Standard monthly user rate.",
+    "native": "20 USD",
+    "kind": "fixed",
+    "currency": "USD"
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Groove, turn one support mailbox into an assigned team inbox with a knowledge base. The hard boundary is email reliability, reporting, rules, integrations, and mature simplicity, plus channel integrations and support operations.",
+  "coreLoopDIY": "Turn one support mailbox into an assigned team inbox with a knowledge base, reply from one place, and retain a searchable conversation history.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "email or chat channel credentials"
+  ],
+  "whatYouLose": [
+    "email reliability, reporting, rules, integrations, and mature simplicity",
+    "omnichannel integrations",
+    "large-scale deliverability",
+    "AI resolution tuning",
+    "enterprise routing and compliance"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "channel integrations and support operations",
+  "replacementScope": "small-team shared inbox",
+  "ongoingBurden": "message delivery, webhooks, threading, identity, permissions, attachments, notifications, spam, search, uptime, and retention",
+  "whyPeopleStillPay": "People still pay for Groove because support software survives because missing or misrouting one customer message is expensive and every channel behaves differently. The recurring cost buys message delivery, webhooks, threading, identity, permissions, attachments, notifications, spam, search, uptime, and retention, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Chatwoot",
+      "url": "https://github.com/chatwoot/chatwoot",
+      "desc": "Mature open-source customer engagement and shared-inbox platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Chatwoot",
+      "url": "https://www.chatwoot.com/",
+      "type": "open-source",
+      "repo": "https://github.com/chatwoot/chatwoot",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A proper support inbox with chat, email and a help center; free software, billable server chores.",
+      "stars": 35534,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose on a Linux VM, followed by environment, database, reverse-proxy and TLS configuration",
+        "engines": null,
+        "dataFormat": "Application data in PostgreSQL, queues/cache in Redis, and attachments on local disk or S3-compatible/cloud object storage",
+        "gapVsPaid": "It is a broader omnichannel stack that requires self-hosting rather than Groove's simple managed shared mailbox.",
+        "setupBlocker": "Provisioning a Linux server and correctly wiring DNS/TLS, SMTP, PostgreSQL/Redis and storage",
+        "sources": [
+          "https://github.com/chatwoot/chatwoot",
+          "https://github.com/chatwoot/chatwoot/blob/develop/LICENSE",
+          "https://developers.chatwoot.com/self-hosted/deployment/docker",
+          "https://developers.chatwoot.com/self-hosted/deployment/architecture",
+          "https://developers.chatwoot.com/self-hosted/deployment/requirements",
+          "https://developers.chatwoot.com/self-hosted/configuration/environment-variables",
+          "https://www.groovehq.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Frappe Helpdesk",
+      "url": "https://frappe.io/helpdesk",
+      "type": "open-source",
+      "repo": "https://github.com/frappe/helpdesk",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Tickets, SLAs and a knowledge base in a clean Frappe shell; the five-minute installer still leaves you the pager.",
+      "stars": 3300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "self-hosted",
+        "install": "Run Frappe's easy-install script against the stable container image on a Linux server",
+        "engines": null,
+        "dataFormat": "Tickets in the Frappe site database, with public and private attachments in the site's files directories",
+        "gapVsPaid": "You give up Groove's low-friction email collaboration for a younger, self-hosted Frappe help desk.",
+        "setupBlocker": "A Linux server, domain/DNS, Docker or the easy-install script, and mail account configuration",
+        "sources": [
+          "https://github.com/frappe/helpdesk",
+          "https://github.com/frappe/helpdesk/blob/develop/LICENSE",
+          "https://docs.frappe.io/helpdesk",
+          "https://www.groovehq.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "osTicket",
+      "url": "https://osticket.com/",
+      "type": "open-source",
+      "repo": "https://github.com/osTicket/osTicket",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Email and web forms become assigned tickets; dated, dependable and very much your PHP server.",
+      "stars": 3868,
+      "lastCommit": "2026-06",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-only",
+        "runs": "self-hosted",
+        "install": "Upload the release to a PHP web root, create a MySQL database, then finish the browser installer",
+        "engines": null,
+        "dataFormat": "Tickets and configuration in MySQL; attachments in the database or server filesystem depending on storage setup; ticket metadata can export as CSV",
+        "gapVsPaid": "It is less polished for conversational email collaboration and knowledge-base publishing than Groove.",
+        "setupBlocker": "A PHP/MySQL web host plus database credentials, filesystem permissions and mail piping or IMAP setup",
+        "sources": [
+          "https://github.com/osTicket/osTicket",
+          "https://github.com/osTicket/osTicket/blob/develop/LICENSE.txt",
+          "https://docs.osticket.com/en/latest/Getting%20Started/Installation.html",
+          "https://docs.osticket.com/en/latest/Getting%20Started/Upgrade%20and%20Migration.html",
+          "https://docs.osticket.com/en/latest/Guides/Data%20Extraction%20Guide.html",
+          "https://www.groovehq.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Zammad",
+      "url": "https://zammad.org/",
+      "type": "open-source",
+      "repo": "https://github.com/zammad/zammad",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A serious ticket desk with email, chat, SLAs and a knowledge base; setup is the first ticket.",
+      "stars": 5800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "self-hosted",
+        "install": "Deploy the Docker Compose/Portainer stack or install supported Linux packages",
+        "engines": null,
+        "dataFormat": "Ticket and user data in PostgreSQL, search indexes in Elasticsearch, and attachments/backups in Docker volumes or server storage",
+        "gapVsPaid": "Its ticket-centric interface and heavy infrastructure are overkill compared with Groove's lightweight inbox.",
+        "setupBlocker": "A comparatively large server and familiarity with Docker/Portainer, PostgreSQL and Elasticsearch",
+        "sources": [
+          "https://github.com/zammad/zammad",
+          "https://github.com/zammad/zammad/blob/develop/LICENSE",
+          "https://docs.zammad.org/en/latest/install/docker-compose.html",
+          "https://docs.zammad.org/en/latest/install/package.html",
+          "https://docs.zammad.org/en/latest/prerequisites/hardware.html",
+          "https://docs.zammad.org/en/pre-release/install/elasticsearch/connect-configure-elasticsearch.html",
+          "https://docs.zammad.org/en/latest/appendix/backup-and-restore/docker-compose.html",
+          "https://www.groovehq.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "tawk.to",
+      "url": "https://www.tawk.to/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "Live chat, tickets, email, and a help centre for zero dollars; the tiny tawk.to badge pays the rent.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, then paste the generated JavaScript widget or install a CMS plugin",
+        "engines": null,
+        "dataFormat": "Chats, tickets and contacts in tawk.to's cloud account; chat and ticket exports are JSON",
+        "gapVsPaid": "Its email-ticket workflow and knowledge base are less refined than Groove's shared-mailbox experience.",
+        "setupBlocker": "Access to edit the website or install its CMS plugin",
+        "sources": [
+          "https://www.tawk.to/",
+          "https://www.tawk.to/why-free/",
+          "https://help.tawk.to/article/adding-a-widget-to-your-website",
+          "https://www.tawk.to/data-protection/how-we-store-your-data/",
+          "https://www.tawk.to/security/",
+          "https://help.tawk.to/article/where-and-how-do-we-host-our-data",
+          "https://help.tawk.to/article/how-do-i-convert-json-files",
+          "https://www.groovehq.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Odoo Helpdesk One App Free",
+      "url": "https://www.odoo.com/app/helpdesk",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A real hosted ticket desk for unlimited users, as long as Helpdesk is your one free Odoo app.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted Odoo Online signup with Helpdesk selected as the single free app",
+        "engines": null,
+        "dataFormat": "An Odoo Online PostgreSQL database in Odoo's cloud, with record exports and downloadable ZIP database backups",
+        "gapVsPaid": "The one-app-free rule and broader ERP shell make it less straightforward than Groove.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.odoo.com/pricing",
+          "https://www.odoo.com/app/helpdesk",
+          "https://www.odoo.com/documentation/19.0/administration/odoo_online.html",
+          "https://www.odoo.com/documentation/19.0/administration/hosting.html",
+          "https://www.odoo.com/documentation/19.0/applications/essentials/export_import_data.html",
+          "https://www.groovehq.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "FreeScout",
+      "url": "https://freescout.net/",
+      "desc": "The shared inbox is free, but its knowledge base is a paid module, so it misses the stated job."
+    },
+    {
+      "name": "Freshdesk Free Program",
+      "url": "https://www.freshworks.com/freshdesk/pricing/",
+      "desc": "The no-cost program ends after six months, so it fails the word forever."
+    },
+    {
+      "name": "Zoho Desk Free",
+      "url": "https://www.zoho.com/desk/",
+      "desc": "The three-agent inbox is free; a public knowledge base is not."
+    }
+  ],
+  "relatedSlugs": [
+    "intercom",
+    "zendesk",
+    "help-scout"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Standard plan and a small-team shared inbox DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Groove in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, WebSockets, and Docker Compose; do not offer alternative stacks.\nThe core loop is: turn one support mailbox into an assigned team inbox with a knowledge base, reply from one place, and retain a searchable conversation history.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement one workspace, agents, contacts, inboxes, conversations, messages, labels, and assignment.\nProvide a website chat widget with reconnect, unread counts, file limits, and clear availability state.\nCreate a shared inbox with filters, collision warnings, notes, canned replies, and searchable history.\nAdd email notifications, browser notifications, and an immutable assignment and status log.\nImplement spam controls, attachment scanning hooks, retention settings, export, and contact deletion.\nShip Docker Compose, backups, health checks, migrations, and a documented admin recovery flow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out many social and messaging channels.\nDeliberately leave out AI agents trained on proprietary support data.\nDeliberately leave out enterprise workforce management, SSO, and compliance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

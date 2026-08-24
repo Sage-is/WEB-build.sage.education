@@ -1,0 +1,130 @@
+{
+  "slug": "lindy",
+  "name": "Lindy",
+  "domain": "lindy.ai",
+  "appURL": "https://lindy.ai",
+  "category": "automation",
+  "subcategory": "AI assistants + automation",
+  "tagline": "Configurable AI assistants for email, meetings, support, and operations",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "usage-based",
+    "basis": "usage or capacity based",
+    "unit": "usage",
+    "currency": "USD",
+    "native": "Usage or capacity pricing; exact monthly cost varies",
+    "source": "https://lindy.ai/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Plus",
+        "monthly": 49.99,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "2 connected inboxes; base monthly usage allowance is not stated numerically on the public card.",
+        "notes": "7-day trial."
+      },
+      {
+        "name": "Pro",
+        "monthly": 99.99,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "3 connected inboxes; 3x the Plus usage allowance; absolute task or credit count not published.",
+        "notes": "7-day trial."
+      },
+      {
+        "name": "Max",
+        "monthly": 199.99,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "5 connected inboxes; 7x the Plus usage allowance; absolute task or credit count not published.",
+        "notes": "7-day trial."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom inbox, usage, security and support limits.",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; 7-day trial",
+    "billingTerms": "monthly only; no public annual plan",
+    "priceChanges": [],
+    "hiddenCosts": "Unused usage does not roll over. Optional overage is charged at 2x the standard credit cost; phone numbers cost $10/month each and US/Canada calls use about 20 credits per minute.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://www.lindy.ai/pricing",
+      "https://docs.lindy.ai/account-and-billing/credits"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible AI assistants + automation loop is buildable, but a credible replacement needs more than the first screen. Lindy earns its keep through connectors, auth, reliability, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build one explicit AI assistants + automation workflow with a trigger, validated steps, retries, logs, and a manual replay button.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "hosted PostgreSQL and Redis",
+    "API credentials for the two chosen services",
+    "Node.js 22"
+  ],
+  "whatYouLose": [
+    "schema drift handling and enterprise controls",
+    "sender reputation, deliverability, and suppression handling",
+    "hundreds of maintained connectors",
+    "OAuth app verification",
+    "durable execution at scale"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra"
+  ],
+  "moatNotes": "connectors/auth/reliability",
+  "whyPeopleStillPay": "Lindy: One automation is easy. Subscribers pay for maintained integrations, credentials, retries, observability, and someone else owning breakage.",
+  "ongoingBurden": "Maintain OAuth, rate limits, webhooks, retries, queues, idempotency, logs, secret rotation, and third-party API changes.",
+  "priorArt": [
+    {
+      "name": "Activepieces",
+      "url": "https://github.com/activepieces/activepieces",
+      "desc": "Open-source automation builder with connectors and self-hosting."
+    },
+    {
+      "name": "n8n",
+      "url": "https://github.com/n8n-io/n8n",
+      "desc": "Source-available workflow automation engine and connector reference."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Dify Community Edition",
+      "url": "https://dify.ai/",
+      "desc": "A visual agent builder; the inbox, calendar, and support integrations are still yours to wire."
+    },
+    {
+      "name": "Flowise",
+      "url": "https://flowiseai.com/",
+      "desc": "A visual LLM graph, not a finished email, meeting, or support assistant."
+    },
+    {
+      "name": "n8n Community Edition",
+      "url": "https://n8n.io/",
+      "desc": "A workflow canvas, not a ready assistant; email, meetings, and support behavior still have to be designed."
+    }
+  ],
+  "relatedSlugs": [
+    "relevance-ai",
+    "browse-ai",
+    "gumloop"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Lindy is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Lindy, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build one explicit AI assistants + automation workflow with a trigger, validated steps, retries, logs, and a manual replay button.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: schema drift handling and enterprise controls; sender reputation, deliverability, and suppression handling; hundreds of maintained connectors.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

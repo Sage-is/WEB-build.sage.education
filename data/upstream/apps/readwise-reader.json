@@ -1,0 +1,101 @@
+{
+  "slug": "readwise-reader",
+  "name": "Readwise Reader",
+  "domain": "readwise.io",
+  "category": "read-it-later",
+  "subcategory": "reader + highlights",
+  "tagline": "Read-it-later app with highlights, RSS, PDFs, and spaced review",
+  "priceMonthly": 12.99,
+  "pricing": {
+    "plan": "Readwise Full",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "12.99 USD",
+    "source": "https://readwise.io/pricing/reader",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Full/Readwise including Reader listed at $12.99/month monthly and $9.99/month annually.",
+    "tiers": [
+      {
+        "name": "Readwise Full",
+        "monthly": 12.99,
+        "annualPerMonth": 9.99,
+        "per": "user",
+        "limits": "Includes Reader plus Readwise highlight review and export; no separate Reader-only paid plan.",
+        "notes": "Annual total is $119.88."
+      }
+    ],
+    "freeTierCaps": "no free tier; 30-day trial",
+    "billingTerms": "monthly + annual; Reader is bundled only with Readwise Full",
+    "priceChanges": [],
+    "hiddenCosts": "there is no cheaper Reader-only subscription; continuous subscribers retain their locked price, so legacy accounts may pay a different amount",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://readwise.io/pricing/reader"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "Saving articles and highlighting is easy; reliable extraction, mobile/offline reading, sync, Kindle/import integrations, RSS/PDF support, and review loops are real work.",
+  "coreLoopDIY": "Build a browser save endpoint, article extractor, reader view, highlights table, export to Markdown, and review emails.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "hosted app",
+    "browser extension or share sheet",
+    "parser/extractor",
+    "database",
+    "email or notification service",
+    "optional OCR/PDF tools"
+  ],
+  "whatYouLose": [
+    "excellent parsing",
+    "mobile/offline apps",
+    "Kindle integrations",
+    "RSS/PDF workflows",
+    "spaced repetition",
+    "exports"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish",
+    "switching-costs"
+  ],
+  "moatNotes": "capture/sync/integrations",
+  "whyPeopleStillPay": "They pay because all reading inputs flow into one durable highlight system.",
+  "priorArt": [
+    {
+      "name": "wallabag",
+      "url": "https://github.com/wallabag/wallabag",
+      "desc": "Open-source read-it-later app with article extraction and self-hosted reading workflows.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Karakeep",
+      "url": "https://karakeep.app",
+      "desc": "Excellent capture, PDFs, RSS and highlights, but no spaced highlight review."
+    },
+    {
+      "name": "Omnivore",
+      "url": "https://github.com/omnivore-app/omnivore",
+      "desc": "The cloud died; the surviving version is a multi-service self-host, not a normal-person install."
+    },
+    {
+      "name": "wallabag",
+      "url": "https://wallabag.org",
+      "desc": "A solid read-later archive, but it lacks the combined RSS, PDF and spaced-review workflow."
+    }
+  ],
+  "relatedSlugs": [
+    "raindrop-io",
+    "feedly",
+    "inoreader"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful because DIY covers 60% quickly but power users pay for the ingestion web.",
+  "prompt": "Build me a personal read-it-later app to replace Readwise Reader. Requirements:\n\n- A self-hosted web app (VPS or localhost): Node + Express + better-sqlite3, server-\n  rendered with one clean reading column.\n- Save via a bookmarklet POSTing the URL; extract with @mozilla/readability + jsdom and\n  store title, author, site, word count, and cleaned HTML. When extraction fails, keep\n  the bare link with a 'source only' badge instead of mangling it.\n- Reading view: the cleaned article, estimated read time, and select-to-highlight (a\n  little vanilla JS; store the highlight with surrounding context).\n- Library: Inbox, Archive, and per-tag lists; keyboard j/k to move, Enter to open, e to\n  archive.\n- A highlights page grouped by article, plus a nightly node-cron export of all\n  highlights to ~/highlights/YYYY-MM-DD.md so they outlive the app.\n- A daily review email with 5 random old highlights via Resend or SMTP (creds in .env).\n- Full-text search over articles and highlights with SQLite FTS5.\n- No accounts, no telemetry; if hosted, put it behind basic auth and HTTPS.\n- Out of scope: RSS ingestion, PDF/epub parsing, Kindle sync, and mobile apps. The\n  browser is the reader.\n- README: bookmarklet install and SMTP setup.",
+  "promptCurated": false
+}

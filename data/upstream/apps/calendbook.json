@@ -1,0 +1,212 @@
+{
+  "slug": "calendbook",
+  "name": "Calendbook",
+  "domain": "calendbook.com",
+  "appURL": "https://calendbook.com",
+  "category": "scheduling",
+  "subcategory": "booking pages",
+  "tagline": "Scheduling links with calendars, payments, and automated reminders",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://calendbook.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited bookings, 1 event type, 1 connected calendar, username/booking page and embed",
+        "notes": "The homepage says unlimited bookings; an official integrations page separately says Professional unlocks unlimited bookings, an unresolved first-party contradiction."
+      },
+      {
+        "name": "Premium",
+        "monthly": null,
+        "annualPerMonth": 2,
+        "per": "user",
+        "limits": "Unlimited event types, up to 10 calendar connections, Zapier and webhooks",
+        "notes": "Current official homepage says $2/user/month billed annually; no month-to-month rate was disclosed."
+      },
+      {
+        "name": "Professional",
+        "monthly": null,
+        "annualPerMonth": 5,
+        "per": "user",
+        "limits": "Premium features plus custom branding, advanced availability and accept/reject controls",
+        "notes": "Current official homepage says $5/user/month billed annually; no month-to-month rate was disclosed."
+      }
+    ],
+    "freeTierCaps": "Unlimited bookings, 1 event type and 1 connected calendar, according to the current homepage",
+    "billingTerms": "annual billing on the current official pricing cards; no monthly rate disclosed",
+    "priceChanges": [],
+    "hiddenCosts": "The official homepage and integrations page conflict over whether Free has unlimited bookings, so that limit should be treated cautiously. Paid plans are per user and annual-only on the current public card.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://calendbook.com/",
+      "https://calendbook.com/pricing",
+      "https://www.calendbook.com/integrations"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Calendbook's solo core is compact: build a personal booking pages tool that reads one calendar, publishes availability, reserves a slot, and writes the event back. A competent builder can reach a useful personal version in one sitting, while the paid product mainly wins on OAuth, calendar reliability.",
+  "coreLoopDIY": "Build a personal booking pages tool that reads one calendar, publishes availability, reserves a slot, and writes the event back.",
+  "diyTimeEstimate": "one sitting",
+  "replacementScope": "personal replacement for the core loop",
+  "requirements": [
+    "Google Calendar OAuth credentials",
+    "hosted callback URL",
+    "email provider API key in .env"
+  ],
+  "whatYouLose": [
+    "race-free booking under load",
+    "team routing and round robin",
+    "reliable reminders and timezone edge cases",
+    "calendar-provider edge cases and timezone correctness",
+    "multi-calendar conflict handling"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "OAuth/calendar reliability",
+  "whyPeopleStillPay": "Calendbook: People pay because a booking tool must never double-book them, leak private events, or send the wrong time to a client.",
+  "ongoingBurden": "Maintain OAuth, timezone data, webhooks, idempotency, reminders, calendar-provider quirks, and uptime.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.diy",
+      "desc": "Mature open-source scheduling platform and OAuth reference."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Appointy Free",
+      "url": "https://www.appointy.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "One staffer gets reminders, classes and Square checkout for 100 bookings a month; growth wakes the paywall.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Booking, customer, service and staff records live in Appointy's cloud, with connected calendar and payment data also handled by their respective providers",
+        "gapVsPaid": "The free plan is capped at one staff member, five services and 100 appointments a month, and it lacks free two-way calendar sync.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.appointy.com/pricing/",
+          "https://help.appointy.com/hc/en-us/articles/215053646-Is-My-Data-Secure-On-Appointy",
+          "https://www.appointy.com/appointy-privacy-policy/",
+          "https://calendbook.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Cal.com Free",
+      "url": "https://cal.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Unlimited solo event types, calendars and bookings, with payments and notifications; team routing costs money.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account, availability, booking and integration records live in Cal.com's cloud and in the connected calendar, conferencing and payment providers",
+        "gapVsPaid": "The free plan is excellent for one person, but shared staffing, round-robin routing and team administration require payment.",
+        "setupBlocker": null,
+        "sources": [
+          "https://cal.com/pricing",
+          "https://cal.com/privacy",
+          "https://calendbook.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "zcal Free",
+      "url": "https://zcal.co/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Unlimited links and calendars, custom questions, email reminders and Stripe payments; teams are paid and zcal takes 3%.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Account and booking records live in zcal's cloud; Stripe processes and stores payment details for paid bookings",
+        "gapVsPaid": "Team scheduling is paid and zcal takes a 3% commission on Stripe payments, with less service-business administration than Calendbook.",
+        "setupBlocker": null,
+        "sources": [
+          "https://zcal.co/pricing",
+          "https://help.zcal.co/pricing/free-forever-plan",
+          "https://help.zcal.co/integrations/stripe",
+          "https://zcal.co/privacy",
+          "https://calendbook.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "TidyCal Free",
+      "url": "https://tidycal.com/",
+      "desc": "Payments are free, but automated reminder controls are not; it stops just short of the stated job."
+    },
+    {
+      "name": "YouCanBookMe Free",
+      "url": "https://youcanbook.me/",
+      "desc": "Payments and confirmations are free, but pre-meeting reminders start on a paid plan."
+    }
+  ],
+  "relatedSlugs": [
+    "lemcal",
+    "clockwise",
+    "doodle"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Strong page because Calendbook separates a compact personal workflow from the value of long-term polish.",
+  "prompt": "Build a usable personal replacement for the core loop of Calendbook.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a personal booking pages tool that reads one calendar, publishes availability, reserves a slot, and writes the event back.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: race-free booking under load; team routing and round robin; reliable reminders and timezone edge cases.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "opusclip",
+  "name": "OpusClip",
+  "domain": "opus.pro",
+  "appURL": "https://opus.pro",
+  "category": "audio-video",
+  "subcategory": "AI video repurposing",
+  "tagline": "Finds highlights and turns long video into captioned short clips",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://opus.pro/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "60 processing credits/month; 1080p watermarked exports; no editor; exported clips expire after 3 days; 10 GB local upload cap",
+        "notes": null
+      },
+      {
+        "name": "Starter",
+        "monthly": 15,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "150 credits/month; 1 brand template; watermark removed",
+        "notes": "No public annual rate was exposed for Starter."
+      },
+      {
+        "name": "Pro",
+        "monthly": 29,
+        "annualPerMonth": 14.5,
+        "per": "workspace",
+        "limits": "3,600 credits/year issued upfront; 2 seats; 2 brand templates; 6 social connections; 30 GB uploads",
+        "notes": "Annual total is $174."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom credits, seats, social connections, API access and support",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "60 credits/month, 1080p watermarked exports, no editing, 10 GB local uploads and exported clips retained for 3 days",
+    "billingTerms": "monthly + annual where offered; annual Pro is billed upfront and advertised at 50% below monthly",
+    "priceChanges": [],
+    "hiddenCosts": "More processing credits, seats and social accounts require upgrades or custom purchases; free exports expire after 3 days.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.opus.pro/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible AI video repurposing loop is buildable, but a credible replacement needs more than the first screen. OpusClip earns its keep through media pipeline, hosting, distribution, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a local AI video repurposing workflow that imports user-owned media, applies the core edit or transformation, previews it, and exports a standard file.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Python 3.12",
+    "FFmpeg",
+    "desktop with sufficient storage",
+    "optional model or API key in .env"
+  ],
+  "whatYouLose": [
+    "professional codecs, effects, and collaboration",
+    "production codecs, rendering speed, and media templates",
+    "hosted recording reliability",
+    "large-scale rendering",
+    "distribution and podcast hosting"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "media pipeline/hosting/distribution",
+  "whyPeopleStillPay": "OpusClip: People pay to avoid codec failures, upload limits, rendering surprises, lost recordings, and distribution chores.",
+  "ongoingBurden": "Maintain codecs, media probing, resumable processing, storage cleanup, exports, device permissions, and performance.",
+  "priorArt": [
+    {
+      "name": "Kdenlive",
+      "url": "https://github.com/KDE/kdenlive",
+      "desc": "Open-source non-linear video editor."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "veed",
+    "kapwing",
+    "headliner"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of OpusClip is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for OpusClip, not a full clone.\nUse exactly this stack: Python 3.12 + FastAPI + FFmpeg + React.\nPrimary job: Build a local AI video repurposing workflow that imports user-owned media, applies the core edit or transformation, previews it, and exports a standard file.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: professional codecs, effects, and collaboration; production codecs, rendering speed, and media templates; hosted recording reliability.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

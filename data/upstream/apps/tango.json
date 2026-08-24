@@ -1,0 +1,137 @@
+{
+  "slug": "tango",
+  "name": "Tango",
+  "domain": "tango.us",
+  "appURL": "https://tango.us",
+  "category": "screen-recording",
+  "subcategory": "screen recording, walkthroughs and product demos",
+  "tagline": "Capture a workflow and generate a concise step guide with screenshots and annotations",
+  "priceMonthly": 26,
+  "pricing": {
+    "plan": "Pro Personal",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://www.tango.us/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Pro monthly amount.",
+    "native": "26 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "5 shared workflows; browser capture; up to 10 users/workspace",
+        "notes": null
+      },
+      {
+        "name": "Pro Personal",
+        "monthly": 26,
+        "annualPerMonth": 22,
+        "per": "user",
+        "limits": "1–2 paid users; unlimited workflows; 14-day version history",
+        "notes": "The supplied snapshot said $24/month for Pro; the current Personal rate is $26 monthly or $22/month annually."
+      },
+      {
+        "name": "Pro Team",
+        "monthly": 20,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "3+ paid users; unlimited workflows; 14-day version history",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom users, security and support; 365-day version history",
+        "notes": "Enterprise also charges a platform fee based on users supported."
+      }
+    ],
+    "freeTierCaps": "5 shared workflows, browser capture and up to 10 users in the workspace",
+    "billingTerms": "monthly + annual; Pro pricing is per paid user",
+    "priceChanges": [],
+    "hiddenCosts": "Every Pro user is billable; Enterprise adds a platform fee based on the number of users supported.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.tango.us/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Tango, capture a workflow and generate a concise step guide with screenshots and annotations. The hard boundary is browser and desktop capture, blur controls, team sharing, and integrations, plus capture polish, hosting, and collaboration.",
+  "coreLoopDIY": "Capture a screen workflow with microphone audio, trim the result, annotate key moments, generate a concise step guide with screenshots, and export a shareable local video.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS or Windows screen-recording permission",
+    "microphone permission",
+    "ffmpeg",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "browser and desktop capture, blur controls, team sharing, and integrations",
+    "instant hosted sharing",
+    "viewer analytics",
+    "team libraries",
+    "cross-device capture"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra",
+    "collaboration"
+  ],
+  "moatNotes": "capture polish, hosting, and collaboration",
+  "replacementScope": "personal desktop recorder",
+  "ongoingBurden": "OS permissions, codecs, rendering performance, uploads, storage, links, and viewer analytics",
+  "whyPeopleStillPay": "People still pay for Tango because the recording itself is easy; the subscription removes upload, transcoding, sharing, organization, and support work. The recurring cost buys OS permissions, codecs, rendering performance, uploads, storage, links, and viewer analytics, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Cap",
+      "url": "https://github.com/CapSoftware/Cap",
+      "desc": "Open-source screen recording and sharing product with modern desktop architecture."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Mimik",
+      "url": "https://mimik.westpoint.io",
+      "type": "open-source",
+      "repo": "https://github.com/westpoint-io/mimik",
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "Tango without the cloud: click through a workflow and get local, editable steps.",
+      "stars": 88,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Folge",
+      "url": "https://folge.me",
+      "desc": "A proper desktop guide maker whose free forever ends at guide number six."
+    },
+    {
+      "name": "MotionShot",
+      "url": "https://www.motionshot.app",
+      "desc": "Two watermarked guides, then the free story is over."
+    }
+  ],
+  "relatedSlugs": [
+    "screen-studio",
+    "cleanshot-x",
+    "scribe"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal desktop recorder DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Tango in an empty repository.\nUse Tauri 2, React, TypeScript, ffmpeg, and SQLite; do not offer alternative stacks.\nThe core loop is: capture a screen workflow with microphone audio, trim the result, annotate key moments, generate a concise step guide with screenshots, and export a shareable local video.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nOffer screen, window, or region capture plus optional microphone audio.\nShow an always-visible recording timer and make stop available from the tray.\nCreate a non-destructive trim view with crop, zoom, cursor highlight, and text callouts.\nRender locally through ffmpeg with sensible H.264 and WebM presets.\nGenerate a poster frame, transcript, and Markdown summary beside each video.\nProvide copy-file-path and reveal-in-folder actions instead of mandatory cloud upload.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out public cloud hosting.\nDeliberately leave out viewer identity and engagement analytics.\nDeliberately leave out enterprise workspaces and SSO.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

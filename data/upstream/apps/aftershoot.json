@@ -1,0 +1,257 @@
+{
+  "slug": "aftershoot",
+  "name": "Aftershoot",
+  "domain": "aftershoot.com",
+  "appURL": "https://aftershoot.com",
+  "category": "photo-editing",
+  "subcategory": "photo organization, culling and editing",
+  "tagline": "Run local duplicate detection and transparent culling heuristics over a photo folder",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Select",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://account.aftershoot.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Pro monthly subscription.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Select",
+        "monthly": 15,
+        "annualPerMonth": 10,
+        "per": "user",
+        "limits": "Unlimited photo culling; 1 user.",
+        "notes": "Annual plan is $120 prepaid."
+      },
+      {
+        "name": "Edit",
+        "monthly": 35,
+        "annualPerMonth": 30,
+        "per": "user",
+        "limits": "Unlimited photo editing; 1 user.",
+        "notes": "Annual plan is $360 prepaid."
+      },
+      {
+        "name": "Retouch",
+        "monthly": 25,
+        "annualPerMonth": 20,
+        "per": "user",
+        "limits": "Unlimited supported retouching; 1 user.",
+        "notes": "Annual plan is $240 prepaid."
+      },
+      {
+        "name": "Select + Edit",
+        "monthly": 50,
+        "annualPerMonth": 40,
+        "per": "user",
+        "limits": "Unlimited culling and editing; 1 user.",
+        "notes": "Annual plan is $480 prepaid."
+      },
+      {
+        "name": "Select + Retouch",
+        "monthly": 40,
+        "annualPerMonth": 30,
+        "per": "user",
+        "limits": "Unlimited culling and supported retouching; 1 user.",
+        "notes": "Annual plan is $360 prepaid."
+      },
+      {
+        "name": "Edit + Retouch",
+        "monthly": 60,
+        "annualPerMonth": 50,
+        "per": "user",
+        "limits": "Unlimited editing and supported retouching; 1 user.",
+        "notes": "Annual plan is $600 prepaid."
+      },
+      {
+        "name": "Complete",
+        "monthly": 55,
+        "annualPerMonth": 45,
+        "per": "user",
+        "limits": "Unlimited culling, editing and supported retouching; 1 user.",
+        "notes": "Annual plan is $540 prepaid."
+      }
+    ],
+    "freeTierCaps": "no free tier; 30-day full-access trial with no card required",
+    "billingTerms": "monthly + annual; subscriptions auto-renew",
+    "priceChanges": [],
+    "hiddenCosts": "An additional custom AI profile is $7/month or $70/year; keeping custom profiles after canceling Edit/Retouch costs $4/month; a subscription can be paused only once per year for up to 3 months.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://account.aftershoot.com/pricing",
+      "https://aftershoot.com/blog/aftershoot-pricing-tiers/",
+      "https://aftershoot.com/blog/the-workflow-complete/",
+      "https://aftershoot.com/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Aftershoot, run local duplicate detection and transparent culling heuristics over a photo folder. The hard boundary is proprietary culling and editing models, photographer training data, speed, and workflow, plus image pipeline quality, models, and workflow polish.",
+  "coreLoopDIY": "Catalog local photos, run duplicate detection and transparent culling heuristics over a folder, generate previews, and export the selected originals or rendered copies.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "desktop computer",
+    "local photo library",
+    "sufficient disk space",
+    "optional GPU for AI features"
+  ],
+  "whatYouLose": [
+    "proprietary culling and editing models, photographer training data, speed, and workflow",
+    "proprietary raw-processing quality",
+    "cloud sync and sharing",
+    "large AI models",
+    "camera and print ecosystem"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "execution-polish"
+  ],
+  "moatNotes": "image pipeline quality, models, and workflow polish",
+  "replacementScope": "personal local photo catalog",
+  "ongoingBurden": "raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity",
+  "whyPeopleStillPay": "People still pay for Aftershoot because photographers pay because image quality, catalog safety, and fast handling of huge libraries matter more than cloning sliders. The recurring cost buys raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Immich",
+      "url": "https://github.com/immich-app/immich",
+      "desc": "Active open-source self-hosted photo and video management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "digiKam",
+      "url": "https://www.digikam.org/",
+      "type": "open-source",
+      "repo": "https://invent.kde.org/graphics/digikam",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Duplicate search, similarity tools, aesthetic detection, pick labels, and metadata export in a mature desktop catalog; setup is less friendly.",
+      "stars": 32,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "local",
+        "install": "Install the Windows installer/portable build, macOS package, or a Linux AppImage, Flatpak, Snap, or distribution package",
+        "engines": "Local OpenCV and packaged machine-learning models for face recognition, automatic tagging, image-quality scoring, similarity search, red-eye detection, and related catalog analysis",
+        "dataFormat": "Photos remain in selected local or network collection folders; catalog, thumbnails, faces, and similarity data live in SQLite by default or MariaDB, with metadata and ratings optionally written into files or XMP sidecars",
+        "gapVsPaid": "Its duplicate, similarity, and quality tools are useful, but they are less purpose-built and less personalized than Aftershoot's photographer-focused AI culling.",
+        "setupBlocker": "First-run collection and database choices are technical, and scanning a large library plus downloading recognition models can take a long time",
+        "sources": [
+          "https://www.digikam.org/",
+          "https://www.digikam.org/download/",
+          "https://invent.kde.org/graphics/digikam",
+          "https://invent.kde.org/graphics/digikam/-/blob/master/COPYING",
+          "https://docs.digikam.org/en/getting_started/quick_start.html",
+          "https://docs.digikam.org/en/asset_management/organize_find.html",
+          "https://docs.digikam.org/en/maintenance_tools/maintenance_quality.html",
+          "https://aftershoot.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "RapidRAW",
+      "url": "https://www.getrapidraw.com/",
+      "type": "open-source",
+      "repo": "https://github.com/CyberTimon/RapidRAW",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "android"
+      ],
+      "desc": "Imports folders, groups duplicates, flags blur, supports ratings, and hands the keepers into a RAW workflow without a subscription.",
+      "stars": 9200,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "local",
+        "install": "Install the Windows .exe, macOS .dmg, or Linux AppImage/DEB/Flatpak; Android is an experimental sideload",
+        "engines": "Local subject, sky, and foreground masking, NIND denoising, LaMa inpainting, and optional handoff to a user-run ComfyUI backend",
+        "dataFormat": "Photos are never moved; non-destructive adjustments are stored in a documented .rrdata sidecar next to each image, while thumbnails, logs, and downloaded models live in local application data",
+        "gapVsPaid": "Its blur and duplicate grouping help, but the culling heuristics are young and do not learn a photographer's selections or match Aftershoot's production integrations.",
+        "setupBlocker": "Desktop binaries are unsigned, so Windows SmartScreen and macOS Gatekeeper need manual bypass steps; Linux AppImage users may also need libfuse2",
+        "sources": [
+          "https://www.getrapidraw.com/",
+          "https://github.com/CyberTimon/RapidRAW",
+          "https://github.com/CyberTimon/RapidRAW/blob/main/LICENSE",
+          "https://www.getrapidraw.com/docs/getting-started/installation",
+          "https://www.getrapidraw.com/docs/",
+          "https://www.getrapidraw.com/docs/other-panels/inpaint",
+          "https://aftershoot.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Selekt",
+      "url": "https://www.selekt.photos/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "desc": "A packaged local culler with RAW previews, duplicate and burst grouping, explainable scores, ratings, and XMP export; still labelled beta.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "both",
+        "install": "Install the native Windows or macOS desktop application",
+        "engines": "Undisclosed on-device models score and group images; optional cloud features use services including Amazon Rekognition and OpenAI for labels, faces, tags, descriptions, and smart crops",
+        "dataFormat": "Local-first projects use an encrypted SQLite database for thumbnails, EXIF, ratings, tags, and cull decisions; XMP/ratings can be exported, while optional sync and cloud-AI features upload project data or resized images",
+        "gapVsPaid": "It is the closest packaged culler, but it is still labeled beta and has less proven personalization, workflow integration, and support than Aftershoot.",
+        "setupBlocker": "The macOS build may require right-click Open, and the product is still explicitly labeled beta even though the core culling workflow is packaged",
+        "sources": [
+          "https://www.selekt.photos/",
+          "https://www.selekt.photos/download",
+          "https://www.selekt.photos/privacy",
+          "https://www.selekt.photos/faq",
+          "https://aftershoot.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "FilterPixel",
+      "url": "https://filterpixel.com/",
+      "desc": "The free allowance is four projects for life, and duplicate clustering plus Lightroom or Capture One handoff require payment."
+    },
+    {
+      "name": "Narrative",
+      "url": "https://narrative.so/",
+      "desc": "Frequently called free, actually a trial; the ongoing culling product starts on a paid plan."
+    },
+    {
+      "name": "OptiCull Free",
+      "url": "https://dopeai.tech/opticull",
+      "desc": "Unlimited manual culling is free, but AI scoring and duplicate grouping, the Aftershoot part, sit in the paid tier."
+    }
+  ],
+  "relatedSlugs": [
+    "adobe-lightroom",
+    "capture-one",
+    "ente-photos"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal local photo catalog DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Aftershoot in an empty repository.\nUse Tauri 2, React, TypeScript, Rust image libraries, SQLite, and local filesystem access; do not offer alternative stacks.\nThe core loop is: catalog local photos, run duplicate detection and transparent culling heuristics over a folder, generate previews, and export the selected originals or rendered copies.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex selected folders without moving or rewriting originals and store only catalog data in SQLite.\nGenerate thumbnails and previews, read EXIF, detect duplicates by hash, and monitor file changes.\nProvide timeline, folders, albums, ratings, flags, tags, search, and side-by-side compare.\nStore edits as reversible parameters for crop, rotate, exposure, contrast, white balance, and saturation.\nRender exports to a new folder with explicit color space, quality, size, and metadata choices.\nAdd catalog backup, missing-file repair, integrity scan, and a clear original-safety guarantee.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a proprietary raw-rendering engine.\nDeliberately leave out hosted cross-device photo sync and client galleries.\nDeliberately leave out frontier culling, retouching, and generative models.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

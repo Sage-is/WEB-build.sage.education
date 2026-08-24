@@ -1,0 +1,330 @@
+{
+  "slug": "activecampaign",
+  "name": "ActiveCampaign",
+  "domain": "activecampaign.com",
+  "appURL": "https://activecampaign.com",
+  "category": "newsletter",
+  "subcategory": "email newsletters and creator publishing",
+  "tagline": "Run a small email list and a handful of transparent automations",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://activecampaign.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Starter starting price at a small contact count.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 15,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 user, 5 automation actions, limited segmentation, email sends 10x contact limit, 15 active goals, 1 brand kit.",
+        "notes": "Official pricing search result exposed starting price but the crawled page did not expose the full contact-tier price table."
+      },
+      {
+        "name": "Plus",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 user, unlimited automation actions, landing pages, standard segmentation, email sends 10x contact limit, 25 active goals.",
+        "notes": "Numeric USD price not exposed in crawled official page."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "3 users, advanced segmentation, email sends 12x contact limit, 200 active goals.",
+        "notes": "Numeric USD price not exposed in crawled official page."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 145,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "5 users, premium segmentation, email sends 15x contact limit, 200 active goals.",
+        "notes": "Official pricing search result exposed starting price; full table was not exposed in crawled page."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day trial shown, no credit card needed.",
+    "billingTerms": "annual billing displayed in plan table; full monthly/annual USD table not exposed in crawled official page",
+    "priceChanges": [],
+    "hiddenCosts": "Pricing scales by contacts; add-ons include AI Activities, Enhanced CRM, SMS, WhatsApp and transactional email; page says upgrades are used when list grows.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.activecampaign.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For ActiveCampaign, run a small email list and a handful of transparent automations. The hard boundary is deep lifecycle automation, crm, deliverability, integrations, and data history, plus deliverability, growth network, and integrations.",
+  "coreLoopDIY": "Collect subscribers to a small email list, compose and send compliant campaigns with a handful of transparent automations, publish a web archive, and report basic delivery and click events.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Amazon SES account",
+    "verified sending domain",
+    "PostgreSQL",
+    "public HTTPS deploy target",
+    "DNS access"
+  ],
+  "whatYouLose": [
+    "deep lifecycle automation, CRM, deliverability, integrations, and data history",
+    "inbox-placement expertise",
+    "advanced automations",
+    "commerce integrations",
+    "recommendation and ad networks"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations",
+    "network-effects"
+  ],
+  "moatNotes": "deliverability, growth network, and integrations",
+  "replacementScope": "single-publication newsletter",
+  "ongoingBurden": "DNS authentication, reputation, bounces, complaints, unsubscribe compliance, templates, queues, analytics, backups, and support",
+  "whyPeopleStillPay": "People still pay for ActiveCampaign because newsletter operators pay for inbox placement, growth mechanics, and operational confidence on publication day. The recurring cost buys DNS authentication, reputation, bounces, complaints, unsubscribe compliance, templates, queues, analytics, backups, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Listmonk",
+      "url": "https://github.com/knadh/listmonk",
+      "desc": "Mature open-source newsletter and mailing-list manager."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Brevo Free",
+      "url": "https://www.brevo.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Campaigns and automation for up to 2,000 automated contacts; the 300-email daily ceiling slows launch day.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, sender verification, and optional domain authentication",
+        "engines": null,
+        "dataFormat": "Contacts, campaigns, templates, automation events, and reports live in Brevo's cloud; exports are available, but the internal storage format is not disclosed.",
+        "gapVsPaid": "The 300-email daily limit can split even a small launch across days, and only 2,000 contacts can enter automations on the free plan.",
+        "setupBlocker": "The first meaningful hurdle is verifying the sender and setting SPF/DKIM records for a sending domain; without that, deliverability will disappoint.",
+        "sources": [
+          "https://www.brevo.com/pricing/",
+          "https://help.brevo.com/hc/en-us/articles/208580669-FAQs-What-are-the-limits-of-the-Free-plan",
+          "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans",
+          "https://www.activecampaign.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "EmailOctopus Free",
+      "url": "https://emailoctopus.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A useful hosted list plus three five-step automations; exactly enough machinery for a small lifecycle.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, list import, and sender/domain verification",
+        "engines": null,
+        "dataFormat": "Subscribers, campaigns, forms, automation state, and reports live in EmailOctopus's cloud; CSV import/export is supported, while the internal storage format is not disclosed.",
+        "gapVsPaid": "Its automations are intentionally lightweight and do not approach ActiveCampaign's branching logic, goals, CRM integrations, or sales workflows.",
+        "setupBlocker": "A sender address must be verified, and serious sending should use an authenticated domain.",
+        "sources": [
+          "https://emailoctopus.com/pricing",
+          "https://help.emailoctopus.com/article/243-verifying-your-sending-domain",
+          "https://help.emailoctopus.com/article/46-importing-contacts",
+          "https://www.activecampaign.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Loops Free",
+      "url": "https://loops.so/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Lifecycle and marketing email for 1,000 contacts with every feature; contact 1,001 brings a card reader.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, domain authentication, and event/API integration for lifecycle email",
+        "engines": null,
+        "dataFormat": "Contacts, events, templates, and campaign or loop state live in Loops's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "Loops is an email-lifecycle tool rather than a sales-and-marketing CRM, so it does not replace ActiveCampaign's deal, account, and broad automation ecosystem.",
+        "setupBlocker": "Marketing broadcasts are easy, but lifecycle automation becomes useful only after a non-expert authenticates a domain and connects product events through an integration or API.",
+        "sources": [
+          "https://loops.so/pricing",
+          "https://loops.so/docs/sending-emails/domain-verification",
+          "https://loops.so/docs/events",
+          "https://www.activecampaign.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mautic",
+      "url": "https://mautic.org/",
+      "type": "open-source",
+      "repo": "https://github.com/mautic/mautic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The full automation engine with no contact tax; it replaces the SaaS bill with serious server maintenance.",
+      "stars": 10300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Download the production package or install with Composer, then configure PHP, a database, cron, and a mail transport",
+        "engines": null,
+        "dataFormat": "Contacts, segments, campaigns, events, and reports live in the configured MySQL or MariaDB database; assets, configuration, logs, and queue files live on the server filesystem.",
+        "gapVsPaid": "Mautic can match deep automation, but the user must operate the application, database, cron, upgrades, backups, mail transport, and deliverability stack.",
+        "setupBlocker": "The first wall is not the installer but production operation: PHP and database tuning, several cron jobs, HTTPS, backups, upgrades, SMTP/API sending, and DNS authentication.",
+        "sources": [
+          "https://github.com/mautic/mautic",
+          "https://github.com/mautic/mautic/blob/7.x/LICENSE.txt",
+          "https://docs.mautic.org/en/7.2/getting_started/how_to_install_mautic.html",
+          "https://docs.mautic.org/en/7.2/configuration/cron_jobs.html",
+          "https://docs.mautic.org/en/7.1/configuration/settings.html",
+          "https://www.activecampaign.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Notifuse",
+      "url": "https://www.notifuse.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Notifuse/notifuse",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Visual campaigns and automations in one modern compose stack; PostgreSQL and an SMTP provider still need seats.",
+      "stars": 2038,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup, or one application container plus PostgreSQL for self-hosting",
+        "engines": null,
+        "dataFormat": "Self-hosted contacts, campaigns, automations, and events live in PostgreSQL; files can use S3-compatible storage, and the configured email provider receives message payloads. Hosted data lives in Notifuse's cloud.",
+        "gapVsPaid": "Notifuse is newer and narrower, without ActiveCampaign's mature CRM, predictive features, and thousand-plus integration ecosystem.",
+        "setupBlocker": "Self-hosting still needs Docker, PostgreSQL, a public HTTPS endpoint, an SMTP or API sending provider, and correctly authenticated sending domains.",
+        "sources": [
+          "https://www.notifuse.com/",
+          "https://github.com/Notifuse/notifuse",
+          "https://github.com/Notifuse/notifuse/blob/main/LICENSE",
+          "https://docs.notifuse.com/self-hosting/installation",
+          "https://notifuse.com/compare/notifuse-vs-mautic",
+          "https://www.activecampaign.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plunk",
+      "url": "https://www.useplunk.com/",
+      "type": "open-source",
+      "repo": "https://github.com/useplunk/plunk",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Campaigns, transactional mail and workflows in one container; the sending provider still sends a bill.",
+      "stars": 5300,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup, or the official Docker Compose stack",
+        "engines": null,
+        "dataFormat": "The self-hosted stack stores core data in PostgreSQL, jobs and cache in Redis, and objects in MinIO; hosted data is kept in Plunk's EU infrastructure.",
+        "gapVsPaid": "Plunk is developer-first and much thinner in visual audience management, CRM depth, segmentation tooling, and marketer-oriented reporting.",
+        "setupBlocker": "Hosted use still needs domain authentication; self-hosting adds PostgreSQL, Redis, MinIO, Nginx or another proxy, exposed web and SMTP services, DNS, and ongoing deliverability work.",
+        "sources": [
+          "https://www.useplunk.com/",
+          "https://www.useplunk.com/pricing",
+          "https://github.com/useplunk/plunk",
+          "https://github.com/useplunk/plunk/blob/next/LICENSE",
+          "https://docs.useplunk.com/self-hosting/docker",
+          "https://www.activecampaign.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Sender Free",
+      "url": "https://www.sender.net/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A real free list, unlimited workflows and 15,000 monthly sends; SMS did not make the cut.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, list import, and sender/domain verification",
+        "engines": null,
+        "dataFormat": "Subscribers, campaigns, forms, automation state, transactional messages, and analytics live in Sender's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "Sender covers email automation but not ActiveCampaign's sales CRM, deal records, lead scoring, or broad sales-automation layer.",
+        "setupBlocker": "The first real hurdle is authenticating the sending domain and warming a legitimate list rather than merely creating the account.",
+        "sources": [
+          "https://www.sender.net/pricing/",
+          "https://help.sender.net/knowledgebase/how-to-authenticate-your-domain/",
+          "https://www.activecampaign.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "substack",
+    "mailerlite",
+    "buttondown"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a single-publication newsletter DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for ActiveCampaign in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Amazon SES; do not offer alternative stacks.\nThe core loop is: collect subscribers to a small email list, compose and send compliant campaigns with a handful of transparent automations, publish a web archive, and report basic delivery and click events.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement subscriber import, double opt-in, unsubscribe, suppression, tags, and consent timestamps.\nCreate a Markdown campaign editor with HTML and plain-text previews.\nQueue sends through SES with retries, rate limits, idempotency, and resumable batches.\nProcess delivery, bounce, complaint, open, and click webhooks without logging message content.\nPublish a simple issue archive and subscriber preference page.\nAdd test sends, seed-list checks, DNS setup guidance, exports, and backups.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a newsletter recommendation marketplace.\nDeliberately leave out ad sales and payment infrastructure.\nDeliberately leave out complex lifecycle automation and enterprise deliverability support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,130 @@
+{
+  "slug": "zenkit",
+  "name": "Zenkit",
+  "domain": "zenkit.com",
+  "appURL": "https://zenkit.com",
+  "category": "tasks",
+  "subcategory": "flexible work management",
+  "tagline": "Projects, tasks, wikis, and database-style views across a product suite",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://zenkit.com/en/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Plus",
+        "monthly": null,
+        "annualPerMonth": 9.24,
+        "per": "user",
+        "limits": "Maximum 10 users; 100 workspaces; 50 lists; 20,000 items; 1,000 comments/seat/month; 300 automation runs/seat/month; 6 GB storage.",
+        "notes": "€8/seat/month on the annual/default view. Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      },
+      {
+        "name": "Team",
+        "monthly": null,
+        "annualPerMonth": 13.86,
+        "per": "user",
+        "limits": "Unlimited users; 1,000 workspaces; 200 lists; 100,000 items; 10,000 comments/seat/month; 3,000 automation runs/seat/month; 20 GB storage.",
+        "notes": "€12/seat/month on the annual/default view. Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": 24.26,
+        "per": "user",
+        "limits": "5,000 workspaces; 1,000 lists; 150,000 items; 10,000 comments/seat/month; 3,000 automation runs/seat/month; 50 GB storage.",
+        "notes": "€21/seat/month on the annual/default view. Converted from EUR at €1 = $1.15535 on 2026-08-14; rounded to 2 decimals."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom quotas; unlimited-quota option; dedicated success management and SLA.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (save up to 16%); exact monthly prices were not exposed by the live static page; 14-day trial",
+    "priceChanges": [],
+    "hiddenCosts": "Every organization member, including owners and admins, is billable on paid plans; VAT is excluded; quota overages have a roughly 14-day grace period before restrictions; the post-trial account can become export-only.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://zenkit.com/en/pricing/",
+      "https://wise.com/gb/currency-converter/eur-to-usd-rate/history"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Zenkit's solo core is compact: build a single-user flexible work management workspace with projects, tasks, statuses, filters, recurring items, and JSON export. A competent builder can reach a useful personal version in one sitting, while the paid product mainly wins on collaboration, integrations, polish.",
+  "coreLoopDIY": "Build a single-user flexible work management workspace with projects, tasks, statuses, filters, recurring items, and JSON export.",
+  "diyTimeEstimate": "one sitting",
+  "replacementScope": "personal replacement for the core loop",
+  "requirements": [
+    "Node.js 22",
+    "local or self-hosted runtime",
+    "SQLite database"
+  ],
+  "whatYouLose": [
+    "enterprise permissions",
+    "large integration catalog",
+    "mobile capture and notifications",
+    "real-time multiplayer"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "collaboration/integrations/polish",
+  "whyPeopleStillPay": "Zenkit: Teams pay because shared state, notifications, permissions, and migrations are harder than the visible board or list.",
+  "ongoingBurden": "Maintain notifications, recurring-date logic, importers, permissions, backups, and collaboration conflict handling.",
+  "priorArt": [
+    {
+      "name": "Vikunja",
+      "url": "https://github.com/go-vikunja/vikunja",
+      "desc": "Open-source task manager with lists, boards, and collaboration."
+    },
+    {
+      "name": "Plane",
+      "url": "https://github.com/makeplane/plane",
+      "desc": "Open-source issue and project tracker."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "AFFiNE",
+      "url": "https://affine.pro",
+      "desc": "Documents, whiteboards, and databases are real; there is no mature project-task engine"
+    },
+    {
+      "name": "AppFlowy",
+      "url": "https://www.appflowy.io",
+      "desc": "The workspace has databases and kanban, but free self-hosted collaboration is one member plus guests"
+    },
+    {
+      "name": "Docmost",
+      "url": "https://docmost.com",
+      "desc": "The open-source wiki is real, but the database and kanban feature called Bases is commercial"
+    }
+  ],
+  "relatedSlugs": [
+    "proofhub",
+    "clickup",
+    "meistertask"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Strong page because Zenkit separates a compact personal workflow from the value of long-term polish.",
+  "prompt": "Build a usable personal replacement for the core loop of Zenkit.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a single-user flexible work management workspace with projects, tasks, statuses, filters, recurring items, and JSON export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: enterprise permissions; large integration catalog; mobile capture and notifications.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

@@ -1,0 +1,144 @@
+{
+  "slug": "meistertask",
+  "name": "MeisterTask",
+  "domain": "meistertask.com",
+  "appURL": "https://meistertask.com",
+  "category": "project-management",
+  "subcategory": "team projects, issues and delivery planning",
+  "tagline": "Run visual project boards with recurring tasks, timelines, and lightweight reporting",
+  "priceMonthly": 9,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://www.meistertask.com/pricing/",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Pro monthly seat amount.",
+    "native": "9 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited tasks/team members, 3 projects, 5 notes, 5 Content Manager seats, 20 Meister AI credits, 20 MB/file and 7-day version history",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 9,
+        "annualPerMonth": 7,
+        "per": "user",
+        "limits": "Unlimited projects/notes, 75 Meister AI credits, 200 MB/file and 30-day version history",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 16,
+        "annualPerMonth": 12.5,
+        "per": "user",
+        "limits": "350 Meister AI credits, 200 MB/file, unlimited version history, timelines/roles/security and reports",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "350 Meister AI credits plus workload, portfolios, SSO, compliance and tailored support",
+        "notes": "The official comparison table says Custom while another card visually showed '$15' without a verifiable billing basis; price left null."
+      }
+    ],
+    "freeTierCaps": "Unlimited tasks/team members; 3 projects, 5 notes, 5 Content Manager seats, 20 AI credits, 20 MB/file and 7-day version history",
+    "billingTerms": "monthly + annual for Pro/Business; Enterprise custom",
+    "priceChanges": [],
+    "hiddenCosts": "VAT is excluded and checkout may apply regional pricing. AI credits and file/version-history limits are plan caps; Enterprise pricing is internally inconsistent on the live official page, so it is not inferred.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.meistertask.com/pricing/",
+      "https://accounts.meister.co/pricing/meistertask?months=1"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For MeisterTask, run visual project boards with recurring tasks, timelines, and lightweight reporting. The hard boundary is cross-platform polish, integrations, automations, and team administration, plus collaboration, integrations, and organizational trust.",
+  "coreLoopDIY": "Run visual project boards for a small team with recurring tasks, timelines, milestones, comments, lightweight reporting, and a searchable activity history.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "email credentials for invitations"
+  ],
+  "whatYouLose": [
+    "cross-platform polish, integrations, automations, and team administration",
+    "deep integrations",
+    "enterprise permissions",
+    "large-scale reporting",
+    "battle-tested notifications and mobile apps"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "switching-costs"
+  ],
+  "moatNotes": "collaboration, integrations, and organizational trust",
+  "replacementScope": "small-team tracker",
+  "ongoingBurden": "auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime",
+  "whyPeopleStillPay": "People still pay for MeisterTask because teams pay because project state has to remain authoritative through staff changes, outages, and years of accumulated workflow exceptions. The recurring cost buys auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Plane",
+      "url": "https://github.com/makeplane/plane",
+      "desc": "Active open-source project and issue tracking platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "YouTrack",
+      "url": "https://www.jetbrains.com/youtrack/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Boards, recurring work via visual schedules, Gantt, calendars, and reports for ten users",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Focalboard",
+      "url": "https://github.com/mattermost-community/focalboard",
+      "desc": "Still recommended everywhere; Mattermost stopped maintaining it and the last standalone release was April 2023"
+    },
+    {
+      "name": "OpenProject",
+      "url": "https://www.openproject.org",
+      "desc": "Boards and timelines are free, but recurring tasks are still on the late-2026 roadmap"
+    },
+    {
+      "name": "PLANKA",
+      "url": "https://planka.app",
+      "desc": "The free Community edition paywalls recurring cards and calendar view, both central to this job"
+    }
+  ],
+  "relatedSlugs": [
+    "asana",
+    "monday-com",
+    "clickup"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a small-team tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for MeisterTask in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: run visual project boards for a small team with recurring tasks, timelines, milestones, comments, lightweight reporting, and a searchable activity history.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement organizations, projects, members, issues, labels, cycles, and milestones.\nProvide list, kanban, and simple timeline views backed by one canonical issue model.\nAdd comments, mentions, assignments, watchers, and a complete activity log.\nImplement project roles for owner, member, and viewer and test every mutation.\nAdd search, CSV import or export, email notifications, and daily database backups.\nShip Docker Compose, health checks, migrations, seed data, and an admin recovery command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out hundreds of external integrations.\nDeliberately leave out enterprise portfolio planning and SSO.\nDeliberately leave out native mobile clients and vendor-operated uptime.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

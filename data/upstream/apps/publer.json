@@ -1,0 +1,376 @@
+{
+  "slug": "publer",
+  "name": "Publer",
+  "domain": "publer.io",
+  "appURL": "https://publer.io",
+  "category": "social-media",
+  "subcategory": "social scheduling and content repurposing",
+  "tagline": "Schedule posts across a small set of networks and maintain reusable media",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Professional",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://publer.io/plans",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Professional starting monthly price; account count changes total.",
+    "native": "12 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "1 user, 1 workspace, 3 social accounts excluding X, 10 queued scheduled posts/account, 25 drafts, 24-hour post history",
+        "notes": "Pinterest on Free additionally requires at least 100 followers or a claimed website."
+      },
+      {
+        "name": "Professional",
+        "monthly": 15,
+        "annualPerMonth": 12,
+        "per": "flat",
+        "limits": "Minimum 3 paid social accounts and 1 owner; unlimited scheduling/drafts/media/workspaces/RSS/history; X supported",
+        "notes": "Base minimum is 3 social accounts at $5/account/month or $4/account/month billed annually; additional members cost extra."
+      },
+      {
+        "name": "Business",
+        "monthly": 30,
+        "annualPerMonth": 24,
+        "per": "flat",
+        "limits": "Minimum 3 paid social accounts and 1 owner; Professional features plus unlimited AI prompts, analytics, competitor analysis and API access",
+        "notes": "Base minimum is 3 social accounts at $10/account/month or $8/account/month billed annually; additional members cost extra."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Custom account/member volume, unlimited daily posting, onboarding and priority support",
+        "notes": "Custom quote; billed yearly."
+      }
+    ],
+    "freeTierCaps": "1 user, 1 workspace, 3 social accounts excluding X, 10 queued scheduled posts per account, 25 drafts and 24-hour post history",
+    "billingTerms": "monthly + annual (2 months free); Enterprise annual only; 14-day money-back guarantee",
+    "priceChanges": [],
+    "hiddenCosts": "Paid prices scale with every social account and additional member, with a 3-account minimum; every 10th account/member is free after 9. VAT is excluded. 'Unlimited' paid scheduling still has anti-spam daily posting limits.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://publer.io/plans"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Publer, schedule posts across a small set of networks and maintain reusable media. The hard boundary is connector breadth, bulk workflows, analytics, collaboration, and hosted reliability, plus api access, connector upkeep, and collaboration.",
+  "coreLoopDIY": "Draft and schedule posts across a small set of networks, preview them accurately, publish through one official API, maintain reusable media, and retain a searchable content calendar.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "developer application for one social network",
+    "OAuth credentials",
+    "PostgreSQL",
+    "public HTTPS endpoint",
+    "background worker"
+  ],
+  "whatYouLose": [
+    "connector breadth, bulk workflows, analytics, collaboration, and hosted reliability",
+    "many maintained network APIs",
+    "inbox and moderation",
+    "deep analytics",
+    "team approvals and asset libraries"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "API access, connector upkeep, and collaboration",
+  "replacementScope": "single-network scheduler",
+  "ongoingBurden": "OAuth review, API policy changes, media limits, queues, retries, rate limits, webhooks, tokens, and moderation workflows",
+  "whyPeopleStillPay": "People still pay for Publer because the scheduler is easy; staying approved and correct across constantly changing social APIs is the subscription. The recurring cost buys OAuth review, API policy changes, media limits, queues, retries, rate limits, webhooks, tokens, and moderation workflows, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Active open-source social media scheduling platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Adobe Express Free",
+      "url": "https://www.adobe.com/express/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Six networks, a media editor and a thousand scheduled posts monthly; analytics are nearly decorative.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser, or install the Adobe Express desktop/mobile app.",
+        "engines": "Adobe Firefly models power the generative features.",
+        "dataFormat": "Projects, uploads, libraries and brand assets live in Adobe's cloud; exports include image, PDF and video files.",
+        "gapVsPaid": "Adobe Express Free is primarily a design tool and its scheduler connects only one account per network, so it cannot match Publer's multi-account publishing workflow.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.adobe.com/express/pricing",
+          "https://helpx.adobe.com/express/web/adobe-express-subscription/free.html",
+          "https://www.adobe.com/express/feature",
+          "https://helpx.adobe.com/express/web/brands-libraries-projects/create-manage-brands/projects.html",
+          "https://publer.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "BrightBean Studio",
+      "url": "https://brightbean.xyz/studio/",
+      "type": "open-source",
+      "repo": "https://github.com/brightbeanxyz/brightbean-studio",
+      "platforms": [
+        "web",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "Hosted-free scheduling, reusable assets, inbox and analytics; no three-account austerity.",
+      "stars": 2100,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup, or clone the repository and deploy with Docker Compose or a supported PaaS.",
+        "engines": "No model is bundled; its REST API and MCP server connect external agents such as Claude Desktop/Code, Cursor or custom clients.",
+        "dataFormat": "Hosted data lives in BrightBean's cloud; self-hosted data uses PostgreSQL 16+ with media on local disk or S3-compatible storage.",
+        "gapVsPaid": "Its social integrations and analytics are newer and less battle-tested than Publer's mature managed service.",
+        "setupBlocker": "Connecting social networks requires first-party platform developer/OAuth credentials; self-hosting also requires Docker or a PaaS.",
+        "sources": [
+          "https://brightbean.xyz/studio/",
+          "https://github.com/brightbeanxyz/brightbean-studio",
+          "https://github.com/brightbeanxyz/brightbean-studio/blob/main/LICENSE",
+          "https://publer.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Buffer Free",
+      "url": "https://buffer.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Three channels, ten queued posts each and a tidy media workflow; only eight different channels may ever touch the account.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, with optional desktop browser extension and mobile apps.",
+        "engines": "Buffer AI Assistant is included, but Buffer's public product documentation does not identify its underlying model provider.",
+        "dataFormat": "Posts, media, ideas, connected-account metadata and analytics are stored in Buffer's cloud.",
+        "gapVsPaid": "The free plan stops at three channels and ten queued posts per channel, with a much thinner reusable-media workflow than paid Publer.",
+        "setupBlocker": null,
+        "sources": [
+          "https://buffer.com/pricing",
+          "https://buffer.com/legal/privacy",
+          "https://buffer.com/legal",
+          "https://publer.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Fedica Free",
+      "url": "https://fedica.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "Ten network accounts and unlimited monthly posts, but only ten may wait in line at once.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup and OAuth connection to each social account.",
+        "engines": null,
+        "dataFormat": "Connected profiles, drafts, scheduled posts, media and analytics live in Fedica's cloud.",
+        "gapVsPaid": "Only ten posts may be scheduled at once across the account, which makes it a poor fit for Publer-sized content backlogs.",
+        "setupBlocker": null,
+        "sources": [
+          "https://fedica.com/signup/",
+          "https://fedica.com/",
+          "https://fedica.com/account/privacy",
+          "https://publer.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mixpost Lite",
+      "url": "https://mixpost.app/",
+      "type": "open-source",
+      "repo": "https://github.com/inovector/mixpost",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Single-user queues, media and basic analytics in Docker; less convenient, less rented.",
+      "stars": 3500,
+      "lastCommit": "2026-03",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose is recommended; a manual Laravel/Composer installation is also documented.",
+        "engines": null,
+        "dataFormat": "MySQL stores application data, Redis handles queues/cache, and media uses local/public disk or S3-compatible storage.",
+        "gapVsPaid": "Mixpost Lite is a single-user self-hosted product, so Publer's managed reliability and zero-maintenance convenience disappear.",
+        "setupBlocker": "Requires a server with Docker plus social-platform app credentials; the manual path also needs PHP, Composer, Supervisor, cron, Redis and FFmpeg.",
+        "sources": [
+          "https://github.com/inovector/mixpost",
+          "https://github.com/inovector/mixpost/blob/main/LICENSE.md",
+          "https://docs.mixpost.app/lite/installation/docker/",
+          "https://docs.mixpost.app/lite/installation/manual/",
+          "https://docs.mixpost.app/lite/configuration/environment-variables/",
+          "https://docs.mixpost.app/server/",
+          "https://publer.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Postiz",
+      "url": "https://postiz.com/",
+      "type": "open-source",
+      "repo": "https://github.com/gitroomhq/postiz-app",
+      "platforms": [
+        "web",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "Broad scheduling and reusable media without subscription fees; operations are the new recurring charge.",
+      "stars": 34300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Hosted signup, or Docker Compose for self-hosting.",
+        "engines": "Optional AI/media features connect to OpenAI, ElevenLabs, fal.ai, Tavily, KieAI and Transloadit.",
+        "dataFormat": "PostgreSQL holds application data; Redis and Temporal support jobs; media is stored locally or in Cloudflare R2/S3-compatible storage.",
+        "gapVsPaid": "Postiz replaces Publer's managed service with a PostgreSQL, Redis and Temporal deployment plus platform credentials you must operate.",
+        "setupBlocker": "Hosted use is straightforward; self-hosting requires Docker, social OAuth apps, and a PostgreSQL, Redis and Temporal stack.",
+        "sources": [
+          "https://github.com/gitroomhq/postiz-app",
+          "https://github.com/gitroomhq/postiz-app/blob/main/LICENSE",
+          "https://docs.postiz.com/installation/system-requirements",
+          "https://docs.postiz.com/installation/docker-compose",
+          "https://docs.postiz.com/configuration/reference",
+          "https://docs.postiz.com/installation/docker",
+          "https://publer.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Publer Free",
+      "url": "https://publer.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "The same product keeps three non-X accounts and ten queued posts each; useful, intentionally cramped.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup and OAuth connection to each social account.",
+        "engines": null,
+        "dataFormat": "Connected-account metadata, scheduled content, media and analytics live in Publer's cloud.",
+        "gapVsPaid": "The free tier is capped at three accounts, ten scheduled posts per account, 24 hours of history and five CSV rows per import.",
+        "setupBlocker": null,
+        "sources": [
+          "https://publer.com/",
+          "https://publer.com/help/en/article/what-is-included-in-publer-free-dliovh/",
+          "https://publer.com/help/en/article/why-can-i-only-upload-5-posts-with-the-csv-file-9ac61y/",
+          "https://publer.com/privacy",
+          "https://publer.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Social Champ Free",
+      "url": "https://www.socialchamp.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Three non-X accounts, fifteen queued posts each and an inbox; one user, no X and no excess furniture.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup and OAuth connection to each social profile.",
+        "engines": "Champ AI Suite is included, but Social Champ's public documentation does not identify the underlying model provider.",
+        "dataFormat": "Posts, media, profile metadata, inbox data and analytics live in Social Champ's cloud.",
+        "gapVsPaid": "The free tier has only three profiles, fifteen scheduled posts per profile and no X connection.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.socialchamp.com/pricing/",
+          "https://www.socialchamp.com/integrations/",
+          "https://www.socialchamp.com/",
+          "https://www.socialchamp.com/privacy-policy/",
+          "https://publer.io/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "hootsuite",
+    "metricool",
+    "hypefury"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Professional plan and a single-network scheduler DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Publer in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and one official social-platform API; do not offer alternative stacks.\nThe core loop is: draft and schedule posts across a small set of networks, preview them accurately, publish through one official API, maintain reusable media, and retain a searchable content calendar.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nSupport drafts, scheduled times, queues, campaigns, tags, and a weekly calendar.\nConnect exactly one social network using its documented OAuth flow.\nValidate character, media, aspect-ratio, and file-size limits before scheduling.\nPublish through an idempotent background job with retries and clear failure states.\nStore platform post identifiers and refresh publication status without scraping.\nAdd reusable snippets, local media storage, CSV export, and a token reconnect flow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out unofficial automation or scraping.\nDeliberately leave out multi-network inbox and social listening.\nDeliberately leave out agency approvals, white labelling, and enterprise reporting.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

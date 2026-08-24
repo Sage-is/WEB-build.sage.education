@@ -1,0 +1,124 @@
+{
+  "slug": "proton-unlimited",
+  "name": "Proton Unlimited",
+  "domain": "proton.me",
+  "appURL": "https://proton.me",
+  "category": "security",
+  "subcategory": "privacy suite",
+  "tagline": "Encrypted email, calendar, VPN, password manager, and cloud storage",
+  "priceMonthly": 12.99,
+  "pricing": {
+    "plan": "Unlimited",
+    "kind": "fixed",
+    "basis": "monthly individual plan",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "$12.99/month",
+    "source": "https://proton.me/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Proton Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 user; 1 email address; 1 GB storage initially, expandable to 5 GB by completing account actions; limited VPN and Pass",
+        "notes": "Permanent free ecosystem tier."
+      },
+      {
+        "name": "Proton Unlimited",
+        "monthly": 12.99,
+        "annualPerMonth": 9.99,
+        "per": "user",
+        "limits": "1 user; 500 GB storage; 15 email addresses; 3 custom domains; 10 VPN connections; up to 50 password vaults",
+        "notes": "$119.88 billed annually at the published annual-equivalent rate."
+      }
+    ],
+    "freeTierCaps": "1 user; 1 email address; 1 GB initial storage (up to 5 GB after account actions); limited VPN and password-manager access",
+    "billingTerms": "monthly + annual; annual Unlimited is $9.99/month equivalent",
+    "priceChanges": [
+      {
+        "what": "Proton Unlimited monthly plan",
+        "fromUsd": 11.99,
+        "toUsd": 12.99,
+        "when": "2023-07",
+        "source": "https://proton.me/blog/monthly-unlimited-price-change"
+      }
+    ],
+    "hiddenCosts": "Taxes can be added; storage, addresses and users above the included personal limits require a different Proton plan, and discounted acquisition offers can renew at the then-current standard rate",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://proton.me/pricing",
+      "https://proton.me/support/proton-plans",
+      "https://proton.me/blog/monthly-unlimited-price-change"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. Proton Unlimited's durable value is security, infrastructure, trust, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a local diagnostic or backup companion for privacy suite; do not claim to replace audited security, identity, VPN, or cloud-storage infrastructure.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "desktop development machine",
+    "user-controlled storage target",
+    "documented threat-model limits",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "calendar-provider edge cases and timezone correctness",
+    "audited cryptography and incident response",
+    "global network or redundant storage infrastructure",
+    "identity, credit, or broker-removal operations",
+    "recovery guarantees and regulated trust"
+  ],
+  "moatTags": [
+    "brand-trust",
+    "scale-infra"
+  ],
+  "moatNotes": "security/infrastructure/trust",
+  "whyPeopleStillPay": "Proton Unlimited: Security subscriptions buy professional operations, audits, response capacity, redundancy, and accountability when something goes wrong.",
+  "ongoingBurden": "Own threat modelling, key management, patching, backups, restore tests, incident response, privacy requests, and dependency security.",
+  "priorArt": [
+    {
+      "name": "Nextcloud",
+      "url": "https://github.com/nextcloud/server",
+      "desc": "Open-source file sync, sharing, and collaboration server."
+    },
+    {
+      "name": "Syncthing",
+      "url": "https://github.com/syncthing/syncthing",
+      "desc": "Peer-to-peer continuous file synchronization."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Nextcloud Files",
+      "url": "https://nextcloud.com/files/",
+      "desc": "Drive and calendar are credible; encrypted mail, consumer VPN, and a password manager are separate projects."
+    },
+    {
+      "name": "Proton Free",
+      "url": "https://proton.me/pricing",
+      "desc": "Mail, calendar, drive, passwords, and VPN are free; the storage and VPN limits are the whole reason Unlimited exists."
+    },
+    {
+      "name": "Syncthing",
+      "url": "https://syncthing.net/",
+      "desc": "A superb file-sync engine replacing roughly one-fifth of the suite."
+    }
+  ],
+  "relatedSlugs": [
+    "nordvpn",
+    "expressvpn",
+    "deleteme"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Proton Unlimited survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Proton Unlimited; do not claim to replace its structural moat.\nUse exactly this stack: Go 1.24 + SQLite.\nPrimary job: Build a local diagnostic or backup companion for privacy suite; do not claim to replace audited security, identity, VPN, or cloud-storage infrastructure.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: calendar-provider edge cases and timezone correctness; audited cryptography and incident response; global network or redundant storage infrastructure.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

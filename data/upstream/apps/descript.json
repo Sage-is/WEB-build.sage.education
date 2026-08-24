@@ -1,0 +1,139 @@
+{
+  "slug": "descript",
+  "name": "Descript",
+  "domain": "descript.com",
+  "category": "audio-video",
+  "subcategory": "podcast/video editing",
+  "tagline": "Text-based audio and video editor with transcription and AI tools",
+  "priceMonthly": 24,
+  "pricing": {
+    "plan": "Hobbyist",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "24 USD",
+    "source": "https://www.descript.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Hobbyist is listed at $24/month monthly and $16/month annually.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 media hour/editor/month; 100 AI credits one-time; 720p watermarked exports; unlimited projects",
+        "notes": "SquadCast allowance: 1 recording hour/editor/month, 1 show, 10 participants, 1 integration."
+      },
+      {
+        "name": "Hobbyist",
+        "monthly": 24,
+        "annualPerMonth": 16,
+        "per": "user",
+        "limits": "10 media hours/editor/month; 400 AI credits/month; 1080p; 30 AI Speech minutes/month",
+        "notes": "Annual price is billed yearly."
+      },
+      {
+        "name": "Creator",
+        "monthly": 35,
+        "annualPerMonth": 24,
+        "per": "user",
+        "limits": "30 media hours/editor/month; 800 AI credits/month; 4K; 120 AI Speech minutes/month",
+        "notes": "Supports teams of up to 3 editors, each billed separately."
+      },
+      {
+        "name": "Business",
+        "monthly": 65,
+        "annualPerMonth": 50,
+        "per": "user",
+        "limits": "40 media hours/editor/month; 1,500 AI credits/month; 300 AI Speech minutes/month",
+        "notes": "Supports teams of up to 5 editors; basic-access seats can be free."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom media hours, AI credits, seats, security, support and contract terms",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "1 media hour/editor/month; 100 AI credits once; 720p watermarked exports; SquadCast 1 recording hour/editor/month, 1 show, 10 participants and 1 integration",
+    "billingTerms": "monthly + annual (up to 35% lower); annual billed upfront; paid editors billed separately",
+    "priceChanges": [],
+    "hiddenCosts": "Extra media hours and AI-credit top-ups are sold only on Creator and Business; adding editors multiplies the subscription.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.descript.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build transcript-based cutting for simple clips, but Descript's editor, media pipeline, AI voice/video tooling, publishing, and collaboration are a serious product.",
+  "coreLoopDIY": "Transcribe media, map words to timestamps, allow text deletion to cut audio/video, then render via ffmpeg.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "ffmpeg",
+    "speech-to-text/alignment",
+    "desktop or web editor",
+    "video rendering pipeline",
+    "optional hosted storage"
+  ],
+  "whatYouLose": [
+    "polished nonlinear editor",
+    "overdub/voice tools",
+    "filler-word workflows",
+    "templates",
+    "cloud collaboration",
+    "rendering reliability"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "proprietary-models",
+    "collaboration"
+  ],
+  "moatNotes": "media pipeline/collaboration",
+  "whyPeopleStillPay": "They pay to avoid building and babysitting a media editor, not just for transcription.",
+  "priorArt": [
+    {
+      "name": "Kdenlive",
+      "url": "https://github.com/KDE/kdenlive",
+      "desc": "Mature open-source video editor; useful alternative but not text-first SaaS clone.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Kdenlive",
+      "url": "https://kdenlive.org",
+      "type": "open-source",
+      "repo": "https://github.com/KDE/kdenlive",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A real editor with local transcription and transcript-based cutting; the AI copywriter did not come along.",
+      "stars": 5400,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "Excellent transcription engine; entirely missing the finished audio-and-video editor around it."
+    }
+  ],
+  "relatedSlugs": [
+    "loom",
+    "tella",
+    "capcut"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Great boundary case where a toy clone is easy but the product depth is obvious.",
+  "prompt": "Build me a text-based clip cutter to replace Descript for simple edits. Requirements:\n\n- A local web app: Node + Express with a plain JS frontend, binds to localhost.\n- I drop an audio/video file into ./media/; the app transcribes it with whisperX\n  for word-level timestamps, or the OpenAI Whisper API if a key is in .env.\n- The transcript renders as clickable words. I select and delete words or whole\n  sentences; deleted spans go into a cut list I can undo from.\n- Render: build one ffmpeg trim/concat command that removes the cut spans from\n  the original and writes ./output/<name>-cut.mp4 (or .mp3 for audio-only).\n- Pad each cut by about 80 ms so words are not clipped mid-syllable.\n- Save each project as JSON next to the media file (transcript + cut list) so an\n  edit can be reopened later.\n- No accounts, no telemetry; everything stays on my machine except the optional\n  Whisper API call.\n- Out of scope: multitrack timeline, overdub or AI voices, filler-word\n  auto-removal, cloud anything. This is a cutter, not an editor.\n- README: installing ffmpeg and whisperX, and a warning that local\n  transcription of long video is slow on CPU.",
+  "promptCurated": false
+}

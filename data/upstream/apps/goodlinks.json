@@ -1,0 +1,132 @@
+{
+  "slug": "goodlinks",
+  "name": "GoodLinks",
+  "domain": "goodlinks.app",
+  "appURL": "https://goodlinks.app",
+  "category": "reading",
+  "subcategory": "read-later, bookmarks and RSS",
+  "tagline": "Save readable pages locally across Apple devices with tags and highlights",
+  "priceMonthly": 0.42,
+  "pricing": {
+    "plan": "Annual Feature Upgrade",
+    "basis": "annual billing, per month",
+    "unit": "flat",
+    "source": "https://apps.apple.com/us/app/goodlinks/id1474335294",
+    "checkedOn": "2026-08-13",
+    "confidence": "medium",
+    "notes": "Approximate annual premium amount divided by 12; regional pricing varies.",
+    "native": "0.42 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "GoodLinks app",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 universal Apple-platform purchase; includes all current features and 1 year of newly released premium features.",
+        "notes": "One-time App Store purchase: $9.99."
+      },
+      {
+        "name": "Annual Feature Upgrade",
+        "monthly": null,
+        "annualPerMonth": 0.42,
+        "per": "flat",
+        "limits": "Adds new premium features released during each additional 1-year period; previously unlocked features remain permanently available.",
+        "notes": "Optional $4.99/year in-app purchase."
+      }
+    ],
+    "freeTierCaps": "no free tier and no trial",
+    "billingTerms": "one-time $9.99 app purchase + optional $4.99/year feature-upgrade subscription; no required monthly plan",
+    "priceChanges": [],
+    "hiddenCosts": "summaries can require the user's own external LLM API key, creating separate provider charges; Apple regional pricing and tax may vary",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://apps.apple.com/us/app/goodlinks/id1474335294",
+      "https://goodlinks.app/help/premium/",
+      "https://goodlinks.app/help/faq/"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For GoodLinks, save readable pages locally across Apple devices with tags and highlights. The hard boundary is native apple polish, icloud sync, shortcuts, and mobile capture, plus capture polish, sync, and content partnerships.",
+  "coreLoopDIY": "Save permitted web pages locally across Apple devices, extract readable text, add tags and highlights, search the archive, and export it in open formats.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "Node.js 22",
+    "local disk",
+    "optional browser bookmarklet",
+    "user-supplied RSS feeds"
+  ],
+  "whatYouLose": [
+    "native Apple polish, iCloud sync, Shortcuts, and mobile capture",
+    "publisher bypasses",
+    "cross-device mobile capture",
+    "high-quality recommendation graph",
+    "licensed full-text feeds"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "capture polish, sync, and content partnerships",
+  "replacementScope": "personal reading archive",
+  "ongoingBurden": "feed quirks, parsing, paywalls, canonical URLs, deduplication, images, search, sync, browser extensions, and publisher changes",
+  "whyPeopleStillPay": "People still pay for GoodLinks because people pay when capture works everywhere, reading state syncs instantly, and the archive remains clean without constant parser repairs. The recurring cost buys feed quirks, parsing, paywalls, canonical URLs, deduplication, images, search, sync, browser extensions, and publisher changes, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "FreshRSS",
+      "url": "https://github.com/FreshRSS/FreshRSS",
+      "desc": "Mature open-source RSS reader with feeds, filters, and self-hosting support."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Karakeep",
+      "url": "https://karakeep.app",
+      "type": "open-source",
+      "repo": "https://github.com/karakeep-app/karakeep",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted",
+        "cli",
+        "browser-extension"
+      ],
+      "desc": "A polished read-later archive with highlights and mobile apps, provided you host it.",
+      "stars": 28100,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "wallabag",
+      "url": "https://wallabag.org",
+      "type": "open-source",
+      "repo": "https://github.com/wallabag/wallabag",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted",
+        "browser-extension"
+      ],
+      "desc": "Readable saved pages, tags and highlights across devices; local Apple elegance becomes Docker.",
+      "stars": 12900,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "readwise",
+    "raindrop-io",
+    "inoreader"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Premium plan and a personal reading archive DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for GoodLinks in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, Readability.js, and a local background worker; do not offer alternative stacks.\nThe core loop is: save permitted web pages locally across Apple devices, extract readable text, add tags and highlights, search the archive, and export it in open formats.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nSupport manual URL save, RSS or Atom subscriptions, OPML import, and a simple bookmarklet.\nFetch politely with a clear user agent, rate limits, conditional requests, and robots-aware behavior.\nExtract title, author, date, canonical URL, readable HTML, and selected images.\nProvide inbox, unread, archive, favorites, tags, highlights, notes, and full-text search.\nKeep the original URL prominent and never attempt to bypass authentication or paywalls.\nExport OPML, bookmarks HTML, Markdown, and a complete JSON backup.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out paywall circumvention.\nDeliberately leave out licensed publisher content and recommendation networks.\nDeliberately leave out native mobile clients and seamless commercial sync.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

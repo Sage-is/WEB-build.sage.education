@@ -1,0 +1,173 @@
+{
+  "slug": "gumloop",
+  "name": "Gumloop",
+  "domain": "gumloop.com",
+  "appURL": "https://gumloop.com",
+  "category": "automation",
+  "subcategory": "workflow automation and app integrations",
+  "tagline": "Build one AI-assisted workflow from user-approved files and APIs",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://gumloop.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Starter monthly tier; usage credits apply.",
+    "native": "97 USD",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Pro",
+        "monthly": 37,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "20,000 credits/month; unlimited agents, 35+ models, BYO API keys, unlimited seats and teams; 5 concurrent workflow runs; 25 concurrent agent chats; 1 hosted MCP server",
+        "notes": "New accounts receive a card-required 14-day Pro trial that auto-converts unless canceled."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom credits, concurrency, MCP hosting, model proxying, governance, security, retention and support",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier; new accounts get a card-required 14-day Pro trial, while legacy free balances no longer replenish",
+    "billingTerms": "monthly Pro billing; no public annual plan; 14-day card-required trial auto-converts unless canceled",
+    "priceChanges": [],
+    "hiddenCosts": "Overage is $0.005 per credit after 20,000; the default overage cap can reach 1,000,000 credits ($5,000) per period; model usage is passed through, successful tools cost at least 1 credit plus tool-specific charges, active compute costs 5 credits/minute, and an 8% orchestration fee is added; unused non-Enterprise credits do not roll over",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.gumloop.com/pricing",
+      "https://docs.gumloop.com/core-concepts/credits",
+      "https://www.gumloop.com/blog/transparent-pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Gumloop, build one AI-assisted workflow from user-approved files and APIs. The hard boundary is hosted agent runtime, model routing, connectors, browser operations, and collaboration, plus connector breadth and execution reliability.",
+  "coreLoopDIY": "Build one AI-assisted workflow that connects user-approved files and APIs, execute it durably, expose retries and logs, and avoid claiming a general integration platform.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "OAuth or API credentials for two chosen services",
+    "PostgreSQL",
+    "Redis",
+    "public HTTPS endpoint",
+    "background worker"
+  ],
+  "whatYouLose": [
+    "hosted agent runtime, model routing, connectors, browser operations, and collaboration",
+    "thousands of connectors",
+    "maintained OAuth applications",
+    "schema-drift handling",
+    "high-scale durable execution and support"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra"
+  ],
+  "moatNotes": "connector breadth and execution reliability",
+  "replacementScope": "two-service personal automation",
+  "ongoingBurden": "OAuth review, token refresh, webhooks, polling, schemas, retries, idempotency, queues, secrets, rate limits, observability, and upgrades",
+  "whyPeopleStillPay": "People still pay for Gumloop because one automation is easy; maintaining hundreds of connectors and making every run recoverable is the business. The recurring cost buys OAuth review, token refresh, webhooks, polling, schemas, retries, idempotency, queues, secrets, rate limits, observability, and upgrades, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Activepieces",
+      "url": "https://github.com/activepieces/activepieces",
+      "desc": "Active open-source automation platform with connectors and durable workflow execution."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Dify Community Edition",
+      "url": "https://dify.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A serious agent canvas with a free Community Edition and a license that keeps one eyebrow raised.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-Dify-Open-Source-License",
+        "runs": "self-hosted",
+        "install": "Clone the repository and start the documented multi-container Docker Compose stack.",
+        "engines": "Dify connects to major hosted and local LLM, embedding and reranking providers plus multiple vector databases.",
+        "dataFormat": "PostgreSQL, Redis, a vector database and persistent storage volumes hold apps, conversations, files and indexes.",
+        "gapVsPaid": "Dify is LLM-app-centric and its multi-container stack is heavier than Gumloop's managed file-and-API automation experience.",
+        "setupBlocker": "The stack needs Docker and roughly 4 GiB RAM plus model-provider keys; the license restricts unlicensed multi-tenant hosting and frontend rebranding.",
+        "sources": [
+          "https://github.com/langgenius/dify",
+          "https://github.com/langgenius/dify/blob/main/LICENSE",
+          "https://docs.dify.ai/en/self-host/deploy/quick-start/docker-compose",
+          "https://www.gumloop.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Langflow",
+      "url": "https://www.langflow.org/",
+      "type": "open-source",
+      "repo": "https://github.com/langflow-ai/langflow",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "self-hosted"
+      ],
+      "desc": "Drag boxes around an LLM graph until files and APIs become one useful workflow.",
+      "stars": 152879,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Install the Windows/macOS desktop app or a uv/Python package; Docker is available for server deployment.",
+        "engines": "Components connect to major LLM providers, local models, vector databases and tool backends.",
+        "dataFormat": "SQLite stores flows, messages and credentials by default; PostgreSQL is optional, and flows export as JSON.",
+        "gapVsPaid": "Langflow is more developer-oriented and has a much thinner catalog of general SaaS and browser-automation steps than Gumloop.",
+        "setupBlocker": "Desktop installs cleanly, but useful AI flows still require a provider API key or local-model setup; server deployment needs Python/uv or Docker.",
+        "sources": [
+          "https://www.langflow.org/",
+          "https://github.com/langflow-ai/langflow",
+          "https://github.com/langflow-ai/langflow/blob/main/LICENSE",
+          "https://docs.langflow.org/get-started-installation",
+          "https://docs.langflow.org/deployment-docker",
+          "https://docs.langflow.org/configuration-custom-database",
+          "https://docs.langflow.org/memory",
+          "https://docs.langflow.org/components-models",
+          "https://github.com/langflow-ai/langflow/releases",
+          "https://www.gumloop.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Flowise",
+      "url": "https://flowiseai.com/",
+      "desc": "Sunset by its maintainers: development froze in July 2026 and the repo was archived on August 13, 2026. A free tool you cannot rely on next year."
+    }
+  ],
+  "relatedSlugs": [
+    "pipedream",
+    "ifttt",
+    "relay-app"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a two-service personal automation DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Gumloop in an empty repository.\nUse TypeScript, Node.js 22, PostgreSQL, Redis, BullMQ, and Docker Compose; do not offer alternative stacks.\nThe core loop is: build one AI-assisted workflow that connects user-approved files and APIs, execute it durably, expose retries and logs, and avoid claiming a general integration platform.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement a fixed trigger, transform, condition, and action workflow model rather than a general visual language.\nConnect exactly two named services using documented APIs and encrypted credentials.\nStore every run, step input hash, output summary, retry, and final status in PostgreSQL.\nMake side effects idempotent and support retry from the failed step without repeating completed actions.\nAdd rate limits, backoff, dead-letter handling, manual replay, cancellation, and secret rotation.\nShip Docker Compose, health checks, sample workflows, tests, backups, and connector-limit documentation.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a broad connector marketplace.\nDeliberately leave out unreviewed user code execution.\nDeliberately leave out enterprise governance, guaranteed execution, and vendor-operated OAuth apps.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

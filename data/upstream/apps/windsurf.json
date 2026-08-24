@@ -1,0 +1,343 @@
+{
+  "slug": "windsurf",
+  "name": "Windsurf",
+  "domain": "windsurf.com",
+  "appURL": "https://windsurf.com",
+  "category": "dev-tools",
+  "subcategory": "AI coding agents and developer workspaces",
+  "tagline": "Build a VS Code extension that proposes and applies reviewed multi-file patches",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://devin.ai/blog/windsurf-pricing-plans",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Pro monthly tier; packaging can change rapidly.",
+    "native": "20 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Light daily and weekly agent quotas; exact numeric allowance is not published; unlimited inline edits and Tab.",
+        "notes": "Limited model selection."
+      },
+      {
+        "name": "Pro",
+        "monthly": 20,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Daily and weekly quotas; estimated daily messages vary by model: 7-27 Premium Plus, 8-101 Premium, or 47-190 Lightweight.",
+        "notes": "Additional usage is charged at the selected model's API price."
+      },
+      {
+        "name": "Teams",
+        "monthly": 40,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Same published model-dependent estimated daily ranges as Pro, with team administration.",
+        "notes": "Additional usage is charged at the selected model's API price."
+      },
+      {
+        "name": "Max",
+        "monthly": 200,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Estimated daily messages: 42-170 Premium Plus, 47-631 Premium, or 291-1,190 Lightweight.",
+        "notes": "Additional usage is charged at the selected model's API price."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom ACU allocation, controls and support.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "light daily and weekly quotas with no published numeric amount; unlimited inline edits and Tab completion",
+    "billingTerms": "current public plans are monthly; legacy annual subscriptions may remain until renewal",
+    "priceChanges": [
+      {
+        "what": "Pro per user per month",
+        "fromUsd": 15,
+        "toUsd": 20,
+        "when": "2026-03",
+        "source": "https://devin.ai/blog/windsurf-pricing-plans"
+      },
+      {
+        "what": "Teams per user per month",
+        "fromUsd": 30,
+        "toUsd": 40,
+        "when": "2026-03",
+        "source": "https://devin.ai/blog/windsurf-pricing-plans"
+      }
+    ],
+    "hiddenCosts": "Daily and weekly quotas both apply and reset separately; extra usage is model-priced. Existing $15 Pro and $30 Teams customers were explicitly grandfathered, so two customers can pay different prices for the same named plan.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://devin.ai/blog/windsurf-pricing-plans",
+      "https://docs.devin.ai/desktop/accounts/quota",
+      "https://docs.devin.ai/desktop/accounts/usage"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Windsurf, build a VS Code extension that proposes and applies reviewed multi-file patches. The hard boundary is proprietary coding models, agent context, ide integration, and hosted inference, plus frontier models, context infrastructure, and execution safety.",
+  "coreLoopDIY": "Build a bounded VS Code coding assistant that indexes the current repository, proposes and applies reviewed multi-file patches, runs approved commands, and preserves an auditable session log.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "VS Code",
+    "OpenAI or Anthropic API key",
+    "Git repository",
+    "local command sandbox"
+  ],
+  "whatYouLose": [
+    "proprietary coding models, agent context, IDE integration, and hosted inference",
+    "frontier proprietary model",
+    "large-scale code retrieval",
+    "cloud sandbox fleet",
+    "enterprise policy and support"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "scale-infra"
+  ],
+  "moatNotes": "frontier models, context infrastructure, and execution safety",
+  "replacementScope": "single-repository coding assistant",
+  "ongoingBurden": "model changes, indexing, prompt injection, tool permissions, sandboxing, evaluation, telemetry choices, and IDE compatibility",
+  "whyPeopleStillPay": "People still pay for Windsurf because the UI can be copied, but high-quality code models, context ranking, safe execution, and constant evaluation are the product. The recurring cost buys model changes, indexing, prompt injection, tool permissions, sandboxing, evaluation, telemetry choices, and IDE compatibility, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Continue",
+      "url": "https://github.com/continuedev/continue",
+      "desc": "Active open-source coding-assistant framework for IDEs and multiple model providers."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Aider",
+      "url": "https://aider.chat/",
+      "type": "open-source",
+      "repo": "https://github.com/Aider-AI/aider",
+      "platforms": [
+        "cli",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "It edits the repo from a terminal and commits its own mess.",
+      "stars": 48000,
+      "lastCommit": "2026-05",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "Install with aider-install, pipx or uv, then run it inside a Git repository",
+        "engines": "Claude, OpenAI, DeepSeek, Gemini, open-weight and local models through LiteLLM-compatible providers",
+        "dataFormat": "Repository files and Git commits stay local; optional chat and input history is local, while prompts and repository context go to the selected model provider",
+        "gapVsPaid": "It is terminal-only, without Windsurf's native editor autocomplete, graphical multi-file patch review and integrated browsing workflow.",
+        "setupBlocker": "Terminal use, a Git repository and an API key or local model runtime",
+        "sources": [
+          "https://github.com/Aider-AI/aider",
+          "https://github.com/Aider-AI/aider/blob/main/LICENSE",
+          "https://aider.chat/docs/",
+          "https://aider.chat/docs/config/options.html",
+          "https://aider.chat/docs/more/analytics.html",
+          "https://windsurf.com/editor"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Cline",
+      "url": "https://cline.bot/",
+      "type": "open-source",
+      "repo": "https://github.com/cline/cline",
+      "platforms": [
+        "browser-extension",
+        "cli",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A code agent in your editor; the model bill is still yours.",
+      "stars": 65800,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "VS Code or JetBrains extension, or npm-installed CLI",
+        "engines": "Anthropic Claude, OpenAI GPT, Google Gemini, OpenRouter, Bedrock, Azure, Vertex, Cerebras, Groq, Ollama, LM Studio and OpenAI-compatible endpoints",
+        "dataFormat": "Code stays in the working repository and task data is stored locally; prompts and selected code context go to the chosen provider unless a local backend is used",
+        "gapVsPaid": "Its approval-heavy extension workflow is less seamless than Windsurf's editor-native autocomplete and reviewed multi-file patch experience.",
+        "setupBlocker": "Sign in for Cline inference, bring an API key, or run and configure a local model",
+        "sources": [
+          "https://github.com/cline/cline",
+          "https://github.com/cline/cline/blob/main/LICENSE",
+          "https://cline.bot/",
+          "https://cline.bot/faq",
+          "https://cline.bot/pricing",
+          "https://windsurf.com/editor"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Goose",
+      "url": "https://goose-docs.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/aaif-goose/goose",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "cli"
+      ],
+      "desc": "A desktop agent that edits and runs code without pretending the model is free.",
+      "stars": 52400,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "Desktop installer or curl-installed CLI",
+        "engines": "Anthropic, OpenAI, Google, Ollama, OpenRouter, Azure, Bedrock and other providers; ACP can use supported model subscriptions",
+        "dataFormat": "Code and files stay local; sessions and configuration are stored in Goose application data, while prompts and context go to the selected provider unless local",
+        "gapVsPaid": "It lacks Windsurf's full editor, inline completion and graphical patch-review workflow.",
+        "setupBlocker": "A provider subscription, API key or local model must be connected before the agent can work",
+        "sources": [
+          "https://github.com/block/goose",
+          "https://github.com/block/goose/blob/main/LICENSE",
+          "https://block.github.io/goose/",
+          "https://block.github.io/goose/docs/getting-started/providers/",
+          "https://windsurf.com/editor"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Kilo Code",
+      "url": "https://kilo.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/kilo-org/kilocode",
+      "platforms": [
+        "browser-extension",
+        "cli",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "One open agent across VS Code, JetBrains and the terminal; inference still has a meter somewhere.",
+      "stars": 26735,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "OpenCode",
+      "url": "https://opencode.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/anomalyco/opencode",
+      "platforms": [
+        "cli",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A fast local coding agent with no loyalty to any model vendor.",
+      "stars": 193678,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Install script, Homebrew or npm",
+        "engines": "Dozens of providers through AI SDK and Models.dev, including hosted APIs and local OpenAI-compatible or Ollama-style backends",
+        "dataFormat": "Source files stay local; credentials are stored under the user's OpenCode data directory and configuration under the config directory, while prompts and context go to the selected provider",
+        "gapVsPaid": "It is terminal-first and gives up Windsurf's graphical editor, inline completion and visual multi-file patch review.",
+        "setupBlocker": "Terminal comfort and a provider API key or local model server are required",
+        "sources": [
+          "https://github.com/anomalyco/opencode",
+          "https://github.com/anomalyco/opencode/blob/dev/LICENSE",
+          "https://opencode.ai/docs/",
+          "https://opencode.ai/docs/providers/",
+          "https://opencode.ai/docs/config/",
+          "https://windsurf.com/editor"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Zed",
+      "url": "https://zed.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/zed-industries/zed",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A fast open editor with agents built in, not a VS Code costume.",
+      "stars": 88100,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "local",
+        "install": "Direct desktop download, Homebrew, winget or install script",
+        "engines": "Zed-hosted models, provider API keys or subscriptions, OpenRouter, Vercel AI Gateway, Bedrock, Ollama, LM Studio, OpenAI-compatible local servers and external ACP agents",
+        "dataFormat": "Source files stay local; provider keys use the system keychain, while AI prompts and code context go to the selected provider or local model",
+        "gapVsPaid": "It requires moving to a different editor and is less centered on Windsurf's reviewed multi-file patch and Cascade-style workflow.",
+        "setupBlocker": "Editor installation is clean; AI needs a Zed account, provider subscription or key, gateway, or local model, and platform hardware support varies",
+        "sources": [
+          "https://github.com/zed-industries/zed",
+          "https://github.com/zed-industries/zed/blob/main/LICENSE",
+          "https://zed.dev/docs/installation",
+          "https://zed.dev/docs/ai/quick-start.html",
+          "https://zed.dev/docs/ai/privacy-and-security",
+          "https://windsurf.com/editor"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Continue",
+      "url": "https://continue.dev/",
+      "desc": "Acquired by Cursor; the repo is read-only and 2.0.0 is the last release."
+    },
+    {
+      "name": "Refact",
+      "url": "https://github.com/smallcloudai/refact",
+      "desc": "The original repo was archived and Refact Cloud was retired in May 2026."
+    },
+    {
+      "name": "Roo Code",
+      "url": "https://github.com/RooCodeInc/Roo-Code",
+      "desc": "The extension shut down and the repo was archived on May 15, 2026."
+    }
+  ],
+  "relatedSlugs": [
+    "replit",
+    "bolt-new",
+    "lovable"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a single-repository coding assistant DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Windsurf in an empty repository.\nUse TypeScript, Node.js 22, a VS Code extension, SQLite, and one user-supplied model API; do not offer alternative stacks.\nThe core loop is: build a bounded VS Code coding assistant that indexes the current repository, proposes and applies reviewed multi-file patches, runs approved commands, and preserves an auditable session log.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a VS Code sidebar with chat, selected-code actions, repository search, and a patch preview.\nIndex only the open repository and respect .gitignore plus a separate assistant ignore file.\nRequire explicit approval before reading outside the workspace or running any command.\nRepresent edits as unified diffs with accept, reject, partial apply, undo, and Git status checks.\nCapture tool calls, model requests, command output, and patch decisions in a local session log.\nAdd token and cost estimates, provider errors, cancellation, tests, and an offline data-flow diagram.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out training or reproducing a frontier coding model.\nDeliberately leave out unattended command execution outside a sandbox.\nDeliberately leave out cloud workspaces, team policy, and enterprise support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

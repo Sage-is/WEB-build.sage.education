@@ -1,0 +1,147 @@
+{
+  "slug": "thrivecart",
+  "name": "ThriveCart",
+  "domain": "thrivecart.com",
+  "appURL": "https://thrivecart.com",
+  "category": "creator-commerce",
+  "subcategory": "checkout platform",
+  "tagline": "Checkout pages, funnels, subscriptions, affiliates, and course delivery",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Lifetime licence",
+    "kind": "one-time",
+    "basis": "one-time",
+    "unit": "one-time",
+    "currency": "USD",
+    "native": "One-time licence; offer can change",
+    "source": "https://thrivecart.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "The pricing model is not safely comparable as one fixed monthly USD amount. Review the official source before publication.",
+    "tiers": [
+      {
+        "name": "Standard",
+        "monthly": 47,
+        "annualPerMonth": 37,
+        "per": "workspace",
+        "limits": "Unlimited products, funnels, courses, and students; 1 order bump; 2,000 community members; 10 communities; 100 GB hosted video; 2 GB per video; 1080p",
+        "notes": "0% platform transaction fee."
+      },
+      {
+        "name": "Pro+",
+        "monthly": 87,
+        "annualPerMonth": 67,
+        "per": "workspace",
+        "limits": "Unlimited products, courses, and students; multiple order bumps; 10,000 community members; unlimited communities; 500 GB hosted video; 4 GB per video; 1080p; custom domain",
+        "notes": "0% platform transaction fee."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom scale, support, and service limits",
+        "notes": "Quote required."
+      },
+      {
+        "name": "Standard Lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "$495 one-time lifetime Standard licence",
+        "notes": "A separate optional Pro+ upgrade is $295/year."
+      }
+    ],
+    "freeTierCaps": "no free tier; 30-day trial on subscription plans",
+    "billingTerms": "monthly + annual; separate $495 one-time lifetime licence with optional $295/year Pro+ upgrade",
+    "priceChanges": [],
+    "hiddenCosts": "The lifetime purchase does not include Pro+ permanently: keeping the optional Pro+ upgrade costs $295/year. External payment processors still charge their own processing fees.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://thrivecart.com/pricing/",
+      "https://thrivecart.com/blog/new-monthly-pricing-model/",
+      "https://thrivecart.com/lifetime/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. ThriveCart's durable value is payments, network, compliance, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a narrow checkout platform storefront or member area for one creator, using Stripe Checkout and explicit digital-delivery rules.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "PostgreSQL",
+    "Stripe account and API keys in .env",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "marketplace discovery and buyer trust",
+    "tax, disputes, payouts, and fraud operations",
+    "native apps and community moderation",
+    "fulfilment, email, and affiliate ecosystems"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "network-effects",
+    "brand-trust"
+  ],
+  "moatNotes": "payments/network/compliance",
+  "whyPeopleStillPay": "ThriveCart: Creators pay to outsource payments, tax complexity, disputes, deliverability, moderation, and the trust needed to convert strangers.",
+  "ongoingBurden": "Own payments, webhooks, refunds, tax records, fraud, access control, file delivery, moderation, backups, and support.",
+  "priorArt": [
+    {
+      "name": "Medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "desc": "Open-source commerce modules and backend."
+    },
+    {
+      "name": "Ghost",
+      "url": "https://github.com/TryGhost/Ghost",
+      "desc": "Open-source publishing and membership platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Checkout pages, bumps, upsells, subscriptions, one affiliate program and one course on a real free plan.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Ghost",
+      "url": "https://ghost.org",
+      "desc": "A membership publisher is not a checkout-funnel and affiliate platform."
+    },
+    {
+      "name": "Medusa",
+      "url": "https://medusajs.com",
+      "desc": "Commerce plumbing for developers, not a ready-made checkout, funnel and course business."
+    },
+    {
+      "name": "WooCommerce",
+      "url": "https://woocommerce.com",
+      "desc": "Checkout exists; free subscriptions, funnels, affiliates and course delivery do not arrive together."
+    }
+  ],
+  "relatedSlugs": [
+    "whop",
+    "skool",
+    "samcart"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: ThriveCart survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by ThriveCart; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + Stripe.\nPrimary job: Build a narrow checkout platform storefront or member area for one creator, using Stripe Checkout and explicit digital-delivery rules.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: marketplace discovery and buyer trust; tax, disputes, payouts, and fraud operations; native apps and community moderation.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

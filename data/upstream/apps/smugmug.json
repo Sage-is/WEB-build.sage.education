@@ -1,0 +1,216 @@
+{
+  "slug": "smugmug",
+  "name": "SmugMug",
+  "domain": "smugmug.com",
+  "appURL": "https://smugmug.com",
+  "category": "photo-editing",
+  "subcategory": "photo organization, culling and editing",
+  "tagline": "Publish a self-hosted client gallery from user-owned photo storage",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Direct",
+    "basis": "annual billing, per month",
+    "unit": "flat",
+    "source": "https://www.smugmug.com/plans",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official Power monthly tier.",
+    "native": "20 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Direct",
+        "monthly": null,
+        "annualPerMonth": 20,
+        "per": "workspace",
+        "limits": "Unlimited full-resolution JPEG storage; digital delivery; Lightroom integration and 24/7 support.",
+        "notes": "Annual total is $240; the live page exposes a monthly toggle but did not render its monthly price."
+      },
+      {
+        "name": "Portfolio",
+        "monthly": null,
+        "annualPerMonth": 23.5,
+        "per": "workspace",
+        "limits": "Unlimited JPEG storage plus print/digital sales, a customizable site, watermarks and fulfillment.",
+        "notes": "Annual total is $282; the live page exposes a monthly toggle but did not render its monthly price."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 37,
+        "per": "workspace",
+        "limits": "Unlimited JPEG storage plus multiple pricelists, coupons/packages and client favoriting/download controls.",
+        "notes": "Annual total is $444; the live page exposes a monthly toggle but did not render its monthly price."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom volume, team and institutional terms; 0 self-serve prices published.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day free trial",
+    "billingTerms": "monthly + annual; only annual-equivalent prices rendered in the live public page",
+    "priceChanges": [],
+    "hiddenCosts": "RAW storage is an add-on: $10/month for the first 1 TB, then $6/month for each additional TB.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.smugmug.com/plans"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For SmugMug, publish a self-hosted client gallery from user-owned photo storage. The hard boundary is image hosting, global delivery, print commerce, client proofing, and support, plus image pipeline quality, models, and workflow polish.",
+  "coreLoopDIY": "Catalog local photos from user-owned storage, generate previews, apply non-destructive adjustments, and publish selected images to a self-hosted client gallery.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "desktop computer",
+    "local photo library",
+    "sufficient disk space",
+    "optional GPU for AI features"
+  ],
+  "whatYouLose": [
+    "image hosting, global delivery, print commerce, client proofing, and support",
+    "proprietary raw-processing quality",
+    "cloud sync and sharing",
+    "large AI models",
+    "camera and print ecosystem"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "proprietary-models",
+    "execution-polish"
+  ],
+  "moatNotes": "image pipeline quality, models, and workflow polish",
+  "replacementScope": "personal local photo catalog",
+  "ongoingBurden": "raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity",
+  "whyPeopleStillPay": "People still pay for SmugMug because photographers pay because image quality, catalog safety, and fast handling of huge libraries matter more than cloning sliders. The recurring cost buys raw codecs, color management, metadata, previews, face models, GPU support, storage, backups, sync, and export fidelity, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Immich",
+      "url": "https://github.com/immich-app/immich",
+      "desc": "Active open-source self-hosted photo and video management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Lychee",
+      "url": "https://lycheeorg.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/LycheeOrg/Lychee",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Clean albums, passworded shares, metadata, and downloads from your own storage; no print lab, sales engine, or hand-holding.",
+      "stars": 4300,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose with the Lychee image and MariaDB; prebuilt and source installs also exist",
+        "engines": null,
+        "dataFormat": "Uploaded originals and derivatives live in persistent uploads storage; albums, users, metadata and settings live in MariaDB (or another configured database), with separate logs and temporary-data volumes",
+        "gapVsPaid": "It can publish attractive private albums, but it has no SmugMug print lab, storefront, client proofing, sales fulfillment or managed hosting support.",
+        "setupBlocker": "Docker Compose, writable persistent volumes, a database, an APP_KEY, and domain/TLS setup for remote sharing",
+        "sources": [
+          "https://github.com/LycheeOrg/Lychee",
+          "https://github.com/LycheeOrg/Lychee/blob/master/LICENSE",
+          "https://github.com/LycheeOrg/Lychee/blob/master/docker-compose.yaml",
+          "https://lycheeorg.dev/docs/installation.html",
+          "https://www.smugmug.com/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Photoview",
+      "url": "https://photoview.github.io/",
+      "type": "open-source",
+      "repo": "https://github.com/photoview/photoview",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A fast gallery over an existing folder tree with RAW, EXIF, users, share links, and downloads; minimal branding controls, maximum ownership.",
+      "stars": 6497,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Docker Compose with SQLite, MariaDB, or PostgreSQL and one or more mounted media folders",
+        "engines": "Built-in dlib/go-face face detection and recognition; FFmpeg for video processing; optional Mapbox token for maps",
+        "dataFormat": "Original photos remain in the mounted folder tree; the database stores users, albums, indexes, and face metadata, while a media-cache directory stores thumbnails and optimized video",
+        "gapVsPaid": "It is an ownership-first browser over your folders, not SmugMug's branded portfolio, print-sales, proofing and fulfillment business platform.",
+        "setupBlocker": "Docker plus careful volume paths and host-file permissions; safe remote access also needs a reverse proxy or VPN and TLS",
+        "sources": [
+          "https://github.com/photoview/photoview",
+          "https://github.com/photoview/photoview/blob/master/LICENSE.txt",
+          "https://photoview.github.io/en/docs/installation-docker/",
+          "https://photoview.github.io/en/docs/installation-environment-variables/",
+          "https://www.smugmug.com/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Piwigo",
+      "url": "https://piwigo.org/",
+      "type": "open-source",
+      "repo": "https://github.com/Piwigo/Piwigo",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A mature self-hosted gallery with private albums, users, themes, metadata, downloads, and a huge plugin ecosystem; you become the support desk.",
+      "stars": 3800,
+      "lastCommit": "2026-05",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "self-hosted",
+        "install": "Upload the NetInstall script or release to PHP web hosting, then complete browser setup against MySQL or MariaDB",
+        "engines": null,
+        "dataFormat": "Originals live under the upload or galleries directories, generated derivatives and configuration stay in the Piwigo tree, and albums, users, metadata, and plugin state live in MySQL or MariaDB",
+        "gapVsPaid": "Themes and plugins can approximate galleries, but SmugMug's integrated commerce, print lab, proofing and fully managed hosting do not come with it.",
+        "setupBlocker": "Requires PHP web hosting, a database, writable directories, and ongoing web-server, TLS, and plugin maintenance",
+        "sources": [
+          "https://github.com/Piwigo/Piwigo",
+          "https://github.com/Piwigo/Piwigo/blob/master/COPYING",
+          "https://piwigo.org/get-piwigo",
+          "https://doc.piwigo.org/self-hosting-piwigo/move-your-piwigo-to-another-server",
+          "https://doc.piwigo.org/self-hosting-piwigo/importing-and-synchronizing-ftp-photos",
+          "https://www.smugmug.com/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Immich",
+      "url": "https://immich.app/",
+      "desc": "Excellent backup and browsing, but client-facing gallery theming, password workflows, and presentation polish are afterthoughts."
+    }
+  ],
+  "relatedSlugs": [
+    "adobe-lightroom",
+    "capture-one",
+    "ente-photos"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Power plan and a personal local photo catalog DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for SmugMug in an empty repository.\nUse Tauri 2, React, TypeScript, Rust image libraries, SQLite, and local filesystem access; do not offer alternative stacks.\nThe core loop is: catalog local photos from user-owned storage, generate previews, apply non-destructive adjustments, and publish selected images to a self-hosted client gallery.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex selected folders without moving or rewriting originals and store only catalog data in SQLite.\nGenerate thumbnails and previews, read EXIF, detect duplicates by hash, and monitor file changes.\nProvide timeline, folders, albums, ratings, flags, tags, search, and side-by-side compare.\nStore edits as reversible parameters for crop, rotate, exposure, contrast, white balance, and saturation.\nRender exports to a new folder with explicit color space, quality, size, and metadata choices.\nAdd catalog backup, missing-file repair, integrity scan, and a clear original-safety guarantee.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a proprietary raw-rendering engine.\nDeliberately leave out hosted cross-device photo sync and client galleries.\nDeliberately leave out frontier culling, retouching, and generative models.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

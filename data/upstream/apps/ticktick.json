@@ -1,0 +1,118 @@
+{
+  "slug": "ticktick",
+  "name": "TickTick",
+  "domain": "ticktick.com",
+  "appURL": "https://ticktick.com",
+  "category": "tasks",
+  "subcategory": "personal tasks, routines and daily planning",
+  "tagline": "Combine tasks, habits, calendar, focus timer, and recurring reminders in one local app",
+  "priceMonthly": 3,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://ticktick.com/about/upgrade",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Based on the annual subscription divided by 12; storefront taxes can vary.",
+    "native": "3 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "9 lists; 99 active tasks/list; 19 checklist items/task; 2 reminders/task; 5 habits; 2 users/shared list including owner; 1 attachment/day; planner 2 times/week.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 3.99,
+        "annualPerMonth": 3,
+        "per": "user",
+        "limits": "299 lists; 999 tasks/list; 199 subtasks/checklist items/task; 5 reminders/task; 299 habits; up to 30 users/shared list; 99 attachments/day.",
+        "notes": "Web annual promotion is $35.99/year (regularly $49.99); monthly price is from the US App Store and can vary by platform/region."
+      }
+    ],
+    "freeTierCaps": "9 lists; 99 active tasks/list; 19 checklist items/task; 2 reminders/task; 5 habits; 2 users/shared list including owner; 1 attachment/day; planner 2 times/week.",
+    "billingTerms": "monthly + annual; current web annual promotion is $35.99/year (28% off regular $49.99); platform prices vary",
+    "priceChanges": [],
+    "hiddenCosts": "The $35.99 annual price is a limited-time promotion; renewal/platform pricing may be the regular $49.99; app-store billing rules apply.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://ticktick.com/about/upgrade",
+      "https://help.ticktick.com/articles/7055792921664028672",
+      "https://apps.apple.com/us/app/ticktick-to-do-list-calendar/id626144601"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For TickTick, combine tasks, habits, calendar, focus timer, and recurring reminders in one local app. The hard boundary is cross-platform sync, mobile widgets, calendar integrations, and years of recurrence polish, plus cross-device reliability and workflow polish.",
+  "coreLoopDIY": "Capture tasks, habits, and recurring reminders in one local app with a calendar and focus timer, schedule or repeat them, work from a focused today view, and keep history locally.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS, Windows, or Linux",
+    "notification permission",
+    "local SQLite database"
+  ],
+  "whatYouLose": [
+    "cross-platform sync, mobile widgets, calendar integrations, and years of recurrence polish",
+    "perfect mobile sync",
+    "calendar and email integrations",
+    "shared workspaces",
+    "behavioral coaching polish"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "cross-device reliability and workflow polish",
+  "replacementScope": "personal desktop task manager",
+  "ongoingBurden": "recurrence edge cases, notifications, sync conflicts, calendar APIs, mobile capture, and backups",
+  "whyPeopleStillPay": "People still pay for TickTick because task software is sticky because trust, speed, and ubiquitous capture matter more than the database schema. The recurring cost buys recurrence edge cases, notifications, sync conflicts, calendar APIs, mobile capture, and backups, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Vikunja",
+      "url": "https://github.com/go-vikunja/vikunja",
+      "desc": "Mature open-source task and project manager with lists, kanban, and recurring work."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Lunatask",
+      "url": "https://lunatask.app",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "Tasks, seven habits, a daily calendar, reminders, recurrence, and Pomodoro; external calendar sync is paid",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Super Productivity",
+      "url": "https://super-productivity.com",
+      "desc": "Tasks, recurrence, timeboxing, and Pomodoro are excellent; there is no actual habit tracker"
+    }
+  ],
+  "relatedSlugs": [
+    "things-3",
+    "routine",
+    "morgen"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Premium plan and a personal desktop task manager DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for TickTick in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, and desktop notifications; do not offer alternative stacks.\nThe core loop is: capture tasks, habits, and recurring reminders in one local app with a calendar and focus timer, schedule or repeat them, work from a focused today view, and keep history locally.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate inbox, today, upcoming, someday, and completed views with fast keyboard capture.\nSupport projects, tags, due dates, start dates, priorities, notes, subtasks, and attachments.\nImplement robust daily, weekly, monthly, and custom recurring rules with tests.\nAdd a focus view with one active task, timer, and optional desktop notification.\nProvide search, saved filters, undo, and a completed-task archive.\nExport and import a documented JSON format and make automatic local backups.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out team assignment and comments.\nDeliberately leave out two-way calendar or email synchronization.\nDeliberately leave out native mobile apps and cloud accounts.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

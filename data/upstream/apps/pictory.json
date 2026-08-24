@@ -1,0 +1,140 @@
+{
+  "slug": "pictory",
+  "name": "Pictory",
+  "domain": "pictory.ai",
+  "appURL": "https://pictory.ai",
+  "category": "audio-video",
+  "subcategory": "AI video creation",
+  "tagline": "Turns scripts, articles, and long videos into narrated short-form videos",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://pictory.ai/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 29,
+        "annualPerMonth": 25,
+        "per": "workspace",
+        "limits": "1 user; 200 video minutes/month; 5 GB storage; 1 brand kit; 60 ElevenLabs minutes/month; 100 AI credits/month",
+        "notes": "Annual price is the live promotional rate."
+      },
+      {
+        "name": "Professional",
+        "monthly": 59,
+        "annualPerMonth": 35,
+        "per": "workspace",
+        "limits": "1 user; 600 video minutes/month; 20 GB; 5 brand kits; 120 ElevenLabs minutes/month",
+        "notes": "Live page conflicts on AI credits: 500/month in one view versus 12,000/year in the annual view; annual price is promotional."
+      },
+      {
+        "name": "Team",
+        "monthly": 199,
+        "annualPerMonth": 119,
+        "per": "workspace",
+        "limits": "3+ users; 1,800 video minutes/month; 100 GB; 10 brand kits; 240 ElevenLabs minutes/month; 2,400 AI credits/month",
+        "notes": "Price shown for the 3-user starting configuration; annual price is promotional."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "10+ users with custom media minutes, storage, AI credits, security and support",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day trial includes 15 video minutes, 50 AI credits, 5-minute generated-video maximum and 60-minute/1 GB editing maximum",
+    "billingTerms": "monthly + annual; live annual promotion advertises savings up to 40%",
+    "priceChanges": [],
+    "hiddenCosts": "Team starts at 3 users; AI, voice and video allowances are separate pools, and the live annual rates are promotional rather than guaranteed renewal prices.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://pictory.ai/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible AI video creation loop is buildable, but a credible replacement needs more than the first screen. Pictory earns its keep through media pipeline, hosting, distribution, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a local AI video creation workflow that imports user-owned media, applies the core edit or transformation, previews it, and exports a standard file.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Python 3.12",
+    "FFmpeg",
+    "desktop with sufficient storage",
+    "optional model or API key in .env"
+  ],
+  "whatYouLose": [
+    "distribution and podcast hosting",
+    "professional codecs, effects, and collaboration",
+    "production codecs, rendering speed, and media templates",
+    "hosted recording reliability",
+    "large-scale rendering"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "media pipeline/hosting/distribution",
+  "whyPeopleStillPay": "Pictory: People pay to avoid codec failures, upload limits, rendering surprises, lost recordings, and distribution chores.",
+  "ongoingBurden": "Maintain codecs, media probing, resumable processing, storage cleanup, exports, device permissions, and performance.",
+  "priorArt": [
+    {
+      "name": "Kdenlive",
+      "url": "https://github.com/KDE/kdenlive",
+      "desc": "Open-source non-linear video editor."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "MoneyPrinterTurbo",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "type": "open-source",
+      "repo": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "Give it a script and it assembles stock footage, voice, music and captions; you supply the model keys and patience.",
+      "stars": 66000,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "OpenMontage",
+      "url": "https://www.openmontage.video",
+      "desc": "Impressive engine, but the non-builder desktop app is still private alpha; today it expects an AI coding assistant."
+    },
+    {
+      "name": "YumCut",
+      "url": "https://yumcut.com",
+      "desc": "Source-available under a noncommercial licence, while the usable hosted workflow is credit-metered; neither story qualifies."
+    }
+  ],
+  "relatedSlugs": [
+    "screenflow",
+    "camtasia",
+    "invideo"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Pictory is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Pictory, not a full clone.\nUse exactly this stack: Python 3.12 + FastAPI + FFmpeg + React.\nPrimary job: Build a local AI video creation workflow that imports user-owned media, applies the core edit or transformation, previews it, and exports a standard file.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: distribution and podcast hosting; professional codecs, effects, and collaboration; production codecs, rendering speed, and media templates.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

@@ -1,0 +1,169 @@
+{
+  "slug": "opinion-stage",
+  "name": "Opinion Stage",
+  "domain": "opinionstage.com",
+  "appURL": "https://opinionstage.com",
+  "category": "forms",
+  "subcategory": "forms, surveys and lead capture",
+  "tagline": "Create a poll, quiz, or survey and embed it with basic response analytics",
+  "priceMonthly": 25,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://opinionstage.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Starter monthly tier.",
+    "native": "25 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "25 responses/month; 2 users; unlimited items and questions; 1 workspace.",
+        "notes": null
+      },
+      {
+        "name": "Pro, 1,000 responses",
+        "monthly": 32,
+        "annualPerMonth": 25,
+        "per": "workspace",
+        "limits": "1,000 responses/month; 2 users; 1 workspace.",
+        "notes": null
+      },
+      {
+        "name": "Pro, 2,500 responses",
+        "monthly": 49,
+        "annualPerMonth": 39,
+        "per": "workspace",
+        "limits": "2,500 responses/month; 2 users; 1 workspace.",
+        "notes": null
+      },
+      {
+        "name": "Business, 10,000 responses",
+        "monthly": 99,
+        "annualPerMonth": 79,
+        "per": "workspace",
+        "limits": "10,000 responses/month; 5 users; 1 workspace.",
+        "notes": null
+      },
+      {
+        "name": "Business, 25,000 responses",
+        "monthly": 249,
+        "annualPerMonth": 199,
+        "per": "workspace",
+        "limits": "25,000 responses/month; 5 users; 1 workspace.",
+        "notes": null
+      },
+      {
+        "name": "Business, 50,000 responses",
+        "monthly": 500,
+        "annualPerMonth": 400,
+        "per": "workspace",
+        "limits": "50,000 responses/month; 5 users; 1 workspace.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom or unlimited responses, users and workspaces.",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "25 responses/month; 2 users; unlimited items and questions; 1 workspace.",
+    "billingTerms": "Monthly + annual; annual pricing is displayed as approximately 20% lower and is billed yearly.",
+    "priceChanges": [],
+    "hiddenCosts": null,
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.opinionstage.com/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Opinion Stage, create a poll, quiz, or survey and embed it with basic response analytics. The hard boundary is templates, hosted delivery, lead features, and engagement reporting, plus integrations, deliverability, and workflow depth.",
+  "coreLoopDIY": "Create a poll, quiz, or survey, embed it publicly, validate submissions, notify the owner, and provide basic analytics with a private response table and CSV export.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "Node.js 22",
+    "Resend API key or SMTP credentials",
+    "self-hosted deploy target"
+  ],
+  "whatYouLose": [
+    "templates, hosted delivery, lead features, and engagement reporting",
+    "advanced branching",
+    "payment and CRM integrations",
+    "large template libraries",
+    "enterprise compliance"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "integrations, deliverability, and workflow depth",
+  "replacementScope": "single-owner form service",
+  "ongoingBurden": "spam control, email delivery, storage, exports, accessibility, conditional logic, and integrations",
+  "whyPeopleStillPay": "People still pay for Opinion Stage because a basic form is trivial; people pay when the form feeds a dependable business workflow and never loses a response. The recurring cost buys spam control, email delivery, storage, exports, accessibility, conditional logic, and integrations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Formbricks",
+      "url": "https://github.com/formbricks/formbricks",
+      "desc": "Active open-source survey and experience-management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Forminator",
+      "url": "https://wordpress.org/plugins/forminator/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Polls, quizzes, surveys, calculations, and response summaries, free inside WordPress",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "HeyForm",
+      "url": "https://heyform.net",
+      "type": "open-source",
+      "repo": "https://github.com/heyform/heyform",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Polls, quizzes, and surveys with conversational presentation and exportable answers",
+      "stars": 8881,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Formbricks",
+      "url": "https://formbricks.com",
+      "desc": "A strong survey platform, but not a quiz-and-poll result engine"
+    }
+  ],
+  "relatedSlugs": [
+    "surveymonkey",
+    "fillout",
+    "paperform"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a single-owner form service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Opinion Stage in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and Resend; do not offer alternative stacks.\nThe core loop is: create a poll, quiz, or survey, embed it publicly, validate submissions, notify the owner, and provide basic analytics with a private response table and CSV export.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a form builder with short text, long text, email, number, select, radio, checkbox, and file fields.\nPublish each form at a stable slug with server-side validation and accessible labels.\nAdd honeypot, rate limiting, submission-size limits, and a clear privacy notice.\nStore responses in SQLite and provide search, filters, detail view, and CSV export.\nSend an owner notification without placing submitted values in logs.\nSupport a thank-you screen and one simple conditional branch.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out payment collection.\nDeliberately leave out hundreds of third-party integrations.\nDeliberately leave out multi-brand enterprise workspaces and compliance attestations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,120 @@
+{
+  "slug": "capture",
+  "name": "Capture - Quick Notes",
+  "domain": "capture.sir.studio",
+  "appURL": "https://apps.apple.com/us/app/quick-notes-capture/id6458535284",
+  "category": "notes-knowledge",
+  "subcategory": "quick capture inbox for Apple devices",
+  "tagline": "Catch notes, links, images, and files now, then send them to the app where they belong",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Lifetime",
+    "basis": "one-time",
+    "unit": "one-time",
+    "native": "19.99 USD",
+    "source": "https://apps.apple.com/us/app/quick-notes-capture/id6458535284",
+    "checkedOn": "2026-08-04",
+    "confidence": "high",
+    "notes": "The US App Store also lists a $9.99 yearly subscription. Regional prices vary.",
+    "tiers": [
+      {
+        "name": "Free trial",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Official pages describe the app as free to try but do not publish a numeric capture allowance or trial length",
+        "notes": null
+      },
+      {
+        "name": "Pro Monthly",
+        "monthly": 1.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited captures; export to 54 destinations; iCloud sync across iPhone, iPad, Mac, Watch and Vision Pro",
+        "notes": "Apple in-app subscription."
+      },
+      {
+        "name": "Pro Yearly",
+        "monthly": null,
+        "annualPerMonth": 0.83,
+        "per": "flat",
+        "limits": "Unlimited captures; export to 54 destinations; all supported Apple devices",
+        "notes": "Billed $9.99/year through Apple."
+      },
+      {
+        "name": "Lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "One-time $19.99; unlimited captures and paid features",
+        "notes": "One-time purchase, not a subscription."
+      }
+    ],
+    "freeTierCaps": "Free-to-try access exists, but the current official site/App Store listing does not publish a numeric capture cap or trial length",
+    "billingTerms": "monthly ($1.99) + annual ($9.99/year) + $19.99 lifetime; Apple manages renewal",
+    "priceChanges": [],
+    "hiddenCosts": "Prices and Family Sharing availability are controlled by Apple and may vary by storefront. The official current listing does not state the trial's numeric usage allowance.",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://sir.studio/capture",
+      "https://apps.apple.com/us/app/quick-notes-capture/id6458535284"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core capture inbox is a weekend build: everything runs on public Apple frameworks, so SwiftData plus CloudKit sync, a share extension, and a menu bar capture window cover the loop on iPhone and Mac. What is not a weekend is Capture's real surface: five Apple platforms and a catalog of 40+ destination exporters whose URL schemes, APIs, and content rules shift independently. Build the two-platform inbox with a handful of exporters you actually use and it is genuinely yours; chase full parity and you have signed up for the maintenance.",
+  "coreLoopDIY": "Catch text, links, images, and files on iPhone and Mac, sync them through your private iCloud, organize them into lists, then send each item on to the apps you actually use via destination-specific export actions.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Xcode",
+    "Apple Developer account for iCloud and App Group entitlements"
+  ],
+  "whatYouLose": [
+    "App Store-ready polish across iPhone, iPad, Mac, Apple Watch, and Apple Vision Pro",
+    "years of CloudKit migration, conflict, and offline-sync edge cases",
+    "ongoing maintenance for more than 40 destination-specific export integrations",
+    "the localization, accessibility, and device test matrix",
+    "fast compatibility updates when Apple or a destination app changes behavior"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "maintenance across Apple platforms, CloudKit, system integrations, and more than 40 destination-specific exporters",
+  "whyPeopleStillPay": "People buy Capture to avoid maintaining the same workflow across Apple's platforms. The one-time purchase includes iCloud sync, deep system integration, and more than 40 third-party export destinations whose URL schemes, APIs, Shortcuts, and content rules can change independently.",
+  "priorArt": [
+    {
+      "name": "FSNotes",
+      "url": "https://github.com/glushchenko/fsnotes",
+      "desc": "Open-source notes manager for macOS and iOS with plain-text storage."
+    },
+    {
+      "name": "NoteTaker",
+      "url": "https://github.com/insidegui/NoteTaker",
+      "desc": "Open-source Swift notes app for macOS and iOS with CloudKit sync."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Drafts",
+      "url": "https://getdrafts.com",
+      "desc": "Excellent text inbox, but images, files and custom routing are not all free."
+    },
+    {
+      "name": "FSNotes",
+      "url": "https://fsnot.es",
+      "desc": "A fast notes app, not an inbox that dispatches captures to other apps."
+    }
+  ],
+  "relatedSlugs": [
+    "drafts-pro",
+    "bear-pro",
+    "things-3"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Submitted by Capture's maker. The entry uses the US lifetime purchase and covers the complete multi-platform capture and export workflow.",
+  "prompt": "Build me a native quick-capture inbox for iPhone and Mac to replace Capture. Requirements:\n\n- Swift 6 + SwiftUI, one Xcode project: an iOS app and a macOS menu bar app sharing a\n  Swift package for the model, persistence, search, and export logic. SwiftData for\n  storage, synced through my private CloudKit database.\n- A capture is text, a URL, an image, or a file, with a list, archive state, and\n  created/edited dates. Run NSDataDetector on text so URLs, phone numbers, and dates\n  become tappable.\n- iOS: a share extension so anything can be sent in from any app, plus a WidgetKit\n  widget for one-tap capture. Mac: a menu bar item with a global hotkey opening a\n  compact capture window.\n- Inbox, Archive, and lists, with full-text search and undoable archive/delete. JSON\n  export of everything so my notes are never trapped.\n- Export actions for the destinations I actually use: Reminders and Calendar via\n  EventKit, a Mail draft, Things and Bear via their URL schemes, and copy-as-Markdown.\n  One small adapter file per destination so more are addable later.\n- Offline-first: SwiftData writes locally and CloudKit retries when back online.\n  Last-write-wins conflict handling is fine, say so in the README.\n- No accounts, no telemetry, nothing leaves my devices except private iCloud sync and\n  the exports I trigger.\n- Out of scope: Apple Watch and Vision Pro apps, and Capture's 40+ destination catalog.\n  Keeping that many exporters alive is the paid product's job, not mine.\n- README: the entitlements to enable (App Groups, iCloud/CloudKit), and a plain warning\n  that CloudKit sync needs a paid Apple Developer account.",
+  "promptCurated": true
+}

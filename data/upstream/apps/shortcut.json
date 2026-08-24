@@ -1,0 +1,273 @@
+{
+  "slug": "shortcut",
+  "name": "Shortcut",
+  "domain": "shortcut.com",
+  "appURL": "https://shortcut.com",
+  "category": "project-management",
+  "subcategory": "team projects, issues and delivery planning",
+  "tagline": "Manage software stories, epics, iterations, roadmaps, and engineering workflows",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Team",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://shortcut.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Team monthly seat price.",
+    "native": "10 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Up to 10 users, 1 team, 1 workspace and 1 workflow",
+        "notes": null
+      },
+      {
+        "name": "Team",
+        "monthly": 10,
+        "annualPerMonth": 8.5,
+        "per": "user",
+        "limits": "Unlimited users, up to 5 teams, 1 workspace and up to 5 workflows",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 16,
+        "annualPerMonth": 12,
+        "per": "user",
+        "limits": "Unlimited users, teams, workspaces and workflows; advanced roadmaps/security/reporting",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom enterprise security, onboarding, support and controls",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "Up to 10 users, 1 team, 1 workspace and 1 workflow",
+    "billingTerms": "monthly + annual; 14-day Business trial, no credit card",
+    "priceChanges": [],
+    "hiddenCosts": "Each paid seat includes up to 5 no-cost Observer seats; users who need editing rights are paid. Enterprise is custom. Qualified nonprofits can receive Shortcut free.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.shortcut.com/pricing/",
+      "https://www.shortcut.com/faq/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Shortcut, manage software stories, epics, iterations, roadmaps, and engineering workflows. The hard boundary is git integrations, reporting, collaboration, and mature agile project semantics, plus collaboration, integrations, and organizational trust.",
+  "coreLoopDIY": "Plan and track software stories, epics, iterations, and roadmaps through boards, milestones, comments, and a searchable activity history for a small team.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "email credentials for invitations"
+  ],
+  "whatYouLose": [
+    "Git integrations, reporting, collaboration, and mature agile project semantics",
+    "deep integrations",
+    "enterprise permissions",
+    "large-scale reporting",
+    "battle-tested notifications and mobile apps"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "switching-costs"
+  ],
+  "moatNotes": "collaboration, integrations, and organizational trust",
+  "replacementScope": "small-team tracker",
+  "ongoingBurden": "auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime",
+  "whyPeopleStillPay": "People still pay for Shortcut because teams pay because project state has to remain authoritative through staff changes, outages, and years of accumulated workflow exceptions. The recurring cost buys auth, permissions, notifications, search, migrations, audit history, integrations, backups, and uptime, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Plane",
+      "url": "https://github.com/makeplane/plane",
+      "desc": "Active open-source project and issue tracking platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Plane",
+      "url": "https://plane.so",
+      "type": "open-source",
+      "repo": "https://github.com/makeplane/plane",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Linear-and-Jira-shaped work tracking without the subscription; the stack behind it is not small",
+      "stars": 55600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup, or the official Docker/Kubernetes self-hosting stack",
+        "engines": null,
+        "dataFormat": "Self-hosted Plane keeps workspaces, projects, work items, users, comments, and settings in PostgreSQL; attachments, images, and exports live in MinIO or another S3-compatible object store, with RabbitMQ and optional OpenSearch alongside them. Plane Cloud stores the equivalent data in Plane's infrastructure.",
+        "gapVsPaid": "Plane covers stories, cycles, modules, and roadmaps, but its self-hosted stack is heavier and its engineering integrations and iteration workflow are less proven than Shortcut's.",
+        "setupBlocker": "Self-hosting is a multi-service deployment: Docker or Kubernetes plus PostgreSQL, RabbitMQ, object storage, a domain, TLS, and usually email configuration.",
+        "sources": [
+          "https://github.com/makeplane/plane",
+          "https://github.com/makeplane/plane/blob/preview/COPYRIGHT.txt",
+          "https://developers.plane.so/self-hosting/overview",
+          "https://developers.plane.so/self-hosting/plane-architecture",
+          "https://developers.plane.so/self-hosting/manage/backup-restore"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Taiga",
+      "url": "https://taiga.io",
+      "type": "open-source",
+      "repo": "https://github.com/taigaio/taiga-back",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Proper Scrum and kanban, with a cleaner UI and a stack that still wants a real admin",
+      "stars": 844,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MPL-2.0",
+        "runs": "both",
+        "install": "Hosted Taiga signup, or the official multi-container Docker Compose production stack",
+        "engines": null,
+        "dataFormat": "A self-hosted deployment stores application data in PostgreSQL, messages/events in RabbitMQ, and uploaded media in persistent volumes or configured storage; hosted workspaces live in Taiga's cloud.",
+        "gapVsPaid": "Taiga handles Scrum well but has weaker roadmaps, cross-project reporting, Git integrations, automation, and product-planning depth than Shortcut.",
+        "setupBlocker": "Production self-hosting is not one container: it needs Docker/Compose familiarity, several Taiga services, PostgreSQL, RabbitMQ, environment files, a reverse proxy, TLS, and email settings.",
+        "sources": [
+          "https://taiga.io/",
+          "https://taiga.io/deployment-pricing-options/",
+          "https://github.com/taigaio/taiga-back",
+          "https://github.com/taigaio/taiga-back/blob/main/LICENSE",
+          "https://docs.taiga.io/setup-production.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "YouTrack",
+      "url": "https://www.jetbrains.com/youtrack/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "A full project tracker for ten people; user eleven is where JetBrains remembers billing",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "both",
+        "install": "Hosted YouTrack Cloud signup, or the official Docker image for YouTrack Server",
+        "engines": null,
+        "dataFormat": "YouTrack Server stores issues, users, projects, and configuration in its own integrated on-disk database under the data directory, with separate configuration, logs, and backups directories; YouTrack Cloud keeps the data in JetBrains-managed infrastructure.",
+        "gapVsPaid": "YouTrack is more configurable but less streamlined around Shortcut's story–epic–iteration flow, and the free plan ends at ten users.",
+        "setupBlocker": "The cloud edition installs cleanly; self-hosting requires Docker volume mapping, enough storage, a one-time setup token, and external HTTPS/reverse-proxy work for a public server.",
+        "sources": [
+          "https://www.jetbrains.com/youtrack/buy/",
+          "https://www.jetbrains.com/help/youtrack/server/youtrack-docker-installation.html",
+          "https://www.jetbrains.com/help/youtrack/server/changing-database-location.html",
+          "https://www.jetbrains.com/help/youtrack/server/youtrack-supported-environments.html",
+          "https://www.jetbrains.com/help/youtrack/cloud/server-configuration-settings.html"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "OpenProject",
+      "url": "https://www.openproject.org",
+      "type": "open-source",
+      "repo": "https://github.com/opf/openproject",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The enterprise project suite; free in money, expensive in menus",
+      "stars": 15200,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted Enterprise Cloud signup, or Community Edition via Docker Compose/all-in-one Docker or supported Linux packages",
+        "engines": null,
+        "dataFormat": "Self-hosted application data lives in PostgreSQL; uploaded attachments live on a persistent filesystem volume or configured S3-compatible object storage, while configuration and any linked repositories must be backed up separately. Cloud data lives in OpenProject's hosted infrastructure.",
+        "gapVsPaid": "OpenProject's enterprise project machinery is slower and less engineering-focused than Shortcut's lightweight stories, iterations, roadmaps, and developer integrations.",
+        "setupBlocker": "The free Community Edition needs a Linux server; the recommended Docker setup still requires persistent database/file volumes, a hostname, TLS, and mail configuration.",
+        "sources": [
+          "https://github.com/opf/openproject",
+          "https://github.com/opf/openproject/blob/dev/LICENSE",
+          "https://www.openproject.org/docs/installation-and-operations/",
+          "https://www.openproject.org/docs/installation-and-operations/installation/docker/",
+          "https://www.openproject.org/docs/installation-and-operations/operation/backing-up/",
+          "https://www.openproject.org/docs/faq/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Redmine",
+      "url": "https://www.redmine.org",
+      "type": "open-source",
+      "repo": "https://github.com/redmine/redmine",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Project tracking, time sheets, Gantt, and wikis from the era when software admitted it needed configuration",
+      "stars": 6000,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "self-hosted",
+        "install": "Install the Ruby on Rails application against PostgreSQL, MySQL/MariaDB, or SQLite; packaged containers/appliances are third-party conveniences",
+        "engines": null,
+        "dataFormat": "Issues, users, projects, time entries, and configuration live in the configured SQL database; uploaded attachments live as files in Redmine's `files` directory.",
+        "gapVsPaid": "Redmine can track issues but does not reproduce Shortcut's modern iteration planning, roadmap visualization, Git workflow, analytics, or keyboard-speed UX.",
+        "setupBlocker": "The official install is a real Rails deployment, Ruby and gem versions, database creation, migrations, a production web server, email, backups, and upgrades are all the operator's job.",
+        "sources": [
+          "https://www.redmine.org/",
+          "https://github.com/redmine/redmine",
+          "https://github.com/redmine/redmine/blob/master/LICENSE.txt",
+          "https://www.redmine.org/projects/redmine/wiki/redmineinstall"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "asana",
+    "monday-com",
+    "clickup"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Team plan and a small-team tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Shortcut in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: plan and track software stories, epics, iterations, and roadmaps through boards, milestones, comments, and a searchable activity history for a small team.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement organizations, projects, members, issues, labels, cycles, and milestones.\nProvide list, kanban, and simple timeline views backed by one canonical issue model.\nAdd comments, mentions, assignments, watchers, and a complete activity log.\nImplement project roles for owner, member, and viewer and test every mutation.\nAdd search, CSV import or export, email notifications, and daily database backups.\nShip Docker Compose, health checks, migrations, seed data, and an admin recovery command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out hundreds of external integrations.\nDeliberately leave out enterprise portfolio planning and SSO.\nDeliberately leave out native mobile clients and vendor-operated uptime.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

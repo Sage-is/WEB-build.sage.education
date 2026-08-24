@@ -1,0 +1,150 @@
+{
+  "slug": "neon",
+  "name": "Neon",
+  "domain": "neon.com",
+  "appURL": "https://neon.com",
+  "category": "hosting",
+  "subcategory": "application hosting and backend platforms",
+  "tagline": "Operate one Postgres database with backups on a user-owned server",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Launch",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://neon.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Launch monthly tier before usage.",
+    "native": "19 USD",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "100 projects; 100 CU-hours/project/month; 0.5 GB storage/project; 5 GB egress/month; up to 2 CU; 6-hour/1 GB instant restore.",
+        "notes": null
+      },
+      {
+        "name": "Launch",
+        "monthly": 0,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "No minimum; compute $0.106/CU-hour; storage $0.35/GB-month; up to 16 CU; 100 projects and 10 branches/project.",
+        "notes": "Usage based."
+      },
+      {
+        "name": "Scale",
+        "monthly": 0,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "No minimum; compute $0.222/CU-hour; storage $0.35/GB-month; up to 56 CU; 1,000 projects and 25 branches/project; 99.95% SLA; 30-day restore.",
+        "notes": "Usage based."
+      }
+    ],
+    "freeTierCaps": "100 projects, 100 CU-hours/project/month, 0.5 GB/project, 5 GB egress/month, up to 2 CU, and 6-hour/1 GB instant restore",
+    "billingTerms": "monthly usage billing with no minimum on Launch or Scale; no annual self-serve plan",
+    "priceChanges": [
+      {
+        "what": "Launch compute per CU-hour",
+        "fromUsd": 0.14,
+        "toUsd": 0.106,
+        "when": "2025-11",
+        "source": "https://neon.com/blog/major-compute-price-reduction-on-neon"
+      },
+      {
+        "what": "Scale compute per CU-hour",
+        "fromUsd": 0.26,
+        "toUsd": 0.222,
+        "when": "2025-11",
+        "source": "https://neon.com/blog/major-compute-price-reduction-on-neon"
+      }
+    ],
+    "hiddenCosts": "Branches cost $0.002/branch-hour; instant-restore storage is $0.20/GB-month and snapshots are $0.09/GB-month. Compute, storage, transfer and branch history all meter separately.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://neon.com/pricing",
+      "https://neon.com/docs/introduction/plans",
+      "https://neon.com/faqs/free-plan-limits-and-quotas",
+      "https://neon.com/blog/major-compute-price-reduction-on-neon"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Neon, operate one Postgres database with backups on a user-owned server. The hard boundary is serverless postgres architecture, branching, autoscaling, storage, and operational expertise, plus infrastructure scale, operations, and reliability.",
+  "coreLoopDIY": "Operate one containerized Postgres database on a user-owned server, retain logs, and perform regular backups.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Linux server",
+    "Docker",
+    "domain and DNS access",
+    "backup destination",
+    "basic systems administration"
+  ],
+  "whatYouLose": [
+    "serverless Postgres architecture, branching, autoscaling, storage, and operational expertise",
+    "global edge network",
+    "managed databases",
+    "autoscaling",
+    "DDoS protection, support, and compliance"
+  ],
+  "moatTags": [
+    "scale-infra"
+  ],
+  "moatNotes": "infrastructure scale, operations, and reliability",
+  "replacementScope": "single-server personal platform",
+  "ongoingBurden": "patching, certificates, isolation, secrets, builds, deploys, logs, metrics, backups, capacity, incidents, and security response",
+  "whyPeopleStillPay": "People still pay for Neon because hosting products sell an operations team and failure-domain diversity, not merely a deploy button. The recurring cost buys patching, certificates, isolation, secrets, builds, deploys, logs, metrics, backups, capacity, incidents, and security response, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "desc": "Active open-source self-hosting platform for applications, databases, and services."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Coolify",
+      "url": "https://coolify.io/",
+      "type": "open-source",
+      "repo": "https://github.com/coollabsio/coolify",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Run one Postgres database on your server with a web console, scheduled backups, restore jobs, and honest ops responsibility.",
+      "stars": 57000,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Dokploy",
+      "url": "https://dokploy.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Dokploy/dokploy",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Deploy Postgres, schedule backups, and restore it from the same self-hosted control plane.",
+      "stars": 36000,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "vercel",
+    "railway",
+    "supabase-pro"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Launch plan and a single-server personal platform DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Neon in an empty repository.\nUse Docker Compose, Caddy, PostgreSQL, Redis, and a small Go control plane; do not offer alternative stacks.\nThe core loop is: operate one containerized Postgres database on a user-owned server, retain logs, and perform regular backups.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nAccept a Git repository or container image and one explicit Dockerfile-based build path.\nImplement applications, environments, secrets, domains, health checks, and rolling container replacement.\nUse Caddy for automatic TLS and route only to healthy local containers.\nCapture bounded build and runtime logs and expose restart, rollback, and redeploy actions.\nBack up PostgreSQL metadata and document backups for each deployed application's data volumes.\nAdd host metrics, disk alerts, update instructions, disaster recovery, and a prominent single-server warning.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out multi-region or serverless infrastructure.\nDeliberately leave out managed data stores and global edge delivery.\nDeliberately leave out DDoS response, compliance, and guaranteed uptime.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

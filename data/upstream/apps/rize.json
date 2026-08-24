@@ -1,0 +1,133 @@
+{
+  "slug": "rize",
+  "name": "Rize",
+  "domain": "rize.io",
+  "appURL": "https://rize.io",
+  "category": "time-tracking",
+  "subcategory": "time tracking, focus and attention",
+  "tagline": "Track desktop activity categories and provide neutral focus and break reminders",
+  "priceMonthly": 12.99,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://rize.io/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official monthly subscription.",
+    "native": "12.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 12.99,
+        "annualPerMonth": 9.99,
+        "per": "user",
+        "limits": "500 AI credits/month; desktop activity tracking and focus insights.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 28.99,
+        "annualPerMonth": 23.99,
+        "per": "user",
+        "limits": "1,000 AI credits/month; advanced analytics and coaching.",
+        "notes": null
+      },
+      {
+        "name": "Max",
+        "monthly": 49.99,
+        "annualPerMonth": 39.99,
+        "per": "user",
+        "limits": "3,000 AI credits/month; highest individual AI allowance.",
+        "notes": null
+      },
+      {
+        "name": "Team",
+        "monthly": 39.99,
+        "annualPerMonth": 29.99,
+        "per": "user",
+        "limits": "Team reporting and administration; no public numeric seat minimum.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom credits, security, and support.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual; quarterly option also exists but its exact public rate was not verified; 7-day trial",
+    "priceChanges": [],
+    "hiddenCosts": "AI use is credit-capped and can force an upgrade; Enterprise is custom.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://rize.io/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Rize, track desktop activity categories and provide neutral focus and break reminders. The hard boundary is cross-platform polish, automatic classification, coaching flow, and sync, plus ubiquitous capture, coaching, and team workflow.",
+  "coreLoopDIY": "Track desktop activity categories and focused sessions, provide neutral focus and break reminders, review patterns locally, and export a transparent activity record.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "desktop OS",
+    "notification permission",
+    "optional accessibility permission for app-name tracking",
+    "local SQLite"
+  ],
+  "whatYouLose": [
+    "cross-platform polish, automatic classification, coaching flow, and sync",
+    "cross-device history",
+    "team timesheets and payroll",
+    "behavioral datasets",
+    "blocking across every platform"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "switching-costs"
+  ],
+  "moatNotes": "ubiquitous capture, coaching, and team workflow",
+  "replacementScope": "personal desktop tracker",
+  "ongoingBurden": "idle detection, permissions, app metadata, privacy, notifications, sync, reports, integrations, and backups",
+  "whyPeopleStillPay": "People still pay for Rize because the timer is simple, but people pay for frictionless capture and a history they trust enough to invoice or change habits from. The recurring cost buys idle detection, permissions, app metadata, privacy, notifications, sync, reports, integrations, and backups, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Kimai",
+      "url": "https://github.com/kimai/kimai",
+      "desc": "Mature open-source time-tracking application with projects, reports, and exports."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "ActivityWatch",
+      "url": "https://activitywatch.net/",
+      "desc": "The local activity categories are excellent; built-in focus and break reminders are missing."
+    },
+    {
+      "name": "ManicTime Free",
+      "url": "https://www.manictime.com/solutions/individual",
+      "desc": "Automatic local activity tracking is exact, but there is no neutral focus-and-break coaching loop."
+    },
+    {
+      "name": "Super Productivity",
+      "url": "https://super-productivity.com/",
+      "desc": "It handles focus and break timers, but not passive application categorization."
+    }
+  ],
+  "relatedSlugs": [
+    "toggl-track",
+    "harvest",
+    "clockify"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Rize plan and a personal desktop tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Rize in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, and optional OS accessibility APIs; do not offer alternative stacks.\nThe core loop is: track desktop activity categories and focused sessions, provide neutral focus and break reminders, review patterns locally, and export a transparent activity record.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate one-click start and stop, manual entries, idle detection, tags, projects, and notes.\nKeep any application-name tracking opt-in and never record window contents or keystrokes.\nAdd Pomodoro-style focus sessions, break reminders, and an optional allowlist blocker.\nProvide daily, weekly, project, and category reports with editable corrections.\nExport CSV and JSON and make the underlying event log inspectable.\nAdd automatic local backups and a privacy screen explaining every collected field.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out employee surveillance.\nDeliberately leave out payroll and billing automation.\nDeliberately leave out cross-device blocking and behavioral coaching services.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

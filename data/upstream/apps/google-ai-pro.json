@@ -1,0 +1,226 @@
+{
+  "slug": "google-ai-pro",
+  "name": "Google AI Pro",
+  "domain": "one.google.com",
+  "appURL": "https://one.google.com",
+  "category": "dev-tools",
+  "subcategory": "AI coding agents and developer workspaces",
+  "tagline": "Build a local assistant client that connects to user-supplied model APIs and stores history",
+  "priceMonthly": 19.99,
+  "pricing": {
+    "plan": "Google AI Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://one.google.com/about/google-ai-plans",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official US monthly plan price; regional pricing differs.",
+    "native": "19.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Google account / non-subscriber",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "15 GB Google storage; Gemini prompt and model limits are dynamic and no fixed numeric cap is publicly guaranteed.",
+        "notes": null
+      },
+      {
+        "name": "Google AI Plus",
+        "monthly": 4.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "400 GB storage; 2x access level; 200 Flow credits/month; 3,000 Flow Music credits/month.",
+        "notes": "Annual billing is offered in some markets, but an exact US annual sticker price was not publicly exposed."
+      },
+      {
+        "name": "Google AI Pro",
+        "monthly": 19.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "5 TB storage; 4x access level; 1,000 Flow credits/month; 10,000 Flow Music credits/month; $10 Google Cloud credit/month.",
+        "notes": "Includes a 1,000,000-token context window where supported."
+      },
+      {
+        "name": "Google AI Ultra 5x",
+        "monthly": 99.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "20 TB storage; 5x Pro access; 10,000 Flow credits/month; 30,000 Flow Music credits/month; $40 Google Cloud credit/month.",
+        "notes": null
+      },
+      {
+        "name": "Google AI Ultra 20x",
+        "monthly": 199.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "30 TB storage; 20x Pro access; 25,000 Flow credits/month; 30,000 Flow Music credits/month; $100 Google Cloud credit/month.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "15 GB storage; Gemini request/model caps are dynamic and not published as a durable numeric allowance",
+    "billingTerms": "monthly prices shown; Plus and Pro may offer annual billing by market, but exact US annual prices were not publicly exposed",
+    "priceChanges": [],
+    "hiddenCosts": "Extra AI credits can be purchased after included limits; family sharing supports up to 5 additional people but some AI benefits remain manager-only; consumer plans do not replace Google Workspace licensing.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://one.google.com/about/google-ai-plans",
+      "https://support.google.com/googleone/answer/16476748",
+      "https://support.google.com/googleone/answer/16476811"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Google AI Pro, build a local assistant client that connects to user-supplied model APIs and stores history. The hard boundary is gemini frontier models, google ecosystem integration, storage bundle, and global infrastructure, plus frontier models, context infrastructure, and execution safety.",
+  "coreLoopDIY": "Build a local assistant client that connects to user-supplied model APIs, stores history, indexes the current repository, proposes patches, runs approved commands, and preserves an auditable session log.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "VS Code",
+    "OpenAI or Anthropic API key",
+    "Git repository",
+    "local command sandbox"
+  ],
+  "whatYouLose": [
+    "Gemini frontier models, Google ecosystem integration, storage bundle, and global infrastructure",
+    "frontier proprietary model",
+    "large-scale code retrieval",
+    "cloud sandbox fleet",
+    "enterprise policy and support"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "scale-infra",
+    "integrations"
+  ],
+  "moatNotes": "frontier models, context infrastructure, and execution safety",
+  "replacementScope": "single-repository coding assistant",
+  "ongoingBurden": "model changes, indexing, prompt injection, tool permissions, sandboxing, evaluation, telemetry choices, and IDE compatibility",
+  "whyPeopleStillPay": "People still pay for Google AI Pro because the UI can be copied, but high-quality code models, context ranking, safe execution, and constant evaluation are the product. The recurring cost buys model changes, indexing, prompt injection, tool permissions, sandboxing, evaluation, telemetry choices, and IDE compatibility, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Continue",
+      "url": "https://github.com/continuedev/continue",
+      "desc": "Active open-source coding-assistant framework for IDEs and multiple model providers."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "AnythingLLM",
+      "url": "https://anythingllm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Mintplex-Labs/anything-llm",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Chat, documents and agents in one installer; the models are still your problem.",
+      "stars": 64400,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Desktop installer for macOS/Windows/Linux, or Docker for a self-hosted web instance",
+        "engines": "Local llama.cpp models plus Ollama, LM Studio, LocalAI and many cloud APIs including OpenAI, Anthropic, Gemini, Bedrock, Azure, OpenRouter and Mistral",
+        "dataFormat": "Desktop data stays in the app's local storage; self-hosted data is stored in the mounted server storage and chosen vector database (LanceDB by default), while prompts sent to cloud models leave the machine",
+        "gapVsPaid": "It provides the client and local knowledge layer, but not the included Gemini capacity, NotebookLM benefits, storage bundle, or first-party Google integrations in Google AI Pro.",
+        "setupBlocker": "The installer is easy, but useful results still require downloading a local model or supplying a model-provider API key",
+        "sources": [
+          "https://github.com/Mintplex-Labs/anything-llm",
+          "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE",
+          "https://docs.anythingllm.com/installation-desktop/overview",
+          "https://docs.anythingllm.com/features/privacy-and-data-handling",
+          "https://one.google.com/about/google-ai-plans/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Jan",
+      "url": "https://jan.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/janhq/jan",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A local ChatGPT-shaped window that also accepts your own API keys.",
+      "stars": 43900,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "Download the macOS, Windows or Linux desktop installer",
+        "engines": "Built-in local inference via llama.cpp/llama-server plus OpenAI-compatible APIs and connectors such as OpenAI, Anthropic, Gemini, Groq, Mistral and OpenRouter",
+        "dataFormat": "Threads, assistants, settings and downloaded model files live in Jan's local data folder; only requests sent to configured cloud providers leave the machine",
+        "gapVsPaid": "It replaces the chat window, not Google AI Pro's bundled Gemini usage, NotebookLM access, storage, and integration across Google's products.",
+        "setupBlocker": "Local use requires downloading a multi-gigabyte model and enough RAM; cloud use requires an API key",
+        "sources": [
+          "https://github.com/janhq/jan",
+          "https://github.com/janhq/jan/blob/dev/LICENSE",
+          "https://jan.ai/docs/desktop/",
+          "https://jan.ai/docs/desktop/data-folder/",
+          "https://one.google.com/about/google-ai-plans/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "LibreChat",
+      "url": "https://www.librechat.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/danny-avila/LibreChat",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A multi-model chat client with no interest in owning the conversation.",
+      "stars": 41700,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Clone the repository and start the recommended Docker Compose stack",
+        "engines": "OpenAI, Anthropic, Google Gemini/Vertex AI, Azure OpenAI, AWS Bedrock, Mistral, Groq, OpenRouter, DeepSeek and custom OpenAI-compatible endpoints, plus agents and MCP",
+        "dataFormat": "Conversations, users and configuration live in MongoDB; search indexes use Meilisearch, uploaded/RAG content uses bundled storage and a vector database; prompts sent to cloud models leave the host",
+        "gapVsPaid": "It gives you a self-hosted multi-model client, but model usage is separate and the Google AI Pro bundle and native Google integrations disappear.",
+        "setupBlocker": "Docker Compose brings several services, and the default MongoDB image does not run on Apple Silicon without changing the setup",
+        "sources": [
+          "https://github.com/danny-avila/LibreChat",
+          "https://github.com/danny-avila/LibreChat/blob/main/LICENSE",
+          "https://www.librechat.ai/docs/local",
+          "https://www.librechat.ai/docs/local/docker",
+          "https://one.google.com/about/google-ai-plans/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Continue",
+      "url": "https://continue.dev/",
+      "desc": "An archived coding assistant, not a general local assistant client."
+    }
+  ],
+  "relatedSlugs": [
+    "windsurf",
+    "replit",
+    "bolt-new"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Google AI Pro plan and a single-repository coding assistant DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Google AI Pro in an empty repository.\nUse TypeScript, Node.js 22, a VS Code extension, SQLite, and one user-supplied model API; do not offer alternative stacks.\nThe core loop is: build a local assistant client that connects to user-supplied model APIs, stores history, indexes the current repository, proposes patches, runs approved commands, and preserves an auditable session log.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a VS Code sidebar with chat, selected-code actions, repository search, and a patch preview.\nIndex only the open repository and respect .gitignore plus a separate assistant ignore file.\nRequire explicit approval before reading outside the workspace or running any command.\nRepresent edits as unified diffs with accept, reject, partial apply, undo, and Git status checks.\nCapture tool calls, model requests, command output, and patch decisions in a local session log.\nAdd token and cost estimates, provider errors, cancellation, tests, and an offline data-flow diagram.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out training or reproducing a frontier coding model.\nDeliberately leave out unattended command execution outside a sandbox.\nDeliberately leave out cloud workspaces, team policy, and enterprise support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

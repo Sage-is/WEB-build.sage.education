@@ -1,0 +1,256 @@
+{
+  "slug": "confluence",
+  "name": "Confluence",
+  "domain": "atlassian.com",
+  "appURL": "https://atlassian.com",
+  "category": "tasks",
+  "subcategory": "team documentation",
+  "tagline": "Collaborative pages, spaces, templates, and organizational knowledge",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://www.atlassian.com/software/confluence/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Up to 10 users; 2 GB storage; unlimited spaces and pages.",
+        "notes": null
+      },
+      {
+        "name": "Standard",
+        "monthly": null,
+        "annualPerMonth": 5.42,
+        "per": "user",
+        "limits": "Up to 250,000 users; 250 GB storage.",
+        "notes": "Monthly price is dynamically tiered by user count and was not represented by one stable public number."
+      },
+      {
+        "name": "Premium",
+        "monthly": null,
+        "annualPerMonth": 10.44,
+        "per": "user",
+        "limits": "Up to 250,000 users; unlimited storage; 99.9% SLA; 24/7 support.",
+        "notes": "Monthly price is dynamically tiered by user count."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Up to 150 sites/instances; 99.95% SLA; Atlassian Guard included.",
+        "notes": "Custom annual contract."
+      }
+    ],
+    "freeTierCaps": "Up to 10 users; 2 GB storage; unlimited spaces and pages.",
+    "billingTerms": "Standard/Premium monthly + annual; monthly prices are progressive by user count and annual pricing uses fixed user tiers; Enterprise annual only",
+    "priceChanges": [],
+    "hiddenCosts": "Invited users count toward billing even before accepting; annual fixed user tiers can make unused capacity billable; Marketplace apps, Atlassian Guard outside Enterprise, and taxes can add cost.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.atlassian.com/software/confluence/pricing",
+      "https://support.atlassian.com/confluence-cloud/docs/learn-about-confluence-cloud-plans/",
+      "https://support.atlassian.com/subscriptions-and-billing/docs/understand-user-tiers-for-billing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Do not mistake the interface for the product. Confluence's durable value is collaboration, integrations, polish, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a single-user team documentation workspace with projects, tasks, statuses, filters, recurring items, and JSON export.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "local or self-hosted runtime",
+    "SQLite database",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "large integration catalog",
+    "mobile capture and notifications",
+    "real-time multiplayer",
+    "enterprise permissions"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "collaboration/integrations/polish",
+  "whyPeopleStillPay": "Confluence: Teams pay because shared state, notifications, permissions, and migrations are harder than the visible board or list.",
+  "ongoingBurden": "Maintain notifications, recurring-date logic, importers, permissions, backups, and collaboration conflict handling.",
+  "priorArt": [
+    {
+      "name": "Vikunja",
+      "url": "https://github.com/go-vikunja/vikunja",
+      "desc": "Open-source task manager with lists, boards, and collaboration."
+    },
+    {
+      "name": "Plane",
+      "url": "https://github.com/makeplane/plane",
+      "desc": "Open-source issue and project tracker."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "XWiki",
+      "url": "https://www.xwiki.org",
+      "type": "open-source",
+      "repo": "https://github.com/xwiki/xwiki-platform",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Confluence's grown-up open-source cousin; powerful enough to require an actual administrator",
+      "stars": 1300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LGPL-2.1-only",
+        "runs": "self-hosted",
+        "install": "Official Docker Compose stack, Debian package, or Java application-server distribution",
+        "engines": null,
+        "dataFormat": "Wiki documents, objects, users, metadata, and usually attachments in a relational database; configuration, extensions, caches, and optional attachment files in the permanent directory",
+        "gapVsPaid": "It can approach Confluence's depth, but doing so carries a much heavier Java/Solr/database administration burden and less seamless Atlassian ecosystem integration.",
+        "setupBlocker": "The production setup is a heavyweight Java service with a database, permanent storage, Solr, backups, and TLS to administer",
+        "sources": [
+          "https://github.com/xwiki/xwiki-platform",
+          "https://github.com/xwiki/xwiki-platform/blob/master/LICENSE",
+          "https://www.xwiki.org/xwiki/bin/view/Documentation/AdminGuide/Installation/",
+          "https://hub.docker.com/_/xwiki",
+          "https://www.atlassian.com/software/confluence/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Docmost",
+      "url": "https://docmost.com",
+      "type": "open-source",
+      "repo": "https://github.com/docmost/docmost",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Confluence with less ceremony and a Docker bill",
+      "stars": 21300,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup or Docker Compose with PostgreSQL and Redis",
+        "engines": null,
+        "dataFormat": "Pages, users, comments, and history in PostgreSQL; jobs/cache in Redis; attachments in a persistent local volume by default or S3/Azure Blob",
+        "gapVsPaid": "It is simpler and faster, but has fewer enterprise macros, workflow controls, templates, marketplace integrations and Jira-native connections than Confluence.",
+        "setupBlocker": "Self-hosting requires Docker, a strong APP_SECRET, database credentials, persistent volumes, and normally a domain, TLS reverse proxy, and SMTP",
+        "sources": [
+          "https://github.com/docmost/docmost",
+          "https://github.com/docmost/docmost/blob/main/LICENSE",
+          "https://github.com/docmost/docmost/blob/main/docker-compose.yml",
+          "https://docmost.com/docs/self-hosting/configuration/",
+          "https://www.atlassian.com/software/confluence/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "BookStack",
+      "url": "https://www.bookstackapp.com",
+      "type": "open-source",
+      "repo": "https://github.com/BookStackApp/BookStack",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A wiki organized like a bookshelf; gloriously opinionated and much less flexible than Confluence",
+      "stars": 18971,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Fresh Ubuntu install script or manual PHP/MySQL setup",
+        "engines": null,
+        "dataFormat": "Pages, users, permissions, and settings in MySQL/MariaDB; uploaded images and files in the server filesystem or configured object storage",
+        "gapVsPaid": "Its compulsory shelf/book/chapter structure and smaller extension surface are far less flexible than Confluence spaces, macros, databases, whiteboards and Jira-connected workflows.",
+        "setupBlocker": "The official script expects a fresh Ubuntu host; manual installs require PHP extensions, a database, writable storage, mail, and TLS",
+        "sources": [
+          "https://github.com/BookStackApp/BookStack",
+          "https://github.com/BookStackApp/BookStack/blob/development/LICENSE",
+          "https://www.bookstackapp.com/docs/admin/installation/",
+          "https://www.bookstackapp.com/docs/admin/filesystem-permissions/",
+          "https://www.atlassian.com/software/confluence/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Wiki.js",
+      "url": "https://js.wiki",
+      "type": "open-source",
+      "repo": "https://github.com/requarks/wiki",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A modern wiki with enough knobs to remind you that you are now the administrator",
+      "stars": 28700,
+      "lastCommit": "2026-05",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Docker Compose with PostgreSQL, or a Node.js package plus a supported database",
+        "engines": null,
+        "dataFormat": "Pages, users, authentication data, and history in the configured database; optional storage modules can mirror content and assets to Git, local disk, or cloud storage",
+        "gapVsPaid": "It lacks Confluence's mature enterprise templates, macros, whiteboards, marketplace and Atlassian integrations, while shifting hosting and upgrades to you.",
+        "setupBlocker": "You must provision a database and persistent volumes, then configure backups and a TLS reverse proxy for public use",
+        "sources": [
+          "https://github.com/requarks/wiki",
+          "https://github.com/requarks/wiki/blob/main/LICENSE",
+          "https://docs.requarks.io/install/docker",
+          "https://github.com/requarks/wiki/blob/main/config.sample.yml",
+          "https://www.atlassian.com/software/confluence/features"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "AppFlowy",
+      "url": "https://www.appflowy.io",
+      "desc": "The app is open-source, but the official free self-hosted collaboration tier is one seat plus guests"
+    },
+    {
+      "name": "Outline",
+      "url": "https://www.getoutline.com",
+      "desc": "A favourite self-hosted wiki recommendation; on-prem now starts at $10 a month and cloud is a 30-day trial"
+    }
+  ],
+  "relatedSlugs": [
+    "taskade",
+    "meistertask",
+    "guru"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Confluence survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Confluence; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a single-user team documentation workspace with projects, tasks, statuses, filters, recurring items, and JSON export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: large integration catalog; mobile capture and notifications; real-time multiplayer.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

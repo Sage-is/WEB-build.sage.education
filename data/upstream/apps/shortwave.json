@@ -1,0 +1,186 @@
+{
+  "slug": "shortwave",
+  "name": "Shortwave",
+  "domain": "shortwave.com",
+  "appURL": "https://shortwave.com",
+  "category": "email",
+  "subcategory": "email clients and hosted mail",
+  "tagline": "Group Gmail conversations, add bundles and todos, and index mail locally",
+  "priceMonthly": 18,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://www.shortwave.com/pricing/",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Advertised annual-equivalent Personal price; monthly billing is higher.",
+    "native": "18 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "90 days of standard and AI search history; max 15 threads per AI search; 0 AI filters; limited AI quota; mandatory 'Sent with Shortwave' signature.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 18,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "3 years of AI search history; max 50 threads per AI search; 0 AI filters; standard AI quota.",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 30,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "5 years of AI search history; max 50 threads per AI search; 3 AI filters; roughly 150-300 Standard-intelligence AI requests/day.",
+        "notes": null
+      },
+      {
+        "name": "Premier",
+        "monthly": 45,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Unlimited AI search history; max 100 threads per AI search; 10 AI filters; 2x Business AI usage and 2x context.",
+        "notes": null
+      },
+      {
+        "name": "Max",
+        "monthly": 120,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Unlimited AI search history; max 150 threads per AI search; 50 AI filters; 6x Business AI usage and 3x context.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "90 days of standard and AI search history; max 15 threads per AI search; 0 AI filters; limited AI quota; mandatory 'Sent with Shortwave' signature",
+    "billingTerms": "monthly only for new subscriptions; no annual plan; billed upfront; 14-day free trial and 14-day refund window",
+    "priceChanges": [
+      {
+        "what": "Pro",
+        "fromUsd": 14,
+        "toUsd": 18,
+        "when": "2026-06",
+        "source": "https://www.usagepricing.com/blueprint/activity/shortwave-2026-06-30-price-change"
+      },
+      {
+        "what": "Business",
+        "fromUsd": 24,
+        "toUsd": 30,
+        "when": "2026-06",
+        "source": "https://www.usagepricing.com/blueprint/activity/shortwave-2026-06-30-price-change"
+      },
+      {
+        "what": "Premier",
+        "fromUsd": 36,
+        "toUsd": 45,
+        "when": "2026-06",
+        "source": "https://www.usagepricing.com/blueprint/activity/shortwave-2026-06-30-price-change"
+      },
+      {
+        "what": "Max",
+        "fromUsd": 100,
+        "toUsd": 120,
+        "when": "2026-06",
+        "source": "https://www.usagepricing.com/blueprint/activity/shortwave-2026-06-30-price-change"
+      }
+    ],
+    "hiddenCosts": "Every teammate must use the same paid tier and is billed per seat. AI capacity, search depth and filter count require tier upgrades rather than overage purchases. One paid seat covers all of that person's signed-in accounts; Tasklet 24/7 automation is a separate subscription.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.shortwave.com/pricing/",
+      "https://www.shortwave.com/docs/guides/billing/",
+      "https://www.shortwave.com/docs/how-tos/multi-account/",
+      "https://www.usagepricing.com/blueprint/activity/shortwave-2026-06-30-price-change"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Shortwave, group Gmail conversations, add bundles and todos, and index mail locally. The hard boundary is deep gmail semantics, cloud search, ai, team features, and mobile sync, plus mail infrastructure, integrations, and client polish.",
+  "coreLoopDIY": "Connect an existing Gmail mailbox, group conversations into bundles with todos, index messages locally, provide a fast focused inbox, and send through the account's normal SMTP service.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "existing IMAP and SMTP mailbox",
+    "OAuth client credentials where required",
+    "desktop keychain access",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "deep Gmail semantics, cloud search, AI, team features, and mobile sync",
+    "mail hosting and deliverability",
+    "push on every platform",
+    "advanced team collaboration",
+    "provider-specific AI and search"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "mail infrastructure, integrations, and client polish",
+  "replacementScope": "personal desktop mail client",
+  "ongoingBurden": "IMAP quirks, OAuth, MIME, threading, search, attachments, offline sync, notifications, secure storage, and provider changes",
+  "whyPeopleStillPay": "People still pay for Shortwave because an email client can be rebuilt; operating a trusted mail service with excellent deliverability cannot. The recurring cost buys IMAP quirks, OAuth, MIME, threading, search, attachments, offline sync, notifications, secure storage, and provider changes, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "mailcow",
+      "url": "https://github.com/mailcow/mailcow-dockerized",
+      "desc": "Popular open-source mail-server suite that demonstrates the operational complexity of hosted mail."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "BlueMail Personal",
+      "url": "https://bluemail.me/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "Clusters group related mail and the Later Board turns messages into tasks; Gmail-specific bundles are less clever.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Spark Free",
+      "url": "https://sparkmailapp.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "Smart Inbox, Set Aside and Done reproduce the focused workflow; conversation bundling is simpler.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "superhuman",
+    "front",
+    "fastmail"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Personal plan and a personal desktop mail client DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Shortwave in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, IMAP, SMTP, and OAuth where available; do not offer alternative stacks.\nThe core loop is: connect an existing Gmail mailbox, group conversations into bundles with todos, index messages locally, provide a fast focused inbox, and send through the account's normal SMTP service.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nSupport one IMAP and SMTP account with credentials stored only in the OS keychain.\nIndex headers and message bodies locally with resumable sync and a visible status page.\nImplement standards-based threading, folders, labels, archive, snooze, drafts, and search.\nRender HTML email in a locked-down sandbox and block remote images by default.\nSend multipart messages with attachments and preserve a local copy of every draft.\nAdd export, local cache reset, account reconnect, diagnostics, and safe logging.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out running a public mail server.\nDeliberately leave out shared team inboxes and sales workflows.\nDeliberately leave out mobile push services and provider-scale spam filtering.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,290 @@
+{
+  "slug": "retool",
+  "name": "Retool",
+  "domain": "retool.com",
+  "appURL": "https://retool.com",
+  "category": "no-code-apps",
+  "subcategory": "internal tools and application builders",
+  "tagline": "Build one internal CRUD tool over a trusted database with role-aware actions",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Team",
+    "basis": "annual-equivalent per user",
+    "unit": "per-seat",
+    "source": "https://retool.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Advertised annual-equivalent Team price; monthly billing is higher.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Up to 5 users; 500 workflow runs/month; 5 GB storage; 20 agent hours; 250 AI credits",
+        "notes": "Builder and internal-user roles are free inside the 5-user cap."
+      },
+      {
+        "name": "Team, builder",
+        "monthly": null,
+        "annualPerMonth": 10,
+        "per": "user",
+        "limits": "Builder seat; 5,000 workflow runs/month per organization; 1,000 pooled AI credits after introductory bonus",
+        "notes": "Official US page exposed the annual-equivalent price; monthly amount was not stable in the crawl."
+      },
+      {
+        "name": "Team, internal user",
+        "monthly": null,
+        "annualPerMonth": 5,
+        "per": "user",
+        "limits": "Internal end-user seat; shares the organization's workflow and AI allowances",
+        "notes": "Annual-equivalent price."
+      },
+      {
+        "name": "Business, builder",
+        "monthly": null,
+        "annualPerMonth": 50,
+        "per": "user",
+        "limits": "Builder seat; 5,000 workflow runs/month; 3,000 pooled AI credits; advanced permissions and environments",
+        "notes": "Annual-equivalent price."
+      },
+      {
+        "name": "Business, internal user",
+        "monthly": null,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "Internal end-user seat; business controls",
+        "notes": "Annual-equivalent price."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom builder/internal/external users, support, security and deployment terms",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "5 total users; 500 workflow runs/month; 5 GB storage; 20 agent hours; 250 AI credits",
+    "billingTerms": "monthly + annual; published self-serve figures are role-based per user",
+    "priceChanges": [],
+    "hiddenCosts": "Builder and internal-user seats have different rates; extra workflow capacity costs $75 per 5,000 runs, AI credits are pooled and reset without rollover, Agents are metered separately, and external-user pricing changes after the included band",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://retool.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Retool, build one internal CRUD tool over a trusted database with role-aware actions. The hard boundary is connectors, component library, permissions, workflows, and hosted runtime, plus connectors, runtime reliability, and governance.",
+  "coreLoopDIY": "Define tables and views, build one internal CRUD tool with role-aware actions over one approved trusted database, and deploy it for a small trusted team.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted deploy target",
+    "API credentials for one selected integration"
+  ],
+  "whatYouLose": [
+    "connectors, component library, permissions, workflows, and hosted runtime",
+    "hundreds of connectors",
+    "pixel-perfect app design",
+    "mobile app-store builds",
+    "enterprise permissions and scale"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "connectors, runtime reliability, and governance",
+  "replacementScope": "small-team internal app",
+  "ongoingBurden": "schema migration, auth, permissions, connector drift, queues, deployments, backups, and auditability",
+  "whyPeopleStillPay": "People still pay for Retool because the builder is only useful when its runtime, connectors, permissions, and deployments remain boring for years. The recurring cost buys schema migration, auth, permissions, connector drift, queues, deployments, backups, and auditability, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Appsmith",
+      "url": "https://github.com/appsmithorg/appsmith",
+      "desc": "Large open-source low-code platform for internal applications and data sources."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Appsmith Free",
+      "url": "https://www.appsmith.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Five people can build and run database-backed internal apps in the hosted product without paying.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "cloud",
+        "install": "Hosted signup for Appsmith Cloud Free",
+        "engines": "Appsmith's AI/agent features use Appsmith-managed AI services; exact model availability is product-controlled rather than a local backend",
+        "dataFormat": "App definitions, users, and secrets live in Appsmith Cloud; connected business data remains in the source database/API, while query results pass through Appsmith",
+        "gapVsPaid": "Appsmith's hosted free product has a smaller connector, component, mobile, debugging, and production-observability surface than Retool.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.appsmith.com/pricing",
+          "https://github.com/appsmithorg/appsmith",
+          "https://github.com/appsmithorg/appsmith/blob/release/LICENSE",
+          "https://docs.appsmith.com/getting-started/setup/deployment-architecture",
+          "https://retool.com/",
+          "https://retool.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Budibase",
+      "url": "https://budibase.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Budibase/budibase",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Internal apps, forms, automations, and portals in one box; much closer to Knack than its developer branding suggests.",
+      "stars": 27902,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Docker image or Docker Compose; Kubernetes is also supported",
+        "engines": "Model-agnostic; the agent builder supports bring-your-own AI provider credentials",
+        "dataFormat": "Built-in app data and app definitions are stored in CouchDB, files in MinIO/S3-compatible object storage, and connected external data remains in its source system",
+        "gapVsPaid": "Budibase is faster for standard CRUD but gives up Retool's fine-grained UI composition, custom-code flexibility, connector breadth, and debugging tools.",
+        "setupBlocker": "Requires Docker and persistent storage; production use also means owning upgrades, TLS, backups, and database/network access",
+        "sources": [
+          "https://github.com/Budibase/budibase",
+          "https://github.com/Budibase/budibase/blob/master/LICENSE",
+          "https://docs.budibase.com/docs/docker",
+          "https://docs.budibase.com/docs/budibase-architecture",
+          "https://budibase.com/pricing/",
+          "https://retool.com/",
+          "https://retool.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Directus Self-Hosted",
+      "url": "https://directus.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A polished data studio with tables, forms, dashboards, flows, and APIs; free only below its organization-size ceiling.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-MSCL-1.0",
+        "runs": "self-hosted",
+        "install": "Docker Compose with SQLite for a test install, or a supported SQL database and persistent file storage for production",
+        "engines": "Optional AI Assistant supports OpenAI, Anthropic, Google, and OpenAI-compatible endpoints with the operator's API key",
+        "dataFormat": "Business records stay in the connected SQL database; assets live in configured local or object storage; Directus metadata is stored alongside the database",
+        "gapVsPaid": "Directus is a polished data studio around a database, not a general arbitrary internal-app canvas, so bespoke multi-source tools require much more custom work.",
+        "setupBlocker": "Requires Docker, a secret, persistent database/uploads, backups, TLS, and attention to Directus's non-OSI license and free-tier limits",
+        "sources": [
+          "https://github.com/directus/directus",
+          "https://directus.io/docs/getting-started/create-a-project",
+          "https://directus.io/docs/getting-started/overview",
+          "https://directus.io/docs/guides/ai/assistant",
+          "https://directus.io/pricing",
+          "https://retool.com/",
+          "https://retool.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Retool Free",
+      "url": "https://retool.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "The same product is enough for one small team: five users, unlimited apps, every database and API connector, and role-aware actions.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in Retool Cloud",
+        "engines": "Retool-managed AI models and agents; Free includes pooled AI credits and limited agent hours, while bring-your-own model keys are plan-dependent",
+        "dataFormat": "App definitions, Retool Database rows, and Retool file storage live in Retool Cloud; connected source data remains in the user's databases/APIs, although query results transit Retool",
+        "gapVsPaid": "It is the same product under user, workflow, AI, governance, and support limits that become restrictive as soon as the internal tool serves more than a tiny team.",
+        "setupBlocker": null,
+        "sources": [
+          "https://retool.com/pricing",
+          "https://retool.com/blog/new-free-plan-2022",
+          "https://retool.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "ToolJet Free",
+      "url": "https://www.tooljet.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Two builders, 50 users, two apps, and the actual database and API connectors, not a screenshot-only trial.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "cloud",
+        "install": "Hosted signup for ToolJet Cloud Free",
+        "engines": "ToolJet AI uses vendor-hosted AI services and plan credits; bring-your-own LLM keys are an Enterprise add-on",
+        "dataFormat": "App metadata, ToolJet Database tables, secrets, and files live in ToolJet Cloud; connected source records remain in their external database/API",
+        "gapVsPaid": "ToolJet's component and connector ecosystem, debugging experience, mobile tooling, and production polish are less mature than Retool's.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.tooljet.ai/pricing",
+          "https://github.com/ToolJet/ToolJet",
+          "https://github.com/ToolJet/ToolJet/blob/develop/LICENSE",
+          "https://tooljet.com/database",
+          "https://retool.com/",
+          "https://retool.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "flutterflow",
+    "weweb",
+    "adalo"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Team plan and a small-team internal app DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Retool in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: define tables and views, build one internal CRUD tool with role-aware actions over one approved trusted database, and deploy it for a small trusted team.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a schema editor for text, number, boolean, date, enum, and relation fields.\nGenerate list, detail, create, edit, and kanban views from the schema.\nImplement role-based read and write rules for admin and member roles.\nSupport one REST connector with encrypted credentials and explicit field mapping.\nAdd an activity log, CSV import or export, backups, and health checks.\nShip Docker Compose with migrations and a seeded example workspace.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out arbitrary user-authored code execution.\nDeliberately leave out a broad integration marketplace.\nDeliberately leave out native mobile binaries and enterprise compliance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

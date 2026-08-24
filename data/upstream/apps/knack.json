@@ -1,0 +1,284 @@
+{
+  "slug": "knack",
+  "name": "Knack",
+  "domain": "knack.com",
+  "appURL": "https://knack.com",
+  "category": "databases",
+  "subcategory": "spreadsheet databases and operational data apps",
+  "tagline": "Build a small hosted database app with pages, forms, and role-based views",
+  "priceMonthly": 59,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://knack.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Starter monthly tier.",
+    "native": "59 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 59,
+        "annualPerMonth": 49,
+        "per": "workspace",
+        "limits": "20,000 records; 3 apps; 2 GB storage; 25 AI credits; 500 Flows transactions; 1,000 API calls/day; 1 shared builder.",
+        "notes": "Current new-customer promotion advertises $19/month for the first 3 months, then the regular price."
+      },
+      {
+        "name": "Pro",
+        "monthly": 130,
+        "annualPerMonth": 110,
+        "per": "workspace",
+        "limits": "50,000 records; unlimited apps; 10 GB storage; 1-month history; 50 AI credits; 2,000 Flows transactions; 5,000 API calls/day.",
+        "notes": "Current new-customer promotion advertises $49/month for the first 3 months. Advanced SSO is a $55/month add-on."
+      },
+      {
+        "name": "Corporate",
+        "monthly": 300,
+        "annualPerMonth": 250,
+        "per": "workspace",
+        "limits": "Starts with 125,000 records and scales to 2.5 million; 50 GB storage; 2-month history; 100 AI credits; 5,000 Flows transactions; 10,000 API calls/day.",
+        "notes": "Published price is a starting price and rises with capacity."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "2.5 million+ records; 3-month logs; custom storage, API and usage limits.",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; free trial offered with no card, but the live pricing page does not state its duration",
+    "billingTerms": "monthly month-to-month + annual; annual rates are about 17% lower and billed for the year",
+    "priceChanges": [],
+    "hiddenCosts": "Record/storage add-ons cost $42/month for 15,000 records + 5 GB on Pro (maximum 2) or $90/month for 40,000 records + 20 GB on Corporate (maximum 2); Pro SSO is $55/month; paid plans can auto-add Flows capacity at unpublished prices; each app user consumes a database record.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://www.knack.com/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Knack, build a small hosted database app with pages, forms, and role-based views. The hard boundary is managed hosting, schema builder, permissions, integrations, and support, plus data model flexibility, collaboration, and integrations.",
+  "coreLoopDIY": "Model structured records in a small self-hosted database app, provide grid, form, kanban, and role-based filtered views, and expose a documented API.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "optional object storage for attachments"
+  ],
+  "whatYouLose": [
+    "managed hosting, schema builder, permissions, integrations, and support",
+    "real-time multiplayer",
+    "automation and integration breadth",
+    "scale and formula depth",
+    "enterprise permissions"
+  ],
+  "moatTags": [
+    "switching-costs",
+    "collaboration",
+    "integrations"
+  ],
+  "moatNotes": "data model flexibility, collaboration, and integrations",
+  "replacementScope": "small-team structured database",
+  "ongoingBurden": "schema changes, formulas, permissions, imports, attachments, views, APIs, concurrency, backups, and migrations",
+  "whyPeopleStillPay": "People still pay for Knack because teams pay when a flexible database becomes a shared operational system with integrations and years of accumulated business logic. The recurring cost buys schema changes, formulas, permissions, imports, attachments, views, APIs, concurrency, backups, and migrations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "NocoDB",
+      "url": "https://github.com/nocodb/nocodb",
+      "desc": "Active open-source no-code database interface and Airtable alternative."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Baserow Free",
+      "url": "https://baserow.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Its free app builder turns tables into pages and forms for hundreds of external users, with basic roles and automations.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Tables, application definitions, uploads, and workspace metadata live in Baserow Cloud; tables can be exported as CSV",
+        "gapVsPaid": "Its app builder is less polished for customer-facing portals and offers shallower external-user permissions and page composition than Knack.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/baserow/baserow",
+          "https://github.com/baserow/baserow/blob/develop/LICENSE",
+          "https://baserow.io/pricing",
+          "https://baserow.io/user-docs/export-a-view",
+          "https://www.knack.com/",
+          "https://www.knack.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Budibase",
+      "url": "https://budibase.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Budibase/budibase",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Internal apps, forms, automations, and portals in one box; much closer to Knack than its developer branding suggests.",
+      "stars": 27902,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Docker image or Docker Compose; Kubernetes is also supported",
+        "engines": "Model-agnostic; the agent builder supports bring-your-own AI provider credentials",
+        "dataFormat": "Built-in app data and app definitions are stored in CouchDB, files in MinIO/S3-compatible object storage, and connected external data remains in its source system",
+        "gapVsPaid": "Budibase is oriented toward internal teams, making public portals, external-user onboarding, and managed customer-facing deployment less seamless than Knack.",
+        "setupBlocker": "Requires Docker and persistent storage; production use also means owning upgrades, TLS, backups, and database/network access",
+        "sources": [
+          "https://github.com/Budibase/budibase",
+          "https://github.com/Budibase/budibase/blob/master/LICENSE",
+          "https://docs.budibase.com/docs/docker",
+          "https://docs.budibase.com/docs/budibase-architecture",
+          "https://budibase.com/pricing/",
+          "https://www.knack.com/",
+          "https://www.knack.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "NocoBase",
+      "url": "https://www.nocobase.com/",
+      "type": "open-source",
+      "repo": "https://github.com/nocobase/nocobase",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A database-backed app builder with pages, forms, roles, workflows, and enough plugins to become your next maintenance hobby.",
+      "stars": 23600,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-NocoBase-Community",
+        "runs": "self-hosted",
+        "install": "NocoBase CLI or Docker deployment with MySQL, MariaDB, or PostgreSQL",
+        "engines": "Built-in AI employees can connect to common LLMs; exact provider support depends on installed AI plugins",
+        "dataFormat": "Business data lives in standard relational tables in the configured MySQL, MariaDB, or PostgreSQL database; files use configured local or object storage",
+        "gapVsPaid": "It requires self-hosting and exposes more database machinery, while Knack makes a small hosted customer portal much easier to publish and operate.",
+        "setupBlocker": "Requires a database, secrets, and deployment administration; the community license also preserves NocoBase branding and restricts some uses",
+        "sources": [
+          "https://github.com/nocobase/nocobase",
+          "https://github.com/nocobase/nocobase/blob/main/LICENSE.txt",
+          "https://docs.nocobase.com/get-started/installation/git",
+          "https://www.nocobase.com/en/commercial",
+          "https://www.knack.com/",
+          "https://www.knack.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "REI3",
+      "url": "https://rei3.de/",
+      "type": "open-source",
+      "repo": "https://github.com/r3-team/r3",
+      "platforms": [
+        "web",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A sober business-app builder with forms, reports, roles, workflows, and no per-user meter.",
+      "stars": 571,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Native Linux/Windows server package or Docker Compose, connected to PostgreSQL",
+        "engines": null,
+        "dataFormat": "Human-readable application records and configuration live in a PostgreSQL database controlled by the operator",
+        "gapVsPaid": "Its utilitarian self-hosted business interfaces are less polished for branded external portals and nontechnical customer access than Knack.",
+        "setupBlocker": "You must provision PostgreSQL and configure a server/reverse proxy; it is not a managed one-click workspace",
+        "sources": [
+          "https://github.com/r3-team/r3",
+          "https://github.com/r3-team/r3/blob/main/LICENSE.md",
+          "https://rei3.de/en/docs/admin",
+          "https://www.knack.com/",
+          "https://www.knack.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Softr Free",
+      "url": "https://www.softr.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A hosted portal builder with pages, forms, record editing, user groups, and visibility rules on the free plan.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in Softr Studio",
+        "engines": null,
+        "dataFormat": "App definitions and any Softr Database records live in Softr's cloud; connected-source records remain in the external source, with Softr proxying requests and caching data for up to 24 hours; table blocks can export CSV or XLSX",
+        "gapVsPaid": "The free plan cannot reproduce a production Knack portal without visible Softr branding and plan limits on users, records, and advanced permissions.",
+        "setupBlocker": "No software install; the first hurdle is choosing and authenticating a data source, then mapping its fields and permissions",
+        "sources": [
+          "https://www.softr.io/pricing",
+          "https://docs.softr.io/data-sources/choosing-a-data-source",
+          "https://docs.softr.io/core-concepts-overview/connect-your-data-source",
+          "https://docs.softr.io/actions/export",
+          "https://www.knack.com/",
+          "https://www.knack.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Saltcorn",
+      "url": "https://saltcorn.com/",
+      "desc": "It does the job, but its own security page lists fresh critical RCE, SQL injection, path-traversal, and cross-tenant bugs."
+    }
+  ],
+  "relatedSlugs": [
+    "baserow-cloud",
+    "nocodb-cloud",
+    "grist"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a small-team structured database DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Knack in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: model structured records in a small self-hosted database app, provide grid, form, kanban, and role-based filtered views, and expose a documented API.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate workspaces, bases, tables, fields, records, attachments, relations, and saved views.\nSupport text, number, currency, date, boolean, select, formula-lite, and relation field types.\nBuild grid, form, kanban, and record-detail views from one canonical schema.\nAdd role-based permissions, optimistic concurrency checks, audit history, and trash restore.\nProvide CSV import or export and a token-authenticated REST API generated from the schema.\nShip migrations, seed data, backups, health checks, and a schema export format.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out full spreadsheet formula compatibility.\nDeliberately leave out hundreds of automations and integrations.\nDeliberately leave out large-enterprise governance and vendor-managed scale.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

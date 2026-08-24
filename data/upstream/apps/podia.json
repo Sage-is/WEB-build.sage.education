@@ -1,0 +1,140 @@
+{
+  "slug": "podia",
+  "name": "Podia",
+  "domain": "podia.com",
+  "category": "creator-commerce",
+  "subcategory": "courses/digital products",
+  "tagline": "Creator platform for courses, digital products, email, and memberships",
+  "priceMonthly": 49,
+  "pricing": {
+    "plan": "Mover",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "49 USD",
+    "source": "https://www.podia.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked; public 2026 sources list Mover around $49/month monthly or $42/month annually, with transaction fees on lower tier.",
+    "tiers": [
+      {
+        "name": "Mover",
+        "monthly": 49,
+        "annualPerMonth": 42,
+        "per": "workspace",
+        "limits": "50 products; 500 videos; 25 community spaces; 100 email subscribers; unlimited customers; 5% transaction fee.",
+        "notes": "Annual price is $504."
+      },
+      {
+        "name": "Shaker",
+        "monthly": 99,
+        "annualPerMonth": 84,
+        "per": "workspace",
+        "limits": "150 products; 1,000 videos; 100 community spaces; 1 assistant; 500 email subscribers; 0% transaction fee.",
+        "notes": "Annual price is $1,008."
+      },
+      {
+        "name": "Earthquaker",
+        "monthly": 179,
+        "annualPerMonth": 150,
+        "per": "workspace",
+        "limits": "Unlimited products, videos, spaces and assistants; 1,000 email subscribers; 0% transaction fee.",
+        "notes": "Annual price is $1,800."
+      }
+    ],
+    "freeTierCaps": "no free tier; 30-day trial with no card required",
+    "billingTerms": "monthly + annual",
+    "priceChanges": [],
+    "hiddenCosts": "Mover takes 5% of sales; email costs rise with subscriber count (the current example for 2,500 subscribers is $28/month or $22/month on annual billing); Stripe/PayPal processing is separate, and annual subscriptions generally receive no partial refund.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.podia.com/pricing",
+      "https://www.podia.com/podia-vs-circle",
+      "https://help.podia.com/en/articles/11371138-understanding-podia-transaction-fees"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "Selling a few digital downloads or a course is buildable, but Podia bundles checkout, file delivery, courses, email, memberships, affiliates, and support.",
+  "coreLoopDIY": "Build product pages, Stripe checkout, gated downloads/course lessons, customer accounts, and email receipts.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Stripe",
+    "file storage",
+    "auth",
+    "hosted site",
+    "email service",
+    "course/content database"
+  ],
+  "whatYouLose": [
+    "checkout/product UX",
+    "course hosting",
+    "email marketing",
+    "memberships",
+    "affiliates",
+    "tax/payment details",
+    "support"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "payments/content hosting/marketing",
+  "whyPeopleStillPay": "They pay because commerce plus content delivery has lots of edge cases.",
+  "priorArt": [
+    {
+      "name": "Ghost",
+      "url": "https://github.com/TryGhost/Ghost",
+      "desc": "Open-source publishing and memberships; combine with Stripe/file hosting for some Podia us",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "CourseLit",
+      "url": "https://courselit.app",
+      "type": "open-source",
+      "repo": "https://github.com/codelitdev/courselit",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Courses, downloads, email automation and memberships in one compose file; hosting and deliverability are yours.",
+      "stars": 1200,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "One course, digital products, memberships, email and 2,000 contacts free; the second course is where the meter starts.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Ghost",
+      "url": "https://ghost.org",
+      "desc": "Email and memberships fit; courses, quizzes and a general digital-product store do not."
+    }
+  ],
+  "relatedSlugs": [
+    "teachable",
+    "kajabi",
+    "circle"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good creator monetization entry where 60% DIY value is realistic.",
+  "prompt": "Build me a small digital-products store to replace Podia, for selling a few downloads,\nnot running a course business. Requirements:\n\n- Node + Express + better-sqlite3, server-rendered pages with nunjucks, deployed on my\n  VPS behind my existing reverse proxy.\n- Products live in products.json: slug, title, price, description, and the file to\n  deliver. Delivered files sit outside the web root.\n- One page per product plus a /store index. The buy button goes straight to Stripe\n  Checkout (keys in .env); no cart, no coupons.\n- Stripe webhook on payment: record the order in SQLite (email, product, amount,\n  timestamp) and email the buyer a download link via Resend or SMTP (creds in .env).\n- Download links are signed tokens that expire after 7 days or 5 uses; an expired link\n  shows a resend-by-email form.\n- An /admin page behind HTTP basic auth: order list and revenue per product.\n- Out of scope: memberships, drip courses, email marketing, and affiliates. Do not build\n  customer accounts, the receipt email is the account.\n- README: Stripe webhook setup with the CLI test command, and a plain note that\n  VAT/sales tax is on me, Stripe Tax exists if it matters.",
+  "promptCurated": false
+}

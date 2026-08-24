@@ -1,0 +1,331 @@
+{
+  "slug": "calendly",
+  "name": "Calendly",
+  "domain": "calendly.com",
+  "category": "scheduling",
+  "subcategory": "booking links",
+  "tagline": "Scheduling links for booking meetings without back-and-forth email",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "monthly per seat",
+    "unit": "per-seat",
+    "native": "12 USD",
+    "source": "https://calendly.com/pricing",
+    "checkedOn": "2026-08-07",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Standard listed at $12/seat/month monthly and $10/seat/month annually.",
+    "freeTier": "The free plan covers one event type on one connected calendar.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 one-on-one event type, 1 connected calendar and unlimited scheduled meetings.",
+        "notes": null
+      },
+      {
+        "name": "Standard",
+        "monthly": 12,
+        "annualPerMonth": 10,
+        "per": "user",
+        "limits": "Unlimited event types; connect up to 6 calendars; 1 seat per paid user.",
+        "notes": null
+      },
+      {
+        "name": "Teams",
+        "monthly": 20,
+        "annualPerMonth": 16,
+        "per": "user",
+        "limits": "Unlimited event types; up to 6 connected calendars; round-robin and routing.",
+        "notes": "Annual price falls incrementally by seat band: $16 for seats 1–30, then $14.50 for 31–50, $14 for 51–100, $13.50 for 101–200, $13 for 201–300 and $12 for 301+."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": 1250,
+        "per": "workspace",
+        "limits": "Starts at a $15,000 annual contract; numeric user and event limits are custom.",
+        "notes": "Starting annual contract divided by 12; invoicing and enterprise terms are custom."
+      }
+    ],
+    "freeTierCaps": "1 one-on-one event type, 1 connected calendar and unlimited meetings.",
+    "billingTerms": "monthly + annual; 14-day paid-plan trial falls back to Free; Enterprise starts at $15,000/year",
+    "priceChanges": [],
+    "hiddenCosts": "Every owner and admin occupies a paid seat; newly added seats are prorated and all users in one organization must share a plan. SAML SSO is a paid add-on with no public price.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://calendly.com/pricing",
+      "https://help.calendly.com/hc/en-us/articles/223195488-Choose-the-right-Calendly-plan-for-your-team",
+      "https://help.calendly.com/hc/en-us/articles/223147027-How-to-add-or-remove-users-and-seats"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A single-user booking page is easy; production-grade scheduling needs OAuth, availability rules, time zones, reminders, payments, team routing, and trust.",
+  "coreLoopDIY": "Connect calendar, publish event-type pages, let guests choose available slots, create calendar events, and send reminders.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "Google/Microsoft calendar OAuth",
+    "hosted app",
+    "email notifications",
+    "timezone handling",
+    "auth"
+  ],
+  "whatYouLose": [
+    "polished Google/Outlook OAuth kept working for you",
+    "team round-robin and routing",
+    "SMS reminders",
+    "the integrations directory"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "calendar integration/reliability",
+  "whyPeopleStillPay": "They pay because double-booking or missed meeting invites is costly.",
+  "priorArt": [
+    {
+      "name": "cal.com",
+      "url": "https://github.com/calcom/cal.com",
+      "desc": "open-source Calendly; self-host and skip the OAuth pain"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Cal.com Free",
+      "url": "https://cal.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Unlimited solo event types, calendars and bookings, with payments and notifications; team routing costs money.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Hosted signup, or Docker Compose with PostgreSQL for self-hosting",
+        "engines": null,
+        "dataFormat": "Hosted bookings, availability, integrations, and attendee data live in Cal.com's cloud; self-hosted deployments store core data in PostgreSQL and files or integration data in the configured services.",
+        "gapVsPaid": "Cal.com's broader, more technical product is less turnkey, and team routing, collective scheduling, and organization controls remain paid.",
+        "setupBlocker": "The hosted product is straightforward, but self-hosting requires Docker, PostgreSQL, environment secrets, email delivery, OAuth credentials, a domain, and upgrades.",
+        "sources": [
+          "https://cal.com/pricing",
+          "https://github.com/calcom/cal.com",
+          "https://github.com/calcom/cal.com/blob/main/LICENSE",
+          "https://cal.com/docs/introduction/quick-start/self-hosting/docker",
+          "https://calendly.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Google Calendar appointment schedules",
+      "url": "https://calendar.google.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "One bare appointment page inside the calendar you already use; reminders, payments and polish are paid.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Use the appointment-schedule feature inside Google Calendar",
+        "engines": null,
+        "dataFormat": "Availability and bookings are stored as Google Calendar and appointment-schedule data in the user's Google account; the internal storage format is not disclosed.",
+        "gapVsPaid": "A personal Google account gets only one booking page and lacks Calendly's paid reminders, payment collection, screening forms, and automation integrations.",
+        "setupBlocker": null,
+        "sources": [
+          "https://support.google.com/calendar/answer/190998?hl=en",
+          "https://support.google.com/calendar/answer/10729749?hl=en",
+          "https://calendly.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Koalendar Free",
+      "url": "https://koalendar.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "Unlimited booking pages and two calendar connections; payments, forms, reminders and team routing are paid.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup and calendar connection",
+        "engines": null,
+        "dataFormat": "Booking pages, invitee answers, and availability settings live in Koalendar's cloud, while confirmed bookings are synchronized to connected Google, Outlook, or iCloud calendars; the internal format is not disclosed.",
+        "gapVsPaid": "Payments, intake forms, automated reminders, group events, and team routing are paid, so the free product stops at uncomplicated one-to-one scheduling.",
+        "setupBlocker": "The first setup step is granting calendar OAuth access; paid-only forms, reminders, payments, and team features appear quickly once the booking flow becomes more than basic.",
+        "sources": [
+          "https://koalendar.com/pricing/free-forever",
+          "https://koalendar.com/pricing",
+          "https://calendly.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "TidyCal Free",
+      "url": "https://tidycal.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Unlimited one-person booking types and paid bookings on one calendar; group meetings and fancy emails cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup and one calendar connection",
+        "engines": null,
+        "dataFormat": "Booking types, attendee answers, and booking records live in TidyCal's cloud and are synchronized to the connected calendar; the internal storage format is not disclosed.",
+        "gapVsPaid": "The free plan connects only one calendar and withholds group meetings, custom emails, automatic video links, and analytics.",
+        "setupBlocker": "Connecting the calendar is easy, but the free account is limited to one calendar and omits several workflow customizations.",
+        "sources": [
+          "https://tidycal.com/pricing",
+          "https://calendly.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "YouCanBookMe Free",
+      "url": "https://youcanbook.me/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "One booking page, but it keeps forms, payments, confirmations, polls and the calendar-overlay trick.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup and one calendar connection",
+        "engines": null,
+        "dataFormat": "Booking-page configuration and appointment records live in YouCanBookMe's cloud, with events synchronized to the connected calendar; the internal storage format is not disclosed.",
+        "gapVsPaid": "The free account is limited to one booking page and one connected calendar, so separate meeting types or calendars quickly force an upgrade.",
+        "setupBlocker": "The setup itself is clean; the obstacle is structural rather than technical, one booking page and one connected calendar.",
+        "sources": [
+          "https://youcanbook.me/pricing",
+          "https://calendly.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "zcal Free",
+      "url": "https://zcal.co/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Unlimited links and calendars, custom questions, email reminders and Stripe payments; teams are paid and zcal takes 3%.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup and calendar connection",
+        "engines": null,
+        "dataFormat": "Scheduling links, availability, answers, and booking records live in zcal's cloud and synchronize to connected calendars; the internal storage format is not disclosed.",
+        "gapVsPaid": "Team and routing features are paid, and free-plan Stripe payments lose an additional 3% to zcal.",
+        "setupBlocker": "Calendar OAuth is straightforward, but accepting Stripe payments on the free plan adds zcal's 3% commission.",
+        "sources": [
+          "https://zcal.co/",
+          "https://zcal.co/pricing",
+          "https://help.zcal.co/pricing/free-forever-plan",
+          "https://help.zcal.co/integrations/stripe",
+          "https://calendly.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Zoho Bookings Free",
+      "url": "https://www.zoho.com/bookings/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "A real one-person booking desk with forms, reminders and two-way sync; staff and payment plumbing cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup and calendar connection",
+        "engines": null,
+        "dataFormat": "Services, availability, customer details, and bookings live in Zoho's cloud and synchronize with connected calendars; the internal storage format is not disclosed.",
+        "gapVsPaid": "The free plan is limited to one user and leaves payment integrations, team scheduling, and advanced workflow customization to paid tiers.",
+        "setupBlocker": "A Zoho account and calendar connection are easy; configuring services, time zones, and notification rules is the first non-trivial step.",
+        "sources": [
+          "https://www.zoho.com/bookings/pricing.html",
+          "https://calendly.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Cal.diy",
+      "url": "https://www.cal.diy/",
+      "desc": "Self-hostable, yes; also explicitly a hobbyist, non-production fork that expects database and security expertise."
+    }
+  ],
+  "relatedSlugs": [
+    "savvycal",
+    "raycast-pro",
+    "notion"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "The booking page is easy. Calendar-sync OAuth is where weekends go to die; be honest with yourself about that before starting.",
+  "prompt": "Build me a personal booking page like Calendly. Requirements:\n\n- A public /book page showing my available slots for the next 14 days; visitors\n  pick one, enter name + email + note, and get a confirmation page.\n- Availability = weekly rules in a config file (e.g. Mon–Fri 10:00–17:00,\n  30-min slots, 15-min buffer between meetings, my timezone) minus existing\n  bookings, rendered in the visitor's local timezone.\n- Google Calendar sync via OAuth (credentials in .env): busy events block slots,\n  and confirmed bookings are created in my calendar with the visitor invited and\n  a Google Meet link attached. Warn me in the README: this OAuth app setup is\n  the fiddly part · budget an hour for the Google Cloud console alone.\n- Email confirmations to both sides via SMTP creds in .env.\n- Cancel/reschedule links with a signed token in the email.\n- SQLite storage, one Node process, no accounts, no framework lock-in.",
+  "promptCurated": true
+}

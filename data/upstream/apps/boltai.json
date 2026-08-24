@@ -1,0 +1,361 @@
+{
+  "slug": "boltai",
+  "name": "BoltAI",
+  "domain": "boltai.com",
+  "appURL": "https://boltai.com",
+  "category": "ai-assistant",
+  "subcategory": "native macOS AI workspace",
+  "tagline": "Private native AI workspace for Mac with multiple models, agents, workflows, files, and tools",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Essential",
+    "basis": "one-time purchase with one year of updates",
+    "unit": "one-time",
+    "source": "https://boltai.com/pricing",
+    "checkedOn": "2026-08-04",
+    "confidence": "high",
+    "notes": "List price is 79 USD; a temporary sale price of 55 USD was shown when checked.",
+    "native": "79 USD",
+    "kind": "one-time",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Evaluation",
+        "monthly": 0,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Evaluation access; exact duration and numeric usage cap are not published.",
+        "notes": "Not a permanent free tier."
+      },
+      {
+        "name": "Essential",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 seat; 1 desktop device; 512 MB cloud storage; 1 year of updates, cloud access, and mobile access.",
+        "notes": "One-time perpetual license: $79."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "2 desktop devices + 1 mobile device; 1 GB cloud storage; 1 year of updates, cloud access, and mobile access.",
+        "notes": "One-time perpetual license: $99 at verification; page also displayed a crossed-out $199 reference price."
+      },
+      {
+        "name": "Team Perpetual",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Minimum 5 seats; 1 device/seat; 10 GB shared cloud storage; 1 year of updates and cloud access.",
+        "notes": "One-time perpetual license: $99/seat; optional renewal is $79/seat/year."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; evaluation mode exists, but its numeric cap is not published",
+    "billingTerms": "one-time perpetual licenses; 1 year of updates/cloud included; optional annual renewal, no monthly subscription",
+    "priceChanges": [],
+    "hiddenCosts": "Model-provider API usage is BYOK and billed separately. Personal renewal defaults to 60% of the original pre-discount license price; Team requires 5 seats. After included cloud access ends, data becomes read-only and may be deleted after 24 months without renewal.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://boltai.com/pricing",
+      "https://help.boltai.com/articles/9415943-license"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A coding agent can one-shot a basic chat window that calls a few AI APIs. That reproduces only a small part of BoltAI. A credible replacement must remain fast with large histories and active streams, combine SwiftUI with purpose-built AppKit components where the framework falls short, and make focus, keyboard navigation, menus, windows, drag and drop, and global shortcuts behave like a real Mac app. It must also reproduce AI Workflows, Instant Chat, Instant Dictation, attachments, tools, provider-specific behavior, local persistence, sync recovery, and protected credentials. These are interacting product systems, not a collection of generated screens.",
+  "coreLoopDIY": "Build a performant native Mac chat client for a few AI providers with streaming, searchable history, attachments, agents, workflows, and basic MCP support.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "macOS 13 or later",
+    "Xcode with a Swift 6 toolchain",
+    "API keys for the selected cloud providers",
+    "Ollama for optional local models",
+    "Accessibility and microphone permissions for system-wide workflows"
+  ],
+  "whatYouLose": [
+    "AppKit-backed performance and responsiveness across large workspaces and conversation histories",
+    "carefully tuned keyboard navigation, focus, menus, panels, windows, drag and drop, and other native Mac behavior",
+    "AI Workflows that capture context from other applications and return formatted results where the user is working",
+    "Instant Chat and Instant Dictation as reliable system-wide workflows rather than ordinary in-app screens",
+    "maintained provider compatibility, Cloud Sync, mobile continuity, imports, backup recovery, and protected credential portability"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "integrations",
+    "switching-costs"
+  ],
+  "moatNotes": "Measured native performance, AppKit-level interaction engineering, product taste, workflow depth, provider compatibility, and durable workspace history.",
+  "replacementScope": "basic local multi-provider chat client, not the complete native AI workspace",
+  "ongoingBurden": "Profiling large histories, handling SwiftUI and AppKit lifecycle edge cases, maintaining global panels and Accessibility integrations, tracking provider changes, securing credentials, testing sync and recovery, and preserving native behavior across macOS releases.",
+  "whyPeopleStillPay": "People do not pay for BoltAI because it is the only app capable of putting a prompt box beside an API. Many native and Electron clients already do that. They pay because BoltAI is a fast, coherent Mac workspace where long histories, streaming responses, keyboard navigation, global panels, dictation, workflows, files, and tools behave like one product. Achieving that requires continuous profiling, AppKit-level engineering, product taste, and repair of real-world edge cases. AI can generate a large SwiftUI codebase quickly; it cannot one-shot the accumulated judgment and maintenance required to make that code feel native and remain performant.",
+  "priorArt": [],
+  "alternatives": [
+    {
+      "name": "AnythingLLM",
+      "url": "https://anythingllm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Mintplex-Labs/anything-llm",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A private AI desk for documents and agents; install it, then choose local models or somebody else's meter.",
+      "stars": 64400,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Desktop installer for macOS/Windows/Linux, or Docker for a self-hosted web instance",
+        "engines": "Local llama.cpp models plus Ollama, LM Studio, LocalAI and many cloud APIs including OpenAI, Anthropic, Gemini, Bedrock, Azure, OpenRouter and Mistral",
+        "dataFormat": "Desktop data stays in the app's local storage; self-hosted data is stored in the mounted server storage and chosen vector database (LanceDB by default), while prompts sent to cloud models leave the machine",
+        "gapVsPaid": "It is a cross-platform workspace rather than a deeply Mac-native app, so it gives up BoltAI's menu-bar, global-shortcut, and macOS workflow polish.",
+        "setupBlocker": "The installer is easy, but useful results still require downloading a local model or supplying a model-provider API key",
+        "sources": [
+          "https://github.com/Mintplex-Labs/anything-llm",
+          "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE",
+          "https://docs.anythingllm.com/installation-desktop/overview",
+          "https://docs.anythingllm.com/features/privacy-and-data-handling",
+          "https://boltai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Cherry Studio",
+      "url": "https://cherryai.com/",
+      "type": "open-source",
+      "repo": "https://github.com/CherryHQ/cherry-studio",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A desktop model switchboard with assistants, files, agents and MCP; bring keys or make your laptop sweat.",
+      "stars": 49867,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Jan",
+      "url": "https://jan.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/janhq/jan",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A local-first desktop assistant with cloud connectors and tools; your RAM gets the invoice.",
+      "stars": 43900,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "Download the macOS, Windows or Linux desktop installer",
+        "engines": "Built-in local inference via llama.cpp/llama-server plus OpenAI-compatible APIs and connectors such as OpenAI, Anthropic, Gemini, Groq, Mistral and OpenRouter",
+        "dataFormat": "Threads, assistants, settings and downloaded model files live in Jan's local data folder; only requests sent to configured cloud providers leave the machine",
+        "gapVsPaid": "Its local-first desktop experience is less deeply integrated into macOS and offers fewer polished system-wide workflows than BoltAI.",
+        "setupBlocker": "Local use requires downloading a multi-gigabyte model and enough RAM; cloud use requires an API key",
+        "sources": [
+          "https://github.com/janhq/jan",
+          "https://github.com/janhq/jan/blob/dev/LICENSE",
+          "https://jan.ai/docs/desktop/",
+          "https://jan.ai/docs/desktop/data-folder/",
+          "https://boltai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "LM Studio",
+      "url": "https://lmstudio.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A local-model desktop lab with chat, documents and tools; free forever, but your hardware is now the cloud.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Download the macOS, Windows or Linux desktop installer",
+        "engines": "Runs GGUF models through llama.cpp and MLX models on Apple Silicon; downloads models from Hugging Face and exposes local OpenAI- and Anthropic-compatible APIs",
+        "dataFormat": "Chats, attached documents, presets and downloaded model weights stay in LM Studio's local application data; local chat and RAG can run fully offline",
+        "gapVsPaid": "It is primarily a local-model runner and lab, not a full replacement for BoltAI's agents, reusable workflows, and Mac-wide productivity hooks.",
+        "setupBlocker": "The installer is clean, but the user must choose and download a model large enough for the task and small enough for their RAM",
+        "sources": [
+          "https://lmstudio.ai/docs/app",
+          "https://lmstudio.ai/docs/app/offline",
+          "https://lmstudio.ai/docs/app/basics/rag",
+          "https://lmstudio.ai/terms",
+          "https://boltai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Open WebUI",
+      "url": "https://openwebui.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "ChatGPT-shaped self-hosting with models, files, search and tools; the software is free, the admin role is yours.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-Open-WebUI",
+        "runs": "self-hosted",
+        "install": "Run the official Docker image, install the Python package, or deploy with Kubernetes",
+        "engines": "Ollama and any OpenAI-compatible API, including LM Studio, vLLM, Groq, Mistral and OpenRouter; additional speech, image and search providers",
+        "dataFormat": "By default, chats and account data live in a local SQLite webui.db, uploads in a data/uploads directory and embeddings in the configured vector store; PostgreSQL and object storage are optional",
+        "gapVsPaid": "It is a web service you must administer, so it lacks BoltAI's native Mac feel and zero-server single-user convenience.",
+        "setupBlocker": "A non-expert must install Docker or a compatible Python environment, mount persistent storage correctly, and separately provide Ollama or an API endpoint",
+        "sources": [
+          "https://github.com/open-webui/open-webui",
+          "https://github.com/open-webui/open-webui/blob/main/LICENSE",
+          "https://docs.openwebui.com/reference/database-schema/",
+          "https://docs.openwebui.com/tutorials/maintenance/backups/",
+          "https://boltai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Cherry Studio",
+      "url": "https://cherry-ai.com/",
+      "type": "open-source",
+      "repo": "https://github.com/CherryHQ/cherry-studio",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A desktop workspace for many models, agents, files, tools, and an impressive number of toggles.",
+      "stars": 49901,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "local",
+        "install": "Download the signed desktop installer for macOS, Windows or Linux",
+        "engines": "OpenAI, Anthropic, Gemini and many other cloud APIs; Claude, Perplexity and Poe web integrations; local models through Ollama or LM Studio; OpenAI-compatible endpoints",
+        "dataFormat": "Chats, assistants and settings are stored in the desktop app's local profile; optional WebDAV backup/sync and cloud model calls copy relevant content to those services",
+        "gapVsPaid": "Its Electron desktop is broad but less deeply integrated with macOS, so system-wide shortcuts and native workflow polish trail BoltAI.",
+        "setupBlocker": "The app installs cleanly, but the first useful chat requires an API key or a separately installed local model server",
+        "sources": [
+          "https://github.com/CherryHQ/cherry-studio",
+          "https://github.com/CherryHQ/cherry-studio/blob/main/LICENSE",
+          "https://docs.cherry-ai.com/",
+          "https://boltai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "LobeHub",
+      "url": "https://lobehub.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A polished agent-and-files workspace you can deploy yourself; inference is still somebody's bill.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "LicenseRef-LobeHub-Community",
+        "runs": "both",
+        "install": "Use the hosted service, or self-host with Docker Compose or a supported cloud deployment template",
+        "engines": "OpenAI-compatible providers plus OpenAI, Anthropic, Gemini, Bedrock, Azure, OpenRouter, Ollama and other local/cloud model endpoints",
+        "dataFormat": "Hosted data lives in LobeHub's cloud; self-hosted deployments use PostgreSQL for app data and S3-compatible object storage for files, with model prompts also sent to the configured provider",
+        "gapVsPaid": "Its web-first hosted or self-hosted architecture gives up BoltAI's native Mac integration and simple one-person local setup.",
+        "setupBlocker": "Self-hosting now means configuring Docker plus PostgreSQL, authentication and S3-compatible storage rather than launching a single stateless container",
+        "sources": [
+          "https://github.com/lobehub/lobehub",
+          "https://github.com/lobehub/lobehub/blob/canary/LICENSE",
+          "https://lobehub.com/docs/self-hosting/start",
+          "https://lobehub.com/docs/self-hosting/platform/docker-compose",
+          "https://boltai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "LibreChat",
+      "url": "https://www.librechat.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/danny-avila/LibreChat",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A broad multi-provider assistant with agents, files, search, and no included frontier-model bill.",
+      "stars": 41724,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-07",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Clone the repository and start the recommended Docker Compose stack",
+        "engines": "OpenAI, Anthropic, Google Gemini/Vertex AI, Azure OpenAI, AWS Bedrock, Mistral, Groq, OpenRouter, DeepSeek and custom OpenAI-compatible endpoints, plus agents and MCP",
+        "dataFormat": "Conversations, users and configuration live in MongoDB; search indexes use Meilisearch, uploaded/RAG content uses bundled storage and a vector database; prompts sent to cloud models leave the host",
+        "gapVsPaid": "It requires a server stack and lacks BoltAI's native macOS shortcuts and polished one-person desktop workflows.",
+        "setupBlocker": "Docker Compose brings several services, and the default MongoDB image does not run on Apple Silicon without changing the setup",
+        "sources": [
+          "https://github.com/danny-avila/LibreChat",
+          "https://github.com/danny-avila/LibreChat/blob/main/LICENSE",
+          "https://www.librechat.ai/docs/local",
+          "https://www.librechat.ai/docs/local/docker",
+          "https://boltai.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Msty",
+      "url": "https://msty.ai/",
+      "desc": "The desktop core is $0, but the terms limit it to private non-commercial use; paid work needs a license."
+    }
+  ],
+  "relatedSlugs": [
+    "chatgpt",
+    "claude",
+    "gemini"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets a personal local replacement, not feature parity with BoltAI's hosted, sync, mobile, or team services. Recheck price before merge.",
+  "prompt": "Build a personal local replacement for BoltAI in an empty repository.\nUse Swift 6, SwiftUI, AppKit where necessary, Core Data, and macOS Keychain.\nDo not offer alternative stacks or copy BoltAI branding or visual assets.\nThe goal is a performant native Mac AI workspace, not a web chat wrapped as a desktop app.\nMake the first run work locally with one documented command.\nCreate a native sidebar for projects and chats, a conversation view, and a composer.\nKeep navigation, typing, scrolling, and streaming responsive with large chat histories.\nProfile those interactions and use AppKit-backed controls where naive SwiftUI falls short.\nSupport OpenAI, Anthropic, Google Gemini, and Ollama through documented APIs.\nStore user-supplied API keys in Keychain.\nSupport streaming, cancellation, retry, regeneration, and recoverable partial responses.\nRender Markdown, code, images, reasoning, citations, and tool results.\nAdd projects, reusable agents, saved prompts, chat forking, and full-text search.\nAdd reusable workflows that operate on selected text, clipboard content, and files.\nAdd a global Instant Chat panel that accepts files, models, agents, and tools.\nAdd Instant Dictation that transcribes speech and returns text to the original application.\nSupport basic local and remote MCP servers with per-agent tool selection.\nStore chats and attachments locally with export and backup support.\nHandle provider failures, rate limits, interrupted streams, and application relaunches safely.\nWrite focused tests for persistence, streaming state, workflows, and provider translation.\nCreate a README covering setup, permissions, performance testing, data, and limitations.\nDo not add billing, licensing, telemetry, analytics, or proprietary BoltAI services.\nDeliberately leave out BoltAI Cloud Sync, mobile apps, teams, and hosted AI service.\nDeliberately leave out full import fidelity, production code execution, and long-tail providers.\nFinish by running the focused tests and listing the exact commands used.",
+  "promptCurated": true
+}

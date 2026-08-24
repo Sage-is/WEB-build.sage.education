@@ -1,0 +1,228 @@
+{
+  "slug": "heptabase",
+  "name": "Heptabase",
+  "domain": "heptabase.com",
+  "appURL": "https://heptabase.com",
+  "category": "notes-knowledge",
+  "subcategory": "visual knowledge mapping",
+  "tagline": "Visual whiteboards and cards for research and sense-making",
+  "priceMonthly": 8.99,
+  "pricing": {
+    "plan": "Pro",
+    "kind": "fixed",
+    "basis": "per month billed annually",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "$8.99/month billed annually",
+    "source": "https://support.heptabase.com/en/articles/12990121-pro-premium-and-premium-plans-pricing-faq",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Pro (early bird)",
+        "monthly": 9.99,
+        "annualPerMonth": 6.99,
+        "per": "user",
+        "limits": "100 AI credits/month; Gemini models; voice note remains usable after credits reach 0",
+        "notes": "Grandfathered for eligible users who subscribed before December 2025; not sold to new users."
+      },
+      {
+        "name": "Pro",
+        "monthly": 11.99,
+        "annualPerMonth": 8.99,
+        "per": "user",
+        "limits": "100 AI credits/month; Gemini models; voice note remains usable after credits reach 0",
+        "notes": "Annual total is $107.88."
+      },
+      {
+        "name": "Premium",
+        "monthly": 23.99,
+        "annualPerMonth": 17.99,
+        "per": "user",
+        "limits": "1,800 AI credits/month; OpenAI, Anthropic and Gemini; unlimited PDF uploads/parsing; basic read/search/answer models after credits",
+        "notes": "Annual total is $215.88."
+      },
+      {
+        "name": "Premium+",
+        "monthly": 71.99,
+        "annualPerMonth": 53.99,
+        "per": "user",
+        "limits": "8,100 AI credits/month; otherwise the same feature set as Premium",
+        "notes": "Annual total is $647.88."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; 7-day trial gives Premium's 1,800-credit allowance and unlimited PDF uploads/parsing, ending at 7 days or when trial credits are exhausted",
+    "billingTerms": "monthly + annual; 7-day trial; VAT may be added",
+    "priceChanges": [],
+    "hiddenCosts": "No paid credit top-ups are available. Pro must upgrade or use its own API key after credits; Premium/Premium+ can continue only with basic read/search/answer models after credits. Tier upgrades charge immediately and start a new billing cycle; unused higher-tier credits can be lost on downgrade.",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://support.heptabase.com/en/articles/12990121-pro-premium-and-premium-plans-pricing-faq",
+      "https://support.heptabase.com/en/articles/10364311-what-s-early-bird-pricing-and-how-do-i-keep-it"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Heptabase's solo core is compact: build a local-first visual knowledge mapping app with fast capture, full-text search, backlinks, tags, and Markdown export. A competent builder can reach a useful personal version in one sitting, while the paid product mainly wins on polish, sync, importers.",
+  "coreLoopDIY": "Build a local-first visual knowledge mapping app with fast capture, full-text search, backlinks, tags, and Markdown export.",
+  "diyTimeEstimate": "one sitting",
+  "replacementScope": "personal replacement for the core loop",
+  "requirements": [
+    "desktop development machine",
+    "Node.js 22 and Rust toolchain",
+    "local filesystem access"
+  ],
+  "whatYouLose": [
+    "conflict-safe multi-device sync",
+    "mature importers and exporters",
+    "collaborative editing and sharing",
+    "native mobile clients"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "polish/sync/importers",
+  "whyPeopleStillPay": "Heptabase: People pay for a writing surface they trust for years, plus migration tools, sync, and tiny interaction details that disappear into habit.",
+  "ongoingBurden": "Own schema migrations, backups, sync conflicts, export compatibility, and long-term file readability.",
+  "priorArt": [
+    {
+      "name": "AppFlowy",
+      "url": "https://github.com/AppFlowy-IO/AppFlowy",
+      "desc": "Local-first open-source workspace with documents and databases."
+    },
+    {
+      "name": "Logseq",
+      "url": "https://github.com/logseq/logseq",
+      "desc": "Open-source local knowledge graph and outliner."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "AFFiNE",
+      "url": "https://affine.pro",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Documents and an infinite canvas in one local-first app, without the research tax.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT AND MPL-2.0",
+        "runs": "both",
+        "install": "Use AFFiNE Cloud or install the desktop app; self-hosted collaboration uses the official Docker Compose stack with AFFiNE, PostgreSQL, and Redis",
+        "engines": "AFFiNE AI supports bring-your-own-key routes for OpenAI, Anthropic, Gemini, and FAL; local storage is available in the desktop app, while self-host AI is configured server-side",
+        "dataFormat": "A local-only desktop workspace stays on that device; AFFiNE Cloud stores it in AFFiNE's service, while self-hosted workspaces use PostgreSQL for structured data, mounted blob storage for uploads, Redis for cache, and local configuration files",
+        "gapVsPaid": "It offers documents and an infinite canvas, but its canvas is less specialized for research cards, spatial synthesis, and guided sense-making than Heptabase's.",
+        "setupBlocker": "The desktop app is straightforward, but free self-hosted sync and collaboration require Docker, PostgreSQL, Redis, persistent volumes, configuration, migrations, backups, and a correctly exposed server URL",
+        "sources": [
+          "https://affine.pro/",
+          "https://github.com/toeverything/AFFiNE",
+          "https://github.com/toeverything/AFFiNE/blob/canary/LICENSE",
+          "https://github.com/toeverything/AFFiNE/blob/canary/packages/backend/server/LICENSE",
+          "https://docs.affine.pro/self-host-affine/",
+          "https://docs.affine.pro/self-host-affine/install/docker-compose-recommended",
+          "https://docs.affine.pro/self-host-affine/administer/backup-and-restore",
+          "https://docs.affine.pro/self-host-affine/administer/ai",
+          "https://heptabase.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Logseq",
+      "url": "https://logseq.com",
+      "type": "open-source",
+      "repo": "https://github.com/logseq/logseq",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "Cards, block links and whiteboards for sense-making, with rougher furniture.",
+      "stars": 44299,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Download the desktop/mobile release or use the hosted web app; no server is required for a local graph",
+        "engines": null,
+        "dataFormat": "Classic file graphs are folders of Markdown or Org-mode files plus Logseq configuration/cache files and can be synced with a file service; the newer DB graph stores the graph in a local SQLite database, while optional Logseq Sync/RTC sends graph data to Logseq's service",
+        "gapVsPaid": "Its links and whiteboards are powerful, but whiteboard polish, mobile experience, and performance are rougher, while the newer database path still carries beta risk.",
+        "setupBlocker": "Stable local installation is simple, but the visually stronger DB graph/RTC path is still beta or alpha and explicitly carries data-loss warnings; free cross-device file-graph sync requires choosing and safely operating a third-party file-sync method",
+        "sources": [
+          "https://logseq.com/",
+          "https://github.com/logseq/logseq",
+          "https://github.com/logseq/logseq/blob/master/LICENSE.md",
+          "https://github.com/logseq/logseq/releases",
+          "https://app.logseq.com/",
+          "https://blog.logseq.com/how-to-setup-and-use-logseq-sync/",
+          "https://discuss.logseq.com/t/syncing-logseq-db/31285",
+          "https://heptabase.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Obsidian",
+      "url": "https://obsidian.md",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "Canvas boards backed by linked Markdown files and an enormous plugin drawer.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Install the native Windows, macOS, Linux, iOS, or Android app; no account is required for local use",
+        "engines": null,
+        "dataFormat": "Ordinary Markdown files and attachments in a user-chosen local vault folder, with app settings and plugins under `.obsidian`; optional paid Obsidian Sync stores end-to-end-encrypted replicas in Obsidian's cloud",
+        "gapVsPaid": "Canvas supplies free-form boards, but it lacks Heptabase's purpose-built card workflow, research structure, and guided visual knowledge experience.",
+        "setupBlocker": null,
+        "sources": [
+          "https://obsidian.md/",
+          "https://obsidian.md/license",
+          "https://obsidian.md/download",
+          "https://help.obsidian.md/Files+and+folders/How+Obsidian+stores+data",
+          "https://obsidian.md/sync",
+          "https://heptabase.com/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "mem-ai",
+    "napkin",
+    "reflect"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Strong page because Heptabase separates a compact personal workflow from the value of long-term polish.",
+  "prompt": "Build a usable personal replacement for the core loop of Heptabase.\nUse exactly this stack: Tauri 2 + React + TypeScript + SQLite.\nPrimary job: Build a local-first visual knowledge mapping app with fast capture, full-text search, backlinks, tags, and Markdown export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: conflict-safe multi-device sync; mature importers and exporters; collaborative editing and sharing.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

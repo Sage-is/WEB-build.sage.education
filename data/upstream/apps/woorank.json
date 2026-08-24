@@ -1,0 +1,217 @@
+{
+  "slug": "woorank",
+  "name": "WooRank",
+  "domain": "woorank.com",
+  "appURL": "https://woorank.com",
+  "category": "seo-marketing",
+  "subcategory": "SEO auditing",
+  "tagline": "Website reviews, crawling, keyword tracking, competitive analysis, and reporting",
+  "priceMonthly": 89.99,
+  "pricing": {
+    "plan": "Pro",
+    "kind": "fixed",
+    "basis": "monthly",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "89.99 USD",
+    "source": "https://www.woorank.com/en/p/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Pro",
+        "monthly": 89.99,
+        "annualPerMonth": 53.25,
+        "per": "workspace",
+        "limits": "1 website; 50 tracked keywords; 2,500 crawl pages/site; 2,500 API calls/month; 100 page reviews.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 199.99,
+        "annualPerMonth": 133.25,
+        "per": "workspace",
+        "limits": "5 websites; 250 tracked keywords; 10,000 crawl pages/site; 5,000 API calls/month.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom websites, users, keywords, crawl capacity, API calls, reporting, and support.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier (3-day trial only)",
+    "billingTerms": "monthly + annual; annual is billed upfront",
+    "priceChanges": [],
+    "hiddenCosts": "Additional users, higher API volume, and expanded site/keyword limits require Enterprise or a custom quote; public overage unit rates are not shown.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.woorank.com/en/p/pricing",
+      "https://www.woorank.com/en/release-notes/2024"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible SEO auditing loop is buildable, but a credible replacement needs more than the first screen. WooRank earns its keep through proprietary data, index, crawl scale, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a focused SEO auditing audit for user-owned sites that crawls pages, records technical signals, and exports a prioritized CSV and HTML report.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Python 3.12",
+    "Playwright browsers",
+    "permission to crawl the target site"
+  ],
+  "whatYouLose": [
+    "historical competitor datasets and support",
+    "fresh proprietary keyword, backlink, or ranking data",
+    "proprietary web and keyword indexes",
+    "fresh rank and clickstream data",
+    "large-scale crawling infrastructure"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "scale-infra"
+  ],
+  "moatNotes": "proprietary data/index/crawl scale",
+  "whyPeopleStillPay": "WooRank: The dashboard is reproducible; the expensive part is continuously collecting, cleaning, storing, and defending a useful index of the web.",
+  "ongoingBurden": "Maintain crawling etiquette, parsers, rendering, rate limits, search-engine changes, data freshness, storage, and reporting logic.",
+  "priorArt": [
+    {
+      "name": "Lighthouse",
+      "url": "https://github.com/GoogleChrome/lighthouse",
+      "desc": "Open-source automated auditing for performance, accessibility, and SEO."
+    },
+    {
+      "name": "Unlighthouse",
+      "url": "https://github.com/harlan-zw/unlighthouse",
+      "desc": "Open-source site-wide Lighthouse crawler and dashboard."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "CrawlSEO",
+      "url": "https://github.com/crawlseo/crawlseo",
+      "type": "open-source",
+      "repo": "https://github.com/crawlseo/crawlseo",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Crawls, rank snapshots, comparisons, alerts and exports; the dashboard is free, the setup is not effortless.",
+      "stars": 507,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Clone the repository, configure environment variables, and start its Docker/PostgreSQL stack",
+        "engines": "Uses Google Search Console and PageSpeed Insights for owned-site data, with optional DataForSEO credentials for keyword and backlink data; exposes MCP tools for compatible clients.",
+        "dataFormat": "Sites, crawl snapshots, issues, keyword/rank observations, alerts, task history, users, and OAuth tokens live in the self-hosted PostgreSQL database; crawled page content and reports are retained by that deployment rather than a vendor cloud.",
+        "gapVsPaid": "CrawlSEO can crawl and track ranks, but its review presentation, competitive benchmarking, lead-generation widgets, client reports, and guided remediation are less mature than WooRank's.",
+        "setupBlocker": "The first real obstacle is infrastructure plus identity: Docker and PostgreSQL, a public callback URL, and a Google Cloud OAuth application before Search Console-backed ranking and alerts work.",
+        "sources": [
+          "https://github.com/crawlseo/crawlseo",
+          "https://github.com/crawlseo/crawlseo/blob/main/LICENSE",
+          "https://github.com/crawlseo/crawlseo/blob/main/README.md",
+          "https://github.com/crawlseo/crawlseo/blob/main/docker-compose.yml",
+          "https://developers.google.com/identity/protocols/oauth2",
+          "https://www.woorank.com/",
+          "https://www.woorank.com/en/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "OpenSEO",
+      "url": "https://openseo.so/",
+      "type": "open-source",
+      "repo": "https://github.com/every-app/open-seo",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Website audits, rank tracking and competitor views in one container; polished client reporting is still on the road map.",
+      "stars": 10614,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Clone the repository, supply environment variables, and run the documented Docker-based web/database deployment",
+        "engines": "Uses DataForSEO for keyword, SERP, backlink, and related SEO datasets; it also exposes MCP/agent integrations for compatible coding assistants.",
+        "dataFormat": "Projects, audits, issue results, tracked keywords, and historical observations live in the operator-controlled application database; keyword and SERP requests sent through DataForSEO leave the server and are retained/billed under that provider's account terms.",
+        "gapVsPaid": "OpenSEO lacks WooRank's polished instant-review narrative, sales and lead tools, white-label reporting, guided recommendations, and fully managed data service.",
+        "setupBlocker": "A non-expert needs Docker, a database, authentication and email configuration, plus a funded DataForSEO account and API credentials, the rank tracker is not actually zero-cost to operate.",
+        "sources": [
+          "https://openseo.so/",
+          "https://github.com/every-app/open-seo",
+          "https://github.com/every-app/open-seo/blob/main/LICENSE",
+          "https://github.com/every-app/open-seo/blob/main/README.md",
+          "https://dataforseo.com/pricing",
+          "https://docs.dataforseo.com/v3/serp/overview/",
+          "https://www.woorank.com/",
+          "https://www.woorank.com/en/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "SEO Panel",
+      "url": "https://www.seopanel.org/",
+      "type": "open-source",
+      "repo": "https://github.com/seopanel/Seo-Panel",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Reviews, rankings, backlinks and scheduled reports in a PHP dashboard that has survived several design eras.",
+      "stars": 149,
+      "lastCommit": "2026-06",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-only",
+        "runs": "self-hosted",
+        "install": "Upload the PHP application to a web server, create a MySQL database, and complete the browser installer",
+        "engines": null,
+        "dataFormat": "Sites, users, keyword positions, audit results, reports, logs, and plugin configuration live in the configured MySQL/MariaDB database; application code, cached files, exports, and configuration remain on the PHP host.",
+        "gapVsPaid": "SEO Panel provides raw checks in a dated administration interface and cannot match WooRank's polished reviews, competitor presentation, guided remediation, and client-ready reports.",
+        "setupBlocker": "The first hurdle is a traditional PHP/MySQL deployment with writable directories and cron jobs; after that, search-engine changes and third-party plugins make maintenance much more manual than Seobility.",
+        "sources": [
+          "https://www.seopanel.org/",
+          "https://github.com/seopanel/Seo-Panel",
+          "https://github.com/seopanel/Seo-Panel/blob/master/LICENSE",
+          "https://www.seopanel.org/docs/install/",
+          "https://www.seopanel.org/docs/",
+          "https://github.com/seopanel/Seo-Panel/releases",
+          "https://www.woorank.com/",
+          "https://www.woorank.com/en/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "SEO PowerSuite Free",
+      "url": "https://www.link-assistant.com/",
+      "desc": "Broad enough to be recommended, crippled exactly where ongoing reporting starts: free projects cannot be saved."
+    }
+  ],
+  "relatedSlugs": [
+    "rank-math-pro",
+    "yoast-seo-premium",
+    "seobility"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of WooRank is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for WooRank, not a full clone.\nUse exactly this stack: Python 3.12 + Typer + SQLite + Playwright.\nPrimary job: Build a focused SEO auditing audit for user-owned sites that crawls pages, records technical signals, and exports a prioritized CSV and HTML report.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: historical competitor datasets and support; fresh proprietary keyword, backlink, or ranking data; proprietary web and keyword indexes.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

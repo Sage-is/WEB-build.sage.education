@@ -1,0 +1,238 @@
+{
+  "slug": "cronometer-gold",
+  "name": "Cronometer Gold",
+  "domain": "cronometer.com",
+  "appURL": "https://cronometer.com",
+  "category": "wellness",
+  "subcategory": "fitness, activity and general wellbeing",
+  "tagline": "Log user-entered nutrition and show transparent nutrient totals without diagnosis",
+  "priceMonthly": 10.99,
+  "pricing": {
+    "plan": "Gold",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://cronometer.com/gold/index.html",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official Gold monthly subscription.",
+    "native": "10.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Track foods, exercise, biometrics, and notes; up to 84 nutrients; charts/reports limited to a 7-day window",
+        "notes": null
+      },
+      {
+        "name": "Gold",
+        "monthly": 10.99,
+        "annualPerMonth": 5,
+        "per": "user",
+        "limits": "Up to 95 nutrients, long-range charts/reports, fasting timer, recipe importer, and no ads",
+        "notes": "$59.99 billed annually."
+      },
+      {
+        "name": "Pro",
+        "monthly": 39.99,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "10 client seats included; professional dashboard and client management; 30-day trial",
+        "notes": "Extra client seats cost $2.50 per client per month; an annual Pro rate was not publicly verified."
+      }
+    ],
+    "freeTierCaps": "Basic plan: up to 84 tracked nutrients and a 7-day chart/report window; no published food-diary entry cap.",
+    "billingTerms": "Gold monthly + annual; Pro monthly with a 30-day trial; subscriptions auto-renew and are paid in advance",
+    "priceChanges": [],
+    "hiddenCosts": "Cronometer Pro includes only 10 client seats; each additional client costs $2.50/month.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://cronometer.com/gold/index.html",
+      "https://support.cronometer.com/hc/en-us/articles/360028026971-Subscription-Types",
+      "https://cronometer.com/terms/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Cronometer Gold, log user-entered nutrition and show transparent nutrient totals without diagnosis. The hard boundary is curated food database, barcode data, device integrations, reports, and mobile apps, plus hardware data, content, coaching, and trust.",
+  "coreLoopDIY": "Log user-entered nutrition, show transparent nutrient totals, and display trends without diagnosing, shaming, or enforcing restrictive goals.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "iOS or Android device",
+    "optional HealthKit or Health Connect permission",
+    "local storage"
+  ],
+  "whatYouLose": [
+    "curated food database, barcode data, device integrations, reports, and mobile apps",
+    "wearable hardware data",
+    "coach network",
+    "clinical validation",
+    "large content library and social network"
+  ],
+  "moatTags": [
+    "proprietary-data",
+    "hardware",
+    "content-rights"
+  ],
+  "moatNotes": "hardware data, content, coaching, and trust",
+  "replacementScope": "personal general-wellbeing tracker",
+  "ongoingBurden": "sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support",
+  "whyPeopleStillPay": "People still pay for Cronometer Gold because people pay for polished mobile capture, trusted content, hardware integration, and coaching rather than the basic logbook. The recurring cost buys sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "wger",
+      "url": "https://github.com/wger-project/wger",
+      "desc": "Active open-source fitness and workout management application."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "OpenNutriTracker",
+      "url": "https://simonoppowa.github.io/OpenNutriTracker-Website/",
+      "type": "open-source",
+      "repo": "https://github.com/simonoppowa/OpenNutriTracker",
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "desc": "Calories, macros and micronutrients stay on your phone; the app declines to become your diet coach.",
+      "stars": 2300,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Install the iOS/Android build from the app store or F-Droid",
+        "engines": null,
+        "dataFormat": "Diary, goals, custom foods, and measurements are stored in encrypted local Hive databases on the phone and can be exported as JSON/CSV; food searches may query the project's Supabase service and Open Food Facts.",
+        "gapVsPaid": "OpenNutriTracker has a smaller and less curated food database, weaker barcode and device integrations, and less mature nutrient analytics than Cronometer Gold.",
+        "setupBlocker": null,
+        "sources": [
+          "https://simonoppowa.github.io/OpenNutriTracker-Website/",
+          "https://github.com/simonoppowa/OpenNutriTracker",
+          "https://github.com/simonoppowa/OpenNutriTracker/blob/main/LICENSE",
+          "https://github.com/simonoppowa/OpenNutriTracker/blob/main/PRIVACY_POLICY.md",
+          "https://cronometer.com/",
+          "https://cronometer.com/gold.html"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Food You",
+      "url": "https://foodyou.maksimowiczm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/maksimowiczm/FoodYou",
+      "platforms": [
+        "android"
+      ],
+      "desc": "A local Android food diary with proper micronutrients and none of the motivational yelling.",
+      "stars": 520,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "local",
+        "install": "Install the Android app from F-Droid or the published APK",
+        "engines": null,
+        "dataFormat": "The food diary and personal records stay in the app's local database with export/backup options; food searches can contact Open Food Facts, USDA FoodData Central, and the Swiss Food Composition Database.",
+        "gapVsPaid": "Food You is Android-only and cannot match Cronometer's curated food verification, broad barcode database, cross-device sync, integrations, and advanced nutrient reports.",
+        "setupBlocker": null,
+        "sources": [
+          "https://foodyou.maksimowiczm.com/",
+          "https://github.com/maksimowiczm/FoodYou",
+          "https://github.com/maksimowiczm/FoodYou/blob/main/LICENSE",
+          "https://github.com/maksimowiczm/FoodYou/blob/main/PRIVACY.md",
+          "https://cronometer.com/",
+          "https://cronometer.com/gold.html"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Waistline",
+      "url": "https://waist-line.com/",
+      "type": "open-source",
+      "repo": "https://github.com/davidhealey/waistline",
+      "platforms": [
+        "android"
+      ],
+      "desc": "A plain Android calorie diary that keeps its data local and its opinions to itself.",
+      "stars": 714,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Install the Android app from Google Play or F-Droid",
+        "engines": null,
+        "dataFormat": "Meals, diary entries, foods, goals, and measurements live in a local on-device database with import/export; barcode and food searches can contact Open Food Facts and USDA services.",
+        "gapVsPaid": "Waistline is a simpler Android diary with a smaller verification and reporting layer than Cronometer's detailed micronutrients, biometrics integrations, recipes, and cross-platform history.",
+        "setupBlocker": null,
+        "sources": [
+          "https://waist-line.com/",
+          "https://github.com/davidhealey/waistline",
+          "https://github.com/davidhealey/waistline/blob/master/LICENSE",
+          "https://f-droid.org/packages/com.waist.line/",
+          "https://cronometer.com/",
+          "https://cronometer.com/gold.html"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "wger",
+      "url": "https://wger.de/",
+      "type": "open-source",
+      "repo": "https://github.com/wger-project/wger",
+      "platforms": [
+        "web",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Meals, workouts and trend charts in one open-source bunker; polish is not the main feature.",
+      "stars": 6600,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Create an account on wger.de/use the mobile app, or deploy the official Docker Compose stack",
+        "engines": null,
+        "dataFormat": "Hosted records live in wger's service; self-hosted users keep accounts, workouts, nutrition, measurements, and exercise data in PostgreSQL plus persistent media volumes, while the mobile client maintains an offline local database and syncs.",
+        "gapVsPaid": "wger's nutrition module is much rougher for food lookup, barcode entry, micronutrient completeness, recipe analysis, and daily logging than Cronometer Gold.",
+        "setupBlocker": "None for the hosted service or mobile app; self-hosting immediately requires Docker Compose, PostgreSQL, Redis/sync services, a reverse proxy, mail, backups, and upgrades.",
+        "sources": [
+          "https://wger.de/",
+          "https://github.com/wger-project/wger",
+          "https://github.com/wger-project/wger/blob/master/LICENSE.txt",
+          "https://wger.readthedocs.io/en/latest/production/docker.html",
+          "https://wger.de/en/software/mobile-app",
+          "https://cronometer.com/",
+          "https://cronometer.com/gold.html"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "strava",
+    "myfitnesspal-premium",
+    "macrofactor"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Gold plan and a personal general-wellbeing tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Cronometer Gold in an empty repository.\nUse React Native with Expo, TypeScript, SQLite, and HealthKit or Health Connect only when explicitly enabled; do not offer alternative stacks.\nThe core loop is: log user-entered nutrition, show transparent nutrient totals, and display trends without diagnosing, shaming, or enforcing restrictive goals.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate optional logs for activity, sleep, mood, energy, and personal notes with editable units.\nLet the user build moderate routines and rest days without weight-loss targets, punishment, or competitive pressure.\nRequest health-platform permissions per data type and work fully without granting them.\nShow weekly patterns and consistency with neutral language and no diagnostic or body-image judgments.\nAdd reminders that can be muted, data export, account-free local use, and full deletion.\nInclude a clear statement that the app is not medical care and should not replace qualified advice.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out medical diagnosis or treatment.\nDeliberately leave out extreme exercise or restrictive-eating coaching.\nDeliberately leave out wearable hardware, human coaching, and a large social network.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,374 @@
+{
+  "slug": "hootsuite",
+  "name": "Hootsuite",
+  "domain": "hootsuite.com",
+  "appURL": "https://hootsuite.com",
+  "category": "social-media",
+  "subcategory": "social scheduling and content repurposing",
+  "tagline": "Schedule to one approved network and review a basic content calendar",
+  "priceMonthly": 99,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://hootsuite.com/plans",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical annual-equivalent Standard price; monthly billing and regional packages vary.",
+    "native": "99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Standard",
+        "monthly": null,
+        "annualPerMonth": 99,
+        "per": "user",
+        "limits": "10 social accounts; unlimited publishing.",
+        "notes": "Public price is the per-user monthly equivalent on annual billing; exact month-to-month rate was not reliably exposed."
+      },
+      {
+        "name": "Professional",
+        "monthly": null,
+        "annualPerMonth": 199,
+        "per": "user",
+        "limits": "Unlimited social accounts; unlimited publishing.",
+        "notes": "Public price is the per-user monthly equivalent on annual billing; exact month-to-month rate was not reliably exposed."
+      },
+      {
+        "name": "Advanced",
+        "monthly": null,
+        "annualPerMonth": 399,
+        "per": "user",
+        "limits": "Unlimited social accounts; approval and workflow controls.",
+        "notes": "Public price is the per-user monthly equivalent on annual billing; exact month-to-month rate was not reliably exposed."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom users, accounts, governance, analytics, integrations, security, and support.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier (14-day no-card trial only; trial publishing is capped at 10–20 posts/day per organization and bulk scheduling is disabled)",
+    "billingTerms": "monthly + annual; annual per-user rates are public, but exact month-to-month rates were not reliably exposed",
+    "priceChanges": [],
+    "hiddenCosts": "Each additional seat is separately billed; premium add-ons and tax can increase the total. The no-card trial does not auto-charge.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.hootsuite.com/plans",
+      "https://hootsuite.com/plans"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Hootsuite, schedule to one approved network and review a basic content calendar. The hard boundary is connector breadth, social inbox, listening, analytics, governance, and enterprise support, plus api access, connector upkeep, and collaboration.",
+  "coreLoopDIY": "Draft and schedule posts to one approved network, preview them accurately, publish through the official API, and retain a searchable content calendar.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "developer application for one social network",
+    "OAuth credentials",
+    "PostgreSQL",
+    "public HTTPS endpoint",
+    "background worker"
+  ],
+  "whatYouLose": [
+    "connector breadth, social inbox, listening, analytics, governance, and enterprise support",
+    "many maintained network APIs",
+    "inbox and moderation",
+    "deep analytics",
+    "team approvals and asset libraries"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "API access, connector upkeep, and collaboration",
+  "replacementScope": "single-network scheduler",
+  "ongoingBurden": "OAuth review, API policy changes, media limits, queues, retries, rate limits, webhooks, tokens, and moderation workflows",
+  "whyPeopleStillPay": "People still pay for Hootsuite because the scheduler is easy; staying approved and correct across constantly changing social APIs is the subscription. The recurring cost buys OAuth review, API policy changes, media limits, queues, retries, rate limits, webhooks, tokens, and moderation workflows, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Active open-source social media scheduling platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Adobe Express Free",
+      "url": "https://www.adobe.com/express/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Six networks and a thousand scheduled posts a month; for one basic calendar, it is almost comically sufficient.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted web signup or Adobe Express mobile app",
+        "engines": "Adobe Firefly powers generative text and image features; Adobe does not publish a complete backend-model list.",
+        "dataFormat": "Designs, media, drafts, and scheduled-post metadata live in Adobe's cloud; connected social networks receive the published content, and the internal storage format is not disclosed.",
+        "gapVsPaid": "Adobe Express schedules content, but it lacks Hootsuite's unified social inbox, brand monitoring, and competitor-monitoring workflow.",
+        "setupBlocker": "Each social profile needs OAuth authorization, and Adobe says scheduler connections expire after 60 days and must be reconnected.",
+        "sources": [
+          "https://www.adobe.com/express/feature/content-scheduler",
+          "https://helpx.adobe.com/express/web/publish-and-share/schedule-manage-posts/content-scheduler-overview.html",
+          "https://helpx.adobe.com/express/web/publish-and-share/share-to-social-media/connect-scheduler.html",
+          "https://www.adobe.com/express/pricing",
+          "https://www.hootsuite.com/plans"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "BrightBean Studio",
+      "url": "https://brightbean.xyz/studio/",
+      "type": "open-source",
+      "repo": "https://github.com/brightbeanxyz/brightbean-studio",
+      "platforms": [
+        "web",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "One approved network is easy work for its calendar; you also get an inbox and analytics without paying.",
+      "stars": 2100,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup, or Docker Compose for self-hosting",
+        "engines": null,
+        "dataFormat": "The hosted service stores application data in BrightBean's infrastructure; self-hosting uses PostgreSQL for application data and server-controlled storage for media, while local development can use SQLite.",
+        "gapVsPaid": "BrightBean's smaller project and service do not offer Hootsuite's established listening, governance, and enterprise-support depth.",
+        "setupBlocker": "The hosted version is straightforward; self-hosting needs Docker, a public domain, and developer credentials or OAuth apps for the social networks.",
+        "sources": [
+          "https://brightbean.xyz/studio/",
+          "https://github.com/brightbeanxyz/brightbean-studio",
+          "https://github.com/brightbeanxyz/brightbean-studio/blob/main/LICENSE",
+          "https://www.hootsuite.com/plans"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Buffer Free",
+      "url": "https://buffer.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Three channels and ten queued posts each; the eight-lifetime-connection cap discourages account musical chairs.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup plus social-account connections",
+        "engines": "Buffer AI Assistant; Buffer does not disclose the underlying model provider on its pricing page.",
+        "dataFormat": "Posts, drafts, ideas, analytics, and connected-account metadata live in Buffer's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "Buffer Free is limited to three channels and 10 queued posts per channel, whereas Hootsuite Standard manages 10 accounts with unlimited scheduled posts.",
+        "setupBlocker": null,
+        "sources": [
+          "https://buffer.com/pricing",
+          "https://support.buffer.com/article/595-features-available-on-each-buffer-plan",
+          "https://support.buffer.com/article/564-connecting-your-channels-to-buffer",
+          "https://www.hootsuite.com/plans"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Fedica Free",
+      "url": "https://fedica.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "Ten accounts, unlimited monthly posts and a ten-item live queue; small queues refill indefinitely.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup plus social-account connections",
+        "engines": null,
+        "dataFormat": "Queued posts, account connections, and analytics live in Fedica's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "Its 10-item account-wide queue and one-account-per-platform rule are much less forgiving than Hootsuite's 10-account managed calendar.",
+        "setupBlocker": null,
+        "sources": [
+          "https://fedica.com/signup/",
+          "https://fedica.com/blog/best-social-media-manager-tools-comparison-guide/",
+          "https://www.hootsuite.com/plans"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mixpost Lite",
+      "url": "https://mixpost.app/",
+      "type": "open-source",
+      "repo": "https://github.com/inovector/mixpost",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Queues, publishing and basic analytics in one Dockerized scheduler; one user only.",
+      "stars": 3500,
+      "lastCommit": "2026-03",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose; manual Laravel installation is also documented",
+        "engines": null,
+        "dataFormat": "Application data lives in MySQL or MariaDB, queues and cache in Redis, and media on local disk or configured S3-compatible storage.",
+        "gapVsPaid": "Mixpost Lite gives up Hootsuite's managed inbox, monitoring, and support in exchange for a single-user server that you operate yourself.",
+        "setupBlocker": "A non-expert needs a server, Docker, a domain with TLS, cron/queue workers, and social-platform application credentials.",
+        "sources": [
+          "https://mixpost.app/",
+          "https://github.com/inovector/mixpost",
+          "https://github.com/inovector/mixpost/blob/main/LICENSE",
+          "https://docs.mixpost.app/lite/installation/docker/",
+          "https://docs.mixpost.app/server/",
+          "https://docs.mixpost.app/lite/configuration/environment-variables/",
+          "https://www.hootsuite.com/plans"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Postiz",
+      "url": "https://postiz.com/",
+      "type": "open-source",
+      "repo": "https://github.com/gitroomhq/postiz-app",
+      "platforms": [
+        "web",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "Twenty-eight-plus channels and a proper calendar; the price is running a small software company in your basement.",
+      "stars": 34300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Hosted signup, or the official Docker Compose stack",
+        "engines": null,
+        "dataFormat": "Self-hosted data spans PostgreSQL, Redis, and Temporal; uploads use local persistent storage or configured object storage such as Cloudflare R2. Hosted data lives in Postiz's cloud.",
+        "gapVsPaid": "Postiz can cover publishing, but it does not make Hootsuite's managed monitoring, inbox reliability, and support disappear, you become the operator.",
+        "setupBlocker": "Self-hosting is a substantial stack: the docs call for PostgreSQL, Redis, Temporal, persistent storage, a public domain, and each network's OAuth credentials, with 4 vCPU and 8 GB RAM recommended.",
+        "sources": [
+          "https://postiz.com/",
+          "https://github.com/gitroomhq/postiz-app",
+          "https://github.com/gitroomhq/postiz-app/blob/main/LICENSE",
+          "https://docs.postiz.com/installation/system-requirements",
+          "https://docs.postiz.com/installation/docker-compose",
+          "https://docs.postiz.com/configuration/reference",
+          "https://www.hootsuite.com/plans"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Publer Free",
+      "url": "https://publer.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Three non-X accounts and ten queued posts each, with a calendar and reusable media.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup plus social-account connections",
+        "engines": null,
+        "dataFormat": "Posts, media, drafts, history, and connected-account metadata live in Publer's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "Publer Free omits X, deletes free-plan post history after 24 hours, and does not replace Hootsuite's monitoring layer.",
+        "setupBlocker": null,
+        "sources": [
+          "https://publer.com/plans",
+          "https://publer.com/help/en/article/what-are-publers-plans-and-pricing-15h4yqh/",
+          "https://publer.com/help/en/article/what-is-included-in-publer-free-dliovh/",
+          "https://www.hootsuite.com/plans"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Social Champ Free",
+      "url": "https://www.socialchamp.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Three non-X accounts and fifteen queued posts each; enough for the stated one-network calendar.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup plus social-account connections",
+        "engines": "Champ AI Suite; Social Champ does not identify the underlying model provider on its pricing page.",
+        "dataFormat": "Posts, media, analytics, inbox messages, and connected-account metadata live in Social Champ's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "The free tier excludes X and omits the listening, competitor analysis, and approval workflows that distinguish Hootsuite from a bare calendar.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.socialchamp.com/pricing/",
+          "https://help.socialchamp.com/knowledge-base/getting-started/understanding-our-pricing-structure/",
+          "https://help.socialchamp.com/knowledge-base/publish/unlimited-post-scheduling-with-fair-usage-policy/",
+          "https://www.hootsuite.com/plans"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "metricool",
+    "hypefury",
+    "taplio"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Standard plan and a single-network scheduler DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Hootsuite in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and one official social-platform API; do not offer alternative stacks.\nThe core loop is: draft and schedule posts to one approved network, preview them accurately, publish through the official API, and retain a searchable content calendar.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nSupport drafts, scheduled times, queues, campaigns, tags, and a weekly calendar.\nConnect exactly one social network using its documented OAuth flow.\nValidate character, media, aspect-ratio, and file-size limits before scheduling.\nPublish through an idempotent background job with retries and clear failure states.\nStore platform post identifiers and refresh publication status without scraping.\nAdd reusable snippets, local media storage, CSV export, and a token reconnect flow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out unofficial automation or scraping.\nDeliberately leave out multi-network inbox and social listening.\nDeliberately leave out agency approvals, white labelling, and enterprise reporting.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

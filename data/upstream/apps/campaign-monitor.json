@@ -1,0 +1,288 @@
+{
+  "slug": "campaign-monitor",
+  "name": "Campaign Monitor",
+  "domain": "campaignmonitor.com",
+  "appURL": "https://campaignmonitor.com",
+  "category": "newsletter",
+  "subcategory": "email newsletters and creator publishing",
+  "tagline": "Compose branded campaigns, manage subscribers, and report delivery and clicks",
+  "priceMonthly": 12,
+  "pricing": {
+    "plan": "Lite",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://campaignmonitor.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Lite starting monthly price; list size affects cost.",
+    "native": "12 USD",
+    "kind": "fixed",
+    "currency": "USD"
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Campaign Monitor, compose branded campaigns, manage subscribers, and report delivery and clicks. The hard boundary is template editor, deliverability, journeys, agency features, and integrations, plus deliverability, growth network, and integrations.",
+  "coreLoopDIY": "Collect and manage subscribers, compose and send branded compliant campaigns, publish a web archive, and report basic delivery and click events.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Amazon SES account",
+    "verified sending domain",
+    "PostgreSQL",
+    "public HTTPS deploy target",
+    "DNS access"
+  ],
+  "whatYouLose": [
+    "template editor, deliverability, journeys, agency features, and integrations",
+    "inbox-placement expertise",
+    "advanced automations",
+    "commerce integrations",
+    "recommendation and ad networks"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations"
+  ],
+  "moatNotes": "deliverability, growth network, and integrations",
+  "replacementScope": "single-publication newsletter",
+  "ongoingBurden": "DNS authentication, reputation, bounces, complaints, unsubscribe compliance, templates, queues, analytics, backups, and support",
+  "whyPeopleStillPay": "People still pay for Campaign Monitor because newsletter operators pay for inbox placement, growth mechanics, and operational confidence on publication day. The recurring cost buys DNS authentication, reputation, bounces, complaints, unsubscribe compliance, templates, queues, analytics, backups, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Listmonk",
+      "url": "https://github.com/knadh/listmonk",
+      "desc": "Mature open-source newsletter and mailing-list manager."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Brevo Free",
+      "url": "https://www.brevo.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A visual campaign editor and basic reports with a 300-email daily speed limit.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Contacts, campaigns, consent records, and message events live in Brevo's cloud; contacts can be exported as CSV.",
+        "gapVsPaid": "Brevo Free has a visual campaign editor and basic reports, but the 300-email daily cap and free-tier branding are much more restrictive than Campaign Monitor.",
+        "setupBlocker": "Authenticating a custom sending domain requires adding DNS records.",
+        "sources": [
+          "https://www.brevo.com/pricing/",
+          "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans",
+          "https://help.brevo.com/hc/en-us/articles/360019920220-Export-your-contacts-from-Brevo",
+          "https://www.campaignmonitor.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "EmailOctopus Free",
+      "url": "https://emailoctopus.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Campaigns and reports for 2,500 contacts; branding and a 30-day reporting window are the tax.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Lists, campaigns, automations, and reporting data live in EmailOctopus' cloud; contacts and reports can be exported as CSV.",
+        "gapVsPaid": "EmailOctopus Free handles campaigns and reports, but its branding, 30-day reporting window, and three-automation ceiling are a clear downgrade from Campaign Monitor.",
+        "setupBlocker": "You must verify a sender address or domain; DNS authentication is the first technical step.",
+        "sources": [
+          "https://emailoctopus.com/pricing",
+          "https://help.emailoctopus.com/article/155-do-you-offer-a-trial",
+          "https://help.emailoctopus.com/article/126-exporting-contacts",
+          "https://www.campaignmonitor.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Keila",
+      "url": "https://www.keila.io/",
+      "type": "open-source",
+      "repo": "https://github.com/pentacent/keila",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A friendly campaign editor, forms and tracking without contact pricing; delivery is your SMTP provider's job.",
+      "stars": 2179,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Keila Cloud signup or Docker image plus PostgreSQL",
+        "engines": null,
+        "dataFormat": "Self-hosted subscribers, campaigns, and job state live in PostgreSQL; uploaded campaign assets live on persistent server storage.",
+        "gapVsPaid": "Keila gives you a friendly campaign editor and tracking, but delivery reputation, SMTP configuration, backups, and upgrades become your responsibility rather than Campaign Monitor's.",
+        "setupBlocker": "Self-hosting requires Docker, PostgreSQL, a public HTTPS domain, and credentials for SMTP, SES, SendGrid, Mailgun, or Postmark.",
+        "sources": [
+          "https://github.com/pentacent/keila",
+          "https://www.keila.io/docs/installation/",
+          "https://www.keila.io/docs/configuration/",
+          "https://www.campaignmonitor.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "listmonk",
+      "url": "https://listmonk.app/",
+      "type": "open-source",
+      "repo": "https://github.com/knadh/listmonk",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Campaigns, segments and analytics in one fast compose file; templates favor competence over theatre.",
+      "stars": 22600,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "self-hosted",
+        "install": "Docker Compose or a single release binary plus PostgreSQL",
+        "engines": null,
+        "dataFormat": "Subscribers, campaigns, templates, and analytics live in a PostgreSQL database on your server.",
+        "gapVsPaid": "listmonk is fast and capable, but its utilitarian editor and template workflow are less polished for design-heavy branded campaigns than Campaign Monitor.",
+        "setupBlocker": "You still need a PostgreSQL database and a trustworthy SMTP/API sender with authenticated DNS.",
+        "sources": [
+          "https://github.com/knadh/listmonk",
+          "https://listmonk.app/docs/installation/",
+          "https://www.campaignmonitor.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Notifuse",
+      "url": "https://www.notifuse.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Notifuse/notifuse",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Visual MJML campaigns, scheduling, A/B tests and analytics; bring PostgreSQL and a sender.",
+      "stars": 2038,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Notifuse Cloud signup or self-host with Docker",
+        "engines": null,
+        "dataFormat": "Self-hosted contact, campaign, event, and analytics data lives in PostgreSQL; uploaded assets use S3-compatible storage.",
+        "gapVsPaid": "Notifuse supports visual MJML campaigns, tests, and analytics, but operating the database, storage, and sender is a much steeper price than Campaign Monitor's hosted simplicity.",
+        "setupBlocker": "Self-hosting needs Docker, PostgreSQL, object storage, a public domain, and a separately configured SMTP or email API provider.",
+        "sources": [
+          "https://github.com/Notifuse/notifuse",
+          "https://docs.notifuse.com/",
+          "https://www.notifuse.com/",
+          "https://www.campaignmonitor.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "phpList",
+      "url": "https://www.phplist.org/",
+      "type": "open-source",
+      "repo": "https://github.com/phpList/phplist3",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Campaigns, segmentation and click tracking from the old guard; the interface remembers when gradients were a feature.",
+      "stars": 864,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Free hosted signup or upload the PHP package to a web host",
+        "engines": null,
+        "dataFormat": "Self-hosted subscribers, preferences, queues, campaigns, and analytics live in a MySQL/MariaDB database; CSV/Excel import and export are built in.",
+        "gapVsPaid": "phpList covers campaigns, segmentation, and click tracking, but its dated interface and weaker modern template workflow are noticeably less pleasant than Campaign Monitor.",
+        "setupBlocker": "Manual hosting means configuring PHP, MySQL, cron/queue processing, and a sender; the installer is old-school rather than one-click.",
+        "sources": [
+          "https://github.com/phpList/phplist3",
+          "https://www.phplist.org/manual/books/phplist-manual/page/installing-phplist-manually",
+          "https://www.phplist.com/pricing",
+          "https://www.campaignmonitor.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Sender Free",
+      "url": "https://www.sender.net/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Branded campaigns, subscribers and click reports in a genuinely useful free tier.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Subscribers, campaigns, automations, and engagement events live in Sender's cloud; subscriber data can be exported.",
+        "gapVsPaid": "Sender Free is a strong hosted substitute for small lists, but branding, one-user access, and free-tier limits make it less capable for growing campaign teams.",
+        "setupBlocker": "A custom sending domain must be verified with DNS records for reliable delivery.",
+        "sources": [
+          "https://www.sender.net/pricing/",
+          "https://www.sender.net/help/account-settings-and-billing/how-sender-pricing-works/",
+          "https://www.sender.net/help/sender-authentication/",
+          "https://www.campaignmonitor.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "SendPortal",
+      "url": "https://sendportal.io/",
+      "desc": "Still commonly recommended; the last commit was April 2024 and the Laravel app has not moved since."
+    }
+  ],
+  "relatedSlugs": [
+    "substack",
+    "mailerlite",
+    "activecampaign"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Lite plan and a single-publication newsletter DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Campaign Monitor in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Amazon SES; do not offer alternative stacks.\nThe core loop is: collect and manage subscribers, compose and send branded compliant campaigns, publish a web archive, and report basic delivery and click events.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement subscriber import, double opt-in, unsubscribe, suppression, tags, and consent timestamps.\nCreate a Markdown campaign editor with HTML and plain-text previews.\nQueue sends through SES with retries, rate limits, idempotency, and resumable batches.\nProcess delivery, bounce, complaint, open, and click webhooks without logging message content.\nPublish a simple issue archive and subscriber preference page.\nAdd test sends, seed-list checks, DNS setup guidance, exports, and backups.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a newsletter recommendation marketplace.\nDeliberately leave out ad sales and payment infrastructure.\nDeliberately leave out complex lifecycle automation and enterprise deliverability support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,143 @@
+{
+  "slug": "bartender",
+  "name": "Bartender",
+  "domain": "macbartender.com",
+  "appURL": "https://macbartender.com",
+  "category": "productivity-utilities",
+  "subcategory": "macOS automation and desktop utilities",
+  "tagline": "Hide, reveal, and arrange menu-bar items with user-defined rules",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Bartender licence",
+    "basis": "one-time",
+    "unit": "one-time",
+    "source": "https://macbartender.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Sold as a one-time licence; canonical monthly amount is null.",
+    "native": "one-time",
+    "kind": "one-time",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Bartender 6",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Perpetual Bartender 6 licence; includes updates within the major version.",
+        "notes": "One-time $20; 4-week trial with no card."
+      },
+      {
+        "name": "Bartender 6 Upgrade",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Upgrade path for owners of an earlier Bartender licence.",
+        "notes": "Official purchase copy advertises upgrades from $12; the exact amount depends on the prior licence and is shown in checkout."
+      },
+      {
+        "name": "Bartender Pro",
+        "monthly": null,
+        "annualPerMonth": 1.25,
+        "per": "flat",
+        "limits": "Includes Bartender and future major-version upgrades while the subscription remains active.",
+        "notes": "$15 billed yearly; 7-day trial."
+      },
+      {
+        "name": "Mega Supporter",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Lifetime Bartender access and upgrades.",
+        "notes": "Current numeric checkout price was not exposed on the public page."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "one-time purchase or annual Pro subscription; 4-week Bartender 6 trial and 7-day Pro trial",
+    "priceChanges": [],
+    "hiddenCosts": "The perpetual Bartender 6 purchase does not include future major versions; only Pro or Mega Supporter does. Upgrade pricing varies by the existing licence, and Mega Supporter's public price is hidden in the interactive checkout.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.macbartender.com/purchase/",
+      "https://www.macbartender.com/B5blog/Bartender-Pro/"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Bartender, hide, reveal, and arrange menu-bar items with user-defined rules. The hard boundary is deep macos menu-bar handling, os update compatibility, and polished interaction, plus os integration polish and maintenance.",
+  "coreLoopDIY": "Hide, reveal, and arrange menu-bar items with user-defined rules, expose keyboard-first controls, and store settings locally.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS 14 or later",
+    "Xcode",
+    "only the permissions required by the selected feature"
+  ],
+  "whatYouLose": [
+    "deep macOS menu-bar handling, OS update compatibility, and polished interaction",
+    "years of OS-version edge cases",
+    "large extension ecosystem",
+    "cross-device sync",
+    "commercial support and rapid compatibility fixes"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "OS integration polish and maintenance",
+  "replacementScope": "single-purpose local Mac app",
+  "ongoingBurden": "permissions, accessibility APIs, sandboxing, signing, notarization, OS regressions, updates, backups, and support",
+  "whyPeopleStillPay": "People still pay for Bartender because small utilities are technically reproducible, but customers pay for polish and immediate fixes when an OS update breaks a daily habit. The recurring cost buys permissions, accessibility APIs, sandboxing, signing, notarization, OS regressions, updates, backups, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Espanso",
+      "url": "https://github.com/espanso/espanso",
+      "desc": "Active open-source cross-platform text expansion utility with system integration."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "SaneBar",
+      "url": "https://sanebar.com/",
+      "type": "open-source",
+      "repo": "https://github.com/sane-apps/SaneBar",
+      "platforms": [
+        "macos"
+      ],
+      "desc": "A native menu-bar bouncer with every former Pro feature unlocked.",
+      "stars": 262,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Thaw",
+      "url": "https://github.com/thaw-app/Thaw",
+      "type": "open-source",
+      "repo": "https://github.com/thaw-app/Thaw",
+      "platforms": [
+        "macos"
+      ],
+      "desc": "Ice thawed: signed, actively maintained, and limited to macOS 26 or later.",
+      "stars": 9500,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Ice",
+      "url": "https://icemenubar.app/",
+      "desc": "The famous answer stopped after a September 2025 beta; current macOS users moved to the Thaw fork."
+    }
+  ],
+  "relatedSlugs": [
+    "alfred-powerpack",
+    "setapp",
+    "bettertouchtool"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Bartender licence plan and a single-purpose local Mac app DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Bartender in an empty repository.\nUse Swift 6, SwiftUI, AppKit where necessary, SQLite, and the macOS Keychain; do not offer alternative stacks.\nThe core loop is: hide, reveal, and arrange menu-bar items with user-defined rules, expose keyboard-first controls, and store settings locally.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a menu-bar app with a searchable command window and global hotkey.\nImplement only the primary feature and one settings screen instead of a plugin platform.\nRequest permissions just in time and explain why each is needed before opening System Settings.\nStore configuration locally, support export or import, and never capture unrelated user content.\nAdd launch-at-login, update-check opt-in, diagnostics export, and a complete uninstall note.\nWrite unit tests for transformation logic and one UI test for the core keyboard workflow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a third-party extension marketplace.\nDeliberately leave out cloud accounts and cross-device sync.\nDeliberately leave out broad automation that executes untrusted scripts.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

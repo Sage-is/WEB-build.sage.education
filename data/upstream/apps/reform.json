@@ -1,0 +1,132 @@
+{
+  "slug": "reform",
+  "name": "Reform",
+  "domain": "reform.app",
+  "appURL": "https://reform.app",
+  "category": "forms",
+  "subcategory": "forms, surveys and lead capture",
+  "tagline": "Publish a clean branded lead form with routing, notifications, and exports",
+  "priceMonthly": 35,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://reform.app/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Pro monthly rate.",
+    "native": "35 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Unlimited draft forms; 0 live published forms and therefore 0 collectible responses.",
+        "notes": null
+      },
+      {
+        "name": "Basic",
+        "monthly": 15,
+        "annualPerMonth": 12.5,
+        "per": "workspace",
+        "limits": "Unlimited live forms and responses; basic integrations and branding controls.",
+        "notes": "The annual card states $150/year, but secondary text on the same live card also renders '$180 billed annually'; the annual-equivalent field uses the explicit $150 annual total."
+      },
+      {
+        "name": "Pro",
+        "monthly": 35,
+        "annualPerMonth": 29.17,
+        "per": "workspace",
+        "limits": "Unlimited live forms and responses; advanced integrations, routing and branding controls.",
+        "notes": "The annual card states $350/year, but secondary text on the same live card also renders '$420 billed annually'; the annual-equivalent field uses the explicit $350 annual total."
+      }
+    ],
+    "freeTierCaps": "Unlimited draft forms, but 0 live published forms and therefore 0 collectible responses.",
+    "billingTerms": "Monthly + annual; the live annual cards contain internally contradictory annual-total text, noted tier by tier.",
+    "priceChanges": [],
+    "hiddenCosts": "The 14-day Pro trial requires a card and automatically begins paid Pro billing unless canceled.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.reform.app/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Reform, publish a clean branded lead form with routing, notifications, and exports. The hard boundary is polished ux, spam controls, integrations, and reliable hosted delivery, plus integrations, deliverability, and workflow depth.",
+  "coreLoopDIY": "Publish a clean branded lead form, validate submissions, route and notify the owner, and provide a private response table with CSV export.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "Node.js 22",
+    "Resend API key or SMTP credentials",
+    "self-hosted deploy target"
+  ],
+  "whatYouLose": [
+    "polished UX, spam controls, integrations, and reliable hosted delivery",
+    "advanced branching",
+    "payment and CRM integrations",
+    "large template libraries",
+    "enterprise compliance"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "integrations, deliverability, and workflow depth",
+  "replacementScope": "single-owner form service",
+  "ongoingBurden": "spam control, email delivery, storage, exports, accessibility, conditional logic, and integrations",
+  "whyPeopleStillPay": "People still pay for Reform because a basic form is trivial; people pay when the form feeds a dependable business workflow and never loses a response. The recurring cost buys spam control, email delivery, storage, exports, accessibility, conditional logic, and integrations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Formbricks",
+      "url": "https://github.com/formbricks/formbricks",
+      "desc": "Active open-source survey and experience-management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "OpnForm",
+      "url": "https://opnform.com",
+      "type": "open-source",
+      "repo": "https://github.com/OpnForm/OpnForm",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Tally with a server bill instead of a subscription",
+      "stars": 3500,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "HeyForm",
+      "url": "https://heyform.net",
+      "type": "open-source",
+      "repo": "https://github.com/heyform/heyform",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Typeform's manners, minus the monthly rent",
+      "stars": 8881,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "surveymonkey",
+    "fillout",
+    "paperform"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a single-owner form service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Reform in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and Resend; do not offer alternative stacks.\nThe core loop is: publish a clean branded lead form, validate submissions, route and notify the owner, and provide a private response table with CSV export.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a form builder with short text, long text, email, number, select, radio, checkbox, and file fields.\nPublish each form at a stable slug with server-side validation and accessible labels.\nAdd honeypot, rate limiting, submission-size limits, and a clear privacy notice.\nStore responses in SQLite and provide search, filters, detail view, and CSV export.\nSend an owner notification without placing submitted values in logs.\nSupport a thank-you screen and one simple conditional branch.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out payment collection.\nDeliberately leave out hundreds of third-party integrations.\nDeliberately leave out multi-brand enterprise workspaces and compliance attestations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

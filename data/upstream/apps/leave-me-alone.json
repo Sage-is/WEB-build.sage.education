@@ -1,0 +1,208 @@
+{
+  "slug": "leave-me-alone",
+  "name": "Leave Me Alone",
+  "domain": "leavemealone.com",
+  "appURL": "https://leavemealone.com",
+  "category": "email",
+  "subcategory": "unsubscribe + inbox cleanup",
+  "tagline": "Unsubscribe, mailing-list screening, and inbox cleanup service",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://leavemealone.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Seven Day Pass",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "2 email accounts; unlimited unsubscribes and premium features for 7 days.",
+        "notes": "One-time $19 payment; it does not auto-renew."
+      },
+      {
+        "name": "Casual Emailer",
+        "monthly": 9,
+        "annualPerMonth": 4.5,
+        "per": "flat",
+        "limits": "4 email accounts; unlimited unsubscribes; Rollups are not included.",
+        "notes": "Current annual promotion is $54/year ($4.50/month effective), versus $9 month-to-month."
+      },
+      {
+        "name": "Inbox Zero Hero",
+        "monthly": 25,
+        "annualPerMonth": 5.3333,
+        "per": "flat",
+        "limits": "Unlimited email accounts and unsubscribes; Rollups included with no published sender limit.",
+        "notes": "Current annual promotion is $64/year ($5.33/month effective), versus $25 month-to-month."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Team plan; numeric caps and price not published.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "10 unsubscribes total, no credit card",
+    "billingTerms": "one-time 7-day pass + monthly subscriptions + annual subscriptions; current annual promotions are deeper than the page's generic '2 months free' wording; 14-day money-back guarantee",
+    "priceChanges": [],
+    "hiddenCosts": "The sharply discounted annual Hero price is promotional and can change; the $19 pass expires after 7 days, while subscriptions renew until canceled.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://leavemealone.com/pricing/",
+      "https://leavemealone.com/blog/unroll-me-rollups-alternative/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. Leave Me Alone's durable value is deliverability, security, integration, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a local email companion for unsubscribe + inbox cleanup that works on exported mail or one user-authorized IMAP account.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "desktop development machine",
+    "IMAP or Gmail OAuth credentials where supported",
+    "secure local keychain access",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "provider-grade deliverability",
+    "push reliability across devices",
+    "team routing and shared inbox rules",
+    "abuse response and security operations"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations"
+  ],
+  "moatNotes": "deliverability/security/integration",
+  "whyPeopleStillPay": "Leave Me Alone: Email is infrastructure. Customers pay to avoid lost messages, broken auth, spam problems, and the reputational cost of a flaky inbox.",
+  "ongoingBurden": "Own OAuth refresh, IMAP quirks, encryption, spam handling, notification delivery, and provider policy changes.",
+  "priorArt": [
+    {
+      "name": "Mailspring",
+      "url": "https://github.com/Foundry376/Mailspring",
+      "desc": "Open-source desktop mail client and useful IMAP prior art."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Cleanfox",
+      "url": "https://www.cleanfox.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Unsubscribe and delete newsletter piles for free; anonymized shopping data is the rent.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Edison Mail",
+      "url": "https://www.edisonmail.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "ios",
+        "android"
+      ],
+      "desc": "Unsubscribe, bulk-delete and block senders inside a free mail client; the cleanup service becomes an app.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Install the desktop or mobile app and add existing email accounts",
+        "engines": "Edison’s proprietary AI-based Assistant/search and smart-folder system; the model or backend is not disclosed on the checked official pages",
+        "dataFormat": "Messages remain with the mailbox provider and are cached in the client; Edison also processes account and message-derived data through its services, with separate controls for optional commerce-research participation",
+        "gapVsPaid": "Edison requires adopting a full email client and lacks Leave Me Alone’s dedicated subscription rollups, sender screener, and provider-independent cleanup dashboard.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.edisonmail.com/",
+          "https://www.edisonmail.com/features",
+          "https://www.edisonmail.com/privacy-policy-7-1-23",
+          "https://leavemealone.com/",
+          "https://leavemealone.com/pricing/",
+          "https://leavemealone.com/screener/",
+          "https://leavemealone.com/shield/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Gmailytics",
+      "url": "https://gmailytics.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "Unlimited newsletter unsubscribes plus sender cleanup for Gmail; no recurring bill and no non-Gmail support.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Sign in to the hosted service with Google OAuth and grant Gmail access",
+        "engines": null,
+        "dataFormat": "Gmail messages stay in Google; Gmailytics says it reads metadata rather than bodies, subjects, or attachments, and stores account details, cleanup history, aggregate statistics, and limited sender/date/size/category/unsubscribe metadata",
+        "gapVsPaid": "Gmailytics is limited to Gmail and does not provide Leave Me Alone’s non-Gmail support, subscription rollups, or sender-screening workflow.",
+        "setupBlocker": "Gmail only, and setup requires granting Google OAuth permissions",
+        "sources": [
+          "https://gmailytics.com/",
+          "https://gmailytics.com/pricing",
+          "https://gmailytics.com/privacy",
+          "https://gmailytics.com/terms",
+          "https://leavemealone.com/",
+          "https://leavemealone.com/pricing/",
+          "https://leavemealone.com/screener/",
+          "https://leavemealone.com/shield/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Gmail Cleaner",
+      "url": "https://gururagavendra.github.io/gmail-cleaner/",
+      "desc": "The cleanup works, but requiring a hand-made Google OAuth client fails the non-builder test."
+    },
+    {
+      "name": "InboxPurge",
+      "url": "https://www.inboxpurge.com/",
+      "desc": "Twenty free actions per month turns a cleanup utility into a tasting menu."
+    }
+  ],
+  "relatedSlugs": [
+    "mailbird",
+    "proton-mail-plus",
+    "sanebox"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Leave Me Alone survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Leave Me Alone; do not claim to replace its structural moat.\nUse exactly this stack: Tauri 2 + React + TypeScript + SQLite.\nPrimary job: Build a local email companion for unsubscribe + inbox cleanup that works on exported mail or one user-authorized IMAP account.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: provider-grade deliverability; push reliability across devices; team routing and shared inbox rules.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

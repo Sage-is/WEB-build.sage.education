@@ -1,0 +1,136 @@
+{
+  "slug": "scribe",
+  "name": "Scribe",
+  "domain": "scribehow.com",
+  "appURL": "https://scribehow.com",
+  "category": "screen-recording",
+  "subcategory": "screen recording, walkthroughs and product demos",
+  "tagline": "Capture a browser workflow and produce editable step-by-step documentation",
+  "priceMonthly": 35,
+  "pricing": {
+    "plan": "Pro Personal",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://scribehow.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official Pro Personal monthly tier.",
+    "native": "35 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Unlimited guides; browser capture; link sharing and embeds; 1-week version history; no desktop capture",
+        "notes": null
+      },
+      {
+        "name": "Pro Personal",
+        "monthly": 35,
+        "annualPerMonth": 25,
+        "per": "user",
+        "limits": "1+ paid seat; desktop and browser capture; advanced export, editing and branding",
+        "notes": "The supplied snapshot said $29/month; the live rate is $35 monthly or $25/month annually."
+      },
+      {
+        "name": "Pro Team",
+        "monthly": 17,
+        "annualPerMonth": 13,
+        "per": "user",
+        "limits": "Minimum 5 paid seats; team collaboration and management",
+        "notes": "Minimum spend is $85/month monthly or $65/month equivalent on annual billing."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom seats, security, administration, analytics and support",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "unlimited guides, browser capture, links/embeds and 1-week version history; no desktop capture",
+    "billingTerms": "monthly + annual (about 20% lower); plans apply to the whole team",
+    "priceChanges": [],
+    "hiddenCosts": "Pro Team requires at least 5 paid seats; a workspace cannot mix free and paid members, so upgrading the team upgrades every billable user.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://scribehow.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Scribe, capture a browser workflow and produce editable step-by-step documentation. The hard boundary is automatic capture quality, redaction, team libraries, integrations, and sharing, plus capture polish, hosting, and collaboration.",
+  "coreLoopDIY": "Capture a browser workflow, annotate key steps, and produce editable step-by-step documentation the user can export and share.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS or Windows screen-recording permission",
+    "microphone permission",
+    "ffmpeg",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "automatic capture quality, redaction, team libraries, integrations, and sharing",
+    "instant hosted sharing",
+    "viewer analytics",
+    "team libraries",
+    "cross-device capture"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "collaboration"
+  ],
+  "moatNotes": "capture polish, hosting, and collaboration",
+  "replacementScope": "personal desktop recorder",
+  "ongoingBurden": "OS permissions, codecs, rendering performance, uploads, storage, links, and viewer analytics",
+  "whyPeopleStillPay": "People still pay for Scribe because the recording itself is easy; the subscription removes upload, transcoding, sharing, organization, and support work. The recurring cost buys OS permissions, codecs, rendering performance, uploads, storage, links, and viewer analytics, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Cap",
+      "url": "https://github.com/CapSoftware/Cap",
+      "desc": "Open-source screen recording and sharing product with modern desktop architecture."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Mimik",
+      "url": "https://mimik.westpoint.io",
+      "type": "open-source",
+      "repo": "https://github.com/westpoint-io/mimik",
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "Scribe without the cloud: click through a workflow and get local, editable steps.",
+      "stars": 88,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Folge",
+      "url": "https://folge.me",
+      "desc": "A proper desktop guide maker whose free forever ends at guide number six."
+    },
+    {
+      "name": "MotionShot",
+      "url": "https://www.motionshot.app",
+      "desc": "Two watermarked guides, then the free story is over."
+    }
+  ],
+  "relatedSlugs": [
+    "screen-studio",
+    "cleanshot-x",
+    "vidyard"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro Personal plan and a personal desktop recorder DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Scribe in an empty repository.\nUse Tauri 2, React, TypeScript, ffmpeg, and SQLite; do not offer alternative stacks.\nThe core loop is: capture a browser workflow, annotate key steps, and produce editable step-by-step documentation the user can export and share.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nOffer screen, window, or region capture plus optional microphone audio.\nShow an always-visible recording timer and make stop available from the tray.\nCreate a non-destructive trim view with crop, zoom, cursor highlight, and text callouts.\nRender locally through ffmpeg with sensible H.264 and WebM presets.\nGenerate a poster frame, transcript, and Markdown summary beside each video.\nProvide copy-file-path and reveal-in-folder actions instead of mandatory cloud upload.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out public cloud hosting.\nDeliberately leave out viewer identity and engagement analytics.\nDeliberately leave out enterprise workspaces and SSO.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

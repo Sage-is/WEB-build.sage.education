@@ -1,0 +1,128 @@
+{
+  "slug": "otter-ai",
+  "name": "Otter.ai",
+  "domain": "otter.ai",
+  "category": "meeting-notes",
+  "subcategory": "meeting transcription + assistant",
+  "tagline": "Meeting transcription, summaries, and AI chat over conversations",
+  "priceMonthly": 16.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "16.99 USD",
+    "source": "https://otter.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page URL checked; public secondary coverage in 2026 lists Pro at $16.99/month and about $100/year.",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "300 transcription minutes per month and 3 lifetime audio/video file imports.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 16.99,
+        "annualPerMonth": 8.33,
+        "per": "user",
+        "limits": "1,200 in-app recording minutes per month; 10 file imports per month; maximum 90 minutes per meeting; unlimited storage.",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 30,
+        "annualPerMonth": 19.99,
+        "per": "user",
+        "limits": "Unlimited meetings and in-app recording; unlimited file imports; maximum 4 hours per meeting; up to 3 concurrent meetings.",
+        "notes": "A temporary first-3-month promotion can appear on monthly checkout; standard list price is recorded here."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom deployment, security, and administration; no public numeric price.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "300 transcription minutes per month and 3 lifetime file imports.",
+    "billingTerms": "monthly + annual; annual Pro saves about 51% and Business about 33%",
+    "priceChanges": [],
+    "hiddenCosts": "HIPAA configuration and some enterprise integrations are sold as add-ons or by quote; public prices are not stated.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://otter.ai/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build transcription and summaries, but Otter's value includes live meeting assistant behavior, account sync, speaker workflow, integrations, and mobile/web reliability.",
+  "coreLoopDIY": "Use a meeting bot or local recorder, run transcription, diarize speakers, summarize, then expose search/chat over transcripts.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "speech-to-text API or local Whisper",
+    "storage/search index",
+    "calendar/video-call integration if bot-style capture is desired"
+  ],
+  "whatYouLose": [
+    "live bot joining meetings",
+    "speaker diarization quality",
+    "mobile apps",
+    "team/admin controls",
+    "searchable account history",
+    "integrations"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration",
+    "execution-polish"
+  ],
+  "moatNotes": "integrations/sync/collaboration",
+  "whyPeopleStillPay": "They pay for capture reliability and shared searchable meeting memory, not just the transcript file.",
+  "priorArt": [
+    {
+      "name": "whisperX",
+      "url": "https://github.com/m-bain/whisperX",
+      "desc": "Open-source transcription alignment and diarization tooling useful for DIY Otter-like work",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Speakr",
+      "url": "https://murtaza-nasir.github.io/speakr/",
+      "type": "open-source",
+      "repo": "https://github.com/murtaza-nasir/speakr",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Transcribes meetings, summarizes them and lets you chat across the archive; the price is operating the stack yourself.",
+      "stars": 3600,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Fathom",
+      "url": "https://www.fathom.ai/",
+      "desc": "Unlimited basic transcripts and summaries, but no real chat over your conversation archive."
+    }
+  ],
+  "relatedSlugs": [
+    "fireflies-ai",
+    "fathom-ai",
+    "tldv"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Recognizable but not trivial; good example of transcription being easy while production capture is not.",
+  "prompt": "Build me a personal meeting transcription and search tool to replace Otter.ai.\nRequirements:\n\n- Python stack: whisperX (faster-whisper backend) for transcription, Flask for the UI,\n  stdlib sqlite3 for storage.\n- A CLI: `otter record` captures the mic to ~/Meetings/YYYY-MM-DD-HHMM/audio.wav; `otter\n  import file.m4a` handles recordings made elsewhere.\n- Transcribe locally with whisperX, word timestamps plus speaker diarization; label\n  speakers SPEAKER_1/2 and let me rename them once per meeting.\n- Send the transcript to an LLM (key in .env) for a summary: 5 bullets, decisions made,\n  action items with owners. Save transcript.md and summary.md next to the audio.\n- Index transcripts into SQLite FTS5; `otter search \"budget\"` returns matching lines\n  with meeting date and timestamp.\n- A minimal page on localhost:8787: meeting list, one search box, and an ask box that\n  answers questions over a chosen transcript via the LLM.\n- Everything stays on my machine except the LLM calls; no accounts, no telemetry.\n- Out of scope: a bot that joins Zoom/Meet calls, mobile apps, and team sharing.\n  Diarization will be rough on crosstalk, accept it.\n- README: Python and ffmpeg install, model download size, and the macOS mic permission.",
+  "promptCurated": false
+}

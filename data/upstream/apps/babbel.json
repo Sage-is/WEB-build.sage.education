@@ -1,0 +1,246 @@
+{
+  "slug": "babbel",
+  "name": "Babbel",
+  "domain": "babbel.com",
+  "appURL": "https://babbel.com",
+  "category": "education",
+  "subcategory": "learning, flashcards and language practice",
+  "tagline": "Build a personal lesson and review tool from user-supplied material",
+  "priceMonthly": 8.95,
+  "pricing": {
+    "plan": "Individual, 12 months",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "source": "https://my.babbel.com/en/prices",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Typical one-month subscription price; regional offers vary.",
+    "native": "8.95 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free access",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "1 introductory lesson from every course; free account; no full-course access",
+        "notes": "Babbel does not publish a fixed total lesson count because the number of courses varies by language."
+      },
+      {
+        "name": "Individual, 1 month",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 learner; full self-study content for the purchased language or all languages, depending on checkout offer",
+        "notes": "The official help center confirms a monthly renewal option, but the current US amount was not exposed in accessible official checkout content."
+      },
+      {
+        "name": "Individual, 3 months",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 learner; prepaid 3-month access; full self-study content for the purchased language or all languages, depending on checkout offer",
+        "notes": "The duration is officially offered, but the current US amount was not exposed in accessible official checkout content."
+      },
+      {
+        "name": "Individual, 6 months",
+        "monthly": 13.45,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 learner; billed $80.70 every 6 months; full self-study content for the purchased language or all languages, depending on checkout offer",
+        "notes": "Effective monthly rate on the live US pricing page; this is not a month-to-month plan."
+      },
+      {
+        "name": "Individual, 12 months",
+        "monthly": null,
+        "annualPerMonth": 8.95,
+        "per": "user",
+        "limits": "1 learner; billed $107.40 yearly; full self-study content for the purchased language or all languages, depending on checkout offer",
+        "notes": null
+      },
+      {
+        "name": "Individual, Lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 learner; permanent access; one-time $299.99; 14 languages on the live US offer",
+        "notes": "One-time purchase, not a monthly or annual subscription."
+      },
+      {
+        "name": "Group, 1 month",
+        "monthly": 30.95,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Up to 6 learners; 14 languages; separate accounts and private progress",
+        "notes": "Flat price for the whole group."
+      },
+      {
+        "name": "Group, 12 months",
+        "monthly": null,
+        "annualPerMonth": 15.48,
+        "per": "flat",
+        "limits": "Up to 6 learners; 14 languages; billed $185.70 yearly",
+        "notes": "Flat price for the whole group; about $15.48/month."
+      }
+    ],
+    "freeTierCaps": "1 introductory lesson from every course; the number of courses varies by language",
+    "billingTerms": "1-, 3-, 6-, and 12-month prepaid auto-renewing terms + one-time Lifetime; Group monthly or annual; full term charged upfront",
+    "priceChanges": [],
+    "hiddenCosts": "Prices vary by location, platform, language-access bundle, tax, and promotion; Group members with an existing individual subscription must cancel it separately or both can run in parallel.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://my.babbel.com/en/prices",
+      "https://support.babbel.com/hc/en-gb/articles/19650417983378-Pricing",
+      "https://support.babbel.com/hc/en-gb/articles/205600328-Timing-of-subscription-payments",
+      "https://www.babbel.com/babbel-group-plan",
+      "https://support.babbel.com/hc/en-us/articles/33214529861266-Group-Plan-for-family-and-friends",
+      "https://www.babbel.com/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Babbel, build a personal lesson and review tool from user-supplied material. The hard boundary is professionally authored curriculum, speech practice, courses, apps, and pedagogy, plus content, pedagogy, and network.",
+  "coreLoopDIY": "Turn user-supplied language material into lessons and a study plan, schedule retrieval practice, and show progress without claiming accredited instruction.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "modern browser",
+    "user-supplied study material",
+    "optional speech or language-model API key"
+  ],
+  "whatYouLose": [
+    "professionally authored curriculum, speech practice, courses, apps, and pedagogy",
+    "licensed course catalog",
+    "expert curriculum",
+    "human feedback",
+    "large learner network and certification"
+  ],
+  "moatTags": [
+    "content-rights",
+    "network-effects"
+  ],
+  "moatNotes": "content, pedagogy, and network",
+  "replacementScope": "personal study companion",
+  "ongoingBurden": "curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support",
+  "whyPeopleStillPay": "People still pay for Babbel because the learning loop is buildable, while trusted curriculum, instructors, feedback, credentials, and community are not. The recurring cost buys curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Moodle",
+      "url": "https://github.com/moodle/moodle",
+      "desc": "Long-running open-source learning platform with courses, assessments, and progress tracking."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Anki",
+      "url": "https://apps.ankiweb.net/",
+      "type": "open-source",
+      "repo": "https://github.com/ankitects/anki",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "User-authored language lessons become serious spaced-repetition cards with audio, images and progress history.",
+      "stars": 29600,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the Windows installer, macOS DMG or official Linux launcher",
+        "engines": null,
+        "dataFormat": "Local profile files including collection.anki2, collection.media and backups; exports use .apkg/.colpkg, with optional AnkiWeb sync",
+        "gapVsPaid": "Anki supplies no expert-authored curriculum, grammar path, dialogue practice or automatic pronunciation coaching; the learner must build or source the material.",
+        "setupBlocker": null,
+        "sources": [
+          "https://apps.ankiweb.net/",
+          "https://github.com/ankitects/anki",
+          "https://github.com/ankitects/anki/blob/main/LICENSE",
+          "https://docs.ankiweb.net/files.html",
+          "https://docs.ankiweb.net/backups.html",
+          "https://www.babbel.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "AnkiDroid",
+      "url": "https://ankidroid.org/",
+      "type": "open-source",
+      "repo": "https://github.com/ankidroid/Anki-Android",
+      "platforms": [
+        "android"
+      ],
+      "desc": "The same user-built lesson deck on Android, minus the owl, streak theatre and subscription.",
+      "stars": 11499,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Install from Google Play or F-Droid, or sideload the official APK",
+        "engines": null,
+        "dataFormat": "An Anki collection and media on the Android device, with .apkg import/export and optional AnkiWeb sync",
+        "gapVsPaid": "AnkiDroid supplies no expert-authored curriculum, grammar path or pronunciation coaching; the learner must build or source the material.",
+        "setupBlocker": null,
+        "sources": [
+          "https://ankidroid.org/",
+          "https://github.com/ankidroid/Anki-Android",
+          "https://github.com/ankidroid/Anki-Android/blob/main/COPYING",
+          "https://docs.ankidroid.org/",
+          "https://www.babbel.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Moodle",
+      "url": "https://moodle.org/",
+      "type": "open-source",
+      "repo": "https://github.com/moodle/moodle",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A full course system for lessons, quizzes and review; sensible for a class, excessive for ordering one coffee.",
+      "stars": 7300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Upload the PHP release to a web server, create a database and moodledata directory, then complete the browser installer",
+        "engines": null,
+        "dataFormat": "Courses, users, grades and settings in SQL; uploaded files in the separate moodledata directory",
+        "gapVsPaid": "Moodle supplies no expert-made language curriculum, pronunciation engine or daily conversational flow, and running an LMS is excessive for one learner.",
+        "setupBlocker": "PHP and database requirements, protected writable storage, cron, SMTP, backups and upgrades are all the operator's responsibility",
+        "sources": [
+          "https://github.com/moodle/moodle",
+          "https://github.com/moodle/moodle/blob/main/COPYING.txt",
+          "https://docs.moodle.org/501/en/Installing_Moodle",
+          "https://docs.moodle.org/501/en/Moodledata_directory",
+          "https://www.babbel.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "duolingo-super",
+    "brilliant",
+    "busuu-premium"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Babbel subscription plan and a personal study companion DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Babbel in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and a service worker for offline use; do not offer alternative stacks.\nThe core loop is: turn user-supplied language material into lessons and a study plan, schedule retrieval practice, and show progress without claiming accredited instruction.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImport Markdown, text, or user-authored notes and split them into editable learning units.\nCreate flashcards and short quizzes only after showing the generated items for approval.\nImplement a transparent spaced-repetition schedule with due, again, hard, good, and easy actions.\nAdd goals, study sessions, streak-free progress charts, notes, and weak-topic review.\nFor language practice, record the learner and compare timing or pronunciation without presenting medical claims.\nSupport offline use, full export, reset, backup, and deletion of all learning data.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out licensed premium courses.\nDeliberately leave out accredited certificates and grading.\nDeliberately leave out live tutors, large classrooms, and a learner marketplace.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

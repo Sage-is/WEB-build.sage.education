@@ -1,0 +1,135 @@
+{
+  "slug": "sendible",
+  "name": "Sendible",
+  "domain": "sendible.com",
+  "appURL": "https://sendible.com",
+  "category": "social-media",
+  "subcategory": "agency social management",
+  "tagline": "Publishing, approvals, inbox, monitoring, reporting, and white-label tools",
+  "priceMonthly": 35,
+  "pricing": {
+    "plan": "Core",
+    "kind": "fixed",
+    "basis": "monthly",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "35 USD",
+    "source": "https://www.sendible.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Core",
+        "monthly": 35,
+        "annualPerMonth": 29.75,
+        "per": "workspace",
+        "limits": "1 workspace, 6 profiles, unlimited users/scheduling/AI credits; 100 posts/day/workspace",
+        "notes": "Annual effective rate calculated from the official 15% annual discount."
+      },
+      {
+        "name": "Plus",
+        "monthly": 99,
+        "annualPerMonth": 84.15,
+        "per": "workspace",
+        "limits": "3 workspaces, 18 profiles, unlimited users; 200 posts/day/workspace",
+        "notes": "Annual effective rate calculated from the official 15% annual discount."
+      },
+      {
+        "name": "Premium",
+        "monthly": 199,
+        "annualPerMonth": 169.15,
+        "per": "workspace",
+        "limits": "7 workspaces, 42 profiles, unlimited users; 300 posts/day/workspace",
+        "notes": "Annual effective rate calculated from the official 15% annual discount."
+      },
+      {
+        "name": "Elite",
+        "monthly": 299,
+        "annualPerMonth": 254.15,
+        "per": "workspace",
+        "limits": "15 workspaces, 90 profiles, unlimited users; 500 posts/day/workspace",
+        "notes": "Annual effective rate calculated from the official 15% annual discount."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 750,
+        "annualPerMonth": 637.5,
+        "per": "workspace",
+        "limits": "50 workspaces, 300 profiles, unlimited users; 500 posts/day/workspace",
+        "notes": "Annual effective rate calculated from the official 15% annual discount."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (-15%); 14-day free trial, no card, no contract, cancel anytime",
+    "priceChanges": [],
+    "hiddenCosts": "More profiles require another workspace (6 profiles each); white label is a paid add-on on Elite and Enterprise with no public price; UK customers pay VAT.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.sendible.com/pricing",
+      "https://pages.sendible.com/pricing-plan-iframe?accountTypeId=1976&country=US&freq=1",
+      "https://support.sendible.com/hc/en-us/articles/208538106-Account-sending-limits"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Do not mistake the interface for the product. Sendible's durable value is platform APIs, distribution, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a personal agency social management planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "hosted database and worker",
+    "official platform OAuth credentials where available",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "team approvals and asset workflows",
+    "protection from API and policy changes",
+    "direct publishing reliability as platform APIs change",
+    "reliable direct publishing across networks",
+    "analytics history and attribution"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "platform APIs/distribution",
+  "whyPeopleStillPay": "Sendible: Social tools survive because networks change APIs, permissions, formats, and anti-spam rules constantly.",
+  "ongoingBurden": "Maintain OAuth, token refresh, media constraints, rate limits, scheduling, webhooks, retries, and platform policy compliance.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Open-source social scheduling and publishing platform."
+    },
+    {
+      "name": "Mixpost",
+      "url": "https://github.com/inovector/mixpost",
+      "desc": "Self-hosted social media management software."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "BrightBean Studio",
+      "url": "https://brightbean.xyz/studio/",
+      "desc": "Publishing, approvals, inbox, analytics and client workspaces are present; white-label reseller tooling is not."
+    },
+    {
+      "name": "Postiz",
+      "url": "https://postiz.com/",
+      "desc": "Publishing and team workflow clear the easy half; monitoring, reporting depth and white-labeling do not."
+    }
+  ],
+  "relatedSlugs": [
+    "agorapulse",
+    "sprout-social",
+    "loomly"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Sendible survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Sendible; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build a personal agency social management planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: team approvals and asset workflows; protection from API and policy changes; direct publishing reliability as platform APIs change.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

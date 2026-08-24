@@ -1,0 +1,131 @@
+{
+  "slug": "beehiiv",
+  "name": "beehiiv",
+  "domain": "beehiiv.com",
+  "category": "newsletter",
+  "subcategory": "newsletter platform",
+  "tagline": "Newsletter publishing, growth, monetization, and email platform",
+  "priceMonthly": 49,
+  "pricing": {
+    "plan": "Scale",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "49 USD",
+    "source": "https://www.beehiiv.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Scale listed at $49/month monthly and around $43/month annually in public coverage.",
+    "tiers": [
+      {
+        "name": "Launch",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Up to 2,500 subscribers, unlimited email sends, 3 publications, 1 team member, 10 AI credits/day, 1 podcast episode/month, 1 show.",
+        "notes": null
+      },
+      {
+        "name": "Scale",
+        "monthly": 49,
+        "annualPerMonth": 43,
+        "per": "workspace",
+        "limits": "Up to 100,000 subscribers, unlimited sends/posts, 3 publications, up to 3 team seats, 25 AI credits/day, 4 podcast episodes/month.",
+        "notes": "Annual card showed $43/mo and $517 billed annually; FAQ said paid plans start at $49/mo."
+      },
+      {
+        "name": "Max",
+        "monthly": 109,
+        "annualPerMonth": 96,
+        "per": "workspace",
+        "limits": "Up to 100,000 subscribers, 10 publications, unlimited team seats, 50 AI credits/day, unlimited podcast episodes, 3 shows, 3 Getty credits.",
+        "notes": "Annual card showed $96/mo and $1,151 billed annually with $157/year saving; monthly value is reconstructed from the same official annual/save numbers."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "100,000+ subscribers, custom publications/subscriber limits, 100 AI credits/day, 10 Getty credits, dedicated IPs, SSO, account manager.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "$0; 2,500 subscribers, unlimited sends, 3 publications, 1 team member, 10 AI credits/day, 1 podcast episode/month, 1 show.",
+    "billingTerms": "monthly + annual; annual cards show lower per-month price billed annually",
+    "priceChanges": [],
+    "hiddenCosts": "Stripe processing applies to paid subscriptions; beehiiv take rate is 0% on paid subscription revenue; Enterprise needed above 100K/custom limits.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.beehiiv.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "You can build a newsletter CMS and send emails, but beehiiv's moat is deliverability, growth network, recommendations, ad marketplace, automations, analytics, and migrations.",
+  "coreLoopDIY": "Create posts, maintain subscribers, send campaigns through an email provider, publish web archive, and show basic analytics.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "email service provider",
+    "domain/DNS auth",
+    "database",
+    "CMS/editor",
+    "unsubscribe/compliance",
+    "hosting"
+  ],
+  "whatYouLose": [
+    "email deliverability",
+    "referral/recommendation network",
+    "ad network",
+    "automations",
+    "analytics",
+    "paid newsletter tooling",
+    "migrations"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "network-effects"
+  ],
+  "moatNotes": "deliverability/network/monetization",
+  "whyPeopleStillPay": "They pay because audience growth and email reliability are harder than writing and sending HTML.",
+  "priorArt": [
+    {
+      "name": "Ghost",
+      "url": "https://github.com/TryGhost/Ghost",
+      "desc": "Open-source publishing/newsletter platform with memberships and email support.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Ghost",
+      "url": "https://ghost.org/",
+      "type": "open-source",
+      "repo": "https://github.com/TryGhost/Ghost",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Publishing, newsletters, memberships and paid subscriptions on your server; beehiiv's ad network and growth machinery stay behind.",
+      "stars": 54700,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Substack",
+      "url": "https://substack.com/",
+      "desc": "No monthly bill, but ten percent of paid subscription revenue is not free once monetization works."
+    }
+  ],
+  "relatedSlugs": [
+    "kit",
+    "mailchimp",
+    "ghost-pro"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Valuable 'kinda' because the network/monetization layer is the real reason to pay.",
+  "prompt": "Build me a personal newsletter system to replace beehiiv. Requirements:\n\n- Node + Express + better-sqlite3. Posts are Markdown files in posts/;\n  subscribers live in SQLite: email, token, subscribed_at, unsubscribed_at.\n- A localhost admin page: write and preview a post (marked, rendered inside\n  a tested single-column email HTML template), see subscriber count, send.\n- Sending via Resend or plain SMTP, creds in .env. Every email carries a\n  one-click unsubscribe link (token in the URL) and a List-Unsubscribe\n  header; that is a legal requirement, never skip it.\n- Log each send per subscriber as sent or failed so an interrupted batch\n  resumes without double-sending anyone.\n- Public surface, deployable as one small server: a subscribe form with a\n  double-opt-in confirmation email, and a web archive of past posts at\n  /archive.\n- CSV import and export of the subscriber list.\n- Out of scope: open/click analytics, referral programs, and paid\n  subscriptions; beehiiv's growth network is the actual product.\n- README: .env keys, the ESP's SPF/DKIM DNS records, and a blunt warning to\n  warm up a new sending domain slowly or everything lands in spam;\n  deliverability is most of what the fee buys.",
+  "promptCurated": false
+}

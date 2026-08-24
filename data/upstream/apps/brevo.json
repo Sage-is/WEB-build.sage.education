@@ -1,0 +1,304 @@
+{
+  "slug": "brevo",
+  "name": "Brevo",
+  "domain": "brevo.com",
+  "appURL": "https://brevo.com",
+  "category": "newsletter",
+  "subcategory": "email newsletters and creator publishing",
+  "tagline": "Send a low-volume newsletter and transactional messages with clear consent records",
+  "priceMonthly": 9,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://brevo.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Starter starting monthly tier; send volume changes price.",
+    "native": "9 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "300 email sends/day, up to 100,000 stored contacts, 1 user, automation up to 2,000 contacts, basic reporting.",
+        "notes": null
+      },
+      {
+        "name": "Starter",
+        "monthly": 9,
+        "annualPerMonth": 8.1,
+        "per": "workspace",
+        "limits": "Starts at 5,000 monthly emails; no daily send limit; contact tiers from 500 to 500,000 depending email volume.",
+        "notes": "Annual price uses official 10% yearly discount."
+      },
+      {
+        "name": "Standard",
+        "monthly": 18,
+        "annualPerMonth": 16.2,
+        "per": "workspace",
+        "limits": "Starts at 5,000 monthly emails; up to 3 user seats via add-on, 1 landing page, unlimited automation contacts, A/B testing, AI send time.",
+        "notes": "Annual price uses official 10% yearly discount."
+      },
+      {
+        "name": "Professional",
+        "monthly": 499,
+        "annualPerMonth": 449.1,
+        "per": "workspace",
+        "limits": "Starts at 150,000 monthly emails; up to 2,000,000 contacts, 10 user seats, 10 landing pages, 1 custom object.",
+        "notes": "Annual price uses official 10% yearly discount."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom volume, unlimited contacts, unlimited seats, 40,000 push target limit, 1 dedicated IP included, SAML, SLA, CSM.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "$0; 300 emails/day, up to 100,000 contacts, 1 user, automation up to 2,000 contacts.",
+    "billingTerms": "monthly + yearly (-10%); yearly paid upfront; plan credits renew monthly",
+    "priceChanges": [],
+    "hiddenCosts": "Unused monthly email credits expire; paid contact overages can trigger auto-upgrade; remove-logo add-on $9/mo, extra Standard seats $9/mo, dedicated IP $251/year, SAML $324/mo, SMS/WhatsApp priced separately.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.brevo.com/pricing/",
+      "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Brevo, send a low-volume newsletter and transactional messages with clear consent records. The hard boundary is deliverability infrastructure, multichannel messaging, crm, automation, and support, plus deliverability, growth network, and integrations.",
+  "coreLoopDIY": "Collect subscribers with clear consent records, compose and send a low-volume newsletter and transactional messages, publish a web archive, and report basic delivery and click events.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Amazon SES account",
+    "verified sending domain",
+    "PostgreSQL",
+    "public HTTPS deploy target",
+    "DNS access"
+  ],
+  "whatYouLose": [
+    "deliverability infrastructure, multichannel messaging, CRM, automation, and support",
+    "inbox-placement expertise",
+    "advanced automations",
+    "commerce integrations",
+    "recommendation and ad networks"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations",
+    "network-effects"
+  ],
+  "moatNotes": "deliverability, growth network, and integrations",
+  "replacementScope": "single-publication newsletter",
+  "ongoingBurden": "DNS authentication, reputation, bounces, complaints, unsubscribe compliance, templates, queues, analytics, backups, and support",
+  "whyPeopleStillPay": "People still pay for Brevo because newsletter operators pay for inbox placement, growth mechanics, and operational confidence on publication day. The recurring cost buys DNS authentication, reputation, bounces, complaints, unsubscribe compliance, templates, queues, analytics, backups, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Listmonk",
+      "url": "https://github.com/knadh/listmonk",
+      "desc": "Mature open-source newsletter and mailing-list manager."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Brevo Free",
+      "url": "https://www.brevo.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "The vendor's own free tier does newsletters and transactional mail; 300 messages a day is the small print.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Contacts, campaigns, consent records, and message events live in Brevo's cloud; contacts can be exported as CSV.",
+        "gapVsPaid": "Brevo Free keeps the same product and consent records, but the 300-message daily cap, Brevo branding, and paid-gated reporting and automation limits are the tradeoff.",
+        "setupBlocker": "Authenticating a custom sending domain requires adding DNS records.",
+        "sources": [
+          "https://www.brevo.com/pricing/",
+          "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans",
+          "https://help.brevo.com/hc/en-us/articles/360019920220-Export-your-contacts-from-Brevo",
+          "https://www.brevo.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "listmonk",
+      "url": "https://listmonk.app/",
+      "type": "open-source",
+      "repo": "https://github.com/knadh/listmonk",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Fast campaigns plus a transactional API and explicit subscriber states; the visual polish is utilitarian.",
+      "stars": 22600,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "self-hosted",
+        "install": "Docker Compose or a single release binary plus PostgreSQL",
+        "engines": null,
+        "dataFormat": "Subscribers, campaigns, templates, and analytics live in a PostgreSQL database on your server.",
+        "gapVsPaid": "listmonk is fast and explicit about subscriber states, but it lacks Brevo's managed deliverability, broad automation suite, CRM-style contact tools, and polished visual workflow builder.",
+        "setupBlocker": "You still need a PostgreSQL database and a trustworthy SMTP/API sender with authenticated DNS.",
+        "sources": [
+          "https://github.com/knadh/listmonk",
+          "https://listmonk.app/docs/installation/",
+          "https://www.brevo.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Loops Free",
+      "url": "https://loops.so/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Marketing and transactional email share one hosted account; the free ceiling is 1,000 contacts.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Contacts, custom properties, events, workflows, and message history live in Loops' cloud; contacts can be imported/exported as CSV.",
+        "gapVsPaid": "Loops Free unifies marketing and transactional email, but its 1,000-contact and 4,000-email rolling limits are tighter and its consent/list-management surface is narrower than Brevo's.",
+        "setupBlocker": "You must authenticate a sending domain and instrument your app or API before lifecycle emails become useful.",
+        "sources": [
+          "https://loops.so/pricing",
+          "https://loops.so/docs/account/billing",
+          "https://loops.so/docs/contacts/import-export",
+          "https://www.brevo.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Notifuse",
+      "url": "https://www.notifuse.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Notifuse/notifuse",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Campaigns, transactional API and subscription records in one compose stack; delivery still needs an SMTP provider.",
+      "stars": 2038,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Notifuse Cloud signup or self-host with Docker",
+        "engines": null,
+        "dataFormat": "Self-hosted contact, campaign, event, and analytics data lives in PostgreSQL; uploaded assets use S3-compatible storage.",
+        "gapVsPaid": "Notifuse can hold contacts, campaigns, and transactional events, but you must supply and operate the hosting, object storage, and actual mail-delivery provider that Brevo bundles.",
+        "setupBlocker": "Self-hosting needs Docker, PostgreSQL, object storage, a public domain, and a separately configured SMTP or email API provider.",
+        "sources": [
+          "https://github.com/Notifuse/notifuse",
+          "https://docs.notifuse.com/",
+          "https://www.notifuse.com/",
+          "https://www.brevo.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plunk",
+      "url": "https://www.useplunk.com/",
+      "type": "open-source",
+      "repo": "https://github.com/useplunk/plunk",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Transactional and campaign email with workflows; self-hosting is free, sending is not magic.",
+      "stars": 5300,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup or Docker Compose",
+        "engines": null,
+        "dataFormat": "Self-hosted data lives in PostgreSQL, queues in Redis, and uploads in bundled MinIO or another S3-compatible store.",
+        "gapVsPaid": "Plunk handles both transactional and campaign email, but self-hosting its multi-service stack and configuring SES is much less turnkey than Brevo's managed sending and compliance workflow.",
+        "setupBlocker": "The self-host path needs Docker, several subdomains, DNS/TLS, and an AWS SES account with credentials and domain verification.",
+        "sources": [
+          "https://github.com/useplunk/plunk",
+          "https://docs.useplunk.com/self-hosting/introduction",
+          "https://docs.useplunk.com/self-hosting/docker",
+          "https://docs.useplunk.com/self-hosting/environment-variables",
+          "https://www.brevo.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Sender Free",
+      "url": "https://www.sender.net/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Newsletters, transactional email and consent-friendly lists with 15,000 monthly sends; one seat means one cook.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Subscribers, campaigns, automations, and engagement events live in Sender's cloud; subscriber data can be exported.",
+        "gapVsPaid": "Sender Free covers the core hosted job, but one free user, vendor branding, and its contact/send ceilings make collaboration and growth weaker than Brevo.",
+        "setupBlocker": "A custom sending domain must be verified with DNS records for reliable delivery.",
+        "sources": [
+          "https://www.sender.net/pricing/",
+          "https://www.sender.net/help/account-settings-and-billing/how-sender-pricing-works/",
+          "https://www.sender.net/help/sender-authentication/",
+          "https://www.brevo.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "substack",
+    "mailerlite",
+    "activecampaign"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a single-publication newsletter DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Brevo in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Amazon SES; do not offer alternative stacks.\nThe core loop is: collect subscribers with clear consent records, compose and send a low-volume newsletter and transactional messages, publish a web archive, and report basic delivery and click events.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement subscriber import, double opt-in, unsubscribe, suppression, tags, and consent timestamps.\nCreate a Markdown campaign editor with HTML and plain-text previews.\nQueue sends through SES with retries, rate limits, idempotency, and resumable batches.\nProcess delivery, bounce, complaint, open, and click webhooks without logging message content.\nPublish a simple issue archive and subscriber preference page.\nAdd test sends, seed-list checks, DNS setup guidance, exports, and backups.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a newsletter recommendation marketplace.\nDeliberately leave out ad sales and payment infrastructure.\nDeliberately leave out complex lifecycle automation and enterprise deliverability support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

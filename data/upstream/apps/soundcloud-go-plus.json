@@ -1,0 +1,116 @@
+{
+  "slug": "soundcloud-go-plus",
+  "name": "SoundCloud Go Plus",
+  "domain": "soundcloud.com",
+  "appURL": "https://soundcloud.com",
+  "category": "audio",
+  "subcategory": "music services and creator audio tools",
+  "tagline": "Host and stream user-owned creator audio with comments on a private server",
+  "priceMonthly": 10.99,
+  "pricing": {
+    "plan": "Go plus",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://soundcloud.com/go",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical US monthly Go plus rate.",
+    "native": "10.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 account; ad-supported listening; no numeric listening cap is publicly stated.",
+        "notes": null
+      },
+      {
+        "name": "Go",
+        "monthly": 4.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 account; offline and ad-free listening; 7-day trial.",
+        "notes": null
+      },
+      {
+        "name": "Go+",
+        "monthly": 10.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 account; full catalog, offline listening and selected DJ-app access; 30-day trial.",
+        "notes": null
+      },
+      {
+        "name": "Student Go+",
+        "monthly": 5.49,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 verified student account; Go+ benefits; 30-day trial.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "1 account; ad-supported listening; no numeric listening cap is publicly stated.",
+    "billingTerms": "Monthly only; no annual plan is publicly offered.",
+    "priceChanges": [],
+    "hiddenCosts": "SoundCloud says purchases through mobile app stores are roughly 30% more expensive than direct web billing; direct U.S. web prices are used here.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://soundcloud.com/company/plans"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For SoundCloud Go Plus, host and stream user-owned creator audio with comments on a private server. The hard boundary is creator network, licensed catalog, discovery, rights handling, uploads, and social graph, plus licensed content, rights, and distribution network.",
+  "coreLoopDIY": "Host and stream legally owned or user-created tracks with comments on a private server, and provide a private playback workflow.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "legally owned local audio files",
+    "ffmpeg",
+    "local storage",
+    "optional audio-analysis models"
+  ],
+  "whatYouLose": [
+    "creator network, licensed catalog, discovery, rights handling, uploads, and social graph",
+    "licensed music catalog",
+    "royalty and distribution relationships",
+    "global streaming infrastructure",
+    "artist network and recommendations"
+  ],
+  "moatTags": [
+    "content-rights",
+    "network-effects",
+    "scale-infra"
+  ],
+  "moatNotes": "licensed content, rights, and distribution network",
+  "replacementScope": "personal library or creator utility",
+  "ongoingBurden": "catalog licensing, royalties, identity, content delivery, moderation, recommendations, payouts, codecs, and rights disputes",
+  "whyPeopleStillPay": "People still pay for SoundCloud Go Plus because the product is the catalog, rights chain, and distribution network; a player or processing tool is only the visible edge. The recurring cost buys catalog licensing, royalties, identity, content delivery, moderation, recommendations, payouts, codecs, and rights disputes, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Navidrome",
+      "url": "https://github.com/navidrome/navidrome",
+      "desc": "Active open-source personal music server for legally owned libraries."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Navidrome",
+      "url": "https://www.navidrome.org/",
+      "desc": "A good private jukebox, but it has no SoundCloud-style track comments."
+    }
+  ],
+  "relatedSlugs": [
+    "spotify-premium",
+    "apple-music",
+    "youtube-music-premium"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Go plus plan and a personal library or creator utility DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for SoundCloud Go Plus in an empty repository.\nUse Python 3.12, FastAPI, SQLite, ffmpeg, and a local web interface; do not offer alternative stacks.\nThe core loop is: host and stream legally owned or user-created tracks with comments on a private server, and provide a private playback workflow.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex only user-selected folders and preserve source audio without modification.\nRead tags and artwork, calculate loudness and waveform data, and detect exact duplicates by hash.\nProvide albums, artists, playlists, search, queue, favorites, and resumable local playback.\nAdd optional creator tools for trim, normalize, split stems through a local model, and export new files.\nKeep all rights and source information attached to imported tracks and display it during export.\nDocument that the application does not provide music, licensing, distribution, or royalty collection.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out copyrighted catalog acquisition or sharing.\nDeliberately leave out streaming-service circumvention.\nDeliberately leave out royalty accounting, label distribution, and global content delivery.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

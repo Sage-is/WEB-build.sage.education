@@ -1,0 +1,229 @@
+{
+  "slug": "pimsleur",
+  "name": "Pimsleur",
+  "domain": "pimsleur.com",
+  "appURL": "https://pimsleur.com",
+  "category": "education",
+  "subcategory": "learning, flashcards and language practice",
+  "tagline": "Organize user-owned audio lessons with spaced recall prompts and progress",
+  "priceMonthly": 20.95,
+  "pricing": {
+    "plan": "All Access",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://pimsleur.com/subscriptions",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official All Access monthly subscription.",
+    "native": "20.95 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Audio-Only, single language",
+        "monthly": 14.95,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "All available audio lessons for 1 language; course depth varies by language",
+        "notes": "Not available for every language."
+      },
+      {
+        "name": "Premium, single language",
+        "monthly": 19.95,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "All available levels for 1 language plus reading, Voice Coach, flashcards, and review features",
+        "notes": null
+      },
+      {
+        "name": "All Access, monthly",
+        "monthly": 20.95,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "All available levels across 51 languages; all app features",
+        "notes": null
+      },
+      {
+        "name": "All Access, annual",
+        "monthly": null,
+        "annualPerMonth": 13.75,
+        "per": "user",
+        "limits": "All available levels across 50+ languages; billed $164.95 annually",
+        "notes": "Effective monthly rate rounded from the official annual total."
+      },
+      {
+        "name": "All Access, lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "50+ languages and all available levels; live page lists $798 one-time and a $478.80 promotional checkout price",
+        "notes": "One-time purchase, not a subscription; promotional eligibility and expiry can change."
+      },
+      {
+        "name": "Single-language lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Permanent access to the selected language/levels; price varies by language and number of levels",
+        "notes": "One-time purchase; no single universal price is published."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier (1 sample lesson; paid subscriptions offer a 7-day trial)",
+    "billingTerms": "Audio-Only and Premium are monthly; All Access monthly or annual; lifetime products are one-time purchases; trials auto-convert",
+    "priceChanges": [],
+    "hiddenCosts": "Course depth varies by language; lifetime discounts are promotional, and app-store prices can differ slightly from direct web prices.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.pimsleur.com/subscriptions",
+      "https://www.pimsleur.com/learn-french/",
+      "https://www.pimsleur.com/learn-hindi/subscription-audio/",
+      "https://www.pimsleur.com/pimsleur-faq/",
+      "https://www.pimsleur.com/learn-french/lifetime-subscription/",
+      "https://www.pimsleur.com/subscription-terms/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Pimsleur, organize user-owned audio lessons with spaced recall prompts and progress. The hard boundary is licensed audio curriculum, pedagogy, mobile apps, and language catalog, plus content, pedagogy, and network.",
+  "coreLoopDIY": "Organize user-owned audio lessons into a study plan, schedule spaced retrieval practice, and show progress without claiming accredited instruction.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "modern browser",
+    "user-supplied study material",
+    "optional speech or language-model API key"
+  ],
+  "whatYouLose": [
+    "licensed audio curriculum, pedagogy, mobile apps, and language catalog",
+    "licensed course catalog",
+    "expert curriculum",
+    "human feedback",
+    "large learner network and certification"
+  ],
+  "moatTags": [
+    "content-rights"
+  ],
+  "moatNotes": "content, pedagogy, and network",
+  "replacementScope": "personal study companion",
+  "ongoingBurden": "curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support",
+  "whyPeopleStillPay": "People still pay for Pimsleur because the learning loop is buildable, while trusted curriculum, instructors, feedback, credentials, and community are not. The recurring cost buys curriculum quality, assessment validity, content rights, spaced-repetition tuning, speech models, sync, moderation, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Moodle",
+      "url": "https://github.com/moodle/moodle",
+      "desc": "Long-running open-source learning platform with courses, assessments, and progress tracking."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Anki",
+      "url": "https://apps.ankiweb.net/",
+      "type": "open-source",
+      "repo": "https://github.com/ankitects/anki",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Turns legally owned audio and recall prompts into a scheduled personal course, without supplying Pimsleur's recordings.",
+      "stars": 29600,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the Windows installer, macOS DMG or official Linux launcher",
+        "engines": null,
+        "dataFormat": "Local profile files including collection.anki2, collection.media and backups; exports use .apkg/.colpkg, with optional AnkiWeb sync",
+        "gapVsPaid": "Anki does not include Pimsleur's copyrighted audio course or hands-free conversational pacing; the learner must create every prompt.",
+        "setupBlocker": null,
+        "sources": [
+          "https://apps.ankiweb.net/",
+          "https://github.com/ankitects/anki",
+          "https://github.com/ankitects/anki/blob/main/LICENSE",
+          "https://docs.ankiweb.net/files.html",
+          "https://docs.ankiweb.net/backups.html",
+          "https://www.pimsleur.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "AnkiDroid",
+      "url": "https://ankidroid.org/",
+      "type": "open-source",
+      "repo": "https://github.com/ankidroid/Anki-Android",
+      "platforms": [
+        "android"
+      ],
+      "desc": "An offline Android player and scheduler for your own audio recall cards, not a free copy of the copyrighted course.",
+      "stars": 11499,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Install from Google Play or F-Droid, or sideload the official APK",
+        "engines": null,
+        "dataFormat": "An Anki collection and media on the Android device, with .apkg import/export and optional AnkiWeb sync",
+        "gapVsPaid": "AnkiDroid does not include Pimsleur's audio course or hands-free conversational pacing; the learner must create every recall card.",
+        "setupBlocker": null,
+        "sources": [
+          "https://ankidroid.org/",
+          "https://github.com/ankidroid/Anki-Android",
+          "https://github.com/ankidroid/Anki-Android/blob/main/COPYING",
+          "https://docs.ankidroid.org/",
+          "https://www.pimsleur.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Moodle",
+      "url": "https://moodle.org/",
+      "type": "open-source",
+      "repo": "https://github.com/moodle/moodle",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Sequences owned audio lessons, recall activities and progress for a learner or class; setup is much less conversational.",
+      "stars": 7300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Upload the PHP release to a web server, create a database and moodledata directory, then complete the browser installer",
+        "engines": null,
+        "dataFormat": "Courses, users, grades and settings in SQL; uploaded files in the separate moodledata directory",
+        "gapVsPaid": "Moodle cannot reproduce Pimsleur's expertly sequenced conversational audio or effortless hands-free lesson flow.",
+        "setupBlocker": "PHP and database requirements, protected writable storage, cron, SMTP, backups and upgrades are all the operator's responsibility",
+        "sources": [
+          "https://github.com/moodle/moodle",
+          "https://github.com/moodle/moodle/blob/main/COPYING.txt",
+          "https://docs.moodle.org/501/en/Installing_Moodle",
+          "https://docs.moodle.org/501/en/Moodledata_directory",
+          "https://www.pimsleur.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "duolingo-super",
+    "brilliant",
+    "babbel"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the All Access plan and a personal study companion DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Pimsleur in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and a service worker for offline use; do not offer alternative stacks.\nThe core loop is: organize user-owned audio lessons into a study plan, schedule spaced retrieval practice, and show progress without claiming accredited instruction.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImport Markdown, text, or user-authored notes and split them into editable learning units.\nCreate flashcards and short quizzes only after showing the generated items for approval.\nImplement a transparent spaced-repetition schedule with due, again, hard, good, and easy actions.\nAdd goals, study sessions, streak-free progress charts, notes, and weak-topic review.\nFor language practice, record the learner and compare timing or pronunciation without presenting medical claims.\nSupport offline use, full export, reset, backup, and deletion of all learning data.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out licensed premium courses.\nDeliberately leave out accredited certificates and grading.\nDeliberately leave out live tutors, large classrooms, and a learner marketplace.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

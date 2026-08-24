@@ -1,0 +1,127 @@
+{
+  "slug": "savvycal",
+  "name": "SavvyCal",
+  "domain": "savvycal.com",
+  "category": "scheduling",
+  "subcategory": "booking links",
+  "tagline": "Scheduling links with overlay calendars and nicer booking UX",
+  "priceMonthly": 10,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "native": "10 USD",
+    "source": "https://savvycal.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Basic listed at $12/month monthly and $10/month annually.",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 10,
+        "annualPerMonth": 8.33,
+        "per": "user",
+        "limits": "Unlimited calendars, scheduling links, team scheduling, and meeting polls.",
+        "notes": "Annual plan gives 2 months free."
+      },
+      {
+        "name": "Premium",
+        "monthly": 17,
+        "annualPerMonth": 14.17,
+        "per": "user",
+        "limits": "Everything in Basic plus custom domains, delegated access, paid bookings, and branding removal.",
+        "notes": "Annual plan gives 2 months free."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (2 months free); 30-day money-back guarantee",
+    "priceChanges": [],
+    "hiddenCosts": "Paid bookings require Premium; Stripe or other payment-processing fees still apply.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://savvycal.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core booking-link loop can be cloned, but calendar reliability, time-zone correctness, reminders, and polished link UX make it more than a trivial script.",
+  "coreLoopDIY": "Read availability, generate shareable scheduling pages, write booked events, and email confirmations.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "calendar OAuth",
+    "hosted backend",
+    "email service",
+    "timezone library",
+    "auth"
+  ],
+  "whatYouLose": [
+    "overlay-calendar UX",
+    "team links",
+    "routing",
+    "payments",
+    "reminders",
+    "support"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "calendar integration/polish",
+  "whyPeopleStillPay": "They pay for a nicer, reliable scheduling experience that avoids friction with guests.",
+  "priorArt": [
+    {
+      "name": "Cal.com",
+      "url": "https://github.com/calcom/cal.com",
+      "desc": "Open-source scheduling platform covering the main booking-link mechanics.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "YouCanBookMe Free",
+      "url": "https://youcanbook.me/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "browser-extension"
+      ],
+      "desc": "One booking page, but it keeps forms, payments, confirmations, polls and the calendar-overlay trick.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "zcal Free",
+      "url": "https://zcal.co/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "The booker sees calendar conflicts on the page, and free also buys unlimited links, forms, reminders and polls.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Cal.com Free",
+      "url": "https://cal.com/",
+      "desc": "Excellent free scheduling, but no equivalent overlay-calendar booking experience."
+    }
+  ],
+  "relatedSlugs": [
+    "raycast-pro",
+    "notion",
+    "evernote"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Good smaller-brand page; open-source prior art makes the verdict nuanced.",
+  "prompt": "Build me a solo booking page to replace SavvyCal: one person, one calendar, a few link\ntypes. Requirements:\n\n- Node + Express + better-sqlite3 on my VPS behind HTTPS; server-rendered pages, Luxon\n  for timezone math.\n- Link types in links.json: slug, title, duration, buffer, allowed hours (e.g. /intro,\n  30-min slots, 15-min buffer, weekdays 10:00-16:00 my time).\n- Availability from Google Calendar free/busy (googleapis, OAuth creds in .env); show\n  open slots for the next 14 days in the visitor's detected timezone with a timezone\n  switcher.\n- Booking form: name + email + note. On submit, create the event on my calendar with the\n  guest as attendee so Google sends the invite, and store the booking in SQLite.\n- Re-check free/busy at submit time, not just render time, so two guests cannot grab the\n  same slot.\n- Confirmation email to guest and me via Resend or SMTP (creds in .env), including a\n  cancel link that deletes the event.\n- No accounts, no telemetry beyond my own server logs.\n- Out of scope: team links, routing, payments, and reminder sequences. One calendar,\n  mine.\n- README: the Google Cloud console OAuth steps (budget an hour, it is the worst part)\n  and the DNS/HTTPS notes.",
+  "promptCurated": false
+}

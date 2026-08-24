@@ -1,0 +1,134 @@
+{
+  "slug": "sprout-social",
+  "name": "Sprout Social",
+  "domain": "sproutsocial.com",
+  "appURL": "https://sproutsocial.com",
+  "category": "social-media",
+  "subcategory": "enterprise social management",
+  "tagline": "Publishing, engagement, listening, analytics, and customer care",
+  "priceMonthly": 249,
+  "pricing": {
+    "plan": "Standard",
+    "kind": "fixed",
+    "basis": "per user per month",
+    "unit": "per-seat",
+    "currency": "USD",
+    "native": "$249/user/month",
+    "source": "https://sproutsocial.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Essentials",
+        "monthly": 99,
+        "annualPerMonth": 79,
+        "per": "user",
+        "limits": "5 social profiles, 1 seat priced separately, profile/post reporting and publishing workflow",
+        "notes": null
+      },
+      {
+        "name": "Standard",
+        "monthly": 249,
+        "annualPerMonth": 199,
+        "per": "user",
+        "limits": "5 social profiles, 10 brand keywords/group, consolidated inbox and review management",
+        "notes": null
+      },
+      {
+        "name": "Professional",
+        "monthly": 399,
+        "annualPerMonth": 299,
+        "per": "user",
+        "limits": "Unlimited social profiles, 10 brand keywords/group, competitor/tag/paid insights",
+        "notes": null
+      },
+      {
+        "name": "Advanced",
+        "monthly": 499,
+        "annualPerMonth": 399,
+        "per": "user",
+        "limits": "Unlimited social profiles, 20 brand keywords/group, API/helpdesk integrations and care reports",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom plan, onboarding, SSO setup and priority support",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual; 30-day free trial, no credit card; displayed annual rates require annual billing",
+    "priceChanges": [],
+    "hiddenCosts": "Every seat is billed separately; Premium Analytics, Listening, Employee Advocacy and professional services are separately priced add-ons; add-on prices are not public.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://sproutsocial.com/pricing/",
+      "https://sproutsocial.com/insights/social-media-management-cost/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Do not mistake the interface for the product. Sprout Social's durable value is platform APIs, distribution, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a personal enterprise social management planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "hosted database and worker",
+    "official platform OAuth credentials where available",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "direct publishing reliability as platform APIs change",
+    "reliable direct publishing across networks",
+    "analytics history and attribution",
+    "team approvals and asset workflows",
+    "protection from API and policy changes"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "platform APIs/distribution",
+  "whyPeopleStillPay": "Sprout Social: Social tools survive because networks change APIs, permissions, formats, and anti-spam rules constantly.",
+  "ongoingBurden": "Maintain OAuth, token refresh, media constraints, rate limits, scheduling, webhooks, retries, and platform policy compliance.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Open-source social scheduling and publishing platform."
+    },
+    {
+      "name": "Mixpost",
+      "url": "https://github.com/inovector/mixpost",
+      "desc": "Self-hosted social media management software."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "BrightBean Studio",
+      "url": "https://brightbean.xyz/studio/",
+      "desc": "Publishing, inbox, analytics and collaboration are strong; public listening and customer-care depth are missing."
+    },
+    {
+      "name": "Postiz",
+      "url": "https://postiz.com/",
+      "desc": "Scheduling, teams and analytics cover the commodity layer, not listening or enterprise care."
+    }
+  ],
+  "relatedSlugs": [
+    "socialpilot",
+    "missinglettr",
+    "agorapulse"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Sprout Social survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Sprout Social; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build a personal enterprise social management planner that stores drafts, previews platform variants, and exports a posting queue without pretending to bypass platform APIs.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: direct publishing reliability as platform APIs change; reliable direct publishing across networks; analytics history and attribution.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

@@ -1,0 +1,139 @@
+{
+  "slug": "iubenda",
+  "name": "Iubenda",
+  "domain": "iubenda.com",
+  "appURL": "https://iubenda.com",
+  "category": "legal",
+  "subcategory": "legal documents, privacy compliance and business administration",
+  "tagline": "Maintain versioned privacy-policy and consent records for qualified review",
+  "priceMonthly": 6.99,
+  "pricing": {
+    "plan": "Essentials",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://iubenda.com/en/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Essentials monthly equivalent; modules and site count affect price.",
+    "native": "6.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "1,000 pageviews/month; 3 third-party clauses; 1 language; iubenda branding",
+        "notes": "Cookie solution is disabled after the traffic cap is exceeded."
+      },
+      {
+        "name": "Essentials",
+        "monthly": 6.99,
+        "annualPerMonth": 5.99,
+        "per": "workspace",
+        "limits": "25,000 pageviews/month; 20 third-party clauses; 1 language; monthly scans",
+        "notes": "Per site."
+      },
+      {
+        "name": "Advanced",
+        "monthly": 27.99,
+        "annualPerMonth": 24.99,
+        "per": "workspace",
+        "limits": "50,000 pageviews/month; 30 third-party clauses; all languages; monthly scans",
+        "notes": "Per site."
+      },
+      {
+        "name": "Ultimate",
+        "monthly": 119.99,
+        "annualPerMonth": 99.99,
+        "per": "workspace",
+        "limits": "150,000 pageviews/month; unlimited clauses; all languages; hourly scans",
+        "notes": "Per site."
+      },
+      {
+        "name": "Accessibility Lite",
+        "monthly": 7,
+        "annualPerMonth": 7,
+        "per": "workspace",
+        "limits": "10,000 pageviews/month included; maximum 80,000 before upgrade; 20 AI alt-text generations; overage $7 per extra 10,000 pageviews",
+        "notes": null
+      },
+      {
+        "name": "Accessibility Standard",
+        "monthly": 65,
+        "annualPerMonth": 60,
+        "per": "workspace",
+        "limits": "150,000 pageviews/month included; maximum 1,000,000; unlimited AI alt text; overage $7 per extra 10,000 pageviews",
+        "notes": null
+      },
+      {
+        "name": "Accessibility Custom",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom traffic, support, and commercial terms",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "1,000 pageviews/month, 3 third-party clauses, 1 language, and iubenda branding; cookie solution is disabled above the cap",
+    "billingTerms": "monthly + annual; core annual rates are about 16% lower and accessibility annual rates about 10% lower",
+    "priceChanges": [],
+    "hiddenCosts": "Core-plan traffic overage is €0.05 per 1,000 pageviews. Accessibility overage is $7 per 10,000 pageviews and Lite must upgrade above 80,000. VAT is extra. Forms/Newsletter Consent Database capacity costs €5/month per 1,000 consents.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.iubenda.com/en/pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Iubenda, maintain versioned privacy-policy and consent records for qualified review. The hard boundary is legal content updates, consent management, scanning, jurisdiction coverage, and compliance operations, plus expert judgment, compliance, and regulated services.",
+  "coreLoopDIY": "Collect facts, fill clearly labeled privacy-policy and consent templates, track versions and approvals, and repeatedly state that the output requires qualified legal review.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "self-hosted deployment",
+    "PostgreSQL",
+    "jurisdiction-specific templates supplied by the user or counsel",
+    "secure backup"
+  ],
+  "whatYouLose": [
+    "legal content updates, consent management, scanning, jurisdiction coverage, and compliance operations",
+    "legal advice",
+    "jurisdictional assurance",
+    "filing and registered-agent network",
+    "continuous regulatory monitoring and liability"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "brand-trust"
+  ],
+  "moatNotes": "expert judgment, compliance, and regulated services",
+  "replacementScope": "internal questionnaire and template tracker",
+  "ongoingBurden": "law changes, jurisdiction, template provenance, access, signatures, filings, deadlines, evidence, retention, security, and professional liability",
+  "whyPeopleStillPay": "People still pay for Iubenda because the durable value is expert accountability and regulated execution; document generation alone cannot supply either. The recurring cost buys law changes, jurisdiction, template provenance, access, signatures, filings, deadlines, evidence, retention, security, and professional liability, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "docassemble",
+      "url": "https://github.com/jhpyle/docassemble",
+      "desc": "Open-source expert-system platform for guided interviews and document assembly."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Termly Basic",
+      "url": "https://termly.io/pricing/",
+      "desc": "The free plan allows one basic policy with no policy edits, while exportable consent logs require payment; it does not replace ongoing policy and consent recordkeeping."
+    }
+  ],
+  "relatedSlugs": [
+    "legalzoom",
+    "rocket-lawyer",
+    "clerky"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Essentials plan and a internal questionnaire and template tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Iubenda in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and a versioned Markdown template engine; do not offer alternative stacks.\nThe core loop is: collect facts, fill clearly labeled privacy-policy and consent templates, track versions and approvals, and repeatedly state that the output requires qualified legal review.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate versioned questionnaires, reusable fact fields, conditional sections, templates, and approval states.\nShow the source, jurisdiction, owner, reviewed date, and expiry date for every template.\nGenerate DOCX and PDF drafts with prominent draft and review-required labels.\nKeep an immutable audit log of answers, template version, generation time, downloads, and approvals.\nAdd role-based access, retention, export, encrypted backups, and a deadline calendar.\nDisplay legal-review warnings before generation and again before any final download.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out legal advice or guaranteed compliance.\nDeliberately leave out government filings, identity verification, and registered-agent services.\nDeliberately leave out automatic consent decisions or deployment without qualified review.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

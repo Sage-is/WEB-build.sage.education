@@ -1,0 +1,254 @@
+{
+  "slug": "bazqux-reader",
+  "name": "BazQux Reader",
+  "domain": "bazqux.com",
+  "appURL": "https://bazqux.com",
+  "category": "rss-research",
+  "subcategory": "RSS reader",
+  "tagline": "Fast hosted feed reader with filtering, comments, and full-text reading",
+  "priceMonthly": 2.5,
+  "pricing": {
+    "plan": "Standard",
+    "kind": "fixed",
+    "basis": "annual-equivalent subscription",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "$30/year",
+    "source": "https://bazqux.com/",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Standard",
+        "monthly": null,
+        "annualPerMonth": 2.5,
+        "per": "user",
+        "limits": "Up to 3,000 feeds; 500 filters/smart streams; up to 500 retained articles/feed.",
+        "notes": "Annual-only: $30/year."
+      },
+      {
+        "name": "Supporter",
+        "monthly": null,
+        "annualPerMonth": 4.17,
+        "per": "user",
+        "limits": "Same product limits as Standard; higher payment supports development.",
+        "notes": "Annual-only: $50/year."
+      },
+      {
+        "name": "Lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Lifetime hosted account; same core product limits as the subscription.",
+        "notes": "One-time purchase: $249."
+      }
+    ],
+    "freeTierCaps": "no free tier; 30-day trial",
+    "billingTerms": "annual-only subscriptions plus a one-time lifetime purchase; no month-to-month plan",
+    "priceChanges": [
+      {
+        "what": "Annual subscription",
+        "fromUsd": 19,
+        "toUsd": 30,
+        "when": "2020-03",
+        "source": "https://blog.bazqux.com/2020/07/mark-above-below-article-menu.html"
+      }
+    ],
+    "hiddenCosts": "VAT/GST can be added based on location",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://bazqux.com/",
+      "https://bazqux.com/faq",
+      "https://blog.bazqux.com/2020/07/mark-above-below-article-menu.html"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "BazQux Reader's solo core is compact: build a private RSS reader workspace that imports user-supplied URLs or files, extracts metadata, supports notes, and searches the local corpus. A competent builder can reach a useful personal version in one sitting, while the paid product mainly wins on data, import reliability.",
+  "coreLoopDIY": "Build a private RSS reader workspace that imports user-supplied URLs or files, extracts metadata, supports notes, and searches the local corpus.",
+  "diyTimeEstimate": "one sitting",
+  "replacementScope": "personal replacement for the core loop",
+  "requirements": [
+    "Node.js 22",
+    "browser automation for user-authorized imports",
+    "optional OpenAI API key stored in .env"
+  ],
+  "whatYouLose": [
+    "team libraries and institutional access",
+    "resilient polling of malformed and rate-limited feeds",
+    "licensed scholarly metadata",
+    "publisher-specific import reliability",
+    "citation graph scale"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "data/import reliability",
+  "whyPeopleStillPay": "BazQux Reader: Researchers pay for correct metadata, resilient importers, citation coverage, and workflows that survive publisher and browser changes.",
+  "ongoingBurden": "Maintain parsers, deduplication, PDF extraction, citation styles, and legal access boundaries.",
+  "priorArt": [
+    {
+      "name": "FreshRSS",
+      "url": "https://github.com/FreshRSS/FreshRSS",
+      "desc": "Self-hosted RSS aggregator with multi-user support."
+    },
+    {
+      "name": "Miniflux",
+      "url": "https://github.com/miniflux/v2",
+      "desc": "Minimal self-hosted feed reader with a reliable polling core."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Folo",
+      "url": "https://folo.is",
+      "type": "open-source",
+      "repo": "https://github.com/RSSNext/Folo",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "A modern hosted feed reader with 150 free feeds; self-hosting the backend is not on the menu.",
+      "stars": 38800,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "cloud",
+        "install": "Hosted signup in the web app or install the official desktop/mobile client",
+        "engines": "Provides hosted AI summaries, translation, and text-to-speech; paid tiers add more usage, model selection, and BYOK, while exact default model names are not publicly fixed.",
+        "dataFormat": "Subscriptions, lists, inbox items, read state, actions, and account metadata live in Folo's hosted backend with client-side caches; the open client does not include a supported self-hostable backend.",
+        "gapVsPaid": "Folo's free plan caps feeds and AI actions and does not reproduce BazQux's comment-aware reading, dense power-user interface, or equally predictable full-text behavior.",
+        "setupBlocker": null,
+        "sources": [
+          "https://folo.is/",
+          "https://github.com/RSSNext/Folo",
+          "https://github.com/RSSNext/Folo/blob/dev/LICENSE",
+          "https://folo.is/pricing",
+          "https://folo.is/privacy",
+          "https://bazqux.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "FreshRSS",
+      "url": "https://freshrss.org",
+      "type": "open-source",
+      "repo": "https://github.com/FreshRSS/FreshRSS",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Filtering, folders and full-text reading in a well-kept self-hosted package.",
+      "stars": 15700,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Official Docker image/Compose setup, or a PHP web-server installation",
+        "engines": null,
+        "dataFormat": "Feeds, articles, read state, tags, users, and settings live in SQLite by default or in PostgreSQL/MySQL/MariaDB; the persistent data directory also holds configuration, caches, and extensions.",
+        "gapVsPaid": "FreshRSS lacks BazQux's no-admin hosted speed, comment-aware feeds, polished mobile-client compatibility, and consistently managed full-text extraction.",
+        "setupBlocker": "The first obstacle is supplying a continuously running server, persistent storage, scheduled feed refreshes, HTTPS, backups, and upgrades; there is no first-party managed free account.",
+        "sources": [
+          "https://freshrss.org/",
+          "https://github.com/FreshRSS/FreshRSS",
+          "https://github.com/FreshRSS/FreshRSS/blob/edge/LICENSE.txt",
+          "https://freshrss.github.io/FreshRSS/en/admins/03_Installation.html",
+          "https://github.com/FreshRSS/FreshRSS/tree/edge/Docker",
+          "https://bazqux.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Miniflux",
+      "url": "https://miniflux.app",
+      "type": "open-source",
+      "repo": "https://github.com/miniflux/v2",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Fast reading, regex filters and full-content fetching with very little ceremony.",
+      "stars": 9600,
+      "lastCommit": "2026-05",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "self-hosted",
+        "install": "Install the published binary/package or run the official Docker image, with PostgreSQL",
+        "engines": null,
+        "dataFormat": "Users, subscriptions, fetched entries, read/star state, filters, sessions, and settings live in the operator's PostgreSQL database.",
+        "gapVsPaid": "Miniflux is fast but has thinner filtering, comment handling, full-text controls, sharing, and power-user reading features than BazQux.",
+        "setupBlocker": "PostgreSQL is mandatory, so the first hurdle is not the binary but a database, migrations, scheduled refresh, a reverse proxy with TLS, backups, and upgrades.",
+        "sources": [
+          "https://miniflux.app/",
+          "https://github.com/miniflux/v2",
+          "https://github.com/miniflux/v2/blob/main/LICENSE",
+          "https://miniflux.app/docs/installation.html",
+          "https://miniflux.app/docs/docker.html",
+          "https://bazqux.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "NewsBlur",
+      "url": "https://newsblur.com",
+      "type": "open-source",
+      "repo": "https://github.com/samuelclay/NewsBlur",
+      "platforms": [
+        "web",
+        "macos",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Training filters and comment-aware feeds, paid for with a serious server stack.",
+      "stars": 7600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Hosted signup for the free service, or clone the repository and start its Docker Compose stack",
+        "engines": "Optional AI/Discover features can use an OpenAI API key; NewsBlur also exposes an MCP server for compatible assistants.",
+        "dataFormat": "The hosted account stores feeds, stories, training signals, folders, comments, and read state in NewsBlur's cloud; self-hosting uses PostgreSQL for relational data, MongoDB for stories/read state, Redis caches, and persistent volumes.",
+        "gapVsPaid": "NewsBlur can handle comments and filtering, but its free hosted cap or heavy self-host stack is a worse trade than BazQux's inexpensive, focused hosted service.",
+        "setupBlocker": "None for the limited hosted plan; self-hosting is a serious PostgreSQL, MongoDB, Redis, worker, proxy, storage, backup, and monitoring stack rather than a single-container reader.",
+        "sources": [
+          "https://newsblur.com/",
+          "https://github.com/samuelclay/NewsBlur",
+          "https://github.com/samuelclay/NewsBlur/blob/master/LICENSE",
+          "https://github.com/samuelclay/NewsBlur#docker",
+          "https://newsblur.com/premium",
+          "https://bazqux.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "paperpile",
+    "readcube-papers",
+    "newsblur-premium"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Strong page because BazQux Reader separates a compact personal workflow from the value of long-term polish.",
+  "prompt": "Build a usable personal replacement for the core loop of BazQux Reader.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite + Playwright.\nPrimary job: Build a private RSS reader workspace that imports user-supplied URLs or files, extracts metadata, supports notes, and searches the local corpus.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: team libraries and institutional access; resilient polling of malformed and rate-limited feeds; licensed scholarly metadata.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

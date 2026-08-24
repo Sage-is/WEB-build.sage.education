@@ -1,0 +1,210 @@
+{
+  "slug": "railway",
+  "name": "Railway",
+  "domain": "railway.com",
+  "appURL": "https://railway.com",
+  "category": "hosting",
+  "subcategory": "application hosting and backend platforms",
+  "tagline": "Deploy a few trusted containers and databases on one user-owned host",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Hobby",
+    "basis": "monthly minimum plus usage",
+    "unit": "usage",
+    "source": "https://railway.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Hobby includes a monthly minimum or credit and then usage; recorded amount is the base commitment.",
+    "native": "5 USD",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "First 30 days include $5 trial credit; afterward $1 resource credit/month; 1 project, 3 services/project, 1 vCPU and 0.5 GB RAM/service, 0.5 GB volume, 1 replica, 3-day logs, and 0 custom domains.",
+        "notes": null
+      },
+      {
+        "name": "Hobby",
+        "monthly": 5,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "$5 monthly minimum including $5 usage; 50 projects, 50 services/project, up to 48 vCPU/48 GB per service, 6 replicas, 5 GB volumes, 3 project members and 7-day logs.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 20,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "$20 monthly minimum including $20 usage; 100 projects, 100 services/project, up to 1,000 vCPU/1 TB per service, 42 replicas, 1 TB volumes, unlimited members and 30-day logs.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom commitment; up to 2,400 vCPU/2.4 TB per service, 50 replicas, 5 TB volumes and 90-day logs.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "after a 30-day $5 trial: $1 resource credit/month, 1 project, 3 services/project, 1 vCPU and 0.5 GB RAM/service, 0.5 GB volume, 1 replica, 3-day logs, and no custom domains",
+    "billingTerms": "monthly minimum-spend plans; no public annual plan",
+    "priceChanges": [],
+    "hiddenCosts": "Usage above included credit is $10/GB-month RAM, $20/vCPU-month, $0.05/GB egress and $0.15/GB-month volume storage; Object Storage is $0.015/GB-month. Agent tokens pass through at provider cost and use a default spend cap of $5 on Hobby or $20 on Pro.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://railway.com/pricing",
+      "https://docs.railway.com/pricing/plans",
+      "https://docs.railway.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Railway, deploy a few trusted containers and databases on one user-owned host. The hard boundary is managed infrastructure, usage billing, database templates, networking, and developer experience, plus infrastructure scale, operations, and reliability.",
+  "coreLoopDIY": "Deploy a few trusted containers and databases on one user-owned server, route domains, retain logs, and perform backups.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Linux server",
+    "Docker",
+    "domain and DNS access",
+    "backup destination",
+    "basic systems administration"
+  ],
+  "whatYouLose": [
+    "managed infrastructure, usage billing, database templates, networking, and developer experience",
+    "global edge network",
+    "managed databases",
+    "autoscaling",
+    "DDoS protection, support, and compliance"
+  ],
+  "moatTags": [
+    "scale-infra"
+  ],
+  "moatNotes": "infrastructure scale, operations, and reliability",
+  "replacementScope": "single-server personal platform",
+  "ongoingBurden": "patching, certificates, isolation, secrets, builds, deploys, logs, metrics, backups, capacity, incidents, and security response",
+  "whyPeopleStillPay": "People still pay for Railway because hosting products sell an operations team and failure-domain diversity, not merely a deploy button. The recurring cost buys patching, certificates, isolation, secrets, builds, deploys, logs, metrics, backups, capacity, incidents, and security response, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Coolify",
+      "url": "https://github.com/coollabsio/coolify",
+      "desc": "Active open-source self-hosting platform for applications, databases, and services."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Coolify",
+      "url": "https://coolify.io/",
+      "type": "open-source",
+      "repo": "https://github.com/coollabsio/coolify",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Apps and databases from Git or Docker on your own server, with TLS, logs, environment variables, and backups.",
+      "stars": 57000,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Coolify Cloud signup or one-line install script on a fresh Linux server",
+        "engines": null,
+        "dataFormat": "Self-hosted control data is in an internal PostgreSQL container; deployed apps and databases remain in Docker containers, volumes, and configuration on the user's servers",
+        "gapVsPaid": "Coolify deploys apps and databases from Git, but it cannot match Railway's instant managed project experience, provider-run infrastructure, and low-friction database lifecycle.",
+        "setupBlocker": "A VPS with root SSH access, open ports, DNS, and responsibility for server patching and application-data backups",
+        "sources": [
+          "https://github.com/coollabsio/coolify",
+          "https://coolify.io/docs/get-started/installation",
+          "https://coolify.io/docs/get-started/internal-postgresql-upgrade",
+          "https://coolify.io/docs/knowledge-base/how-to/backup-restore-coolify",
+          "https://railway.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Dokku",
+      "url": "https://dokku.com/",
+      "type": "open-source",
+      "repo": "https://github.com/dokku/dokku",
+      "platforms": [
+        "linux",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "The original tiny Heroku-on-one-box; excellent once you are comfortable treating a server like a pet.",
+      "stars": 32100,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Bootstrap script on a fresh supported Ubuntu or Debian VM, then add an SSH key and domain",
+        "engines": null,
+        "dataFormat": "Application images, configuration, logs, and persistent Docker volumes live on the user's server; service data lives in installed database-plugin volumes",
+        "gapVsPaid": "Dokku can host the same containers, but its CLI-first single-server administration and plugin-managed databases are much rougher than Railway's integrated project UI.",
+        "setupBlocker": "A fresh Linux VM, sudo/SSH competence, DNS, and command-line-only administration",
+        "sources": [
+          "https://github.com/dokku/dokku",
+          "https://dokku.com/docs/getting-started/installation/",
+          "https://dokku.com/docs/advanced-usage/persistent-storage/",
+          "https://dokku.com/docs/deployment/application-deployment/",
+          "https://railway.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Dokploy",
+      "url": "https://dokploy.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Dokploy/dokploy",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A newer self-hosted PaaS for apps and databases, with previews, TLS, logs, and backups in the same control plane.",
+      "stars": 36000,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Dokploy Cloud signup or one-line install script on a Linux VPS",
+        "engines": null,
+        "dataFormat": "Dokploy metadata is stored in PostgreSQL; application and database data lives in Docker named volumes or bind mounts on the deployment servers, with optional S3 backups",
+        "gapVsPaid": "Dokploy has a polished apps-and-databases control plane, but server security, capacity, backups, upgrades, and outages remain yours instead of Railway's.",
+        "setupBlocker": "A VPS with at least 2 GB RAM, free ports 80/443/3000, DNS, and ongoing Docker/server administration",
+        "sources": [
+          "https://github.com/Dokploy/dokploy",
+          "https://github.com/Dokploy/dokploy/blob/canary/LICENSE.MD",
+          "https://docs.dokploy.com/docs/core/installation",
+          "https://docs.dokploy.com/docs/core/architecture",
+          "https://docs.dokploy.com/docs/core/volume-backups",
+          "https://railway.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "vercel",
+    "supabase-pro",
+    "firebase-blaze"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Hobby plan and a single-server personal platform DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Railway in an empty repository.\nUse Docker Compose, Caddy, PostgreSQL, Redis, and a small Go control plane; do not offer alternative stacks.\nThe core loop is: deploy a few trusted containers and databases on one user-owned server, route domains, retain logs, and perform backups.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nAccept a Git repository or container image and one explicit Dockerfile-based build path.\nImplement applications, environments, secrets, domains, health checks, and rolling container replacement.\nUse Caddy for automatic TLS and route only to healthy local containers.\nCapture bounded build and runtime logs and expose restart, rollback, and redeploy actions.\nBack up PostgreSQL metadata and document backups for each deployed application's data volumes.\nAdd host metrics, disk alerts, update instructions, disaster recovery, and a prominent single-server warning.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out multi-region or serverless infrastructure.\nDeliberately leave out managed data stores and global edge delivery.\nDeliberately leave out DDoS response, compliance, and guaranteed uptime.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

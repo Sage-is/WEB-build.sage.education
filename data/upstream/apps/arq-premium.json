@@ -1,0 +1,113 @@
+{
+  "slug": "arq-premium",
+  "name": "Arq Premium",
+  "domain": "arqbackup.com",
+  "appURL": "https://arqbackup.com",
+  "category": "security",
+  "subcategory": "managed backup",
+  "tagline": "Encrypted backup app bundled with cloud storage and retention",
+  "priceMonthly": 5,
+  "pricing": {
+    "plan": "Premium",
+    "kind": "fixed",
+    "basis": "annual-equivalent backup plan",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "$59.99/year",
+    "source": "https://arqbackup.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Arq 7",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "License for 1 computer; back up to storage accounts you provide",
+        "notes": "$49.99 one-time license, scheduled to rise to $59.99 on 2026-09-01; cloud storage is not included."
+      },
+      {
+        "name": "Arq Premium",
+        "monthly": null,
+        "annualPerMonth": 5,
+        "per": "flat",
+        "limits": "Up to 5 computers; 1 TB included cloud storage; versioned encrypted backups",
+        "notes": "$59.99/year, scheduled to rise to $69.99/year on 2026-09-01."
+      }
+    ],
+    "freeTierCaps": "no free tier; trial available, but the official pricing page did not expose a numeric duration",
+    "billingTerms": "Arq 7 is a one-time purchase; Arq Premium is annual only; no monthly subscription",
+    "priceChanges": [],
+    "hiddenCosts": "Arq 7 requires separately paid storage; Arq Premium charges $0.00599/GB/month above 1 TB, and both published prices are scheduled to increase on 2026-09-01",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.arqbackup.com/pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. Arq Premium's durable value is security, infrastructure, trust, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a local diagnostic or backup companion for managed backup; do not claim to replace audited security, identity, VPN, or cloud-storage infrastructure.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "desktop development machine",
+    "user-controlled storage target",
+    "documented threat-model limits",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "audited cryptography and incident response",
+    "global network or redundant storage infrastructure",
+    "identity, credit, or broker-removal operations",
+    "recovery guarantees and regulated trust"
+  ],
+  "moatTags": [
+    "brand-trust",
+    "scale-infra"
+  ],
+  "moatNotes": "security/infrastructure/trust",
+  "whyPeopleStillPay": "Arq Premium: Security subscriptions buy professional operations, audits, response capacity, redundancy, and accountability when something goes wrong.",
+  "ongoingBurden": "Own threat modelling, key management, patching, backups, restore tests, incident response, privacy requests, and dependency security.",
+  "priorArt": [
+    {
+      "name": "restic",
+      "url": "https://github.com/restic/restic",
+      "desc": "Encrypted, deduplicated backup program."
+    },
+    {
+      "name": "Duplicati",
+      "url": "https://github.com/duplicati/duplicati",
+      "desc": "Encrypted backup client for local and cloud targets."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Backrest",
+      "url": "https://garethgeorge.github.io/backrest/",
+      "desc": "A polished restic front end with retention and checks, but no bundled storage whatsoever."
+    },
+    {
+      "name": "Duplicati",
+      "url": "https://duplicati.com/",
+      "desc": "The backup client is free; the destination capacity is still a separate bill."
+    },
+    {
+      "name": "Kopia",
+      "url": "https://kopia.io/",
+      "desc": "A first-rate encrypted backup app; it does not include the cloud storage Arq Premium bundles."
+    }
+  ],
+  "relatedSlugs": [
+    "malwarebytes",
+    "intego",
+    "idrive"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Arq Premium survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Arq Premium; do not claim to replace its structural moat.\nUse exactly this stack: Go 1.24 + SQLite.\nPrimary job: Build a local diagnostic or backup companion for managed backup; do not claim to replace audited security, identity, VPN, or cloud-storage infrastructure.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: audited cryptography and incident response; global network or redundant storage infrastructure; identity, credit, or broker-removal operations.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

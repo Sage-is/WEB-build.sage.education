@@ -1,0 +1,204 @@
+{
+  "slug": "strong-pro",
+  "name": "Strong Pro",
+  "domain": "strong.app",
+  "appURL": "https://strong.app",
+  "category": "wellness",
+  "subcategory": "fitness, activity and general wellbeing",
+  "tagline": "Log workouts, templates, sets, rest timers, and personal history locally",
+  "priceMonthly": 4.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://strong.app/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical monthly Pro subscription.",
+    "native": "4.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited saved workout history and 3 custom workout templates",
+        "notes": null
+      },
+      {
+        "name": "Strong PRO",
+        "monthly": 4.99,
+        "annualPerMonth": 2.5,
+        "per": "user",
+        "limits": "Unlimited routines/templates plus all Pro features",
+        "notes": "$29.99 billed annually; a 6-month option costs $19.99 (about $3.33/month)."
+      },
+      {
+        "name": "Strong PRO Lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Lifetime PRO access",
+        "notes": "$99.99 one-time; app stores may still show lower legacy offers."
+      }
+    ],
+    "freeTierCaps": "Free plan: unlimited saved workouts and 3 custom workout templates.",
+    "billingTerms": "monthly + 6-month + annual + one-time Lifetime",
+    "priceChanges": [],
+    "hiddenCosts": "No Family Sharing. App-store legacy offers can show $3.99 monthly, $23.99 annual, or $79.99 Lifetime; buying a paid plan can forfeit any unused trial period.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.strong.app/",
+      "https://help.strongapp.io/article/105-about-templates",
+      "https://apps.apple.com/us/app/strong-workout-tracker-gym-log/id464254577"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Strong Pro, log workouts, templates, sets, rest timers, and personal history locally. The hard boundary is mobile polish, widgets, watch app, cloud sync, and exercise database, plus hardware data, content, coaching, and trust.",
+  "coreLoopDIY": "Log workouts, sets, and rest timers from templates, keep personal history locally, plan moderate routines, and show trends without enforcing restrictive goals.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "iOS or Android device",
+    "optional HealthKit or Health Connect permission",
+    "local storage"
+  ],
+  "whatYouLose": [
+    "mobile polish, widgets, watch app, cloud sync, and exercise database",
+    "wearable hardware data",
+    "coach network",
+    "clinical validation",
+    "large content library and social network"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "hardware data, content, coaching, and trust",
+  "replacementScope": "personal general-wellbeing tracker",
+  "ongoingBurden": "sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support",
+  "whyPeopleStillPay": "People still pay for Strong Pro because people pay for polished mobile capture, trusted content, hardware integration, and coaching rather than the basic logbook. The recurring cost buys sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "wger",
+      "url": "https://github.com/wger-project/wger",
+      "desc": "Active open-source fitness and workout management application."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "LiftLog",
+      "url": "https://liftlog.online/",
+      "type": "open-source",
+      "repo": "https://github.com/LiamMorrow/LiftLog",
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "desc": "Sets, timers, plans and charts live on the phone instead of behind a lifetime unlock.",
+      "stars": 523,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "local",
+        "install": "Install the iOS or Android app from an app store",
+        "engines": "The optional paid routine generator uses Anthropic Claude; normal workout logging and charts do not require an AI service.",
+        "dataFormat": "Workout plans, exercise history, sets, and measurements are kept on the device and can be exported as plaintext; optional social/backup features publish encrypted data through the project's backend.",
+        "gapVsPaid": "LiftLog covers sets and routines but lacks Strong's mature Apple Watch workflow, broad platform polish, exercise library, chart depth, and long-refined template editing.",
+        "setupBlocker": null,
+        "sources": [
+          "https://liftlog.online/",
+          "https://github.com/LiamMorrow/LiftLog",
+          "https://github.com/LiamMorrow/LiftLog/blob/main/LICENSE",
+          "https://liftlog.online/privacy",
+          "https://liftlog.online/ai",
+          "https://www.strong.app/",
+          "https://www.strong.app/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "FitNotes",
+      "url": "https://www.fitnotesapp.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "android"
+      ],
+      "desc": "A no-ad Android lifting log that has been doing the basic job for years.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Install the Android app from Google Play",
+        "engines": null,
+        "dataFormat": "Workout routines, exercise history, measurements, and notes live in the app's local database; optional backups can be written to the user's Google Drive.",
+        "gapVsPaid": "FitNotes is Android-only and has less polished templates, charts, wearable support, cloud continuity, and cross-platform history than Strong.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.fitnotesapp.com/",
+          "https://www.fitnotesapp.com/privacy/",
+          "https://www.fitnotesapp.com/about/",
+          "https://www.strong.app/",
+          "https://www.strong.app/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "wger",
+      "url": "https://wger.de/",
+      "type": "open-source",
+      "repo": "https://github.com/wger-project/wger",
+      "platforms": [
+        "web",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Workouts, sets, timers and charts on your own server; setup day counts as cardio.",
+      "stars": 6600,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Create an account on wger.de/use the mobile app, or deploy the official Docker Compose stack",
+        "engines": null,
+        "dataFormat": "Hosted records live in wger's service; self-hosted users keep accounts, workouts, nutrition, measurements, and exercise data in PostgreSQL plus persistent media volumes, while the mobile client maintains an offline local database and syncs.",
+        "gapVsPaid": "wger's mobile and self-hosted workflow is less immediate and polished than Strong's fast local logging, template editing, rest timers, history, and wearable integration.",
+        "setupBlocker": "None for the hosted service or mobile app; self-hosting immediately requires Docker Compose, PostgreSQL, Redis/sync services, a reverse proxy, mail, backups, and upgrades.",
+        "sources": [
+          "https://wger.de/",
+          "https://github.com/wger-project/wger",
+          "https://github.com/wger-project/wger/blob/master/LICENSE.txt",
+          "https://wger.readthedocs.io/en/latest/production/docker.html",
+          "https://wger.de/en/software/mobile-app",
+          "https://www.strong.app/",
+          "https://www.strong.app/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "strava",
+    "myfitnesspal-premium",
+    "macrofactor"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal general-wellbeing tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Strong Pro in an empty repository.\nUse React Native with Expo, TypeScript, SQLite, and HealthKit or Health Connect only when explicitly enabled; do not offer alternative stacks.\nThe core loop is: log workouts, sets, and rest timers from templates, keep personal history locally, plan moderate routines, and show trends without enforcing restrictive goals.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate optional logs for activity, sleep, mood, energy, and personal notes with editable units.\nLet the user build moderate routines and rest days without weight-loss targets, punishment, or competitive pressure.\nRequest health-platform permissions per data type and work fully without granting them.\nShow weekly patterns and consistency with neutral language and no diagnostic or body-image judgments.\nAdd reminders that can be muted, data export, account-free local use, and full deletion.\nInclude a clear statement that the app is not medical care and should not replace qualified advice.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out medical diagnosis or treatment.\nDeliberately leave out extreme exercise or restrictive-eating coaching.\nDeliberately leave out wearable hardware, human coaching, and a large social network.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

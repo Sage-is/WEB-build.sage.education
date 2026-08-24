@@ -1,0 +1,258 @@
+{
+  "slug": "paprika-recipe-manager",
+  "name": "Paprika Recipe Manager",
+  "domain": "paprikaapp.com",
+  "appURL": "https://paprikaapp.com",
+  "category": "home",
+  "subcategory": "family organization, recipes and household inventory",
+  "tagline": "Store recipes, plan meals, create grocery lists, and keep data in a portable local database",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Desktop licence",
+    "basis": "one-time",
+    "unit": "one-time",
+    "source": "https://paprikaapp.com/",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Sold as one-time platform-specific licences; canonical monthly amount is null.",
+    "native": "one-time",
+    "kind": "one-time",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "iOS",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited recipes and Paprika Cloud Sync after purchase.",
+        "notes": "One-time $4.99 purchase; sold separately from macOS, Windows, and Android."
+      },
+      {
+        "name": "macOS",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited recipes and Paprika Cloud Sync after purchase.",
+        "notes": "One-time $29.99 purchase; sold separately from iOS, Windows, and Android."
+      },
+      {
+        "name": "Windows",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited recipes and Paprika Cloud Sync; licence covers up to 5 PCs.",
+        "notes": "One-time $29.99 purchase; permanent trial is limited to 50 recipes and has no cloud sync."
+      },
+      {
+        "name": "Android unlock",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited recipes and Paprika Cloud Sync after in-app unlock.",
+        "notes": "One-time in-app unlock; the current Google Play listing does not expose the USD in-app-purchase amount. Paprika's official launch material stated $4.99, but that historical amount is not treated as a verified current price."
+      }
+    ],
+    "freeTierCaps": "Android and Windows can be used indefinitely with up to 50 recipes and no Paprika Cloud Sync; iOS and macOS require purchase.",
+    "billingTerms": "one-time purchase per platform; no monthly or annual plan and no single cross-platform desktop licence",
+    "priceChanges": [],
+    "hiddenCosts": "Each platform is a separate purchase. The currently exposed US prices total $64.97 for iOS, macOS, and Windows before the Android unlock, whose live USD amount is not publicly shown.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.paprikaapp.com/",
+      "https://www.paprikaapp.com/windows/",
+      "https://apps.apple.com/us/app/paprika-recipe-manager-3/id1303222868",
+      "https://apps.apple.com/us/app/paprika-recipe-manager-3/id1303222628?mt=12",
+      "https://play.google.com/store/apps/details?id=com.hindsightlabs.paprika.android.v3"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Paprika Recipe Manager, store recipes, plan meals, create grocery lists, and keep data in a portable local database. The hard boundary is native apps, browser capture, sync, grocery workflow, and long-term maintenance, plus sync, integrations, and household adoption.",
+  "coreLoopDIY": "Store recipes, plan meals, create grocery lists, share or print a simple plan, and keep data in a portable owner-controlled local database.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "modern browser",
+    "local or self-hosted storage",
+    "optional email notifications"
+  ],
+  "whatYouLose": [
+    "native apps, browser capture, sync, grocery workflow, and long-term maintenance",
+    "frictionless family sync",
+    "retailer and smart-home integrations",
+    "large recipe or product database",
+    "mobile polish"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "collaboration"
+  ],
+  "moatNotes": "sync, integrations, and household adoption",
+  "replacementScope": "single-household organizer",
+  "ongoingBurden": "multi-user conflicts, reminders, notifications, imports, barcode data, smart-home APIs, backups, and long-term maintenance",
+  "whyPeopleStillPay": "People still pay for Paprika Recipe Manager because household apps survive when every family member actually uses them and the data stays current across devices. The recurring cost buys multi-user conflicts, reminders, notifications, imports, barcode data, smart-home APIs, backups, and long-term maintenance, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Mealie",
+      "url": "https://github.com/mealie-recipes/mealie",
+      "desc": "Active open-source recipe manager and meal planner for households."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Grocy",
+      "url": "https://grocy.info/",
+      "type": "open-source",
+      "repo": "https://github.com/grocy/grocy",
+      "platforms": [
+        "web",
+        "windows",
+        "self-hosted"
+      ],
+      "desc": "Meal plans and groceries run through a tiny home ERP, because apparently the fridge needed one.",
+      "stars": 9358,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker container/Compose, or install the PHP application on a web server",
+        "engines": null,
+        "dataFormat": "Products, stock, chores, recipes, meal plans, shopping lists, and history live in Grocy's SQLite database inside its data directory; configuration, uploaded pictures, and generated files are stored alongside it on the host volume.",
+        "gapVsPaid": "Grocy can plan meals and groceries, but recipe capture, cooking view, mobile use, and household simplicity are buried inside an inventory-heavy home ERP.",
+        "setupBlocker": "The first obstacle is deploying and exposing a PHP/Docker web app; the larger practical hurdle is configuring locations, units, products, barcodes, and household routines before its ERP-like screens become useful.",
+        "sources": [
+          "https://grocy.info/",
+          "https://github.com/grocy/grocy",
+          "https://github.com/grocy/grocy/blob/master/LICENSE",
+          "https://github.com/grocy/grocy/blob/master/README.md",
+          "https://github.com/grocy/grocy-docker",
+          "https://github.com/grocy/grocy/blob/master/config-dist.php"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mealie",
+      "url": "https://mealie.io/",
+      "type": "open-source",
+      "repo": "https://github.com/mealie-recipes/mealie",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A household recipe server with meal plans and grocery lists; you supply the server and patience.",
+      "stars": 12900,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Docker Compose",
+        "engines": null,
+        "dataFormat": "Recipes, users, groups, meal plans, and shopping-list records live in SQLite by default or PostgreSQL when configured; recipe images and application assets live in the mounted data directory, and Mealie's backup/export archives keep portable copies of the database and media.",
+        "gapVsPaid": "Mealie is a strong household recipe server, but it lacks Paprika's polished native offline apps, effortless local sync, and maintenance-free URL importer.",
+        "setupBlocker": "A non-expert needs Docker, persistent volumes, an update/backup routine, and usually a domain plus HTTPS; importing recipe sites also produces parsing failures that must be cleaned up manually.",
+        "sources": [
+          "https://mealie.io/",
+          "https://github.com/mealie-recipes/mealie",
+          "https://github.com/mealie-recipes/mealie/blob/mealie-next/LICENSE",
+          "https://docs.mealie.io/documentation/getting-started/installation/",
+          "https://docs.mealie.io/documentation/getting-started/installation/backend-config/",
+          "https://docs.mealie.io/documentation/getting-started/usage/backups-and-restoring/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "RecipeSage",
+      "url": "https://recipesage.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "Paprika in a browser, with no bill, no recipe cap, and an export button.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup at RecipeSage, or Docker Compose for self-hosting",
+        "engines": null,
+        "dataFormat": "The hosted service stores recipes, images, labels, meal plans, shopping lists, households, and account data in RecipeSage's infrastructure; self-hosting keeps the relational application database and uploaded media in operator-controlled containers/volumes, with built-in export for portability.",
+        "gapVsPaid": "RecipeSage covers recipes, plans, and lists, but its browser-first experience, offline behavior, importer polish, and native cooking workflow are less refined than Paprika's.",
+        "setupBlocker": "The public service has no setup blocker; self-hosting adds Docker, a database, mail, storage, HTTPS, and backups, while both versions have less refined native-mobile interaction than Paprika or AnyList.",
+        "sources": [
+          "https://recipesage.com/",
+          "https://github.com/julianpoy/RecipeSage",
+          "https://github.com/julianpoy/RecipeSage/blob/master/LICENSE",
+          "https://github.com/julianpoy/RecipeSage/blob/master/README.md",
+          "https://github.com/julianpoy/RecipeSage/tree/master/docker"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Tandoor Recipes",
+      "url": "https://tandoor.dev/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The full recipe-plan-shopping loop; free for personal self-hosting, but the license is not actually open source.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": null,
+        "runs": "self-hosted",
+        "install": "Docker Compose with PostgreSQL; manual Django deployment is also documented",
+        "engines": null,
+        "dataFormat": "Recipes, users, meal plans, shopping lists, books, and permissions live in PostgreSQL in the standard Docker deployment; uploaded images and static/media files live in mounted volumes, and recipe data can be exported through Tandoor's export tools.",
+        "gapVsPaid": "Tandoor is feature-rich, but Docker, PostgreSQL, updates, backups, a web-first interface, and a non-OSI license are a much larger burden than Paprika's local app.",
+        "setupBlocker": "The first obstacle is a multi-container Django/PostgreSQL deployment with secrets, volumes, HTTPS, email, and backups; its Commons-Clause-modified AGPL license is also not an OSI-approved open-source license.",
+        "sources": [
+          "https://tandoor.dev/",
+          "https://github.com/TandoorRecipes/recipes",
+          "https://github.com/TandoorRecipes/recipes/blob/develop/LICENSE.md",
+          "https://docs.tandoor.dev/install/docker/",
+          "https://docs.tandoor.dev/system/configuration/",
+          "https://docs.tandoor.dev/features/export/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Copy Me That",
+      "url": "https://www.copymethat.com/",
+      "desc": "A direct fit until recipe 41; the free tier now stops at 40 recipes."
+    },
+    {
+      "name": "KitchenOwl",
+      "url": "https://kitchenowl.org/",
+      "desc": "Polished enough to tempt you; the project still labels itself Public Alpha."
+    }
+  ],
+  "relatedSlugs": [
+    "home-assistant-cloud",
+    "cozi-gold",
+    "anylist-complete"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Desktop licence plan and a single-household organizer DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Paprika Recipe Manager in an empty repository.\nUse Next.js 15, TypeScript, SQLite, Drizzle ORM, and a local-first PWA; do not offer alternative stacks.\nThe core loop is: store recipes, plan meals, create grocery lists, share or print a simple plan, and keep data in a portable owner-controlled local database.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate household members, shared lists, calendar items, recipes or inventory records, and assignments.\nProvide fast mobile-first capture with large controls, offline queueing, and conflict-safe sync to one server.\nSupport recurring chores or events, reminders, completion history, and printable views.\nAdd CSV or JSON import and export plus photo attachments with clear size limits.\nAllow private and shared items and make every change attributable and undoable.\nAdd backups, household export, member removal, and a simple invite code.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out retailer ordering and proprietary product catalogs.\nDeliberately leave out broad smart-home integrations.\nDeliberately leave out large public recipe libraries and polished native mobile clients.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

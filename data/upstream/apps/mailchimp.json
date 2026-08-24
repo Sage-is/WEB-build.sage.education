@@ -1,0 +1,306 @@
+{
+  "slug": "mailchimp",
+  "name": "Mailchimp",
+  "domain": "mailchimp.com",
+  "category": "newsletter",
+  "subcategory": "email marketing",
+  "tagline": "Email marketing platform with campaigns, automations, forms, and analytics",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Standard",
+    "basis": "monthly at 500 contacts",
+    "unit": "usage",
+    "native": "20 USD",
+    "source": "https://mailchimp.com/pricing/marketing/",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page checked; 2026 public coverage lists Standard starting at $20/month for small contact counts, with subscriber-based scaling and discounts/promos."
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A campaign sender is buildable, but Mailchimp's value is deliverability, templates, compliance, automations, segmentation, ecommerce integrations, and support.",
+  "coreLoopDIY": "Build subscriber lists, campaign composer, templates, segmentation, sends via SES/Postmark/Mailgun, unsubscribe and analytics.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "email provider",
+    "domain authentication",
+    "database",
+    "editor",
+    "compliance/unsubscribe logic",
+    "bounce handling"
+  ],
+  "whatYouLose": [
+    "deliverability",
+    "template/editor polish",
+    "automation builder",
+    "ecommerce integrations",
+    "segmentation",
+    "compliance",
+    "support"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations",
+    "compliance-regulatory"
+  ],
+  "moatNotes": "deliverability/compliance/integrations",
+  "whyPeopleStillPay": "They pay because email is business-critical and deliverability problems are expensive.",
+  "priorArt": [
+    {
+      "name": "Mautic",
+      "url": "https://github.com/mautic/mautic",
+      "desc": "Open-source marketing automation platform with email campaigns and contact management.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Brevo Free",
+      "url": "https://www.brevo.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Campaigns, forms and automation with many contacts but only 300 daily sends.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, sender verification, and optional domain authentication",
+        "engines": null,
+        "dataFormat": "Contacts, campaigns, templates, automation events, and reports live in Brevo's cloud; exports are available, but the internal storage format is not disclosed.",
+        "gapVsPaid": "Brevo's free 300-email daily ceiling makes a single larger campaign slower than Mailchimp and its free emails carry Brevo branding.",
+        "setupBlocker": "The first meaningful hurdle is verifying the sender and setting SPF/DKIM records for a sending domain; without that, deliverability will disappoint.",
+        "sources": [
+          "https://www.brevo.com/pricing/",
+          "https://help.brevo.com/hc/en-us/articles/208580669-FAQs-What-are-the-limits-of-the-Free-plan",
+          "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans",
+          "https://mailchimp.com/pricing/marketing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "EmailOctopus Free",
+      "url": "https://emailoctopus.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A real small-list plan with forms and simple automations; reports expire after thirty days.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, list import, and sender/domain verification",
+        "engines": null,
+        "dataFormat": "Subscribers, campaigns, forms, automation state, and reports live in EmailOctopus's cloud; CSV import/export is supported, while the internal storage format is not disclosed.",
+        "gapVsPaid": "Free-plan reports expire after 30 days and the account is limited to one landing page or form, leaving less history and experimentation than Mailchimp.",
+        "setupBlocker": "A sender address must be verified, and serious sending should use an authenticated domain.",
+        "sources": [
+          "https://emailoctopus.com/pricing",
+          "https://help.emailoctopus.com/article/243-verifying-your-sending-domain",
+          "https://help.emailoctopus.com/article/46-importing-contacts",
+          "https://mailchimp.com/pricing/marketing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "MailPoet Starter",
+      "url": "https://www.mailpoet.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Campaigns, forms, analytics and basic automation inside WordPress; the free list stops at 500.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "both",
+        "install": "Install the WordPress plugin, create a MailPoet account, and enter the free Starter-plan key",
+        "engines": null,
+        "dataFormat": "Lists, subscribers, newsletters, forms, and settings live in MailPoet tables inside the site's WordPress database; MailPoet's sending service processes recipient addresses and keeps delivery logs, which its documentation says are erased after three months.",
+        "gapVsPaid": "It works only inside WordPress and the free Starter allowance stops at 500 subscribers and 5,000 emails per month.",
+        "setupBlocker": "It requires an existing, maintained WordPress site plus a plan key and sender/domain approval; it is not a standalone email app.",
+        "sources": [
+          "https://wordpress.org/plugins/mailpoet/",
+          "https://kb.mailpoet.com/article/349-mailpoet-plans-and-limits-explained",
+          "https://kb.mailpoet.com/article/361-data-collected-and-stored-by-mailpoet",
+          "https://kb.mailpoet.com/article/how-to-erase-mailpoet-data",
+          "https://kb.mailpoet.com/article/387-first-steps-after-installing-the-plugin",
+          "https://mailchimp.com/pricing/marketing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mautic",
+      "url": "https://mautic.org/",
+      "type": "open-source",
+      "repo": "https://github.com/mautic/mautic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The heavyweight open-source replacement for segmentation and automation; it also replaces ease with operations.",
+      "stars": 10300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Download the production package or install with Composer, then configure PHP, a database, cron, and a mail transport",
+        "engines": null,
+        "dataFormat": "Contacts, segments, campaigns, events, and reports live in the configured MySQL or MariaDB database; assets, configuration, logs, and queue files live on the server filesystem.",
+        "gapVsPaid": "Mautic offers more control but gives up Mailchimp's managed deliverability, upgrades, templates, integrations, and low-maintenance operation.",
+        "setupBlocker": "The first wall is not the installer but production operation: PHP and database tuning, several cron jobs, HTTPS, backups, upgrades, SMTP/API sending, and DNS authentication.",
+        "sources": [
+          "https://github.com/mautic/mautic",
+          "https://github.com/mautic/mautic/blob/7.x/LICENSE.txt",
+          "https://docs.mautic.org/en/7.2/getting_started/how_to_install_mautic.html",
+          "https://docs.mautic.org/en/7.2/configuration/cron_jobs.html",
+          "https://docs.mautic.org/en/7.1/configuration/settings.html",
+          "https://mailchimp.com/pricing/marketing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Notifuse",
+      "url": "https://www.notifuse.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Notifuse/notifuse",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A modern visual campaign and automation stack; you own the database and the deliverability chores.",
+      "stars": 2038,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup, or one application container plus PostgreSQL for self-hosting",
+        "engines": null,
+        "dataFormat": "Self-hosted contacts, campaigns, automations, and events live in PostgreSQL; files can use S3-compatible storage, and the configured email provider receives message payloads. Hosted data lives in Notifuse's cloud.",
+        "gapVsPaid": "Notifuse has a smaller template and integration ecosystem, and self-hosters assume database, upgrade, deliverability, and sending-provider work that Mailchimp handles.",
+        "setupBlocker": "Self-hosting still needs Docker, PostgreSQL, a public HTTPS endpoint, an SMTP or API sending provider, and correctly authenticated sending domains.",
+        "sources": [
+          "https://www.notifuse.com/",
+          "https://github.com/Notifuse/notifuse",
+          "https://github.com/Notifuse/notifuse/blob/main/LICENSE",
+          "https://docs.notifuse.com/self-hosting/installation",
+          "https://notifuse.com/compare/notifuse-vs-mautic",
+          "https://mailchimp.com/pricing/marketing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plunk",
+      "url": "https://www.useplunk.com/",
+      "type": "open-source",
+      "repo": "https://github.com/useplunk/plunk",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Campaigns, transactional mail and workflows together; audience CRM depth is thinner.",
+      "stars": 5300,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup, or the official Docker Compose stack",
+        "engines": null,
+        "dataFormat": "The self-hosted stack stores core data in PostgreSQL, jobs and cache in Redis, and objects in MinIO; hosted data is kept in Plunk's EU infrastructure.",
+        "gapVsPaid": "Plunk's audience CRM, template ecosystem, campaign analytics, and non-technical marketing workflow are noticeably thinner than Mailchimp's.",
+        "setupBlocker": "Hosted use still needs domain authentication; self-hosting adds PostgreSQL, Redis, MinIO, Nginx or another proxy, exposed web and SMTP services, DNS, and ongoing deliverability work.",
+        "sources": [
+          "https://www.useplunk.com/",
+          "https://www.useplunk.com/pricing",
+          "https://github.com/useplunk/plunk",
+          "https://github.com/useplunk/plunk/blob/next/LICENSE",
+          "https://docs.useplunk.com/self-hosting/docker",
+          "https://mailchimp.com/pricing/marketing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Sender Free",
+      "url": "https://www.sender.net/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Campaigns, forms, analytics and unlimited workflows in a useful free tier; the monkey can retire.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, list import, and sender/domain verification",
+        "engines": null,
+        "dataFormat": "Subscribers, campaigns, forms, automation state, transactional messages, and analytics live in Sender's cloud; the internal storage format is not disclosed.",
+        "gapVsPaid": "Sender's one-seat branded free plan has a smaller integration and template ecosystem than Mailchimp, even though its send allowance is generous.",
+        "setupBlocker": "The first real hurdle is authenticating the sending domain and warming a legitimate list rather than merely creating the account.",
+        "sources": [
+          "https://www.sender.net/pricing/",
+          "https://help.sender.net/knowledgebase/how-to-authenticate-your-domain/",
+          "https://mailchimp.com/pricing/marketing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "listmonk",
+      "url": "https://listmonk.app/",
+      "desc": "Campaigns and forms are excellent, but the missing automation builder is not a footnote here."
+    },
+    {
+      "name": "Mailchimp Free",
+      "url": "https://mailchimp.com/",
+      "desc": "The free plan now stops at 250 contacts and omits automation flows; the mascot is mostly a signup form."
+    },
+    {
+      "name": "SendPortal",
+      "url": "https://sendportal.io/",
+      "desc": "A familiar open-source recommendation with no commit since April 2024."
+    }
+  ],
+  "relatedSlugs": [
+    "ghost-pro",
+    "shopify",
+    "podia"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Classic hidden-moat example: the UI can be rebuilt; inbox placement cannot be hand-waved.",
+  "prompt": "Build me a small-list email campaign tool to replace Mailchimp. Requirements:\n\n- Node + Express + better-sqlite3 on my VPS. Admin UI bound to localhost/VPN; only\n  the subscribe and unsubscribe endpoints are public.\n- Contacts with tags and custom fields, CSV import and export, and segments saved\n  as filters (has tag X, joined after date, opened last campaign).\n- Campaigns written in Markdown, rendered into one clean single-column HTML email\n  with mjml, plain-text alternative generated automatically.\n- Send through Amazon SES (keys in .env) with throttling and per-recipient status;\n  SES bounce and complaint notifications auto-suppress those addresses.\n- Compliance baked in: unsubscribe link and postal address in every footer, a\n  List-Unsubscribe header, double opt-in on the public signup form.\n- Open tracking is a per-campaign toggle, default off. Campaign report shows sent,\n  bounced, and unsubscribed counts.\n- One SQLite file holds everything; no telemetry, no third-party trackers.\n- Out of scope: the drag-and-drop template editor, automation journeys, and\n  ecommerce integrations. One good template, sent well.\n- README warning: inbox placement is earned, not coded. Document SPF, DKIM, and\n  DMARC setup and tell me to warm up sending volume gradually.",
+  "promptCurated": false
+}

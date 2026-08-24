@@ -1,0 +1,300 @@
+{
+  "slug": "surveymonkey",
+  "name": "SurveyMonkey",
+  "domain": "surveymonkey.com",
+  "appURL": "https://surveymonkey.com",
+  "category": "forms",
+  "subcategory": "forms, surveys and lead capture",
+  "tagline": "Run a structured survey, calculate transparent summaries, and export responses",
+  "priceMonthly": 39,
+  "pricing": {
+    "plan": "Advantage Annual",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://surveymonkey.com/pricing/individual",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Common annual-equivalent individual Advantage price; monthly options differ.",
+    "native": "39 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited survey creation; 10 questions/survey; 3 collectors/survey; the response-viewing cap is displayed only inside the account.",
+        "notes": null
+      },
+      {
+        "name": "Standard Monthly",
+        "monthly": 99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "1 user; 1,000 responses/month.",
+        "notes": null
+      },
+      {
+        "name": "Advantage Annual",
+        "monthly": null,
+        "annualPerMonth": 39,
+        "per": "user",
+        "limits": "1 user; 15,000 responses/year.",
+        "notes": "Billed $468/year."
+      },
+      {
+        "name": "Premier Annual",
+        "monthly": null,
+        "annualPerMonth": 139,
+        "per": "user",
+        "limits": "1 user; 40,000 responses/year.",
+        "notes": "Billed $1,668/year."
+      },
+      {
+        "name": "Team Advantage",
+        "monthly": null,
+        "annualPerMonth": 30,
+        "per": "user",
+        "limits": "Minimum 3 seats; 50,000 responses/year per team.",
+        "notes": null
+      },
+      {
+        "name": "Team Premier",
+        "monthly": null,
+        "annualPerMonth": 92,
+        "per": "user",
+        "limits": "Minimum 3 seats; 100,000 responses/year per team.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom seats, responses, security and service terms.",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "Unlimited survey creation; 10 questions/survey; 3 collectors/survey; the exact response-viewing cap was not publicly exposed before sign-in.",
+    "billingTerms": "One monthly individual plan plus annual individual/team plans; team plans require at least 3 paid seats; plans auto-renew.",
+    "priceChanges": [],
+    "hiddenCosts": "Excess responses can cost up to $0.15 each; Audience respondents are a separate purchase; analyst seats are sold in pairs; invited seats can be prorated; downgrading can remove access to responses older than 365 days above Basic limits.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.surveymonkey.com/pricing/individual/details/",
+      "https://www.surveymonkey.com/pricing/details/",
+      "https://help.surveymonkey.com/en/surveymonkey/billing/response-limits/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For SurveyMonkey, run a structured survey, calculate transparent summaries, and export responses. The hard boundary is panel access, benchmarking, templates, advanced logic, and enterprise governance, plus integrations, deliverability, and workflow depth.",
+  "coreLoopDIY": "Build a public structured survey form, validate submissions, notify the owner, calculate transparent summaries, and provide a private response table with CSV export.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "Node.js 22",
+    "Resend API key or SMTP credentials",
+    "self-hosted deploy target"
+  ],
+  "whatYouLose": [
+    "panel access, benchmarking, templates, advanced logic, and enterprise governance",
+    "advanced branching",
+    "payment and CRM integrations",
+    "large template libraries",
+    "enterprise compliance"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra",
+    "network-effects"
+  ],
+  "moatNotes": "integrations, deliverability, and workflow depth",
+  "replacementScope": "single-owner form service",
+  "ongoingBurden": "spam control, email delivery, storage, exports, accessibility, conditional logic, and integrations",
+  "whyPeopleStillPay": "People still pay for SurveyMonkey because a basic form is trivial; people pay when the form feeds a dependable business workflow and never loses a response. The recurring cost buys spam control, email delivery, storage, exports, accessibility, conditional logic, and integrations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Formbricks",
+      "url": "https://github.com/formbricks/formbricks",
+      "desc": "Active open-source survey and experience-management platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "LimeSurvey",
+      "url": "https://www.limesurvey.org",
+      "type": "open-source",
+      "repo": "https://github.com/LimeSurvey/LimeSurvey",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The survey engine that does nearly everything, provided you enjoy administering PHP",
+      "stars": 3700,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "both",
+        "install": "Hosted Cloud signup, or download the Community Edition PHP package and run its web installer",
+        "engines": null,
+        "dataFormat": "Cloud data lives in LimeSurvey's selected hosting region; self-hosted surveys and responses live in MySQL, MariaDB, PostgreSQL or Microsoft SQL Server, with multiple tabular/statistical export formats.",
+        "gapVsPaid": "LimeSurvey has far deeper survey logic than most free tools, but its dense administration and self-hosting burden are much less approachable than SurveyMonkey, while its free cloud plan permits only 25 responses monthly.",
+        "setupBlocker": "The useful unlimited route is self-hosting, which requires a PHP web server, database, mail, updates and backups; the hosted free plan permits only 25 responses per month.",
+        "sources": [
+          "https://github.com/LimeSurvey/LimeSurvey",
+          "https://manual.limesurvey.org/Installation_-_LimeSurvey_CE",
+          "https://www.limesurvey.org/pricing",
+          "https://help.limesurvey.org/portal/en/kb/articles/free-plan-type",
+          "https://www.surveymonkey.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Formbricks",
+      "url": "https://formbricks.com",
+      "type": "open-source",
+      "repo": "https://github.com/formbricks/formbricks",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Serious survey machinery without the enterprise invoice; self-hosting still means owning the machinery",
+      "stars": 12700,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup, one-click Ubuntu installer, Docker Compose, or Helm",
+        "engines": "Optional Qwen 3 through bundled vLLM, or Google Vertex AI, Azure, AWS Bedrock and OpenAI-compatible endpoints",
+        "dataFormat": "Hosted data lives in Formbricks Cloud; self-hosted survey and response data lives in PostgreSQL, cache/jobs in Redis or Valkey, analytics through Cube, and uploads in S3-compatible storage.",
+        "gapVsPaid": "Formbricks is excellent for product and customer feedback, but it lacks SurveyMonkey's mature research panel, broad question-bank ecosystem, and advanced statistical reporting.",
+        "setupBlocker": "The current self-host stack includes PostgreSQL, Redis/Valkey, Formbricks Hub and Cube; uploads need object storage, and bundled AI needs an NVIDIA GPU.",
+        "sources": [
+          "https://github.com/formbricks/formbricks",
+          "https://formbricks.com/docs/self-hosting/overview",
+          "https://formbricks.com/docs/self-hosting/setup/docker",
+          "https://formbricks.com/docs/self-hosting/configuration/file-uploads",
+          "https://formbricks.com/docs/self-hosting/advanced/enterprise-features/ai-features",
+          "https://www.surveymonkey.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "HeyForm",
+      "url": "https://heyform.net",
+      "type": "open-source",
+      "repo": "https://github.com/heyform/heyform",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Typeform's manners, minus the monthly rent",
+      "stars": 8881,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup, or Docker Compose with MongoDB and KeyDB/Redis",
+        "engines": "Optional OpenAI-compatible API for AI features; default model documented as gpt-3.5-turbo-0125",
+        "dataFormat": "Hosted data lives in HeyForm Cloud; self-hosted forms and responses live in MongoDB, cache/session data in KeyDB/Redis, and uploads on the server or S3-compatible storage.",
+        "gapVsPaid": "HeyForm makes attractive surveys, but it does not match SurveyMonkey's advanced analysis, randomization, research methodology features, or respondent-panel access.",
+        "setupBlocker": "Self-hosting needs Docker, a domain, reverse proxy/TLS, email configuration, and persistent database/storage volumes.",
+        "sources": [
+          "https://github.com/heyform/heyform",
+          "https://docs.heyform.net/open-source/license",
+          "https://docs.heyform.net/open-source/self-hosting",
+          "https://docs.heyform.net/open-source/configuration/environment-variables",
+          "https://www.surveymonkey.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Google Forms",
+      "url": "https://workspace.google.com/products/forms/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Forms, surveys, quizzes, and Sheets output; design restraint is compulsory",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Use Forms in a Google account",
+        "engines": "Gemini-assisted form creation may be available on eligible Workspace plans; the free core product does not require an AI backend",
+        "dataFormat": "Forms are stored in Google Drive; responses live in Google Forms or a linked Google Sheet and can be downloaded as CSV.",
+        "gapVsPaid": "Google Forms is effortless and exports cleanly to Sheets, but its design, branching, survey governance, and statistical analysis are basic compared with SurveyMonkey.",
+        "setupBlocker": "A Google account is required; there is no self-hosted option.",
+        "sources": [
+          "https://workspace.google.com/products/forms/",
+          "https://support.google.com/docs/answer/139706",
+          "https://support.google.com/docs/answer/2917686",
+          "https://www.surveymonkey.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Nextcloud Forms",
+      "url": "https://apps.nextcloud.com/apps/forms",
+      "type": "open-source",
+      "repo": "https://github.com/nextcloud/forms",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Google Forms inside Nextcloud; simple is the feature and the limitation",
+      "stars": 378,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Install the Forms app from the Apps page of an existing Nextcloud server",
+        "engines": null,
+        "dataFormat": "Forms and responses remain in the Nextcloud instance's database; response tables can be exported as CSV.",
+        "gapVsPaid": "Nextcloud Forms keeps responses under your control, but it is intentionally simple and lacks SurveyMonkey's advanced logic, templates, analysis, benchmarking, and respondent sourcing.",
+        "setupBlocker": "It requires an already-running compatible Nextcloud server and administrator access to install and update the app.",
+        "sources": [
+          "https://apps.nextcloud.com/apps/forms",
+          "https://github.com/nextcloud/forms",
+          "https://nextcloud.com/blog/nextcloud-forms/",
+          "https://www.surveymonkey.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Microsoft Forms",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/online-surveys-polls-quizzes",
+      "desc": "The personal free tier stops at 200 responses per form, so it is a demo with better branding"
+    }
+  ],
+  "relatedSlugs": [
+    "fillout",
+    "paperform",
+    "formstack-forms"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Advantage Annual plan and a single-owner form service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for SurveyMonkey in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and Resend; do not offer alternative stacks.\nThe core loop is: build a public structured survey form, validate submissions, notify the owner, calculate transparent summaries, and provide a private response table with CSV export.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a form builder with short text, long text, email, number, select, radio, checkbox, and file fields.\nPublish each form at a stable slug with server-side validation and accessible labels.\nAdd honeypot, rate limiting, submission-size limits, and a clear privacy notice.\nStore responses in SQLite and provide search, filters, detail view, and CSV export.\nSend an owner notification without placing submitted values in logs.\nSupport a thank-you screen and one simple conditional branch.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out payment collection.\nDeliberately leave out hundreds of third-party integrations.\nDeliberately leave out multi-brand enterprise workspaces and compliance attestations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

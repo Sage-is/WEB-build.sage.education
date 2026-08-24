@@ -1,0 +1,218 @@
+{
+  "slug": "sunsama",
+  "name": "Sunsama",
+  "domain": "sunsama.com",
+  "category": "tasks-calendar",
+  "subcategory": "daily planner",
+  "tagline": "Daily planner that pulls tasks and calendar into a focused schedule",
+  "priceMonthly": 22,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "native": "22 USD",
+    "source": "https://sunsama.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; listed at $25/month per person monthly and $20/month annually.",
+    "tiers": [
+      {
+        "name": "Pro",
+        "monthly": 22,
+        "annualPerMonth": 17,
+        "per": "user",
+        "limits": "1 user; daily planning, task/calendar integrations, and analytics; no numeric task cap published.",
+        "notes": "The top pricing card shows $22/$17; a lower FAQ on the same live page still says $25/$20, so the card values were used."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom seats, security, invoicing, and support.",
+        "notes": "Custom quote."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual; 14-day trial with no card; Enterprise custom",
+    "priceChanges": [],
+    "hiddenCosts": "Every teammate added to a workspace is placed on the subscription and billed on a prorated basis.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://sunsama.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A daily planning dashboard is not hard, but Sunsama's value is many integrations, careful UX, calendar sync, and habit-forming workflow.",
+  "coreLoopDIY": "Pull tasks/calendar events, let the user drag tasks into a day plan, track estimates/completion, and run a daily shutdown prompt.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Google/Microsoft calendar OAuth",
+    "task-tool APIs",
+    "hosted backend",
+    "auth",
+    "notification/email channel"
+  ],
+  "whatYouLose": [
+    "integration breadth",
+    "calendar two-way sync",
+    "daily ritual design",
+    "mobile apps",
+    "analytics",
+    "reliability"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "integrations/workflow design",
+  "whyPeopleStillPay": "They pay for a planning habit that survives across tools, not a new to-do list.",
+  "priorArt": [
+    {
+      "name": "Super Productivity",
+      "url": "https://github.com/johannesjo/super-productivity",
+      "desc": "Open-source task/time-planning app with local-first workflows.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "FlowSavvy Free",
+      "url": "https://flowsavvy.app/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "It auto-plans unlimited tasks for the next two weeks; priorities and dependencies are how the paid plan gets you.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a hosted account in the web app or install the iOS or Android app",
+        "engines": "A deterministic scheduling algorithm; FlowSavvy explicitly says it does not use machine learning to build schedules",
+        "dataFormat": "Tasks, events, and settings live in FlowSavvy's cloud database and synchronize with connected Google, Outlook, or iCloud calendars; the service currently provides no general calendar import or export",
+        "gapVsPaid": "FlowSavvy schedules work automatically but lacks Sunsama’s guided daily-planning and shutdown ritual and its broad task-source import workflow.",
+        "setupBlocker": "Requires an internet connection; calendar synchronization requires OAuth or app-specific credentials",
+        "sources": [
+          "https://flowsavvy.app/",
+          "https://flowsavvy.app/pricing",
+          "https://help.flowsavvy.app/en/articles/8009170-miscellaneous-faqs",
+          "https://flowsavvy.app/privacy",
+          "https://help.flowsavvy.app/en/articles/6982421-can-i-import-or-export-my-calendar",
+          "https://help.flowsavvy.app/en/articles/13339919-sync-with-google-outlook-and-icloud-calendar",
+          "https://www.sunsama.com/",
+          "https://www.sunsama.com/pricing",
+          "https://help.sunsama.com/docs/getting-started/basics/daily-planning-the-basics/",
+          "https://help.sunsama.com/docs/usage-guides/timeboxing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Super Productivity",
+      "url": "https://super-productivity.com/",
+      "type": "open-source",
+      "repo": "https://github.com/super-productivity/super-productivity",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "A local task planner with timeboxes, focus mode and its own stopwatch; less glossy, less interested in your wallet.",
+      "stars": 21156,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Use the browser/PWA or install a packaged desktop or mobile build",
+        "engines": null,
+        "dataFormat": "Tasks, projects, time records, and settings are local-first in browser or app storage; optional synchronization and backups use the user's chosen WebDAV or Dropbox account",
+        "gapVsPaid": "Super Productivity has timeboxes and focus tools but not Sunsama’s polished guided daily review, shutdown ritual, and external task aggregation.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/super-productivity/super-productivity",
+          "https://github.com/super-productivity/super-productivity/blob/master/LICENSE",
+          "https://super-productivity.com/",
+          "https://www.sunsama.com/",
+          "https://www.sunsama.com/pricing",
+          "https://help.sunsama.com/docs/getting-started/basics/daily-planning-the-basics/",
+          "https://help.sunsama.com/docs/usage-guides/timeboxing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Trevor AI Free",
+      "url": "https://www.trevorai.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "One calendar gets task-to-time-block planning and some AI suggestions; multiple calendars and deeper automation cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Create a hosted web account and connect one supported calendar; the web app can be installed to a home screen",
+        "engines": "A private per-user deep-learning scheduling model; some language features use OpenAI, according to Trevor's documentation",
+        "dataFormat": "Tasks, calendar events, and scheduling state are processed and stored in Trevor's hosted infrastructure, with connected calendar data synchronized through provider APIs",
+        "gapVsPaid": "Trevor is a lighter web scheduler with one free calendar rather than Sunsama’s deliberate daily-planning ritual and multi-source task workspace.",
+        "setupBlocker": "No native desktop or mobile app; calendar integrations require OAuth, and the free tier is limited to one calendar account",
+        "sources": [
+          "https://www.trevorai.com/",
+          "https://www.trevorai.com/docs",
+          "https://www.trevorai.com/integrations/microsoft-calendars",
+          "https://www.trevorai.com/privacy-policy",
+          "https://www.sunsama.com/",
+          "https://www.sunsama.com/pricing",
+          "https://help.sunsama.com/docs/getting-started/basics/daily-planning-the-basics/",
+          "https://help.sunsama.com/docs/usage-guides/timeboxing/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Amplenote Free",
+      "url": "https://www.amplenote.com/",
+      "desc": "Useful free tasks and notes, but external calendar sync is a Pro feature."
+    },
+    {
+      "name": "Ellie Free",
+      "url": "https://ellieplanner.com/",
+      "desc": "Calendar integration and timebox mode are both behind the subscription."
+    },
+    {
+      "name": "Routine Free",
+      "url": "https://routine.co/",
+      "desc": "The free plan has tasks and calendars, but the daily time-blocking loop is paid."
+    }
+  ],
+  "relatedSlugs": [
+    "akiflow",
+    "motion",
+    "reclaim-ai"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good high-price target where the answer is not trivially yes because integrations matter.",
+  "prompt": "Build me a solo daily planner like Sunsama. Requirements:\n\n- A local web app on localhost:4400: Node + Express + better-sqlite3, server-rendered\n  with a little vanilla JS for drag and drop. No frontend framework.\n- Today view, two columns: my Google Calendar events (read-only via googleapis, OAuth\n  creds in .env) as a timeline, and today's task list beside it.\n- Tasks have title, estimate in minutes, project tag, done flag. Quick-add box at the\n  top, plus a backlog panel of unplanned tasks I can drag into today.\n- Header shows planned minutes vs a daily budget from config (default 6h) and turns\n  red when I overplan.\n- A /shutdown page for the end of day: walks each unfinished task, one keystroke to\n  roll to tomorrow, send to backlog, or drop, then shows planned vs actual.\n- Keep per-day history in SQLite so a /week page can show the last 7 days of planned\n  vs done.\n- Calendar is read-only: never write events. Out of scope: task-tool integrations\n  (Todoist, Trello, email), mobile apps, and two-way calendar sync.\n- No accounts, no telemetry, everything local except the Google API calls.\n- README: Google Cloud console steps for the OAuth client · budget an hour, that\n  console is the worst part of this build.",
+  "promptCurated": false
+}

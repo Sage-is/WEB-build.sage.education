@@ -1,0 +1,130 @@
+{
+  "slug": "parabola",
+  "name": "Parabola",
+  "domain": "parabola.io",
+  "appURL": "https://parabola.io",
+  "category": "automation",
+  "subcategory": "visual data automation",
+  "tagline": "Drag-and-drop data workflows for spreadsheets, APIs, ecommerce, and operations",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "usage-based",
+    "basis": "usage or capacity based",
+    "unit": "usage",
+    "currency": "USD",
+    "native": "Usage or capacity pricing; exact monthly cost varies",
+    "source": "https://parabola.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "1 user; 1,000 credits/month; unlimited flows; limited AI usage; hard stop at the monthly cap.",
+        "notes": null
+      },
+      {
+        "name": "Explorer",
+        "monthly": 20,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "1 user; 1,500 credits/month; 250 MB table storage; daily scheduling.",
+        "notes": "Additional usage is $0.18 per 10 credits."
+      },
+      {
+        "name": "Collaborator",
+        "monthly": 400,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Up to 3 users; 30,000 credits/month; custom scheduling.",
+        "notes": "Self-service monthly plan."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited users; custom credit allotment, storage, scheduling and security.",
+        "notes": "Custom contract; annual credit allotments may apply."
+      }
+    ],
+    "freeTierCaps": "1 user, 1,000 credits/month, unlimited flows and a hard stop at the cap",
+    "billingTerms": "self-service plans are monthly only; Business is custom and may be annual",
+    "priceChanges": [],
+    "hiddenCosts": "Explorer charges $0.18 per additional 10 credits. Credits are charged on flow runs; paid plans move into pay-per-credit usage, while failed or zero-row steps may not count. Cancellation can immediately finalize accrued overage.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://parabola.io/pricing",
+      "https://parabola.io/help"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible visual data automation loop is buildable, but a credible replacement needs more than the first screen. Parabola earns its keep through connectors, auth, reliability, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build one explicit visual data automation workflow with a trigger, validated steps, retries, logs, and a manual replay button.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "hosted PostgreSQL and Redis",
+    "API credentials for the two chosen services",
+    "Node.js 22"
+  ],
+  "whatYouLose": [
+    "durable execution at scale",
+    "schema drift handling and enterprise controls",
+    "hundreds of maintained connectors",
+    "OAuth app verification"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra"
+  ],
+  "moatNotes": "connectors/auth/reliability",
+  "whyPeopleStillPay": "Parabola: One automation is easy. Subscribers pay for maintained integrations, credentials, retries, observability, and someone else owning breakage.",
+  "ongoingBurden": "Maintain OAuth, rate limits, webhooks, retries, queues, idempotency, logs, secret rotation, and third-party API changes.",
+  "priorArt": [
+    {
+      "name": "Activepieces",
+      "url": "https://github.com/activepieces/activepieces",
+      "desc": "Open-source automation builder with connectors and self-hosting."
+    },
+    {
+      "name": "n8n",
+      "url": "https://github.com/n8n-io/n8n",
+      "desc": "Source-available workflow automation engine and connector reference."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "KNIME Analytics Platform",
+      "url": "https://www.knime.com/knime-analytics-platform",
+      "type": "open-source",
+      "repo": "https://github.com/knime-oss/knime-core",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A visual data workbench with hundreds of connectors; scheduled cloud runs are where KNIME starts charging.",
+      "stars": 0,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-07"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "bardeen",
+    "relay-app",
+    "robomotion"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Parabola is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Parabola, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build one explicit visual data automation workflow with a trigger, validated steps, retries, logs, and a manual replay button.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: durable execution at scale; schema drift handling and enterprise controls; hundreds of maintained connectors.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

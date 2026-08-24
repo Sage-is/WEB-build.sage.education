@@ -1,0 +1,251 @@
+{
+  "slug": "discord-nitro",
+  "name": "Discord Nitro",
+  "domain": "discord.com",
+  "appURL": "https://discord.com",
+  "category": "community",
+  "subcategory": "online communities and team communication",
+  "tagline": "Host a private text community on a self-owned server without recreating Discord's public network",
+  "priceMonthly": 9.99,
+  "pricing": {
+    "plan": "Nitro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://discord.com/nitro",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official monthly Nitro subscription.",
+    "native": "9.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Discord (Base)",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "100 servers; 1,000 friends; 10 MB file uploads; 2,000-character messages; screen share 720p/30fps",
+        "notes": "Core Discord account is free."
+      },
+      {
+        "name": "Nitro Basic",
+        "monthly": 2.99,
+        "annualPerMonth": 2.5,
+        "per": "flat",
+        "limits": "100 servers; 50 MB file uploads; 2,000-character messages; screen share up to 1080p/30fps or 720p/60fps",
+        "notes": "$29.99 billed yearly; annual-equivalent rounded to $2.50/month."
+      },
+      {
+        "name": "Nitro",
+        "monthly": 9.99,
+        "annualPerMonth": 8.33,
+        "per": "flat",
+        "limits": "200 servers; 500 MB file uploads; 4,000-character messages; source-quality streaming up to 60fps; 2 Server Boosts; 30% off extra Boosts; 3 friend passes",
+        "notes": "$99.99 billed yearly; annual-equivalent rounded to $8.33/month."
+      }
+    ],
+    "freeTierCaps": "100 servers; 1,000 friends; 10 MB uploads; 2,000 characters/message; 720p/30fps screen share",
+    "billingTerms": "monthly + annual; localized/app-store pricing may differ",
+    "priceChanges": [],
+    "hiddenCosts": "Extra Server Boosts are separate recurring purchases; server perk levels require 2, 7 or 14 allocated Boosts and additional perks can require separate sets of 3 Boosts. Taxes, mobile-store pricing and localized pricing can differ.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://discord.com/nitro",
+      "https://support.discord.com/hc/en-us/articles/115000435108-What-are-Nitro-Nitro-Basic",
+      "https://discord.com/blog/beginners-guide-to-nitro",
+      "https://support.discord.com/hc/en-us/articles/33694251638295-Discord-Account-Caps-Server-Caps-and-More",
+      "https://support.discord.com/hc/en-us/articles/360028038352-Server-Boosting-FAQ"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Discord Nitro, host a private text community on a self-owned server without recreating Discord's public network. The hard boundary is massive user network, voice infrastructure, identity, moderation, discovery, and mobile apps, plus network, moderation, and communication infrastructure.",
+  "coreLoopDIY": "Host a private text community on a self-owned server, organize discussion into channels or topics, and keep membership and moderation under the owner's control without recreating Discord's public network.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "email provider",
+    "object storage for attachments"
+  ],
+  "whatYouLose": [
+    "massive user network, voice infrastructure, identity, moderation, discovery, and mobile apps",
+    "network effects",
+    "native mobile apps",
+    "video and voice infrastructure",
+    "enterprise moderation and discovery"
+  ],
+  "moatTags": [
+    "network-effects",
+    "scale-infra"
+  ],
+  "moatNotes": "network, moderation, and communication infrastructure",
+  "replacementScope": "single private community",
+  "ongoingBurden": "realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations",
+  "whyPeopleStillPay": "People still pay for Discord Nitro because community software is valuable when members are already there and the operator does not have to own realtime reliability and abuse response. The recurring cost buys realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Discourse",
+      "url": "https://github.com/discourse/discourse",
+      "desc": "Mature open-source community discussion platform with strong moderation and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Discord Free",
+      "url": "https://discord.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "The same servers, channels and friend graph; you lose large uploads, HD streaming and decorative peacocking.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup; use the web app or install Discord's signed desktop/mobile app",
+        "engines": null,
+        "dataFormat": "Messages, server membership, uploads, and account activity live in Discord's cloud; the account data package is a ZIP containing JSON and media/metadata exports.",
+        "gapVsPaid": "Discord Free preserves the same servers, channels, friends, and apps, but Nitro's larger uploads, higher-quality streaming, profile cosmetics, and other subscriber perks disappear.",
+        "setupBlocker": "Creating an account is easy, but moving an existing community still means recreating roles, channels, permissions, bots, and invitations.",
+        "sources": [
+          "https://discord.com/",
+          "https://support.discord.com/hc/en-us/articles/360033931551-Getting-Started",
+          "https://support.discord.com/hc/en-us/articles/360034561191-Desktop-Installation-Guide",
+          "https://support.discord.com/hc/en-us/articles/360004957991-Your-Discord-Data-Package",
+          "https://discord.com/privacy",
+          "https://discord.com/nitro"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Element",
+      "url": "https://element.io/",
+      "type": "open-source",
+      "repo": "https://github.com/element-hq/element-web",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Encrypted Matrix rooms with real apps and a free public homeserver; running your own server is optional suffering.",
+      "stars": 13300,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later OR GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use a free Matrix account in Element Web/mobile/desktop, or deploy Element Server Suite on your own infrastructure",
+        "engines": null,
+        "dataFormat": "Rooms, event history, account data, and media live on the selected Matrix homeserver; encrypted-room keys remain on clients and can be backed up through Matrix's key-backup system.",
+        "gapVsPaid": "Element offers encrypted rooms and proper clients, but it lacks Discord's public friend graph, enormous bot/community ecosystem, and familiar gaming-centric social layer.",
+        "setupBlocker": "The clean hosted path is easy, but self-hosting the current Element Server Suite means operating a Matrix homeserver and its Kubernetes/Helm-based stack.",
+        "sources": [
+          "https://github.com/element-hq/element-web",
+          "https://element.io/en/open-source",
+          "https://element.io/en/pricing",
+          "https://docs.element.io/latest/element-server-suite-pro/introduction-to-ess-pro/",
+          "https://matrix.org/docs/matrix-concepts/end-to-end-encryption/",
+          "https://discord.com/nitro"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Rocket.Chat Community",
+      "url": "https://www.rocket.chat/",
+      "type": "open-source",
+      "repo": "https://github.com/RocketChat/Rocket.Chat",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Discord without the public friend graph: channels, threads and files for up to a hundred concurrent users.",
+      "stars": 45900,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Deploy the Community workspace with Docker Compose, Podman, or Kubernetes",
+        "engines": null,
+        "dataFormat": "Users, rooms, messages, and most metadata live in MongoDB; uploads live on local storage or a configured object-storage backend.",
+        "gapVsPaid": "Rocket.Chat Community provides channels, threads, and files, but it has no Discord-wide social network, requires MongoDB administration, and caps the Community workspace at 100 concurrent users.",
+        "setupBlocker": "A production installation requires MongoDB, DNS/TLS, email, backups, upgrades, and enough capacity planning to stay within the Community plan's 100-concurrent-user limit.",
+        "sources": [
+          "https://github.com/RocketChat/Rocket.Chat",
+          "https://github.com/RocketChat/Rocket.Chat/blob/develop/LICENSE",
+          "https://docs.rocket.chat/docs/our-plans",
+          "https://docs.rocket.chat/docs/deploy-with-docker-docker-compose",
+          "https://discord.com/nitro"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Stoat",
+      "url": "https://stoat.chat/",
+      "type": "open-source",
+      "repo": "https://github.com/stoatchat/self-hosted",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Discord-shaped chat on your server; the web client works, while most official native clients still do not.",
+      "stars": 2600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Use Stoat's public service, or deploy its Ubuntu-oriented Docker Compose stack behind your own domain",
+        "engines": null,
+        "dataFormat": "On a self-hosted instance, messages and account records live in MongoDB, cache/state in Valkey, jobs in RabbitMQ, and uploads in MinIO; hosted data lives on Stoat's infrastructure.",
+        "gapVsPaid": "Stoat is recognizably Discord-shaped and self-hostable, but its network is far smaller and most official native clients still do not support custom self-hosted instances.",
+        "setupBlocker": "Self-hosting is a multi-service stack and most official native clients still cannot connect to custom instances, leaving the web/PWA client as the dependable option.",
+        "sources": [
+          "https://stoat.chat/",
+          "https://github.com/stoatchat/self-hosted",
+          "https://github.com/stoatchat/self-hosted/blob/main/LICENSE",
+          "https://github.com/stoatchat/self-hosted/blob/main/compose.yml",
+          "https://discord.com/nitro"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "slack-pro",
+    "circle",
+    "heartbeat-community"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Nitro plan and a single private community DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Discord Nitro in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, WebSockets, and Docker Compose; do not offer alternative stacks.\nThe core loop is: host a private text community on a self-owned server, organize discussion into channels or topics, and keep membership and moderation under the owner's control without recreating Discord's public network.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement spaces, channels, topics, replies, reactions, mentions, profiles, roles, and invitations.\nUse WebSockets for live updates but preserve every message transactionally in PostgreSQL.\nAdd moderation queues, reports, blocks, rate limits, attachment limits, and an audit log.\nProvide email digests, browser notifications, search, pinned content, and member export.\nAdd owner-controlled retention, account deletion, backup, restore, and health checks.\nShip Docker Compose with a seeded demo, migrations, and an emergency admin command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out public-network discovery and existing member liquidity.\nDeliberately leave out production voice or video rooms.\nDeliberately leave out native mobile applications, enterprise SSO, and 24-hour abuse operations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,120 @@
+{
+  "slug": "read-ai",
+  "name": "Read AI",
+  "domain": "read.ai",
+  "appURL": "https://read.ai",
+  "category": "meeting-notes",
+  "subcategory": "meeting transcription and AI notes",
+  "tagline": "Capture meetings and turn them into transcripts, notes, and engagement summaries",
+  "priceMonthly": 19.75,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://read.ai/plans-pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Pro rate shown by the vendor; billing cadence may affect the exact amount.",
+    "native": "19.75 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "5 meeting transcripts per month.",
+        "notes": "No card required."
+      },
+      {
+        "name": "Pro",
+        "monthly": 19.75,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "Unlimited meeting transcripts and storage; 100 file-upload credits per month.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 29.75,
+        "annualPerMonth": 22.5,
+        "per": "user",
+        "limits": "Unlimited meeting transcripts and storage; 200 file-upload credits per month.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise+",
+        "monthly": 39.75,
+        "annualPerMonth": 29.75,
+        "per": "user",
+        "limits": "Minimum 5 licences; unlimited meeting transcripts and storage; 300 file-upload credits per month.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "5 meeting transcripts per month.",
+    "billingTerms": "monthly + annual",
+    "priceChanges": [],
+    "hiddenCosts": "Enterprise+ requires at least 5 licences. Every member of a paid workspace needs a paid licence; Free users cannot join it, and file uploads remain credit-capped on every public paid tier.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.read.ai/plans-pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Read AI, capture meetings and turn them into transcripts, notes, and engagement summaries. The hard boundary is meeting-platform bots, email recaps, analytics, and team workspaces, plus capture reliability, integrations, and collaboration.",
+  "coreLoopDIY": "Record or import a meeting, transcribe it locally, identify speakers with manual correction, and generate structured notes and engagement summaries.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "desktop microphone access",
+    "whisper.cpp model files",
+    "optional OpenAI or Anthropic API key",
+    "local storage"
+  ],
+  "whatYouLose": [
+    "meeting-platform bots, email recaps, analytics, and team workspaces",
+    "calendar auto-join",
+    "reliable speaker diarization",
+    "mobile capture",
+    "team search and sharing"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "capture reliability, integrations, and collaboration",
+  "replacementScope": "personal meeting notebook",
+  "ongoingBurden": "audio permissions, model updates, calendar APIs, storage, speaker correction, and sync",
+  "whyPeopleStillPay": "People still pay for Read AI because a meeting tool must capture every call without surprising anyone, then make the result searchable and shareable across a team. The recurring cost buys audio permissions, model updates, calendar APIs, storage, speaker correction, and sync, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggerganov/whisper.cpp",
+      "desc": "Widely used local Whisper inference implementation suitable for private transcription."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "OpenWhispr",
+      "url": "https://openwhispr.com/",
+      "desc": "Captures and summarizes meetings, but does not produce engagement or sentiment analytics."
+    },
+    {
+      "name": "Speakr",
+      "url": "https://murtaza-nasir.github.io/speakr/",
+      "desc": "Strong transcripts, summaries and speaker statistics; no engagement score pretending to know who was paying attention."
+    }
+  ],
+  "relatedSlugs": [
+    "fathom-ai",
+    "avoma",
+    "meetgeek"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal meeting notebook DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Read AI in an empty repository.\nUse Python 3.12, FastAPI, SQLite, whisper.cpp, and a minimal HTMX interface; do not offer alternative stacks.\nThe core loop is: record or import a meeting, transcribe it locally, identify speakers with manual correction, and generate structured notes and engagement summaries.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nAdd explicit start, pause, resume, and stop controls with a visible recording indicator.\nSupport importing WAV, MP3, M4A, and MP4 files through ffmpeg.\nRun transcription locally and display timestamped editable segments.\nLet the user rename speakers and propagate corrections through the transcript.\nGenerate decisions, action items, questions, and a concise summary from approved text.\nExport Markdown, plain text, and WebVTT beside the original recording.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out silent background capture.\nDeliberately leave out automatic bot attendance in video meetings.\nDeliberately leave out team workspaces and enterprise retention controls.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

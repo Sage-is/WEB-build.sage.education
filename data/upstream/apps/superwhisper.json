@@ -1,0 +1,367 @@
+{
+  "slug": "superwhisper",
+  "name": "Superwhisper",
+  "domain": "superwhisper.com",
+  "category": "voice-dictation",
+  "subcategory": "local dictation",
+  "tagline": "AI dictation for Mac that turns speech into text anywhere",
+  "priceMonthly": 8.49,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "8.49 USD",
+    "source": "https://superwhisper.com/docs/get-started/sw-pro",
+    "checkedOn": "2026-08-07",
+    "confidence": "high",
+    "notes": "Official docs/checkout checked 2026-07-30; Pro monthly listed at $8.49, annual $84.99, lifetime $249.99.",
+    "freeTier": "A free version covers basic dictation; Pro adds unlimited cloud and local models.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Basic dictation; no local models or custom modes; current numeric cloud-usage cap is not published.",
+        "notes": null
+      },
+      {
+        "name": "Pro Monthly",
+        "monthly": 8.49,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Unlimited cloud and local models; license covers personal Mac, Windows, iPhone and iPad devices.",
+        "notes": null
+      },
+      {
+        "name": "Pro Annual",
+        "monthly": null,
+        "annualPerMonth": 7.08,
+        "per": "flat",
+        "limits": "Unlimited cloud and local models; same personal-device license.",
+        "notes": "$84.99/year."
+      },
+      {
+        "name": "Pro Lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "One-time $249.99 purchase; unlimited cloud and local models under the lifetime license terms.",
+        "notes": "One-time price cannot be represented in either recurring-price field."
+      }
+    ],
+    "freeTierCaps": "Basic dictation; no local models or custom modes; the current numeric cloud-use allowance is not published.",
+    "billingTerms": "monthly, annual and one-time lifetime purchase; direct-web prices",
+    "priceChanges": [],
+    "hiddenCosts": "App Store pricing is higher because of Apple fees, but the current exact App Store amounts were not published in the official Pro documentation.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://superwhisper.com/docs/get-started/sw-pro"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "A push-to-talk recorder that transcribes and pastes text into the active app is very buildable for one person, especially on macOS.",
+  "coreLoopDIY": "Bind a hotkey, capture microphone audio, transcribe with Whisper or speech API, optionally rewrite with an LLM, and paste into the active field.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS automation/accessibility permissions",
+    "speech API or local Whisper",
+    "optional LLM API",
+    "hotkey library"
+  ],
+  "whatYouLose": [
+    "beautiful native UX",
+    "presets",
+    "vocabulary/profile tuning",
+    "app-wide polish",
+    "support"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "polish/native integration",
+  "whyPeopleStillPay": "They pay for the low-friction menu-bar experience and dictation profiles.",
+  "priorArt": [
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "Local transcription engine that makes a simple dictation clone realistic.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "FluidVoice",
+      "url": "https://altic.dev/fluid",
+      "type": "open-source",
+      "repo": "https://github.com/altic-dev/FluidVoice",
+      "platforms": [
+        "macos"
+      ],
+      "desc": "Fast Mac dictation with local cleanup; even the fancy part stays on the machine.",
+      "stars": 9400,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Signed macOS download or Homebrew cask",
+        "engines": "Local engines include NVIDIA Nemotron Speech, Parakeet Flash/TDT, Cohere Transcribe models, Apple Speech, and Whisper; optional cleanup can use the local Fluid Intelligence model or OpenAI, Groq, and custom compatible endpoints.",
+        "dataFormat": "Transcripts, optional history, recordings, dictionaries, and settings stay on the Mac; API keys use Keychain, and optional cloud cleanup sends text to the selected provider. Exports can be created locally.",
+        "gapVsPaid": "FluidVoice is macOS-only and newer, with fewer proven ready-made dictation modes and less cross-device polish than Superwhisper.",
+        "setupBlocker": "It requires macOS 15, microphone and Accessibility permissions, and a model download; Intel Macs are limited to the Whisper path.",
+        "sources": [
+          "https://altic.dev/fluid",
+          "https://github.com/altic-dev/FluidVoice",
+          "https://github.com/altic-dev/FluidVoice/blob/main/LICENSE",
+          "https://superwhisper.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Handy",
+      "url": "https://handy.computer/",
+      "type": "open-source",
+      "repo": "https://github.com/cjpais/Handy",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Press a key, talk and get plain text in the app you were already using. No cleanup magic, no invoice.",
+      "stars": 28900,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "DMG, MSI, deb, rpm, or AppImage",
+        "engines": "Local Whisper Small, Medium, Turbo, and Large models; NVIDIA Parakeet v3; Silero VAD; optional cleanup through local or configured LLM and OpenRouter-compatible providers.",
+        "dataFormat": "History is stored in a local SQLite history.db database and recordings as local WAV files; configured cleanup providers receive the transcript sent to them.",
+        "gapVsPaid": "Handy is transcription-first and lacks Superwhisper's mature mode system and consistently polished context-aware cleanup.",
+        "setupBlocker": "The first run needs microphone and text-injection permissions plus a model download; on Linux, automatic insertion may require xdotool, wtype, or dotool depending on the desktop.",
+        "sources": [
+          "https://handy.computer/",
+          "https://github.com/cjpais/Handy",
+          "https://github.com/cjpais/Handy/blob/main/LICENSE",
+          "https://superwhisper.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Muesli",
+      "url": "https://muesli.works/",
+      "type": "open-source",
+      "repo": "https://github.com/Muesli-HQ/muesli",
+      "platforms": [
+        "macos"
+      ],
+      "desc": "Hold a key, talk and get cleaned text at the cursor; the local meeting recorder comes along for free.",
+      "stars": 890,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Signed macOS DMG or Homebrew cask",
+        "engines": "Local speech models include Parakeet variants, Cohere Transcribe, Nemotron, SenseVoice, Qwen3 ASR, Indic ASR, Gemma, and Whisper; cleanup and summaries can use OpenAI, OpenRouter, ChatGPT OAuth, Ollama, LM Studio, or custom endpoints.",
+        "dataFormat": "The app stores its library in a local SQLite database under the macOS Application Support folder and recordings on disk; optional iCloud sync is text-only and recordings do not sync. Exports include PDF, Markdown, and JSON.",
+        "gapVsPaid": "Muesli is Apple-silicon Mac-only and exposes more model and provider plumbing instead of Superwhisper's more polished, ready-made dictation experience.",
+        "setupBlocker": "It requires Apple-silicon macOS 14.2 or later, microphone and Accessibility permissions, and at least one local model download or external provider configuration.",
+        "sources": [
+          "https://muesli.works/",
+          "https://github.com/Muesli-HQ/muesli",
+          "https://github.com/Muesli-HQ/muesli/blob/main/LICENSE",
+          "https://superwhisper.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "OpenWhispr",
+      "url": "https://openwhispr.com/",
+      "type": "open-source",
+      "repo": "https://github.com/OpenWhispr/openwhispr",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A cross-platform hotkey-to-cursor app with local models, cleanup, history and meeting capture.",
+      "stars": 5223,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Native macOS, Windows, or Linux installer; optional account enables cloud services",
+        "engines": "Local Whisper, NVIDIA Parakeet, and llama.cpp-based processing; optional managed or bring-your-own-key cloud paths use providers such as OpenAI and Groq.",
+        "dataFormat": "Local mode stores transcriptions, notes, agent data, and preferences in a local SQLite database, with optional local recordings; cloud sync is optional, and cloud transcription audio is described as transient rather than retained.",
+        "gapVsPaid": "The free local path is less turnkey, while cloud speed, synchronization, and several advanced AI conveniences move into paid or bring-your-own-provider territory.",
+        "setupBlocker": "The free local path needs permissions and a model download; cloud-speed, synchronization, and some advanced AI conveniences require an account, provider key, or paid plan.",
+        "sources": [
+          "https://openwhispr.com/",
+          "https://openwhispr.com/pricing",
+          "https://openwhispr.com/security",
+          "https://openwhispr.com/privacy",
+          "https://github.com/OpenWhispr/openwhispr",
+          "https://github.com/OpenWhispr/openwhispr/blob/main/LICENSE",
+          "https://superwhisper.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Spokenly",
+      "url": "https://spokenly.app/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios"
+      ],
+      "desc": "Unlimited local dictation behind a polished installer; cloud convenience is the bit it charges for.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "both",
+        "install": "Native macOS, Windows, Linux, or iPhone app",
+        "engines": "Free local transcription uses Whisper and Parakeet; bring-your-own-key cloud options include OpenAI, Deepgram, and Groq, while Spokenly's managed cloud and AI cleanup are paid.",
+        "dataFormat": "Offline mode keeps audio and transcripts on the device; a selected cloud provider receives audio for cloud transcription and the provider's retention rules apply. Spokenly does not publish the local database or file format.",
+        "gapVsPaid": "Unlimited local transcription is free, but the managed cloud speed, AI cleanup, and synchronization that make the experience feel effortless are paid.",
+        "setupBlocker": "Local use needs microphone and Accessibility permissions plus a model download; BYOK cloud use requires creating and protecting a provider key.",
+        "sources": [
+          "https://spokenly.app/",
+          "https://spokenly.app/open-source",
+          "https://spokenly.app/pricing",
+          "https://superwhisper.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "TypeNo",
+      "url": "https://typeno.com/",
+      "type": "open-source",
+      "repo": "https://github.com/marswaveai/TypeNo",
+      "platforms": [
+        "macos"
+      ],
+      "desc": "Control, talk, Control, paste. It has no settings because there is nothing to upsell.",
+      "stars": 883,
+      "lastCommit": "2026-05",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "local",
+        "install": "Download the signed and notarized macOS app, then install its separate local speech-engine dependencies",
+        "engines": "The local coli speech-recognition engine; the current public setup does not identify a supported cloud backend.",
+        "dataFormat": "It keeps no transcript history: captured audio is processed locally, the result is placed in the clipboard or active app, and downloaded model files live under ~/.coli/models.",
+        "gapVsPaid": "TypeNo deliberately omits cleanup, modes, history, dictionaries, and settings, so it replaces raw transcription rather than Superwhisper's polished rewriting workflow.",
+        "setupBlocker": "Despite the polished app bundle, setup requires Node.js LTS, ffmpeg, a global npm install of @marswave/coli, and a separate model download.",
+        "sources": [
+          "https://typeno.com/",
+          "https://github.com/marswaveai/TypeNo",
+          "https://github.com/marswaveai/TypeNo/blob/main/LICENSE",
+          "https://superwhisper.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Voicebox",
+      "url": "https://voicebox.sh/",
+      "type": "open-source",
+      "repo": "https://github.com/jamiepine/voicebox",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "desc": "Voice cloning studio attached to a global dictation hotkey; overkill, free overkill.",
+      "stars": 49500,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "local",
+        "install": "Prebuilt macOS or Windows app, Docker, or a source build on Linux",
+        "engines": "Whisper and Whisper Turbo speech recognition through MLX or PyTorch, local Qwen3 text cleanup, and multiple local text-to-speech and voice-cloning engines.",
+        "dataFormat": "Projects, transcripts, model metadata, and settings live in a local SQLite database with local audio and voice assets.",
+        "gapVsPaid": "Voicebox is a heavyweight voice studio whose dictation hotkey is only one module, bringing larger models and more complexity than Superwhisper's focused utility.",
+        "setupBlocker": "The first run is a large model-and-compute setup rather than a tiny dictation utility; Linux users currently need a source build.",
+        "sources": [
+          "https://voicebox.sh/",
+          "https://github.com/jamiepine/voicebox",
+          "https://github.com/jamiepine/voicebox/blob/main/LICENSE",
+          "https://superwhisper.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Voquill",
+      "url": "https://voquill.com/dictation/",
+      "type": "open-source",
+      "repo": "https://github.com/voquill/voquill",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios"
+      ],
+      "desc": "System-wide dictation, local Whisper, cleanup and a glossary; cloud convenience is the paid part.",
+      "stars": 997,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Native macOS, Windows, or Linux installer; on-premises deployment is also offered",
+        "engines": "Local Whisper; cloud or BYOK connections include Groq, OpenAI, Anthropic, Google, DeepSeek, OpenRouter, Azure, and compatible endpoints, with local or provider-backed cleanup.",
+        "dataFormat": "Local history, audio, settings, and encrypted keys live in a local SQLite database; optional cloud synchronization stores account, dictionary, and tone data in Firebase, while cloud audio is described as transient.",
+        "gapVsPaid": "Its free local or BYOK route is less zero-configuration, and the smooth cloud synchronization and fast managed transcription path are paid.",
+        "setupBlocker": "Local use requires permissions and a model download; the smoother cloud transcription and sync path needs an account, provider credentials, or the paid service.",
+        "sources": [
+          "https://voquill.com/dictation/",
+          "https://voquill.com/privacy/",
+          "https://github.com/voquill/voquill",
+          "https://github.com/voquill/voquill/blob/main/LICENCE",
+          "https://superwhisper.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "VoiceInk",
+      "url": "https://tryvoiceink.com/",
+      "desc": "The code is open, but the usable download is a trial; the free path is compiling it yourself in Xcode."
+    }
+  ],
+  "relatedSlugs": [
+    "descript",
+    "loom",
+    "tella"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Strong yes and very on-brand for vibecoding: small utility, obvious primitives, high subscription annoyance.",
+  "prompt": "Build me a push-to-talk dictation tool for macOS to replace Superwhisper. Requirements:\n\n- A global hotkey (default: hold right Option) records my mic while held, stops on\n  release. A small Swift menu bar app or a Hammerspoon script, pick the simpler to\n  ship.\n- Record with ffmpeg (avfoundation) to a temp wav, transcribe locally with whisper.cpp\n  (small.en by default, model path in a config file). Works fully offline, no cloud\n  speech APIs.\n- Paste the result into whatever field has focus (simulate Cmd+V via CGEvent or\n  osascript, then restore my previous clipboard).\n- Optional cleanup mode on a second hotkey: send the transcript to an LLM (key in\n  .env) to fix punctuation and drop filler words, then paste. If no key is set, this\n  mode just does a plain paste.\n- Menu bar icon shows idle/recording/transcribing; clicking it lists the last 10\n  transcripts with copy buttons.\n- Append every transcript to ~/Dictation/YYYY-MM.md with a timestamp, and delete the\n  audio after transcription. No accounts, no telemetry.\n- Out of scope: per-app presets and custom vocabulary tuning. One good general mode.\n- README: mic + accessibility permissions to grant, how to download the whisper\n  model, and a note that the first run will trigger macOS permission prompts.",
+  "promptCurated": false
+}

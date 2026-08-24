@@ -1,0 +1,155 @@
+{
+  "slug": "swipe-pages",
+  "name": "Swipe Pages",
+  "domain": "swipepages.com",
+  "appURL": "https://swipepages.com",
+  "category": "website-builder",
+  "subcategory": "landing-page builder",
+  "tagline": "Mobile-focused landing pages, forms, experiments, and integrations",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://swipepages.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Startup",
+        "monthly": 39,
+        "annualPerMonth": 29,
+        "per": "workspace",
+        "limits": "1 custom domain, 20,000 visits/month, unlimited landing pages, funnels and conversions",
+        "notes": "The monthly price is confirmed by the page's stated $120 annual saving: $39 × 12 versus $29 × 12."
+      },
+      {
+        "name": "Marketer",
+        "monthly": 89,
+        "annualPerMonth": 69,
+        "per": "workspace",
+        "limits": "5 custom domains, 50,000 visits/month, 5 client subaccounts, 5 team members, unlimited landing pages and funnels",
+        "notes": "The monthly price is confirmed by the stated $240 annual saving."
+      },
+      {
+        "name": "Agency",
+        "monthly": 199,
+        "annualPerMonth": 149,
+        "per": "workspace",
+        "limits": "Unlimited custom domains, 500,000 visits/month, unlimited client subaccounts, team members, landing pages and funnels",
+        "notes": "The monthly price is confirmed by the stated $600 annual saving."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom traffic, account and support limits",
+        "notes": "Contact sales; no public price."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day full-featured trial with no credit card",
+    "billingTerms": "monthly + annual; annual plans are billed upfront",
+    "priceChanges": [],
+    "hiddenCosts": "$5 for each additional 5,000 visits above the monthly traffic cap, billed in 5,000-visit blocks.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://swipepages.com/pricing/",
+      "https://swipepages.com/pricing-2024/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible landing-page builder loop is buildable, but a credible replacement needs more than the first screen. Swipe Pages earns its keep through editor, CMS, hosting, polish, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a focused landing-page builder generator that edits structured page sections, previews responsive layouts, and publishes static files.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "deploy target or static hosting",
+    "user-owned domain for publishing"
+  ],
+  "whatYouLose": [
+    "large template and component libraries",
+    "CMS collaboration and client handoff",
+    "managed hosting, forms, and analytics",
+    "general-purpose visual editing"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra",
+    "collaboration"
+  ],
+  "moatNotes": "editor/CMS/hosting/polish",
+  "whyPeopleStillPay": "Swipe Pages: A single site is easy to code. People pay for safe ongoing edits, templates, publishing, domains, collaboration, and no-maintenance hosting.",
+  "ongoingBurden": "Maintain responsive rendering, browser compatibility, deployment, domains, forms, spam protection, backups, and editor migrations.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder."
+    },
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web-builder framework."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Mautic",
+      "url": "https://mautic.org",
+      "type": "open-source",
+      "repo": "https://github.com/mautic/mautic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Responsive pages, forms, campaign analytics and A/B testing; self-hosting is the least mobile-friendly part.",
+      "stars": 9800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Mobile-ready landing pages, forms and one split test free; advanced integrations and agency polish are thinner.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "The editor can be embedded into a product; the product is not included."
+    },
+    {
+      "name": "Webstudio",
+      "url": "https://webstudio.is",
+      "desc": "Makes responsive pages, but not managed experiments, lead workflows and integrations."
+    }
+  ],
+  "relatedSlugs": [
+    "landingi",
+    "instapage",
+    "umso"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Swipe Pages is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Swipe Pages, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a focused landing-page builder generator that edits structured page sections, previews responsive layouts, and publishes static files.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: large template and component libraries; CMS collaboration and client handoff; managed hosting, forms, and analytics.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

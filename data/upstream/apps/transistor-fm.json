@@ -1,0 +1,141 @@
+{
+  "slug": "transistor-fm",
+  "name": "Transistor",
+  "domain": "transistor.fm",
+  "appURL": "https://transistor.fm",
+  "category": "podcasting",
+  "subcategory": "podcast recording, cleanup and publishing",
+  "tagline": "Publish a private or public RSS feed from user-owned audio storage",
+  "priceMonthly": 19,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://transistor.fm/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Starter monthly tier.",
+    "native": "19 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 19,
+        "annualPerMonth": 15.83,
+        "per": "workspace",
+        "limits": "Unlimited podcasts and team members; 50 private subscribers; 20,000 downloads/month",
+        "notes": "Annual equivalent calculated from paying for 10 months and receiving 12."
+      },
+      {
+        "name": "Professional",
+        "monthly": 49,
+        "annualPerMonth": 40.83,
+        "per": "workspace",
+        "limits": "Unlimited podcasts/team; 500 private subscribers; 100,000 downloads/month; dynamic ads",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 99,
+        "annualPerMonth": 82.5,
+        "per": "workspace",
+        "limits": "Unlimited podcasts/team; 3,000 private subscribers; 250,000 downloads/month; branding removed",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 199,
+        "annualPerMonth": 165.83,
+        "per": "workspace",
+        "limits": "Starts at custom download, subscriber, support and service limits",
+        "notes": "Published as $199+/month; annual equivalent calculated from the 10-month-for-12 offer."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day trial",
+    "billingTerms": "monthly + annual; annual is priced as 10 months for 12",
+    "priceChanges": [],
+    "hiddenCosts": "Transcription is sold in separate 5-hour and 20-hour add-ons with no public unit price; sustained download overages require an upgrade or sales discussion.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://transistor.fm/pricing/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Transistor, publish a private or public RSS feed from user-owned audio storage. The hard boundary is reliable hosting, multiple shows, analytics, team access, and directory support, plus audio infrastructure, distribution, and production polish.",
+  "coreLoopDIY": "Import spoken-word audio, perform practical cleanup, assemble an episode with show notes, and publish a private or public RSS feed from user-owned audio storage.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "ffmpeg",
+    "local audio files",
+    "optional transcription API key",
+    "sufficient disk space"
+  ],
+  "whatYouLose": [
+    "reliable hosting, multiple shows, analytics, team access, and directory support",
+    "remote studio reliability",
+    "licensed music libraries",
+    "hosting distribution",
+    "advanced mastering and support"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "audio infrastructure, distribution, and production polish",
+  "replacementScope": "single-creator production tool",
+  "ongoingBurden": "codec support, loudness standards, transcription, storage, feeds, analytics, and deliverability to directories",
+  "whyPeopleStillPay": "People still pay for Transistor because creators pay to remove fragile audio plumbing and publishing chores from a release schedule. The recurring cost buys codec support, loudness standards, transcription, storage, feeds, analytics, and deliverability to directories, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Audacity",
+      "url": "https://github.com/audacity/audacity",
+      "desc": "Long-running open-source multitrack audio editor and useful implementation prior art."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Castopod",
+      "url": "https://castopod.org/",
+      "type": "open-source",
+      "repo": "https://github.com/ad-aures/castopod",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Podcast hosting on your server, complete with feeds, analytics and comments; you inherit the server.",
+      "stars": 863,
+      "lastCommit": "2026-06",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Podlove Podcast Publisher",
+      "url": "https://podlove.org/podlove-podcast-publisher/",
+      "type": "open-source",
+      "repo": "https://github.com/podlove/podlove-publisher",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A serious WordPress podcast publisher, provided WordPress is already a life choice.",
+      "stars": 306,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "riverside",
+    "alitu",
+    "auphonic"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a single-creator production tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Transistor in an empty repository.\nUse Python 3.12, FastAPI, ffmpeg, SQLite, and an HTMX interface; do not offer alternative stacks.\nThe core loop is: import spoken-word audio, perform practical cleanup, assemble an episode with show notes, and publish a private or public RSS feed from user-owned audio storage.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate an upload queue and preserve originals in a read-only media folder.\nGenerate waveforms and non-destructive edit markers instead of rewriting source files.\nImplement silence trimming, loudness normalization to -16 LUFS, fades, and noise-gate presets.\nAdd chapter markers, intro and outro slots, and a simple two-track timeline.\nProduce a transcript and draft title, description, chapters, and social excerpts.\nExport MP3, WAV, transcript, chapters JSON, and a complete project manifest.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out real-time remote recording.\nDeliberately leave out podcast hosting and directory analytics.\nDeliberately leave out licensed stock music and voice cloning.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

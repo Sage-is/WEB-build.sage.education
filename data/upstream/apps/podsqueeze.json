@@ -1,0 +1,125 @@
+{
+  "slug": "podsqueeze",
+  "name": "Podsqueeze",
+  "domain": "podsqueeze.com",
+  "appURL": "https://podsqueeze.com",
+  "category": "podcasting",
+  "subcategory": "podcast recording, cleanup and publishing",
+  "tagline": "Transform an episode into show notes, chapters, quotes, and short text assets",
+  "priceMonthly": 8.99,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "annual billing, per month",
+    "unit": "flat",
+    "source": "https://podsqueeze.com/pricing/",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Starter monthly rate.",
+    "native": "8.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": null,
+        "annualPerMonth": 8.99,
+        "per": "workspace",
+        "limits": "120 processing minutes/month; 8 video clips; 4 GB/file; unused minutes can accumulate",
+        "notes": "Live page displayed $8.99/month beside an annual 30%-off control; the month-to-month amount was not exposed in parsed text. The supplied snapshot said $18/month; the current page shows $8.99/month in its annual-price state."
+      },
+      {
+        "name": "Pro",
+        "monthly": null,
+        "annualPerMonth": 49,
+        "per": "workspace",
+        "limits": "320 processing minutes/month; 20 video clips; 10 GB/file; unused minutes can accumulate",
+        "notes": "Live page displayed $49/month beside an annual 30%-off control; the month-to-month amount was not exposed in parsed text."
+      },
+      {
+        "name": "Agency Lite",
+        "monthly": null,
+        "annualPerMonth": 89,
+        "per": "workspace",
+        "limits": "600 processing minutes/month; 40 video clips; 10 GB/file; unused minutes can accumulate",
+        "notes": "Live page displayed $89/month beside an annual 30%-off control; the month-to-month amount was not exposed in parsed text."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom processing minutes, clips, seats and support",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "annual prices displayed with a stated 30% discount; exact month-to-month dollar amounts were not extractable",
+    "priceChanges": [],
+    "hiddenCosts": "Minutes accumulate only up to 3× the current plan allowance and while the account remains on the same or a higher plan.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://podsqueeze.com/pricing/"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Podsqueeze, transform an episode into show notes, chapters, quotes, and short text assets. The hard boundary is hosted transcription, media clipping, templates, and publishing convenience, plus audio infrastructure, distribution, and production polish.",
+  "coreLoopDIY": "Import a finished spoken-word episode, transcribe it, and transform it into show notes, chapters, quotes, and short text assets ready for export.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "ffmpeg",
+    "local audio files",
+    "optional transcription API key",
+    "sufficient disk space"
+  ],
+  "whatYouLose": [
+    "hosted transcription, media clipping, templates, and publishing convenience",
+    "remote studio reliability",
+    "licensed music libraries",
+    "hosting distribution",
+    "advanced mastering and support"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "audio infrastructure, distribution, and production polish",
+  "replacementScope": "single-creator production tool",
+  "ongoingBurden": "codec support, loudness standards, transcription, storage, feeds, analytics, and deliverability to directories",
+  "whyPeopleStillPay": "People still pay for Podsqueeze because creators pay to remove fragile audio plumbing and publishing chores from a release schedule. The recurring cost buys codec support, loudness standards, transcription, storage, feeds, analytics, and deliverability to directories, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Audacity",
+      "url": "https://github.com/audacity/audacity",
+      "desc": "Long-running open-source multitrack audio editor and useful implementation prior art."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Speakr",
+      "url": "https://murtaza-nasir.github.io/speakr/",
+      "type": "open-source",
+      "repo": "https://github.com/murtaza-nasir/speakr",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Podcast repurposing with your own model endpoints instead of another monthly invoice.",
+      "stars": 3600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "riverside",
+    "alitu",
+    "auphonic"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Starter plan and a single-creator production tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Podsqueeze in an empty repository.\nUse Python 3.12, FastAPI, ffmpeg, SQLite, and an HTMX interface; do not offer alternative stacks.\nThe core loop is: import a finished spoken-word episode, transcribe it, and transform it into show notes, chapters, quotes, and short text assets ready for export.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate an upload queue and preserve originals in a read-only media folder.\nGenerate waveforms and non-destructive edit markers instead of rewriting source files.\nImplement silence trimming, loudness normalization to -16 LUFS, fades, and noise-gate presets.\nAdd chapter markers, intro and outro slots, and a simple two-track timeline.\nProduce a transcript and draft title, description, chapters, and social excerpts.\nExport MP3, WAV, transcript, chapters JSON, and a complete project manifest.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out real-time remote recording.\nDeliberately leave out podcast hosting and directory analytics.\nDeliberately leave out licensed stock music and voice cloning.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

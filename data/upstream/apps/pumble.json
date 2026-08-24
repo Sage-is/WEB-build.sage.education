@@ -1,0 +1,320 @@
+{
+  "slug": "pumble",
+  "name": "Pumble",
+  "domain": "pumble.com",
+  "appURL": "https://pumble.com",
+  "category": "community",
+  "subcategory": "online communities and team communication",
+  "tagline": "Run straightforward team channels, direct messages, threads, and file sharing",
+  "priceMonthly": 2.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://pumble.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Pro monthly seat price with annual billing.",
+    "native": "2.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Unlimited users, message history and channels; 10 GB storage/workspace; 1:1 meetings; 3 third-party integrations plus Clockify and Plaky",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 2.99,
+        "annualPerMonth": 2.49,
+        "per": "user",
+        "limits": "10 GB storage/paid seat; 10 integrations; group meetings",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 4.99,
+        "annualPerMonth": 3.99,
+        "per": "user",
+        "limits": "20 GB storage/paid seat; unlimited integrations; meeting recording; 5 free single-channel guests per paid seat",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 7.99,
+        "annualPerMonth": 6.99,
+        "per": "user",
+        "limits": "100 GB storage/paid seat; SSO and retention controls",
+        "notes": null
+      },
+      {
+        "name": "CAKE.com Bundle",
+        "monthly": 15.99,
+        "annualPerMonth": 12.99,
+        "per": "user",
+        "limits": "Pumble plus Clockify and Plaky; charged once per unique user across the bundled products",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "unlimited users, messages and channels; 10 GB/workspace; 1:1 meetings; 3 external integrations plus Clockify and Plaky",
+    "billingTerms": "monthly + annual",
+    "priceChanges": [],
+    "hiddenCosts": "Owners, admins, members and multi-channel guests count as paid seats; deactivated users do not. Business includes 5 free single-channel guests per paid seat, but multi-channel guests are paid. Bundle billing counts each unique user across the included apps.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://pumble.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Pumble, run straightforward team channels, direct messages, threads, and file sharing. The hard boundary is cross-platform apps, push, guest access, admin controls, and hosted reliability, plus network, moderation, and communication infrastructure.",
+  "coreLoopDIY": "Host a private team space with channels, direct messages, threads, and file sharing, and keep membership and moderation under the owner's control.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "email provider",
+    "object storage for attachments"
+  ],
+  "whatYouLose": [
+    "cross-platform apps, push, guest access, admin controls, and hosted reliability",
+    "network effects",
+    "native mobile apps",
+    "video and voice infrastructure",
+    "enterprise moderation and discovery"
+  ],
+  "moatTags": [
+    "collaboration",
+    "scale-infra",
+    "network-effects"
+  ],
+  "moatNotes": "network, moderation, and communication infrastructure",
+  "replacementScope": "single private community",
+  "ongoingBurden": "realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations",
+  "whyPeopleStillPay": "People still pay for Pumble because community software is valuable when members are already there and the operator does not have to own realtime reliability and abuse response. The recurring cost buys realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Discourse",
+      "url": "https://github.com/discourse/discourse",
+      "desc": "Mature open-source community discussion platform with strong moderation and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Chanty Free",
+      "url": "https://www.chanty.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "Five people get unlimited history, files, tasks and one-to-one calls; the sixth human triggers billing.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup; use Chanty's web, desktop, or mobile clients",
+        "engines": null,
+        "dataFormat": "Chats, task records, users, and files live in Chanty's cloud; workspace data export is a Business-plan feature rather than part of the free plan.",
+        "gapVsPaid": "Chanty Free includes unlimited history, files, tasks, and one-to-one calls, but it stops at five members and free workspaces cannot export their data.",
+        "setupBlocker": "There is no technical setup blocker, but the free workspace is limited to five members, so the sixth teammate forces a migration or payment.",
+        "sources": [
+          "https://www.chanty.com/pricing/",
+          "https://pumble.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Element",
+      "url": "https://element.io/",
+      "type": "open-source",
+      "repo": "https://github.com/element-hq/element-web",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Free Matrix chat with rooms, threads, files and proper apps; familiar enough after the first vocabulary lesson.",
+      "stars": 13300,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later OR GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use a free Matrix account in Element Web/mobile/desktop, or deploy Element Server Suite on your own infrastructure",
+        "engines": null,
+        "dataFormat": "Rooms, event history, account data, and media live on the selected Matrix homeserver; encrypted-room keys remain on clients and can be backed up through Matrix's key-backup system.",
+        "gapVsPaid": "Element supplies rooms, threads, files, and apps, but the Matrix homeserver model and vocabulary are less straightforward for a team expecting Pumble's Slack-like conventions.",
+        "setupBlocker": "The clean hosted path is easy, but self-hosting the current Element Server Suite means operating a Matrix homeserver and its Kubernetes/Helm-based stack.",
+        "sources": [
+          "https://github.com/element-hq/element-web",
+          "https://element.io/en/open-source",
+          "https://element.io/en/pricing",
+          "https://docs.element.io/latest/element-server-suite-pro/introduction-to-ess-pro/",
+          "https://matrix.org/docs/matrix-concepts/end-to-end-encryption/",
+          "https://pumble.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mattermost Team Edition",
+      "url": "https://mattermost.com/",
+      "type": "open-source",
+      "repo": "https://github.com/mattermost/mattermost",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Full self-hosted team chat for under 250 users; free software, non-free evenings.",
+      "stars": 38700,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Install the official Linux binary with PostgreSQL, then configure systemd, TLS/reverse proxy, SMTP, and file storage",
+        "engines": null,
+        "dataFormat": "Channels, posts, users, and configuration live in PostgreSQL; file attachments live in the Mattermost data directory or configured S3-compatible object storage.",
+        "gapVsPaid": "Mattermost Team Edition is a fuller self-hosted chat, but PostgreSQL, TLS, SMTP, storage, backups, upgrades, and uptime become the team's responsibility.",
+        "setupBlocker": "The first obstacle is a real Linux service deployment, PostgreSQL, SMTP, DNS/TLS, storage, backups, and upgrades, not an app-store install.",
+        "sources": [
+          "https://docs.mattermost.com/product-overview/editions-and-offerings.html",
+          "https://github.com/mattermost/mattermost",
+          "https://docs.mattermost.com/deployment-guide/server/linux/deploy-rhel.html",
+          "https://docs.mattermost.com/administration-guide/configure/smtp-email.html",
+          "https://pumble.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Pumble Free",
+      "url": "https://pumble.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "The same product keeps unlimited users, channels and history; storage, calls and integrations are where the invoice waits.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup; use the browser or Pumble's desktop/mobile apps",
+        "engines": null,
+        "dataFormat": "Messages, channels, user records, and files live in Pumble's cloud; workspace owners can export public-channel data as a ZIP with message data and file links.",
+        "gapVsPaid": "Pumble Free keeps unlimited users, channels, and history, but free group calls and screen sharing are absent and storage and integration allowances are much tighter.",
+        "setupBlocker": "There is no installation hurdle, but migration still requires inviting everyone and rebuilding channels and integrations; free exports exclude private channels and direct messages.",
+        "sources": [
+          "https://pumble.com/pricing",
+          "https://pumble.com/help/workspace-administration/pricing/pumble-subscription-plans-and-extra-features/",
+          "https://pumble.com/help/profile/account-management/export-data-from-pumble/",
+          "https://pumble.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Rocket.Chat Community",
+      "url": "https://www.rocket.chat/",
+      "type": "open-source",
+      "repo": "https://github.com/RocketChat/Rocket.Chat",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Slack-shaped chat for up to a hundred concurrent users; MongoDB and upgrades are now yours.",
+      "stars": 45900,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Deploy the Community workspace with Docker Compose, Podman, or Kubernetes",
+        "engines": null,
+        "dataFormat": "Users, rooms, messages, and most metadata live in MongoDB; uploads live on local storage or a configured object-storage backend.",
+        "gapVsPaid": "Rocket.Chat Community is capable and self-hosted, but MongoDB administration, upgrades, and its 100-concurrent-user Community limit are more burdensome than Pumble.",
+        "setupBlocker": "A production installation requires MongoDB, DNS/TLS, email, backups, upgrades, and enough capacity planning to stay within the Community plan's 100-concurrent-user limit.",
+        "sources": [
+          "https://github.com/RocketChat/Rocket.Chat",
+          "https://github.com/RocketChat/Rocket.Chat/blob/develop/LICENSE",
+          "https://docs.rocket.chat/docs/our-plans",
+          "https://docs.rocket.chat/docs/deploy-with-docker-docker-compose",
+          "https://pumble.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Zulip",
+      "url": "https://zulip.com/",
+      "type": "open-source",
+      "repo": "https://github.com/zulip/zulip",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Channels become streams and every conversation gets a topic; async teams usually call that an upgrade.",
+      "stars": 25600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "slack-pro",
+    "discord-nitro",
+    "circle"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a single private community DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Pumble in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, WebSockets, and Docker Compose; do not offer alternative stacks.\nThe core loop is: host a private team space with channels, direct messages, threads, and file sharing, and keep membership and moderation under the owner's control.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement spaces, channels, topics, replies, reactions, mentions, profiles, roles, and invitations.\nUse WebSockets for live updates but preserve every message transactionally in PostgreSQL.\nAdd moderation queues, reports, blocks, rate limits, attachment limits, and an audit log.\nProvide email digests, browser notifications, search, pinned content, and member export.\nAdd owner-controlled retention, account deletion, backup, restore, and health checks.\nShip Docker Compose with a seeded demo, migrations, and an emergency admin command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out public-network discovery and existing member liquidity.\nDeliberately leave out production voice or video rooms.\nDeliberately leave out native mobile applications, enterprise SSO, and 24-hour abuse operations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

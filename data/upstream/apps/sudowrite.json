@@ -1,0 +1,128 @@
+{
+  "slug": "sudowrite",
+  "name": "Sudowrite",
+  "domain": "sudowrite.com",
+  "appURL": "https://sudowrite.com",
+  "category": "writing-assistant",
+  "subcategory": "grammar, editing and long-form writing",
+  "tagline": "Brainstorm fiction, expand scenes, inspect story context, and generate constrained prose suggestions",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Hobby and Student",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://sudowrite.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official entry monthly tier; credit allowances differ by plan.",
+    "native": "19 USD",
+    "kind": "usage-based",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Hobby & Student",
+        "monthly": 19,
+        "annualPerMonth": 10,
+        "per": "user",
+        "limits": "225,000 credits/month",
+        "notes": "Unused included credits expire at each monthly refresh; annual total is $120."
+      },
+      {
+        "name": "Professional",
+        "monthly": 29,
+        "annualPerMonth": 22,
+        "per": "user",
+        "limits": "1,000,000 credits/month",
+        "notes": "Unused included credits expire at each monthly refresh; annual total is $264."
+      },
+      {
+        "name": "Max",
+        "monthly": 59,
+        "annualPerMonth": 44,
+        "per": "user",
+        "limits": "2,000,000 credits/month; unused included credits roll over for up to 12 months",
+        "notes": "Rollover requires an active Max subscription; annual total is $528."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom limits and terms",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (up to 50% lower); no-card free trial; subscriptions auto-renew",
+    "priceChanges": [],
+    "hiddenCosts": "Hobby and Professional included credits expire every monthly refresh; Max rollover lasts at most 12 months. Extra credits can be purchased, never expire, but can only be used while a subscription is active.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://sudowrite.com/pricing",
+      "https://docs.sudowrite.com/plans--account/wBnmhtSyMcWtk2BLzifGkz/what-plans-are-available/mwfVvj2rGcKYs1BQy4Pdcb",
+      "https://docs.sudowrite.com/plans--account/wBnmhtSyMcWtk2BLzifGkz/do-credits-roll-over/u93HAUuEXStjSzpH3UE6FH"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Sudowrite, brainstorm fiction, expand scenes, inspect story context, and generate constrained prose suggestions. The hard boundary is its fiction-tuned workflows, context handling, and model orchestration, plus polish, integrations, and proprietary language models.",
+  "coreLoopDIY": "Open local text or Markdown, brainstorm fiction, expand scenes, generate constrained prose suggestions from story context, show a diff, and save or export without uploading the document.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "macOS, Windows, or Linux",
+    "local files",
+    "optional OpenAI or Anthropic API key for semantic rewrites"
+  ],
+  "whatYouLose": [
+    "its fiction-tuned workflows, context handling, and model orchestration",
+    "cross-device sync",
+    "large proprietary style models",
+    "browser and office-suite extensions",
+    "team style guides"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "polish, integrations, and proprietary language models",
+  "replacementScope": "personal local editor",
+  "ongoingBurden": "model quality, extension compatibility, dictionaries, releases, and sync",
+  "whyPeopleStillPay": "People still pay for Sudowrite because the paid tool is already present everywhere they write and its suggestions have been tuned across millions of documents. The recurring cost buys model quality, extension compatibility, dictionaries, releases, and sync, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "LanguageTool",
+      "url": "https://github.com/languagetool-org/languagetool",
+      "desc": "Mature open-source grammar and style checker with desktop and server components."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "KoboldCpp",
+      "url": "https://github.com/LostRuins/koboldcpp",
+      "type": "open-source",
+      "repo": "https://github.com/LostRuins/koboldcpp",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "One executable plus a model download gets you story continuation, memory, world info and author’s notes; elegance was not bundled.",
+      "stars": 11300,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "prowritingaid",
+    "languagetool",
+    "wordtune"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Hobby and Student plan and a personal local editor DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Sudowrite in an empty repository.\nUse Tauri 2, React, TypeScript, SQLite, and a small Rust filesystem layer; do not offer alternative stacks.\nThe core loop is: open local text or Markdown, brainstorm fiction, expand scenes, generate constrained prose suggestions from story context, show a diff, and save or export without uploading the document.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a three-pane editor with source text, suggestion list, and accepted-result preview.\nImplement deterministic checks for repeated words, sentence length, passive constructions, and typography.\nAdd an optional API-backed rewrite action that sends only the selected passage.\nShow every change as an accept-or-reject diff and support undo.\nImport and export .txt and .md while preserving headings and lists.\nPersist user rules, ignored terms, and recent documents in SQLite.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a browser extension.\nDeliberately leave out Office or Google Docs plugins.\nDeliberately leave out collaborative editing and cloud sync.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

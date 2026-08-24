@@ -1,0 +1,154 @@
+{
+  "slug": "landingi",
+  "name": "Landingi",
+  "domain": "landingi.com",
+  "appURL": "https://landingi.com",
+  "category": "website-builder",
+  "subcategory": "landing-page platform",
+  "tagline": "Landing pages, popups, experiments, lead capture, and agency workflows",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Lite",
+    "kind": "fixed",
+    "basis": "monthly landing-page plan",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "$29/month",
+    "source": "https://landingi.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Build",
+        "monthly": 29,
+        "annualPerMonth": 24,
+        "per": "workspace",
+        "limits": "10 active landing pages; 2,000 visits/month; 1 custom domain; 5 users; 2,500 credits/month",
+        "notes": "Annual price shown at $24/month equivalent."
+      },
+      {
+        "name": "Optimize",
+        "monthly": 149,
+        "annualPerMonth": 119,
+        "per": "workspace",
+        "limits": "100 active landing pages; 30,000 visits/month; 3 custom domains; 10 users; 10,000 credits/month",
+        "notes": "Annual price shown at $119/month equivalent."
+      },
+      {
+        "name": "Scale",
+        "monthly": 299,
+        "annualPerMonth": 229,
+        "per": "workspace",
+        "limits": "Unlimited active pages; 100,000-500,000 visits/month depending configuration; 10 custom domains; unlimited users; 20,000 credits/month",
+        "notes": "Starts at the stated price; final price varies with the selected traffic allowance."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": 1499,
+        "annualPerMonth": 1199,
+        "per": "workspace",
+        "limits": "Unlimited active pages; 1M+ visits/month; 100 custom domains; unlimited users; 60,000 credits/month",
+        "notes": "Starts at the stated price; final enterprise configuration may vary."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day trial capped at 200 visits, after which the trial ends",
+    "billingTerms": "monthly + annual (annual advertised as 2+ months free; current annual promotional equivalents are lower than a simple two-month discount)",
+    "priceChanges": [],
+    "hiddenCosts": "Extra domains cost $5/month each (with plan-specific add-on ceilings); credit top-ups cost $15 for 5,000, $25 for 10,000, or $40 for 20,000; Scale pricing increases with selected monthly traffic.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://landingi.com/pricing/",
+      "https://landingi.com/landing-page/builder/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible landing-page platform loop is buildable, but a credible replacement needs more than the first screen. Landingi earns its keep through editor, CMS, hosting, polish, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a focused landing-page platform generator that edits structured page sections, previews responsive layouts, and publishes static files.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Node.js 22",
+    "deploy target or static hosting",
+    "user-owned domain for publishing"
+  ],
+  "whatYouLose": [
+    "CMS collaboration and client handoff",
+    "managed hosting, forms, and analytics",
+    "general-purpose visual editing",
+    "large template and component libraries"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra"
+  ],
+  "moatNotes": "editor/CMS/hosting/polish",
+  "whyPeopleStillPay": "Landingi: A single site is easy to code. People pay for safe ongoing edits, templates, publishing, domains, collaboration, and no-maintenance hosting.",
+  "ongoingBurden": "Maintain responsive rendering, browser compatibility, deployment, domains, forms, spam protection, backups, and editor migrations.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder."
+    },
+    {
+      "name": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "desc": "Open-source web-builder framework."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Mautic",
+      "url": "https://mautic.org",
+      "type": "open-source",
+      "repo": "https://github.com/mautic/mautic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Pages, forms, campaigns and A/B tests without licence fees; database and email operations replace the subscription.",
+      "stars": 9800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Hosted pages, popups, forms and one split test on a permanent free plan; agency workflow is thin.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "A library for building the editor, with none of the campaign product around it."
+    },
+    {
+      "name": "Webstudio",
+      "url": "https://webstudio.is",
+      "desc": "A page builder without managed popups, experiments, lead operations or agency workflow."
+    }
+  ],
+  "relatedSlugs": [
+    "instapage",
+    "unbounce",
+    "swipe-pages"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Landingi is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Landingi, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + SQLite.\nPrimary job: Build a focused landing-page platform generator that edits structured page sections, previews responsive layouts, and publishes static files.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: CMS collaboration and client handoff; managed hosting, forms, and analytics; general-purpose visual editing.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

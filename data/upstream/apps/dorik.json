@@ -1,0 +1,303 @@
+{
+  "slug": "dorik",
+  "name": "Dorik",
+  "domain": "dorik.com",
+  "appURL": "https://dorik.com",
+  "category": "website-builder",
+  "subcategory": "websites and landing pages",
+  "tagline": "Build a small responsive site with pages, collections, and simple forms",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Personal",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://dorik.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Personal monthly rate.",
+    "native": "29 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Personal",
+        "monthly": 29,
+        "annualPerMonth": 20.75,
+        "per": "flat",
+        "limits": "1 custom domain; 25 static pages; 200 blog posts; 5 CMS collections and 200 collection items; no collaborators",
+        "notes": "$249/year. A two-year commitment is advertised at $10.38/month equivalent; a separate $249 one-time lifetime offer was also live."
+      },
+      {
+        "name": "Business",
+        "monthly": 59,
+        "annualPerMonth": 41.5,
+        "per": "flat",
+        "limits": "3 custom domains; unlimited pages/blog posts/storage/bandwidth; 10 collaborators",
+        "notes": "$498/year. A two-year commitment is advertised at $20.75/month equivalent; a separate $599 one-time lifetime offer was also live."
+      },
+      {
+        "name": "Agency",
+        "monthly": 99,
+        "annualPerMonth": 79,
+        "per": "flat",
+        "limits": "Unlimited custom domains, pages, collaborators, blog posts, storage and bandwidth; agency white-label/client-billing features",
+        "notes": "$948/year; two-year and lifetime pricing are contact-sales/custom."
+      }
+    ],
+    "freeTierCaps": "no free tier; 7-day trial, with site count determined by the trialed plan",
+    "billingTerms": "monthly + annual; separate two-year and limited-time lifetime purchase options are also advertised",
+    "priceChanges": [],
+    "hiddenCosts": "Dorik does not sell domains; you must buy one separately. Lifetime Personal charges $199 one-time per additional website; Lifetime Business charges $149 per additional website and limits code export to 15/month.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://dorik.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Dorik, build a small responsive site with pages, collections, and simple forms. The hard boundary is hosting, cms, memberships, templates, and no-code editing polish, plus editor polish, hosting, templates, and ecosystem.",
+  "coreLoopDIY": "Assemble a small responsive site from sections with pages, collections, and simple forms, edit copy and media, preview breakpoints, and publish a static site to a user-owned target.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Node.js 22",
+    "domain and deploy target",
+    "local images",
+    "optional form-email API key"
+  ],
+  "whatYouLose": [
+    "hosting, CMS, memberships, templates, and no-code editing polish",
+    "large template marketplace",
+    "managed hosting and CDN",
+    "advanced CMS",
+    "commerce and agency workflows"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra"
+  ],
+  "moatNotes": "editor polish, hosting, templates, and ecosystem",
+  "replacementScope": "single-site builder",
+  "ongoingBurden": "responsive rendering, forms, domains, certificates, deploys, backups, template maintenance, and browser regressions",
+  "whyPeopleStillPay": "People still pay for Dorik because the page renderer is reproducible, but customers pay to avoid becoming their own hosting and browser-compatibility team. The recurring cost buys responsive rendering, forms, domains, certificates, deploys, backups, template maintenance, and browser regressions, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Webstudio",
+      "url": "https://github.com/webstudio-is/webstudio",
+      "desc": "Open-source visual website builder designed around web standards."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Concrete CMS",
+      "url": "https://www.concretecms.org",
+      "type": "open-source",
+      "repo": "https://github.com/concretecms/concretecms",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A proper in-page CMS for people who prefer editing the page to editing a dashboard about the page.",
+      "stars": 850,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Release ZIP to PHP hosting, create a MySQL/MariaDB database, then finish the browser installer",
+        "engines": null,
+        "dataFormat": "Pages, users, settings and block data in SQL; uploaded assets in the server file manager or a configured remote storage location",
+        "gapVsPaid": "Concrete CMS is less visually freeform and polished than Dorik, and the owner must provide hosting, updates, backups and form delivery.",
+        "setupBlocker": "PHP hosting, a database, writable directories, and responsibility for updates, backups and outbound mail",
+        "sources": [
+          "https://github.com/concretecms/concretecms",
+          "https://github.com/concretecms/concretecms/blob/9.5.x/LICENSE.TXT",
+          "https://documentation.concretecms.org/9-x/developers/introduction/installing-concrete-cms",
+          "https://documentation.concretecms.org/9-x/developers/introduction/system-requirements",
+          "https://documentation.concretecms.org/9-x/developers/working-with-files-and-the-file-manager/file-storage-locations",
+          "https://dorik.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Microweber",
+      "url": "https://microweber.org",
+      "type": "open-source",
+      "repo": "https://github.com/microweber/microweber",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A drag-and-drop PHP CMS with pages, forms and collections; simple to edit, not maintenance-free.",
+      "stars": 3431,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Hosted signup, or upload the PHP package to a web host and complete its browser installer",
+        "engines": null,
+        "dataFormat": "Site content and settings in a supported SQL database; images and other uploads in server storage",
+        "gapVsPaid": "Microweber's templates and integrations are less polished, and replacing Dorik means running the PHP host, updates, backups and mail yourself.",
+        "setupBlocker": "Self-hosting needs compatible PHP extensions, URL rewriting, a database and correct filesystem permissions",
+        "sources": [
+          "https://github.com/microweber/microweber",
+          "https://github.com/microweber/microweber/blob/master/LICENSE",
+          "https://github.com/microweber/microweber/blob/master/composer.json",
+          "https://microweber.com/download",
+          "https://github.com/microweber/microweber-user-guide",
+          "https://dorik.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plasmic",
+      "url": "https://www.plasmic.app",
+      "type": "open-source",
+      "repo": "https://github.com/plasmicapp/plasmic",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Unlimited hosted projects, CMS and custom domains free; the badge is cheaper than Dorik.",
+      "stars": 6900,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT AND AGPL-3.0-only",
+        "runs": "both",
+        "install": "Hosted signup; optional npm-installed Plasmic CLI for React code generation and deployment in your own repository",
+        "engines": "Plasmic AI (beta); the official site does not name its underlying model provider",
+        "dataFormat": "Hosted projects and CMS records in Plasmic Cloud; codegen writes React components plus plasmic.json and plasmic.lock into the user's repository",
+        "gapVsPaid": "Plasmic is much more React/component-oriented than Dorik, and its free hosted output keeps Plasmic branding.",
+        "setupBlocker": "Free hosted output keeps Plasmic branding; codegen/self-deployment requires a Node/React project and deployment workflow",
+        "sources": [
+          "https://github.com/plasmicapp/plasmic",
+          "https://github.com/plasmicapp/plasmic/blob/master/LICENSE",
+          "https://www.plasmic.app/pricing",
+          "https://docs.plasmic.app/learn/codegen-guide/",
+          "https://dorik.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Silex",
+      "url": "https://www.silex.me",
+      "type": "open-source",
+      "repo": "https://github.com/silexlabs/Silex",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A visual multi-page static-site builder with export; collections are manual rather than magical.",
+      "stars": 2919,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the hosted editor with a GitLab login, install the desktop alpha, or run the official Docker setup",
+        "engines": "Optional desktop MCP workflow can connect to Ollama, OpenCode, Goose or Claude Code",
+        "dataFormat": "Project JSON and assets in GitLab, FTP or local storage; publishing produces ordinary static HTML, CSS and JavaScript",
+        "gapVsPaid": "Silex has no comparable built-in collections/CMS workflow, so repeated content and simple data-driven pages become manual.",
+        "setupBlocker": "The stable hosted route starts with a GitLab account; the desktop build is still labelled alpha",
+        "sources": [
+          "https://github.com/silexlabs/Silex",
+          "https://github.com/silexlabs/Silex/blob/develop/LICENSE",
+          "https://docs.silex.me/en/dev/run",
+          "https://docs.silex.me/en/user/register",
+          "https://docs.silex.me/en/user/faq",
+          "https://dorik.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Vvveb",
+      "url": "https://www.vvveb.com",
+      "type": "open-source",
+      "repo": "https://github.com/givanz/Vvveb",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A finished visual CMS with forms, posts and custom content; obscure enough that support starts with reading docs.",
+      "stars": 1200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Download and upload the PHP release, open the site URL, and complete the browser installer",
+        "engines": null,
+        "dataFormat": "Content, products, orders and settings in MySQL/MariaDB, SQLite or PostgreSQL; media and downloadable files on the server filesystem",
+        "gapVsPaid": "Vvveb is less polished and approachable than Dorik, and the reader becomes responsible for the PHP server, mail, security and backups.",
+        "setupBlocker": "PHP hosting, a database, writable files, mail and payment configuration, plus ongoing server updates",
+        "sources": [
+          "https://github.com/givanz/Vvveb",
+          "https://github.com/givanz/Vvveb/blob/master/LICENSE",
+          "https://www.vvveb.com",
+          "https://docs.vvveb.com/",
+          "https://dorik.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Webstudio",
+      "url": "https://webstudio.is",
+      "type": "open-source",
+      "repo": "https://github.com/webstudio-is/webstudio",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A polished visual builder and CMS connector; using your own domain for free moves hosting onto you.",
+      "stars": 8800,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Hosted signup or desktop app; alternatively export the project or deploy the self-hosted builder/site",
+        "engines": "Webstudio Inception AI and MCP integrations; the hosted model provider is not named in official documentation",
+        "dataFormat": "Projects and assets live in Webstudio Cloud when hosted there; export/self-host routes produce source or static assets under the user's deployment",
+        "gapVsPaid": "Webstudio lacks Dorik's all-in-one collections/forms/hosting simplicity, and a free custom-domain site requires export or self-hosting.",
+        "setupBlocker": "The free cloud plan publishes only to a Webstudio subdomain; a free custom domain requires export or self-hosting",
+        "sources": [
+          "https://github.com/webstudio-is/webstudio",
+          "https://github.com/webstudio-is/webstudio/blob/main/LICENSE",
+          "https://webstudio.is/pricing",
+          "https://docs.webstudio.is/university/self-hosting",
+          "https://dorik.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "GrapesJS",
+      "url": "https://grapesjs.com",
+      "desc": "The editor is real; the product around it is yours to build."
+    }
+  ],
+  "relatedSlugs": [
+    "duda",
+    "tilda",
+    "typedream"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Personal plan and a single-site builder DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Dorik in an empty repository.\nUse Next.js 15, TypeScript, Tailwind CSS, SQLite, Drizzle ORM, and static export; do not offer alternative stacks.\nThe core loop is: assemble a small responsive site from sections with pages, collections, and simple forms, edit copy and media, preview breakpoints, and publish a static site to a user-owned target.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nProvide a section library for hero, proof, features, pricing, FAQ, and footer blocks.\nUse a constrained design-token system rather than arbitrary CSS controls.\nAllow inline text editing and local image upload with responsive optimization.\nPreview desktop, tablet, and mobile widths and surface overflow errors.\nPersist projects in SQLite and support a portable JSON export.\nGenerate a clean static Next.js output and document deployment to one target.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a plugin marketplace.\nDeliberately leave out multi-tenant managed hosting.\nDeliberately leave out advanced ecommerce, memberships, and agency billing.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

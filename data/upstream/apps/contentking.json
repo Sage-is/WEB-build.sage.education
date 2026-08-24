@@ -1,0 +1,121 @@
+{
+  "slug": "contentking",
+  "name": "ContentKing",
+  "domain": "contentkingapp.com",
+  "appURL": "https://contentkingapp.com",
+  "category": "seo-marketing",
+  "subcategory": "technical audits and on-page optimization",
+  "tagline": "Schedule a modest owned-site crawl and alert on selected technical changes",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Custom",
+    "basis": "custom",
+    "unit": "custom",
+    "source": "https://contentkingapp.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Pricing is sales-led; canonical monthly price is null.",
+    "native": "custom",
+    "kind": "custom",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Essentials",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom Page Bundle across sites; minimum Page Capacity is 100 pages per site; unlimited team members.",
+        "notes": "Now sold as Conductor Monitoring; public price is not disclosed."
+      },
+      {
+        "name": "Growth",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom Page Bundle across sites; minimum Page Capacity is 100 pages per site; unlimited team members.",
+        "notes": "Public price and plan-specific page allowance are not disclosed."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom Page Bundle, sites, monitoring configuration, support, and security terms; minimum 100 pages per site.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier (2-week premium trial/upgrade only)",
+    "billingTerms": "custom quote; public monthly and annual rates are not published",
+    "priceChanges": [],
+    "hiddenCosts": "Pricing scales with the Page Bundle across sites, with a 100-page minimum capacity per site; seats are not separately charged.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://contentkingapp.com/pricing",
+      "https://www.conductor.com/platform/monitoring/",
+      "https://www.conductor.com/docs/monitoring/page-bundle-and-page-capacity/",
+      "https://www.conductor.com/docs/monitoring/conductor-monitoring-setup-guide/",
+      "https://www.conductor.com/docs/monitoring/issue-configuration/"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For ContentKing, schedule a modest owned-site crawl and alert on selected technical changes. The hard boundary is continuous monitoring infrastructure, prioritization, integrations, and enterprise scale, plus crawl scale, rule depth, and operational polish.",
+  "coreLoopDIY": "Schedule a modest crawl of a user-owned site, inspect HTML and rendered pages, alert on selected technical changes, explain prioritized issues, and export a reproducible audit.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Python 3.12",
+    "Playwright browsers",
+    "permission to crawl the target site",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "continuous monitoring infrastructure, prioritization, integrations, and enterprise scale",
+    "massive hosted crawl capacity",
+    "proprietary scoring",
+    "continuous monitoring",
+    "agency reporting and support"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "proprietary-data"
+  ],
+  "moatNotes": "crawl scale, rule depth, and operational polish",
+  "replacementScope": "single-site audit tool",
+  "ongoingBurden": "robots handling, rendering, canonicalization, deduplication, crawl traps, rule maintenance, scheduling, storage, and false positives",
+  "whyPeopleStillPay": "People still pay for ContentKing because a crawler is buildable; professionals pay for years of edge-case handling and reports they can trust with clients. The recurring cost buys robots handling, rendering, canonicalization, deduplication, crawl traps, rule maintenance, scheduling, storage, and false positives, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "SEOnaut",
+      "url": "https://github.com/stjudewashere/seonaut",
+      "desc": "Open-source technical SEO auditing application."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "CrawlSEO",
+      "url": "https://github.com/crawlseo/crawlseo",
+      "type": "open-source",
+      "repo": "https://github.com/crawlseo/crawlseo",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Scheduled crawls and real alerts without a subscription; the catch is configuring Google OAuth, Postgres and notification plumbing yourself.",
+      "stars": 507,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "screaming-frog-seo-spider",
+    "sitebulb",
+    "clearscope"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Custom plan and a single-site audit tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for ContentKing in an empty repository.\nUse Python 3.12, FastAPI, SQLite, Playwright, and an HTMX interface; do not offer alternative stacks.\nThe core loop is: schedule a modest crawl of a user-owned site, inspect HTML and rendered pages, alert on selected technical changes, explain prioritized issues, and export a reproducible audit.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nRequire an explicit ownership or permission acknowledgement before a crawl starts.\nRespect robots.txt, rate limits, canonical URLs, nofollow, redirects, and a configurable URL cap.\nCollect status, title, description, headings, canonical, robots, links, images, structured data, and rendered text.\nDetect duplicates, orphan candidates, broken links, redirect chains, missing metadata, and indexability conflicts.\nShow every issue with affected URLs, evidence, severity, and a concrete remediation note.\nExport crawl data and issues to CSV plus a self-contained HTML report.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out crawling sites without permission.\nDeliberately leave out web-scale backlink or keyword datasets.\nDeliberately leave out automated changes to production websites.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

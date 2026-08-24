@@ -1,0 +1,143 @@
+{
+  "slug": "setapp",
+  "name": "Setapp",
+  "domain": "setapp.com",
+  "appURL": "https://setapp.com",
+  "category": "productivity-utilities",
+  "subcategory": "macOS automation and desktop utilities",
+  "tagline": "Build a small app launcher and update checker for legally owned local applications",
+  "priceMonthly": 14.99,
+  "pricing": {
+    "plan": "Mac",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://setapp.com/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official Mac monthly subscription.",
+    "native": "14.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Mac",
+        "monthly": 14.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 Mac and 1,000 AI credits.",
+        "notes": "The live page offers annual billing with savings up to 40%, but its crawlable text did not expose the exact annual amount."
+      },
+      {
+        "name": "Mac + iOS",
+        "monthly": 18.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 Mac, up to 4 iOS devices, and 1,000 AI credits.",
+        "notes": "The live page offers annual billing with savings up to 40%, but its crawlable text did not expose the exact annual amount."
+      },
+      {
+        "name": "Power User",
+        "monthly": 22.99,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Up to 4 Macs, up to 4 iOS devices, and 2,000 AI credits.",
+        "notes": "The live page offers annual billing with savings up to 40%, but its crawlable text did not expose the exact annual amount."
+      },
+      {
+        "name": "Additional AI credits",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "Optional extra AI-credit allocation; public pack sizes and prices were not exposed.",
+        "notes": "Add-on."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual; annual advertised to save up to 40%; 7-day trial",
+    "priceChanges": [],
+    "hiddenCosts": "The $9.99 figure on file is not the current month-to-month Mac price, which is $14.99. AI apps consume 1,000 or 2,000 included credits and extra credits cost more, but public add-on prices were not exposed; taxes are extra.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://setapp.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Setapp, build a small app launcher and update checker for legally owned local applications. The hard boundary is licensed catalog of commercial apps, developer relationships, billing, and distribution, plus os integration polish and maintenance.",
+  "coreLoopDIY": "Build a small macOS app launcher and update checker for legally owned local applications, expose keyboard-first controls, and store settings locally.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "macOS 14 or later",
+    "Xcode",
+    "only the permissions required by the selected feature"
+  ],
+  "whatYouLose": [
+    "licensed catalog of commercial apps, developer relationships, billing, and distribution",
+    "years of OS-version edge cases",
+    "large extension ecosystem",
+    "cross-device sync",
+    "commercial support and rapid compatibility fixes"
+  ],
+  "moatTags": [
+    "content-rights",
+    "execution-polish"
+  ],
+  "moatNotes": "OS integration polish and maintenance",
+  "replacementScope": "single-purpose local Mac app",
+  "ongoingBurden": "permissions, accessibility APIs, sandboxing, signing, notarization, OS regressions, updates, backups, and support",
+  "whyPeopleStillPay": "People still pay for Setapp because small utilities are technically reproducible, but customers pay for polish and immediate fixes when an OS update breaks a daily habit. The recurring cost buys permissions, accessibility APIs, sandboxing, signing, notarization, OS regressions, updates, backups, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Espanso",
+      "url": "https://github.com/espanso/espanso",
+      "desc": "Active open-source cross-platform text expansion utility with system integration."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Applite",
+      "url": "https://aerolite.dev/applite",
+      "type": "open-source",
+      "repo": "https://github.com/milanvarady/Applite",
+      "platforms": [
+        "macos"
+      ],
+      "desc": "A non-technical Homebrew app store for installing and updating casks you actually own.",
+      "stars": 6900,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Latest",
+      "url": "https://max.codes/latest/",
+      "type": "open-source",
+      "repo": "https://github.com/mangerlahn/Latest",
+      "platforms": [
+        "macos"
+      ],
+      "desc": "Checks App Store and Sparkle apps, then updates them without pretending to be an app subscription.",
+      "stars": 4700,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "MacUpdater",
+      "url": "https://www.corecode.io/macupdater/",
+      "desc": "The final edition is free because the product shut down; its update database is no longer maintained."
+    }
+  ],
+  "relatedSlugs": [
+    "alfred-powerpack",
+    "bartender",
+    "bettertouchtool"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Mac plan and a single-purpose local Mac app DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Setapp in an empty repository.\nUse Swift 6, SwiftUI, AppKit where necessary, SQLite, and the macOS Keychain; do not offer alternative stacks.\nThe core loop is: build a small macOS app launcher and update checker for legally owned local applications, expose keyboard-first controls, and store settings locally.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate a menu-bar app with a searchable command window and global hotkey.\nImplement only the primary feature and one settings screen instead of a plugin platform.\nRequest permissions just in time and explain why each is needed before opening System Settings.\nStore configuration locally, support export or import, and never capture unrelated user content.\nAdd launch-at-login, update-check opt-in, diagnostics export, and a complete uninstall note.\nWrite unit tests for transformation logic and one UI test for the core keyboard workflow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a third-party extension marketplace.\nDeliberately leave out cloud accounts and cross-device sync.\nDeliberately leave out broad automation that executes untrusted scripts.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

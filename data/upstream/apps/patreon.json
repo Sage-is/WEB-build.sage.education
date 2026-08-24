@@ -1,0 +1,233 @@
+{
+  "slug": "patreon",
+  "name": "Patreon",
+  "domain": "patreon.com",
+  "appURL": "https://patreon.com",
+  "category": "creator-commerce",
+  "subcategory": "membership platform",
+  "tagline": "Paid memberships, posts, chats, community, and creator discovery",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Platform plan",
+    "kind": "revenue-share",
+    "basis": "revenue share",
+    "unit": "usage",
+    "currency": "USD",
+    "native": "Percentage of creator income plus processing",
+    "source": "https://patreon.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "The pricing model is not safely comparable as one fixed monthly USD amount. Review the official source before publication.",
+    "tiers": [
+      {
+        "name": "Standard",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "No published cap on free or paid members/posts; 10% platform fee for creators who published after August 4, 2025; up to 100 native-video hours per month once there are paying fans.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "No monthly fee and no published member/post cap; Patreon takes 10% of creator income under the current standard plan",
+    "billingTerms": "percentage-of-income pricing; no monthly or annual subscription",
+    "priceChanges": [],
+    "hiddenCosts": "Payment processing is commonly 2.9% + $0.30 for USD payments, plus payout fees and 2.5% currency conversion where applicable; qualifying iOS purchases can incur Apple's 30% fee, especially outside the US.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.patreon.com/pricing",
+      "https://support.patreon.com/hc/en-gb/articles/36426991446797-A-standard-platform-fee-for-new-creators-effective-after-4-August-2025",
+      "https://support.patreon.com/hc/en-gb/articles/15458893135501-How-payments-reach-you",
+      "https://support.patreon.com/hc/en-gb/articles/16303719836813-Selling-one-time-purchases-on-Patreon"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. Patreon's durable value is payments, network, compliance, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build a narrow membership platform storefront or member area for one creator, using Stripe Checkout and explicit digital-delivery rules.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "Node.js 22",
+    "PostgreSQL",
+    "Stripe account and API keys in .env",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "tax, disputes, payouts, and fraud operations",
+    "native apps and community moderation",
+    "fulfilment, email, and affiliate ecosystems",
+    "marketplace discovery and buyer trust"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "network-effects",
+    "brand-trust"
+  ],
+  "moatNotes": "payments/network/compliance",
+  "whyPeopleStillPay": "Patreon: Creators pay to outsource payments, tax complexity, disputes, deliverability, moderation, and the trust needed to convert strangers.",
+  "ongoingBurden": "Own payments, webhooks, refunds, tax records, fraud, access control, file delivery, moderation, backups, and support.",
+  "priorArt": [
+    {
+      "name": "Medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "desc": "Open-source commerce modules and backend."
+    },
+    {
+      "name": "Ghost",
+      "url": "https://github.com/TryGhost/Ghost",
+      "desc": "Open-source publishing and membership platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "CourseLit",
+      "url": "https://courselit.app",
+      "type": "open-source",
+      "repo": "https://github.com/codelitdev/courselit",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Paid communities, memberships, courses and posts in one self-hosted product; discovery remains your marketing problem.",
+      "stars": 1200,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Docker Compose, with SUPER_ADMIN_EMAIL set before first start",
+        "engines": null,
+        "dataFormat": "Application records in MongoDB; production media uploads use MediaLit plus S3-compatible object storage",
+        "gapVsPaid": "CourseLit has no creator discovery network and its community/social experience is less mature than Patreon's.",
+        "setupBlocker": "Docker starts the app, but a production setup also needs SMTP for email login and MediaLit/S3-compatible storage for uploads",
+        "sources": [
+          "https://github.com/codelitdev/courselit",
+          "https://github.com/codelitdev/courselit/blob/main/LICENSE",
+          "https://docs.courselit.app/self-hosting/self-host/",
+          "https://github.com/codelitdev/courselit/blob/main/deployment/docker/docker-compose.yml",
+          "https://www.patreon.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Discourse",
+      "url": "https://www.discourse.org",
+      "type": "open-source",
+      "repo": "https://github.com/discourse/discourse",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Paid groups, posts and chat with Stripe built in; there is no Patreon discovery feed to bring strangers.",
+      "stars": 47600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "both",
+        "install": "Use the official Docker installer on a 64-bit Linux server; managed Discourse hosting is the paid alternative",
+        "engines": null,
+        "dataFormat": "Persistent records in PostgreSQL, Redis for cache/queues, and uploads/backups/logs in the Docker volume or S3-compatible storage",
+        "gapVsPaid": "Discourse has no creator discovery feed and is forum-first rather than a polished paid-content creator page.",
+        "setupBlocker": "Self-hosting needs a Linux VPS, Docker, DNS, TLS, working SMTP and regular upgrades",
+        "sources": [
+          "https://github.com/discourse/discourse",
+          "https://github.com/discourse/discourse/blob/main/LICENSE.txt",
+          "https://github.com/discourse/discourse/blob/main/docs/INSTALL.md",
+          "https://meta.discourse.org/t/self-hosting-index/308035",
+          "https://meta.discourse.org/t/configure-an-s3-compatible-object-storage-provider-for-uploads/148916",
+          "https://www.patreon.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Ghost",
+      "url": "https://ghost.org",
+      "type": "open-source",
+      "repo": "https://github.com/TryGhost/Ghost",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Paid posts, members and newsletters without Patreon's discovery, chats or audience hand-holding.",
+      "stars": 54500,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Run Ghost-CLI on supported Ubuntu/MySQL hosting; the official Docker path is available but still documented as preview",
+        "engines": null,
+        "dataFormat": "Posts, members and settings in MySQL; images under Ghost's content directory by default or through a configured storage adapter",
+        "gapVsPaid": "Ghost has no Patreon discovery network or native group chat, so audience acquisition and community conversation remain separate.",
+        "setupBlocker": "Self-hosting needs a server, domain, DNS, TLS and transactional/newsletter mail, plus Ghost upgrades",
+        "sources": [
+          "https://github.com/TryGhost/Ghost",
+          "https://github.com/TryGhost/Ghost/blob/main/LICENSE",
+          "https://docs.ghost.org/install/ubuntu",
+          "https://docs.ghost.org/install/docker",
+          "https://docs.ghost.org/config",
+          "https://www.patreon.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Paid memberships, posts, community and email on a permanent free plan; it will not put you in front of Patreon's audience.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Contacts, funnels, course/community content, orders, emails and uploaded files in systeme.io's vendor-managed cloud; the underlying storage format is not published",
+        "gapVsPaid": "systeme.io provides no Patreon discovery network or creator feed that can bring an audience.",
+        "setupBlocker": "Selling requires connecting a payment gateway; the free plan is capped at 2,000 contacts, three funnels, one course, one community and one custom domain",
+        "sources": [
+          "https://systeme.io/pricing",
+          "https://help.systeme.io/article/4455-how-to-manage-files-on-systeme-io",
+          "https://help.systeme.io/article/300-host-videos",
+          "https://www.patreon.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Liberapay",
+      "url": "https://liberapay.com",
+      "desc": "It is genuinely free, but intentionally offers donations with no rewards, gated posts, chats or community tiers."
+    },
+    {
+      "name": "Substack",
+      "url": "https://substack.com",
+      "desc": "The product fits paid posts and community, but Substack takes 10% of every paid transaction before Stripe fees."
+    }
+  ],
+  "relatedSlugs": [
+    "memberful",
+    "memberstack",
+    "buy-me-a-coffee"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: Patreon survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by Patreon; do not claim to replace its structural moat.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + Stripe.\nPrimary job: Build a narrow membership platform storefront or member area for one creator, using Stripe Checkout and explicit digital-delivery rules.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: tax, disputes, payouts, and fraud operations; native apps and community moderation; fulfilment, email, and affiliate ecosystems.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

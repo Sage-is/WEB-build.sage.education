@@ -1,0 +1,228 @@
+{
+  "slug": "socialbee",
+  "name": "SocialBee",
+  "domain": "socialbee.com",
+  "appURL": "https://socialbee.com",
+  "category": "social-media",
+  "subcategory": "social scheduling and content repurposing",
+  "tagline": "Organize posts into evergreen categories and schedule them across networks",
+  "priceMonthly": 49,
+  "pricing": {
+    "plan": "Accelerate",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://socialbee.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Accelerate monthly tier.",
+    "native": "49 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Bootstrap",
+        "monthly": 29,
+        "annualPerMonth": 24.17,
+        "per": "workspace",
+        "limits": "5 social profiles, 1 user, 1 workspace, 10 categories, 10 sources, 1,000 posts/category",
+        "notes": "Annual plan is billed $290/year; page card rounds this to $24/month."
+      },
+      {
+        "name": "Accelerate",
+        "monthly": 49,
+        "annualPerMonth": 40.83,
+        "per": "workspace",
+        "limits": "10 profiles, 1 user, 1 workspace, 50 categories, 30 sources, 5,000 posts/category",
+        "notes": "Annual plan is billed $490/year; page card rounds this to $40.8/month."
+      },
+      {
+        "name": "Pro",
+        "monthly": 99,
+        "annualPerMonth": 82.5,
+        "per": "workspace",
+        "limits": "25 profiles, 3 users/workspace, 5 workspaces, unlimited categories/sources, 5,000 posts/category",
+        "notes": "Annual plan is billed $990/year; page card rounds this to $82.5/month."
+      },
+      {
+        "name": "Pro50",
+        "monthly": 179,
+        "annualPerMonth": 149.2,
+        "per": "workspace",
+        "limits": "50 profiles, 5 users/workspace, 10 workspaces, unlimited categories/sources",
+        "notes": "Annual page card displays $149.2/month, billed annually."
+      },
+      {
+        "name": "Pro100",
+        "monthly": 329,
+        "annualPerMonth": 274.2,
+        "per": "workspace",
+        "limits": "100 profiles, 5 users/workspace, 20 workspaces, unlimited categories/sources",
+        "notes": "Annual page card displays $274.2/month, billed annually."
+      },
+      {
+        "name": "Pro150",
+        "monthly": 449,
+        "annualPerMonth": 374.2,
+        "per": "workspace",
+        "limits": "150 profiles, 5 users/workspace, 30 workspaces, unlimited categories/sources",
+        "notes": "Annual page card displays $374.2/month, billed annually."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (page labels 16% off); 14-day Pro trial, no card; 30-day money-back guarantee",
+    "priceChanges": [],
+    "hiddenCosts": "Extra users, workspaces and profiles are paid add-ons with prices shown only inside the app; profile caps count every connected account; temporary promo codes are excluded.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://socialbee.com/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For SocialBee, organize posts into evergreen categories and schedule them across networks. The hard boundary is many connectors, content recycling, concierge services, and team workflow, plus api access, connector upkeep, and collaboration.",
+  "coreLoopDIY": "Draft posts, organize them into evergreen categories, schedule them across networks, preview them accurately, publish through official APIs, and retain a searchable content calendar.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "developer application for one social network",
+    "OAuth credentials",
+    "PostgreSQL",
+    "public HTTPS endpoint",
+    "background worker"
+  ],
+  "whatYouLose": [
+    "many connectors, content recycling, concierge services, and team workflow",
+    "many maintained network APIs",
+    "inbox and moderation",
+    "deep analytics",
+    "team approvals and asset libraries"
+  ],
+  "moatTags": [
+    "integrations",
+    "collaboration"
+  ],
+  "moatNotes": "API access, connector upkeep, and collaboration",
+  "replacementScope": "single-network scheduler",
+  "ongoingBurden": "OAuth review, API policy changes, media limits, queues, retries, rate limits, webhooks, tokens, and moderation workflows",
+  "whyPeopleStillPay": "People still pay for SocialBee because the scheduler is easy; staying approved and correct across constantly changing social APIs is the subscription. The recurring cost buys OAuth review, API policy changes, media limits, queues, retries, rate limits, webhooks, tokens, and moderation workflows, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Postiz",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "desc": "Active open-source social media scheduling platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "BrightBean Studio",
+      "url": "https://brightbean.xyz/studio/",
+      "type": "open-source",
+      "repo": "https://github.com/brightbeanxyz/brightbean-studio",
+      "platforms": [
+        "web",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "Reusable schedules and broad publishing with analytics; evergreen categories are less explicit, but the loop works.",
+      "stars": 2100,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "both",
+        "install": "Hosted signup, or clone the repository and deploy with Docker Compose or a supported PaaS.",
+        "engines": "No model is bundled; its REST API and MCP server connect external agents such as Claude Desktop/Code, Cursor or custom clients.",
+        "dataFormat": "Hosted data lives in BrightBean's cloud; self-hosted data uses PostgreSQL 16+ with media on local disk or S3-compatible storage.",
+        "gapVsPaid": "BrightBean can repeat schedules, but it lacks SocialBee's explicit category-based evergreen library and category-level controls.",
+        "setupBlocker": "Connecting social networks requires first-party platform developer/OAuth credentials; self-hosting also requires Docker or a PaaS.",
+        "sources": [
+          "https://brightbean.xyz/studio/",
+          "https://github.com/brightbeanxyz/brightbean-studio",
+          "https://github.com/brightbeanxyz/brightbean-studio/blob/main/LICENSE",
+          "https://socialbee.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Mixpost Lite",
+      "url": "https://mixpost.app/",
+      "type": "open-source",
+      "repo": "https://github.com/inovector/mixpost",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Queues are the product: fill categories, set times and let old posts circulate again.",
+      "stars": 3500,
+      "lastCommit": "2026-03",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "self-hosted",
+        "install": "Docker Compose is recommended; a manual Laravel/Composer installation is also documented.",
+        "engines": null,
+        "dataFormat": "MySQL stores application data, Redis handles queues/cache, and media uses local/public disk or S3-compatible storage.",
+        "gapVsPaid": "Mixpost's queues are useful, but the Lite edition lacks SocialBee's team, analytics and AI-assisted category-management depth.",
+        "setupBlocker": "Requires a server with Docker plus social-platform app credentials; the manual path also needs PHP, Composer, Supervisor, cron, Redis and FFmpeg.",
+        "sources": [
+          "https://github.com/inovector/mixpost",
+          "https://github.com/inovector/mixpost/blob/main/LICENSE.md",
+          "https://docs.mixpost.app/lite/installation/docker/",
+          "https://docs.mixpost.app/lite/installation/manual/",
+          "https://docs.mixpost.app/lite/configuration/environment-variables/",
+          "https://docs.mixpost.app/server/",
+          "https://socialbee.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Postiz",
+      "url": "https://postiz.com/",
+      "type": "open-source",
+      "repo": "https://github.com/gitroomhq/postiz-app",
+      "platforms": [
+        "web",
+        "self-hosted",
+        "cli"
+      ],
+      "desc": "Recurring posts and multi-network scheduling replace the evergreen loop; self-hosting is the new category.",
+      "stars": 34300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Hosted signup, or Docker Compose for self-hosting.",
+        "engines": "Optional AI/media features connect to OpenAI, ElevenLabs, fal.ai, Tavily, KieAI and Transloadit.",
+        "dataFormat": "PostgreSQL holds application data; Redis and Temporal support jobs; media is stored locally or in Cloudflare R2/S3-compatible storage.",
+        "gapVsPaid": "Recurring posts are less category-native than SocialBee's evergreen system, and Postiz also requires self-hosted operations.",
+        "setupBlocker": "Hosted use is straightforward; self-hosting requires Docker, social OAuth apps, and a PostgreSQL, Redis and Temporal stack.",
+        "sources": [
+          "https://github.com/gitroomhq/postiz-app",
+          "https://github.com/gitroomhq/postiz-app/blob/main/LICENSE",
+          "https://docs.postiz.com/installation/system-requirements",
+          "https://docs.postiz.com/installation/docker-compose",
+          "https://docs.postiz.com/configuration/reference",
+          "https://docs.postiz.com/installation/docker",
+          "https://socialbee.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "hootsuite",
+    "metricool",
+    "hypefury"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Accelerate plan and a single-network scheduler DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for SocialBee in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and one official social-platform API; do not offer alternative stacks.\nThe core loop is: draft posts, organize them into evergreen categories, schedule them across networks, preview them accurately, publish through official APIs, and retain a searchable content calendar.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nSupport drafts, scheduled times, queues, campaigns, tags, and a weekly calendar.\nConnect exactly one social network using its documented OAuth flow.\nValidate character, media, aspect-ratio, and file-size limits before scheduling.\nPublish through an idempotent background job with retries and clear failure states.\nStore platform post identifiers and refresh publication status without scraping.\nAdd reusable snippets, local media storage, CSV export, and a token reconnect flow.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out unofficial automation or scraping.\nDeliberately leave out multi-network inbox and social listening.\nDeliberately leave out agency approvals, white labelling, and enterprise reporting.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

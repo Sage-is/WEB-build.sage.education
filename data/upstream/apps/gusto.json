@@ -1,0 +1,245 @@
+{
+  "slug": "gusto",
+  "name": "Gusto",
+  "domain": "gusto.com",
+  "appURL": "https://gusto.com",
+  "category": "hr",
+  "subcategory": "HR, recruiting, payroll and workforce operations",
+  "tagline": "Track employees, documents, leave, and onboarding without calculating or moving payroll",
+  "priceMonthly": 49,
+  "pricing": {
+    "plan": "Simple",
+    "basis": "monthly base",
+    "unit": "flat",
+    "source": "https://gusto.com/product/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Simple monthly base fee; per-person charges are additional.",
+    "native": "49 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Contractor Only",
+        "monthly": 35,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "$35 base/month + $6 per contractor paid that month",
+        "notes": "Current promotion waives the $35 base for the first 6 months; normalized price is the standard rate."
+      },
+      {
+        "name": "Simple",
+        "monthly": 49,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "$49 base/month + $6 per person/month",
+        "notes": null
+      },
+      {
+        "name": "Plus",
+        "monthly": 80,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "$80 base/month + $12 per person/month",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 180,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "$180 base/month + $22 per person/month",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly only; no annual plan",
+    "priceChanges": [],
+    "hiddenCosts": "Every payroll plan adds a per-person charge. Add-ons include next-day pay $15+$3/person on Simple, instant pay $100/payroll, same-day pay $90/payroll, Time & Attendance Plus $6/person on Simple, priority support $30+$3/person, HR resources $50+$5/person, performance $3/person, Money Plus $19/month, FSA/commuter $4/person with $20 minimum plus a $200 annual service charge, and R&D credit service at 15% of the credit.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://gusto.com/product/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Gusto, track employees, documents, leave, and onboarding without calculating or moving payroll. The hard boundary is payroll rails, tax filing, benefits, banking, compliance, and support, plus compliance, payroll, and regulated integrations.",
+  "coreLoopDIY": "Track employees, documents, leave, and onboarding, maintain approvals and records, and export data without calculating or moving payroll or making employment decisions.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "PostgreSQL",
+    "private self-hosted deployment",
+    "strict admin access",
+    "documented retention policy"
+  ],
+  "whatYouLose": [
+    "payroll rails, tax filing, benefits, banking, compliance, and support",
+    "payroll rails",
+    "tax and labor-law compliance",
+    "benefits integrations",
+    "identity checks and global employment infrastructure"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "integrations"
+  ],
+  "moatNotes": "compliance, payroll, and regulated integrations",
+  "replacementScope": "internal records tracker without payroll",
+  "ongoingBurden": "sensitive data, access, retention, audit, payroll calculations, filings, benefits, employment law, incident response, and support",
+  "whyPeopleStillPay": "People still pay for Gusto because HR platforms survive because mistakes affect pay, benefits, immigration, and legal obligations, not because forms are difficult to render. The recurring cost buys sensitive data, access, retention, audit, payroll calculations, filings, benefits, employment law, incident response, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Frappe HR",
+      "url": "https://github.com/frappe/hrms",
+      "desc": "Active open-source human-resources and payroll application built on Frappe."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Connecteam Small Business Plan",
+      "url": "https://connecteam.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Directory, documents, leave and onboarding for ten people; employee eleven is the business model.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup, then invite staff to the web and mobile apps",
+        "engines": null,
+        "dataFormat": "Employee records, documents, schedules and time data in Connecteam's cloud; schedules and timesheets export to Excel, PDF, CSV or payroll-specific files",
+        "gapVsPaid": "It covers basic records for ten users but does not calculate taxes, file payroll forms or move payroll money like Gusto.",
+        "setupBlocker": null,
+        "sources": [
+          "https://connecteam.com/",
+          "https://connecteam.com/pricing/",
+          "https://help.connecteam.com/en/articles/6393056-small-business-plan-frequently-asked-questions",
+          "https://help.connecteam.com/en/articles/6410944-the-small-business-plan",
+          "https://help.connecteam.com/en/articles/9448683-is-there-a-limit-to-the-number-of-users-i-can-add-to-a-plan",
+          "https://help.connecteam.com/en/articles/6453258-can-i-export-my-team-s-schedule",
+          "https://help.connecteam.com/en/articles/5917303-time-clock-export-options",
+          "https://gusto.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "OrangeHRM Starter",
+      "url": "https://www.orangehrm.com/orangehrm-starter-open-source-software",
+      "type": "open-source",
+      "repo": "https://github.com/orangehrm/orangehrm",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The old-school HR suite: records, leave, attendance and approvals, with a real server and no fashion budget.",
+      "stars": 1107,
+      "lastCommit": "2026-06",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use the free hosted Starter signup, or upload the release to an Apache/PHP/MySQL server and complete the web installer",
+        "engines": null,
+        "dataFormat": "Hosted Starter keeps employee records in OrangeHRM's cloud; self-hosted Starter stores them in MySQL/MariaDB with uploaded files in application storage",
+        "gapVsPaid": "It is an HR database, not a US payroll engine, so tax filing and employee payments remain entirely outside the product.",
+        "setupBlocker": "Self-hosting requires Apache, PHP and MySQL/MariaDB plus security and backups; the hosted path starts with a 30-day trial before conversion to lifetime-free Starter",
+        "sources": [
+          "https://github.com/orangehrm/orangehrm",
+          "https://github.com/orangehrm/orangehrm/blob/main/LICENSE",
+          "https://starterhelp.orangehrm.com/hc/en-us/articles/5295915003666-OrangeHRM-Starter-Installation-Guide",
+          "https://www.orangehrm.com/orangehrm-starter-open-source-software",
+          "https://www.orangehrm.com/open-source/open-source-on-demand",
+          "https://gusto.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Horilla HR",
+      "url": "https://www.horilla.com/",
+      "type": "open-source",
+      "repo": "https://github.com/horilla/horilla-hr",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Hire-to-leave HR in Docker; free forever means you own the updates and backups.",
+      "stars": 1400,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LGPL-2.1-only",
+        "runs": "self-hosted",
+        "install": "Clone the stable 2.0 branch and run docker-compose up -d; a manual Django setup is also documented",
+        "engines": null,
+        "dataFormat": "HR records in PostgreSQL by default, with uploaded media on server storage or optional Google Cloud Storage",
+        "gapVsPaid": "It cannot replace Gusto's payroll calculations, filings or money movement, and it adds self-hosting work.",
+        "setupBlocker": "Docker and production configuration: database credentials, secret key, allowed hosts, HTTPS, backups and mail remain the operator's job",
+        "sources": [
+          "https://github.com/horilla/horilla-hr",
+          "https://github.com/horilla/horilla-hr/blob/2.0/LICENSE",
+          "https://github.com/horilla/horilla-hr/blob/2.0/.env.dist",
+          "https://www.horilla.com/",
+          "https://docs.horilla.com/",
+          "https://gusto.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Frappe HR",
+      "url": "https://frappe.io/hr",
+      "type": "open-source",
+      "repo": "https://github.com/frappe/hrms",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A complete HR suite without the license bill; the server, backups and upgrades are now in your job description.",
+      "stars": 8500,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0",
+        "runs": "self-hosted",
+        "install": "Launch its Docker Compose stack, or install hrms and ERPNext into an existing Frappe Bench",
+        "engines": null,
+        "dataFormat": "Each Frappe site has its own MariaDB database plus private/public files directories; backups are SQL dumps and file archives under the site",
+        "gapVsPaid": "It manages HR records but does not provide Gusto's turnkey US tax filing and payroll disbursement.",
+        "setupBlocker": "The full Frappe/ERPNext stack brings Docker, MariaDB, Redis, proxy/TLS and version-compatible app upgrades",
+        "sources": [
+          "https://github.com/frappe/hrms",
+          "https://github.com/frappe/hrms/blob/develop/LICENSE",
+          "https://docs.frappe.io/framework/user/en/basics/sites",
+          "https://docs.frappe.io/framework/user/en/bench/reference/backup",
+          "https://docs.frappe.io/framework/user/en/tutorial/create-a-site",
+          "https://gusto.com/"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "rippling",
+    "deel",
+    "remote-com"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Simple plan and a internal records tracker without payroll DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Gusto in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: track employees, documents, leave, and onboarding, maintain approvals and records, and export data without calculating or moving payroll or making employment decisions.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement employees, teams, roles, documents, leave requests, equipment, onboarding tasks, and acknowledgements.\nUse least-privilege roles and log every read or change to sensitive records.\nAdd approval workflows, expiry reminders, export, retention, deletion holds, and encrypted backups.\nKeep compensation fields optional and never calculate payroll, taxes, benefits, or statutory filings.\nProvide a data dictionary and explain which fields should not be stored without legal review.\nShip Docker Compose, health checks, disaster recovery, and an emergency-access procedure.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out payroll calculation or money movement.\nDeliberately leave out automated hiring decisions or applicant scoring.\nDeliberately leave out tax, benefits, immigration, identity, and global-employment compliance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

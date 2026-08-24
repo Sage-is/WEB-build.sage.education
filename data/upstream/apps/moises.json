@@ -1,0 +1,137 @@
+{
+  "slug": "moises",
+  "name": "Moises",
+  "domain": "moises.ai",
+  "appURL": "https://moises.ai",
+  "category": "audio",
+  "subcategory": "music services and creator audio tools",
+  "tagline": "Run a local stem-separation model and build practice controls for user-owned songs",
+  "priceMonthly": 5.99,
+  "pricing": {
+    "plan": "Premium",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://apps.apple.com/us/app/moises-the-musicians-app/id1515796612",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Annual Premium price divided by 12; monthly billing is higher.",
+    "native": "5.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "5 uploads/month; maximum 5 minutes/file; 10 AI Studio credits/month; chords/metronome limited to the first 1 minute.",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": 5.99,
+        "annualPerMonth": 3.33,
+        "per": "user",
+        "limits": "Unlimited uploads under fair use; maximum 20 minutes/file; up to 5 stems; 200 AI Studio credits/month.",
+        "notes": "Annual total is $39.99 on the U.S. Apple App Store."
+      },
+      {
+        "name": "Pro",
+        "monthly": 29.99,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Maximum 180 minutes/file; Pro separation models; unlimited AI Studio credits.",
+        "notes": "Exact annual U.S. price was not publicly listed in the sources checked; storefront prices can vary."
+      }
+    ],
+    "freeTierCaps": "5 uploads/month; maximum 5 minutes/file; 10 AI Studio credits/month; chords/metronome limited to the first 1 minute.",
+    "billingTerms": "Monthly + annual where offered; prices vary by storefront and region. The U.S. Apple App Store figures are used where public.",
+    "priceChanges": [],
+    "hiddenCosts": "Free AI credits expire at the monthly reset; projects processed with paid-only features can become inaccessible after cancellation; app-store taxes and regional pricing can differ.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://apps.apple.com/us/app/moises-the-musicians-app/id1515796612",
+      "https://help.moises.ai/hc/en-us/articles/360010972039-How-many-songs-can-I-upload",
+      "https://help.moises.ai/hc/en-us/articles/21960006352796-Moises-AI-Studio-Credits"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Moises, run a local stem-separation model and build practice controls for user-owned songs. The hard boundary is proprietary separation models, mobile polish, chord detection, cloud compute, and speed, plus licensed content, rights, and distribution network.",
+  "coreLoopDIY": "Run a local stem-separation model on legally owned or user-created tracks, then provide private practice controls and playback for each song.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "legally owned local audio files",
+    "ffmpeg",
+    "local storage",
+    "optional audio-analysis models"
+  ],
+  "whatYouLose": [
+    "proprietary separation models, mobile polish, chord detection, cloud compute, and speed",
+    "licensed music catalog",
+    "royalty and distribution relationships",
+    "global streaming infrastructure",
+    "artist network and recommendations"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "content-rights"
+  ],
+  "moatNotes": "licensed content, rights, and distribution network",
+  "replacementScope": "personal library or creator utility",
+  "ongoingBurden": "catalog licensing, royalties, identity, content delivery, moderation, recommendations, payouts, codecs, and rights disputes",
+  "whyPeopleStillPay": "People still pay for Moises because the product is the catalog, rights chain, and distribution network; a player or processing tool is only the visible edge. The recurring cost buys catalog licensing, royalties, identity, content delivery, moderation, recommendations, payouts, codecs, and rights disputes, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Navidrome",
+      "url": "https://github.com/navidrome/navidrome",
+      "desc": "Active open-source personal music server for legally owned libraries."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "StemDeck",
+      "url": "https://github.com/stemdeckapp/stemdeck",
+      "type": "open-source",
+      "repo": "https://github.com/stemdeckapp/stemdeck",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Local six-stem separation plus loops and a mixer; chords and pitch-shifting remain someone else’s problem.",
+      "stars": 2000,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Demucs GUI",
+      "url": "https://github.com/CarlGao4/Demucs-Gui",
+      "desc": "A tidy Windows wrapper whose last commit was 2025-06, just outside the maintenance bar."
+    },
+    {
+      "name": "StemRoller",
+      "url": "https://www.stemroller.com/",
+      "desc": "It separates four stems but stops before the looping and practice controls."
+    },
+    {
+      "name": "Ultimate Vocal Remover GUI",
+      "url": "https://github.com/Anjok07/ultimatevocalremovergui",
+      "desc": "Everyone recommends it; 25,700 stars, but the last commit was 2025-03."
+    }
+  ],
+  "relatedSlugs": [
+    "spotify-premium",
+    "apple-music",
+    "youtube-music-premium"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Premium plan and a personal library or creator utility DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Moises in an empty repository.\nUse Python 3.12, FastAPI, SQLite, ffmpeg, and a local web interface; do not offer alternative stacks.\nThe core loop is: run a local stem-separation model on legally owned or user-created tracks, then provide private practice controls and playback for each song.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nIndex only user-selected folders and preserve source audio without modification.\nRead tags and artwork, calculate loudness and waveform data, and detect exact duplicates by hash.\nProvide albums, artists, playlists, search, queue, favorites, and resumable local playback.\nAdd optional creator tools for trim, normalize, split stems through a local model, and export new files.\nKeep all rights and source information attached to imported tracks and display it during export.\nDocument that the application does not provide music, licensing, distribution, or royalty collection.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out copyrighted catalog acquisition or sharing.\nDeliberately leave out streaming-service circumvention.\nDeliberately leave out royalty accounting, label distribution, and global content delivery.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

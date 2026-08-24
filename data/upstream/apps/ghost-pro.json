@@ -1,0 +1,130 @@
+{
+  "slug": "ghost-pro",
+  "name": "Ghost Pro",
+  "domain": "ghost.org",
+  "category": "publishing",
+  "subcategory": "blog/newsletter/membership",
+  "tagline": "Managed Ghost hosting for blogs, newsletters, and paid memberships",
+  "priceMonthly": 29,
+  "pricing": {
+    "plan": "Publisher",
+    "basis": "annual billing, per month",
+    "unit": "flat",
+    "native": "29 USD",
+    "source": "https://ghost.org/pricing/",
+    "checkedOn": "2026-08-13",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; public page shows Starter/Publisher annual-effective amounts and monthly options; Publisher monthly estimated at $35/month from current tiers.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": null,
+        "annualPerMonth": 18,
+        "per": "workspace",
+        "limits": "1 staff user; 1,000 members; 5 MB/file; 1 newsletter; unlimited email sends.",
+        "notes": "Annual price is $216/year. A monthly billing toggle exists, but its exact rate was not exposed in the accessible page state."
+      },
+      {
+        "name": "Publisher",
+        "monthly": null,
+        "annualPerMonth": 29,
+        "per": "workspace",
+        "limits": "3 staff users; 1,000 members; 100 MB/file; 3 newsletters; 3 premium tiers; 15 offers; unlimited email sends.",
+        "notes": "Annual price is $348/year."
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": 199,
+        "per": "workspace",
+        "limits": "15 staff users; 10,000 members; 250 MB/file; 10 newsletters; 10 premium tiers; 50 offers; unlimited email sends.",
+        "notes": "Annual price is $2,388/year."
+      },
+      {
+        "name": "Custom",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited staff and members; 1 GB/file; 99.9% uptime SLA.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no permanent hosted free tier verified; a try-for-free flow is offered, but the public page does not state a numeric trial length",
+    "billingTerms": "monthly + annual; live accessible state exposes annual rates; upgrade, downgrade or cancel anytime",
+    "priceChanges": [],
+    "hiddenCosts": "member growth can force a higher plan; the free .link domain is free for 1 year then renews at the normal rate; Stripe processing still applies; Business custom SSL and managed subdirectory installs are each $50/month",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://ghost.org/pricing/"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "medium",
+  "verdictSummary": "Because Ghost is open source, the core publishing/newsletter/membership product can be self-hosted; the cost is ops, email setup, and maintenance.",
+  "coreLoopDIY": "Self-host Ghost, configure theme/domain/email, enable memberships/newsletters, and maintain backups/upgrades.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "VPS/Docker",
+    "domain/DNS",
+    "transactional/email provider",
+    "backups",
+    "theme/configuration"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "upgrades",
+    "backups",
+    "email delivery setup",
+    "CDN/security",
+    "support",
+    "easy scaling"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "open-source core/hosting/deliverability",
+  "whyPeopleStillPay": "They pay because publishing should not turn into server administration.",
+  "priorArt": [
+    {
+      "name": "Ghost",
+      "url": "https://github.com/TryGhost/Ghost",
+      "desc": "The product's own open-source publishing platform.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Ghost",
+      "url": "https://ghost.org/",
+      "type": "open-source",
+      "repo": "https://github.com/TryGhost/Ghost",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Ghost Pro without Ghost doing the server, database, mail plumbing, backups, or late-night updates for you.",
+      "stars": 54691,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Substack",
+      "url": "https://substack.com/",
+      "desc": "Free until readers pay you; then Substack takes ten percent, which is not the same thing as free."
+    }
+  ],
+  "relatedSlugs": [
+    "shopify",
+    "podia",
+    "teachable"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Strong yes and important because hosted open-source is exactly what many people can vibecode/self-host.",
+  "prompt": "Build me a self-hosted Ghost site to replace Ghost Pro. Requirements:\n\n- Do not write a CMS. Deploy the open-source Ghost itself on my VPS with\n  Docker Compose: ghost and MySQL 8 containers, named volumes for content and\n  the database.\n- Caddy in front for HTTPS on my domain with automatic certificates; Ghost\n  bound to localhost so only Caddy is exposed.\n- Newsletter and transactional email via Mailgun, creds flowing from .env into\n  the compose file, plus a checklist of the SPF/DKIM/DMARC DNS records.\n- Memberships and paid subscriptions wired to Stripe keys in .env, test mode\n  first.\n- Nightly backup cron: mysqldump plus a tar of the content volume into\n  ./backups/, keep 14, with a written restore procedure tested once for real.\n- An update.sh that pulls new images and restarts, with a note to read Ghost\n  release notes before major-version jumps.\n- My content on my server; no third-party analytics added.\n- Out of scope: building a custom theme from scratch (start from the default\n  theme) and any custom blog engine code.\n- README: DNS records, first-run admin setup, and the honest warning that\n  upgrades and email deliverability are now my job, that is the trade.",
+  "promptCurated": false
+}

@@ -1,0 +1,204 @@
+{
+  "slug": "obsidian-sync",
+  "name": "Obsidian Sync",
+  "domain": "obsidian.md",
+  "category": "notes-knowledge",
+  "subcategory": "local markdown sync",
+  "tagline": "Paid sync service for a local-first Markdown knowledge base",
+  "priceMonthly": 5,
+  "pricing": {
+    "plan": "Sync",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "native": "5 USD",
+    "source": "https://obsidian.md/pricing",
+    "checkedOn": "2026-08-07",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Sync listed at $5/user/month monthly and $4/user/month annually.",
+    "freeTier": "Sync itself has no free tier, though the Obsidian app is free.",
+    "tiers": [
+      {
+        "name": "Obsidian app",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "flat",
+        "limits": "Free local Markdown app; 0 GB of hosted Sync storage included.",
+        "notes": "Not the paid Sync service."
+      },
+      {
+        "name": "Sync Standard",
+        "monthly": 5,
+        "annualPerMonth": 4,
+        "per": "user",
+        "limits": "1 synced vault, 1 GB storage, 5 MB maximum file size, 1-month version history and unlimited devices.",
+        "notes": null
+      },
+      {
+        "name": "Sync Plus",
+        "monthly": 10,
+        "annualPerMonth": 8,
+        "per": "user",
+        "limits": "10 synced vaults, 10 GB storage, 200 MB maximum file size, 12-month version history and unlimited devices.",
+        "notes": "Storage can be upgraded to 100 GB; current add-on price was not publicly listed."
+      }
+    ],
+    "freeTierCaps": "no free Sync tier; the Obsidian app itself is free and stores local Markdown files",
+    "billingTerms": "monthly + annual (20% off); 7-day refund window",
+    "priceChanges": [],
+    "hiddenCosts": "Every collaborator on a shared vault needs their own Sync subscription. Optional storage above 10 GB costs extra, but the current public amount was not found.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://obsidian.md/pricing",
+      "https://obsidian.md/sync",
+      "https://obsidian.md/blog/standard-plan/"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "If you already accept local Markdown files, syncing folders across devices is a solved problem; the hard part is not the app, it is conflict-free convenience.",
+  "coreLoopDIY": "Use a local Markdown folder, git/Syncthing/iCloud/Drive for sync, and optional scripts for backlinks/search.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "local Markdown folder",
+    "Syncthing, Git, iCloud, Dropbox, or similar",
+    "optional mobile file access"
+  ],
+  "whatYouLose": [
+    "official mobile sync polish",
+    "conflict handling",
+    "version history UI",
+    "encrypted vault workflow",
+    "Obsidian support"
+  ],
+  "moatTags": [
+    "execution-polish"
+  ],
+  "moatNotes": "sync/polish",
+  "whyPeopleStillPay": "They pay for no-drama sync across devices while keeping Obsidian's local-first model.",
+  "priorArt": [
+    {
+      "name": "Syncthing",
+      "url": "https://github.com/syncthing/syncthing",
+      "desc": "Open-source continuous file synchronization that can replace much of Obsidian Sync for tec",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "iCloud Drive",
+      "url": "https://www.apple.com/icloud/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "ios"
+      ],
+      "desc": "Five free gigabytes and excellent Apple plumbing; everyone else gets a side door.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Enable iCloud Drive in Apple-device settings; install iCloud for Windows from the Microsoft Store",
+        "engines": null,
+        "dataFormat": "Ordinary vault Markdown files and attachments in Apple's iCloud storage, mirrored or downloaded into Finder, Files, or File Explorer on signed-in devices",
+        "gapVsPaid": "It is Apple-centric and lacks Obsidian Sync's vault-aware version history, deleted-file recovery, selective vault syncing and end-to-end-encrypted service across all supported platforms.",
+        "setupBlocker": "An Apple Account is required, free storage is shared with all iCloud data, and Android/Linux have no native iCloud Drive sync client",
+        "sources": [
+          "https://support.apple.com/en-us/118443",
+          "https://support.apple.com/en-us/108047",
+          "https://support.apple.com/guide/icloud-windows/set-up-icloud-drive-icw0144825a5/icloud",
+          "https://obsidian.md/sync"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Nextcloud",
+      "url": "https://nextcloud.com",
+      "type": "open-source",
+      "repo": "https://github.com/nextcloud/server",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Your own cloud, complete with the privilege of maintaining your own cloud.",
+      "stars": 36300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Nextcloud All-in-One Docker stack or a supported web-server/PHP/database installation, plus sync clients",
+        "engines": null,
+        "dataFormat": "User files in a server data directory or object store; accounts, shares, file cache, versions, and other metadata in the database, with optional local synced copies",
+        "gapVsPaid": "It can sync the folder, but it is not Obsidian-aware, does not provide the same conflict handling and version recovery by default, and makes you operate the cloud service.",
+        "setupBlocker": "A practical deployment needs an always-on host, Docker or a full PHP/database stack, domain and TLS, storage planning, backups, and upgrades",
+        "sources": [
+          "https://github.com/nextcloud/server",
+          "https://github.com/nextcloud/server/blob/master/COPYING",
+          "https://docs.nextcloud.com/server/latest/admin_manual/installation/index.html",
+          "https://github.com/nextcloud/all-in-one",
+          "https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/primary_storage.html",
+          "https://obsidian.md/sync"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Syncthing",
+      "url": "https://syncthing.net",
+      "type": "open-source",
+      "repo": "https://github.com/syncthing/syncthing",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "cli"
+      ],
+      "desc": "Syncs the vault directly between computers; iPhones remain the awkward relative.",
+      "stars": 87300,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MPL-2.0",
+        "runs": "local",
+        "install": "Install a native package or binary on every device, exchange device IDs, and share the vault folder",
+        "engines": null,
+        "dataFormat": "The original Markdown files and attachments remain as normal files in selected folders on each peer; Syncthing keeps its configuration and index database locally",
+        "gapVsPaid": "It has no central always-available history or recovery service, devices need overlapping availability to propagate changes, and iPhone/iPad support depends on third-party clients.",
+        "setupBlocker": "Every device needs a client and pairing, at least one peer must be online to receive changes, and there is no official iOS client",
+        "sources": [
+          "https://github.com/syncthing/syncthing",
+          "https://github.com/syncthing/syncthing/blob/main/LICENSE",
+          "https://docs.syncthing.net/intro/getting-started.html",
+          "https://docs.syncthing.net/users/config.html",
+          "https://obsidian.md/sync"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "readwise-reader",
+    "raindrop-io",
+    "feedly"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "Very clean yes; lets the site distinguish app value from convenience subscription.",
+  "prompt": "Build me a sync setup for my Obsidian vault to replace Obsidian Sync. Requirements:\n\n- This is plumbing, not an app: the vault is a folder of Markdown files, sync it with\n  git. Syncthing is the zero-history alternative; use git here because I want history.\n- A small watcher (Node + chokidar + simple-git, or a plain bash script on a\n  systemd/launchd timer, pick the simpler) that debounces 30 seconds after the last\n  change, commits with an auto message, and pushes to a private GitHub repo.\n- On start and every 5 minutes: pull with rebase. On conflict, never lose data: write\n  the incoming version as <name>.conflict-YYYY-MM-DD.md, keep mine in place, and log it.\n- .gitignore for .obsidian/workspace* and .trash so device-local state does not ping-\n  pong between machines.\n- A `vaultsync status` command showing last push/pull time and any outstanding conflict\n  files.\n- Mobile: point a git client (Working Copy on iOS, MGit on Android) at the same repo.\n  Document that in the README, do not build mobile anything.\n- The repo stays private; token in .env or the system git credential helper. No accounts\n  beyond GitHub, no telemetry, notes stay plain Markdown on disk.\n- Out of scope: an encrypted-vault workflow and a version-history UI. git log is the\n  history.\n- README: second-machine setup steps and the conflict-file convention.",
+  "promptCurated": false
+}

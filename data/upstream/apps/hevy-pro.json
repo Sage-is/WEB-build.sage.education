@@ -1,0 +1,206 @@
+{
+  "slug": "hevy-pro",
+  "name": "Hevy Pro",
+  "domain": "hevyapp.com",
+  "appURL": "https://hevyapp.com",
+  "category": "wellness",
+  "subcategory": "fitness, activity and general wellbeing",
+  "tagline": "Log workouts and routines locally with neutral progress charts",
+  "priceMonthly": 2.99,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "annual-equivalent",
+    "unit": "flat",
+    "source": "https://hevyapp.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Annual Pro plan divided by 12; monthly billing is higher.",
+    "native": "2.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "4 routines, 7 custom exercises, and stats history limited to 30 days or 3 months depending on view; 400+ built-in exercises",
+        "notes": "Only weight and waist measurements remain available on the free account."
+      },
+      {
+        "name": "Hevy Pro",
+        "monthly": 2.99,
+        "annualPerMonth": 2,
+        "per": "user",
+        "limits": "Unlimited routines and custom exercises plus all-time graph/history access",
+        "notes": "$23.99 billed annually; the US App Store also exposes a $3.99 monthly offer for some users."
+      },
+      {
+        "name": "Hevy Pro Lifetime",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Lifetime Pro access",
+        "notes": "$74.99 one-time."
+      }
+    ],
+    "freeTierCaps": "Free plan: 4 routines, 7 custom exercises, 30-day/3-month statistics windows, and 400+ built-in exercises.",
+    "billingTerms": "monthly + annual + one-time Lifetime; app-store offers can vary",
+    "priceChanges": [],
+    "hiddenCosts": "Hevy Coach is a separate product and can create a second subscription. App-store legacy/alternate monthly offers can differ from the public $2.99 rate.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://help.hevyapp.com/hc/en-us/articles/35119778922263-Hevy-Pro-Subscription-How-to-get-Pro-and-What-Does-It-Include",
+      "https://help.hevyapp.com/hc/en-us/articles/38279350428695-What-will-happen-to-my-account-if-I-switch-from-Pro-to-the-free-version",
+      "https://apps.apple.com/us/app/hevy-workout-tracker-gym-log/id1458862350"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "The core loop is small enough for a capable coding agent to produce a useful local version in one sitting. For Hevy Pro, log workouts and routines locally with neutral progress charts. The hard boundary is mobile apps, social features, watch integration, sync, and polished tracking, plus hardware data, content, coaching, and trust.",
+  "coreLoopDIY": "Log workouts and routines locally, plan moderate training, and show neutral progress charts without diagnosing, shaming, or enforcing restrictive goals.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "iOS or Android device",
+    "optional HealthKit or Health Connect permission",
+    "local storage"
+  ],
+  "whatYouLose": [
+    "mobile apps, social features, watch integration, sync, and polished tracking",
+    "wearable hardware data",
+    "coach network",
+    "clinical validation",
+    "large content library and social network"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "hardware",
+    "network-effects"
+  ],
+  "moatNotes": "hardware data, content, coaching, and trust",
+  "replacementScope": "personal general-wellbeing tracker",
+  "ongoingBurden": "sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support",
+  "whyPeopleStillPay": "People still pay for Hevy Pro because people pay for polished mobile capture, trusted content, hardware integration, and coaching rather than the basic logbook. The recurring cost buys sensor permissions, data quality, notifications, safety language, accessibility, sync, privacy, content review, and support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "wger",
+      "url": "https://github.com/wger-project/wger",
+      "desc": "Active open-source fitness and workout management application."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "LiftLog",
+      "url": "https://liftlog.online/",
+      "type": "open-source",
+      "repo": "https://github.com/LiamMorrow/LiftLog",
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "desc": "Sets, timers, plans and charts live on the phone instead of behind a lifetime unlock.",
+      "stars": 523,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "local",
+        "install": "Install the iOS or Android app from an app store",
+        "engines": "The optional paid routine generator uses Anthropic Claude; normal workout logging and charts do not require an AI service.",
+        "dataFormat": "Workout plans, exercise history, sets, and measurements are kept on the device and can be exported as plaintext; optional social/backup features publish encrypted data through the project's backend.",
+        "gapVsPaid": "LiftLog lacks Hevy's large social community, polished exercise discovery, coaching-style routine marketplace, wearable integrations, and cross-platform sharing experience.",
+        "setupBlocker": null,
+        "sources": [
+          "https://liftlog.online/",
+          "https://github.com/LiamMorrow/LiftLog",
+          "https://github.com/LiamMorrow/LiftLog/blob/main/LICENSE",
+          "https://liftlog.online/privacy",
+          "https://liftlog.online/ai",
+          "https://www.hevyapp.com/",
+          "https://www.hevyapp.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "FitNotes",
+      "url": "https://www.fitnotesapp.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "android"
+      ],
+      "desc": "A no-ad Android lifting log that has been doing the basic job for years.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "local",
+        "install": "Install the Android app from Google Play",
+        "engines": null,
+        "dataFormat": "Workout routines, exercise history, measurements, and notes live in the app's local database; optional backups can be written to the user's Google Drive.",
+        "gapVsPaid": "FitNotes is Android-only and gives up Hevy's iOS/web presence, social feed, friend comparisons, richer exercise media, and polished cloud synchronization.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.fitnotesapp.com/",
+          "https://www.fitnotesapp.com/privacy/",
+          "https://www.fitnotesapp.com/about/",
+          "https://www.hevyapp.com/",
+          "https://www.hevyapp.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "wger",
+      "url": "https://wger.de/",
+      "type": "open-source",
+      "repo": "https://github.com/wger-project/wger",
+      "platforms": [
+        "web",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Workouts, sets, timers and charts on your own server; setup day counts as cardio.",
+      "stars": 6600,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Create an account on wger.de/use the mobile app, or deploy the official Docker Compose stack",
+        "engines": null,
+        "dataFormat": "Hosted records live in wger's service; self-hosted users keep accounts, workouts, nutrition, measurements, and exercise data in PostgreSQL plus persistent media volumes, while the mobile client maintains an offline local database and syncs.",
+        "gapVsPaid": "wger is broader but its logging flow, exercise media, offline/mobile polish, social layer, and instant setup are less refined than Hevy's.",
+        "setupBlocker": "None for the hosted service or mobile app; self-hosting immediately requires Docker Compose, PostgreSQL, Redis/sync services, a reverse proxy, mail, backups, and upgrades.",
+        "sources": [
+          "https://wger.de/",
+          "https://github.com/wger-project/wger",
+          "https://github.com/wger-project/wger/blob/master/LICENSE.txt",
+          "https://wger.readthedocs.io/en/latest/production/docker.html",
+          "https://wger.de/en/software/mobile-app",
+          "https://www.hevyapp.com/",
+          "https://www.hevyapp.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "strava",
+    "myfitnesspal-premium",
+    "macrofactor"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pro plan and a personal general-wellbeing tracker DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Hevy Pro in an empty repository.\nUse React Native with Expo, TypeScript, SQLite, and HealthKit or Health Connect only when explicitly enabled; do not offer alternative stacks.\nThe core loop is: log workouts and routines locally, plan moderate training, and show neutral progress charts without diagnosing, shaming, or enforcing restrictive goals.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate optional logs for activity, sleep, mood, energy, and personal notes with editable units.\nLet the user build moderate routines and rest days without weight-loss targets, punishment, or competitive pressure.\nRequest health-platform permissions per data type and work fully without granting them.\nShow weekly patterns and consistency with neutral language and no diagnostic or body-image judgments.\nAdd reminders that can be muted, data export, account-free local use, and full deletion.\nInclude a clear statement that the app is not medical care and should not replace qualified advice.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out medical diagnosis or treatment.\nDeliberately leave out extreme exercise or restrictive-eating coaching.\nDeliberately leave out wearable hardware, human coaching, and a large social network.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

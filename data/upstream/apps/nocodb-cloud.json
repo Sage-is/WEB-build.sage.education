@@ -1,0 +1,280 @@
+{
+  "slug": "nocodb-cloud",
+  "name": "NocoDB Cloud",
+  "domain": "nocodb.com",
+  "appURL": "https://nocodb.com",
+  "category": "databases",
+  "subcategory": "spreadsheet databases and operational data apps",
+  "tagline": "Use a managed spreadsheet interface over structured data",
+  "priceMonthly": 15,
+  "pricing": {
+    "plan": "Plus",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "source": "https://nocodb.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Plus monthly user price.",
+    "native": "15 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Up to 3 editors and 10 commenters; 1,000 records; 1 GB storage; 100 automation runs/month; 1,000 API calls/month; 1 extension; 0 external database connections.",
+        "notes": null
+      },
+      {
+        "name": "Plus",
+        "monthly": 15,
+        "annualPerMonth": 12,
+        "per": "user",
+        "limits": "50,000 records; 20 GB storage; 100,000 API calls/month; 30-day revision history; 2 snapshots; 0 external database connections.",
+        "notes": "The live plan card says 10,000 automation runs, while the live comparison table says 30,000. Seat charges are capped after 9 paid users."
+      },
+      {
+        "name": "Business",
+        "monthly": 30,
+        "annualPerMonth": 24,
+        "per": "user",
+        "limits": "300,000 records; 100 GB storage; 1 million API calls/month; 10 external database connections; 90-day history; 5 snapshots.",
+        "notes": "The live plan card says 50,000 automation runs, while the live comparison table says 120,000. Seat charges are capped after 9 paid users."
+      },
+      {
+        "name": "Scale",
+        "monthly": 54,
+        "annualPerMonth": 45,
+        "per": "user",
+        "limits": "1 million records; 150 GB storage; 5 million API calls/month; 180-day history; 10 snapshots.",
+        "notes": "The live page conflicts with itself: it says both 'no seat minimums' and a 3-seat minimum, and shows 250,000 automation runs on the card versus 240,000 in the table."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Unlimited records; 1 TB storage; 365+ days of history; 50+ snapshots; custom usage and security limits.",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "3 editors, 10 commenters, 1,000 records, 1 GB storage, 100 automation runs/month, 1,000 API calls/month, 1 extension and no external database connections",
+    "billingTerms": "monthly + annual; published annual rates are 20% lower",
+    "priceChanges": [],
+    "hiddenCosts": "Plus and Business billing is capped at 9 paid seats ($135/$270 monthly or $108/$216 annual-equivalent); Scale has contradictory 0-versus-3-seat-minimum language; overage rates are not published, so higher usage may require an upgrade.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://nocodb.com/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For NocoDB Cloud, use a managed spreadsheet interface over structured data. The hard boundary is managed hosting, integrations, collaboration, storage, and support, plus data model flexibility, collaboration, and integrations.",
+  "coreLoopDIY": "Model structured records behind a spreadsheet-style interface, provide grid, form, kanban, and filtered views, and expose a documented API.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "self-hosted server",
+    "optional object storage for attachments"
+  ],
+  "whatYouLose": [
+    "managed hosting, integrations, collaboration, storage, and support",
+    "real-time multiplayer",
+    "automation and integration breadth",
+    "scale and formula depth",
+    "enterprise permissions"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "data model flexibility, collaboration, and integrations",
+  "replacementScope": "small-team structured database",
+  "ongoingBurden": "schema changes, formulas, permissions, imports, attachments, views, APIs, concurrency, backups, and migrations",
+  "whyPeopleStillPay": "People still pay for NocoDB Cloud because teams pay when a flexible database becomes a shared operational system with integrations and years of accumulated business logic. The recurring cost buys schema changes, formulas, permissions, imports, attachments, views, APIs, concurrency, backups, and migrations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "NocoDB",
+      "url": "https://github.com/nocodb/nocodb",
+      "desc": "Active open-source no-code database interface and Airtable alternative."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Baserow Free",
+      "url": "https://baserow.io/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Airtable with fewer ornaments: 3,000 rows, forms, views, automations, and a small app builder for $0.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Tables, application definitions, uploads, and workspace metadata live in Baserow Cloud; tables can be exported as CSV",
+        "gapVsPaid": "Baserow Free primarily stores data in its own database instead of providing NocoDB's direct spreadsheet-style layer over an existing SQL schema.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/baserow/baserow",
+          "https://github.com/baserow/baserow/blob/develop/LICENSE",
+          "https://baserow.io/pricing",
+          "https://baserow.io/user-docs/export-a-view",
+          "https://nocodb.com/",
+          "https://nocodb.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Grist",
+      "url": "https://www.getgrist.com/",
+      "type": "open-source",
+      "repo": "https://github.com/gristlabs/grist-core",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Self-hosted rather than managed, but a polished relational grid with formulas and forms.",
+      "stars": 11100,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "both",
+        "install": "Hosted signup, desktop app, or Docker container for self-hosting",
+        "engines": null,
+        "dataFormat": "Each document is a .grist SQLite database containing table data, attachments, document metadata, and recent history; CSV/Excel exports are also available",
+        "gapVsPaid": "Grist is a relational spreadsheet document rather than a live administrative facade over existing databases, and shared use usually adds self-hosting work.",
+        "setupBlocker": "None for hosted or desktop use; shared self-hosting requires Docker, authentication, backups, a public URL, and safe Python-formula sandboxing",
+        "sources": [
+          "https://github.com/gristlabs/grist-core",
+          "https://github.com/gristlabs/grist-core/blob/main/LICENSE.txt",
+          "https://support.getgrist.com/self-managed/",
+          "https://support.getgrist.com/exports/",
+          "https://support.getgrist.com/install/first-run-setup/",
+          "https://nocodb.com/",
+          "https://nocodb.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "NocoDB Free",
+      "url": "https://nocodb.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "The same managed product: three editors, 1,000 records, forms, grid, kanban, gallery, webhooks, and API access.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-Sustainable-Use-1.0",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Free-plan records and attachments live in NocoDB Cloud; records can be exported through the UI/API, but external database connections are not included on the free plan",
+        "gapVsPaid": "It is the same cloud product, but the free workspace's record, editor, storage, and automation limits are too small for many paid NocoDB deployments.",
+        "setupBlocker": null,
+        "sources": [
+          "https://nocodb.com/pricing",
+          "https://github.com/nocodb/nocodb",
+          "https://github.com/nocodb/nocodb/blob/develop/LICENSE.md",
+          "https://docs.nocodb.com/getting-started/self-hosted/environment-variables/",
+          "https://nocodb.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "SeaTable Free",
+      "url": "https://seatable.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "A serious grid with 10,000 rows, forms, automations, scripts, and an app builder before it asks for money.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup for SeaTable Cloud",
+        "engines": null,
+        "dataFormat": "Bases live in SeaTable Cloud and can be exported as proprietary .dtable containers containing JSON plus an asset folder; individual tables or views export to XLSX",
+        "gapVsPaid": "SeaTable keeps records inside its own base format and does not replace NocoDB's core strength of exposing an existing SQL database through a grid and API.",
+        "setupBlocker": null,
+        "sources": [
+          "https://seatable.com/prices/",
+          "https://seatable.com/help/subscription-plans/",
+          "https://seatable.com/help/dtable-format-export-backup-seatable/",
+          "https://seatable.com/help/data-import-export-seatable/",
+          "https://nocodb.com/",
+          "https://nocodb.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Teable Free",
+      "url": "https://teable.ai/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "An Airtable-shaped database with 1,000 rows, 100 automations, and a real app builder on the free plan.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": "Vendor-hosted AI and App Builder features use Teable's configured model services and free-plan credits; the exact model roster can change",
+        "dataFormat": "Bases, records, attachments, automation state, and app definitions live in Teable Cloud; bases can be backed up as .tea files and tables exported as CSV",
+        "gapVsPaid": "Teable is an excellent hosted base, but it is not a drop-in live interface over arbitrary existing SQL schemas in the way paid NocoDB can be.",
+        "setupBlocker": null,
+        "sources": [
+          "https://github.com/teableio/teable",
+          "https://github.com/teableio/teable/blob/develop/LICENSE",
+          "https://teable.ai/pricing",
+          "https://help.teable.ai/en/base/export",
+          "https://nocodb.com/",
+          "https://nocodb.com/pricing"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "baserow-cloud",
+    "grist",
+    "rows"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Plus plan and a small-team structured database DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for NocoDB Cloud in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Docker Compose; do not offer alternative stacks.\nThe core loop is: model structured records behind a spreadsheet-style interface, provide grid, form, kanban, and filtered views, and expose a documented API.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate workspaces, bases, tables, fields, records, attachments, relations, and saved views.\nSupport text, number, currency, date, boolean, select, formula-lite, and relation field types.\nBuild grid, form, kanban, and record-detail views from one canonical schema.\nAdd role-based permissions, optimistic concurrency checks, audit history, and trash restore.\nProvide CSV import or export and a token-authenticated REST API generated from the schema.\nShip migrations, seed data, backups, health checks, and a schema export format.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out full spreadsheet formula compatibility.\nDeliberately leave out hundreds of automations and integrations.\nDeliberately leave out large-enterprise governance and vendor-managed scale.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

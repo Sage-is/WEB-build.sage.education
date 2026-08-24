@@ -1,0 +1,127 @@
+{
+  "slug": "savio",
+  "name": "Savio",
+  "domain": "savio.io",
+  "appURL": "https://savio.io",
+  "category": "user-research",
+  "subcategory": "feedback boards, interviews and product research",
+  "tagline": "Centralize manually imported feedback, tag it, and connect it to feature decisions",
+  "priceMonthly": 39,
+  "pricing": {
+    "plan": "Essential",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://www.savio.io/pricing/",
+    "checkedOn": "2026-08-12",
+    "confidence": "medium",
+    "notes": "Typical Essential monthly plan.",
+    "native": "39 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Essential",
+        "monthly": 39,
+        "annualPerMonth": 32.5,
+        "per": "workspace",
+        "limits": "1 paid user included; unlimited free users; 1 product; 1 roadmap.",
+        "notes": "Additional paid users cost $23/month each; annual billing gives 2 months free."
+      },
+      {
+        "name": "Professional",
+        "monthly": 79,
+        "annualPerMonth": 65.83,
+        "per": "workspace",
+        "limits": "1 paid user included; unlimited free users; 1 product; 5 roadmaps.",
+        "notes": "Additional paid users cost $39/month each; annual billing gives 2 months free."
+      },
+      {
+        "name": "Business",
+        "monthly": 249,
+        "annualPerMonth": 207.5,
+        "per": "workspace",
+        "limits": "1 paid user included; unlimited free users; unlimited products and roadmaps.",
+        "notes": "Additional paid users cost $49/month each; annual billing gives 2 months free."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom users, onboarding, invoicing, security and service terms.",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "Monthly + annual; annual billing gives 2 months free. A 14-day trial requires no card.",
+    "priceChanges": [],
+    "hiddenCosts": "Only owner/admin/manager roles are paid; extra paid users cost $23, $39 or $49/month each depending on tier, while contributors, viewers and submitters are free.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.savio.io/pricing/"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Savio, centralize manually imported feedback, tag it, and connect it to feature decisions. The hard boundary is crm and support integrations, customer revenue context, workflow, and collaboration, plus participant network, synthesis workflow, and collaboration.",
+  "coreLoopDIY": "Centralize manually imported feedback, tag it, merge duplicates, connect evidence to themes and feature decisions, and publish a transparent status or research view.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "Resend API key",
+    "optional video-call links"
+  ],
+  "whatYouLose": [
+    "CRM and support integrations, customer revenue context, workflow, and collaboration",
+    "large participant panel",
+    "recording and transcription infrastructure",
+    "advanced research repository",
+    "enterprise governance"
+  ],
+  "moatTags": [
+    "collaboration",
+    "integrations"
+  ],
+  "moatNotes": "participant network, synthesis workflow, and collaboration",
+  "replacementScope": "small-team feedback repository",
+  "ongoingBurden": "recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention",
+  "whyPeopleStillPay": "People still pay for Savio because people pay either for access to participants or for a research repository that keeps evidence usable across an organization. The recurring cost buys recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Fider",
+      "url": "https://github.com/getfider/fider",
+      "desc": "Open-source customer-feedback portal with voting and status workflows."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Quackback",
+      "url": "https://quackback.io",
+      "type": "open-source",
+      "repo": "https://github.com/QuackbackIO/quackback",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "A central feedback inbox with tags, duplicate merging, roadmap decisions and issue-tracker sync.",
+      "stars": 216,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "canny",
+    "productboard",
+    "dovetail"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Essential plan and a small-team feedback repository DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Savio in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Resend; do not offer alternative stacks.\nThe core loop is: centralize manually imported feedback, tag it, merge duplicates, connect evidence to themes and feature decisions, and publish a transparent status or research view.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate public and private feedback intake with consent text and optional contact details.\nSupport posts, votes, comments, tags, statuses, owners, and duplicate merging.\nAdd a research note type with evidence links, quotes, themes, and confidence.\nBuild search and filters across feedback, customers, segments, themes, and status.\nProvide email notifications, moderation, export, deletion, and an audit log.\nPublish a read-only roadmap or findings page using only explicitly public items.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a paid research-participant marketplace.\nDeliberately leave out unlimited video storage and automated transcription.\nDeliberately leave out enterprise repositories, SSO, and governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

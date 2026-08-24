@@ -1,0 +1,117 @@
+{
+  "slug": "crowdcast",
+  "name": "Crowdcast",
+  "domain": "crowdcast.io",
+  "appURL": "https://crowdcast.io",
+  "category": "video-conferencing",
+  "subcategory": "video meetings and webinars",
+  "tagline": "Host a small interactive live event and publish a replay",
+  "priceMonthly": 49,
+  "pricing": {
+    "plan": "Lite",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://crowdcast.io/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "high",
+    "notes": "Official Lite monthly tier.",
+    "native": "49 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Lite",
+        "monthly": 49,
+        "annualPerMonth": 34.3,
+        "per": "workspace",
+        "limits": "100 live attendees; 10 live hours/month; 1 host seat; 1 GB studio storage; 2-hour sessions; 5% ticket fee",
+        "notes": "Annual equivalent calculated from the official 30% discount."
+      },
+      {
+        "name": "Pro",
+        "monthly": 89,
+        "annualPerMonth": 62.3,
+        "per": "workspace",
+        "limits": "250 live attendees; 20 live hours/month; 2 host seats; 5 GB studio storage; 4-hour sessions; 1 multistream; 5% ticket fee",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": 195,
+        "annualPerMonth": 136.5,
+        "per": "workspace",
+        "limits": "1,000 live attendees; 40 live hours/month; 4 host seats; 10 GB studio storage; 6-hour sessions; 3 multistreams; 2% ticket fee",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day trial is limited to 10 live attendees and 60-minute sessions",
+    "billingTerms": "monthly + annual (30% lower)",
+    "priceChanges": [],
+    "hiddenCosts": "Overage is $0.15 per extra live attendee, $20 per extra 5 live hours and $29 per extra host seat; paid events also incur Crowdcast's 2%–5% fee plus Stripe's 2.9% + $0.30.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.crowdcast.io/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Crowdcast, host a small interactive live event and publish a replay. The hard boundary is live-event media, registration, chat, questions, analytics, and community audience, plus real-time media infrastructure and reliability.",
+  "coreLoopDIY": "Host a small interactive live event in a private video room, issue signed room links, publish a replay, and keep recordings only when every participant is clearly informed.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "public server with strong bandwidth",
+    "domain and TLS",
+    "TURN server",
+    "Docker",
+    "explicit participant consent for recording"
+  ],
+  "whatYouLose": [
+    "live-event media, registration, chat, questions, analytics, and community audience",
+    "global low-latency media network",
+    "dial-in and telephony",
+    "large webinars",
+    "transcription, support, and compliance"
+  ],
+  "moatTags": [
+    "scale-infra"
+  ],
+  "moatNotes": "real-time media infrastructure and reliability",
+  "replacementScope": "small private meeting service",
+  "ongoingBurden": "TURN capacity, codecs, browsers, packet loss, scaling, recording, consent, abuse, monitoring, and incident response",
+  "whyPeopleStillPay": "People still pay for Crowdcast because video products survive because real-time media quality and global reliability are infrastructure businesses, not weekend interface projects. The recurring cost buys TURN capacity, codecs, browsers, packet loss, scaling, recording, consent, abuse, monitoring, and incident response, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Jitsi Meet",
+      "url": "https://github.com/jitsi/jitsi-meet",
+      "desc": "Widely deployed open-source video-conferencing platform."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "BigBlueButton",
+      "url": "https://bigbluebutton.org",
+      "type": "open-source",
+      "repo": "https://github.com/bigbluebutton/bigbluebutton",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Interactive live sessions, polls and replay recordings; public-event polish remains your job.",
+      "stars": 9200,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "zoom-pro",
+    "google-workspace-business-starter",
+    "microsoft-teams-essentials"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Lite plan and a small private meeting service DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Crowdcast in an empty repository.\nUse Docker Compose, Jitsi Meet, a small Next.js 15 control panel, PostgreSQL, and TURN; do not offer alternative stacks.\nThe core loop is: host a small interactive live event in a private video room, issue signed room links, publish a replay, and keep recordings only when every participant is clearly informed.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nDeploy Jitsi Meet through pinned Docker images and configure a dedicated TURN service.\nBuild an owner panel for rooms, signed invitations, expiry, lobby mode, and participant limits.\nShow connection diagnostics for camera, microphone, browser, bandwidth, and TURN reachability.\nMake recording disabled by default and require an on-screen consent state for every participant.\nStore room metadata and audit events, but do not store media unless explicitly enabled.\nAdd health checks, bandwidth dashboards, backup, restore, upgrade, and incident instructions.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a global media edge network.\nDeliberately leave out public webinar scale and telephony.\nDeliberately leave out regulated recording, enterprise compliance, and guaranteed support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

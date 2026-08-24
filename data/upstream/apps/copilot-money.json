@@ -1,0 +1,230 @@
+{
+  "slug": "copilot-money",
+  "name": "Copilot Money",
+  "domain": "copilot.money",
+  "category": "personal-finance",
+  "subcategory": "budgeting + spending tracker",
+  "tagline": "Personal finance app for spending, budgets, investments, and net worth",
+  "priceMonthly": 13,
+  "pricing": {
+    "plan": "Monthly subscription",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "13 USD",
+    "source": "https://apps.apple.com/us/app/copilot-track-budget-money/id1447330651",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Apple App Store pricing checked 2026-07-30; monthly subscription listed at $13 and yearly at $95.",
+    "tiers": [
+      {
+        "name": "Copilot Money",
+        "monthly": 13,
+        "annualPerMonth": 7.92,
+        "per": "flat",
+        "limits": "All product features; 1 household subscription; no feature-based paid tiers",
+        "notes": "7-day free trial; annual price is $95/year."
+      }
+    ],
+    "freeTierCaps": "no free tier; interactive test drive before signup, then 7-day free trial",
+    "billingTerms": "monthly + annual (annual $95/year; 39% below monthly)",
+    "priceChanges": [],
+    "hiddenCosts": null,
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://www.copilot.money/#pricing-dark",
+      "https://apps.apple.com/us/app/copilot-track-budget-money/id1447330651"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A beautiful spending dashboard can be vibecoded, but Copilot's bank/investment sync, categorization, native Apple apps, and data-security posture are the product.",
+  "coreLoopDIY": "Import bank/CSV data, categorize transactions with rules/LLM, show budgets, investments, and net-worth charts.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Plaid/bank API or CSV import",
+    "secure storage",
+    "macOS/iOS/web app",
+    "categorization rules",
+    "charts"
+  ],
+  "whatYouLose": [
+    "bank sync",
+    "iOS/Mac polish",
+    "transaction enrichment",
+    "investment tracking",
+    "mobile notifications",
+    "security posture"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "bank data/native app/security",
+  "whyPeopleStillPay": "They pay because the app feels native and current financial data appears automatically.",
+  "priorArt": [
+    {
+      "name": "Actual Budget",
+      "url": "https://github.com/actualbudget/actual",
+      "desc": "Open-source budgeting app; good starting point for a DIY personal finance workflow.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Wealthfolio",
+      "url": "https://wealthfolio.app/",
+      "type": "open-source",
+      "repo": "https://github.com/afadil/wealthfolio",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "self-hosted"
+      ],
+      "desc": "Portfolio, net worth, spending and budgets on your own device; automatic broker sync is the paid convenience.",
+      "stars": 8500,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Native desktop or iOS app, or the official Docker image/Compose deployment for web mode",
+        "engines": null,
+        "dataFormat": "Desktop and self-hosted modes use a local SQLite database (the web server exposes a configurable app.db path); optional Wealthfolio Connect and encrypted device sync send selected holdings/account data through the vendor service.",
+        "gapVsPaid": "Wealthfolio cannot match Copilot's turnkey US account and card aggregation, automatic categorization, transaction cleanup, and consistently polished mobile-first daily-money workflow without paid sync.",
+        "setupBlocker": null,
+        "sources": [
+          "https://wealthfolio.app/",
+          "https://github.com/wealthfolio/wealthfolio",
+          "https://github.com/wealthfolio/wealthfolio/blob/main/LICENSE",
+          "https://github.com/wealthfolio/wealthfolio#docker",
+          "https://wealthfolio.app/privacy",
+          "https://copilot.money/",
+          "https://copilot.money/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Money Manager Ex",
+      "url": "https://moneymanagerex.org/",
+      "type": "open-source",
+      "repo": "https://github.com/moneymanagerex/moneymanagerex",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "A local ledger with budgets, reports and investments; the interface has no subscription budget.",
+      "stars": 2200,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-only",
+        "runs": "local",
+        "install": "Native or portable desktop package for Windows, macOS, or Linux; mobile builds are also published",
+        "engines": null,
+        "dataFormat": "Accounts and transactions live in a user-chosen local SQLite .mmb database, with optional database encryption; CSV, QIF, and other interchange formats are available.",
+        "gapVsPaid": "Money Manager Ex is a manual desktop ledger with a dated interface, not Copilot's automatically synced, mobile-first view of spending, investments, subscriptions, and net worth.",
+        "setupBlocker": null,
+        "sources": [
+          "https://moneymanagerex.org/",
+          "https://github.com/moneymanagerex/moneymanagerex",
+          "https://github.com/moneymanagerex/moneymanagerex/blob/master/LICENSE",
+          "https://moneymanagerex.org/docs/",
+          "https://moneymanagerex.org/docs/en_US/index.html",
+          "https://copilot.money/",
+          "https://copilot.money/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "GnuCash",
+      "url": "https://www.gnucash.org/",
+      "type": "open-source",
+      "repo": "https://github.com/gnucash/gnucash",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Spending, budgets and investments in a serious double-entry desktop; simplicity did not make the balance sheet.",
+      "stars": 4300,
+      "lastCommit": "2026-06",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "local",
+        "install": "Native desktop installer or operating-system package",
+        "engines": null,
+        "dataFormat": "The default book is a local compressed XML .gnucash file; SQLite, MySQL, and PostgreSQL backends are optional, but the documentation warns that database storage does not make GnuCash a true multi-user application.",
+        "gapVsPaid": "GnuCash demands double-entry bookkeeping and manual imports, giving up Copilot's automatic account aggregation, approachable categorization, mobile polish, and unified investment dashboard.",
+        "setupBlocker": null,
+        "sources": [
+          "https://www.gnucash.org/",
+          "https://github.com/Gnucash/gnucash",
+          "https://github.com/Gnucash/gnucash/blob/stable/LICENSE",
+          "https://www.gnucash.org/download.phtml",
+          "https://www.gnucash.org/docs/v5/C/gnucash-guide/basics-files1.html",
+          "https://copilot.money/",
+          "https://copilot.money/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "KMyMoney",
+      "url": "https://kmymoney.org/",
+      "type": "open-source",
+      "repo": "https://github.com/KDE/kmymoney",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "Budgets, investments and cash-flow forecasts on the desktop; delight was not in the KDE requirements.",
+      "stars": 202,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-2.0-or-later",
+        "runs": "local",
+        "install": "Install a distribution package, Flatpak/AppImage, or the published Windows/macOS desktop build",
+        "engines": null,
+        "dataFormat": "The normal .kmy file is compressed XML on the user's disk and can be GPG-encrypted; KMyMoney also supports SQL storage and imports such as QIF, OFX, and GnuCash XML.",
+        "gapVsPaid": "KMyMoney's desktop workflow and uneven bank connectivity are much less automatic and polished than Copilot's account aggregation, categorization, subscription detection, and mobile net-worth view.",
+        "setupBlocker": null,
+        "sources": [
+          "https://kmymoney.org/",
+          "https://github.com/KDE/kmymoney",
+          "https://invent.kde.org/office/kmymoney/-/tree/master/LICENSES",
+          "https://kmymoney.org/download.html",
+          "https://docs.kde.org/stable5/en/kmymoney/kmymoney/",
+          "https://copilot.money/",
+          "https://copilot.money/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "fathom-hq",
+    "ahrefs",
+    "semrush"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good Apple-native example; core is easy, polish/data sync is sticky.",
+  "prompt": "Build me a personal finance dashboard to replace Copilot Money. Requirements:\n\n- Local web app: Node + Express + better-sqlite3, charts with Chart.js, no\n  build step.\n- No bank APIs: I drop CSV exports from my banks into imports/, a chokidar\n  watcher ingests new files using per-bank column maps in mappings.json,\n  and rows dedupe on a date+amount+description hash.\n- Categorization: ordered regex rules in rules.json run first; unmatched\n  transactions land in a review page where one click assigns a category and\n  offers to save the pattern as a new rule. Optional LLM fallback, key in\n  .env.\n- Dashboard: current month spend by category against per-category budgets,\n  a 12-month trend line, and top merchants.\n- Recurring detection: the same merchant at roughly monthly intervals gets\n  flagged as a subscription and listed with its annual cost. This list\n  alone tends to pay for the build.\n- Accounts and net worth: monthly balance snapshots per account, plotted\n  over time.\n- Everything local in one SQLite file, localhost only, no telemetry; note\n  in the README that the optional LLM call sends transaction text out, skip\n  it if that bothers me.\n- Out of scope: automatic bank sync (Plaid needs approval and per-connection\n  fees) and investment tracking; CSV import is the honest personal version.\n- README: how to add a new bank's CSV mapping.",
+  "promptCurated": false
+}

@@ -1,0 +1,313 @@
+{
+  "slug": "thinkific",
+  "name": "Thinkific",
+  "domain": "thinkific.com",
+  "appURL": "https://thinkific.com",
+  "category": "creator-commerce",
+  "subcategory": "digital products, courses and memberships",
+  "tagline": "Host a structured course with lessons, progress, and simple quizzes",
+  "priceMonthly": 54,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://www.thinkific.com/pricing/",
+    "checkedOn": "2026-08-10",
+    "confidence": "high",
+    "notes": "Official Basic monthly tier.",
+    "native": "54 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 54,
+        "annualPerMonth": 40,
+        "per": "workspace",
+        "limits": "Unlimited courses; 10,000 current students; 100 GB video uploads/month; 1 community with 5 spaces; 5 digital downloads; 5 coaching/webinar products; 1 admin",
+        "notes": null
+      },
+      {
+        "name": "Start",
+        "monthly": 109,
+        "annualPerMonth": 82,
+        "per": "workspace",
+        "limits": "Unlimited courses; 10,000 current students; 200 GB video uploads/month; 1 community with 10 spaces; unlimited downloads/coaching products; 2 admins",
+        "notes": null
+      },
+      {
+        "name": "Grow",
+        "monthly": 219,
+        "annualPerMonth": 164,
+        "per": "workspace",
+        "limits": "Unlimited courses; 10,000 current students; 400 GB video uploads/month; 3 communities with 20 spaces each; 6 admins",
+        "notes": null
+      },
+      {
+        "name": "Plus",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom current-student allowance; unlimited courses, communities, and spaces; video allowance starts at 7,500 GB/month",
+        "notes": "Quote required."
+      }
+    ],
+    "freeTierCaps": "no free tier; 30-day trial only",
+    "billingTerms": "monthly + annual (annual prices shown as effective monthly rates; about 25% lower)",
+    "priceChanges": [],
+    "hiddenCosts": "Branded mobile app is $199/month. Thinkific Payments starts at 2.9%+$0.30, plus 1.5% for international cards, 1% FX, 0.7% for subscriptions/payment plans, 0.5% tax/VAT service, and 0.4% invoicing up to $5; instant payout is 1.5%. Third-party gateway fees are 5% Basic, 2% Start, 1% Grow, and 0% on the first $1M/year on Plus.",
+    "tiersCheckedOn": "2026-08-10",
+    "tiersSources": [
+      "https://www.thinkific.com/pricing/",
+      "https://support.thinkific.com/hc/en-us/articles/360062803954-Thinkific-Payments-Transaction-Fees",
+      "https://support.thinkific.com/hc/en-us/articles/360062647953-Third-Party-Payment-Gateway-Fees"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Thinkific, host a structured course with lessons, progress, and simple quizzes. The hard boundary is course builder, payments, communities, apps, integrations, and support, plus payments, tax, distribution, and operations.",
+  "coreLoopDIY": "Host a structured course with lessons, progress tracking, and simple quizzes, sell it from a user-owned storefront, deliver purchased lessons, and manage customers.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Stripe account",
+    "PostgreSQL",
+    "S3-compatible storage",
+    "public HTTPS deployment",
+    "email provider"
+  ],
+  "whatYouLose": [
+    "course builder, payments, communities, apps, integrations, and support",
+    "marketplace discovery",
+    "tax remittance",
+    "fraud operations",
+    "advanced course and community tooling"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "payments, tax, distribution, and operations",
+  "replacementScope": "single-creator storefront",
+  "ongoingBurden": "checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support",
+  "whyPeopleStillPay": "People still pay for Thinkific because creators pay to outsource the dangerous and tedious parts around money, delivery, tax, and customer access. The recurring cost buys checkout, webhooks, tax, refunds, fraud, entitlements, storage, email, accessibility, backups, and customer support, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "desc": "Active open-source commerce platform with modular checkout and fulfillment primitives."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "CourseLit",
+      "url": "https://courselit.app",
+      "type": "open-source",
+      "repo": "https://github.com/codelitdev/courselit",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A modern self-hosted course site with lessons, quizzes, drip and progress; email and storage need configuring.",
+      "stars": 1200,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Docker Compose, with SUPER_ADMIN_EMAIL set before first start",
+        "engines": null,
+        "dataFormat": "Application records in MongoDB; production media uploads use MediaLit plus S3-compatible object storage",
+        "gapVsPaid": "CourseLit's assessment/reporting ecosystem is less mature than Thinkific's and production email/storage are the owner's job.",
+        "setupBlocker": "Docker starts the app, but a production setup also needs SMTP for email login and MediaLit/S3-compatible storage for uploads",
+        "sources": [
+          "https://github.com/codelitdev/courselit",
+          "https://github.com/codelitdev/courselit/blob/main/LICENSE",
+          "https://docs.courselit.app/self-hosting/self-host/",
+          "https://github.com/codelitdev/courselit/blob/main/deployment/docker/docker-compose.yml",
+          "https://www.thinkific.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Frappe Learning",
+      "url": "https://frappe.io/learning",
+      "type": "open-source",
+      "repo": "https://github.com/frappe/lms",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Structured courses, lessons, progress, quizzes and certificates without a licence bill; Docker remains.",
+      "stars": 3100,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Run Frappe's easy-install script or the official Docker Compose deployment",
+        "engines": null,
+        "dataFormat": "Course and user records in the Frappe/MariaDB site database; public/private site files on disk, while video lessons commonly embed external hosts",
+        "gapVsPaid": "Frappe Learning has a less mature hosted creator workflow and requires infrastructure, email and payment setup.",
+        "setupBlocker": "Self-hosting still needs Docker or a Frappe server, DNS/SSL and email; payments require separate gateway configuration",
+        "sources": [
+          "https://github.com/frappe/lms",
+          "https://github.com/frappe/lms/blob/develop/LICENSE",
+          "https://docs.frappe.io/learning/introduction",
+          "https://docs.frappe.io/learning/course-creation/adding-a-lesson/add-video-content",
+          "https://docs.frappe.io/learning/setting-up-payment-gateway",
+          "https://www.thinkific.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Moodle",
+      "url": "https://moodle.org",
+      "type": "open-source",
+      "repo": "https://github.com/moodle/moodle",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Lessons, progress and quizzes with decades of scars and capabilities.",
+      "stars": 7300,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Upload the PHP release to a web server, create a database and moodledata directory, then complete the browser installer",
+        "engines": null,
+        "dataFormat": "Courses, users, grades and settings in SQL; uploaded files in the separate moodledata directory",
+        "gapVsPaid": "Moodle is far heavier to operate and less polished for a solo creator even though its LMS depth is greater.",
+        "setupBlocker": "PHP and database requirements, protected writable storage, cron, SMTP, backups and upgrades are all the operator's responsibility",
+        "sources": [
+          "https://github.com/moodle/moodle",
+          "https://github.com/moodle/moodle/blob/main/COPYING.txt",
+          "https://docs.moodle.org/501/en/Installing_Moodle",
+          "https://docs.moodle.org/501/en/Moodledata_directory",
+          "https://www.thinkific.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Odoo Community",
+      "url": "https://www.odoo.com/page/community",
+      "type": "open-source",
+      "repo": "https://github.com/odoo/odoo",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Paid courses, lessons, quizzes and progress inside a giant business suite; overkill arrives preinstalled.",
+      "stars": 53527,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LGPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Use Odoo's packaged installer, source install or Docker image, backed by PostgreSQL",
+        "engines": null,
+        "dataFormat": "Business and website records in PostgreSQL; uploaded attachments in Odoo's filestore",
+        "gapVsPaid": "Odoo is operational overkill and offers a less focused course-authoring and learner experience than Thinkific.",
+        "setupBlocker": "A production deployment needs PostgreSQL, workers/reverse proxy configuration, backups and ongoing administration of a very large suite",
+        "sources": [
+          "https://github.com/odoo/odoo",
+          "https://github.com/odoo/odoo/blob/19.0/LICENSE",
+          "https://www.odoo.com/documentation/19.0/administration/on_premise/packages.html",
+          "https://www.odoo.com/documentation/19.0/administration/on_premise/source.html",
+          "https://www.thinkific.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "systeme.io",
+      "url": "https://systeme.io",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "One structured course with lessons and quizzes on a hosted free plan; one is the operative number.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup",
+        "engines": null,
+        "dataFormat": "Contacts, funnels, course/community content, orders, emails and uploaded files in systeme.io's vendor-managed cloud; the underlying storage format is not published",
+        "gapVsPaid": "The free plan supports only one course and offers less mature learning analytics, authoring and assessment control than Thinkific.",
+        "setupBlocker": "Selling requires connecting a payment gateway; the free plan is capped at 2,000 contacts, three funnels, one course, one community and one custom domain",
+        "sources": [
+          "https://systeme.io/pricing",
+          "https://help.systeme.io/article/4455-how-to-manage-files-on-systeme-io",
+          "https://help.systeme.io/article/300-host-videos",
+          "https://www.thinkific.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Tutor LMS",
+      "url": "https://tutorlms.com",
+      "type": "open-source",
+      "repo": "https://github.com/themeum/tutor",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "WordPress courses, progress and quizzes for free; the surrounding plugin ecosystem will introduce itself.",
+      "stars": 124,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "GPL-3.0-only",
+        "runs": "self-hosted",
+        "install": "Install from WordPress Plugins → Add New, then run Tutor LMS's setup wizard",
+        "engines": null,
+        "dataFormat": "Courses, enrollments and settings in the WordPress database; lesson media in the WordPress Media Library",
+        "gapVsPaid": "Tutor LMS trades Thinkific's hosted simplicity for WordPress/plugin maintenance, while several advanced course features sit outside the free core.",
+        "setupBlocker": "It first requires a maintained WordPress site, and subscriptions, certificates, assignments, drip content and several integrations sit outside the free core",
+        "sources": [
+          "https://github.com/themeum/tutor",
+          "https://github.com/themeum/tutor/blob/master/LICENSE",
+          "https://docs.themeum.com/tutor-lms/basic/installation/",
+          "https://docs.themeum.com/tutor-lms/subscriptions/",
+          "https://www.thinkific.com"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Medusa",
+      "url": "https://medusajs.com",
+      "desc": "Selling access is not the same as delivering lessons, progress and quizzes."
+    }
+  ],
+  "relatedSlugs": [
+    "gumroad",
+    "lemon-squeezy",
+    "paddle"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Basic plan and a single-creator storefront DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Thinkific in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, Stripe Checkout, and S3-compatible storage; do not offer alternative stacks.\nThe core loop is: host a structured course with lessons, progress tracking, and simple quizzes, sell it from a user-owned storefront, deliver purchased lessons, and manage customers.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement products, variants, prices, files or lessons, coupons, customers, orders, and entitlements.\nUse Stripe-hosted Checkout and verify every webhook signature and idempotency key.\nGrant access only after confirmed payment and revoke it on refund or chargeback.\nCreate a customer library with signed short-lived download or lesson URLs.\nAdd order search, resend receipt, refund handoff, export, and an immutable event log.\nDocument taxes as the creator's responsibility and do not calculate unsupported jurisdictions.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out merchant-of-record tax remittance.\nDeliberately leave out a buyer marketplace or affiliate network.\nDeliberately leave out advanced communities, certificates, mobile apps, and enterprise learning features.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,134 @@
+{
+  "slug": "timeos",
+  "name": "timeOS",
+  "domain": "timeos.ai",
+  "appURL": "https://timeos.ai",
+  "category": "meeting-notes",
+  "subcategory": "meeting productivity",
+  "tagline": "Meeting notes, briefings, follow-ups, and cross-tool knowledge",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://timeos.ai/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "5 AI meeting credits at sign-up; maximum 90 minutes per meeting.",
+        "notes": "The live site is branded Timeless, formerly timeOS."
+      },
+      {
+        "name": "Pro",
+        "monthly": 29,
+        "annualPerMonth": 19,
+        "per": "user",
+        "limits": "Unlimited meeting notes and storage.",
+        "notes": null
+      },
+      {
+        "name": "Max",
+        "monthly": 39,
+        "annualPerMonth": 29,
+        "per": "user",
+        "limits": "Unlimited meeting notes and storage plus unlimited API, MCP, and webhooks.",
+        "notes": null
+      },
+      {
+        "name": "Team",
+        "monthly": 35,
+        "annualPerMonth": 25,
+        "per": "user",
+        "limits": "Minimum 3 seats; unlimited meeting notes and storage.",
+        "notes": "Does not include the unlimited API/MCP/webhook access in Max or Business."
+      },
+      {
+        "name": "Business",
+        "monthly": 39,
+        "annualPerMonth": 29,
+        "per": "user",
+        "limits": "Unlimited meeting notes, storage, API, MCP, and webhooks.",
+        "notes": "Annual plan includes a 1-year price guarantee."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom administration, security, and support; no public price or numeric limits.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "5 AI meeting credits granted at sign-up; each meeting can be up to 90 minutes.",
+    "billingTerms": "monthly + annual; annual saves up to 35%",
+    "priceChanges": [],
+    "hiddenCosts": "Team requires at least 3 paid seats, and API/MCP/webhook access requires the individual Max tier or team Business tier.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.timeos.ai/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible meeting productivity loop is buildable, but a credible replacement needs more than the first screen. timeOS earns its keep through capture, integrations, reliability, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build a private meeting productivity pipeline that accepts an audio file, transcribes it, creates structured notes, and exports Markdown.",
+  "diyTimeEstimate": "multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "Python 3.12",
+    "FFmpeg",
+    "local Whisper model or optional API key in .env"
+  ],
+  "whatYouLose": [
+    "live multi-speaker accuracy",
+    "calendar and CRM integrations",
+    "cross-call team analytics",
+    "meeting-bot auto-join"
+  ],
+  "moatTags": [
+    "integrations",
+    "execution-polish"
+  ],
+  "moatNotes": "capture/integrations/reliability",
+  "whyPeopleStillPay": "timeOS: Customers pay for automatic capture, dependable speaker handling, search across calls, and notes arriving without manual file wrangling.",
+  "ongoingBurden": "Own audio capture permissions, diarization quality, model downloads, storage, privacy, and integrations.",
+  "priorArt": [
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "Local speech-to-text engine suitable for private transcription."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Muesli",
+      "url": "https://muesli.works/",
+      "desc": "Excellent local notes; integrations and cross-tool knowledge are deliberately not the product."
+    },
+    {
+      "name": "OpenWhispr",
+      "url": "https://openwhispr.com/",
+      "desc": "Good meeting capture and search, but no pre-meeting briefings, cross-tool context or automated follow-up system."
+    }
+  ],
+  "relatedSlugs": [
+    "wudpecker",
+    "meetrecord",
+    "transkriptor"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of timeOS is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for timeOS, not a full clone.\nUse exactly this stack: Python 3.12 + FastAPI + whisper.cpp + SQLite.\nPrimary job: Build a private meeting productivity pipeline that accepts an audio file, transcribes it, creates structured notes, and exports Markdown.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: live multi-speaker accuracy; calendar and CRM integrations; cross-call team analytics.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

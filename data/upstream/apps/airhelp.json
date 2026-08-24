@@ -1,0 +1,135 @@
+{
+  "slug": "airhelp",
+  "name": "AirHelp",
+  "domain": "airhelp.com",
+  "category": "travel",
+  "subcategory": "flight compensation and passenger-rights claims",
+  "tagline": "Pursue passenger compensation for delayed, canceled, or overbooked flights",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "No Win, No Fee",
+    "basis": "percentage of recovered flight compensation",
+    "unit": "usage",
+    "native": "35% of compensation; an additional 15% applies if legal action is required",
+    "source": "https://www.airhelp.com/en-int/our-fees/",
+    "checkedOn": "2026-08-03",
+    "confidence": "high",
+    "notes": "AirHelp deducts a 35% service fee from recovered compensation. If legal action is required, it deducts an additional 15%.",
+    "tiers": [
+      {
+        "name": "No Win, No Fee",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "$0 upfront; AirHelp keeps 35% of successfully recovered flight compensation",
+        "notes": "The 35% standard fee includes VAT; nothing is charged when compensation is not recovered."
+      },
+      {
+        "name": "AirHelp+ Single Trip Protection",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "flat",
+        "limits": "1 trip, including outbound, return, and any connecting flights",
+        "notes": "€19.99 per trip, converted to about $23.06 at the ECB EUR/USD reference rate of 1.1534 published 2026-08-13."
+      },
+      {
+        "name": "AirHelp+ Lite",
+        "monthly": null,
+        "annualPerMonth": 2.88,
+        "per": "user",
+        "limits": "1 year of membership; the official fee list does not publish a numeric trip allowance",
+        "notes": "€29.99 billed yearly, converted to about $34.59/year at ECB EUR/USD 1.1534."
+      },
+      {
+        "name": "AirHelp+ Smart / Protect 3 trips",
+        "monthly": null,
+        "annualPerMonth": 3.84,
+        "per": "user",
+        "limits": "3 registered trips/year; €100 disruption payout, €200 missed-connection payout, and €100 baggage payout",
+        "notes": "€39.99 billed yearly, converted to about $46.12/year at ECB EUR/USD 1.1534."
+      },
+      {
+        "name": "AirHelp+ Pro / Protect 9 trips",
+        "monthly": null,
+        "annualPerMonth": 9.61,
+        "per": "user",
+        "limits": "9 registered trips/year; €100 disruption payout, €200 missed-connection payout, and €100 baggage payout",
+        "notes": "€99.99 billed yearly, converted to about $115.33/year at ECB EUR/USD 1.1534."
+      },
+      {
+        "name": "AirHelp+ USA Comfort",
+        "monthly": null,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "6 registered trips/year; $200 fast disruption payout plus eligible compensation claims",
+        "notes": "$179.99 billed yearly."
+      },
+      {
+        "name": "AirHelp+ USA Pro",
+        "monthly": null,
+        "annualPerMonth": 20.83,
+        "per": "user",
+        "limits": "9 registered trips/year; $200 fast disruption payout plus eligible compensation claims",
+        "notes": "$249.99 billed yearly."
+      }
+    ],
+    "freeTierCaps": "Eligibility and information checks cost $0; an unsuccessful compensation claim costs $0; there is no free AirHelp+ membership.",
+    "billingTerms": "success-fee claim service, one-time single-trip protection, or annual AirHelp+ membership; no monthly AirHelp+ plan",
+    "priceChanges": [],
+    "hiddenCosts": "Successful claims lose 35%; legal action adds another 15% (up to 50% total, used in about 3% of cases). Goodwill claims cost $29.99 unless recovery is below $30 or 3,000 loyalty points. Membership benefits may require registration at least 48 hours before departure; bank/FX fees can reduce payouts.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.airhelp.com/en-int/our-fees/",
+      "https://www.airhelp.com/en-int/airhelp-plus/",
+      "https://www.airhelp.com/en/airhelp-plus/",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A useful personal organizer is buildable, but AirHelp is more than the visible intake form. A local app can assess EC261 and UK261 eligibility, organize evidence, draft letters, and track deadlines. It cannot responsibly reproduce AirHelp's managed airline correspondence, cross-jurisdictional legal judgment, funded court action, and professional accountability in one sitting. This is a credible personal substitute for straightforward self-service claims, not a full replacement.",
+  "coreLoopDIY": "Assess EC261 and UK261 eligibility, organize journey facts and evidence, estimate compensation, generate draft letters, and track submission and escalation deadlines locally.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "requirements": [
+    "Node.js 22",
+    "modern browser",
+    "SQLite",
+    "user-entered flight, passenger, and evidence data",
+    "current official passenger-rights sources"
+  ],
+  "whatYouLose": [
+    "AirHelp staff handling airline correspondence and negotiation",
+    "case-specific legal judgment across jurisdictions",
+    "lawyer access and funded legal action under a no-win, no-fee model",
+    "commercial flight, weather, and disruption data used to validate claims",
+    "professional support and accountability when a claim becomes contested"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "brand-trust",
+    "integrations"
+  ],
+  "moatNotes": "legal judgment/airline handling/court funding",
+  "whyPeopleStillPay": "People pay AirHelp to transfer the work, uncertainty, follow-up, and legal escalation to a specialist on a no-win, no-fee basis. A local tool can organize a straightforward self-service claim, but it does not negotiate with the airline, fund litigation, or take professional responsibility for a contested case.",
+  "priorArt": [
+    {
+      "name": "ClaimSolo",
+      "url": "https://github.com/codecube/ClaimSolo",
+      "desc": "Open-source, local-first personal workspace for assessing, documenting, and tracking EC261 and UK261 flight claims."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "ClaimSolo",
+      "url": "https://github.com/codecube/ClaimSolo",
+      "desc": "Exactly the right workflow, but it is an 11-commit source checkout with two stars and no installer."
+    }
+  ],
+  "relatedSlugs": [],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "ClaimSolo is working proof of a personal self-service organizer, not a verified one-prompt reproduction of the managed claims service.",
+  "prompt": "Build me a local flight-compensation claim organizer to replace AirHelp for self-service claims. Requirements:\n\n- Node 22 + Express + better-sqlite3, server-rendered pages on localhost, no frontend\n  framework; all data in one SQLite file plus a local uploads folder.\n- Model passengers, bookings, multi-segment journeys, disruptions (delay, cancellation,\n  denied boarding, missed connection), claims, evidence files, and deadlines.\n- Deterministic EC261 and UK261 eligibility rules in one versioned rules module: given\n  the journey facts, output eligible / not eligible / needs manual review, the\n  compensation band (250/400/600 EUR distance tiers), and the article relied on.\n  Show which facts triggered which rule branch.\n- Compute great-circle distance from airport coordinates and timezone-safe arrival\n  delay from user-entered flight details; no commercial flight-data API.\n- Attach evidence (tickets, emails, receipts) as local files on a chronological\n  claim timeline.\n- Generate editable draft letters to the airline and the national enforcement body\n  from templates; never send anything automatically.\n- Track stages (preparing, submitted, escalated to authority or ADR, resolved) with\n  due dates, exported as an ICS file for my calendar.\n- Export a whole claim as JSON and Markdown so nothing is trapped in the app.\n- Say plainly in the UI and README: decision support, not legal advice; verify\n  current rules and limitation periods yourself.\n- Out of scope: automatic submission, airline negotiation, lawyer engagement, court\n  filing, accounts, sync. The staff, legal funding, and accountability are the part\n  you cannot build.\n- README: setup, where data lives, backup by copying the SQLite file and uploads.",
+  "promptCurated": true
+}

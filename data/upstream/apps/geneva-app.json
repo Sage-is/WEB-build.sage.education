@@ -1,0 +1,178 @@
+{
+  "slug": "geneva-app",
+  "name": "Geneva",
+  "domain": "geneva.com",
+  "appURL": "https://geneva.com",
+  "category": "community",
+  "subcategory": "online communities and team communication",
+  "tagline": "Host a small private community without recreating Geneva's mobile network and member identity",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Community plan",
+    "basis": "free-or-variable",
+    "unit": "custom",
+    "source": "https://geneva.com/",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "No stable public paid monthly tier was recorded; canonical amount is null.",
+    "native": "free-or-variable",
+    "kind": "unknown",
+    "currency": "USD"
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Geneva, host a small private community without recreating Geneva's mobile network and member identity. The hard boundary is existing member network, native apps, chat, events, moderation, and hosted reliability, plus network, moderation, and communication infrastructure.",
+  "coreLoopDIY": "Host a small private community, organize discussion into channels or topics, and keep membership and moderation under the owner's control, without recreating Geneva's mobile network and member identity.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "Docker",
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "email provider",
+    "object storage for attachments"
+  ],
+  "whatYouLose": [
+    "existing member network, native apps, chat, events, moderation, and hosted reliability",
+    "network effects",
+    "native mobile apps",
+    "video and voice infrastructure",
+    "enterprise moderation and discovery"
+  ],
+  "moatTags": [
+    "network-effects",
+    "scale-infra"
+  ],
+  "moatNotes": "network, moderation, and communication infrastructure",
+  "replacementScope": "single private community",
+  "ongoingBurden": "realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations",
+  "whyPeopleStillPay": "People still pay for Geneva because community software is valuable when members are already there and the operator does not have to own realtime reliability and abuse response. The recurring cost buys realtime delivery, notifications, abuse handling, search, media, permissions, mobile clients, backups, and community operations, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Discourse",
+      "url": "https://github.com/discourse/discourse",
+      "desc": "Mature open-source community discussion platform with strong moderation and search."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Discord Free",
+      "url": "https://discord.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "Private servers, channels, events and mobile apps, backed by the friend graph Geneva would otherwise make you rebuild.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup; use the web app or install Discord's signed desktop/mobile app",
+        "engines": null,
+        "dataFormat": "Messages, server membership, uploads, and account activity live in Discord's cloud; the account data package is a ZIP containing JSON and media/metadata exports.",
+        "gapVsPaid": "Discord Free supplies private servers, channels, events, and mature mobile apps, but it is less purpose-built around Geneva-style community rooms, member profiles, and local social discovery.",
+        "setupBlocker": "Creating an account is easy, but moving an existing community still means recreating roles, channels, permissions, bots, and invitations.",
+        "sources": [
+          "https://discord.com/",
+          "https://support.discord.com/hc/en-us/articles/360033931551-Getting-Started",
+          "https://support.discord.com/hc/en-us/articles/360034561191-Desktop-Installation-Guide",
+          "https://support.discord.com/hc/en-us/articles/360004957991-Your-Discord-Data-Package",
+          "https://discord.com/privacy",
+          "https://www.geneva.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Element",
+      "url": "https://element.io/",
+      "type": "open-source",
+      "repo": "https://github.com/element-hq/element-web",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Private Matrix spaces, rooms and encrypted messaging with proper mobile apps; the social discovery layer is thinner.",
+      "stars": 13300,
+      "lastCommit": "2026-07",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later OR GPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use a free Matrix account in Element Web/mobile/desktop, or deploy Element Server Suite on your own infrastructure",
+        "engines": null,
+        "dataFormat": "Rooms, event history, account data, and media live on the selected Matrix homeserver; encrypted-room keys remain on clients and can be backed up through Matrix's key-backup system.",
+        "gapVsPaid": "Element gives private spaces, rooms, calls, and encrypted messaging, but Matrix terminology and a thinner social-discovery layer make it less immediately community-shaped than Geneva.",
+        "setupBlocker": "The clean hosted path is easy, but self-hosting the current Element Server Suite means operating a Matrix homeserver and its Kubernetes/Helm-based stack.",
+        "sources": [
+          "https://github.com/element-hq/element-web",
+          "https://element.io/en/open-source",
+          "https://element.io/en/pricing",
+          "https://docs.element.io/latest/element-server-suite-pro/introduction-to-ess-pro/",
+          "https://matrix.org/docs/matrix-concepts/end-to-end-encryption/",
+          "https://www.geneva.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "HumHub",
+      "url": "https://www.humhub.com/",
+      "type": "open-source",
+      "repo": "https://github.com/humhub/humhub",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A self-owned private social network with spaces, profiles and activity streams; mobile polish is the tax.",
+      "stars": 6700,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "both",
+        "install": "Use HumHub's paid hosted service, or install the Community Edition PHP package on a web server with MySQL/MariaDB",
+        "engines": null,
+        "dataFormat": "Profiles, spaces, posts, and configuration live in the HumHub SQL database; uploaded files live under the instance's uploads directory or configured storage.",
+        "gapVsPaid": "HumHub provides spaces, profiles, streams, and events under your control, but operating the server and accepting weaker mobile polish are significant downgrades from Geneva's managed apps.",
+        "setupBlocker": "The free route needs a PHP server, database, web-server configuration, cron jobs, mail delivery, backups, and upgrades before the first member joins.",
+        "sources": [
+          "https://github.com/humhub/humhub",
+          "https://github.com/humhub/humhub/blob/master/LICENSE.AGPL-3.0-or-later",
+          "https://docs.humhub.org/docs/admin/server-setup/",
+          "https://docs.humhub.org/docs/admin/cron-jobs",
+          "https://docs.humhub.org/docs/admin/backup/",
+          "https://www.humhub.com/hosting/",
+          "https://www.geneva.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "slack-pro",
+    "discord-nitro",
+    "circle"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Community plan plan and a single private community DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Geneva in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, WebSockets, and Docker Compose; do not offer alternative stacks.\nThe core loop is: host a small private community, organize discussion into channels or topics, and keep membership and moderation under the owner's control, without recreating Geneva's mobile network and member identity.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nImplement spaces, channels, topics, replies, reactions, mentions, profiles, roles, and invitations.\nUse WebSockets for live updates but preserve every message transactionally in PostgreSQL.\nAdd moderation queues, reports, blocks, rate limits, attachment limits, and an audit log.\nProvide email digests, browser notifications, search, pinned content, and member export.\nAdd owner-controlled retention, account deletion, backup, restore, and health checks.\nShip Docker Compose with a seeded demo, migrations, and an emergency admin command.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out public-network discovery and existing member liquidity.\nDeliberately leave out production voice or video rooms.\nDeliberately leave out native mobile applications, enterprise SSO, and 24-hour abuse operations.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,135 @@
+{
+  "slug": "loom",
+  "name": "Loom",
+  "domain": "loom.com",
+  "category": "screen-recording",
+  "subcategory": "screen video + sharing",
+  "tagline": "Async screen recording with instant hosting, transcripts, and team sharing",
+  "priceMonthly": 18,
+  "pricing": {
+    "plan": "Business",
+    "basis": "monthly per user",
+    "unit": "per-seat",
+    "native": "18 USD",
+    "source": "https://www.loom.com/pricing",
+    "checkedOn": "2026-08-07",
+    "confidence": "high",
+    "notes": "Official/Atlassian pricing checked 2026-07-30; Business listed around $18/user/month.",
+    "freeTier": "The free plan allows 25 videos of up to 5 minutes each.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Up to 50 workspace members; 25 videos/person; 5 minutes/video; unlimited-length meeting recordings; 720p.",
+        "notes": "Unlimited screenshots."
+      },
+      {
+        "name": "Business",
+        "monthly": 18,
+        "annualPerMonth": 15,
+        "per": "user",
+        "limits": "Unlimited videos and recording length; paid Creator/Admin seat.",
+        "notes": null
+      },
+      {
+        "name": "Business + AI",
+        "monthly": 24,
+        "annualPerMonth": 20,
+        "per": "user",
+        "limits": "Unlimited videos and length plus AI workflows; 14-day trial.",
+        "notes": null
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Custom users and limits; price not public.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "50 workspace members, 25 videos per person, 5 minutes per video, unlimited-length meeting recordings, unlimited screenshots and 720p recording.",
+    "billingTerms": "monthly + annual (about 17% off); 14-day Business + AI trial",
+    "priceChanges": [],
+    "hiddenCosts": "Creator and Admin roles are paid; Creator Lite is free. Seat counting and billing mechanics differ between direct Loom subscriptions and Atlassian subscriptions.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://www.loom.com/pricing",
+      "https://support.loom.com/hc/en-us/articles/360002241017-How-to-upgrade-your-Loom-plan"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "Local screen recording is easy, but instant hosting, permissions, viewer analytics, comments, trimming, and team libraries push it beyond one sitting.",
+  "coreLoopDIY": "Record screen and camera, encode video, upload to storage, generate transcript/summary, and serve a share page.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "screen capture API",
+    "ffmpeg",
+    "object storage",
+    "hosted app",
+    "auth",
+    "optional transcription API"
+  ],
+  "whatYouLose": [
+    "instant reliable hosting",
+    "permissions",
+    "comments",
+    "analytics",
+    "workspace libraries",
+    "browser extensions"
+  ],
+  "moatTags": [
+    "scale-infra",
+    "collaboration",
+    "execution-polish"
+  ],
+  "moatNotes": "hosting/collaboration",
+  "whyPeopleStillPay": "They pay because a Loom link works everywhere and preserves context for the team.",
+  "priorArt": [
+    {
+      "name": "OBS Studio",
+      "url": "https://github.com/obsproject/obs-studio",
+      "desc": "Excellent open-source recording engine; hosting/sharing remains the DIY gap.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Cap",
+      "url": "https://cap.so",
+      "type": "open-source",
+      "repo": "https://github.com/CapSoftware/Cap",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "self-hosted"
+      ],
+      "desc": "Loom with your own storage and your own server chores.",
+      "stars": 20500,
+      "lastCommit": "2026-07",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "OBS Studio",
+      "url": "https://obsproject.com",
+      "desc": "Records anything beautifully; hosts, transcribes and organizes absolutely nothing."
+    }
+  ],
+  "relatedSlugs": [
+    "tella",
+    "capcut",
+    "granola"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Classic paid-for-polish case: the local primitive is free, the workflow is subscription.",
+  "prompt": "Build me a screen-record-and-share tool to replace Loom on macOS. Requirements:\n\n- Two parts: a local recording CLI and a share server on my own VPS.\n- Recording: `rec start` / `rec stop` wrapping ffmpeg's avfoundation capture,\n  screen plus mic, saved to ~/Recordings/YYYY-MM-DD-HHMM.mp4. No camera bubble.\n- On stop: transcode to web-friendly H.264, transcribe with whisper.cpp, then\n  upload video and transcript to the server with rsync over SSH.\n- The server (Node + Express + better-sqlite3 behind my existing reverse proxy)\n  serves each recording at an unguessable /v/<random-id> URL: player, title, date,\n  and the transcript below it, searchable in-page.\n- `rec stop` ends by printing the share URL and copying it to my clipboard. Target:\n  under a minute from stop to link for a 2-minute video.\n- The index page listing all recordings stays private (localhost or VPN only); the\n  share pages are link-only, no listing anywhere. No accounts, no telemetry.\n- Out of scope: viewer analytics, comments, trimming, and team libraries. The\n  unlisted URL is the entire permission model.\n- README: macOS screen-recording and mic permissions, finding the right ffmpeg\n  device index, and the server deploy steps.",
+  "promptCurated": false
+}

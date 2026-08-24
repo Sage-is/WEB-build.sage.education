@@ -1,0 +1,192 @@
+{
+  "slug": "jasper",
+  "name": "Jasper",
+  "domain": "jasper.ai",
+  "category": "ai-writing",
+  "subcategory": "marketing AI platform",
+  "tagline": "AI platform for branded marketing content and campaign workflows",
+  "priceMonthly": 69,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "69 USD",
+    "source": "https://www.jasper.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Pro listed at $69/month monthly or $59/month billed yearly.",
+    "tiers": [
+      {
+        "name": "Pro",
+        "monthly": 69,
+        "annualPerMonth": 59,
+        "per": "user",
+        "limits": "1 seat; 2 brand voices; 5 knowledge assets; 3 audiences; 30+ languages.",
+        "notes": null
+      },
+      {
+        "name": "Business",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited brand voices, knowledge assets, and audiences; API, agents, governance, and custom seats.",
+        "notes": "Custom price."
+      }
+    ],
+    "freeTierCaps": "no permanent free tier; 7-day trial",
+    "billingTerms": "monthly + annual for Pro; Business is custom",
+    "priceChanges": [],
+    "hiddenCosts": "Additional Pro seats cost extra, and Copyscape plagiarism checks are a separately paid add-on.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.jasper.ai/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A branded prompt library over an LLM is buildable, but Jasper's paid value is brand memory, workflow templates, governance, collaboration, and marketing-specific agents.",
+  "coreLoopDIY": "Store brand voice/docs, provide marketing templates/agents, call an LLM, and organize outputs by campaign.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "LLM API",
+    "brand/document store",
+    "prompt templates",
+    "auth/teams",
+    "hosted app"
+  ],
+  "whatYouLose": [
+    "brand governance",
+    "campaign workflows",
+    "team collaboration",
+    "compliance/security posture",
+    "integrations",
+    "tuned UX for marketers"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "collaboration"
+  ],
+  "moatNotes": "workflow/governance/model wrapper",
+  "whyPeopleStillPay": "They pay to scale marketing output while keeping brand consistency and approval workflows.",
+  "priorArt": [
+    {
+      "name": "LibreChat",
+      "url": "https://github.com/danny-avila/LibreChat",
+      "desc": "Open-source AI chat/workspace UI that can be extended with prompt presets and model routin",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "AnythingLLM",
+      "url": "https://anythingllm.com/",
+      "type": "open-source",
+      "repo": "https://github.com/Mintplex-Labs/anything-llm",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "A local-first AI desk with reusable agents, documents, memory, and workflows; less campaign theatre, more settings.",
+      "stars": 64416,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Desktop installer for macOS/Windows/Linux, or Docker for a self-hosted web instance",
+        "engines": "Local llama.cpp models plus Ollama, LM Studio, LocalAI and many cloud APIs including OpenAI, Anthropic, Gemini, Bedrock, Azure, OpenRouter and Mistral",
+        "dataFormat": "Desktop data stays in the app's local storage; self-hosted data is stored in the mounted server storage and chosen vector database (LanceDB by default), while prompts sent to cloud models leave the machine",
+        "gapVsPaid": "It can hold brand documents and reusable agents, but it lacks Jasper's managed brand governance, campaign workflows, approvals, and marketing-team controls.",
+        "setupBlocker": "The installer is easy, but useful results still require downloading a local model or supplying a model-provider API key",
+        "sources": [
+          "https://github.com/Mintplex-Labs/anything-llm",
+          "https://github.com/Mintplex-Labs/anything-llm/blob/master/LICENSE",
+          "https://docs.anythingllm.com/installation-desktop/overview",
+          "https://docs.anythingllm.com/features/privacy-and-data-handling",
+          "https://www.jasper.ai/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Jan",
+      "url": "https://jan.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/janhq/jan",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A desktop ChatGPT-shaped box with local models and reusable assistants; excellent at prompts, blissfully unaware of your marketing calendar.",
+      "stars": 43900,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "Apache-2.0",
+        "runs": "local",
+        "install": "Download the macOS, Windows or Linux desktop installer",
+        "engines": "Built-in local inference via llama.cpp/llama-server plus OpenAI-compatible APIs and connectors such as OpenAI, Anthropic, Gemini, Groq, Mistral and OpenRouter",
+        "dataFormat": "Threads, assistants, settings and downloaded model files live in Jan's local data folder; only requests sent to configured cloud providers leave the machine",
+        "gapVsPaid": "It is a general assistant with saved instructions, not Jasper's coordinated campaign workspace with brand controls and team operations.",
+        "setupBlocker": "Local use requires downloading a multi-gigabyte model and enough RAM; cloud use requires an API key",
+        "sources": [
+          "https://github.com/janhq/jan",
+          "https://github.com/janhq/jan/blob/dev/LICENSE",
+          "https://jan.ai/docs/desktop/",
+          "https://jan.ai/docs/desktop/data-folder/",
+          "https://www.jasper.ai/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    },
+    {
+      "name": "Open WebUI",
+      "url": "https://openwebui.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A self-hosted AI workbench with saved prompts, knowledge, web search, and multi-model comparison; powerful, not especially house-trained.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "LicenseRef-Open-WebUI",
+        "runs": "self-hosted",
+        "install": "Run the official Docker image, install the Python package, or deploy with Kubernetes",
+        "engines": "Ollama and any OpenAI-compatible API, including LM Studio, vLLM, Groq, Mistral and OpenRouter; additional speech, image and search providers",
+        "dataFormat": "By default, chats and account data live in a local SQLite webui.db, uploads in a data/uploads directory and embeddings in the configured vector store; PostgreSQL and object storage are optional",
+        "gapVsPaid": "It can approximate brand-aware drafting, but not Jasper's packaged marketing workflows, governance, collaboration, and campaign management.",
+        "setupBlocker": "A non-expert must install Docker or a compatible Python environment, mount persistent storage correctly, and separately provide Ollama or an API endpoint",
+        "sources": [
+          "https://github.com/open-webui/open-webui",
+          "https://github.com/open-webui/open-webui/blob/main/LICENSE",
+          "https://docs.openwebui.com/reference/database-schema/",
+          "https://docs.openwebui.com/tutorials/maintenance/backups/",
+          "https://www.jasper.ai/"
+        ],
+        "checkedOn": "2026-08-14"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "quillbot",
+    "grammarly",
+    "languagetool"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good paid-wrapper debate: buildable core, but organizational workflow can justify paying.",
+  "prompt": "Build me a personal marketing-copy generator to replace Jasper. Requirements:\n\n- A local web app: Node + Express + better-sqlite3 on localhost:4850, plain\n  server-rendered forms, no frontend framework.\n- A brand/ folder of Markdown files: voice.md (tone rules, banned words),\n  audience.md, product.md. Every generation prepends these to the prompt\n  automatically.\n- Template library in SQLite: blog outline, landing-page hero, product description,\n  cold email, tweet thread. Each template is a prompt with {{variables}} filled in\n  from a small form.\n- Calls the Anthropic or OpenAI API (key and model name in .env), streams into the\n  page, and always produces 3 variants side by side.\n- Every output saved with template, inputs, chosen variant, and a campaign label;\n  past outputs browsable and searchable by campaign.\n- A rewrite box: paste any draft, get it back in my brand voice.\n- Everything stays on my machine except the LLM calls. No accounts, no telemetry.\n- Out of scope: team collaboration, approval workflows, and multi-writer brand\n  governance. This is a one-person tool.\n- README: .env keys and how to tune the brand files, that is where the quality lives.",
+  "promptCurated": false
+}

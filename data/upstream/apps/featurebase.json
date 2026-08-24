@@ -1,0 +1,125 @@
+{
+  "slug": "featurebase",
+  "name": "Featurebase",
+  "domain": "featurebase.app",
+  "appURL": "https://featurebase.app",
+  "category": "user-research",
+  "subcategory": "feedback boards, interviews and product research",
+  "tagline": "Run a feedback portal, changelog, roadmap, and lightweight support widget",
+  "priceMonthly": 59,
+  "pricing": {
+    "plan": "Growth",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://featurebase.app/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Typical Growth monthly tier.",
+    "native": "59 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "1 seat; live chat; unlimited conversations; 0 included AI resolutions.",
+        "notes": null
+      },
+      {
+        "name": "Growth",
+        "monthly": null,
+        "annualPerMonth": 29,
+        "per": "user",
+        "limits": "1+ paid seats; AI support charged per resolution.",
+        "notes": "Billed yearly; $0.49 per AI resolution."
+      },
+      {
+        "name": "Professional",
+        "monthly": null,
+        "annualPerMonth": 59,
+        "per": "user",
+        "limits": "1+ paid seats; 20 free Lite seats; AI support charged per resolution.",
+        "notes": "Billed yearly; $0.49 per AI resolution."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": 99,
+        "per": "user",
+        "limits": "1+ paid seats; 50 free Lite seats; AI support charged per resolution.",
+        "notes": "Billed yearly; $0.49 per AI resolution."
+      }
+    ],
+    "freeTierCaps": "1 seat; live chat; unlimited conversations; 0 included AI resolutions.",
+    "billingTerms": "Annual public pricing per paid seat; exact month-to-month seat prices were not exposed in the checked page output.",
+    "priceChanges": [],
+    "hiddenCosts": "Every paid support tier adds $0.49 per AI resolution on top of seat fees; the startup program advertises 86% off and 1 year of Fibi AI free only for qualifying companies founded under 2 years ago with fewer than 6 employees.",
+    "tiersCheckedOn": "2026-08-12",
+    "tiersSources": [
+      "https://www.featurebase.app/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For Featurebase, run a feedback portal, changelog, roadmap, and lightweight support widget. The hard boundary is integrated suite, ai, custom domains, sso, and hosted delivery, plus participant network, synthesis workflow, and collaboration.",
+  "coreLoopDIY": "Collect structured feedback through a portal with a changelog, roadmap, and lightweight support widget, merge duplicates, connect evidence to themes, and publish a transparent status view.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "PostgreSQL",
+    "public HTTPS deployment",
+    "Resend API key",
+    "optional video-call links"
+  ],
+  "whatYouLose": [
+    "integrated suite, AI, custom domains, SSO, and hosted delivery",
+    "large participant panel",
+    "recording and transcription infrastructure",
+    "advanced research repository",
+    "enterprise governance"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "collaboration"
+  ],
+  "moatNotes": "participant network, synthesis workflow, and collaboration",
+  "replacementScope": "small-team feedback repository",
+  "ongoingBurden": "recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention",
+  "whyPeopleStillPay": "People still pay for Featurebase because people pay either for access to participants or for a research repository that keeps evidence usable across an organization. The recurring cost buys recruitment, consent, scheduling, media storage, transcription, tagging consistency, notifications, search, and retention, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Fider",
+      "url": "https://github.com/getfider/fider",
+      "desc": "Open-source customer-feedback portal with voting and status workflows."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "Quackback",
+      "url": "https://quackback.io",
+      "desc": "Feedback, roadmap and changelog are covered; there is no real support desk or help center."
+    },
+    {
+      "name": "Sleekplan Indie",
+      "url": "https://sleekplan.com/pricing/",
+      "desc": "The free widget closes the feedback loop, not customer-support tickets; half the app is missing."
+    },
+    {
+      "name": "UserJot",
+      "url": "https://userjot.com",
+      "desc": "Excellent feedback, roadmap and changelog; its widget is not a support inbox or help center."
+    }
+  ],
+  "relatedSlugs": [
+    "canny",
+    "productboard",
+    "dovetail"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Growth plan and a small-team feedback repository DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for Featurebase in an empty repository.\nUse Next.js 15, TypeScript, PostgreSQL, Drizzle ORM, and Resend; do not offer alternative stacks.\nThe core loop is: collect structured feedback through a portal with a changelog, roadmap, and lightweight support widget, merge duplicates, connect evidence to themes, and publish a transparent status view.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nCreate public and private feedback intake with consent text and optional contact details.\nSupport posts, votes, comments, tags, statuses, owners, and duplicate merging.\nAdd a research note type with evidence links, quotes, themes, and confidence.\nBuild search and filters across feedback, customers, segments, themes, and status.\nProvide email notifications, moderation, export, deletion, and an audit log.\nPublish a read-only roadmap or findings page using only explicitly public items.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out a paid research-participant marketplace.\nDeliberately leave out unlimited video storage and automated transcription.\nDeliberately leave out enterprise repositories, SSO, and governance.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

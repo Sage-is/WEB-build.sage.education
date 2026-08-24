@@ -1,0 +1,119 @@
+{
+  "slug": "beautiful-ai",
+  "name": "Beautiful.ai",
+  "domain": "beautiful.ai",
+  "category": "presentations",
+  "subcategory": "smart slide design",
+  "tagline": "Presentation builder with smart templates and auto-formatting",
+  "priceMonthly": 45,
+  "pricing": {
+    "plan": "Pro monthly",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "45 USD",
+    "source": "https://www.beautiful.ai/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing checked; 2026 public sources list Pro at $12/month billed annually and a monthly/ad-hoc option around $45/month.",
+    "tiers": [
+      {
+        "name": "Pro",
+        "monthly": 45,
+        "annualPerMonth": 12,
+        "per": "user",
+        "limits": "1 user; unlimited slides and AI content; 300+ slide layouts.",
+        "notes": "The $45 month-to-month option is marketed as a one-month/single-presentation Pro purchase; annual Pro is $144/year."
+      },
+      {
+        "name": "Team",
+        "monthly": 50,
+        "annualPerMonth": 40,
+        "per": "user",
+        "limits": "2–20 seats; shared slide and template libraries; centralized brand controls.",
+        "notes": "Minimum paid commitment is 2 seats."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Designed for more than 20 users; custom onboarding, security and support; price is quote-based.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "no free tier; 14-day card-required trial",
+    "billingTerms": "monthly + annual; Pro month-to-month is $45, while annual Pro is $12/month billed $144",
+    "priceChanges": [],
+    "hiddenCosts": "trial auto-renews to the selected paid plan; Team has a 2-seat minimum; annual refunds are narrowly limited and may carry a processing fee; eligible .edu users can receive 1 year of Pro",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://www.beautiful.ai/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "You can build a template deck generator, but auto-layout slide behavior, template polish, brand controls, PowerPoint import/export, and collaboration are real work.",
+  "coreLoopDIY": "Generate slides from structured content, apply smart templates, auto-fit text/images, export to PDF/PPTX.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "LLM API",
+    "slide layout engine",
+    "PPTX/PDF export library",
+    "template library",
+    "hosted app"
+  ],
+  "whatYouLose": [
+    "smart templates",
+    "brand controls",
+    "shared libraries",
+    "PowerPoint compatibility",
+    "collaboration",
+    "viewer analytics"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "content-rights",
+    "collaboration"
+  ],
+  "moatNotes": "templates/editor depth/collaboration",
+  "whyPeopleStillPay": "They pay for slides that stay designed as content changes.",
+  "priorArt": [
+    {
+      "name": "reveal.js",
+      "url": "https://github.com/hakimel/reveal.js",
+      "desc": "Open-source HTML presentation framework; useful rendering layer but not the smart-template",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Presenton",
+      "url": "https://presenton.ai/",
+      "type": "open-source",
+      "repo": "https://github.com/presenton/presenton",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Generate a deck from a prompt or document, edit it visually, and export editable PPTX or PDF; bring an API key or a local model instead of another subscription.",
+      "stars": 9393,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "jasper",
+    "quillbot",
+    "grammarly"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Useful because slide-generation demos are easy but slide-editing polish is sticky.",
+  "prompt": "Build me a Markdown slide deck tool to replace Beautiful.ai. Requirements:\n\n- A CLI plus local preview: Node, decks are Markdown files rendered with\n  reveal.js. deck serve talk.md gives a live-reload preview on localhost;\n  deck export talk.md prints a PDF with Playwright.\n- Slide syntax: --- starts a new slide, Note: lines become speaker notes.\n- 4 layouts picked by a comment on the slide's first line: title, bullets,\n  big-number, and image+text two-column. Layouts are plain CSS files I can\n  edit.\n- Auto-fit instead of clipping: when a slide overflows, step the text size\n  down once and print a terminal warning naming the tight slides.\n- theme.json for brand: two fonts, 4 colors, and a logo in the corner of\n  every slide.\n- Optional: deck draft \"topic\" < notes.txt sends my rough notes to an LLM\n  (Anthropic or OpenAI key in .env) and writes a starter deck for me to\n  edit; the LLM is never involved in rendering.\n- Decks are plain files in a folder, fully local, no accounts, no telemetry.\n- Out of scope: PPTX export and collaboration; the HTML deck plus PDF is\n  enough. Do not chase Beautiful.ai's self-designing layouts, that engine is\n  the product.\n- README: setup and the whole slide syntax in ten lines.",
+  "promptCurated": false
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "pageoptimizer-pro",
+  "name": "PageOptimizer Pro",
+  "domain": "pageoptimizer.pro",
+  "appURL": "https://pageoptimizer.pro",
+  "category": "seo-marketing",
+  "subcategory": "technical audits and on-page optimization",
+  "tagline": "Analyze selected competitor pages and produce an inspectable on-page checklist",
+  "priceMonthly": 40,
+  "pricing": {
+    "plan": "Basic",
+    "basis": "monthly",
+    "unit": "flat",
+    "source": "https://www.pageoptimizer.pro/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "medium",
+    "notes": "Typical Basic monthly tier.",
+    "native": "40 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 40,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "20 POP credits/month; unlimited domains; Watchdog monitoring for 10 pages.",
+        "notes": "Monthly only."
+      },
+      {
+        "name": "Unlimited",
+        "monthly": 72,
+        "annualPerMonth": 61.58,
+        "per": "workspace",
+        "limits": "50 POP credits/month; unlimited reports under fair use; Watchdog monitoring for 200 pages.",
+        "notes": "Annual total is $739."
+      },
+      {
+        "name": "Teams",
+        "monthly": 143,
+        "annualPerMonth": 118.75,
+        "per": "workspace",
+        "limits": "120 POP credits/month; 5 included subaccounts (up to 100); Watchdog monitoring for 500 pages.",
+        "notes": "Annual total is $1,425."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "Basic is monthly only; Unlimited and Teams offer monthly + annual billing",
+    "priceChanges": [],
+    "hiddenCosts": "Extra seats cost $12/month or $120/year. Non-expiring credit packs range from $15 for 10 credits to $800 for 1,000; reports, reruns, NLP, and AI writing consume different credit amounts. White Glove service starts at $275.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.pageoptimizer.pro/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The core loop is buildable, but a dependable replacement becomes a real weekend or multi-day project. For PageOptimizer Pro, analyze selected competitor pages and produce an inspectable on-page checklist. The hard boundary is proprietary scoring, report depth, extensions, and established seo methodology, plus crawl scale, rule depth, and operational polish.",
+  "coreLoopDIY": "Analyze selected competitor pages alongside one owned site, inspect HTML and rendered pages, produce an inspectable prioritized on-page checklist, and export a reproducible audit.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "Python 3.12",
+    "Playwright browsers",
+    "permission to crawl the target site",
+    "local disk space"
+  ],
+  "whatYouLose": [
+    "proprietary scoring, report depth, extensions, and established SEO methodology",
+    "massive hosted crawl capacity",
+    "proprietary scoring",
+    "continuous monitoring",
+    "agency reporting and support"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra"
+  ],
+  "moatNotes": "crawl scale, rule depth, and operational polish",
+  "replacementScope": "single-site audit tool",
+  "ongoingBurden": "robots handling, rendering, canonicalization, deduplication, crawl traps, rule maintenance, scheduling, storage, and false positives",
+  "whyPeopleStillPay": "People still pay for PageOptimizer Pro because a crawler is buildable; professionals pay for years of edge-case handling and reports they can trust with clients. The recurring cost buys robots handling, rendering, canonicalization, deduplication, crawl traps, rule maintenance, scheduling, storage, and false positives, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "SEOnaut",
+      "url": "https://github.com/stjudewashere/seonaut",
+      "desc": "Open-source technical SEO auditing application."
+    }
+  ],
+  "alternatives": [],
+  "rejectedAlternatives": [
+    {
+      "name": "BlogPilot",
+      "url": "https://github.com/IamRamgarhia/BlogPilot-Open-Source-AI-SEO-Content-Studio",
+      "desc": "Claims competitor analysis and content scoring; nine stars is where the inspection should begin, not end."
+    },
+    {
+      "name": "thruuu",
+      "url": "https://thruuu.com/",
+      "desc": "The free credits can inspect a SERP and make roughly two briefs; the inspectable checklist does not remain free."
+    }
+  ],
+  "relatedSlugs": [
+    "screaming-frog-seo-spider",
+    "sitebulb",
+    "contentking"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Basic plan and a single-site audit tool DIY substitute. Recheck price before merge.",
+  "prompt": "Build a personal replacement for PageOptimizer Pro in an empty repository.\nUse Python 3.12, FastAPI, SQLite, Playwright, and an HTMX interface; do not offer alternative stacks.\nThe core loop is: analyze selected competitor pages alongside one owned site, inspect HTML and rendered pages, produce an inspectable prioritized on-page checklist, and export a reproducible audit.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nRequire an explicit ownership or permission acknowledgement before a crawl starts.\nRespect robots.txt, rate limits, canonical URLs, nofollow, redirects, and a configurable URL cap.\nCollect status, title, description, headings, canonical, robots, links, images, structured data, and rendered text.\nDetect duplicates, orphan candidates, broken links, redirect chains, missing metadata, and indexability conflicts.\nShow every issue with affected URLs, evidence, severity, and a concrete remediation note.\nExport crawl data and issues to CSV plus a self-contained HTML report.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDeliberately leave out crawling sites without permission.\nDeliberately leave out web-scale backlink or keyword datasets.\nDeliberately leave out automated changes to production websites.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

@@ -1,0 +1,132 @@
+{
+  "slug": "deepbrain-ai",
+  "name": "DeepBrain AI",
+  "domain": "aistudios.com",
+  "appURL": "https://aistudios.com",
+  "category": "ai-video",
+  "subcategory": "AI avatar video",
+  "tagline": "AI Studios creates avatar videos, translations, and business content",
+  "priceMonthly": null,
+  "pricing": {
+    "plan": "Typical paid plan",
+    "kind": "unknown",
+    "basis": "paid plan; billing basis requires review",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "Public paid plan exists; amount not safely recovered",
+    "source": "https://aistudios.com/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "low",
+    "notes": "The official pricing URL is recorded, but a stable current amount was not safely recoverable in this pass. Do not publish a number until rechecked.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Up to 3 videos total, max 1 minute each; 1 custom avatar; 720p; 1 priority video/month; 3 dubbing uses; 16 one-time generative credits",
+        "notes": "Free plan."
+      },
+      {
+        "name": "Personal",
+        "monthly": 24,
+        "annualPerMonth": 19.2,
+        "per": "user",
+        "limits": "Unlimited video projects, max 30 minutes/video; 3 custom avatars; 1080p; 50 priority videos/month; 120 dubbing minutes/month; 60 generative credits/month or 720/year",
+        "notes": "Annual equivalent is derived from the official 20% yearly discount ($230.40/year, paid upfront)."
+      },
+      {
+        "name": "Team",
+        "monthly": 55,
+        "annualPerMonth": 44,
+        "per": "user",
+        "limits": "Unlimited projects, max 60 minutes/video; 5 custom avatars; 4K; 150 priority videos/month; 240 dubbing minutes/month; 150 credits/month/seat or 1,800/year shared",
+        "notes": "Annual equivalent is derived from the official 20% yearly discount ($528.00/year per seat, paid upfront)."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Unlimited video duration and custom avatars; custom usage and support",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "Up to 3 videos total at 1 minute each; 1 custom avatar; 720p; 1 priority video/month; 3 dubbing uses; 16 one-time generative credits",
+    "billingTerms": "monthly + annual (-20%); annual plans are charged yearly",
+    "priceChanges": [],
+    "hiddenCosts": "Team is per seat; unused monthly dubbing minutes and generative credits do not roll over; add-ons follow the subscription billing cycle; dubbing overage can consume generative credits.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.aistudios.com/pricing"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "Do not mistake the interface for the product. DeepBrain AI's durable value is proprietary model, inference, safety, which a solo one-shot build cannot reproduce responsibly. The prompt therefore builds only the closest honest personal consolation tool.",
+  "coreLoopDIY": "Build the closest honest personal AI avatar video workflow using one user-selected local or API model, job history, preview, and export.",
+  "diyTimeEstimate": "not a true replacement; consolation build in one to two days",
+  "replacementScope": "consolation build only; the paid product's moat remains",
+  "requirements": [
+    "GPU-capable machine or model API key in .env",
+    "Python 3.12",
+    "FFmpeg",
+    "Explicit README warning that this is a consolation build, not a production replacement"
+  ],
+  "whatYouLose": [
+    "production codecs, rendering speed, and media templates",
+    "frontier generation quality",
+    "voice or likeness safety systems",
+    "low-latency inference infrastructure",
+    "licensed data, avatars, and production templates"
+  ],
+  "moatTags": [
+    "proprietary-models",
+    "scale-infra",
+    "content-rights"
+  ],
+  "moatNotes": "proprietary model/inference/safety",
+  "whyPeopleStillPay": "DeepBrain AI: The visible editor is small; the value sits in the model, inference capacity, safety controls, and production-quality outputs.",
+  "ongoingBurden": "Own compute costs, queueing, model and codec changes, consent controls, moderation, storage, and failed jobs.",
+  "priorArt": [
+    {
+      "name": "ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI",
+      "desc": "Node-based open-source generative image workflow engine."
+    },
+    {
+      "name": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "desc": "Local speech-to-text engine suitable for private transcription."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "DUIX Avatar",
+      "url": "https://www.duix.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Clone one face and voice, type the script, render locally; stock presenters, translations and browser polish stay behind.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "hour-one",
+    "vidnoz",
+    "fliki"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Credibility row: DeepBrain AI survives for a structural reason, not because its interface is difficult to copy.",
+  "prompt": "Build the closest honest consolation tool inspired by DeepBrain AI; do not claim to replace its structural moat.\nUse exactly this stack: Python 3.12 + FastAPI + FFmpeg + React.\nPrimary job: Build the closest honest personal AI avatar video workflow using one user-selected local or API model, job history, preview, and export.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: production codecs, rendering speed, and media templates; frontier generation quality; voice or likeness safety systems.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

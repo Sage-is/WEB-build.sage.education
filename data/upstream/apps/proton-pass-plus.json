@@ -1,0 +1,160 @@
+{
+  "slug": "proton-pass-plus",
+  "name": "Proton Pass Plus",
+  "domain": "proton.me",
+  "appURL": "https://proton.me",
+  "category": "security",
+  "subcategory": "passwords, privacy and private networking",
+  "tagline": "Create a local password and alias vault with portable encrypted backup",
+  "priceMonthly": 2.99,
+  "pricing": {
+    "plan": "Pass Plus",
+    "basis": "annual billing, per user per month",
+    "unit": "per-seat",
+    "source": "https://proton.me/pass/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official Pass Plus monthly rate.",
+    "native": "2.99 USD",
+    "kind": "fixed",
+    "currency": "USD",
+    "tiers": [
+      {
+        "name": "Pass Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Unlimited logins, notes, cards and devices; 10 hide-my-email aliases; 5 GB Proton Drive storage",
+        "notes": "Permanent free tier."
+      },
+      {
+        "name": "Pass Plus",
+        "monthly": null,
+        "annualPerMonth": 2.99,
+        "per": "user",
+        "limits": "Unlimited hide-my-email aliases, custom domains/mailboxes, integrated 2FA, sharing, dark-web monitoring and up to 50 vaults",
+        "notes": "$35.88/year at the current published annual rate; current monthly USD amount was not exposed reliably."
+      },
+      {
+        "name": "Pass Family",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Up to 6 Pass Plus accounts",
+        "notes": "Current official USD amount was not exposed reliably in the crawl."
+      }
+    ],
+    "freeTierCaps": "Unlimited logins, notes, cards and devices; 10 hide-my-email aliases; 5 GB cloud storage",
+    "billingTerms": "Free + monthly/annual paid options; exact monthly and Family USD prices were not exposed reliably",
+    "priceChanges": [
+      {
+        "what": "Pass Plus annual monthly equivalent",
+        "fromUsd": 1.99,
+        "toUsd": 2.99,
+        "when": "2024-11",
+        "source": "https://proton.me/blog/pass-plus-simplelogin-premium-feature"
+      }
+    ],
+    "hiddenCosts": "Paid alias/custom-domain use can depend on external domain registration; subscriptions auto-renew, taxes can apply, and Proton Unlimited is a separate bundle if mail, VPN and larger storage are also needed",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://proton.me/pass/pricing",
+      "https://proton.me/blog/pass-plus-simplelogin-premium-feature"
+    ]
+  },
+  "verdict": "no",
+  "verdictConfidence": "high",
+  "verdictSummary": "A consolation build is possible, but the paid product's decisive value sits outside a solo rebuild. For Proton Pass Plus, create a local password and alias vault with portable encrypted backup. The hard boundary is proton identity, email alias infrastructure, audits, apps, recovery, and privacy operations, plus security assurance, infrastructure, and trust.",
+  "coreLoopDIY": "Create a local password and alias vault with strong encryption, portable encrypted backups, explicit threat-model documentation, and no claim of replacing an audited service.",
+  "diyTimeEstimate": "closest consolation build: one sitting",
+  "requirements": [
+    "desktop OS",
+    "secure backup location",
+    "modern cryptographic libraries",
+    "careful review before real-world use"
+  ],
+  "whatYouLose": [
+    "Proton identity, email alias infrastructure, audits, apps, recovery, and privacy operations",
+    "independent security audits",
+    "global relay infrastructure",
+    "breach monitoring data",
+    "account recovery and support"
+  ],
+  "moatTags": [
+    "brand-trust",
+    "scale-infra"
+  ],
+  "moatNotes": "security assurance, infrastructure, and trust",
+  "replacementScope": "educational or low-risk personal utility",
+  "ongoingBurden": "cryptography, secure updates, key recovery, threat intelligence, relay capacity, abuse response, audits, and incident handling",
+  "whyPeopleStillPay": "People still pay for Proton Pass Plus because security products are paid for because expert review, infrastructure, and accountability matter more than recreating screens. The recurring cost buys cryptography, secure updates, key recovery, threat intelligence, relay capacity, abuse response, audits, and incident handling, not just the visible interface.",
+  "priorArt": [
+    {
+      "name": "Vaultwarden",
+      "url": "https://github.com/dani-garcia/vaultwarden",
+      "desc": "Widely used Bitwarden-compatible self-hosted password server implementation."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "AliasVault",
+      "url": "https://www.aliasvault.net/",
+      "type": "open-source",
+      "repo": "https://github.com/aliasvault/aliasvault",
+      "platforms": [
+        "web",
+        "ios",
+        "android",
+        "self-hosted",
+        "browser-extension"
+      ],
+      "desc": "Passwords, passkeys, aliases, and encrypted backups on your server; reliable mail delivery is now infrastructure.",
+      "stars": 2400,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Proton Pass Free",
+      "url": "https://proton.me/pass",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android",
+        "browser-extension"
+      ],
+      "desc": "The same password-and-alias vault with ten aliases and portable exports; unlimited aliases and sharing stay paid.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "Bitwarden Free",
+      "url": "https://bitwarden.com/pricing/",
+      "desc": "Excellent password vault and export story; email aliases are not a native core feature."
+    },
+    {
+      "name": "KeePassXC",
+      "url": "https://keepassxc.org/",
+      "desc": "Local vault and portable encrypted backups, but no integrated alias service."
+    }
+  ],
+  "relatedSlugs": [
+    "bitwarden",
+    "deleteme",
+    "nordvpn"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Editorial comparison targets the Pass Plus plan and a educational or low-risk personal utility DIY substitute. Recheck price before merge.",
+  "prompt": "Build a closest honest personal substitute for Proton Pass Plus in an empty repository.\nUse Rust, Tauri 2, React, SQLite, Argon2id, and audited cryptographic libraries; do not offer alternative stacks.\nThe core loop is: create a local password and alias vault with strong encryption, portable encrypted backups, explicit threat-model documentation, and no claim of replacing an audited service.\nMake the first run work locally with one documented command.\nStore all user data locally by default and make export straightforward.\nPut secrets in .env, ship .env.example, and never commit credentials.\nWrite a plain-language threat model before implementing any sensitive feature.\nKeep all vault data encrypted with a master key derived through Argon2id and a unique salt.\nUse authenticated encryption from a maintained library and never invent cryptographic primitives.\nImplement lock timeout, clipboard clearing, password generation, import, export, and encrypted backups.\nMake recovery-key creation explicit and test restore from a fresh installation.\nDisplay a persistent warning that the build has not received an independent security audit.\nInclude clear empty, loading, success, and recoverable error states.\nAdd input validation, safe filenames, and graceful handling of unavailable APIs.\nWrite focused tests for the core transformation and one end-to-end happy path.\nCreate a README with setup, architecture, permissions, data location, and backup steps.\nDo not add accounts, billing, telemetry, analytics, or a hosted control plane.\nDo not claim to reproduce proprietary data, network liquidity, regulated access, or frontier infrastructure.\nDeliberately leave out a production VPN or anonymity network.\nDeliberately leave out identity-protection monitoring and data-broker removal.\nDeliberately leave out enterprise security guarantees, audits, and emergency support.\nFinish by running the tests and listing the exact commands used.",
+  "promptCurated": false
+}

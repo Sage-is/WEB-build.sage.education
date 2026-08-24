@@ -1,0 +1,242 @@
+{
+  "slug": "monarch-money",
+  "name": "Monarch Money",
+  "domain": "monarch.com",
+  "category": "personal-finance",
+  "subcategory": "budgeting + net worth",
+  "tagline": "Personal finance dashboard for budgeting, transactions, goals, and net worth",
+  "priceMonthly": 14.99,
+  "pricing": {
+    "plan": "Core",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "14.99 USD",
+    "source": "https://www.monarch.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "medium",
+    "notes": "Official pricing page checked; 2026 public references list $14.99/month or $99.99/year for Core.",
+    "tiers": [
+      {
+        "name": "Core",
+        "monthly": 14.99,
+        "annualPerMonth": 8.33,
+        "per": "flat",
+        "limits": "One household; budgeting, goals, cash flow, net worth and account tracking",
+        "notes": "7-day trial. Annual price is $99.99/year."
+      },
+      {
+        "name": "Plus",
+        "monthly": null,
+        "annualPerMonth": 16.58,
+        "per": "flat",
+        "limits": "Everything in Core plus forecasting, business tracking, advanced investment analysis, gains/losses and estate-planning features",
+        "notes": "Annual only at $199/year; 7-day trial; desktop-first features."
+      }
+    ],
+    "freeTierCaps": "no free tier; 7-day free trial",
+    "billingTerms": "Core monthly + annual; Plus annual only",
+    "priceChanges": [],
+    "hiddenCosts": "Taxes may apply; app-store billing terms can differ. Core promotions do not apply to Plus or monthly plans. Plus is unavailable on advisor-sponsored accounts.",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://www.monarch.com/pricing",
+      "https://help.monarch.com/hc/en-us/articles/44815447567636-Updating-Your-Subscription",
+      "https://www.monarch.com/blog/monarch-plus"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "A manual finance dashboard is buildable, but high-quality bank aggregation, transaction cleaning, investment data, household collaboration, and mobile sync make it real work.",
+  "coreLoopDIY": "Import transactions from CSV or Plaid, categorize spending, track accounts/goals/net worth, and show monthly reports.",
+  "diyTimeEstimate": "multi-day",
+  "requirements": [
+    "bank aggregation API or CSV import",
+    "secure database",
+    "categorization rules",
+    "charts",
+    "mobile/web app",
+    "backups"
+  ],
+  "whatYouLose": [
+    "bank/investment sync",
+    "transaction categorization",
+    "household collaboration",
+    "mobile apps",
+    "support",
+    "data security posture"
+  ],
+  "moatTags": [
+    "integrations",
+    "brand-trust",
+    "collaboration"
+  ],
+  "moatNotes": "bank data/security/convenience",
+  "whyPeopleStillPay": "They pay because personal finance apps are only valuable when data arrives automatically and safely.",
+  "priorArt": [
+    {
+      "name": "Firefly III",
+      "url": "https://github.com/firefly-iii/firefly-iii",
+      "desc": "Open-source personal finance manager for budgets, transactions, and reports.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Wealthfolio",
+      "url": "https://wealthfolio.app/",
+      "type": "open-source",
+      "repo": "https://github.com/afadil/wealthfolio",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "self-hosted"
+      ],
+      "desc": "Investments, net worth, spending, budgets and goals on your device; automatic broker sync is the paid shortcut.",
+      "stars": 8500,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-only",
+        "runs": "both",
+        "install": "Native desktop or iOS app, or the official Docker image/Compose deployment for web mode",
+        "engines": null,
+        "dataFormat": "Desktop and self-hosted modes use a local SQLite database (the web server exposes a configurable app.db path); optional Wealthfolio Connect and encrypted device sync send selected holdings/account data through the vendor service.",
+        "gapVsPaid": "Wealthfolio's free local mode lacks Monarch's turnkey multi-institution sync, household collaboration, automatic transaction cleanup, recurring detection, and integrated goal planning.",
+        "setupBlocker": null,
+        "sources": [
+          "https://wealthfolio.app/",
+          "https://github.com/wealthfolio/wealthfolio",
+          "https://github.com/wealthfolio/wealthfolio/blob/main/LICENSE",
+          "https://github.com/wealthfolio/wealthfolio#docker",
+          "https://wealthfolio.app/privacy",
+          "https://www.monarchmoney.com/",
+          "https://www.monarchmoney.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Actual Budget",
+      "url": "https://actualbudget.org/",
+      "type": "open-source",
+      "repo": "https://github.com/actualbudget/actual",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "self-hosted"
+      ],
+      "desc": "Budgets, imported transactions, schedules and reports on your disk; investment analytics are much thinner.",
+      "stars": 28000,
+      "lastCommit": "2026-08",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Native desktop app for local-only use, or the official Docker/Node server for browser access and device sync",
+        "engines": null,
+        "dataFormat": "Each client works from a local SQLite budget; the server keeps account metadata plus budget blobs under its data directory, and optional end-to-end encryption covers budget contents but not bank-sync tokens.",
+        "gapVsPaid": "Actual has much weaker investment and net-worth analytics and no equally seamless household collaboration or managed multi-provider account aggregation.",
+        "setupBlocker": null,
+        "sources": [
+          "https://actualbudget.org/",
+          "https://github.com/actualbudget/actual",
+          "https://github.com/actualbudget/actual/blob/master/LICENSE.md",
+          "https://actualbudget.org/download/",
+          "https://actualbudget.org/docs/install/",
+          "https://actualbudget.org/docs/config/",
+          "https://actualbudget.org/docs/settings/",
+          "https://www.monarchmoney.com/",
+          "https://www.monarchmoney.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "Firefly III",
+      "url": "https://www.firefly-iii.org/",
+      "type": "open-source",
+      "repo": "https://github.com/firefly-iii/firefly-iii",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Transactions, budgets, goals and net worth in Docker; portfolio analysis is not its favourite spreadsheet.",
+      "stars": 24200,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Official Docker Compose deployment; a separate Firefly III Data Importer is normally added for bank files",
+        "engines": null,
+        "dataFormat": "Transactions, accounts, budgets, rules, and metadata live in the configured MariaDB/MySQL or PostgreSQL database; uploads and generated files live in persistent server volumes.",
+        "gapVsPaid": "Firefly III requires server administration and is weaker than Monarch for investment tracking, household collaboration, polished goals, automatic institution sync, and mobile usability.",
+        "setupBlocker": "The first obstacle is operating a real web service, Docker, a database, application secrets, TLS, mail, backups, upgrades, and usually the separate importer plus an API token.",
+        "sources": [
+          "https://www.firefly-iii.org/",
+          "https://github.com/firefly-iii/firefly-iii",
+          "https://github.com/firefly-iii/firefly-iii/blob/main/LICENSE",
+          "https://docs.firefly-iii.org/how-to/firefly-iii/installation/docker/",
+          "https://docs.firefly-iii.org/how-to/data-importer/installation/docker/",
+          "https://www.monarchmoney.com/",
+          "https://www.monarchmoney.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    },
+    {
+      "name": "FreeBudget",
+      "url": "https://freebudget.org/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web",
+        "ios",
+        "android"
+      ],
+      "desc": "Budgets, rules, CSV imports, reports and net worth for free; live bank links cost extra.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "proprietary-free",
+        "runs": "cloud",
+        "install": "Hosted signup in a browser or installation of its progressive web app",
+        "engines": null,
+        "dataFormat": "Transactions, budgets, rules, reports, and net-worth records live in FreeBudget's cloud; manual and CSV import/export are available, while linked-account data passes through Plaid when the paid sync option is enabled.",
+        "gapVsPaid": "FreeBudget's free tier relies on manual or CSV imports and has thinner investment, collaboration, goal, and mobile experience than Monarch's continuously synced household dashboard.",
+        "setupBlocker": null,
+        "sources": [
+          "https://freebudget.org/",
+          "https://freebudget.org/features",
+          "https://freebudget.org/privacy",
+          "https://freebudget.org/help/import-transactions",
+          "https://freebudget.org/help/bank-syncing",
+          "https://www.monarchmoney.com/",
+          "https://www.monarchmoney.com/pricing"
+        ],
+        "checkedOn": "2026-08-11"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "copilot-money",
+    "fathom-hq",
+    "ahrefs"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Good kinda: spreadsheet replacement is yes, bank-sync product is harder.",
+  "prompt": "Build me a CSV-first personal finance dashboard to replace Monarch Money. Requirements:\n\n- Node + Express + better-sqlite3 on localhost:4910, server-rendered pages with\n  Chart.js for the graphs.\n- Import bank and card CSV exports: per-bank column mapping saved after the first\n  import, dedupe on a date+amount+description hash so re-imports are always safe.\n- Rule-based categorization: substring or regex on description sets the category,\n  rules run on import, and a fast keyboard-driven screen clears the leftovers.\n- Monthly budget targets per category with actual-vs-budget bars and overspend\n  flags, plus a cash-flow view by month.\n- An accounts table including manual balances for things without CSVs (pension,\n  property); a net-worth chart built from balance snapshots I enter monthly.\n- A recurring-charge detector: same merchant, similar amount, monthly cadence,\n  listed with annualized cost. That is the subscription-audit view.\n- Everything local in one SQLite file, no bank credentials anywhere, no accounts,\n  no telemetry. Nightly DB copy to backups/, keep 30.\n- Out of scope: automatic bank sync via Plaid, household multi-user, and mobile\n  apps. The monthly CSV ritual is the price of keeping credentials out of this.\n- README: import walkthrough for two example bank CSV formats, backup location.",
+  "promptCurated": false
+}

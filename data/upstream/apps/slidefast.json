@@ -1,0 +1,113 @@
+{
+  "slug": "slidefast",
+  "name": "SlideFast",
+  "domain": "slidefast.io",
+  "category": "social-media",
+  "subcategory": "AI social carousel generator",
+  "tagline": "AI carousel builder for LinkedIn, Instagram, TikTok, and other social channels",
+  "priceMonthly": 8.07,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "8.07 USD",
+    "source": "https://slidefast.io/pricing",
+    "checkedOn": "2026-08-14",
+    "confidence": "high",
+    "notes": "Official pricing page lists Starter at €7/month, approximately $8 at the checked date; Pro is €19/month and Max is €39/month.",
+    "tiers": [
+      {
+        "name": "Starter",
+        "monthly": 8.07,
+        "annualPerMonth": 5.65,
+        "per": "flat",
+        "limits": "5 AI carousels/month, 50 edit messages/month, unlimited exports",
+        "notes": "Vendor publishes €7/month; annual effective €4.90/month is calculated from the stated 30% discount, then converted at 1 EUR = 1.1534 USD (ECB, 2026-08-13)."
+      },
+      {
+        "name": "Pro",
+        "monthly": 21.91,
+        "annualPerMonth": 15.34,
+        "per": "flat",
+        "limits": "50 AI carousels/month, 500 edit messages/month, unlimited exports, custom themes/brand kit, no watermark",
+        "notes": "Vendor publishes €19/month; annual effective €13.30/month is calculated from the stated 30% discount and converted at the ECB rate."
+      },
+      {
+        "name": "MAX",
+        "monthly": 44.98,
+        "annualPerMonth": 31.49,
+        "per": "flat",
+        "limits": "Higher carousel/edit allowance than Pro; exact numeric caps were not exposed on the live pricing card",
+        "notes": "Vendor publishes €39/month; annual effective €27.30/month is calculated from the stated 30% discount and converted at the ECB rate."
+      }
+    ],
+    "freeTierCaps": "no free tier",
+    "billingTerms": "monthly + annual (-30%); 7-day trial, no credit card; cancel anytime",
+    "priceChanges": [],
+    "hiddenCosts": "Carousel creation and AI revisions are separately capped; MAX's exact numeric caps were not publicly exposed. USD amounts vary with EUR/USD exchange rates.",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://slidefast.io/pricing",
+      "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "high",
+  "verdictSummary": "A personal prompt-to-carousel tool is a solid weekend build, but SlideFast's polished editor, reusable brand system, asset library, dependable multi-format exports, and publishing workflow take sustained product work.",
+  "coreLoopDIY": "Turn a topic, URL, or rough notes into a structured social carousel, edit the slides, apply a brand theme, and export a LinkedIn-ready PDF.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "LLM API key",
+    "PDF rendering library",
+    "local image storage",
+    "optional URL content extractor"
+  ],
+  "whatYouLose": [
+    "polished visual editor",
+    "reusable brand and asset library",
+    "reliable PDF and image exports",
+    "multi-channel publishing workflow",
+    "hosted storage and sharing"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "integrations"
+  ],
+  "moatNotes": "editor polish/templates/export workflow",
+  "whyPeopleStillPay": "They pay to skip the fragile parts between an AI draft and a consistently branded carousel that is actually ready to publish.",
+  "priorArt": [
+    {
+      "name": "PptxGenJS",
+      "url": "https://github.com/gitbrent/PptxGenJS",
+      "desc": "Open-source JavaScript presentation generator that can provide the structured rendering and export layer.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Piktochart Free",
+      "url": "https://piktochart.com/",
+      "type": "free",
+      "repo": null,
+      "platforms": [
+        "web"
+      ],
+      "desc": "Sixty AI credits refresh each month; it makes carousels, not your entire social calendar.",
+      "stars": null,
+      "lastCommit": null,
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "canva",
+    "gamma",
+    "typefully"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "The core generator is approachable; repeatable visual quality and last-mile publishing are the durable product.",
+  "prompt": "Build me a local AI social-carousel maker to replace SlideFast. Requirements:\n\n- Use Node, Express, SQLite, and a single-page vanilla JS interface.\n- A composer accepts a topic, pasted notes, or a URL; URL fetching extracts\n  readable article text on the server.\n- Send the source to one LLM (API key in .env) and require structured JSON:\n  hook, 5-10 slides, CTA, LinkedIn caption, and hashtags.\n- Show every slide in a 1080x1350 canvas preview with inline text editing,\n  drag-to-reorder, duplicate, delete, and regenerate-one-slide actions.\n- Include 4 fixed layouts: cover, statement, bullets, and CTA. Auto-fit text\n  within strict bounds and warn when copy is too dense.\n- Load brand settings from brand.json: logo, two fonts, 4 colors, and footer.\n  Provide a small settings panel that updates and saves this file.\n- Let me upload local images and assign one to a slide; store them under\n  data/assets and never send them anywhere except the optional LLM call.\n- Save projects to SQLite and autosave edits after a short debounce.\n- Export every slide as PNG and the full carousel as a LinkedIn-ready PDF\n  using Playwright, with deterministic dimensions and embedded fonts.\n- No accounts, payments, analytics, collaboration, or direct social posting.\n- Ship one sample project and a README covering setup, .env, brand.json,\n  supported input types, and export commands.",
+  "promptCurated": true
+}

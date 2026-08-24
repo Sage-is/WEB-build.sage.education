@@ -1,0 +1,144 @@
+{
+  "slug": "browse-ai",
+  "name": "Browse AI",
+  "domain": "browse.ai",
+  "appURL": "https://browse.ai",
+  "category": "automation",
+  "subcategory": "web data extraction",
+  "tagline": "No-code web robots for monitoring, extraction, and scheduled data delivery",
+  "priceMonthly": 19,
+  "pricing": {
+    "plan": "Starter",
+    "kind": "fixed",
+    "basis": "monthly automation plan",
+    "unit": "flat",
+    "currency": "USD",
+    "native": "$19/month",
+    "source": "https://browse.ai/pricing",
+    "checkedOn": "2026-07-31",
+    "confidence": "medium",
+    "notes": "Working normalization from the official public pricing structure. Recheck the source page immediately before publication.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "Unlimited robots; 2 websites; 3 users; 90-day data retention; monitoring no more frequent than hourly",
+        "notes": "The live first-party page did not expose a stable numeric monthly-credit allowance for Free."
+      },
+      {
+        "name": "Personal",
+        "monthly": 48,
+        "annualPerMonth": 19,
+        "per": "workspace",
+        "limits": "2,000 credits on monthly billing or 12,000 credits/year paid upfront; 5 websites; 3 users; unlimited robots; 90-day retention; 5-minute monitoring",
+        "notes": "The annual allowance averages 1,000 credits/month but is issued for the annual term."
+      },
+      {
+        "name": "Professional",
+        "monthly": 87,
+        "annualPerMonth": 69,
+        "per": "workspace",
+        "limits": "5,000 credits/month or 60,000 credits/year; 10 websites; 10 users; unlimited robots; 90-day retention; 5-minute monitoring",
+        "notes": null
+      },
+      {
+        "name": "Premium",
+        "monthly": null,
+        "annualPerMonth": 500,
+        "per": "workspace",
+        "limits": "Custom credits, websites and users; managed onboarding and higher-scale automation",
+        "notes": "Starts at $6,000/year and is billed annually."
+      }
+    ],
+    "freeTierCaps": "Unlimited robots, 2 websites, 3 users, 90-day retention and hourly monitoring; numeric monthly credits were not reliably exposed on the current page",
+    "billingTerms": "free + monthly or annual Personal/Professional; Premium is annual-only from $6,000/year; credits reset by billing period and do not carry over",
+    "priceChanges": [],
+    "hiddenCosts": "Extra websites cost $5/month on monthly Personal or $4/month annual, and $3/month monthly or $2.40/month annual on Professional; some premium-site runs consume 2-10+ credits; 1 credit covers only 10 extracted rows or 1 screenshot, and unused credits expire",
+    "tiersCheckedOn": "2026-08-14",
+    "tiersSources": [
+      "https://www.browse.ai/pricing"
+    ]
+  },
+  "verdict": "kinda",
+  "verdictConfidence": "medium",
+  "verdictSummary": "The visible web data extraction loop is buildable, but a credible replacement needs more than the first screen. Browse AI earns its keep through connectors, auth, reliability, so expect a weekend or multi-day build and a narrower personal scope.",
+  "coreLoopDIY": "Build one explicit web data extraction workflow with a trigger, validated steps, retries, logs, and a manual replay button.",
+  "diyTimeEstimate": "weekend to multi-day",
+  "replacementScope": "narrow personal or very small-team substitute",
+  "requirements": [
+    "hosted PostgreSQL and Redis",
+    "API credentials for the two chosen services",
+    "Node.js 22"
+  ],
+  "whatYouLose": [
+    "OAuth app verification",
+    "durable execution at scale",
+    "schema drift handling and enterprise controls",
+    "hundreds of maintained connectors"
+  ],
+  "moatTags": [
+    "integrations",
+    "scale-infra"
+  ],
+  "moatNotes": "connectors/auth/reliability",
+  "whyPeopleStillPay": "Browse AI: One automation is easy. Subscribers pay for maintained integrations, credentials, retries, observability, and someone else owning breakage.",
+  "ongoingBurden": "Maintain OAuth, rate limits, webhooks, retries, queues, idempotency, logs, secret rotation, and third-party API changes.",
+  "priorArt": [
+    {
+      "name": "Activepieces",
+      "url": "https://github.com/activepieces/activepieces",
+      "desc": "Open-source automation builder with connectors and self-hosting."
+    },
+    {
+      "name": "n8n",
+      "url": "https://github.com/n8n-io/n8n",
+      "desc": "Source-available workflow automation engine and connector reference."
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "EasySpider",
+      "url": "https://github.com/NaiboWang/EasySpider",
+      "type": "open-source",
+      "repo": "https://github.com/NaiboWang/EasySpider",
+      "platforms": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "desc": "A desktop scraper whose academic-looking workflow editor still gets paginated data out.",
+      "stars": 44125,
+      "lastCommit": "2026-07",
+      "selfHost": "one-click",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "Maxun",
+      "url": "https://maxun.dev/",
+      "type": "open-source",
+      "repo": "https://github.com/getmaxun/maxun",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Point, click, schedule a robot, and keep the scraper on your own box.",
+      "stars": 17100,
+      "lastCommit": "2026-07",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "apify",
+    "octoparse",
+    "relevance-ai"
+  ],
+  "pagePriority": 3,
+  "verifiedOneShot": false,
+  "notes": "Useful boundary case: the first 60 percent of Browse AI is approachable, but operating the last 40 percent is the real subscription.",
+  "prompt": "Build a deliberately narrow personal substitute for Browse AI, not a full clone.\nUse exactly this stack: Next.js 15 + TypeScript + PostgreSQL + BullMQ.\nPrimary job: Build one explicit web data extraction workflow with a trigger, validated steps, retries, logs, and a manual replay button.\nStart from an empty folder and create the complete working project.\nMake the default mode single-user and private.\nStore user data locally unless the core job requires the declared self-hosted database.\nDo not add analytics, telemetry, ads, or third-party accounts.\nPut every secret and external credential in .env and provide .env.example.\nUse realistic sample data that is clearly labelled and easy to delete.\nImplement the smallest polished interface that completes the core loop end to end.\nInclude clear empty, loading, validation, success, and failure states.\nAdd import and export so the user is not trapped in the app.\nUse accessible keyboard navigation, labels, focus states, and sensible contrast.\nValidate untrusted input and never log secrets or private file contents.\nDeliberately exclude these paid-product advantages: OAuth app verification; durable execution at scale; schema drift handling and enterprise controls.\nDo not fake integrations, network effects, proprietary data, model quality, compliance, or security claims.\nWhere an external API is optional, keep the app useful without it and explain the degraded mode.\nWrite focused unit tests for the data model and the most important workflow.\nAdd one end-to-end smoke test that proves the core loop works.\nCreate a README with setup, permissions, architecture, data location, backup, and limitations.\nAdd scripts for install, development, test, build, and a production-style local run.\nRun the tests and build before finishing, then fix errors rather than merely describing them.",
+  "promptCurated": false
+}

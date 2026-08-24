@@ -1,0 +1,160 @@
+{
+  "slug": "feedly",
+  "name": "Feedly",
+  "domain": "feedly.com",
+  "category": "rss-research",
+  "subcategory": "RSS reader",
+  "tagline": "RSS reader and research feed for websites, newsletters, and alerts",
+  "priceMonthly": 7,
+  "pricing": {
+    "plan": "Pro",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "7 USD",
+    "source": "https://docs.feedly.com/pricing",
+    "checkedOn": "2026-07-30",
+    "confidence": "high",
+    "notes": "Official docs checked 2026-07-30; Feedly Pro listed at $7/month or $65/year.",
+    "tiers": [
+      {
+        "name": "Basic",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "user",
+        "limits": "Up to 100 sources; 3 Feeds; 3 Boards.",
+        "notes": null
+      },
+      {
+        "name": "Pro",
+        "monthly": 7,
+        "annualPerMonth": 5.42,
+        "per": "user",
+        "limits": "Faster feed polling, search and integrations; annual total is $65.",
+        "notes": null
+      },
+      {
+        "name": "Pro+",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "AI Feeds, RSS Builder and Zapier; feed polling can be as frequent as 7 minutes.",
+        "notes": "Annual-only, but the current exact public price was not exposed."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "user",
+        "limits": "Team feeds, administration and intelligence tools; numeric seat limits and price are quote-based.",
+        "notes": "Contact sales."
+      }
+    ],
+    "freeTierCaps": "100 sources; 3 Feeds; 3 Boards",
+    "billingTerms": "Pro offers monthly + annual; Pro+ is annual-only; Enterprise is quote-based",
+    "priceChanges": [],
+    "hiddenCosts": "self-service refunds are limited to 5 days after a charge; Enterprise cost scales by seats and selected intelligence features",
+    "tiersCheckedOn": "2026-08-13",
+    "tiersSources": [
+      "https://docs.feedly.com/article/50-i-want-to-switch-to-yearly-monthly-billing",
+      "https://docs.feedly.com/article/140-what-is-the-difference-between-feedly-basic-pro-and-teams",
+      "https://docs.feedly.com/article/43-how-can-i-cancel-the-subscription",
+      "https://feedly.com/i/pro"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "Core RSS reading, folders, search, and saved articles are very buildable; Feedly's paid moat is polished feed discovery, mobile, AI features, and reliability.",
+  "coreLoopDIY": "Parse RSS feeds on a schedule, store items, mark read/saved, expose folders and search, and optionally summarize articles.",
+  "diyTimeEstimate": "one sitting",
+  "requirements": [
+    "hosted cron or local daemon",
+    "RSS parser",
+    "database",
+    "web UI",
+    "optional LLM API"
+  ],
+  "whatYouLose": [
+    "mobile apps",
+    "feed discovery",
+    "integrations",
+    "Leo/AI filtering",
+    "uptime",
+    "polished reading UX"
+  ],
+  "moatTags": [
+    "execution-polish",
+    "scale-infra",
+    "integrations"
+  ],
+  "moatNotes": "data ingestion/polish",
+  "whyPeopleStillPay": "They pay to avoid maintaining hundreds of feeds and reader apps across devices.",
+  "priorArt": [
+    {
+      "name": "FreshRSS",
+      "url": "https://github.com/FreshRSS/FreshRSS",
+      "desc": "Mature self-hosted RSS aggregator and reader.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "Folo",
+      "url": "https://folo.is",
+      "type": "open-source",
+      "repo": "https://github.com/RSSNext/Folo",
+      "platforms": [
+        "web",
+        "macos",
+        "windows",
+        "linux",
+        "ios",
+        "android"
+      ],
+      "desc": "A modern hosted research feed with 150 free subscriptions, one inbox and one automation.",
+      "stars": 38800,
+      "lastCommit": "2026-08",
+      "selfHost": "hosted",
+      "checkedOn": "2026-08-06"
+    },
+    {
+      "name": "NewsBlur",
+      "url": "https://newsblur.com",
+      "type": "open-source",
+      "repo": "https://github.com/samuelclay/NewsBlur",
+      "platforms": [
+        "web",
+        "macos",
+        "ios",
+        "android",
+        "self-hosted"
+      ],
+      "desc": "Feeds, newsletters and trainable filters, in exchange for running several databases.",
+      "stars": 7600,
+      "lastCommit": "2026-08",
+      "selfHost": "ops",
+      "checkedOn": "2026-08-06"
+    }
+  ],
+  "rejectedAlternatives": [
+    {
+      "name": "FreshRSS",
+      "url": "https://freshrss.org",
+      "desc": "Excellent RSS, but it has no built-in email-newsletter inbox or alert workflow."
+    },
+    {
+      "name": "Miniflux",
+      "url": "https://miniflux.app",
+      "desc": "A fine feed reader, but newsletters and monitoring require separate services."
+    }
+  ],
+  "relatedSlugs": [
+    "inoreader",
+    "todoist",
+    "sunsama"
+  ],
+  "pagePriority": 5,
+  "verifiedOneShot": false,
+  "notes": "A textbook yes: open protocol, many mature open-source alternatives.",
+  "prompt": "Build me a personal RSS reader to replace Feedly. Requirements:\n\n- Node + Express + better-sqlite3, server-rendered pages, binds to localhost.\n- Feeds live in feeds.opml with folders; import my Feedly OPML export on first\n  run so nothing is retyped.\n- Poll every 30 minutes with node-cron, parse with rss-parser, dedupe items by\n  GUID then link.\n- Reader UI: unread counts per folder, an article list with j/k keyboard\n  navigation, one-key mark-read, and s to star.\n- Starred view, plus full-text search over titles and content via SQLite FTS5.\n- Optional summarize button per article using an LLM key from .env; hide the\n  button entirely when no key is set.\n- Keep read items 90 days, starred forever, pruned nightly.\n- No accounts, no telemetry, local-first.\n- Out of scope: mobile apps and feed discovery/suggestions. Adding feeds means\n  editing the OPML, that is fine.\n- README: setup, where the DB lives, and how to export my OPML back out.",
+  "promptCurated": false
+}

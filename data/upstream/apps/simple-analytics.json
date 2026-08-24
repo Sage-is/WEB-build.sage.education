@@ -1,0 +1,200 @@
+{
+  "slug": "simple-analytics",
+  "name": "Simple Analytics",
+  "domain": "simpleanalytics.com",
+  "category": "analytics",
+  "subcategory": "privacy web analytics",
+  "tagline": "Privacy-first website analytics without cookies or personal tracking",
+  "priceMonthly": 20,
+  "pricing": {
+    "plan": "Starter",
+    "basis": "monthly",
+    "unit": "flat",
+    "native": "20 USD",
+    "source": "https://www.simpleanalytics.com/pricing",
+    "checkedOn": "2026-08-07",
+    "confidence": "high",
+    "notes": "Official pricing checked 2026-07-30; Starter listed at $20/month.",
+    "freeTier": "Free for one user and 5 websites with 30 days of history; paid keeps data longer.",
+    "tiers": [
+      {
+        "name": "Free",
+        "monthly": 0,
+        "annualPerMonth": 0,
+        "per": "workspace",
+        "limits": "1 user, 5 websites, 30 days of history and unlimited pageviews under fair use; badge required.",
+        "notes": null
+      },
+      {
+        "name": "Simple (100k monthly data points)",
+        "monthly": 20,
+        "annualPerMonth": 16.67,
+        "per": "workspace",
+        "limits": "100,000 monthly pageviews/data points and 1 included user; website count is not numerically capped on the plan card.",
+        "notes": "Annual plan gives 2 months free; higher traffic changes the price."
+      },
+      {
+        "name": "Enterprise",
+        "monthly": null,
+        "annualPerMonth": null,
+        "per": "workspace",
+        "limits": "Custom traffic, users and service terms; numeric limits and price not public.",
+        "notes": null
+      }
+    ],
+    "freeTierCaps": "1 user, 5 websites, 30-day data history and unlimited pageviews under fair use; a Simple Analytics badge is required.",
+    "billingTerms": "monthly + annual (2 months free); self-serve bill automatically follows measured traffic",
+    "priceChanges": [],
+    "hiddenCosts": "Paid pricing rises automatically with traffic: monthly plans use the current month then a 3-month average; annual plans can auto-increase after a 1-week warning. Each extra user costs $20/month. Bitcoin payment is annual-only and adds 10%; bank-transfer invoices of at least $500 add 10%.",
+    "tiersCheckedOn": "2026-08-11",
+    "tiersSources": [
+      "https://www.simpleanalytics.com/pricing"
+    ]
+  },
+  "verdict": "yes",
+  "verdictConfidence": "high",
+  "verdictSummary": "Pageview analytics, events, dashboards, and exports are very buildable; paid value is hosted privacy posture, reports, reliability, and support.",
+  "coreLoopDIY": "Add JS tracker, record anonymous pageviews/events, aggregate by dimensions, and expose dashboard/API.",
+  "diyTimeEstimate": "weekend",
+  "requirements": [
+    "server",
+    "database",
+    "tracker script",
+    "domain/SSL",
+    "backups",
+    "optional email reports"
+  ],
+  "whatYouLose": [
+    "managed hosting",
+    "privacy/legal positioning",
+    "bot filtering",
+    "reports",
+    "uptime",
+    "support"
+  ],
+  "moatTags": [
+    "compliance-regulatory",
+    "scale-infra",
+    "execution-polish"
+  ],
+  "moatNotes": "hosting/compliance positioning",
+  "whyPeopleStillPay": "They pay for low-maintenance analytics they can put in a privacy policy with confidence.",
+  "priorArt": [
+    {
+      "name": "Umami",
+      "url": "https://github.com/umami-software/umami",
+      "desc": "Open-source web analytics platform for privacy-friendly tracking.",
+      "status": "alive"
+    }
+  ],
+  "alternatives": [
+    {
+      "name": "GoatCounter",
+      "url": "https://www.goatcounter.com",
+      "type": "open-source",
+      "repo": "https://github.com/arp242/goatcounter",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "The spartan version: useful traffic numbers and very little else to argue about.",
+      "stars": 5800,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": null,
+        "runs": "both",
+        "install": "Create a hosted account or run the single static binary or Docker image",
+        "engines": null,
+        "dataFormat": "A self-hosted instance uses SQLite by default or PostgreSQL; the hosted service stores analytics on GoatCounter's infrastructure and supports JSON and CSV exports",
+        "gapVsPaid": "It is much more spartan and lacks Simple Analytics' polished reports, automations and privacy-focused workflow conveniences.",
+        "setupBlocker": "None for hosted use; self-hosting needs a reachable binary or container plus a public URL and TLS",
+        "sources": [
+          "https://raw.githubusercontent.com/arp242/goatcounter/master/LICENSE",
+          "https://github.com/arp242/goatcounter",
+          "https://www.goatcounter.com/help/terms",
+          "https://www.goatcounter.com/help/events",
+          "https://simpleanalytics.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Plausible Community Edition",
+      "url": "https://plausible.io/self-hosted-web-analytics",
+      "type": "open-source",
+      "repo": "https://github.com/plausible/analytics",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "A nearly identical promise, delivered from a Compose file you own.",
+      "stars": 28377,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "AGPL-3.0-or-later",
+        "runs": "self-hosted",
+        "install": "Deploy the Community Edition with the official Docker Compose installer",
+        "engines": null,
+        "dataFormat": "Account and configuration records live in PostgreSQL and analytics events live in ClickHouse on the user's server",
+        "gapVsPaid": "The core promise is similar, but the user operates the stack and Community Edition does not include every hosted-cloud extra.",
+        "setupBlocker": "Docker Compose, roughly 2 GB of RAM, a domain with DNS and TLS, and backups for PostgreSQL and ClickHouse",
+        "sources": [
+          "https://github.com/plausible/analytics",
+          "https://github.com/plausible/analytics/blob/master/LICENSE.md",
+          "https://github.com/plausible/community-edition",
+          "https://plausible.io/self-hosted-web-analytics",
+          "https://simpleanalytics.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    },
+    {
+      "name": "Umami",
+      "url": "https://umami.is",
+      "type": "open-source",
+      "repo": "https://github.com/umami-software/umami",
+      "platforms": [
+        "web",
+        "self-hosted"
+      ],
+      "desc": "Privacy analytics without cookies, personal profiles or a monthly invoice.",
+      "stars": 38073,
+      "lastCommit": "2026-08",
+      "selfHost": "docker",
+      "checkedOn": "2026-08-06",
+      "facts": {
+        "license": "MIT",
+        "runs": "both",
+        "install": "Create an Umami Cloud account or deploy the Node application with Docker Compose and PostgreSQL",
+        "engines": null,
+        "dataFormat": "A self-hosted deployment stores analytics and account data in PostgreSQL; Umami Cloud stores it in Umami's managed service",
+        "gapVsPaid": "It exposes more configuration and dashboard complexity while offering fewer of Simple Analytics' reporting conveniences.",
+        "setupBlocker": "None for hosted signup; self-hosting requires Docker or Node hosting and a PostgreSQL database",
+        "sources": [
+          "https://github.com/umami-software/umami",
+          "https://github.com/umami-software/umami/blob/master/LICENSE",
+          "https://umami.is/docs/install",
+          "https://umami.is/docs/hosting",
+          "https://umami.is/pricing",
+          "https://simpleanalytics.com/"
+        ],
+        "checkedOn": "2026-08-10"
+      }
+    }
+  ],
+  "rejectedAlternatives": [],
+  "relatedSlugs": [
+    "umami-cloud",
+    "squarespace",
+    "wix"
+  ],
+  "pagePriority": 4,
+  "verifiedOneShot": false,
+  "notes": "Another strong yes; helps cluster analytics apps on the site.",
+  "prompt": "Build me privacy-first web analytics to replace Simple Analytics, self-hosted for my own\nsites. Requirements:\n\n- A Node + Express service with better-sqlite3: one /collect endpoint and a dashboard at\n  /dash behind basic auth (password in .env).\n- A tracker snippet under 1 KB of plain JS, no cookies: sends path, referrer, screen\n  width, and a daily-salted hash of IP + user agent for unique counting; the salt\n  rotates daily so nothing is traceable across days.\n- Keep raw hits 30 days; a nightly node-cron job aggregates into daily rollups per site\n  (pageviews, uniques, top pages, top referrers, device split), keeps rollups forever,\n  deletes expired raw hits.\n- Custom events via sa('signup') in the snippet, counted per day.\n- Dashboard per site: a 30-day chart (hand-rolled SVG, no chart library), pages and\n  referrers tables, a date-range picker.\n- Filter obvious bots by user-agent list; ignore my own visits via a localStorage opt-\n  out flag.\n- CSV export per site and month from the dashboard.\n- No cookies and no personal data stored, GDPR-sane by construction.\n- Out of scope: funnels, session replay, and multi-user access. Uptime is on me; the\n  collect endpoint sits behind my existing reverse proxy.\n- README: the snippet to paste and the Caddy or nginx route.",
+  "promptCurated": false
+}
