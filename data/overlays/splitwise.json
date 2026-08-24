@@ -1,0 +1,112 @@
+{
+  "slug": "splitwise",
+  "sourceHash": "sha256:35fb61f8f3f47759f131e1a2ea898e6706a2cf0e65124943088e51524ffd475f",
+  "generatedAt": "2026-08-24T10:40:55.759Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "intermediate",
+  "timeEstimate": "one-sitting",
+  "title": "Build your own group expense splitter (a personal Splitwise)",
+  "summary": "You will build a small web app where a household or trip group logs shared expenses and gets back the shortest list of repayments that settles everyone up. There are no accounts: a group lives at an unguessable link, and whoever holds the link can log and settle. Splitwise survives because the whole group already has it installed and its quiet reminders do the chasing, which is adoption rather than math. You are building for the people who share your fridge, and that is a perfectly good audience.",
+  "whatYoullLearn": [
+    "Modeling a shared ledger in SQLite with integer-cent arithmetic",
+    "Minimum cash flow debt simplification: turning a tangle of IOUs into the fewest repayments",
+    "Link-based access control with unguessable IDs instead of passwords",
+    "Flexible split logic for equal, exact, percentage and weighted shares",
+    "Multi-currency bookkeeping with a hand-maintained rate table, plus CSV and JSON export"
+  ],
+  "whatYouWontGet": [
+    "A web app you can add to a phone home screen; native iOS and Android builds stay out of scope",
+    "Your version starts with a blank member list; friends keep their Splitwise accounts and habits elsewhere",
+    "Currency conversion runs on rates you type in yourself and refresh by hand",
+    "Receipt scanning and itemized per-dish splits are deliberately excluded",
+    "Settlement ends at a who-pays-whom plan; payments themselves happen in person or in your payment app"
+  ],
+  "moatLessons": [
+    {
+      "tag": "network-effects",
+      "lesson": "Splitwise wins because everyone's flatmate already has it installed, so the group picks the tool, not the individual. Builders learn that shipping to a group you already coordinate with beats adding more features."
+    },
+    {
+      "tag": "execution-polish",
+      "lesson": "Polished apps and quiet balance reminders keep debts moving without awkward conversations. Builders learn that software doing the nagging is real product substance and worth copying in spirit."
+    },
+    {
+      "tag": "integrations",
+      "lesson": "Pro sells receipt scanning, automatic currency conversion and settle-up hooks into payment apps. Builders learn these connectors are the paid surface, and naming them out of scope keeps a personal build honest."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 22 and npm installed locally",
+    "Git and an account on a code host such as GitHub",
+    "A free-tier account on any small host (PaaS or a low-cost VPS) for the deploy step",
+    "Comfort running commands and editing files in a terminal; no accounting background needed"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the app and link-shared groups",
+      "body": "Hand the agent the boring foundation: an Express app with SQLite storage, server-rendered pages, and one-click groups that live at unguessable URLs. Members are just names typed into the group. When it finishes, run the server, create a group, and confirm the URL looks random.",
+      "why": "Scaffolding is precise boilerplate with no judgment calls, ideal for handing over whole while you review the diff.",
+      "prompt": "Build a link-shared expense splitter scaffold. Requirements:\n- Node 22 with Express, better-sqlite3, server-rendered EJS templates, htmx copied into public/vendor, no SPA framework and no build step\n- SQLite file at ./data/app.db with the path read from DATABASE_PATH in .env, commit a .env.example and gitignore .env\n- Create tables: groups (id TEXT primary key, name TEXT, base_currency TEXT, created_at TEXT) and members (id INTEGER primary key, group_id TEXT, name TEXT)\n- POST /groups creates a group whose id comes from nanoid at 21 characters, then redirects to /groups/<id>\n- GET /groups/<id> lets anyone add members as plain typed names, no signup screens of any kind\n- README states plainly that the unguessable link is the entire auth model\n- Pain warning: better-sqlite3 compiles native code, so if npm install fails check for a C compiler and python3 before suspecting the code\n- Out of scope: expense forms, balance math, styling, deployment"
+    },
+    {
+      "label": "WE",
+      "title": "Log expenses with flexible splits",
+      "body": "Drive the assistant through the heart of the app: recording who paid and how the cost divides. Work with it to validate four split modes and store resolved cents per person. Test by adding a pizza night split three ways, then edit it and check the activity log caught the change.",
+      "why": "Split math hides edge cases in parsing and rounding, so you want to steer and debug alongside the assistant rather than accept one big output.",
+      "prompt": "Add expense logging with flexible splits to the splitter from step 1. Requirements:\n- Each expense stores payer member id, amount in integer cents, currency code, ISO date, note and category\n- Support four split modes: equal, exact amounts, percentages and shares, validating that exact amounts sum to the total and percentages sum to 100 within a one cent tolerance\n- Persist resolved results in an expense_splits table (expense_id, member_id, value_cents) so later steps read final numbers rather than raw mode inputs\n- An htmx form posts to POST /groups/<id>/expenses and swaps in an updated expense list fragment, no full page reload\n- Every edit and delete appends a row to an activity_log table (group_id, entity, entity_id, action, created_at)\n- Log repayments as expenses with kind set to reimbursement so they can net against balances later\n- Pain warning: float money will bite, keep every amount and split as integer cents including form parsing\n- Out of scope: receipt photos, per-item splits, recurring expenses"
+    },
+    {
+      "label": "WE",
+      "title": "Compute balances and the settle-up plan",
+      "body": "This is the satisfying part: collapsing everyone's tangled IOUs into the fewest payments. Have the assistant implement the greedy creditor-debtor pairing, then you write the circular-debt test yourself and watch it collapse to zero transfers. Read the GeeksforGeeks walkthrough first if the algorithm feels opaque.",
+      "why": "Algorithm work rewards iterating with the assistant on tests and edge cases, not delegating blind, because wrong-but-plausible math is easy to miss in review.",
+      "prompt": "Add the balances view and the settle-up plan to the existing app. Requirements:\n- GET /groups/<id>/balances shows each member's net position: total paid minus total owed across expense_splits, with reimbursements netted in\n- Write a simplifyDebts function implementing minimum cash flow debt simplification, repeatedly pairing the largest creditor with the largest debtor until every net reaches zero\n- Render the result as a plain transfer list, one row per payment showing payer, recipient and amount, no buttons\n- Add a unit test where A owes B, B owes C and C owes A, asserting the plan collapses to zero transfers\n- Cover edge cases: a single-member group, and an equal split whose one cent remainder lands on the payer\n- Pain warning: the greedy approach gives few transfers in practice but is not provably optimal, resist rewriting it as a graph flow problem\n- Out of scope: interest calculations, date-aware settlement, any payment processing"
+    },
+    {
+      "label": "WE",
+      "title": "Add currencies and exports",
+      "body": "Trips spend in several currencies, so give each group a hand-edited rate table and convert only when balancing. Then wire CSV and JSON endpoints so the group's data always leaves cleanly. Verify by adding one expense in another currency and confirming the balance converts once, not twice.",
+      "why": "Rounding rules and column formats are small decisions with lasting consequences, the kind of chunk you direct closely while the assistant types.",
+      "prompt": "Add multi-currency handling and exports to the group splitter. Requirements:\n- Keep every expense amount in its original currency and add a rates table keyed by group and currency storing hand-entered rates to the group's base currency\n- Build a small settings section on the group page where members edit the rate table, with no external exchange rate API calls\n- Convert to the base currency only during balance computation, rounding once per member there\n- On the expense list show original amount and converted base amount side by side\n- Add GET /groups/<id>/export.csv and GET /groups/<id>/export.json streaming members, expenses, expense_splits and rates\n- Fix the CSV column order and document it in the README so future imports stay predictable\n- Pain warning: converting per display instead of per computation makes pennies drift between views, convert exactly once\n- Out of scope: live rates, historical rate lookups, automatic currency detection"
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Deploy it where your group can click the link",
+      "body": "Create a small server or free-tier app on the host of your choice, point a subdomain's DNS record at it, and enable HTTPS. Set DATABASE_PATH as a host environment variable, mount persistent storage for the data directory, and schedule a nightly backup of app.db. Send the link to your group and log the first real expense together.",
+      "why": "Provider consoles and DNS panels are human-only surfaces, so account creation and record changes belong to you, not the agent.",
+      "prompt": null
+    }
+  ],
+  "stretchGoals": [
+    "Add a PWA manifest so the app installs to a phone home screen",
+    "Give each member a personal link that highlights only their own balance",
+    "Write an importer for a Splitwise CSV export so one real group can migrate over"
+  ],
+  "resources": [
+    {
+      "title": "Minimize cash flow among friends (GeeksforGeeks)",
+      "url": "https://www.geeksforgeeks.org/minimize-cash-flow-among-given-set-friends-borrowed-money/",
+      "note": "Explains the exact debt-simplification algorithm behind your settle-up plan"
+    },
+    {
+      "title": "Spliit (source code)",
+      "url": "https://github.com/spliit-app/spliit",
+      "note": "An open-source reference implementation worth reading when data modeling gets tricky"
+    },
+    {
+      "title": "Spliit (hosted)",
+      "url": "https://spliit.app",
+      "note": "Try a finished link-shared splitter before building your own"
+    },
+    {
+      "title": "IHateMoney",
+      "url": "https://ihatemoney.org",
+      "note": "A long-running self-hosted splitter, useful for comparing scope decisions"
+    }
+  ]
+}

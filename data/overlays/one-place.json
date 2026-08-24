@@ -1,0 +1,121 @@
+{
+  "slug": "one-place",
+  "sourceHash": "sha256:4271b4f1650e0fa834c39f89ee509b4acfdf65ddfd401bbd44bd5eda73111fac",
+  "generatedAt": "2026-08-24T11:19:54.234Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "advanced",
+  "timeEstimate": "multi-week",
+  "title": "Build your own scheduled property watcher (a personal One Place)",
+  "summary": "You will build a small Node.js service that runs your saved property searches on a schedule: it fetches the listing pages you point it at, uses an LLM (a large language model accessed through an API) to pull structured fields like price and rooms out of the page HTML, deduplicates results into a local SQLite database, and emails you when something matches. An MCP server (Model Context Protocol, a standard way for chat agents to call tools) lets you run searches and log lead notes straight from Claude or Codex. You are not rebuilding the market itself: One Place survives because it operates a crawler fleet across European portals and keeps millions of listings normalized and searchable every day, which is company-scale work.",
+  "whatYoullLearn": [
+    "Schedule recurring jobs with node-cron and track last-run state in SQLite",
+    "Automate a headless browser with Playwright and keep raw HTML snapshots for debugging",
+    "Prompt an LLM API for strict JSON extraction and validate fields before storing them",
+    "Dedupe messy listings by canonical URL first, then fuzzy title-price-surface-location comparison",
+    "Expose tools over MCP so coding agents can operate your app from chat"
+  ],
+  "whatYouWontGet": [
+    "Coverage equals the sources you configure; the index starts empty and grows run by run",
+    "Each source stays yours to maintain when a portal changes its markup or tightens bot checks",
+    "Extraction and dedupe run at one person's search volume, with no image or semantic search",
+    "Locations remain text unless you add your own geo or points-of-interest enrichment",
+    "Single operator, single database: hosted boards, lead sharing, and team pipelines sit outside this build"
+  ],
+  "moatLessons": [
+    {
+      "tag": "proprietary-data",
+      "lesson": "One Place's real asset is a continuously refreshed, normalized corpus of European listings that took years to assemble. The builder's takeaway: when the dataset is the product, a personal tool competes on being first to alert you about your own criteria, not on covering the market."
+    },
+    {
+      "tag": "scale-infra",
+      "lesson": "Keeping crawlers alive across dozens of portals that change markup, throttle bots, and spawn duplicates is an operations problem, not a code problem. Design your watcher for source breakage: snapshots on disk, loud failure logging, and quick per-source fixes are what keep a one-person fleet maintainable."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 20+ and npm installed locally",
+    "Playwright Chromium installed with npx playwright install chromium",
+    "An LLM API key (Anthropic or OpenAI) ready to place in .env",
+    "A Resend account with API key, or SMTP credentials, for outgoing email",
+    "One or two real-estate search URLs you are permitted to check programmatically; read each site's robots.txt and terms first",
+    "Comfort editing JavaScript and running commands in a terminal; no database server needed, better-sqlite3 stores everything in a file"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the watcher service",
+      "body": "Start from an empty folder and have your agent lay down the skeleton: an Express server bound to localhost port 4920, a better-sqlite3 database file at data/app.db, and a health route returning JSON. Run it, hit the health route in a browser, and confirm the database file appears before moving on.",
+      "why": "Scaffolding is precise boilerplate with no judgment calls, the textbook case for handing a chunk to an agent whole.",
+      "prompt": "Build a Node.js project called property-watcher. Requirements:\n- Node 20+, Express, better-sqlite3 with the database file at data/app.db created on first run\n- Server binds to 127.0.0.1:4920 and logs the URL on start\n- GET /api/health returns the JSON {\"ok\":true}\n- Folder layout: src/server.js entrypoint, src/db.js owns the database handle, public/ served as static files at /\n- npm run dev uses node --watch for restart-on-change\n- .env holds PORT=4920 plus commented placeholders LLM_API_KEY and EMAIL_API_KEY, nothing hardcoded\n- Pain warning: better-sqlite3 is synchronous by design, do not wrap calls in extra promise layers\n- Out of scope: auth, HTTPS, Docker, and anything beyond a placeholder index.html"
+    },
+    {
+      "label": "WE",
+      "title": "Model saved searches and a small control panel",
+      "body": "Add a saved_searches table and a plain HTML form so you can create and edit searches in the browser. Each row carries a name, one or more source URLs, natural-language criteria, hard filters such as a maximum price, a cadence, and recipient emails. Verify by saving one real search and reading it back through a debug route.",
+      "why": "Schema choices shape every later step, so you steer the assistant here instead of delegating the decisions.",
+      "prompt": "Add saved search management to property-watcher. Requirements:\n- Table saved_searches: id, name, source_urls (JSON array), criteria_text, filters_json, cadence_cron, recipients (JSON array), enabled, last_run_at, created_at, updated_at\n- REST routes under /api/searches: create, list, get, update, delete, with input validation\n- A form page at public/searches.html listing searches with edit and delete buttons\n- filters_json holds price_max, rooms_min, surface_min, location_terms\n- cadence_cron is a cron string like */30 * * * *, defaulting to every 30 minutes\n- Add GET /api/searches/:id/debug returning the parsed row as JSON for testing\n- Pain warning: validate cron strings at save time or silent scheduler bugs follow\n- Out of scope: user accounts, drag-and-drop boards, rich text editors"
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Get keys and choose your sources",
+      "body": "Create an account with an LLM provider and copy an API key into .env, then do the same for Resend or your SMTP provider. Pick one or two real-estate search pages you personally want watched, open their robots.txt and terms, and confirm automated checking is tolerated. Save those URLs into a saved search using the panel from the previous step.",
+      "why": "Provider dashboards, signups, and the legal judgment of what you may crawl are human-only work no agent should do for you.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Fetch listing pages with Playwright",
+      "body": "Build the fetcher that loads each source URL in headless Chromium and saves the raw HTML under snapshots/<searchId>/<timestamp>.html. Trigger it by hand first through a run route so you can watch one real page land on disk. Portal pages are heavy and flaky, so log navigation time and keep timeouts generous.",
+      "why": "Fetching strategy needs live experimentation against real portals, exactly the loop where you drive and the assistant types.",
+      "prompt": "Set up Playwright fetching for property-watcher. Requirements:\n- Install playwright and chromium once via npx playwright install chromium\n- src/fetcher.js exports runSearch(searchId): loads each source URL from saved_searches, waits for networkidle, saves the HTML\n- Snapshots go to snapshots/<searchId>/<ISO timestamp>.html next to a meta.json with final URL and HTTP status\n- POST /api/searches/:id/run triggers runSearch and returns the snapshot paths\n- Set a 45 second timeout per page and record every attempt in a runs table: id, search_id, started_at, status, error\n- Reuse the database handle from src/db.js and the search rows created in the previous step\n- Pain warning: some portals lazy-load listings, scroll to the bottom before saving the HTML\n- Out of scope: proxy rotation, CAPTCHA solving, parallel browser pools"
+    },
+    {
+      "label": "WE",
+      "title": "Extract structured listings with an LLM",
+      "body": "Send each new snapshot's cleaned HTML to the LLM and get back strict JSON: title, price, currency, surface, rooms, location text, description, image URLs, source URL, and a confidence score. Validate every response against that schema and quarantine anything malformed instead of storing guesses. Test against the snapshots you already captured so extraction is repeatable offline.",
+      "why": "Extraction quality depends on iterating prompts against real pages, a judgment loop the learner should own.",
+      "prompt": "Add LLM extraction to property-watcher. Requirements:\n- src/extract.js reads a snapshot from snapshots/<searchId>/, strips script and style tags, sends the cleaned HTML to the model behind LLM_API_KEY from .env\n- The extraction prompt demands strict JSON: title, price, currency, surface_m2, rooms, location_text, description, image_urls, source_url, confidence between 0 and 1\n- Parse with JSON.parse after stripping markdown fences, write failures to rejects/<timestamp>.json instead of the database\n- Store listings in a listings table keyed by canonical source_url, keeping extracted_at and the snapshot path\n- Log token counts per request and abort the batch after three consecutive failures\n- Pain warning: models invent prices on truncated pages, cap input at the first 200 KB and tell the model when text was cut\n- Out of scope: image analysis, translation, sentiment scoring"
+    },
+    {
+      "label": "WE",
+      "title": "Match, dedupe, and track price changes",
+      "body": "Connect extractions to your saved criteria. Apply the hard filters from filters_json deterministically first, then ask the LLM for a yes-or-no call with a one-line explanation on fuzzy preferences such as renovation potential. Deduplicate by canonical URL first and by title-plus-price-plus-surface-plus-location similarity second, appending to a price_history table whenever a known listing changes price.",
+      "why": "Matching thresholds and duplicate tolerance encode your taste in results, so this logic stays under your direction.",
+      "prompt": "Add matching and deduplication to property-watcher. Requirements:\n- src/match.js evaluates each new listing against its saved_searches row: deterministic filters_json checks first, then one LLM yes/no call with a one sentence reason against criteria_text\n- Store decisions in a matches table: listing_id, search_id, decided_at, passed, reason\n- Dedupe in two passes: normalize the canonical URL, then fuzzy compare title, price, surface, and location with string similarity above 0.9\n- On a duplicate with a new price, insert into price_history (listing_id, price, seen_at) and update the listings row\n- Log every match decision with its inputs so false positives are debuggable later\n- Pain warning: portals republish the same unit under different URLs, expect the fuzzy pass to catch most duplicates\n- Out of scope: machine-learned ranking, vector databases, cross-source identity resolution"
+    },
+    {
+      "label": "WE",
+      "title": "Email alerts and the scheduled pipeline",
+      "body": "Wire node-cron so every enabled search runs on its cadence through the full pipeline: fetch, extract, match, notify. New matches go out through Resend or SMTP with the match reason, key fields, the source link, and a per-search disable link. Confirm the loop by setting a one-minute cadence and receiving a real email end to end.",
+      "why": "Scheduling glues every earlier artifact together, a systems-integration task best done interactively with an assistant at your side.",
+      "prompt": "Add scheduling and email alerts to property-watcher. Requirements:\n- node-cron reads cadence_cron from each saved_searches row and runs runSearch, extract, match, notify in order, updating last_run_at\n- Guard against overlapping runs with an in-memory lock per search id\n- Send email via Resend using EMAIL_API_KEY from .env, falling back to SMTP through nodemailer when SMTP_URL is set\n- Each alert shows match reason, price, surface, rooms, location, the source link, and a /unsubscribe/<searchId> link that sets enabled=false\n- Record sends in a sent_alerts table so the same listing never emails twice\n- Expose POST /api/run-all for manual full-pipeline testing\n- Pain warning: cron inside a dev process dies with the terminal, document pm2 or launchd in the README\n- Out of scope: fancy HTML email templates, digest batching, push notifications"
+    },
+    {
+      "label": "WE",
+      "title": "Open it to agents with an MCP server",
+      "body": "Finish by exposing the watcher over MCP so you can ask Claude or Codex to run a search now or log a lead note without touching the UI. Implement six tools: list_saved_searches, run_search_now, get_recent_matches, explain_match, update_search, and add_lead_note. Connect it in your agent's config and drive the whole watcher from a chat window.",
+      "why": "Tool surface design is the payoff skill of this build, worth doing hand-in-hand while you test each call from a real agent.",
+      "prompt": "Add an MCP server to property-watcher. Requirements:\n- Use @modelcontextprotocol/sdk over stdio in src/mcp.js, started via npm run mcp\n- Tools: list_saved_searches, run_search_now, get_recent_matches, explain_match, update_search, add_lead_note\n- Reuse src/db.js and existing logic directly, do not call the HTTP endpoints from the MCP layer\n- add_lead_note writes to a lead_notes table: id, listing_id, note, created_at\n- Return concise JSON strings from each tool and validate ids before touching rows\n- Document the Claude Desktop and Codex config JSON snippets in the README\n- Pain warning: stdio servers crash silently on console.log noise, route all logging to stderr\n- Out of scope: remote transport, authentication on the MCP socket, streaming responses"
+    }
+  ],
+  "stretchGoals": [
+    "Send a weekly digest email summarizing price drops across all searches",
+    "Geocode matched listings and plot them on a simple map view",
+    "Track source health and alert yourself when a portal starts returning empty pages"
+  ],
+  "resources": [
+    {
+      "title": "One Place",
+      "url": "https://one-place.com",
+      "note": "The paid product itself, useful for seeing what a market-wide index offers beyond a personal watcher."
+    },
+    {
+      "title": "One Place pricing",
+      "url": "https://one-place.com/pricing",
+      "note": "Shows where the free plan ends: unlimited search and alerts, capped at five boards, with Pro adding pipeline and agentic search."
+    }
+  ]
+}

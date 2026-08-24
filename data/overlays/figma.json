@@ -1,0 +1,115 @@
+{
+  "slug": "figma",
+  "sourceHash": "sha256:e88dd9b7407b85d304a2ac2d3b753839ad20484256599ee37fe3ec558447f049",
+  "generatedAt": "2026-08-24T11:05:40.127Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "advanced",
+  "timeEstimate": "not-solo",
+  "title": "Build your own vector canvas editor (a personal Figma)",
+  "summary": "You'll build a single-player vector canvas editor that runs entirely in the browser: rectangles, ellipses, text and frames you can select, move, restyle, and export as SVG or PNG, with documents saved locally. A canvas is the browser's drawing surface, and vector means shapes are stored as coordinates and paths rather than pixels, so they stay sharp at any zoom. This is a weekend-scale sketch of Figma's core idea, and it stops being a toy exactly where Figma's business begins: many people editing the same file at once. Teams pay Figma because the product is coordination inside one live document, not because drawing rectangles is hard.",
+  "whatYoullLearn": [
+    "Rendering a scene graph, a plain list of shape objects, onto an HTML canvas every frame",
+    "Hit testing and handle math: turning pointer coordinates into selections, moves, and resizes",
+    "Designing a small JSON document model with versioned import and export",
+    "Persisting structured data offline with IndexedDB",
+    "Judging which parts of a product are features you can build versus infrastructure you cannot"
+  ],
+  "whatYouWontGet": [
+    "Editing stays single-player: two people opening the same file will not see each other's changes",
+    "Files stay on your machine unless you export them, so there are no share links, comments, or team workspaces",
+    "There is no plugin system, so the tool does exactly what you build into it and nothing more",
+    "Large files with hundreds of shapes may stutter, since this build skips years of rendering optimization",
+    "Existing Figma files will not import"
+  ],
+  "moatLessons": [
+    {
+      "tag": "collaboration",
+      "lesson": "Figma's hardest part is invisible: multiplayer editing built on CRDTs (conflict-free replicated data types, data structures that merge simultaneous edits without conflicts) running on servers tuned for millions of live sessions. The builder takeaway is that 'just sync the shapes' is a distributed-systems problem wearing a design tool's clothes."
+    },
+    {
+      "tag": "network-effects",
+      "lesson": "Figma wins because the file everyone else already opens is the file everyone keeps opening; leaving means moving your whole team at once. The builder takeaway is that shared-file gravity beats feature checklists, so personal tools are wisest aimed at workflows no crowd has settled."
+    },
+    {
+      "tag": "execution-polish",
+      "lesson": "A decade of canvas engineering sits under Figma's feel: instant edits and smooth zooming on enormous files. The builder takeaway is that performance work is cumulative and unglamorous, users read it as quality, and shipping an honest 80 percent, clearly labeled, is a respectable outcome."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 20 or newer installed (check with: node --version)",
+    "A code editor such as VS Code",
+    "A current version of Chrome, Edge, or Firefox, plus basic DevTools familiarity",
+    "Git installed for checkpoint commits as you go",
+    "No accounts needed: the build is local-first and everything stays in your browser"
+  ],
+  "steps": [
+    {
+      "label": "WE",
+      "title": "Scaffold the editor and render a document",
+      "body": "Create a Svelte and Vite project, then define the heart of the app: a document object holding a plain list of shapes with ids, types, and geometry. Write a render function that clears the canvas and draws each shape in order, and confirm you can see seeded shapes before touching interaction code. Keeping rendering separate from input now pays off later, when selection and export both reuse it.",
+      "why": "You drive because the data model sets every later decision; assistants scaffold fine, but the schema should be yours.",
+      "prompt": "Build a single-page vector canvas editor scaffold. Requirements:\n- Svelte 5 with Vite: npm create vite@latest canvas-editor -- --template svelte, dev server on localhost:5173\n- src/lib/document.js exports createDocument() returning { id, name, schemaVersion: 1, shapes: [] }, where a shape is { id, type: 'rect' | 'ellipse' | 'text', x, y, width, height, fill, stroke, strokeWidth, cornerRadius }\n- src/lib/render.js exports render(ctx, doc) that clears the canvas and draws shapes in array order\n- Seed the app with 3 rects, including one frame-sized backdrop, and 1 text node, so the first paint shows 4 shapes\n- Full-window canvas element with devicePixelRatio scaling so edges stay crisp\n- No backend, no router, no state library; module-level state is fine\n- No secrets are needed today; if any key ever appears it goes in .env and stays uncommitted\n- Out of scope: pan, zoom, undo, and any networking; do not add a sync layer\nPain warning: canvas text metrics vary by platform, so fix text nodes at fontSize 16 with the default font for now."
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Selection, move, and resize handles",
+      "body": "Hand over a precisely specified interaction chunk: click to select, drag to move, drag eight handles to resize. Geometry like this is deterministic, self-contained, and easy to verify visually, which makes it ideal to delegate whole. Your job is writing the spec tightly, then poking the edges: tiny shapes, negative drags, shapes stacked on top of each other.",
+      "why": "Delegate because hit-testing math is a closed problem with visual acceptance checks; writing those checks yourself is the skill.",
+      "prompt": "Add selection, move and resize to the canvas editor. Requirements:\n- Reuse src/lib/document.js shapes and src/lib/render.js; track the selection in a new src/lib/editorState.js\n- Click selects the topmost shape whose bounds contain the pointer; clicking empty canvas deselects; Escape deselects\n- Dragging the body moves the selected shape; 8 square handles (corner handles 8px, edge handles 6px) resize it with a minimum size of 8x8\n- Holding Shift while dragging a corner handle preserves aspect ratio\n- Draw outlines and handles in a new src/lib/overlay.js so render.js stays a pure function\n- Cursor feedback: move cursor over the body, directional resize cursors over each handle\n- Out of scope: multi-select, grouping, snapping, and rotation; do not add them\nVerify against a rect, an ellipse and a text node; if resize misbehaves for one type, report it rather than silently special-casing."
+    },
+    {
+      "label": "WE",
+      "title": "Style controls: fill, stroke, and corner radius",
+      "body": "Connect the selection to a right-hand properties panel so clicking a shape exposes editable fill, stroke, stroke width, and corner radius. Do this one yourself: wiring form inputs to your own document model tests every assumption from step one, and the debugging is where the learning lives. Watch the full chain flow: input event, model mutation, re-render, pixels.",
+      "why": "You drive because gluing UI to your own data model surfaces design mistakes early; delegating it hides them until they are expensive.",
+      "prompt": "Add a properties panel bound to the selected shape. Requirements:\n- A right-side panel 240px wide with fill (color input), stroke (color input), strokeWidth (number input, min 0) and cornerRadius (number input, min 0)\n- Edits mutate the shape immediately and trigger render; no Apply button\n- With nothing selected, show the document name and shape count instead of controls\n- Text nodes get a text-content textarea alongside their fill control\n- Show cornerRadius for rects only; hide the field for ellipses and text\n- Store all colors as hex strings in the document so future JSON export round-trips cleanly\n- Out of scope: gradients, opacity, typography settings, saved style libraries\nKnown friction: number inputs fire events faster than renders want; batch updates with requestAnimationFrame if typing feels laggy."
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Layers list with drag-reorder",
+      "body": "A layers list mirrors the shapes array as rows and lets dragging reorder them, which changes paint order on the canvas. It consumes state that already exists, touches no geometry, and has obvious done criteria: list order equals array order. That isolation is exactly what makes it safe to hand away.",
+      "why": "Delegate because the component wraps existing state with zero geometry risk, and specifying a clean props-in, events-out contract is worth practicing.",
+      "prompt": "Add a layers panel with drag-reorder. Requirements:\n- New LayersPanel.svelte docked left, 200px wide, one row per shape showing the type initial and a shortened shape.id\n- Rows render in the same order as document.shapes; the top row paints last, matching canvas stacking\n- Reorder with HTML5 drag-and-drop or pointer events; on drop, splice document.shapes to match the list and call render\n- Clicking a row selects that shape and syncs the properties panel from the previous step\n- Double-clicking a row renames it via a new name property on the shape model\n- Out of scope: nested groups, visibility toggles, locks, thumbnails\nAcceptance check: drag a text row above a rect row and confirm the canvas repaint order matches immediately, no reload."
+    },
+    {
+      "label": "WE",
+      "title": "Local persistence and JSON import/export",
+      "body": "Make the editor survive a refresh by saving the document to IndexedDB, the browser's built-in database for structured data, shortly after each change. Then add explicit actions that download the document as .json and load one back, turning your work into portable files you own. Autosave protects the session; export creates ownership.",
+      "why": "You drive because storage decisions set data safety forever, and watching your own file fail to round-trip teaches serialization better than review ever will.",
+      "prompt": "Add persistence and JSON import/export to the canvas editor. Requirements:\n- src/lib/storage.js opens an IndexedDB database named canvas-editor with an object store called documents keyed by id\n- Save 500ms after the last mutation using a debounce helper; restore the newest saved document on startup\n- Export JSON downloads <docname>.json via Blob and URL.createObjectURL; Import JSON reads with FileReader, checks that shapes is an Array, then loads it\n- Reject files whose schemaVersion is missing or not 1, with a visible inline message\n- Use IndexedDB only; leave localStorage untouched\n- Out of scope: cloud sync, encryption, multi-document tabs, and conflict resolution between autosave versions\nTest honestly: export, make a bad edit, refresh, import, and confirm ids, names, positions and hex colors come back unchanged in the JSON."
+    },
+    {
+      "label": "WE",
+      "title": "Export SVG and PNG, then write the honest README",
+      "body": "Finish by exporting the current selection: serialize chosen shapes to SVG markup, the vector format browsers render natively, and rasterize the same markup to PNG through an offscreen canvas. Then write a README that states plainly what this is, a single-player sketch, and points readers who need real-time collaboration to Penpot or Excalidraw. Naming the boundary is part of the craft.",
+      "why": "You drive because export correctness is judged by your own eyes and the README carries the lesson's judgment call; neither fits fire-and-forget delegation.",
+      "prompt": "Add SVG and PNG export for the current selection. Requirements:\n- src/lib/exportSvg.js maps each selected shape to SVG elements: rect with rx for cornerRadius, ellipse, text as a text element; wrap them in an svg element with xmlns and a viewBox sized to the selection bounding box plus 16px padding\n- src/lib/exportPng.js turns that SVG string into a blob URL, draws it onto an offscreen canvas at 2x scale, and downloads a PNG via toBlob\n- Two toolbar buttons, active only while a selection exists\n- fill, stroke, strokeWidth, cornerRadius and text content must all appear in the SVG output\n- Write README.md covering: what it is (a single-player canvas sketch), how to run it (npm install, npm run dev), the schemaVersion note, and pointers to Penpot and Excalidraw for anyone needing real-time collaboration\n- Out of scope: PDF export, SVG import, clipboard copy, print stylesheets\nCheck by exporting one shape of each type and opening the resulting SVG in a fresh browser tab."
+    }
+  ],
+  "stretchGoals": [
+    "Add keyboard shortcuts: Delete removes, Ctrl/Cmd+D duplicates, arrow keys nudge 1px and Shift+arrow nudges 10px",
+    "Feel the multiplayer wall firsthand: sync two browser tabs with Yjs over a 30-line WebSocket server and watch conflict handling get complicated",
+    "Add a minimal component system: mark a shape as a symbol and let copies inherit its style edits"
+  ],
+  "resources": [
+    {
+      "title": "Penpot",
+      "url": "https://github.com/penpot/penpot",
+      "note": "The serious open-source design tool; its repo shows what real multiplayer design software actually takes."
+    },
+    {
+      "title": "Excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "note": "Readable source for a collaborative whiteboard; a great reference for canvas interaction code."
+    },
+    {
+      "title": "Quant-UX",
+      "url": "https://github.com/KlausSchaefers/quant-ux",
+      "note": "Open-source prototyping and user-testing tool; useful for comparing scope decisions against your own build."
+    }
+  ]
+}

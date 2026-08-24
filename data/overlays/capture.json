@@ -1,0 +1,115 @@
+{
+  "slug": "capture",
+  "sourceHash": "sha256:0e1758bb60afddf8580583d5cd3b74562cfb001473554c32898dc1d7c864ac89",
+  "generatedAt": "2026-08-24T10:47:29.588Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "intermediate",
+  "timeEstimate": "multi-day",
+  "title": "Build your own quick-capture inbox (a personal Capture)",
+  "summary": "You build a two-platform capture inbox: an iPhone app with a share extension and a home-screen widget, plus a Mac menu bar window, all syncing one inbox through your own iCloud via CloudKit. Items can be text, links, images, or files, sorted into lists and forwarded to the few destinations you actually use, like Reminders, Bear, or a Mail draft. Capture still earns its $19.99 because it maintains that loop across five Apple platforms and more than forty export destinations, each of which can change without warning; your version deliberately covers only the platforms and exporters you rely on.",
+  "whatYoullLearn": [
+    "Modeling one shared SwiftData schema in a Swift package that separate iOS and macOS targets both import",
+    "Enabling App Groups and CloudKit entitlements and syncing a private iCloud database with offline-first writes",
+    "Building a share extension and a WidgetKit widget so any app on the phone can send content into your inbox",
+    "Adding a macOS menu bar app with a global hotkey that opens a compact capture window",
+    "Isolating each export destination (EventKit, mailto, third-party URL schemes) behind a single adapter file"
+  ],
+  "whatYouWontGet": [
+    "This build targets iPhone and Mac; iPad refinement, Apple Watch, and Vision Pro are outside the lesson's scope",
+    "Sync uses documented last-write-wins handling rather than years of hardened CloudKit conflict and migration work",
+    "Exports cover the six destinations wired in the final step, not a maintained catalog of forty-plus integrations",
+    "Testing covers your own devices and language; broader localization and accessibility passes remain open work",
+    "When Apple or a destination app changes behavior, updating the affected adapter happens on your schedule"
+  ],
+  "moatLessons": [
+    {
+      "tag": "execution-polish",
+      "lesson": "Capture runs the same capture-and-dispatch loop on iPhone, iPad, Mac, Watch, and Vision Pro, with localization and accessibility folded in, and that consistency across screen sizes and OS versions is itself the product. The builder's takeaway is to scope hard: two platforms finished properly beat five half-covered, so decide early which surfaces earn your polish budget."
+    },
+    {
+      "tag": "integrations",
+      "lesson": "Every one of Capture's 40-plus exporters tracks a third-party app whose URL scheme, API, or content rules can shift on its own schedule, and customers pay precisely to skip that upkeep. The builder's takeaway is to treat each integration as an ongoing promise, wire only destinations you genuinely use, and keep every exporter behind its own single-file adapter so repairs stay local and cheap."
+    }
+  ],
+  "prerequisites": [
+    "A Mac with Xcode 16 or later installed (free on the Mac App Store)",
+    "A paid Apple Developer Program membership ($99 per year); CloudKit sync will not run on the free tier",
+    "An iPhone on iOS 18 or later, signed into the same Apple ID and iCloud account as the Mac",
+    "Comfort reading Swift and SwiftUI, or patience to ask your AI assistant to walk through each file it produces"
+  ],
+  "steps": [
+    {
+      "label": "WE",
+      "title": "Scaffold one project, two apps, one shared model",
+      "body": "Create the Xcode workspace with an iOS app, a macOS menu bar app, and a local Swift package called CaptureCore holding the model and logic. A Swift package is a bundle of reusable Swift code that both apps import, so you fix each bug once. Get both apps building and persisting a single test item locally before adding any features. When SwiftData macro errors appear, paste them straight to your assistant and iterate together.",
+      "why": "Setup depends on your machine's Xcode state and proceeds by error-pasting, the classic case for driving with an assistant beside you rather than delegating blind.",
+      "prompt": "Build the Xcode workspace skeleton for a two-platform quick-capture inbox. Requirements:\n- One repo named QuickCapture with three parts: an iOS app target, a macOS menu bar app target, and a local Swift package named CaptureCore that both apps import.\n- CaptureCore defines CaptureItem as a SwiftData @Model with fields: id UUID, kind enum (text, url, image, file), body String, optional fileURL, listName String, isArchived Bool, createdAt Date, updatedAt Date.\n- Persistence is local-first: a SwiftData ModelContainer writing to each platform's Application Support directory, no CloudKit yet.\n- The iOS app opens on InboxView listing items newest-first, with a + button that saves typed text or a pasted URL as a CaptureItem.\n- The macOS target shows a menu bar icon (SF Symbol) that opens a small window containing the same capture field.\n- Acceptance: both schemes build clean, creating and deleting an item works on each platform.\n- Out of scope: device-to-device sync, share extensions, widgets.\n- Pain warning: SwiftData macros are strict about property types, keep every non-id property optional-friendly so migrations stay easy."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Sign in to Xcode and enable App Groups and iCloud",
+      "body": "Open Signing & Capabilities on all three targets and add the iCloud capability with CloudKit selected, plus an App Group such as group.com.yourname.quickcapture. An App Group is Apple's permission slip that lets multiple targets read the same container, and CloudKit is the Apple service behind private iCloud sync. This step requires your personal Apple ID inside Xcode's signing pane, which is exactly why it stays human-only. Finish by confirming the iOS simulator and a physical iPhone both build with provisioning in place.",
+      "why": "Capability panes authenticate against your Apple ID session, a console surface no assistant can touch, so the prompt is correctly null.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Build the full iOS inbox",
+      "body": "Flesh out InboxView from step 1 so it captures text, links, images, and files, archives and deletes with undo, and searches everything. NSDataDetector is Apple's built-in text scanner that finds URLs, phone numbers, and dates inside plain strings, which makes captured content tappable. Seed fifty fake items so search and undo get genuinely exercised rather than assumed. At the end of this step the iPhone app stands alone as a usable inbox, even though nothing syncs yet.",
+      "why": "Feature work rewards pair-driving: the assistant drafts views quickly while you judge interaction feel and catch simulator quirks in the loop.",
+      "prompt": "Add the complete inbox experience to the iOS app from step 1, importing CaptureCore. Requirements:\n- InboxView shows sections Inbox and Archive grouped by listName, supports swipe-to-archive and swipe-to-delete, and offers an Undo button active for 10 seconds after each action.\n- The capture editor accepts typed text, pasted URLs, photos via PhotosPicker, and files via fileImporter, saving through the CaptureItem model in CaptureCore.\n- Run NSDataDetector over saved text so URLs, phone numbers, and dates render tappable on the detail view.\n- Add a .searchable full-text field over body; verify results update in under 100ms against 500 seeded rows.\n- Include a DEBUG-only seeding function that inserts 50 demo items on first launch.\n- Out of scope: any networking, and CloudKit stays off until the Mac step.\n- Pain warning: PhotosPicker returns different payload types depending on iOS version, normalize everything to JPEG Data before saving."
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Hand off the share extension and the widget",
+      "body": "A share extension is a mini-app that appears in any app's share sheet, and the widget adds one-tap capture from the home screen. Both are tightly standardized boilerplate wrapped around your existing CaptureCore model, which makes them perfect to delegate whole. After reviewing the generated code, check that both new targets carry the same App Group identifier you created in step 2. Then test honestly: share a Safari link into the extension and confirm it appears in the inbox after relaunching the app.",
+      "why": "Extensions and widgets follow rigid Apple templates with almost no design freedom, so a precise whole-task handoff beats typing them interactively.",
+      "prompt": "Add an iOS share extension and a WidgetKit widget to the QuickCapture project from steps 1-3. Requirements:\n- A share extension named QuickCaptureShare that appears in the share sheet, accepts URLs, text, images, and files, and writes a CaptureItem into the shared App Group container group.com.yourname.quickcapture using the CaptureCore package.\n- The extension UI is one screen: a preview of the captured content plus an editable listName field, and Save dismisses the extension.\n- A medium-size WidgetKit widget named QuickCaptureWidget with one button that deep-links into the app with a new-capture draft prefilled.\n- Both new targets carry the identical App Group and iCloud entitlements already configured on the main app.\n- Acceptance: sharing a link from Safari creates an inbox item visible after reopening the app.\n- Out of scope: watchOS targets and lock-screen widgets.\n- Pain warning: share extensions run under tight memory limits, so decode image thumbnails lazily instead of loading full assets."
+    },
+    {
+      "label": "WE",
+      "title": "Bring up the Mac menu bar window and switch on sync",
+      "body": "Replace the Mac placeholder window with a compact capture view that reuses CaptureCore, opened anywhere by a global hotkey, then point CaptureCore's SwiftData configuration at CloudKit. Last-write-wins means the most recent edit prevails when two devices edited the same item while offline, and you state that plainly in README.md rather than hiding it. Verify the whole chain: capture on the iPhone, then watch the item surface on the Mac. First syncs can lag for several minutes, so resist rapid-fire retesting.",
+      "why": "Sync debugging mixes your accounts, your devices, and real-world timing, calls only you can make, so drive this step with the assistant advising.",
+      "prompt": "Wire the macOS menu bar app to the shared store and activate CloudKit sync. Requirements:\n- Replace the placeholder Mac window with a compact capture view reusing CaptureCore and CaptureItem, toggled from anywhere by a global hotkey (Option-Space default, configurable in settings).\n- Configure CaptureCore's SwiftData ModelConfiguration to back onto the CloudKit private database, with automatic retries while offline and last-write-wins conflict resolution.\n- Use the same App Group id group.com.yourname.quickcapture and container identifiers as steps 2 and 4 so iOS, Mac, and the share extension read one store.\n- Produce a short test plan in your reply: create an item in the iPhone simulator, confirm it appears in the Mac window within a minute while online.\n- Write README.md at the repo root documenting the enabled entitlements (App Groups, iCloud/CloudKit) and stating plainly that CloudKit sync requires a paid Apple Developer account.\n- Out of scope: Apple Watch and Vision Pro builds.\n- Pain warning: the first CloudKit push can take minutes to propagate, so wait before assuming sync is broken."
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Delegate the six exporters and the JSON escape hatch",
+      "body": "Exports are the payoff of the whole inbox: send any item onward or pull everything back out. Six small adapter files behind one protocol is a textbook delegable batch, since each file has a fixed shape and clear inputs. Delegate it, then do the part automation cannot: run each exporter once against the real destination app and confirm the result. The dated JSON export doubles as your proof that notes are never trapped in your own app.",
+      "why": "Six isolated files conforming to one fixed protocol is the definition of a safe delegation, while validating each against live apps stays firmly your job.",
+      "prompt": "Add destination export actions to the QuickCapture inbox built in steps 1-5. Requirements:\n- Create a folder Sources/CaptureCore/Exporters containing exactly one Swift file per destination: RemindersExporter.swift, CalendarExporter.swift (both via EventKit), MailDraftExporter.swift (mailto URL), ThingsExporter.swift and BearExporter.swift (their x-callback URL schemes), and MarkdownExporter.swift that copies the item as Markdown text.\n- All exporters conform to one CaptureExporting protocol returning success or a readable error message shown as an alert.\n- Add a context menu on each CaptureItem row listing all exporters; exports must never block the main thread.\n- Add a JSON export action that writes every item to a user-chosen file via a save panel, timestamps in ISO8601 format.\n- No secrets and no network calls anywhere in Exporters, everything rides on system frameworks and URL schemes.\n- Out of scope: OAuth-based destinations and any exporter beyond these six.\n- Pain warning: Bear's URL scheme fails silently when Bear is not installed, so detect the failure and show an alert instead of crashing."
+    }
+  ],
+  "stretchGoals": [
+    "Add one exporter for another destination you use daily, keeping the one-file-per-destination pattern intact",
+    "Add an App Intents shortcut so Siri can capture text hands-free from the lock screen",
+    "Start an EXPORTERS.md checklist recording where each destination's URL-scheme behavior is documented, so future breakage takes minutes to diagnose"
+  ],
+  "resources": [
+    {
+      "title": "NoteTaker (open source)",
+      "url": "https://github.com/insidegui/NoteTaker",
+      "note": "A Swift notes app for macOS and iOS with CloudKit sync, the closest working reference for steps 1 through 5."
+    },
+    {
+      "title": "FSNotes (open source)",
+      "url": "https://github.com/glushchenko/fsnotes",
+      "note": "A mature plain-text notes manager showing how iOS and macOS targets share storage and logic in practice."
+    },
+    {
+      "title": "Capture official site",
+      "url": "https://sir.studio/capture",
+      "note": "The original's feature list, useful for keeping your build's scope honest against the real thing."
+    },
+    {
+      "title": "Capture on the App Store",
+      "url": "https://apps.apple.com/us/app/quick-notes-capture/id6458535284",
+      "note": "Current pricing tiers and feature claims for the product you are studying."
+    }
+  ]
+}

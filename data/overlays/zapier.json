@@ -1,0 +1,117 @@
+{
+  "slug": "zapier",
+  "sourceHash": "sha256:3cd5c1b73ec7fee127e5fe3b14ad3ad33ead567df5ce242a767c111dd6b4fb93",
+  "generatedAt": "2026-08-24T10:55:15.840Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "intermediate",
+  "timeEstimate": "weekend",
+  "title": "Build your own automation runner (a personal Zapier)",
+  "summary": "You will build a single Node.js process that runs your personal automations: pipelines fired by cron schedules (time-based triggers) or incoming webhooks (URLs other services call), with every run logged to SQLite, failed runs retried, and alerts pushed to your phone through ntfy. Two example pipelines ship with it: a daily weather digest and a save-a-link endpoint. Zapier survives because its real product is a maintained catalog of thousands of app connections plus the reliability layer underneath them; your runner intentionally serves only the handful of flows you actually use, in exchange for full control and no task meter.",
+  "whatYoullLearn": [
+    "Writing a Node.js service that calls REST APIs with fetch",
+    "Scheduling work with cron expressions and receiving webhooks securely with token checks",
+    "Logging structured run history to SQLite with better-sqlite3",
+    "Implementing retries with exponential backoff, meaning each retry waits longer than the last",
+    "Deploying and supervising a long-running process on a VPS with systemd"
+  ],
+  "whatYouWontGet": [
+    "Connections cover only the apps you write code for, and each new integration is about twenty lines you maintain yourself",
+    "Token refreshes and provider auth changes are handled per app in your own code",
+    "Retry and history behavior is the version you build: three attempts with backoff and one SQLite table, not per-step replay",
+    "Operating the runner means editing files and using SSH, with no visual editor for non-coders",
+    "Trigger types are the ones you implement, cron times and webhook posts, not each app's native events",
+    "Availability tracks your VPS and your attention to restarts and deploys"
+  ],
+  "moatLessons": [
+    {
+      "tag": "integrations",
+      "lesson": "Zapier maintains connectors for over 9,000 apps, absorbing every OAuth flow change and API deprecation so customers never touch a credential. A builder learns that each integration is an ongoing maintenance contract, which is why a personal runner caps its ambitions at the few services it truly needs."
+    },
+    {
+      "tag": "scale-infra",
+      "lesson": "Under the connector catalog sits unglamorous infrastructure: queues, retries, task history, and uptime engineering measured across enormous task volume. A builder learns that reliability becomes the product once real work depends on you, and even a three-attempt backoff loop teaches the vocabulary of what platforms solve at fleet scale."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 20 or newer installed locally, check with node --version",
+    "A code editor such as VS Code and comfort in a terminal",
+    "A free OpenWeatherMap account for an API key, signup required",
+    "An ntfy.sh topic name for phone notifications, free and no account needed",
+    "For the deploy step: a small Ubuntu VPS with SSH access, and a domain whose DNS you control if you want public webhooks"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the runner process",
+      "body": "Hand the agent the whole scaffold: one Express server that registers cron schedules and webhook routes, a pipelines folder of plain JS files, and a SQLite table that records every run. Review the diff rather than typing boilerplate, then run npm install and npm run dev to confirm the server boots and data/runs.db appears.",
+      "why": "Fixed file names, a fixed schema, and no business logic make this precise low-risk scaffolding an agent can complete whole.",
+      "prompt": "Build a Node.js personal automation runner scaffold. Requirements:\n- Node 20+ project with Express 4 and node-cron, entry point index.js, one process only.\n- Pipelines live in pipelines/ as plain JS files exporting name, trigger, and async run(payload); trigger is either { type: \"cron\", expression } or { type: \"webhook\", path }.\n- index.js loads every file in pipelines/ and registers cron jobs and POST webhook routes automatically, no per-pipeline wiring.\n- Every run logged to SQLite via better-sqlite3 at data/runs.db with columns id, pipeline, source, payload_json, status, duration_ms, error, created_at.\n- Secrets read only from .env via dotenv; commit a .env.example listing WEATHER_API_KEY, WEATHER_CITY, NTFY_URL, PIPELINE_TOKEN.\n- npm scripts: start and dev using node --watch.\n- Out of scope: authentication beyond the webhook token check, any UI, Docker, tests.\n- Pain warning: better-sqlite3 compiles native code, so run npm install fully before diagnosing code errors."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Collect credentials and accounts",
+      "body": "Sign up at OpenWeatherMap and copy your API key, pick an ntfy topic name, and create any OAuth app registrations a service demands. OAuth is the standard where a provider lets an app act for you after you approve it in a browser, and those approval screens sit behind your logins by design. Paste each value into .env following the .env.example layout, and keep the real file out of git.",
+      "why": "Developer dashboards and OAuth consent screens require your authenticated browser sessions, which no agent can complete on your behalf.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "First pipeline: daily weather to your phone",
+      "body": "Work with your assistant to add the first real pipeline to the scaffold from step one: a cron job that fetches the morning forecast and pushes a summary to ntfy. Run it manually first, watch the row land in the runs table, then adjust the schedule and wording until the notification on your phone reads the way you want. This is the moment the whole concept clicks, so iterate here.",
+      "why": "Business logic tied to your accounts rewards iterative assistant sessions while you stay in the terminal verifying each ntfy ping.",
+      "prompt": "Add a daily weather pipeline to my runner. Requirements:\n- New file pipelines/weather.js exporting name \"weather\", trigger { type: \"cron\", expression: \"0 8 * * *\" }, and async run().\n- Fetch the current forecast from OpenWeatherMap using WEATHER_API_KEY from .env, city taken from WEATHER_CITY.\n- POST a one-line summary with temp, condition, and rain chance to the ntfy topic URL in NTFY_URL using fetch.\n- Wrap execution in p-retry with 3 attempts and exponential backoff, recording each attempt in the existing runs table.\n- After the final failed attempt, POST the error text to the same ntfy topic so silence never looks like success.\n- Verify once by importing the file with node -e, calling run(), and checking the runs table shows status success.\n- Out of scope: multiple cities, rich formatting, response caching."
+    },
+    {
+      "label": "WE",
+      "title": "Second pipeline: inbound webhook with a secret token",
+      "body": "Extend the runner so outside services can trigger work: a token-checked webhook route that appends a row to a CSV file. Ask your assistant for the route guard and the pipeline, then attack it yourself with curl before trusting it, including a deliberate wrong-token attempt. Security checks written by an agent deserve your adversarial testing, not your faith.",
+      "why": "Auth logic is high-consequence code where the learner should drive and review closely, using the assistant as a pair rather than a delegate.",
+      "prompt": "Add a secure inbound webhook pipeline to my runner. Requirements:\n- In index.js, require header x-runner-token on every /webhook/* request to equal PIPELINE_TOKEN from .env, responding 401 otherwise.\n- New pipelines/bookmarks.js triggered by webhook: accept JSON { url, tags } and append one row to bookmarks.csv with columns timestamp,url,tags, creating the file with headers on first write.\n- Log each execution to the runs table with source \"webhook\" and store the sanitized payload.\n- Respond 202 after validation and run pipeline work asynchronously.\n- Verify with curl: correct token writes both a CSV row and a runs row, a wrong token returns 401 and writes nothing.\n- Out of scope: rate limiting, HTTPS termination, deduplicating repeated URLs.\n- Pain warning: shell quoting around JSON bodies trips everyone eventually, prefer curl --data-binary @payload.json when quotes fight back."
+    },
+    {
+      "label": "WE",
+      "title": "Run history dashboard on localhost",
+      "body": "Give the runner a face: a /runs page served only on the loopback interface that lists recent executions from the SQLite table, expands to show payloads and errors, and offers a re-run button per row. Have your assistant generate the server-rendered page, then poke every button yourself and break a pipeline on purpose to watch the failure view earn its keep. Debugging visibility is half of what a platform sells, and this page is your version of it.",
+      "why": "Interface taste is iterative judgment work, so the assistant drafts and the learner judges each revision against their own debugging habits.",
+      "prompt": "Add a local run-history dashboard to my runner. Requirements:\n- Serve GET /runs from index.js bound to 127.0.0.1 only, never 0.0.0.0.\n- Query the runs table for the last 100 rows newest first and render a server-side HTML table showing pipeline, source, status, duration_ms, and created_at.\n- Make each row expandable via native <details> elements revealing payload_json and error, no client framework.\n- Add a POST /runs/:id/rerun handler per row that reloads that pipeline module and calls its run() with the stored payload.\n- Keep it one HTML template file with zero dependencies beyond what index.js already uses.\n- Out of scope: login screen, charts, auto-refresh, mobile styling.\n- Pain warning: rerun executes pipeline code, which is acceptable on localhost and unacceptable exposed publicly, keep the bind address strict."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Deploy to a VPS so schedules survive your laptop",
+      "body": "Move the runner to a VPS, a small rented Linux server, so cron jobs fire while your machine sleeps. Write a systemd unit, the Linux service manager's config, that starts the runner on boot and restarts it after crashes. For public webhooks, add a DNS record pointing your domain at the server, open port 443 in the firewall, and put TLS in front with Caddy. Then watch the first day of runs on the dashboard to confirm nothing was lost in transit.",
+      "why": "DNS records, cloud console settings, and SSH key setup act on real infrastructure under your identity, making these human-only surfaces.",
+      "prompt": null
+    }
+  ],
+  "stretchGoals": [
+    "Connect a fourth-party service that requires OAuth end to end, registering the app and handling token refresh yourself",
+    "Swap SQLite for PostgreSQL once run history grows beyond a single file you want to back up by copying",
+    "Add a dead-man switch: a heartbeat cron that alerts your ntfy topic if the runner itself stops checking in"
+  ],
+  "resources": [
+    {
+      "title": "n8n on GitHub",
+      "url": "https://github.com/n8n-io/n8n",
+      "note": "Read how a mature self-hosted automation tool structures nodes and triggers before you hand-roll more pipelines."
+    },
+    {
+      "title": "n8n hosting documentation",
+      "url": "https://docs.n8n.io/hosting/",
+      "note": "Shows what production self-hosting demands, persistent storage and a public webhook URL, which maps directly onto your deploy step."
+    },
+    {
+      "title": "Activepieces repository",
+      "url": "https://github.com/activepieces/activepieces",
+      "note": "MIT-licensed connector implementations worth reading when you design your own integration pattern."
+    },
+    {
+      "title": "Activepieces install overview",
+      "url": "https://www.activepieces.com/docs/install/overview",
+      "note": "Contrasts its Docker, PostgreSQL, and Redis footprint with your single-process choice and clarifies the trade-off."
+    }
+  ]
+}

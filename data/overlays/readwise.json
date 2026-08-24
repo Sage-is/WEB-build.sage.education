@@ -1,0 +1,119 @@
+{
+  "slug": "readwise",
+  "sourceHash": "sha256:c5d8ff13cfd8190c565fe1f71c01a836ba938f02db65e2c6ebdbe32200a46c6c",
+  "generatedAt": "2026-08-24T10:59:51.374Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "intermediate",
+  "timeEstimate": "one-sitting",
+  "title": "Build your own reading archive (a personal Readwise)",
+  "summary": "You will build a local reading archive that imports highlights from files you already have, reviews them with spaced repetition, searches the whole collection instantly, and exports everything as Markdown, CSV, and JSON. The core loop fits in a focused sitting. Readwise still charges monthly because capture works across dozens of apps, reading state syncs between devices, and its parsers get repaired whenever publishers change their sites.",
+  "whatYoullLearn": [
+    "Parsing messy real-world export files, JSON, CSV, and Kindle clippings text, into a typed SQLite schema",
+    "Implementing a simplified SM-2 spaced repetition scheduler with due-date queries",
+    "Full-text search over SQLite using FTS5",
+    "Writing a bookmarklet that talks to your own validated, rate-limited API",
+    "Designing lossless exports in Markdown, CSV, and JSON that double as backups"
+  ],
+  "whatYouWontGet": [
+    "Your archive covers files you import and quotes you capture by hand, with exports in open formats",
+    "Pages behind logins or paywalls are stored as links and quotes only, respecting publisher terms",
+    "Capture happens from your desktop browser through the bookmarklet and forms",
+    "Review order comes from your own schedule rather than recommendations drawn from other readers",
+    "Feeds are ones you supply yourself, the app stores links and quotes rather than licensed article text"
+  ],
+  "moatLessons": [
+    {
+      "tag": "integrations",
+      "lesson": "Readwise wins by pulling highlights from dozens of sources automatically, and each connector is ongoing maintenance against someone else's changing export formats. A builder learns to start with file imports, which never break silently, and to add live connectors only when the pain of exporting by hand becomes real."
+    },
+    {
+      "tag": "execution-polish",
+      "lesson": "The daily review feels effortless and the archive stays clean without parser repairs, and that reliability is what people renew. A builder learns that the review loop you actually open every morning beats a longer feature list, so spend the saved time on deduplication and empty states."
+    },
+    {
+      "tag": "content-rights",
+      "lesson": "Readwise's Reader serves licensed full-text articles through publisher agreements, which costs money and relationships no solo project can replicate. A builder learns to stay inside open content, storing links and your own quotes, which keeps the project legal and maintenance-free."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 22 installed, confirmed by running node -v",
+    "A desktop browser such as Firefox or Chrome for the bookmarklet step",
+    "At least one real highlight export, such as a Kindle My Clippings.txt file or any JSON or CSV file of quotes",
+    "A terminal, a code editor, and comfort running npm commands"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the archive app",
+      "body": "Create the repository skeleton with Next.js 15, TypeScript, SQLite through Drizzle ORM, and one setup command that leaves you with a running home page. Drizzle is a thin library that maps TypeScript objects onto SQL tables, so the schema file is plain code you can read. Ask for the diff and study the highlights table it defines, because every later step builds on it.",
+      "why": "Fixed-stack boilerplate is low-risk and precisely specified, the ideal shape for handing to an agent whole.",
+      "prompt": "Build the starter for a local reading archive web app. Requirements:\n- Next.js 15 with TypeScript and the App Router, plain CSS modules, no UI kit.\n- SQLite stored at data/archive.db using Drizzle ORM, migrations generated with drizzle-kit.\n- Schema in src/db/schema.ts defining a highlights table with id, text, author, title, source_file, location, url, tags_json, captured_at, times_seen, next_review_at.\n- Home route at / showing row counts read from the highlights table.\n- DATABASE_PATH read from .env, ship .env.example, never commit credentials.\n- One command, npm run setup, that creates the database, applies migrations, and prints next steps.\n- Out of scope: login screens, dark mode, component libraries, Docker.\n- Expect drizzle-kit config path trouble, verify the migrations folder exists before moving on."
+    },
+    {
+      "label": "WE",
+      "title": "Import highlights from your exported files",
+      "body": "Wire the importer to the highlights table from step 1 and feed it real exports. Start with the two fixture files, then run it against a genuine Kindle clippings dump if you have one, because real files carry encoding surprises and repeated page headers. Watch the duplicate counter, hashing text plus author is what keeps the archive clean over months of imports.",
+      "why": "Real export files fail in ways nobody predicts, so keep the debugging loop in your own hands.",
+      "prompt": "Add a highlight importer that reads user-exported files into the highlights table in src/db/schema.ts. Requirements:\n- POST /api/import accepts multipart uploads of .json, .csv, and .txt files up to 10 MB.\n- Parse three formats: JSON arrays of highlight objects, CSVs with text and author columns, and Kindle My Clippings.txt blocks separated by ========== lines.\n- Skip duplicates by inserting only rows whose sha256 hash of text plus author is new.\n- Page at /import shows an upload form and reports rows imported and duplicates skipped per run.\n- Create fixtures/sample-clippings.txt with 5 clippings and fixtures/sample-export.json with 10 highlights, and a test asserting the combined run inserts 15 rows.\n- Strip stray page headers and fix encoding artifacts defensively, clippings files are always messy.\n- Out of scope: calling Kindle or Readwise APIs directly, OCR from screenshots."
+    },
+    {
+      "label": "WE",
+      "title": "Add search, tags, and the daily review queue",
+      "body": "Turn the archive into a study tool. Spaced repetition shows each highlight right before you would forget it, and a simplified SM-2 scheduler with 1, 3, and 7 day intervals is enough to feel the effect within a week. Search uses SQLite FTS5, a built-in full-text index that stays fast as the collection grows into the thousands.",
+      "why": "Review intervals define how the tool feels day to day, tune them interactively instead of accepting a first draft.",
+      "prompt": "Add tagging, full-text search, and the review queue on top of the importer from step 2. Requirements:\n- Full-text search over text and author using SQLite FTS5, exposed at /search?q= with highlighted matches.\n- Inline tag editing per highlight, persisted to the tags_json column in src/db/schema.ts.\n- Page at /review serving up to 10 due highlights per day, ordered by next_review_at ascending.\n- Four grading buttons, Again, Hard, Good, Easy, updating next_review_at with simplified SM-2 intervals of 1, 3, 7, and 14 days.\n- Header counter on /review showing how many highlights are due today and how many were reviewed this week.\n- Keep search server-side with FTS5 match queries, do not load the whole table into the client.\n- Out of scope: Anki sync, configurable algorithm settings screens, streak gamification."
+    },
+    {
+      "label": "WE",
+      "title": "Build the capture API and bookmarklet",
+      "body": "Give the archive a way to grow between imports. A bookmarklet is a tiny script saved as a browser bookmark that runs on whatever page you are viewing and sends the quote to your own API. Keep capture humble, store the link and the quote, and leave automatic page fetching alone since paywalls and bot defenses make that a swamp.",
+      "why": "Bookmarklets misbehave differently in every browser, quick iterate-and-test cycles beat one-shot delegation.",
+      "prompt": "Add capture paths that insert new rows into the highlights table built in step 1. Requirements:\n- POST /api/capture accepts JSON with url, title, selection, and tags, validated with zod, inserting with source_file set to bookmarklet.\n- Page at /capture renders the bookmarklet snippet as a draggable link that posts the current tab's url, title, and selected text.\n- A manual form on /capture for pasting a quote, author, and URL when the bookmarklet misbehaves.\n- Rate limit /api/capture to 30 requests per minute per IP to stop runaway loops.\n- Store the URL string only, do not fetch page content, paywalls and bot defenses make scraping unreliable and off limits.\n- Return clear JSON errors with status codes so the bookmarklet can surface failures.\n- Out of scope: browser extensions, mobile share sheets, screenshot capture."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Pin the bookmarklet and capture real pages",
+      "body": "Open /capture in your browser and drag the bookmarklet button onto the bookmarks bar, something no script can do for you. Visit five pages worth quoting and click the button on each, then paste one quote through the manual form as a fallback drill. Finish by confirming six new rows now exist in the highlights table.",
+      "why": "Placing a button inside the browser's own interface is a human-only action, no agent can reach your bookmarks bar.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Export Markdown, CSV, and a JSON backup",
+      "body": "Make leaving easy and staying a choice. Exports in Markdown, CSV, and JSON prove the data stays portable, and the JSON backup doubles as your disaster recovery story. Run the export twice, once to read the files and once to restore into a scratch database, because an untested backup is a hope, not a backup.",
+      "why": "Mechanical file generation suits an agent, but judging whether the round trip is truly lossless is your call.",
+      "prompt": "Add exports that cover every column of the highlights table populated by steps 2 through 4. Requirements:\n- Write Markdown files to exports/markdown/, grouped into one file per title, filenames slugged from the title with author and date in frontmatter.\n- Write exports/backup.json containing every row and column of the highlights table.\n- GET /api/export/csv streams CSV with exactly the columns the step 2 importer parses, so imports and exports round trip.\n- Page at /export offers three buttons and reports the file count written after each run.\n- Slug titles safely, reject path traversal characters, and overwrite cleanly on repeat exports.\n- Verify the JSON round trip: restoring exports/backup.json into a fresh database yields identical row counts.\n- Out of scope: Notion or Obsidian API sync, scheduled cloud backups."
+    }
+  ],
+  "stretchGoals": [
+    "Subscribe to a handful of RSS or Atom feeds you pick yourself and import quotes from entries you flag",
+    "Support OPML import and export so your subscription list travels between readers",
+    "Add a weekly recap page that resurfaces five random highlights from the archive"
+  ],
+  "resources": [
+    {
+      "title": "Readwise",
+      "url": "https://readwise.io",
+      "note": "Try the demo review flow to see the daily loop you are rebuilding"
+    },
+    {
+      "title": "Readwise pricing",
+      "url": "https://readwise.io/pricing",
+      "note": "Current tiers, useful for judging which parts of the scope are worth paying for"
+    },
+    {
+      "title": "FreshRSS",
+      "url": "https://github.com/FreshRSS/FreshRSS",
+      "note": "Mature self-hosted reader, a reference implementation for polite feed handling"
+    },
+    {
+      "title": "Anki",
+      "url": "https://apps.ankiweb.net",
+      "note": "See where spaced repetition goes when you want scheduling far deeper than SM-2 lite"
+    }
+  ]
+}

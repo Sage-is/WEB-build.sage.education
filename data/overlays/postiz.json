@@ -1,0 +1,105 @@
+{
+  "slug": "postiz",
+  "sourceHash": "sha256:0ba59d8afce0c1d80ef33ff3ec572abf6d4b7e6eddcdc7651575d39fb3206fac",
+  "generatedAt": "2026-08-24T10:43:52.916Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "intermediate",
+  "timeEstimate": "multi-day",
+  "title": "Build your own social scheduler (a personal Postiz)",
+  "summary": "You'll build a small web app that queues social posts and publishes them on a schedule to Mastodon, Bluesky, and Telegram using their open APIs. It runs on a machine you control, with a compose box, slot-based timing, and a history of what went out. Postiz still sells because networks like Instagram, LinkedIn, and TikTok only allow posting through apps that pass a human review process, and keeping dozens of integrations alive as APIs change is steady work. Building your own shows you exactly where that maintenance burden lives.",
+  "whatYoullLearn": [
+    "Authenticating to social APIs with tokens: REST calls for Mastodon and Telegram, the AT Protocol SDK for Bluesky",
+    "The adapter pattern: one small module per network behind a shared interface",
+    "Slot-based queueing backed by SQLite queries",
+    "Clock-driven publishing (cron) with claim-before-send writes that prevent double-posting",
+    "Resizing attached images per network with sharp"
+  ],
+  "whatYouWontGet": [
+    "Three open-API networks (Mastodon, Bluesky, Telegram) rather than 28+ maintained channels",
+    "Connections to Instagram, LinkedIn, TikTok, and X, which require developer apps that pass each platform's own approval process",
+    "A simple sent-posts history page in place of analytics dashboards",
+    "One user by design, so no approvals workflow or shared calendars",
+    "A plain compose box instead of AI-generated images, videos, and captions",
+    "Posting as the test, rather than per-network visual previews"
+  ],
+  "moatLessons": [
+    {
+      "tag": "integrations",
+      "lesson": "Postiz wins because its hosted apps already cleared Instagram, LinkedIn, and TikTok reviews, and its team patches connectors as platforms change terms. A builder learns that the integration layer is the product itself: stick to open APIs for the DIY core and treat every extra network as recurring upkeep, not a finished feature."
+    },
+    {
+      "tag": "collaboration",
+      "lesson": "Approval flows, roles, and team calendars are ordinary CRUD, yet they anchor the paid plans because agencies buy coordination, not scheduling math. A solo builder learns where single-user scope is a feature, and that self-hosting upstream Postiz is the honest route if a team layer is ever needed."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 20+ and git installed",
+    "An always-on machine you control: a home server, Raspberry Pi, or a few-dollar VPS",
+    "Accounts on a Mastodon instance, Bluesky, and Telegram",
+    "Comfort editing files and running commands in a terminal",
+    "sqlite3 CLI handy for inspecting your database during the build"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the app shell and database",
+      "body": "Hand the agent a precise brief so the boilerplate appears while you keep the design decisions. Ask for fewer than ten dependencies so every package stays auditable at a glance. Then run npm start, confirm GET /healthz answers, and inspect the two tables in data/queue.db with the sqlite3 CLI before moving on.",
+      "why": "Fully specified, low-risk scaffolding is the ideal whole-chunk handoff.",
+      "prompt": "Set up the project skeleton for a personal social post scheduler. Requirements:\n- Node.js 20 + Express + better-sqlite3, entry point server.js, port 3000\n- SQLite file at data/queue.db with tables: posts (id, network, text, media_path, state, scheduled_at, attempts, posted_url) and slots (weekday, hour, minute, timezone)\n- Home page served server-side with EJS: an empty compose form and a placeholder queue list\n- A media/ directory next to data/ for image attachments\n- Secrets loaded by dotenv from .env; commit .env.example with empty values only\n- npm start boots it and GET /healthz answers 200 with ok:true\n- Out of scope: real network calls, login, CSS frameworks\n- Keep total dependencies under 10 so the install stays easy to audit"
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Collect API credentials for the three networks",
+      "body": "Create a Mastodon app under Preferences, then Development, and copy the access token into .env. Generate a Bluesky app password in its settings screen, which is safer for third-party tools than your main password. Message BotFather on Telegram to create a bot, add it to your channel as admin, and look up your chat id. Prove each credential with one curl call before any adapter code exists.",
+      "why": "Token creation lives in logged-in dashboards no assistant can operate.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Write the three network adapters and send a real post",
+      "body": "An adapter is a small module that turns a generic post row into one network's API calls, and this is where you drive the assistant one network at a time. Ship text-only posts first because image handling differs: Mastodon expects multipart uploads while Bluesky uploads blobs through the AT Protocol SDK. Debug live API errors together, with your eyes on responses and the agent editing code between attempts.",
+      "why": "Live-API debugging pairs your judgment on errors with fast agent edits.",
+      "prompt": "Add publishing adapters that send one row of the posts table for real. Requirements:\n- One file per network under adapters/: mastodon.js posts via POST /api/v1/statuses with MASTODON_TOKEN, bluesky.js uses @atproto/api createRecord with BLUESKY_HANDLE and BLUESKY_APP_PASSWORD, telegram.js calls sendMessage with TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID\n- adapters/index.js exports send(post) that dispatches on the network column\n- On success store the returned URL in posted_url and set state to sent; on error leave state queued and append the error message\n- Write scripts/test-send.js that inserts one row per network and calls send() so I can verify outside the UI\n- Text-only first; expect Bluesky image upload to be a separate blob flow from Mastodon's multipart form\n- Out of scope: retries and scheduling, added later\n- Print full API error bodies to the console so failures are readable"
+    },
+    {
+      "label": "WE",
+      "title": "Add the composer and slot-based queue",
+      "body": "This is the heart of the lesson: turning a list of weekday posting times into an automatic ordering of drafts. Think through what happens when two posts want the same slot while the assistant implements nextFreeSlot(). Character limits are per network and easy to get wrong, so surface them as live guidance rather than silent truncation.",
+      "why": "Queue semantics decide correctness, so you steer while the agent types.",
+      "prompt": "Build the composer UI and slot-based queueing on top of the existing posts and slots tables. Requirements:\n- The compose form saves a post with state queued, filling either the next free slot or a pinned datetime I choose\n- nextFreeSlot() scans slot rows in weekday order in my timezone and skips already-taken times\n- Live character counters per network: 500 Mastodon, 300 Bluesky, 4096 Telegram caption\n- Attached images go to media/ resized with sharp to max width 1600px, path recorded in media_path\n- A duplicate-to-networks action creates one row per selected network with independently editable text\n- Queue view lists rows ordered by scheduled_at with edit and delete\n- Out of scope: drag-and-drop reordering and calendar views\n- Warn inline when text exceeds the smallest selected limit instead of blocking save"
+    },
+    {
+      "label": "WE",
+      "title": "Run the clock: cron tick, retries, history",
+      "body": "node-cron is a library that runs a function on a clock, and this tick loop is where a scheduler earns trust. Test the claim-before-send sequence by firing two overlapping ticks manually and confirming only one post lands. Exponential backoff, meaning each retry waits longer than the last, keeps repeated failures inside rate limits. Then deploy under pm2 on the always-on box and watch the history page fill overnight.",
+      "why": "Timing-race bugs reward pair review, not blind delegation.",
+      "prompt": "Add the scheduler that publishes queued posts automatically and safely. Requirements:\n- node-cron ticks every minute, selecting posts where state is queued and scheduled_at is past\n- Claim with a single UPDATE setting state to sending WHERE state equals queued before calling send(), so overlapping ticks never double-post\n- Retry failures up to 3 times with exponential backoff tracked in attempts, then mark failed\n- History page listing the last 100 rows with state and links to posted_url\n- Manual Retry button on failed rows for testing without waiting a minute\n- Treat HTTP 429 rate-limit responses like any failure so backoff absorbs them\n- Out of scope: analytics, webhooks, multi-user login\n- Log each attempt with timestamp, network, and outcome to console and to a logs/send.log file"
+    }
+  ],
+  "stretchGoals": [
+    "Self-host upstream Postiz alongside yours and compare how its maintained providers handle edge cases",
+    "Add a fourth network such as a Discord webhook; the adapter pattern makes it an afternoon",
+    "Ping yourself on the same Telegram bot whenever a send fails twice"
+  ],
+  "resources": [
+    {
+      "title": "Postiz on GitHub (AGPL)",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "note": "Read how a maintained scheduler structures its per-network providers before writing your own, or self-host it for the full feature set."
+    },
+    {
+      "title": "Postiz homepage and FAQ",
+      "url": "https://postiz.com/",
+      "note": "Shows which features the hosted plan bundles and why people keep paying."
+    },
+    {
+      "title": "Postiz pricing",
+      "url": "https://postiz.com/pricing",
+      "note": "Puts a dollar figure on the OAuth-approval and upkeep work you are sidestepping."
+    }
+  ]
+}

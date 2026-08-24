@@ -1,0 +1,120 @@
+{
+  "slug": "notion",
+  "sourceHash": "sha256:f867176ab6ccd5d59d237817ca81d1a368f54bb9daad6611afa3070125a14a7d",
+  "generatedAt": "2026-08-24T10:50:37.688Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "intermediate",
+  "timeEstimate": "multi-day",
+  "title": "Build your own notes workspace (a personal Notion)",
+  "summary": "You'll build a local notes workspace: Markdown pages with [[wiki links]] and backlinks (pages that link back to the current one), simple typed tables embedded in pages, full-text search over everything, and a nightly export to plain files, all backed by one SQLite database. This is a multi-day build for an intermediate learner. Notion keeps its customers because teams need a shared space: real-time collaboration across devices, per-user permissions, and a deeply refined block editor that nontechnical teammates can trust. Your build proves the personal core is reproducible; the team layer is the product.",
+  "whatYoullLearn": [
+    "Modeling a notes app in SQLite: a pages table, JSON documents for databases, and an FTS5 virtual table for search",
+    "Rendering and sanitizing user Markdown safely with marked",
+    "Parsing [[wiki-style]] links and computing backlinks with SQL queries",
+    "Building small inline-editable tables stored as JSON columns",
+    "Automating plain-file exports so your notes stay readable outside the app"
+  ],
+  "whatYouWontGet": [
+    "Pages are Markdown documents edited in one pane, not a drag-and-drop block canvas",
+    "Your notes live in one SQLite file on one machine; using them on another device means copying that file",
+    "There are no user accounts or per-page permissions; the workspace belongs to you alone",
+    "Databases are flat editable tables; filtered, sorted, and calendar views remain Notion territory",
+    "There is no template gallery or integration directory; extending the app means writing the code yourself"
+  ],
+  "moatLessons": [
+    {
+      "tag": "collaboration",
+      "lesson": "Notion wins because teammates can edit the same page at once with permissions that admins trust. A builder learns that single-user storage is a weekend project, while merging simultaneous edits across devices (operational transforms or CRDTs) is product-scale engineering."
+    },
+    {
+      "tag": "execution-polish",
+      "lesson": "Notion's block editor feels effortless after years of iteration on drag handles, keyboard shortcuts, and paste handling. A builder learns the interface is the moat: the same features shipped rough read as unfinished rather than useful."
+    },
+    {
+      "tag": "integrations",
+      "lesson": "Notion wins by connecting to Slack, GitHub, calendars, and a public API, making it the hub people already live in. A builder learns each connector multiplies surface area and maintenance load, so a personal tool stays lean by choosing zero integrations on purpose."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 20 or newer installed; `node --version` prints v20+",
+    "Comfort editing JavaScript and using a terminal",
+    "A code editor such as VS Code",
+    "Git installed if you want to version your work",
+    "No paid accounts or API keys needed; everything runs on localhost"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the app: Express, better-sqlite3, first route",
+      "body": "Set up a Node + Express project with better-sqlite3 for storage and server-rendered HTML, no frontend framework and no build step. Create the pages table, wire list/create/read routes, bind to 127.0.0.1, and confirm the page list loads in a browser. Hand the whole skeleton to your assistant, then review the diff before running it.",
+      "why": "Scaffolding is mechanical boilerplate with clear acceptance criteria, ideal for a whole-chunk handoff you review afterward.",
+      "prompt": "Build the project skeleton for a local notes web app. Requirements:\n- Node 20+, Express 4, better-sqlite3, HTML rendered server-side with EJS or template literals, no frontend framework, no build step.\n- A db.js module that opens notes.db and creates a pages table: id INTEGER PRIMARY KEY, title TEXT UNIQUE, body TEXT, updated_at TEXT.\n- An Express server on port 3000 bound to 127.0.0.1 only, routes: GET / (page list), GET /pages/new, POST /pages, GET /pages/:id.\n- A shared layout whose header holds a search form posting to /search (stub the route) plus Home and New page links.\n- Config in .env loaded with dotenv; add .env and notes.db to .gitignore.\n- Acceptance: npm start serves the page list at http://127.0.0.1:3000 and creating a page persists it across restart.\n- Out of scope: auth, hosting config, CSS frameworks.\n- Pain warning: better-sqlite3 installs a native binary, if node-gyp errors check your Node version before debugging anything else."
+    },
+    {
+      "label": "WE",
+      "title": "Markdown editor with live preview",
+      "body": "Upgrade the page form from the scaffold into a split editor: a textarea beside a preview pane that renders Markdown as you type. Save raw Markdown to the pages.body column you created earlier, and sanitize HTML on the server when displaying saved pages. Drive the assistant through the tricky parts, especially the sanitizer.",
+      "why": "Editor behavior and sanitizer edge cases need your judgment in the loop, not a one-shot generation you hope is safe.",
+      "prompt": "Add a Markdown editor with live preview to the pages app from step 1. Requirements:\n- On the edit screen, show the existing textarea on the left and a preview pane on the right inside the current layout.\n- Render Markdown in the browser with a vendored copy of marked.min.js served locally, no CDN and no npm browser bundler.\n- Debounce input events so the preview rerenders at most every 150 ms while typing.\n- Saving posts raw Markdown into pages.body from step 1; never persist rendered HTML.\n- Server-side display converts body with marked and strips script and iframe tags before inserting into the page.\n- Acceptance: a page with headings, a list, bold text and a code block previews identically after save and reload.\n- Out of scope: block dragging, slash commands, formatting toolbars.\n- Pain warning: pasting rich text can inject raw HTML into the textarea, prove the sanitizer strips it."
+    },
+    {
+      "label": "WE",
+      "title": "Wiki links and backlinks",
+      "body": "Make pages reference each other with [[Page Name]] tokens that become clickable links, and add a backlinks section showing which pages point at the current one. Missing links open a prefilled edit form instead of erroring, so links never dead-end. This step shapes your data model, so iterate with the assistant on the matching logic.",
+      "why": "Link semantics decide how your whole dataset hangs together, so steer the assistant interactively rather than delegating blind.",
+      "prompt": "Add [[wiki-style]] links and automatic backlinks to the Markdown pages from steps 1-2. Requirements:\n- When rendering a saved page, replace every [[Page Name]] token with a link to /pages/<slug>, using one shared slug function that lowercases and hyphenates titles.\n- A wiki link to a missing page opens the edit form with that title prefilled; saving creates it, so links never 404.\n- Append a Backlinks section under every rendered page listing pages whose body contains [[Current Title]], queried with LIKE against pages.body.\n- Style links whose target does not exist differently so gaps are visible at a glance.\n- Acceptance: seed Home, Projects, Ideas with Home linking to the others; Projects' backlinks section shows Home.\n- Out of scope: autocomplete dropdowns, graph views.\n- Pain warning: titles containing regex characters break naive matching, escape them in the LIKE pattern."
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Simple databases embedded in pages",
+      "body": "Give any page an inline table: a fenced code block declares typed columns (text, number, date, select), stored as one JSON document per database in SQLite, rendered as an editable table. Delegate this as one precise chunk, then verify rows survive a restart. Filters, sorts, and multiple views stay out of scope; those are Notion's ground.",
+      "why": "A typed-table renderer is a narrow spec with verifiable behavior, well suited to handing off whole and testing.",
+      "prompt": "Add simple inline databases to the workspace built in steps 1-3. Requirements:\n- A page may contain a fenced block labeled db whose first line names typed columns, types limited to text, number, date, select.\n- Store each database as a single JSON document in a new dbs table: id INTEGER PRIMARY KEY, page_id INTEGER REFERENCES pages(id), data TEXT holding {\"columns\":[{\"name,type,options\"}],\"rows\":[]}.\n- Page view renders the block as an HTML table with editable cells; cell edits POST to /api/dbs/:id/rows which updates the JSON and returns it.\n- Select columns render as dropdowns populated from the column definition.\n- Acceptance: a Books page with title(text), rating(number), finished(date), genre(select) and two rows survives a server restart intact.\n- Out of scope: filters, formulas, relations between databases.\n- Pain warning: two tabs editing one row overwrite each other, last write wins, note that in the README."
+    },
+    {
+      "label": "WE",
+      "title": "Full-text search with SQLite FTS5",
+      "body": "Add a search box in the header that queries every page instantly using FTS5, SQLite's full-text extension. Keep the index synced with triggers, fall back to LIKE for symbol-heavy queries, and show highlighted snippets on the results page. Tune the snippet behavior with the assistant until results read naturally.",
+      "why": "Search quality is a matter of taste, so expect a tuning loop with the assistant instead of accepting the first version.",
+      "prompt": "Wire full-text search across all pages using SQLite FTS5. Requirements:\n- Create virtual table pages_fts with fts5(title, body, content='pages', content_rowid='id') plus AFTER INSERT, UPDATE, DELETE triggers on pages to keep it synced.\n- GET /search?q= queries pages_fts with MATCH, falls back to a LIKE scan over pages.body when q is only symbols, renders results with snippet() excerpts and the query terms wrapped in mark tags.\n- Point the header search form from step 1 at this route.\n- Acceptance: a word appearing in three seeded pages returns all three with excerpts; deleting a page removes it from results.\n- Out of scope: fuzzy matching, typo tolerance, indexing database rows.\n- Pain warning: the FTS5 tokenizer treats brackets as separators, so [[Page Name]] matches oddly, test quoted phrases against bare words."
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Nightly export to plain Markdown files",
+      "body": "Close the loop on data ownership: a script that writes every page to ./export/ as a .md file with front matter, rewriting [[wiki links]] to relative Markdown links between files. Schedule it nightly with launchd or cron and document it in the README. Delegate the whole script, then diff two consecutive runs.",
+      "why": "Once the slug format exists this is a fully specified, low-risk file transform, perfect for a hands-off handoff with a spot check.",
+      "prompt": "Add a nightly export of every page to plain Markdown files. Requirements:\n- scripts/export.js reads all rows from pages (step 1) and writes one .md file per page into ./export/, named with the slug function from step 3, with YAML front matter carrying title and updated_at.\n- Rewrite [[Wiki Links]] in exported bodies to relative Markdown links targeting the sibling .md files.\n- Clear ./export/ at the start of each run, then log the count of files written and the destination path.\n- Add npm run export to package.json and README instructions to schedule it nightly via launchd on macOS or cron on Linux.\n- Acceptance: running npm run export twice yields byte-identical files, one per page, no leftovers from deleted pages.\n- Out of scope: uploading exports anywhere, converting database blocks to CSV.\n- Pain warning: titles differing only in case collide on macOS filesystems, append a numeric suffix to duplicates."
+    }
+  ],
+  "stretchGoals": [
+    "Add an ask-my-notes page that retrieves matching paragraphs and sends them to an LLM API, key stored in .env",
+    "Turn a page structure you repeat into a one-click template button on the home screen",
+    "Generate a small static site from the ./export/ folder and publish selected pages publicly"
+  ],
+  "resources": [
+    {
+      "title": "AppFlowy (GitHub)",
+      "url": "https://github.com/AppFlowy-IO/AppFlowy",
+      "note": "An open-source Notion-like workspace worth reading to see how docs and databases coexist at scale."
+    },
+    {
+      "title": "AFFiNE (GitHub)",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "note": "Another open-source workspace combining docs and canvases, useful for comparing data-model choices."
+    },
+    {
+      "title": "SiYuan (GitHub)",
+      "url": "https://github.com/siyuan-note/siyuan",
+      "note": "Stores workspace blocks as JSON files on disk, a directly relevant contrast to your single SQLite file."
+    },
+    {
+      "title": "Notion pricing",
+      "url": "https://www.notion.com/pricing",
+      "note": "Shows what the paid tiers charge for, helpful context for which features you consciously skipped."
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "buffer",
+  "sourceHash": "sha256:4c11df0f9777ed6abb2337b43bceb87b5e118602f31a3554d8e2194fbc83dd44",
+  "generatedAt": "2026-08-24T11:02:39.465Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "intermediate",
+  "timeEstimate": "multi-day",
+  "title": "Build your own social post scheduler (a personal Buffer)",
+  "summary": "You will build a small web app that holds a queue of posts and publishes them to Mastodon and Bluesky at times you pick, with retries and a history log. It runs on a machine you control, with credentials in a .env file and data in SQLite. Buffer keeps getting paid because maintaining many networks' APIs as platforms change, rendering accurate previews, tracking analytics, and shipping mobile apps are ongoing jobs, not things you write once.",
+  "whatYoullLearn": [
+    "Setting up API credentials the way the platforms intend: a Mastodon access token and a Bluesky app password",
+    "Designing a database-backed queue whose status column makes double-posting practically impossible",
+    "Writing one small adapter function per network behind a shared interface, so adding a network means adding a file",
+    "Scheduling recurring work with a cron tick (a timer that fires every minute) and retrying failures with backoff (waiting longer between tries)",
+    "Reading rate-limit headers and API error bodies instead of guessing"
+  ],
+  "whatYouWontGet": [
+    "One or two networks of your choosing, not the dozen Buffer keeps current as each platform shifts its API",
+    "A plain-text composer with a character counter, not rendered previews showing how each network will lay out the post",
+    "Your own history page of sent posts, not an analytics dashboard with engagement metrics",
+    "A single user with a single queue in a browser, no mobile apps and no team approval flows",
+    "Full ownership of upkeep: when a platform changes its API, updating the adapter is on you"
+  ],
+  "moatLessons": [
+    {
+      "tag": "integrations",
+      "lesson": "Buffer's durable advantage is keeping every network integration alive while the platforms rename endpoints, tighten policies, and expire tokens. The lesson for a builder is that an integration is a subscription to someone else's changelog, so isolate each network in its own adapter file and start with the one or two you actually use."
+    },
+    {
+      "tag": "execution-polish",
+      "lesson": "People trust Buffer because scheduled posts reliably go out and the small details, queue order, previews, failure notices, all behave. The lesson is that correctness mechanics earn trust: mark a row before sending, never fire twice, show honest failure states, and users forgive the missing extras."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 20 or newer installed (check with node -v) and npm working",
+    "A Mastodon account on any instance, and a Bluesky account",
+    "An always-on computer (home server, old laptop, or Raspberry Pi) because scheduled posts only fire while the process runs",
+    "Comfort editing files and running commands in a terminal; git basics help for checkpointing"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the app: Express server, SQLite queue, compose page",
+      "body": "Start with the skeleton: an Express (Node's most common web server library) app, a SQLite database through better-sqlite3, and one page with a compose box and the queue listed by send time. This step has no tricky decisions, which makes it ideal to delegate wholesale. Verify it works by posting through curl and refreshing the page.",
+      "why": "Known-stack boilerplate is precise and low-risk, so hand it over whole and save your attention for the parts that involve real judgment.",
+      "prompt": "Set up a Node project named scheduler with Express and better-sqlite3. Requirements:\n- package.json with express and better-sqlite3 installed and a test script that runs node --test\n- server.js serving port 3000 with one page at / containing a textarea compose box, a file input for images, and the queue ordered by send time\n- SQLite database file at data/app.db with a posts table: id, body, image_path, send_at (ISO datetime), network, status ('queued','sending','sent','failed'), attempts, posted_url\n- POST /api/posts inserts a queued row from JSON {body, sendAt?, imageUrl?} and returns the row\n- GET /api/posts returns all rows ordered by send_at ascending\n- uploaded images saved under media/ next to the database, path stored in image_path\n- dotenv loaded, .env in .gitignore from the start\n- out of scope: login screens, CSS beyond readable defaults, any social network calls\n- verify: curl a POST then reload / and see the row"
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Create your Mastodon access token and Bluesky app password",
+      "body": "Publishing needs credentials, and platforms hand these out only to logged-in humans. On Mastodon you create an application in Preferences, Development, then copy the access token, which proves to the API that requests come from your app. On Bluesky you generate an app password in Settings, a scoped key that can post without revealing your main password. Paste both into .env as MASTODON_TOKEN, MASTODON_INSTANCE, BLUESKY_HANDLE, and BLUESKY_APP_PASSWORD.",
+      "why": "Developer consoles sit behind your personal login and terms acceptance, surfaces no agent can reach and none should.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Write the two network adapters and send a real test post",
+      "body": "Now connect the queue to reality with two small files, adapters/mastodon.js and adapters/bluesky.js, each exporting one publish function. Drive the agent here rather than delegating, because API calls fail in ways only a live account reveals: expired tokens, wrong MIME types, rate limits. End the step with a real post visible in your feed from each network.",
+      "why": "Live-API code fails unpredictably, so stay in the loop while the agent writes and curl verifies against real accounts.",
+      "prompt": "Add adapters/mastodon.js and adapters/bluesky.js that each publish one post. Requirements:\n- mastodon.js exports async postToMastodon(body, imagePath): upload media to ${MASTODON_INSTANCE}/api/v1/media, then POST /api/v1/statuses with MASTODON_TOKEN from .env as Bearer auth\n- bluesky.js exports async postToBluesky(body, imagePath): sign in with @atproto/api using BLUESKY_HANDLE and BLUESKY_APP_PASSWORD, upload the blob, then create the record with the image embedded when one exists\n- both return the public URL of the published post\n- scripts/test-post.js takes text and a network name as CLI args, calls the matching adapter, prints the returned URL\n- reject images over 1 MB with a clear message naming the limit\n- on a 401 response throw an error that names the exact .env key to fix\n- out of scope: threads, alt-text fields, deleting posts, any third network\n- warning: Mastodon enforces rate limits, so test once per network, not in a loop"
+    },
+    {
+      "label": "WE",
+      "title": "Make it send itself: slots, the minute tick, and safe retries",
+      "body": "This is the heart of a scheduler. You define posting windows (Buffer calls these slots), new posts fill the next free window, and a cron job (a timer that wakes every minute) publishes whatever is due. The safety trick is marking a row 'sending' before any network call, so a crash mid-publish leaves evidence instead of causing a double post. Retries use exponential backoff, meaning each retry waits longer than the last.",
+      "why": "State-machine bugs here cause double-posting, which costs real reputation, so keep the judgment in the loop instead of delegating this chunk whole.",
+      "prompt": "Build the sending engine in scheduler.js with slot filling and a minute tick. Requirements:\n- slots.json listing my posting times, e.g. [\"09:00\",\"17:00\"], interpreted in my local timezone\n- fillSlots: a new post without explicit sendAt takes the next free slot after now; explicit sendAt pins it exactly\n- node-cron firing every minute selects rows where status='queued' and send_at <= now, sets status='sending' before calling the adapter from step 3, then writes status='sent' with posted_url, or status='failed'\n- retry failures up to 3 times with backoff waits of 1, 5, then 15 minutes, tracked in attempts\n- one console.log line per attempt: timestamp, network, result, useful later when grepping logs\n- out of scope: per-channel queues, calendar views, timezone switching per post\n- warning: the machine must be awake at slot time, a sleeping laptop silently misses its posts"
+    },
+    {
+      "label": "WE",
+      "title": "Composer counters and a history page you will actually read",
+      "body": "Finish with the feedback loops: a live character counter per network, since Mastodon allows about 500 characters and Bluesky 300, and a history page listing your last 100 sent posts with links to the live versions. Failed posts deserve equal billing, shown with their attempt count and last error so morning-you knows what happened overnight. These small touches are what make the tool trustworthy enough to rely on.",
+      "why": "Small additive UI rides along safely in an interactive session, where you can redirect the agent the moment a detail drifts.",
+      "prompt": "Add character counting to the composer and a history page. Requirements:\n- composer shows remaining characters for the selected network, 500 for Mastodon and 300 for Bluesky, counted in graphemes with the graphemer package so emoji measure as one\n- history.html at /history lists the last 100 rows where status='sent' from data/app.db: time, network, first line of body, link to posted_url\n- failed rows highlighted on the queue page with attempts and the latest error message stored in a new error_text column via a small migration\n- a retry button beside each failed row setting status back to 'queued'\n- out of scope: analytics charts, engagement numbers, rendered previews of network layouts\n- warning: each network wraps and truncates text differently, link out to the real post instead of faking a preview"
+    }
+  ],
+  "stretchGoals": [
+    "Add a third network behind the same adapter interface and feel for yourself why each one is a maintenance commitment",
+    "Email yourself a daily digest of sent and failed posts so overnight activity reaches you without opening the app",
+    "Move the whole folder to a Raspberry Pi or small VPS and let it run unattended for a week"
+  ],
+  "resources": [
+    {
+      "title": "Postiz (open-source scheduler)",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "note": "Study how a full scheduler structures many network adapters once yours outgrows two files."
+    },
+    {
+      "title": "Mixpost Lite (open-source, MIT)",
+      "url": "https://github.com/inovector/mixpost",
+      "note": "A single-user scheduler in PHP worth reading for its queue and retry design choices."
+    },
+    {
+      "title": "Buffer pricing",
+      "url": "https://buffer.com/pricing",
+      "note": "Scan the tier limits to calibrate which Buffer features are worth copying versus skipping."
+    }
+  ]
+}

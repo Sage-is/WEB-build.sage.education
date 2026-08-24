@@ -1,0 +1,84 @@
+{
+  "slug": "carrd",
+  "sourceHash": "sha256:a9b0c44c1d3741228ee20516a27ff343774ed0589f6c3e03ad2e2ca44dd7d9fa",
+  "generatedAt": "2026-08-24T10:30:13.742Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "beginner",
+  "timeEstimate": "one-sitting",
+  "title": "Build your own one-page site (a personal Carrd)",
+  "summary": "You will build a one-page personal site from a single HTML file that is generated from a content.json file, plus a tiny form endpoint that saves messages to a log on your own machine, and then put it all online under your own domain. That covers the heart of what Carrd does: a fast, focused profile or landing page. Carrd still does well because it costs about $19 a year and removes every ounce of hosting, DNS, and design work behind a visual editor. Building your own earns its keep when you want full control of the markup or want to learn how these pieces fit together.",
+  "whatYoullLearn": [
+    "Write semantic HTML and CSS with typographic hierarchy, CSS variables, and automatic dark mode",
+    "Drive a site from a JSON content file with a small build script",
+    "Run a minimal Express endpoint that validates input and appends submissions to a flat file",
+    "Filter bot submissions with a hidden honeypot field",
+    "Deploy static files and point a custom domain at them with a DNS record"
+  ],
+  "whatYouWontGet": [
+    "You edit content.json directly instead of arranging blocks in a visual editor",
+    "Designs start from your own markup rather than a gallery of ready-made templates",
+    "Form submissions collect in your own log file and server instead of a managed inbox",
+    "Hosting is yours to run, so publishing means redeploying your files"
+  ],
+  "moatLessons": [
+    {
+      "tag": "execution-polish",
+      "lesson": "Carrd wins on craft: every template looks intentionally designed and the editor makes good taste cheap. The lesson for builders is that layout quality is the actual feature, so budget several iterations on spacing and type instead of shipping the first generated pass."
+    },
+    {
+      "tag": "scale-infra",
+      "lesson": "Carrd serves millions of pages with zero configuration, and that frictionless delivery is why people pay even at tiny prices. A builder learns that removing deployment and DNS friction is itself the product, and that a static file on a CDN scales further than any personal project will ever need."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 18 or newer installed, check with node --version",
+    "A code editor such as VS Code and a terminal",
+    "An AI coding assistant running in your project folder",
+    "A free account on a static host such as Cloudflare Pages or Netlify",
+    "Optional: a domain registered at any registrar if you want a custom URL"
+  ],
+  "steps": [
+    {
+      "label": "WE",
+      "title": "Generate the one-page site from content.json",
+      "body": "Ask your assistant to build a generator that turns a JSON file into a single polished HTML page. The JSON file acts as your content management system: edit it, rerun the script, and the page updates. Push hard on design quality here, since typography and spacing are what separate a page that looks made from one that looks templated.",
+      "why": "Design judgment needs you in the loop; the assistant drafts, you steer the iterations.",
+      "prompt": "Build a one-page personal site generator. Requirements:\n- Stack: plain HTML and CSS with a small Node build script called build.js, no frameworks and no client-side JavaScript required\n- content.json is the CMS: name, headline, short about paragraph, avatar image path, social links, and an optional projects array where each item has title, description, and URL\n- Running node build.js writes index.html from content.json using template literals\n- Design bar: strong typographic hierarchy, generous whitespace, one accent color set via a CSS variable, dark mode through the prefers-color-scheme media query\n- Inline all CSS in index.html and add Open Graph meta tags so shared links show a preview card\n- Out of scope: JavaScript frameworks, analytics snippets, external font CDNs\n- Fair warning: typography takes a few passes, ask for three distinct layout variants before picking one"
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Add the contact form backend",
+      "body": "This chunk is precise and low-risk, so hand it to your agent whole. The server serves the index.html from step 1, accepts form posts, and appends each message to messages.log as a JSON line. A honeypot is an invisible field humans never fill; bots that fill it reveal themselves and get quietly discarded.",
+      "why": "A single-file Express endpoint with clear specs is boilerplate an agent can complete without supervision.",
+      "prompt": "Add a contact form backend. Requirements:\n- Stack: one server.js file using Express, serving the index.html and assets generated in step 1 on localhost\n- POST /contact accepts name, email, and message, rejects empty values, and appends one JSON line to messages.log\n- Add a honeypot field named company hidden with CSS: bots that fill it receive a fake success response and nothing is logged\n- On success return a small inline thank-you fragment instead of a redirect\n- Read the port from a .env file using dotenv, and list .env and messages.log in .gitignore\n- Out of scope: sending email, CAPTCHA services, databases\n- Honest limit: appending to a text file is fine at personal-site traffic but will not survive thousands of simultaneous submissions"
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Deploy it and attach your domain",
+      "body": "Sign in to a static host such as Cloudflare Pages or Netlify and drag your project folder in; the wizard handles the rest. If your host supports Node functions, upload server.js as a function so the form keeps working, otherwise park the form until you pick a host that does. To use your own domain, open your registrar's DNS panel, which is the internet's address book, and add the CNAME record (a pointer that aims your domain at the host) shown in the host's dashboard. DNS changes can take up to a day to spread.",
+      "why": "Hosting wizards, registrar accounts, and DNS records are surfaces only you can sign into and click.",
+      "prompt": null
+    }
+  ],
+  "stretchGoals": [
+    "Generate a social share image from content.json during the build",
+    "Add a second layout, like a resume variant, switchable from a field in content.json",
+    "Swap messages.log for SQLite once you want to query submissions"
+  ],
+  "resources": [
+    {
+      "title": "Carrd",
+      "url": "https://carrd.co",
+      "note": "The product you are replacing; open it side by side and compare finish against your page."
+    },
+    {
+      "title": "GrapesJS",
+      "url": "https://github.com/GrapesJS/grapesjs",
+      "note": "Open-source builder library worth exploring if you later want a visual editor on top of your generator."
+    }
+  ]
+}

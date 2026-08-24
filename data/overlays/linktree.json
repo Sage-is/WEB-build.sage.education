@@ -1,0 +1,89 @@
+{
+  "slug": "linktree",
+  "sourceHash": "sha256:9b7cde7c8751ae03dacc2bd6ff5262540df44b69525da80c62cf6d09880ae710",
+  "generatedAt": "2026-08-24T10:34:15.266Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "beginner",
+  "timeEstimate": "one-sitting",
+  "title": "Build your own link-in-bio page (a personal Linktree Pro)",
+  "summary": "You will build one static page (a page served exactly as stored, with no app logic behind it) showing your avatar, name, short bio, and one button per entry in a links.json file you edit to update the site. A small Node server turns button taps into redirects and logs each one, feeding a password-protected stats page with your true click counts. Linktree keeps its paying subscribers because it hosts the page, keeps the editor and analytics working at scale, and bundles marketing extras, all chores that become yours as the operator.",
+  "whatYoullLearn": [
+    "Modeling site content as data, keeping every link in links.json so redesigns never touch content",
+    "Mobile-first CSS with automatic dark mode through prefers-color-scheme",
+    "Building a redirect-based click counter backed by a plain log file, with no trackers involved",
+    "Testing HTTP behavior with curl and the browser devtools network tab",
+    "Running your own server on a VPS with pm2 and Caddy handling HTTPS"
+  ],
+  "whatYouWontGet": [
+    "Changes happen by editing links.json and reloading, rather than arranging cards in a visual editor",
+    "Analytics mean a clicks-per-link table you wrote, not charts, trend history, or audience geography",
+    "Hosting is self-managed, so uptime, certificate renewal, and OS updates sit on your checklist",
+    "Storefront checkout, email capture, and Instagram automations are outside this build entirely"
+  ],
+  "moatLessons": [
+    {
+      "tag": "execution-polish",
+      "lesson": "Linktree's core artifact could be written in an afternoon, yet it charges fifteen dollars a month because the polish is the product: an editor anyone can use, layouts tested across hundreds of phones, fast analytics, and hosting that absorbs traffic spikes. A builder learns that version one is cheap and the long tail of consistency and upkeep is what customers actually buy."
+    }
+  ],
+  "prerequisites": [
+    "A code editor such as VS Code and any current browser",
+    "Node.js 20 or newer installed from nodejs.org, confirmed with node -v",
+    "Comfort in a terminal: moving between folders with cd, running commands, stopping with Ctrl-C",
+    "For step 3 only: an account at any VPS provider (about five dollars a month) and a domain whose DNS panel you control"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the link page",
+      "body": "Hand your assistant the prompt below and treat the reply as a first draft, not a finished thing. Run it locally, edit links.json, refresh the browser, and confirm the buttons follow the file. This single page is the whole artifact Linktree charges fifteen dollars a month for, which tells you something about where software value actually lives.",
+      "why": "Fixed shape, instantly visible result, zero risk: the ideal profile for handing a whole scaffold to an agent.",
+      "prompt": "Build a single-page link-in-bio site in a new folder called my-links. Requirements:\n- index.html with all CSS embedded in one style tag, no frameworks, plus links.json holding an array of {title, url, slug, emoji} entries, seeded with 4 sample links.\n- The page loads links.json with fetch() and renders avatar.png, a display name, a one-line bio, and one full-width button per entry in file order.\n- Mobile-first layout: a centered column capped at 480px, buttons at least 44px tall (a comfortable thumb target) with 12px vertical gaps.\n- Colors defined as CSS custom properties switched by prefers-color-scheme, so dark-mode systems get a dark background automatically.\n- Head tags for title, description, og:title, og:description, and og:image pointing at a 1200x630 og.png (Open Graph tags are what chat apps read to draw a share preview; a plain colored rectangle is fine).\n- Out of scope: JavaScript animation, multi-page routing, icon fonts, build tooling.\n- Pain warning: fetch() cannot read files over file://, so test with python3 -m http.server 8000 inside the folder.\nDone means http://localhost:8000 shows four working buttons matching links.json exactly."
+    },
+    {
+      "label": "WE",
+      "title": "Wire up your own click counts",
+      "body": "With the page working, give the tracker prompt to your assistant and stay in the loop: start the server, click buttons, and watch clicks.log grow. When /stats misbehaves, describe the exact error to your assistant and apply the fix yourself. Debugging with a helper is the real skill this step teaches, more than the tracker code.",
+      "why": "Routing, file writes, and auth invite genuine bugs, so keep the assistant beside you while you poke at it.",
+      "prompt": "Add click tracking to my-links. Requirements:\n- One server.js using only Node's built-in http module, serving index.html and links.json from disk and answering GET /go/:slug with a 302 redirect (a temporary hop that forwards the visitor to the real URL).\n- Reuse the slug field already in links.json as the source of truth; the server looks the slug up to find each destination.\n- On every redirect, append one line formatted as slug followed by an ISO timestamp to a clicks.log file in the project root, then respond 302.\n- Unknown slugs return a plain-text 404 listing the valid slugs so broken buttons are easy to spot.\n- Serve /stats as an HTML table of clicks per link, highest first, guarded by HTTP Basic Auth (the browser's native username dialog) with credentials in ADMIN_USER and ADMIN_PASS inside a .env file, started with node --env-file=.env server.js.\n- Out of scope: charts, IP logging, cookies, anything third-party.\n- Pain warning: some browsers prefetch links and inflate counts, so treat the numbers as directional, not exact.\nVerify by running curl -i http://localhost:3000/go/github twice, then confirming /stats reports two."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Put it on your own server",
+      "body": "Rent a small virtual private server (a rented Linux machine), then generate an SSH key pair on your computer and paste the public half into the provider's dashboard. In your domain's DNS panel add an A record, the entry mapping a hostname to your server's IP address. Copy the my-links folder up, run server.js under pm2 (a process manager that restarts it after crashes and reboots), and put Caddy in front for automatic HTTPS. These consoles authenticate as you personally, which is exactly why no agent should drive them.",
+      "why": "Billing and DNS consoles require your identity, the one surface an assistant should never touch.",
+      "prompt": null
+    }
+  ],
+  "stretchGoals": [
+    "Point a subdomain at the server and let Caddy issue the HTTPS certificate automatically",
+    "Style branded buttons for major platforms, borrowing colors and icons from the LittleLink project",
+    "Move clicks.log into a SQLite table so you can slice clicks by day or referrer with plain SQL"
+  ],
+  "resources": [
+    {
+      "title": "LittleLink",
+      "url": "https://github.com/sethcottle/littlelink",
+      "note": "An open-source link page with 100+ branded button styles worth borrowing for recognizable platform icons."
+    },
+    {
+      "title": "LinkStack",
+      "url": "https://linkstack.org/",
+      "note": "A self-hosted alternative with an editor, themes, and click stats, useful for comparing feature scope."
+    },
+    {
+      "title": "Carrd",
+      "url": "https://carrd.co/",
+      "note": "A hosted one-page builder showing how even free tiers trade element caps and branding for convenience."
+    },
+    {
+      "title": "Linktree pricing",
+      "url": "https://linktr.ee/s/pricing",
+      "note": "What the managed version costs per month, handy context for what your build replaces."
+    }
+  ]
+}

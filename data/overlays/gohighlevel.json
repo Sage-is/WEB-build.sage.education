@@ -1,0 +1,129 @@
+{
+  "slug": "gohighlevel",
+  "sourceHash": "sha256:14ac860e1df6d7fe34d8b2a28c9180ab1adc062b7b814856a9c6a73988ebcd7a",
+  "generatedAt": "2026-08-24T11:23:09.333Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "advanced",
+  "timeEstimate": "multi-day",
+  "title": "Build your own lead management starter (a personal HighLevel)",
+  "summary": "You'll build a small, local lead-management slice for one business: a public inquiry form, a contact and deal pipeline with follow-up tasks, and consented email sends through a provider API. Everything runs on your own machine or server using Docker and PostgreSQL, with your data staying in files you control. HighLevel still makes sense for its customers because it is hundreds of connected tools in one place: client sub-accounts (separate workspaces per client), managed phone and email delivery, and one support team when a flow breaks.",
+  "whatYoullLearn": [
+    "Modeling contacts, companies, deals, and pipeline stages in PostgreSQL with Drizzle ORM, a library that maps database rows to typed code objects",
+    "Building a public lead-capture form with spam protection and recorded consent",
+    "Sending email programmatically with templates, unsubscribe links, suppression checks, and send logs",
+    "Running a local multi-service stack with Docker Compose",
+    "Backing up, restoring, importing, and exporting your own data so nothing is trapped"
+  ],
+  "whatYouWontGet": [
+    "Scope stops at lead capture, contacts, deals, follow-ups, and email; funnels, websites, memberships, and client portals are separate products of their own",
+    "One workspace for you, not multi-client sub-account administration or white-label resale",
+    "Email goes through a provider you configure; telephony, SMS provisioning, and managed deliverability stay outside the project",
+    "Payments, AI features, reporting suites, mobile apps, and a connector marketplace are not part of the build",
+    "You operate the stack yourself: uptime, compliance, and support are your responsibility, which is the trade for owning it"
+  ],
+  "moatLessons": [
+    {
+      "tag": "integrations",
+      "lesson": "HighLevel wins by keeping forms, calendars, payments, and messaging under one roof so data flows without glue code. The lesson for a builder: every integration is ongoing maintenance, so pick a narrow core and connect outward deliberately rather than trying to absorb whole categories."
+    },
+    {
+      "tag": "scale-infra",
+      "lesson": "Managed phone numbers and email domains are expensive to run well; deliverability, meaning whether mail lands in inboxes instead of spam folders, takes constant operational care. The lesson: rent delivery infrastructure from specialists and spend your effort on the workflow logic around it."
+    },
+    {
+      "tag": "switching-costs",
+      "lesson": "Each client workspace accumulates connected domains, calendars, automations, and history, so leaving means migrating all of it at once. The lesson: build CSV export and clean schemas into your own tools from day one so you never trap yourself the way platforms trap their customers."
+    }
+  ],
+  "prerequisites": [
+    "Docker Desktop installed and running (check with docker --version)",
+    "Node.js 20 or newer and Git installed",
+    "PostgreSQL itself comes via Docker Compose, so no separate install needed",
+    "An account with a transactional email provider such as Postmark or Resend",
+    "A domain you control, with DNS access at your registrar, to verify a sending domain"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the project until one command runs it",
+      "body": "Hand the assistant the job of creating lead-starter: a Next.js 15 app wired to PostgreSQL through Drizzle, with Docker Compose starting the database. Your acceptance test is simple: docker compose up -d, then npm run dev, then seeing a page at localhost:3000. Fix nothing by hand yet; if the scaffold fails, push the error back to the agent.",
+      "why": "Scaffolding is precise, low-risk boilerplate, so hand it over whole and save your judgment for the schema.",
+      "prompt": "Build a Next.js 15 lead-management starter called lead-starter in this empty repository. Requirements:\n- Next.js 15 with TypeScript and the App Router, strict mode on\n- Drizzle ORM connecting to PostgreSQL 16, connection string read from DATABASE_URL in .env\n- A docker-compose.yml that starts PostgreSQL with a named volume so data survives restarts\n- One documented startup path in the README: docker compose up -d then npm run dev serving a page at localhost:3000\n- .env.example listing DATABASE_URL and EMAIL_PROVIDER_API_KEY, with .env covered by .gitignore\n- A health endpoint at /api/health returning { \"status\": \"ok\" }\nOut of scope: authentication, CSS frameworks, CI pipelines.\nPain warning: Next.js 15 and React type versions drift often, pin exact versions in package.json so a fresh install reproduces your working state."
+    },
+    {
+      "label": "WE",
+      "title": "Design the schema and seed a demo workspace",
+      "body": "Drive the modeling of your core tables yourself: companies, contacts, deals, notes, tasks, and pipeline stages. Ask the assistant for options where you're unsure, like how to order stages, and decide. Run the seed script and inspect rows with psql before writing any UI, because every later screen depends on these shapes.",
+      "why": "Schema choices ripple through everything downstream, so stay in the loop on every table before interfaces exist.",
+      "prompt": "Add the database schema to lead-starter using Drizzle ORM against the PostgreSQL service from docker-compose.yml. Requirements:\n- Tables: companies, contacts with company_id, deals with contact_id, stage, and value, notes, tasks with due date and done flag, and pipeline_stages with a position column\n- Seed five stages exactly: New, Contacted, Proposal, Won, Lost\n- An npm run seed script inserting two companies, six contacts, four deals spread across stages, and three tasks due soon\n- Apply the schema with drizzle-kit push, then verify psql \\c leadstarter \\dt lists all six tables\n- An index on contacts.email plus a helper that finds duplicates by lowercase email match\n- Store timestamps as UTC in every table\nKeep migration files in ./drizzle. Out of scope: user accounts, row permissions, audit tables.\nPain warning: due dates will bite you across timezones later, deciding on UTC storage now saves a painful migration."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Verify a sending domain with your email provider",
+      "body": "Log in to Postmark or Resend, add your domain, and copy the DKIM and SPF records they show you into your registrar's DNS settings. DKIM is a signature system proving mail really came from your domain; SPF names which servers may send for it. Wait for the provider's verification to pass, then generate an API key and put it in .env as EMAIL_PROVIDER_API_KEY.",
+      "why": "Provider dashboards and DNS consoles are tied to your logged-in accounts, surfaces no assistant can act on for you.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Ship the public inquiry form",
+      "body": "Build /inquire as the front door of your funnel-less funnel. Test it in a private browser window: submit garbage, submit without consent, submit normally. Confirm each submission created a contact at stage New with a deal and a note holding the message, using the schema from step two.",
+      "why": "Public forms attract bots and edge cases fast, so you want to steer validation decisions interactively.",
+      "prompt": "Add a public inquiry form at /inquire in lead-starter. Requirements:\n- Fields for name, email, optional phone, and message, plus a required consent checkbox storing the timestamp and consent text version in a consents table\n- Spam protection using a honeypot field, an invisible input bots fill, plus a minimum 3-second fill time, with no external captcha service\n- Server-side validation with zod, invalid input re-rendering with inline messages, success rendering a plain confirmation state\n- On valid submit, POST to /api/leads creates a contact at stage New, opens a deal, and stores the message as a note, matching the step-two schema\n- Rate limit the endpoint to 5 submissions per IP per hour with an in-memory counter\nOut of scope: file uploads, embeddable form builders, analytics scripts.\nPain warning: when the honeypot trips, return a normal-looking success response instead of an error, otherwise bots learn they were caught."
+    },
+    {
+      "label": "WE",
+      "title": "Manage contacts and deals day to day",
+      "body": "This is the screen you'll live in: contact list, deal pipeline, and a today view of follow-ups. Use it with the seeded demo data from step two and adjust anything that feels awkward now, while changes are cheap. The merge flow is the trickiest part, so review the assistant's transaction handling closely.",
+      "why": "Workflow feel is personal and iterative, exactly the kind of work worth doing with an assistant beside you rather than delegated blind.",
+      "prompt": "Add the daily-use views to lead-starter, built on the tables created earlier. Requirements:\n- /contacts with search by name or email, pagination at 25 rows, and a detail page showing notes and deals\n- /pipeline showing deals grouped by the five seeded stages with a stage-change action persisting the update\n- /today listing tasks due today or overdue with a done toggle stamping completed_at\n- A duplicate finder comparing lowercase emails and a merge action repointing deals and notes to the surviving contact inside one transaction\n- An activity_log row written on every mutation with actor, entity, action, and timestamp\nOut of scope: drag-and-drop libraries, board animations, bulk edit.\nPain warning: a merge that moves deals but not notes corrupts your data silently, wrap the whole merge in a single database transaction and test it twice."
+    },
+    {
+      "label": "WE",
+      "title": "Send your first consented campaign",
+      "body": "Wire sending through the provider key from step three, starting with one template to your own address. Only after that works should you send to a small segment of real opted-in contacts. Read the send logs together with the assistant's output and trace one message end to end through the emails table.",
+      "why": "Email touches outside systems and real people, so keep judgment in the loop for anything that leaves the building.",
+      "prompt": "Add manual email sending to lead-starter using the provider credentials in EMAIL_PROVIDER_API_KEY from the earlier setup step. Requirements:\n- An emails table logging every attempt with contact_id, template name, status, provider_message_id, and error text\n- Three editable templates in ./templates as markdown files supporting {{first_name}} style tokens\n- A compose page that picks one template, previews it against one chosen contact, then sends to a filtered segment of subscribed contacts only\n- An /unsubscribe/[contactId] page setting subscribed to false, checked by a suppression lookup before every send\n- A rate limit of 10 messages per minute and one automatic retry on transient provider failures, both visible in the log\nOut of scope: scheduled sends, A/B testing, drag-and-drop HTML editors.\nPain warning: provider sandbox keys accept sends but deliver nothing, so test the complete path with one real address you own before any batch."
+    },
+    {
+      "label": "WE",
+      "title": "Get your data in and out",
+      "body": "Portability is what keeps your tool honest, so build CSV import and export while the data is still small. Round-trip once: export, tweak a few rows in a spreadsheet, import back, and confirm updates landed where expected. Add the interaction timeline last, since it reads from everything built so far.",
+      "why": "Import formats and merge rules involve your real data quirks, which you know and an agent doesn't.",
+      "prompt": "Add import and export to lead-starter so data stays portable. Requirements:\n- Export endpoints producing contacts.csv and deals.csv with column order documented in README_IMPORT.md\n- An import page accepting a CSV upload, showing a field-mapping preview against existing columns, then creating or updating contacts matched by lowercase email\n- An import report with counts of created, updated, and skipped rows plus row numbers and reasons for rejects\n- An interaction timeline on each contact page merging notes, sent emails, form submissions, and stage changes, newest first\n- Parse CSVs with papaparse, not string splitting\nOut of scope: Excel formats, Google Sheets sync, webhook ingestion.\nPain warning: quoted fields containing commas break naive parsers and corrupt imports, which is exactly why papaparse is required here."
+    },
+    {
+      "label": "WE",
+      "title": "Prove it works and make recovery boring",
+      "body": "Close the project with tests around the two scariest paths, duplicate merging and unsubscribe suppression, plus a backup command you've actually restored from. Write the README last, once the commands are real. Then delete the demo data, restore from backup, and confirm your test contact survived.",
+      "why": "Verification is where you catch the agent's confident mistakes, so treat tests as your review checklist, not decoration.",
+      "prompt": "Harden lead-starter with tests and a backup routine. Requirements:\n- Vitest unit tests covering duplicate detection and the unsubscribe suppression check\n- One Playwright end-to-end test walking submit form, contact appears, task toggled done, unsubscribed contact blocked from sending\n- npm run backup writing pg_dump output to ./backups/YYYY-MM-DD-HHMM.sql.gz\n- npm run restore loading one of those files into a fresh database, verified by counting contacts afterward\n- README sections for setup, architecture, where data lives, backup and restore, and the sending-domain setup completed earlier\nOut of scope: deploy pipelines, monitoring dashboards, load testing.\nPain warning: an untested restore is not a backup, run the restore against a scratch database today while the stakes are zero."
+    }
+  ],
+  "stretchGoals": [
+    "Add saved filters so the segments you email repeatedly are one click away",
+    "Schedule a weekly digest email summarizing new leads and overdue tasks",
+    "Read Twenty's data model on GitHub and borrow its approach to custom fields"
+  ],
+  "resources": [
+    {
+      "title": "Twenty (open-source CRM)",
+      "url": "https://github.com/twentyhq/twenty",
+      "note": "Study how an established open-source CRM models contacts, companies, and deals before finalizing your schema."
+    },
+    {
+      "title": "Mautic (open-source marketing automation)",
+      "url": "https://github.com/mautic/mautic",
+      "note": "A reference for how campaigns, consent, and unsubscribe handling look at larger scale than your slice."
+    },
+    {
+      "title": "HighLevel pricing",
+      "url": "https://www.gohighlevel.com/pricing",
+      "note": "Shows what the paid tiers bundle, useful context for exactly how much you are deliberately leaving out."
+    }
+  ]
+}

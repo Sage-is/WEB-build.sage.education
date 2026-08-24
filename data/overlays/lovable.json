@@ -1,0 +1,121 @@
+{
+  "slug": "lovable",
+  "sourceHash": "sha256:6de3825287cfbe8c036531aa3be3d35e1c27ed2af2466ff6a9a34180d14dd925",
+  "generatedAt": "2026-08-24T11:15:31.896Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "advanced",
+  "timeEstimate": "one-sitting",
+  "title": "Build your own brief-to-app generator (a personal Lovable)",
+  "summary": "You will build vibe, a terminal tool that takes a plain-language brief like 'a habit tracker with a weekly grid', asks a model to write a small React app into a local folder, checks that it compiles, and commits every round to git so nothing is unrecoverable. Building it teaches the real shape of prompt-to-app products: the wrapper around the model is a sitting of work, and the model doing the writing is the actual product. Lovable keeps its customers because the subscription bundles frontier model access, hosted previews, deploys, and a database wired up for people who never open a terminal, and none of that comes home with a weekend CLI.",
+  "whatYoullLearn": [
+    "Calling Anthropic or OpenAI APIs from Node and parsing strict JSON file output",
+    "Scaffolding Vite + React + TypeScript projects programmatically",
+    "Using git branches, diff stats, and revert as a review surface for machine-written code",
+    "Closing the loop with npm run build and tsc --noEmit as automated judges",
+    "Metering token usage and computing a dollar cost per generation round"
+  ],
+  "whatYouWontGet": [
+    "Generation quality tracks whichever model API key you bring; the frontier model itself is Lovable's core asset",
+    "Apps run on localhost; shareable URLs mean setting up hosting separately",
+    "Persistence is the SQLite or JSON layer you wire up; managed auth and database services stay out of scope",
+    "The workflow assumes terminal comfort; it does not turn non-developers into shippers"
+  ],
+  "moatLessons": [
+    {
+      "tag": "proprietary-models",
+      "lesson": "Lovable's edge is not the chat box but the frontier model doing the writing; a personal clone rents that intelligence by API, which teaches builders that wrapping a model is cheap while producing one is a different business entirely."
+    },
+    {
+      "tag": "scale-infra",
+      "lesson": "Hosted previews, sandboxed execution of generated code, and one-click deploys look cosmetic but are serious distributed systems; building vibe makes you feel how much engineering sits between 'files on my disk' and 'a URL anyone can open', and that gap is what the subscription sells."
+    }
+  ],
+  "prerequisites": [
+    "Node 22 installed, confirmed with node --version",
+    "git installed with user.name and user.email configured",
+    "An Anthropic or OpenAI account with billing enabled and an API key ready for .env",
+    "Basic terminal fluency: running commands, reading file trees"
+  ],
+  "steps": [
+    {
+      "label": "MANUALLY",
+      "title": "Get a model API key and set a spending cap",
+      "body": "Sign up with Anthropic or OpenAI, create an API key, and set a hard monthly spending limit in the billing dashboard before writing any code. Put the key in a .env file, a local secrets file git ignores, and add .env to .gitignore so it never lands in version control. An API key is a password that bills by the character, so treat it like one.",
+      "why": "Billing consoles and key custody are human-only surfaces; handing a live payment credential to an agent trades real risk for zero learning.",
+      "prompt": null
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the vibe CLI",
+      "body": "Hand the boring bones to your coding agent: package setup, command registration, config loading, and a slug helper. Your job is to review the returned diff and confirm node src/index.js new \"test brief\" exits zero before moving on. Keeping this layer dependency-light pays off in every later step.",
+      "why": "Pure boilerplate with a crisp acceptance test is the textbook case for handing a whole chunk away.",
+      "prompt": "Build a Node 22 CLI called vibe. Requirements:\n- package.json with \"type\": \"module\" and only two dependencies: commander for argument parsing and dotenv for loading config.\n- src/index.js registers three subcommands: new <brief>, undo, preview, each stubbed with a console.log so node src/index.js new \"test\" runs and exits 0 today.\n- src/lib/config.js reads MODEL_API_KEY and VIBE_MODEL_PROVIDER from a root .env file and exits with a clear message naming the missing variable.\n- src/lib/slug.js converts a brief string to a lowercase, hyphen-only, filesystem-safe slug capped at 40 characters.\n- An npm test script that invokes the CLI once and asserts exit code 0.\n- Honest pain warning: resist adding chalk, ora, or any UI library now, every extra dependency is something later steps must debug.\n- Out of scope: model calls, web UI, telemetry, progress spinners."
+    },
+    {
+      "label": "WE",
+      "title": "Turn a brief into real files",
+      "body": "Drive the first real generation yourself: send a one-line brief, inspect the raw model response, and iterate on parsing until actual files land in ./apps/<slug>. Expect malformed JSON at least once; that struggle teaches failure modes no documentation captures. Then run npm install and npm run dev inside the generated folder and watch your brief become a page.",
+      "why": "Model output arrives messy in ways you can only learn by debugging it live, so this step stays on your keyboard.",
+      "prompt": "Add the brief-to-files engine to the vibe CLI from step 2. Requirements:\n- src/lib/generate.js calls the provider named in .env using the official SDK, @anthropic-ai/sdk or openai, with the key read from MODEL_API_KEY and never logged.\n- The system prompt demands exactly one JSON object back: {\"files\":[{\"path\":\"src/App.tsx\",\"contents\":\"...\"}]}, no prose outside the JSON.\n- Strip any markdown fences, then JSON.parse; on failure write the raw response to .vibe/last-response.txt and exit 1.\n- Write every file under ./apps/<slug>/ using src/lib/slug.js, rejecting any path containing .. or leading slashes.\n- Generated apps are Vite + React + TypeScript with package.json, vite.config.ts, index.html, src/main.tsx, and src/App.tsx at minimum.\n- Generated apps persist data with better-sqlite3 into a single app.db file, declared in the generated package.json.\n- Honest pain warning: models wrap JSON in ```json fences far more often than you expect, handle that case before anything else works.\n- Out of scope: streaming responses, multi-provider fallback, conversation memory."
+    },
+    {
+      "label": "WE",
+      "title": "Make the build verify itself",
+      "body": "Teach vibe to judge its own work: run the generated app's npm run build and tsc --noEmit, which reports type errors without emitting files, then feed failures back to the model and cap retries at three. Watch one broken generation get repaired automatically, then force a failure to confirm it stops and shows the error instead of spinning forever.",
+      "why": "Repair loops are where agents spin and burn tokens; the stop-at-three policy is judgment you should own personally.",
+      "prompt": "Add a verify-and-repair loop to src/lib/generate.js. Requirements:\n- After files are written, run npm install, then npm run build, then npx tsc --noEmit inside ./apps/<slug> using child_process.execSync with output captured.\n- On any failure, send the combined stdout and stderr back to the model asking only for changed files in the same files-array JSON format.\n- Retry the full generate-and-check cycle at most 3 times, then print the last compiler error and stop.\n- Print one status line per attempt: attempt number, failing command, and error line count.\n- Record the attempt count in .vibe/session.json, creating the file if missing, so reruns start clean instead of inheriting stale counts.\n- Honest pain warning: tsc output can overflow the model's context window, truncate each error blob to its first 4000 characters before sending.\n- Out of scope: unit tests for generated apps, linting, formatting tools."
+    },
+    {
+      "label": "WE",
+      "title": "Put every round behind git",
+      "body": "Make each verified round a commit on a branch, printing the diff stat, the count of files changed plus insertions and deletions, before committing so you see exactly what the model touched. Then practice vibe undo on a deliberately bad round until reverting feels routine. Manual review cannot keep pace with machine-written code, so git becomes your review surface.",
+      "why": "One careless reset erases an afternoon; git judgment remains a human skill even inside an AI workflow.",
+      "prompt": "Add git safety to every vibe round. Requirements:\n- When vibe new scaffolds ./apps/<slug>, run git init and make an initial empty commit on main.\n- After a round passes the verify loop from step 4, print git diff --stat for the pending changes, then git add -A and git commit with message round-<N>: <first 50 chars of the brief>.\n- vibe undo runs git revert HEAD inside the most recently used app directory and refuses to run when git status reports a dirty worktree.\n- On a dirty tree, print instructions to stash or discard instead of attempting the revert.\n- Honest pain warning: revert on a dirty tree fails with a message nobody enjoys reading, catching it early is the whole feature.\n- Verify by generating twice and confirming git log shows the initial commit plus two round commits.\n- Out of scope: pushing to remotes, pull requests, merge conflict resolution."
+    },
+    {
+      "label": "WE",
+      "title": "Track sessions, tokens, and cost",
+      "body": "Extend the .vibe/session.json introduced by the verify loop into full conversation memory, then add token counting, where tokens are the text chunks models bill by, and a dollars-per-round readout computed from src/lib/prices.json. Generate the same brief twice and compare costs; the number will surprise you. Resending only files you name is your first taste of context management, the discipline separating toy wrappers from tools people rely on.",
+      "why": "Context trimming and cost math are tradeoffs worth watching round by round; delegating them blind hides the instincts this lesson exists to build.",
+      "prompt": "Add conversation memory and cost accounting to vibe. Requirements:\n- Store the transcript, current file tree, and last diff stat in .vibe/session.json inside each app directory, rewriting it after every round.\n- On follow-up rounds to an existing app, resend only files the user names by path plus the session summary, never the whole tree.\n- Read token usage from each API response, normalize the Anthropic and OpenAI usage field shapes in one tested function, and store totals in session.json.\n- Compute dollars per round from src/lib/prices.json, which maps model name to input and output price per million tokens, and print the figure with 4 decimal places.\n- Print an inline warning whenever a single round exceeds 0.25 USD so bill surprises surface immediately.\n- Add vibe new --continue <slug> to resume the stored session instead of starting cold.\n- Honest pain warning: usage fields differ between providers and drift across versions, pin SDK versions in package.json.\n- Out of scope: embeddings, vector stores, semantic memory search."
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Preview and document",
+      "body": "The finish line is mechanical: spawn the Vite dev server on port 5173, refuse to preview an app whose last verify failed, and write the README covering quickstart, key setup, typical cost, and the honest note that output quality equals the model behind the key. Review the docs voice yourself before calling it done; honesty does not delegate well.",
+      "why": "A process spawn plus documentation is contained and easily verified, safe to hand off once the judgment-heavy steps are done.",
+      "prompt": "Finish vibe with a preview command and a README. Requirements:\n- vibe preview spawns npx vite --port 5173 inside the named app directory with stdio inherited, and exits when the server process exits.\n- Refuse to preview an app whose last verify round failed, printing which command failed instead.\n- README.md at the repo root documents the required .env variables, a typical total cost per generated app computed from src/lib/prices.json, and a plain paragraph stating that output quality equals the model behind the key.\n- Include a 60-second quickstart: install, set the key, generate one app, run preview, open localhost:5173.\n- Verify with npm test plus one manual preview run against an app generated in earlier rounds.\n- Honest pain warning: port 5173 is Vite's default and collides if another instance runs, detect and report the busy port.\n- Out of scope: hosted URLs, HTTPS certificates, deployment targets, Docker."
+    }
+  ],
+  "stretchGoals": [
+    "Add a vibe swap-provider command so one brief replays across two models and the outputs compare line by line",
+    "Append every round's cost to a CSV file and chart a month of tinkering spend",
+    "Seed generation from your own template repository instead of empty folders"
+  ],
+  "resources": [
+    {
+      "title": "bolt.diy",
+      "url": "https://github.com/stackblitz-labs/bolt.diy",
+      "note": "Open-source prompt-to-app builder, useful for comparing architectural choices with your own."
+    },
+    {
+      "title": "Aider",
+      "url": "https://github.com/Aider-AI/aider",
+      "note": "Mature terminal coding agent, study how it handles diffs and per-round commits."
+    },
+    {
+      "title": "open-lovable",
+      "url": "https://github.com/firecrawl/open-lovable",
+      "note": "Closest open cousin, chats a React app together using your own model keys."
+    },
+    {
+      "title": "Dyad",
+      "url": "https://github.com/dyad-sh/dyad",
+      "note": "Local-first Lovable-style desktop app, a reference for how polished a local generator can get."
+    }
+  ]
+}
