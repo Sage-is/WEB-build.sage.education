@@ -1,0 +1,114 @@
+{
+  "slug": "snapchat",
+  "sourceHash": "sha256:dacd88b0c8391151fa1fe15a4cb0a7363f0a23b3e142ff7b32d8f4aca7a9dccd",
+  "generatedAt": "2026-08-24T11:34:24.456Z",
+  "generator": {
+    "model": "claude-cli",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "advanced",
+  "timeEstimate": "one-sitting",
+  "title": "Build your own ephemeral snap relay (a personal Snapchat)",
+  "summary": "You will build a private snap relay: a camera-first web app your friends install to their home screen, where photos delete after one timed view, group stories vanish after 24 hours, and streaks count daily exchanges. The mechanics are a small server plus a delete timer. Snapchat survives untouched because the app is the friend graph: you can clone every feature and still clone none of the value, since the people, the AR lens models, and the global media pipeline stay on their side.",
+  "whatYoullLearn": [
+    "Capturing photos in the browser with getUserMedia and compositing caption overlays on a canvas",
+    "Building an installable PWA with a service worker that caches the shell but never the private media",
+    "Implementing view-once delivery where the server deletes the file the moment it is viewed",
+    "Web push notifications with VAPID keys, including graceful behavior when permission is denied",
+    "Testing time-dependent logic (streak day boundaries, 24-hour sweeps) with a fake clock"
+  ],
+  "whatYouWontGet": [
+    "Your snap partners must opt in and install your app; everyone you currently snap with stays on Snapchat's graph",
+    "AR lenses and face filters, which rest on years of proprietary face-tracking models",
+    "Screenshot detection: browsers have no API to see or stop a screenshot, and your UI should say so plainly",
+    "Snap Map, Discover, Spotlight, and the creator ecosystem around them",
+    "Messenger-grade mobile push: web push on iOS is best-effort and will occasionally arrive late or not at all"
+  ],
+  "moatLessons": [
+    {
+      "tag": "network-effects",
+      "lesson": "The graph is the product. A disappearing photo is only valuable because of who opens it, so a feature-complete clone with two users is a group chat with extra steps. The builder's lesson: audit any product for whether the value lives in the software or in who else is using it before you rebuild it."
+    },
+    {
+      "tag": "proprietary-models",
+      "lesson": "Lenses look like a filter feature but are frontier computer-vision work: years of face-tracking models, training data, and on-device optimization. When a 'feature' is really a research program, a solo builder should scope it out explicitly rather than budget a weekend for it."
+    },
+    {
+      "tag": "scale-infra",
+      "lesson": "Snaps ride a global media pipeline moving billions of images a day with low latency. Your single VPS handles one friend group fine, and that contrast teaches the real cost curve: features are cheap to copy, operating them for everyone at once is the expensive part."
+    }
+  ],
+  "prerequisites": [
+    "Node 22 installed locally",
+    "A small VPS or free-tier Node host you can put behind HTTPS (camera and push APIs require it)",
+    "A domain name you control, for DNS and the Caddy certificate",
+    "A friend group willing to install the PWA and actually use it"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the server, PWA shell, and invite-only accounts",
+      "body": "Start with the skeleton: a Fastify server, a SQLite database, and an installable PWA shell served without a build step. Accounts are invite-code only, seeded by a CLI script, because a private network's first security layer is that strangers cannot sign up at all. HTTPS matters from the first minute: browsers refuse camera and push access over plain http, so local dev runs on a self-signed certificate.",
+      "why": "Scaffolding is well-specified boilerplate with known-good patterns, so an agent can produce it whole at low risk.",
+      "prompt": "Build the project scaffold for a private snap relay. Requirements:\n- Node 22 + Fastify + better-sqlite3 with WAL mode, no build step, static files served from /public.\n- Vanilla-JS installable PWA: manifest.json plus a service worker that caches the UI shell for offline but never caches snap images.\n- Invite-code accounts: scripts/seed-invites.js writes codes into SQLite, signup is username plus passcode, sessions are httpOnly cookies.\n- Media lives as files in ./data/media outside the web root; metadata in ./data/app.db.\n- SESSION_SECRET in .env, with .env.example and a scripts/gen-secrets.js that generates values.\n- Local dev over HTTPS with a self-signed cert; document the browser warning and the trust step in README.\n- Out of scope: styling polish, third-party auth, any test runner beyond node:test.\n- Verify: npm start serves https://localhost:8443 and signup with a seeded code creates a row in the users table."
+    },
+    {
+      "label": "WE",
+      "title": "Build the camera capture and send flow",
+      "body": "Now the core loop's front half: open the camera, capture a still, add a caption, send it. getUserMedia is the browser API that grants camera access, and its behavior differs across phones, browsers, and permission states, so test on a real device from the start. The caption is drawn on a canvas layered over the photo and flattened to a single JPEG on send.",
+      "why": "Camera and canvas behavior varies per device, so you need to steer and test on a real phone while the AI iterates.",
+      "prompt": "Add the snap capture and send flow. Requirements:\n- Open the camera with getUserMedia, front or rear, and capture a still to a canvas.\n- Caption layer: type text or draw with a finger on the same canvas, flattened to one JPEG on send.\n- POST the JPEG to /api/snaps with a recipient list; the server writes the file to ./data/media and one row per recipient in a snaps table.\n- Recipient picker lists users created via the step 1 invite flow.\n- Export JPEG at quality 0.8 to keep uploads near 2 MB, phones on weak connections stall on full-resolution images.\n- Out of scope: video capture, filters of any kind.\n- Verify: send a snap to yourself from a phone on your network and watch the file appear in ./data/media."
+    },
+    {
+      "label": "WE",
+      "title": "Implement view-once deletion and daily streaks",
+      "body": "This is the promise the whole app makes: one view, up to 10 seconds, then the file is gone from the server. Deletion has to happen server-side at view time, not client-side, or it is theater. Streaks are the retention mechanic: a counter per friend pair that increments once per calendar day both directions have sent, which makes day-boundary math the classic hidden bug.",
+      "why": "Deletion semantics are the trust core of the app; read every line and run the tests yourself rather than accepting them on faith.",
+      "prompt": "Add view-once delivery and per-pair streaks. Requirements:\n- GET /api/snaps/:id streams the image once, marks the row opened, then deletes the file immediately; only sent and opened timestamps remain.\n- Client shows the snap full-screen for up to 10 seconds then returns to the inbox; reopening shows 'deleted from our server'.\n- Streaks table keyed on the sorted user pair, incremented once per calendar day when both directions have sent.\n- Day-boundary math uses the server clock in one documented timezone, mixing client and server clocks here causes phantom streak breaks.\n- Tests with node:test and a fake clock: delete-after-view removes the file, and a streak survives a send at 23:59 answered at 00:01.\n- Honest UI copy: state plainly that screenshots cannot be detected on the web.\n- Out of scope: read receipts beyond the opened flag, resend or retry queues."
+    },
+    {
+      "label": "WE",
+      "title": "Add 24-hour group stories with a sweep job",
+      "body": "Stories are snaps posted to the whole group, hard-deleted after 24 hours by a background sweep. A sweep job is a scheduled task that scans for expired rows and removes both the database row and the file on disk. Time-based deletion fails silently when it fails, so the sweep logs what it deleted and the tests drive it with the fake clock from step 3.",
+      "why": "Silent-failure territory: you drive so the fake-clock tests convince you, not just the agent, that expiry actually happens.",
+      "prompt": "Add 24-hour group stories. Requirements:\n- POST /api/story adds a snap visible to all members; story rows live in a stories table pointing at files in ./data/media.\n- A sweep job runs every 10 minutes and hard-deletes story files and rows older than 24 hours.\n- Story viewer shows items oldest first with tap-to-advance.\n- Sweep test using the step 3 fake clock: an item aged 23h50m survives, one aged 24h10m is gone, both file and row.\n- Log each sweep run with a deleted-item count so you can verify it on the server later.\n- Out of scope: per-viewer watch receipts, story replies."
+    },
+    {
+      "label": "WE",
+      "title": "Wire up web push notifications",
+      "body": "A messenger nobody is notified by is a mailbox nobody checks. Web push uses VAPID keys, a public/private key pair that identifies your server to browser push services. Ask for notification permission only after the learner has sent a first snap; permission prompts on first load get reflex-denied. The app must work fully without push, because on iOS it is best-effort by platform design.",
+      "why": "Push debugging spans browser, OS, and server at once, and an agent cannot see your phone's notification tray.",
+      "prompt": "Add web push notifications for new snaps and stories. Requirements:\n- Use the web-push library with VAPID keys generated by scripts/gen-secrets.js from step 1 and stored in .env.\n- Request permission only after the user sends their first snap, never on first load; store subscriptions in a push_subs table.\n- Notify recipients on new snaps and story posts; a failed push must never block or delay the send itself.\n- Full functionality with push denied; README states iOS web push is best-effort.\n- Test: a subscription returning HTTP 410 is pruned from push_subs.\n- Out of scope: notification preference UI, unread badge counts."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Deploy behind Caddy and recruit your friend group",
+      "body": "Rent a small VPS, point your domain's DNS A record at it, and put Caddy in front of the Node app so certificates renew themselves. Copy .env up, run the invite seeder from step 1, and hand codes to your friends in person. Walk each one through installing the PWA from the browser share menu, since that step loses people. Then use it for a week and notice who actually opens it: that observation is the network-effects lesson arriving firsthand.",
+      "why": "DNS panels, VPS signup, and persuading humans to install an app are surfaces only you can touch.",
+      "prompt": null
+    }
+  ],
+  "stretchGoals": [
+    "Add finger-drawing with color selection to the caption canvas",
+    "Study Signal's view-once media design and add client-side encryption so the server never holds readable images",
+    "Read Pixelfed's federated stories model and consider whether federation could ever solve your two-user network problem"
+  ],
+  "resources": [
+    {
+      "title": "Signal for Android (source)",
+      "url": "https://github.com/signalapp/Signal-Android",
+      "note": "A real open-source implementation of disappearing messages and view-once media to compare your deletion design against"
+    },
+    {
+      "title": "Pixelfed (source)",
+      "url": "https://github.com/pixelfed/pixelfed",
+      "note": "Federated photo sharing with 24-hour ephemeral stories, the closest open ecosystem to the story half of this build"
+    },
+    {
+      "title": "Snapchat+ plan page",
+      "url": "https://www.snapchat.com/plus",
+      "note": "Worth a look at what the paid tier actually sells: cosmetics and status inside the graph, not features"
+    }
+  ]
+}

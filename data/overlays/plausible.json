@@ -1,0 +1,93 @@
+{
+  "slug": "plausible",
+  "sourceHash": "sha256:656438bc62ed5a0aa2ad08eed85bb43d5a3d58c194f19258c282e2e651972973",
+  "generatedAt": "2026-08-24T11:27:34.004Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "beginner",
+  "timeEstimate": "weekend",
+  "title": "Build your own privacy-friendly web analytics (a personal Plausible)",
+  "summary": "You will build a small analytics service that runs on your own machine: a lightweight JavaScript snippet records page views, a tiny server stores each visit in a SQLite database, and a password-protected dashboard shows your traffic. Because it is self-hosted, the data lives where you control it. It covers what a personal site actually needs, while businesses keep paying Plausible because its hosted service stays fast at millions of visits, keeps filtering bots as bots evolve, and handles the privacy-law paperwork and day-to-day upkeep for them.",
+  "whatYoullLearn": [
+    "Writing a cookieless tracking snippet in vanilla JavaScript under 2 KB",
+    "Building an HTTP endpoint that validates events, filters obvious bots, and writes rows to SQLite",
+    "Hashing visitor identifiers with a salt (a random string mixed into the hash so it cannot be reversed) so raw IP addresses are never stored",
+    "Aggregating events into unique visitors, top pages, referrers, and countries with SQL",
+    "Drawing a chart as inline SVG with no frontend framework"
+  ],
+  "whatYouWontGet": [
+    "Bot filtering limited to user-agent matching; sophisticated bots require ongoing tuning beyond a weekend build",
+    "Query performance tuned for personal-site volumes rather than millions of monthly pageviews",
+    "Scope covers pageviews, referrers, devices, and countries; funnels, goal tracking, and email reports sit outside it",
+    "Privacy-by-design choices like no cookies and hashed IPs, while formal compliance sign-off for regulations such as GDPR remains your responsibility"
+  ],
+  "moatLessons": [
+    {
+      "tag": "scale-infra",
+      "lesson": "Plausible stores events in ClickHouse, a column database built so dashboards answer in milliseconds even at millions of pageviews. A builder learns that fast aggregation at scale is an infrastructure discipline with real operating costs, not a code feature you can copy into a weekend project."
+    },
+    {
+      "tag": "compliance-regulatory",
+      "lesson": "Part of what customers buy is relief: cookieless collection, European hosting, and a documented GDPR posture kept current as rules change. Your build can borrow the privacy techniques, and the lesson is that careful legal maintenance is itself a product that people pay for monthly."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 20 or newer installed (node --version prints a version)",
+    "Git installed and a GitHub account for saving your work",
+    "A code editor such as VS Code and a terminal you are comfortable typing in",
+    "A website you control where you can add one script tag, or just a local HTML page for testing"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the plausible-lite project",
+      "body": "Start with an empty Node.js project named plausible-lite that boots a web server, creates its database, and answers a health check. There are no product decisions in this step, only structure, so hand the checklist to your coding agent and read the result. When node server.js prints a running server and /health responds, you have a working increment.",
+      "why": "Pure boilerplate with zero product judgment involved, so delegate it whole and spend your attention reviewing the diff.",
+      "prompt": "Set up a minimal Node.js project called plausible-lite for a self-hosted analytics tool. Requirements:\n\n- Node 20, Express 4, and better-sqlite3 as the only runtime dependencies, plus a package.json with a start script.\n- Layout: server.js at the root, public/ for static assets, src/db.js for database setup.\n- On first boot create data/events.db with a table events: id INTEGER PRIMARY KEY, site TEXT, path TEXT, referrer TEXT, country TEXT, device_class TEXT, visitor_hash TEXT, ts INTEGER unix milliseconds, and an index on (site, ts).\n- Read PORT and SALT from .env, defaults PORT=3000 and a long random SALT; add .env and *.db to .gitignore before any commit.\n- GET /health returns the JSON {\"ok\":true} so boot success is checkable.\n- Express serves public/ as static files.\n- Out of scope: no authentication, no dashboard, no ingest endpoint yet.\n- Known friction: better-sqlite3 compiles a native module during install, which can take a minute or fail without build tools, so print a clear error if it does."
+    },
+    {
+      "label": "WE",
+      "title": "Write the tracker and ingest endpoint",
+      "body": "This is the heart of the product: a tiny script other sites include, and an endpoint that receives its signals. Drive your AI assistant through it piece by piece, asking questions until the daily hash and the bot filter make sense to you. Finish by loading the test page, seeing a row land in data/events.db, and confirming a fake bot gets rejected.",
+      "why": "Hashing and filtering choices define your privacy story, so keep your hands on the wheel rather than delegating the core.",
+      "prompt": "Build a cookieless pageview tracker and its ingest endpoint for the plausible-lite project from step 1. Requirements:\n\n- public/plausible.js under 2 KB: vanilla JavaScript, no cookies, uses navigator.sendBeacon to POST JSON to /api/event with site, path, referrer, screen (mobile, tablet, or desktop from window width), and nothing else.\n- POST /api/event computes visitor_hash as sha256(SALT + ip + user-agent + today date) truncated to 16 hex characters, rotated daily, never storing the raw IP.\n- Reject requests whose user-agent matches bot, crawler, spider, or headless case-insensitively, and log how many were rejected.\n- Accepted events insert into the existing events table in data/events.db.\n- Add public/test.html containing <script defer src=\"/plausible.js\" data-site=\"demo\"> so a visit fires one pageview.\n- Verification: curl a sample event and get 202, curl again with a bot user-agent and confirm rejection.\n- Out of scope: no geolocation lookup, no sessions.\n- Friction warning: sendBeacon cannot set custom headers, so the endpoint must accept plain JSON without any CSRF token."
+    },
+    {
+      "label": "WE",
+      "title": "Turn events into a dashboard",
+      "body": "Raw rows are not insight, so now you aggregate. Ask your assistant for the SQL queries, then check them by hand against the rows you inserted in step 2, because aggregate numbers are easy to get quietly wrong. You finish with a private page showing unique visitors, pageviews, top pages, referrers, countries, and a bar chart of visitors per day.",
+      "why": "Query and presentation choices deserve your judgment, and verifying aggregates yourself is the real lesson of analytics work.",
+      "prompt": "Add a dashboard at /dashboard to plausible-lite that reads the events table from data/events.db. Requirements:\n\n- Protect it with HTTP basic auth using ADMIN_USER and ADMIN_PASS from .env, returning 401 on wrong credentials.\n- For ranges today, 7d, and 30d compute: unique visitors as count(distinct visitor_hash), total pageviews, top 10 paths, top 10 referrers, and top 5 countries.\n- One server-rendered HTML page, dark background, system fonts, no frontend framework and no chart library.\n- Draw visitors per day as an inline SVG bar chart computed from the query results.\n- Support ?range=7d style switching that reloads with new numbers.\n- Verification: browse public/test.html a few times, then refresh /dashboard and watch the counts move.\n- Out of scope: no sessionization, bounce rate, funnels, or exports.\n- Honest limit: SQLite table scans slow down around a few hundred thousand rows, which is fine for a personal site and worth stating in the README."
+    }
+  ],
+  "stretchGoals": [
+    "Deploy plausible-lite to a cheap rented Linux server (a VPS) with Docker Compose, fronted by Caddy for automatic HTTPS",
+    "Fill in real countries using MaxMind's free GeoLite2 database instead of leaving the column empty",
+    "Email yourself a weekly top-pages digest using Nodemailer and a cron job"
+  ],
+  "resources": [
+    {
+      "title": "Plausible Analytics source code",
+      "url": "https://github.com/plausible/analytics",
+      "note": "The paid product's own open source core, useful for comparing your tracker and queries against theirs."
+    },
+    {
+      "title": "Umami",
+      "url": "https://github.com/umami-software/umami",
+      "note": "A mature self-hosted analytics app worth reading after your build to see how the same problems scale up."
+    },
+    {
+      "title": "Plausible subscription plans",
+      "url": "https://plausible.io/docs/subscription-plans",
+      "note": "Shows which capabilities sit behind each paid tier, a map of what you built versus what teams pay for."
+    },
+    {
+      "title": "GoatCounter",
+      "url": "https://www.goatcounter.com",
+      "note": "An even simpler analytics tool, helpful perspective on how small a useful version can be."
+    }
+  ]
+}

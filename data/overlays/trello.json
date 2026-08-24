@@ -1,0 +1,120 @@
+{
+  "slug": "trello",
+  "sourceHash": "sha256:122a6cc2a10a1bba0a9463b372540f424269a943d50f1289827c83bd3e8d9df7",
+  "generatedAt": "2026-08-24T11:31:56.948Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "intermediate",
+  "timeEstimate": "multi-day",
+  "title": "Build your own kanban tracker (a personal Trello)",
+  "summary": "You will build a small-team kanban app on PostgreSQL: boards divided into lists, draggable cards carrying checklists, labels, due dates, and comments, plus a searchable activity history and a few automation rules, served from your own server with logins and email invitations. Every stage ends with something you can click and break. Trello keeps its customers because project data must stay trustworthy for years across staff changes, outages, and phones, and that takes continuous work on sync, permissions, search, notifications, and backups that never shows up in a screenshot.",
+  "whatYoullLearn": [
+    "Modeling relational data in PostgreSQL with Drizzle ORM: boards, lists, cards, labels, and join tables",
+    "Building drag-and-drop ordering in React that survives refreshes and concurrent edits",
+    "Cookie-session auth with per-board roles and an email invitation flow",
+    "Writing a small rule engine plus an activity log that never drifts from reality",
+    "Shipping a Docker Compose stack to a VPS with DNS, TLS, and automated database backups"
+  ],
+  "whatYouWontGet": [
+    "A web app in the browser only; there are no native mobile clients and nothing works offline",
+    "Automation limited to the rules you define; there is no Butler-style rule library or template gallery",
+    "Integrations are only the ones you write yourself; there is no Power-Up directory",
+    "Simple per-board roles (owner, member, viewer) rather than organization-wide admin controls",
+    "Uptime, notifications, and recovery that depend entirely on your server, your cron jobs, and your email provider"
+  ],
+  "moatLessons": [
+    {
+      "tag": "collaboration",
+      "lesson": "Trello keeps dozens of people editing one board without ever dropping a move, with live updates and conflict handling that took years to harden. Builders learn to start honestly with last-write-wins ordering and an activity log, and discover that realtime multi-user sync is its own engineering project."
+    },
+    {
+      "tag": "integrations",
+      "lesson": "Every Power-Up a team installs deepens the cost of leaving, and Atlassian curates that marketplace. Builders learn each connector is permanent maintenance, so shipping one solid webhook or API beats ten shallow plugins."
+    },
+    {
+      "tag": "brand-trust",
+      "lesson": "Teams hand Trello their project truth because it survives staff turnover and incidents with audit history intact. Builders learn the durable product is operational trust, migrations, backups, and uptime, far more than any visible feature."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 20 or newer and Git installed locally",
+    "Docker Desktop running (Docker Engine plus Compose v2 on Linux)",
+    "A way to inspect PostgreSQL, such as the psql CLI or the TablePlus or DBeaver desktop app",
+    "Comfort reading JavaScript or TypeScript; no prior Next.js experience required",
+    "For the hosting step: an account at any VPS provider (around five dollars a month) and a domain whose DNS panel you control",
+    "SMTP credentials from a transactional email provider such as Mailgun, Resend, or Postmark (SMTP is the protocol apps use to send mail), or a free Mailtrap inbox while developing"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the repo",
+      "body": "Hand the whole skeleton to your assistant in one shot: a Next.js 15 app, a Docker Compose file running PostgreSQL, and Drizzle ORM wired up. Drizzle is a type-safe layer that turns TypeScript definitions into SQL tables. When the command finishes you should have a placeholder page that proves the database answers.",
+      "why": "Scaffolding is low-risk boilerplate where mistakes show up immediately, so delegating it whole saves your attention for the schema.",
+      "prompt": "Set up the project skeleton for a self-hosted kanban app. Requirements:\n- Next.js 15 App Router with TypeScript and Tailwind CSS in the repo root, starting with npm run dev\n- docker-compose.yml with one postgres:16 service named db, a named volume pgdata, port 5432 exposed, and a healthcheck using pg_isready\n- Drizzle ORM configured in src/db/index.ts reading DATABASE_URL from .env, with drizzle.config.ts pointing at src/db/schema.ts\n- .env.example listing DATABASE_URL, APP_URL, and AUTH_SECRET placeholders, with the real .env gitignored\n- npm scripts db:migrate and db:studio that connect to the compose db successfully\n- A placeholder page at / that runs SELECT 1 against the db and prints Personal Kanban plus connected on success\n- Out of scope: authentication, visual design, CI\nPain warning: if port 5432 is taken by a local Postgres, map the container to 5433 and update .env to match."
+    },
+    {
+      "label": "WE",
+      "title": "Boards, lists, and draggable cards",
+      "body": "Drive the assistant to extend the schema from step 1 with the three core tables and a board page where cards drag between lists. Drag-and-drop hides sneaky bugs in how order is stored, so review each position update yourself. Done means: you drag a card to Done, refresh, and it stays.",
+      "why": "Ordering state breaks in quiet ways, so you steer the assistant and inspect every write instead of accepting a big diff.",
+      "prompt": "Build the board, list, and card core with drag and drop on top of src/db/schema.ts from step 1. Requirements:\n- Three tables: boards(id uuid primary key, title text, created_at timestamptz), lists(id, board_id foreign key, title, position double precision), cards(id, list_id foreign key, title, description text, position double precision)\n- Route handlers under src/app/api for create, rename, and move operations, validated with zod schemas\n- Board page at src/app/boards/[id]/page.tsx rendering lists sorted by position, with dnd-kit letting cards drag within and across lists\n- After each drop, persist new positions in one transaction touching only affected rows\n- A seed script creating one board named Home Projects with lists To Do, Doing, Done and four sample cards\n- Out of scope: multiple users, permissions, realtime sync\nPain warning: store positions as floats halfway between neighbors so reordering rewrites one row, not every row in the list."
+    },
+    {
+      "label": "WE",
+      "title": "Card details, comments, history, search",
+      "body": "Open up the card: checklists, labels, due dates, and comments, with every mutation recorded in an activity_log table so history becomes searchable. This is the step where quiet write-skips cause damage later, which is why you keep the assistant on a short leash. Done means search finds a comment you left minutes ago.",
+      "why": "History and search touch every mutation path, exactly where unreviewed delegation tends to drop writes.",
+      "prompt": "Add card details, comments, activity history, and search to the cards table from step 2. Requirements:\n- New columns on cards: due_date timestamptz nullable; new tables labels(id, board_id, name, color), card_labels(card_id, label_id), checklist_items(id, card_id, content, done boolean, position), comments(id, card_id, author_name, body, created_at)\n- activity_log(id, board_id, card_id nullable, actor_name, action text, created_at) written in the same transaction as every mutation\n- A card drawer component that opens on card click showing description, due date, checklist with checkboxes, and comments\n- A search page at /search using ILIKE across card titles, descriptions, and comment bodies, linking each result back to /boards/[id]\n- Verify by adding a checklist item and a comment, then finding both via /search\n- Out of scope: file attachments, mentions, notifications\nPain warning: if the activity insert sits outside the mutation transaction, history will drift from reality within a week of real use."
+    },
+    {
+      "label": "WE",
+      "title": "Accounts, roles, invitations",
+      "body": "Turn the single-user app into a small-team tool: password logins, per-board roles, and email invitations through SMTP. Read the auth diff line by line, because security mistakes here compound silently. Done means a second person accepts an invite in another browser and cannot touch anything as a viewer.",
+      "why": "Auth looks routine but the details are load-bearing, so keep the assistant close and judge every change yourself.",
+      "prompt": "Add accounts, per-board roles, and email invitations to the handlers from steps 2 and 3. Requirements:\n- users(id, email unique, password_hash, created_at) hashed with bcryptjs, plus board_members(board_id, user_id, role enum owner, member, viewer)\n- Session auth with a signed JWT cookie using jose and the existing AUTH_SECRET from .env, enforced by middleware on all /boards routes\n- Members page per board where an owner enters an email, the server creates a signup token, and nodemailer sends an invite link to /invite/[token] using SMTP_HOST, SMTP_USER, SMTP_PASS loaded from .env\n- Role checks in every mutation handler from earlier steps: viewer read-only, member edits cards, owner manages members\n- Use a Mailtrap or Ethereal inbox to confirm delivery before touching real SMTP credentials\n- Verify: invite a second user, accept in a fresh browser profile, confirm a viewer cannot move a card\n- Out of scope: SSO, OAuth providers, password reset flows\nPain warning: before this leaves localhost the cookie needs secure and sameSite lax flags, note the TODO now."
+    },
+    {
+      "label": "WE",
+      "title": "Simple automation rules",
+      "body": "Give the board its version of Butler-lite: user-defined rules like when a card enters Done, add the Ship label, evaluated inside the handlers you already have. Rule engines loop and double-fire if written carelessly, so you define the guardrails and let the assistant implement them. Done means a dragged card visibly triggers a rule and logs it.",
+      "why": "Trigger evaluation order can cascade, a judgment call you should own while the assistant writes the mechanics.",
+      "prompt": "Set up simple automation rules on top of the card-move handler and activity_log from earlier steps. Requirements:\n- automation_rules(id, board_id, trigger, action, config jsonb) supporting exactly two triggers, card_moved_to_list and label_added, and three actions, add_label, set_due_in_days, append_comment\n- Evaluate matching rules server-side after each triggering mutation commits, appending one activity_log row per fired rule\n- A rules editor on the board page with dropdowns for trigger, action, and target values, capped at 10 rules per board\n- A Run now button per rule so behavior is testable without dragging cards\n- Verify: create when card moves to Done, add label Ship, drag a card to Done, confirm the label and the activity entry appear\n- Out of scope: multi-condition builders, time-based or scheduled triggers, cross-board rules\nPain warning: cap evaluation at one pass per mutation or a rule that adds labels will re-trigger label rules forever."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Host it for your team",
+      "body": "Create an account at a VPS provider and start the smallest Ubuntu server. In your domain's DNS panel, add an A record pointing a subdomain like board.yourdomain.com at the server's IP; DNS is the internet's address book, and the A record maps a name to a machine. SSH in, install Docker, clone your repo, add an app service plus Caddy (a reverse proxy that fetches and renews TLS certificates automatically) to docker-compose.yml from step 1, and bring the stack up. Create real SMTP credentials in your email provider's console, fill them into .env on the server, schedule a nightly pg_dump cron job into a backups directory, and send your first genuine invitation.",
+      "why": "Provider consoles, DNS panels, and mailbox credentials sit behind your logins, which no agent can hold."
+    }
+  ],
+  "stretchGoals": [
+    "CSV export for any board so the data opens in any spreadsheet",
+    "A calendar view placing cards on a month grid by due date",
+    "A webhook URL that POSTs a JSON payload whenever a card changes list"
+  ],
+  "resources": [
+    {
+      "title": "Plane (open source)",
+      "url": "https://github.com/makeplane/plane",
+      "note": "An active self-hosted tracker; skim its data model when designing your board and card tables."
+    },
+    {
+      "title": "Wekan",
+      "url": "https://github.com/wekan/wekan",
+      "note": "MIT-licensed kanban with years of real usage, useful as a reference for ordering and persistence choices."
+    },
+    {
+      "title": "PLANKA",
+      "url": "https://planka.app",
+      "note": "A self-hosted Trello-style app on PostgreSQL, handy for comparing how someone else scoped the same core loop."
+    },
+    {
+      "title": "Kanboard",
+      "url": "https://kanboard.org",
+      "note": "Deliberately minimal kanban that ships and maintains itself; a masterclass in cutting scope."
+    }
+  ]
+}
