@@ -1,0 +1,25 @@
+{
+  "_comment": "Pilot scope for the transform pipeline: ~20 entries spread across verdicts (yes=5, kinda=9, no=6). Curated prompts preferred as source material; notion/trello/zapier/readwise/buffer are deliberate uncurated-template stress tests. transform.mjs processes only these slugs until this file is retired at scale-up.",
+  "slugs": [
+    "granola",
+    "plausible",
+    "bitly",
+    "carrd",
+    "linktree",
+    "calendly",
+    "splitwise",
+    "postiz",
+    "capture",
+    "notion",
+    "trello",
+    "zapier",
+    "readwise",
+    "buffer",
+    "posthog",
+    "figma",
+    "snapchat",
+    "lovable",
+    "one-place",
+    "gohighlevel"
+  ]
+}

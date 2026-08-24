@@ -1,0 +1,36 @@
+{
+  "_comment": "Normalizes upstream diyTimeEstimate free strings to one enum: one-sitting | weekend | multi-day | multi-week | not-solo. Resolution: exact match first, then the first matching rule in order (prefix beats contains), else the fallback. The enum reflects the lesson's core build scope; a string like 'one sitting for the poller, a weekend to make it trustworthy' maps by its leading phrase.",
+  "enum": ["one-sitting", "weekend", "multi-day", "multi-week", "not-solo"],
+  "exact": {
+    "multi-day": "multi-day",
+    "closest consolation build: one sitting": "one-sitting",
+    "one sitting": "one-sitting",
+    "not a true replacement; consolation build in one to two days": "multi-day",
+    "a weekend": "weekend",
+    "weekend": "weekend",
+    "weekend to multi-day": "multi-day",
+    "not realistically solo": "not-solo",
+    "closest consolation build: multi-day": "multi-day",
+    "weekend project": "weekend",
+    "weeks": "multi-week",
+    "one weekend": "weekend",
+    "multi-week": "multi-week"
+  },
+  "rules": [
+    { "match": "contains", "text": "not realistically", "to": "not-solo" },
+    { "match": "prefix", "text": "one sitting", "to": "one-sitting" },
+    { "match": "prefix", "text": "one session", "to": "one-sitting" },
+    { "match": "prefix", "text": "a weekend", "to": "weekend" },
+    { "match": "prefix", "text": "one weekend", "to": "weekend" },
+    { "match": "prefix", "text": "weekend", "to": "weekend" },
+    { "match": "prefix", "text": "multi-day", "to": "multi-day" },
+    { "match": "prefix", "text": "multi-week", "to": "multi-week" },
+    { "match": "contains", "text": "one sitting", "to": "one-sitting" },
+    { "match": "contains", "text": "a weekend", "to": "weekend" },
+    { "match": "contains", "text": "multi-week", "to": "multi-week" },
+    { "match": "contains", "text": "months", "to": "multi-week" },
+    { "match": "contains", "text": "weeks", "to": "multi-week" },
+    { "match": "contains", "text": "multi-day", "to": "multi-day" }
+  ],
+  "fallback": "multi-day"
+}
