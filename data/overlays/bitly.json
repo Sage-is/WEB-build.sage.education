@@ -1,0 +1,94 @@
+{
+  "slug": "bitly",
+  "sourceHash": "sha256:fbc9d7dfa22befda239e80419122935a157a29c0414d18cfa2f70c64773735b5",
+  "generatedAt": "2026-08-24T10:25:54.662Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "beginner",
+  "timeEstimate": "one-sitting",
+  "title": "Build your own link shortener (a personal Bitly)",
+  "summary": "You will build a link shortener on Cloudflare Workers: a small function that maps short slugs (the memorable tail of a short URL, like go.you.com/xk29fz) to long destinations, sends visitors there with a 302 (a standard response meaning 'moved temporarily, go look over there'), writes one row per click into a SQLite database, and renders a scannable QR code for any link. The whole thing fits in one sitting on Cloudflare's free tier. What you are not rebuilding is Bitly's real product: a fifteen-year-old promise that a link printed on packaging still resolves today, kept by a company whose job is to keep it that way.",
+  "whatYoullLearn": [
+    "Deploy a serverless function (code that runs on demand at Cloudflare's edge, with no server to manage) using wrangler",
+    "Model a key-value lookup in Workers KV and write event rows to a D1 SQLite database",
+    "Redirect traffic with proper 302 responses while keeping logging off the critical path using ctx.waitUntil",
+    "Read request facts like country and device type directly from Cloudflare's request.cf object",
+    "Generate and serve QR code images from a single library call"
+  ],
+  "whatYouWontGet": [
+    "Links resolve for exactly as long as you keep renewing your domain; the lifetime is yours to manage",
+    "Short URLs carry your own domain name rather than a widely recognized brand, which some spam filters treat differently",
+    "Scope covers redirects, click rows, and generated QR images; campaign grouping, landing pages, and a managed QR dashboard stay out",
+    "Analytics arrive as raw per-click rows; country and device summaries are queries you write yourself",
+    "Questions get answered by documentation and community forums; there is no support desk or uptime agreement"
+  ],
+  "moatLessons": [
+    {
+      "tag": "brand-trust",
+      "lesson": "Bitly wins because bit.ly is a promise made by an institution: a link on a 2019 brochure still resolving feels safe, and teams pay to avoid betting print budgets on a hobby project. The builder's takeaway is that your domain is your own version of that promise, so pick one you intend to keep, and notice that name recognition cuts both ways now that generic shorteners land in spam folders."
+    },
+    {
+      "tag": "scale-infra",
+      "lesson": "Bitly absorbs global traffic spikes and filters abuse at a scale few companies ever see, and that infrastructure is the second half of the bill. Your Worker gets edge scaling for free on the free tier, which covers personal use completely, but replicating their fraud filtering and multi-year data retention is where the real cost lives."
+    }
+  ],
+  "prerequisites": [
+    "A Cloudflare account (the free tier is enough)",
+    "A domain you control, with access to its DNS settings",
+    "Node.js 18 or newer installed",
+    "wrangler CLI installed with npm install -g wrangler, then authenticated with wrangler login"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the worker, its two stores, and a first deploy",
+      "body": "Create a Cloudflare Worker project with its KV namespace (a key-value store, read fast at the edge) and D1 database (Cloudflare's serverless SQLite) wired up, then deploy a health-check route. Nothing here involves design decisions; it is exact configuration that must be right before anything else runs. Verify the deployed URL responds before moving on.",
+      "why": "Scaffolding is precise, repetitive config with no judgment calls, so hand it over whole and save your attention for the redirect logic.",
+      "prompt": "Set up a Cloudflare Worker project named linkbox. Requirements:\n- Initialize wrangler v3 or newer in a folder called linkbox, with src/index.ts exporting a fetch handler.\n- Create a KV namespace bound as LINKS and a D1 database bound as CLICKS, both declared in wrangler.toml.\n- Add a GET /health route returning JSON {\"ok\":true} plus the current row count from CLICKS (expect 0).\n- Apply a local D1 migration file migrations/0001_init.sql that creates an empty clicks table so later inserts succeed.\n- Run wrangler deploy, then curl the printed workers.dev URL and confirm the health response.\n- Keep all secrets out of wrangler.toml; anything sensitive goes through wrangler secret put later.\n- Out of scope: no redirect logic, no tests, no CI.\n- Warning: if d1 create complains about a missing location hint, pass --location and pin the same region as your KV namespace."
+    },
+    {
+      "label": "WE",
+      "title": "Build the core: create links, redirect, log clicks, render QR codes",
+      "body": "This is the heart of the lesson: a create endpoint that stores slug-to-URL pairs, a catch-all route that looks up the slug and answers with a 302, and a click logger writing to D1 inside ctx.waitUntil (which lets the response leave immediately while background work finishes). You will also serve a QR image per link and a small stats query. Drive your assistant through this one piece at a time, testing each route with curl before adding the next.",
+      "why": "Redirect semantics, collision handling, and async logging are the actual learning material here, so keep your hands on the wheel.",
+      "prompt": "Add the redirect engine to the existing linkbox worker, using the LINKS KV namespace and the CLICKS D1 database from the scaffold. Requirements:\n- POST /create accepts JSON {\"url\": \"...\", \"backHalf\": \"optional\"}; generate a random 6-character base62 slug when backHalf is absent, store it in LINKS under the key link:<slug>, and return HTTP 409 on a duplicate slug instead of overwriting it.\n- GET /<slug> reads link:<slug> from LINKS and responds 302 with a Location header; unknown slugs get a plain-text 404.\n- Insert one row per click into the clicks table (columns: slug, ts, country, city, device, referer) inside ctx.waitUntil so the redirect never waits on the write; take country and city from request.cf and derive device from a simple user-agent regex (mobile, tablet, desktop).\n- Serve PNG QR codes at /qr/<slug> with the qrcode npm package encoding the public short URL, and set Cache-Control so repeat scans come from cache.\n- Add GET /stats/<slug> returning JSON with total clicks plus counts grouped by country and by device.\n- Out of scope: no authentication, no rate limiting, no bulk import.\n- Warning: request.cf fields are undefined on localhost, so stub them with a fixture object during wrangler dev."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Point your own subdomain at the worker",
+      "body": "Open the Cloudflare dashboard, add a custom domain such as go.yourdomain.com to the linkbox worker, and let Cloudflare create the DNS record for it. Then create a test link and visit go.yourdomain.com/<slug> from your phone to watch the redirect fire against real traffic. This step is yours alone because DNS and routing sit behind account ownership, exactly the kind of surface an assistant should never touch on your behalf.",
+      "why": "DNS records and worker routes live in an account-level console gated by your identity, which makes this the one step a human must click through.",
+      "prompt": null
+    }
+  ],
+  "stretchGoals": [
+    "Add an expiry date and a click cap per link; past either, redirect to a fallback URL instead of showing a 404",
+    "Put the stats view behind an /admin page guarded by a single password stored with wrangler secret put",
+    "Import your existing Bitly slugs and destinations so printed QR codes keep working while you transition"
+  ],
+  "resources": [
+    {
+      "title": "Bitly pricing page",
+      "url": "https://bitly.com/pages/pricing",
+      "note": "Shows the tier caps and costs you just sidestepped, useful context for what your free-tier build replaces."
+    },
+    {
+      "title": "Sink",
+      "url": "https://github.com/miantiao-me/sink",
+      "note": "An open-source shortener on the same Workers, D1, and KV stack; compare its schema choices to yours after you finish."
+    },
+    {
+      "title": "Shlink",
+      "url": "https://github.com/shlinkio/shlink",
+      "note": "A mature self-hosted shortener worth reading once you outgrow the one-sitting version."
+    },
+    {
+      "title": "Dub",
+      "url": "https://github.com/dubinc/dub",
+      "note": "The largest open-source link platform; skim it for analytics ideas beyond basic click counts."
+    }
+  ]
+}

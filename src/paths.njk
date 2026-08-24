@@ -14,7 +14,7 @@ eleventyComputed:
 <p>{{ pathLevel.intro }}</p>
 
 <div data-swap>
-<ul style="--lst:none; --p:0; --d:grid; --g:0.8rem">
+<ul style="--lis:none; --p:0; --d:grid; --g:0.8rem">
   {% for lesson in lessons %}
     {% if lesson.overlay.level == pathLevel.key %}
     <li style="--b:1px solid oklch(88% 0.01 250); --br:0.5rem; --p:0.8rem">
