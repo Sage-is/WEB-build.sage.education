@@ -1,0 +1,14 @@
+{# expects: slug (optional source) #}
+<section style="--p:1rem; --br:0.5rem; --b:1px solid oklch(88% 0.01 250); --mt:2rem">
+  <h2 style="--size:1.1rem">Keep building</h2>
+  <p style="--size:0.9rem">New lessons and honest build notes, by email. No spam, one-click out.</p>
+  {% if env.pbUrl %}
+  <form data-newsletter data-source-slug="{{ slug }}" style="--d:flex; --g:0.5rem; --fw:wrap">
+    <input type="email" name="email" required placeholder="you@example.com" style="--p:0.4rem; --fg:1" />
+    <button type="submit" style="--p:0.4rem 1rem">subscribe</button>
+  </form>
+  <p data-newsletter-note hidden style="--size:0.85rem"></p>
+  {% else %}
+  <p style="--size:0.85rem; --fs:italic">Signups open when the site goes live.</p>
+  {% endif %}
+</section>

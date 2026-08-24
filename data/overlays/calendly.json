@@ -1,0 +1,104 @@
+{
+  "slug": "calendly",
+  "sourceHash": "sha256:fe58fafc511ab8620d955f335732fd1687f31c0b82481518d11fd9f91746a651",
+  "generatedAt": "2026-08-24T10:11:16.320Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "intermediate",
+  "timeEstimate": "weekend",
+  "title": "Build your own booking page (a personal Calendly)",
+  "summary": "You will build a personal booking page: a public URL where guests pick from time slots computed from your weekly availability, minus what your Google Calendar already holds, then get an emailed confirmation with a video-call link. Along the way you run a complete OAuth handshake (the standard way your app gets permission to act on your calendar), render times correctly across time zones, and deploy the result to a real domain. Calendly keeps its customers because reliable calendar sync at scale, team routing, and a wide integration catalog are full-time work, and a missed or doubled meeting costs most people far more than $12 a month.",
+  "whatYoullLearn": [
+    "Modeling availability as data: weekly windows, slot length, buffers, and subtracting busy time",
+    "Running a real OAuth flow end to end, including refresh tokens and redirect URIs",
+    "Timezone-safe slot rendering with Intl.DateTimeFormat",
+    "Sending transactional email over SMTP and signing cancel/reschedule links with HMAC",
+    "Deploying a single-process Node app backed by SQLite"
+  ],
+  "whatYouWontGet": [
+    "This build covers one person's calendar; distributing meetings across a team with round-robin and routing is a separate system.",
+    "Reminders travel by email only; text-message reminders require a paid SMS provider layered on top.",
+    "The integrations available to you are the ones you wire yourself; there is no directory of third-party connections.",
+    "When Google or Microsoft changes consent screens or token behavior, updating the sync becomes your maintenance work."
+  ],
+  "moatLessons": [
+    {
+      "tag": "integrations",
+      "lesson": "Calendly's advantage is that calendar sync works across Google and Microsoft for millions of accounts, which means permanent upkeep against other companies' changing APIs. Builders learn that an integration is not a feature you finish, it is a relationship you maintain."
+    },
+    {
+      "tag": "execution-polish",
+      "lesson": "Guests judge scheduling tools by the failures they never see prevented: double-books, wrong time zones, invitations caught in spam. Calendly wins by making those edge cases boring. Builders learn the booking flow's reliability is the product, and polish means handling concurrent requests and clock edges, not decoration."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 22 and npm installed locally",
+    "A Google account whose Calendar you will book against",
+    "A Google Cloud project, created during the lesson; the free tier is enough",
+    "SMTP credentials for sending mail, such as a Gmail app password",
+    "A deployment target for the last step: any host that runs Node with persistent disk, plus a domain if you want a clean URL",
+    "Comfort running terminal commands and editing files"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the booking app with a config-driven slot engine",
+      "body": "Hand the skeleton to your assistant as one fixed package: a Node server, a SQLite database (a single-file database engine), and an availability config file. You edit the config afterward to change your hours, which is the point: availability lives as data, not code. Test locally by booking through the page until the buffer rule visibly pushes the next slot back.",
+      "why": "A spec this exact is low-risk delegation, and the judgment you exercise is choosing the config values, not writing the plumbing.",
+      "prompt": "Build the project skeleton for a personal booking app. Requirements:\n\n- Single-process Node 22 server using the built-in http module, HTML returned as template strings, no frontend framework\n- better-sqlite3 database at data/bookings.db with one table: bookings(id TEXT PRIMARY KEY, start_utc TEXT, end_utc TEXT, guest_name TEXT, guest_email TEXT, note TEXT)\n- config/availability.json holds weekly windows (example: monday 10:00-17:00), slotMinutes: 30, bufferMinutes: 15, timezone: \"America/New_York\"\n- GET /book renders slots for the next 14 days, computed from availability.json minus existing booking rows and their buffers, displayed in the visitor's timezone using Intl.DateTimeFormat\n- POST /book validates name, email, note, rejects a start that collides with an existing booking or its buffer inside a transaction, inserts the row, returns a plain confirmation page\n- dotenv loads .env, commit a .env.example containing PORT only\n- Out of scope: user accounts, CSS frameworks, calendar sync, emails\n- Prove it works: curl the page, then attempt two bookings whose buffers overlap, the second must fail"
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Create Google Calendar API credentials in the Cloud Console",
+      "body": "Sign in to console.cloud.google.com, create a project, and enable the Google Calendar API. Configure the OAuth consent screen as External, add yourself as a test user, then create an OAuth client ID of type Web application with the redirect URI http://localhost:3000/oauth/callback. Copy the client ID and secret into .env. This is dashboard clicking no agent can do for you, and the upstream entry warns it alone can eat an hour.",
+      "why": "Consent screens and cloud consoles require a logged-in human accepting terms on their own account, so this surface stays yours.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Wire up Google Calendar sync, the honest hard part",
+      "body": "Drive the assistant request by request here rather than handing the whole thing over. Your app exchanges your approval for a refresh token (a long-lived credential that lets it read and write your calendar without asking again), blocks slots for busy events, and creates events when guests book. Watch each call happen so you learn what a failed redirect URI looks like versus an expired token.",
+      "why": "OAuth touches live external state and fails in confusing ways, so you want to steer each request and inspect tokens, not delegate it wholesale.",
+      "prompt": "Add two-way Google Calendar sync to the booking app from step 1. Requirements:\n\n- Use the googleapis npm package · read GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REDIRECT_URI from .env\n- GET /oauth/start redirects to Google's consent screen with the calendar.events scope and access_type=offline so we receive a refresh token, store it at data/tokens.json, gitignored\n- Before rendering /book, call freebusy for the next 14 days and subtract busy periods from available slots alongside booked rows\n- On a successful POST /book, insert a calendar event with the guest as attendee and conferenceDataVersion=1 to attach a Meet link, save the returned event id on the booking row\n- If the token refresh fails, render a plain error page linking to /oauth/start instead of crashing\n- Append a README section titled \"OAuth reality check\" warning that console setup can take an hour · name which Google error messages indicate a wrong redirect URI\n- Out of scope: Outlook sync, background polling, retry queues"
+    },
+    {
+      "label": "WE",
+      "title": "Send confirmations and add signed cancel/reschedule links",
+      "body": "Email goes out through SMTP (the plain protocol mail servers use to hand messages to each other) to both sides of every booking. Guests also get cancel and reschedule links protected by an HMAC signature, a checksum that proves the link was created by someone holding your secret key, so nobody can cancel a stranger's meeting by guessing IDs. Send yourself a booking first and check the spam folder before assuming anything is broken.",
+      "why": "Token verification is security-sensitive code, so review each line yourself instead of accepting the chunk unseen.",
+      "prompt": "Add email confirmations with signed cancel and reschedule links to the booking app. Requirements:\n\n- Use nodemailer · SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS live in .env, a Gmail app password works for testing\n- After a booking commits, email both sides: the host gets guest name, email, and note, the guest gets the time in their timezone plus the Meet link fetched from the calendar event saved in step 3\n- Sign links with CANCEL_SECRET from .env using HMAC SHA-256 over bookingId plus start_utc, shaped /cancel/<id>?token=... and /reschedule/<id>?token=...\n- GET /cancel verifies the token, deletes the calendar event by its saved id, removes the booking row, emails the guest once more\n- GET /reschedule verifies the token and reuses the same slot picker as /book, then moves both the row and the calendar event\n- Note inline in the README that dev SMTP frequently lands in spam, check spam before debugging\n- Out of scope: HTML email templates, attachments, bulk sending"
+    },
+    {
+      "label": "WE",
+      "title": "Deploy to a public URL and retest the whole loop",
+      "body": "Put the app on a host so guests can reach it from anywhere, then walk the full journey again on the live URL: book, receive both emails, see the event appear in Google Calendar. Updating the OAuth redirect URI to the new domain is the step people forget, so do it deliberately. DNS changes at your registrar remain your clicks.",
+      "why": "Deployment blends assistant-drafted commands with registrar and host dashboards only you can operate, which makes it a WE task by definition.",
+      "prompt": "Deploy the finished booking app to a public URL. Requirements:\n\n- Choose a host that runs a single Node process and offers persistent disk for data/bookings.db, a small VPS qualifies\n- Move every .env value into the host's environment variable settings, never commit real secrets\n- Add a start script and an engines.node field to package.json matching the local Node version\n- Update the Google OAuth redirect URI to https://YOUR-DOMAIN/oauth/callback and rerun the consent flow once\n- Point the domain's DNS records at the host yourself in your registrar dashboard\n- Smoke test end to end after deploy: book a slot, confirm both emails arrive, verify the event exists in Google Calendar with a Meet link\n- Out of scope: certificate management if the host terminates HTTPS, monitoring, automated backups"
+    }
+  ],
+  "stretchGoals": [
+    "Add a second event type, like 60-minute deep-dive sessions, purely by extending availability.json and the picker.",
+    "Sync an Outlook calendar alongside Google to feel directly why multi-provider support is its own sustained effort.",
+    "Collect payment at booking time with Stripe Checkout and compare your fee math against competitors' commissions."
+  ],
+  "resources": [
+    {
+      "title": "cal.com on GitHub",
+      "url": "https://github.com/calcom/cal.com",
+      "note": "Open-source scheduler; studying how it models availability shows the production-grade version of your config file."
+    },
+    {
+      "title": "Cal.com self-hosting with Docker",
+      "url": "https://cal.com/docs/introduction/quick-start/self-hosting/docker",
+      "note": "If you ever want a mature scheduler without building one, this is the shortest self-hosted path."
+    },
+    {
+      "title": "Google Calendar appointment schedules",
+      "url": "https://support.google.com/calendar/answer/10729749?hl=en",
+      "note": "Google's built-in booking page; skim it to see the minimum feature set before you build your own."
+    }
+  ]
+}

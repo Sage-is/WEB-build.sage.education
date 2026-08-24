@@ -7,7 +7,10 @@ title: Learn to build your own software
   step by step, with honest notes on what you get and what you give up.
 </p>
 <ul style="--lst:none; --p:0; --d:grid; --g:1rem; --gtc-md:1fr 1fr 1fr">
-  <li><a href="/paths/beginner/">Beginner — one-sitting wins</a></li>
-  <li><a href="/paths/intermediate/">Intermediate — weekend builds</a></li>
-  <li><a href="/paths/advanced/">Advanced — capstone projects</a></li>
+  {% for l in taxonomy.levels %}
+  <li style="--b:1px solid oklch(88% 0.01 250); --br:0.5rem; --p:1rem">
+    <a href="/paths/{{ l.key }}/" style="--weight:700; --c:var(--c-{{ l.key }})">{{ l.label }}</a>
+    <p style="--size:0.85rem; --m:0.3rem 0 0">{{ l.sub }}</p>
+  </li>
+  {% endfor %}
 </ul>

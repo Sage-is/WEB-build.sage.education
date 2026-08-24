@@ -1,0 +1,11 @@
+{# expects: slug, level — revealed by progress.js when all steps are checked #}
+<section data-built-it hidden style="--p:1rem; --br:0.5rem; --b:2px solid var(--c-beginner); --mt:2rem; --ta:center">
+  <h2 style="--size:1.1rem">All steps done — did it work?</h2>
+  {% if env.pbUrl %}
+  <button type="button" data-built-it-btn data-slug="{{ slug }}" data-level="{{ level }}"
+          style="--p:0.5rem 1.2rem; --weight:700">I built this</button>
+  <p data-built-it-note hidden style="--size:0.85rem"></p>
+  {% else %}
+  <p style="--size:0.9rem">Congratulations. Tell someone what you built.</p>
+  {% endif %}
+</section>

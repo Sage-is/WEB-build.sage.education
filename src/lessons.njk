@@ -1,0 +1,11 @@
+---
+pagination:
+  data: lessons
+  size: 1
+  alias: lesson
+permalink: "/lessons/{{ lesson.slug }}/"
+layout: lesson
+eleventyComputed:
+  title: "{{ lesson.overlay.title }}"
+  description: "{{ lesson.overlay.summary }}"
+---

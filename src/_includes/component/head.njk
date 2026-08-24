@@ -4,6 +4,7 @@
   <title>{% if title %}{{ title }} · {% endif %}{{ site.name }}</title>
   <meta name="description" content="{{ description or site.tagline }}" />
   <meta name="generator" content="Startr" />
+  {% if env.pbUrl %}<meta name="pb-url" content="{{ env.pbUrl }}" />{% endif %}
   <link rel="stylesheet" href="https://startr.style/style.css" />
   <style>
     :root {

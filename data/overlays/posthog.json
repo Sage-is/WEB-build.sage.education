@@ -1,0 +1,123 @@
+{
+  "slug": "posthog",
+  "sourceHash": "sha256:3aac88affc25004b84fa8e89932663304b470c3165da77e42011d0a089657130",
+  "generatedAt": "2026-08-24T10:20:50.602Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "advanced",
+  "timeEstimate": "one-sitting",
+  "title": "Build your own first-party analytics box (a personal PostHog)",
+  "summary": "You build a personal analytics box: a Node collector on your own domain, a SQLite database you own outright, and a dashboard that answers your top questions about visitors, pages, referrers, and funnels. It covers the first-party core of product analytics for a handful of sites. PostHog still survives because its bill pays for what comes after the charts: session replay, feature flags, years of queryable history, and an ingestion pipeline that keeps collecting correctly while your product and event schema drift underneath it.",
+  "whatYoullLearn": [
+    "Designing an event schema: event names, properties, and what never gets collected",
+    "First-party tracking: serving a snippet from your own domain so browsers and blockers trust it",
+    "Privacy-preserving visitor counting with a daily-rotating salted hash",
+    "Aggregate SQL in SQLite for funnels, property breakdowns, and nightly rollups",
+    "Keeping a small service alive: systemd units, retention pruning, and off-box backups"
+  ],
+  "whatYouWontGet": [
+    "Dashboards show numbers and trends, not recordings of individual visits",
+    "No feature flags, A/B experiments, or surveys; behavior changes still ship through deploys",
+    "Visits are counted per browser, so one person on phone and laptop appears twice",
+    "Analysis runs over a rolling retention window plus nightly summaries, not open-ended history",
+    "The box collects as long as your VPS does; no on-call team restarts it for you"
+  ],
+  "moatLessons": [
+    {
+      "tag": "scale-infra",
+      "lesson": "PostHog wins on the pipeline, not the charts: bot filtering, late-arriving data, identity resolution, and query cost stay handled across millions of events per workspace. Your box handles one site and the pipeline is still most of the work, which teaches the builder that collection reliability is the actual product."
+    },
+    {
+      "tag": "switching-costs",
+      "lesson": "Teams stay because years of events, saved boards, and instrumented code emitting PostHog-shaped payloads are expensive to abandon mid-flight. The lesson for a builder is to design your event schema deliberately and keep raw rows exportable, so your own switching costs stay low forever."
+    }
+  ],
+  "prerequisites": [
+    "Node 22 installed locally and on the server (verify with node --version)",
+    "A small VPS with SSH access, 1 vCPU and 1 GB RAM is plenty to start",
+    "A domain you control with access to its DNS records, for first-party collection",
+    "The sqlite3 CLI available somewhere you can inspect events.db directly",
+    "A website you can edit so you can paste one script tag into it"
+  ],
+  "steps": [
+    {
+      "label": "MANUALLY",
+      "title": "Give the collector an always-on address",
+      "body": "Create the smallest VPS that runs Node 22, note its IP address, and add an A record such as analytics.yourdomain.com pointing at it. First-party collection means tracking requests go to a domain you control, so this name is part of the architecture, not an afterthought. Nothing is installed yet; the win is a hostname that resolves and a box you can SSH into.",
+      "why": "Cloud consoles and DNS panels are human-only surfaces, and choosing where your data physically lives is a decision worth making yourself.",
+      "prompt": null
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the collector and its events table",
+      "body": "Hand the skeleton to an agent whole, then review the diff before running anything. You end up with one process, one SQLite file, and an /e endpoint that turns a curl POST into a row you can SELECT. That round trip is the foundation every later step builds on.",
+      "why": "A fixed schema plus a hello-world endpoint is exactly the boilerplate shape agents complete cleanly; reviewing the CREATE TABLE is the whole quality gate.",
+      "prompt": "Build a Node 22 analytics collector skeleton. Requirements:\n- Single Express app in server.js, dependencies limited to express, better-sqlite3, and dotenv, listening on port 8787.\n- Create events.db beside server.js with an events table: id, site, event_name, path, referrer, utm_source, utm_medium, utm_campaign, country, device_class, properties (JSON text), visitor_id (nullable for now), created_at (ISO 8601).\n- POST /e accepts JSON with those fields, requires site and event_name, returns 400 on unknown fields, inserts the row; verify with a curl POST followed by SELECT count(*) from events increasing by 1.\n- GET /health returns { ok: true } plus the current row count.\n- Port and SQLite path load from .env via dotenv; commit a .env.example, never the real .env.\n- Out of scope: authentication, dashboards, ORM libraries, migration tooling, plain prepared statements only.\n- Honest pain note: better-sqlite3 compiles native code on install, pin Node 22 or the build fails loudly."
+    },
+    {
+      "label": "WE",
+      "title": "Write tracker.js and make collection truly first-party",
+      "body": "Drive the assistant to write the snippet you will paste on your sites. Because the tracker must match how your pages are built, you stay in the loop deciding what gets sent and what never leaves the browser. The payoff is immediate: paste it on a real page and watch the row land.",
+      "why": "You steer and the assistant types: tracker placement depends on how your own sites work, so the judgment calls stay yours.",
+      "prompt": "Add tracker.js and route collection through your own domain. Requirements:\n- Serve a dependency-free tracker.js under 80 lines from GET /tracker.js on the collector built in the previous step.\n- On page load and on history pushState changes, POST a pageview to https://analytics.YOURDOMAIN/e with site, event_name 'pageview', path, referrer, and UTM parameters parsed from the URL.\n- Expose window.track(name, props) that sends custom events with properties serialized into the JSON properties column.\n- Use navigator.sendBeacon with a fetch keepalive fallback, never block rendering, never set cookies or localStorage.\n- Reverse-proxy /e on your subdomain to the collector's /e route so requests never leave your domain.\n- Out of scope: click autocapture, SPA routers other than the history API, user ids, consent banner logic.\n- Honest pain note: Safari and some extensions strip referrer data, expect blank referrers on a slice of traffic.\n- Verify by pasting the snippet on a real page and watching one pageview row arrive with today's date."
+    },
+    {
+      "label": "WE",
+      "title": "Count visitors without cookies or raw IPs",
+      "body": "Steer the assistant through the privacy core: a daily-rotating salt combined with the IP and user agent produces an anonymous visitor id. You set the policy, the salt stays in .env, and the database ends up holding nothing sensitive to leak. Confirm it by counting distinct visitors on a day you browsed yourself.",
+      "why": "What never touches disk is policy, not typing; the assistant implements once you have decided.",
+      "prompt": "Set up anonymous visitor counting with a rotating salt. Requirements:\n- Generate a 32-character DAILY_SALT into .env at install time, never commit the real value.\n- Inside the /e handler from step 2, compute sha256(current salt + ip + user agent), truncate to 16 hex chars, store as visitor_id, and discard the raw inputs.\n- Never write raw IPs or full user agent strings to disk or logs anywhere in the codebase.\n- Rotate the salt at 00:00 UTC with an in-process timer and document that day-over-day counts shift slightly as a result.\n- Add GET /api/days returning date, distinct visitor_id count, and pageview count for the trailing 30 days.\n- Add columns with ALTER TABLE guarded by a existence check so rerunning the migration is harmless.\n- Out of scope: fingerprinting libraries, returning-visitor cookies, cross-device identity stitching.\n- Verify by browsing your site, then confirm the events table has visitor_id filled in and no ip column exists."
+    },
+    {
+      "label": "WE",
+      "title": "Turn events into answers with a stats API",
+      "body": "Aggregate queries hide wrong answers quietly, so this step stays interactive: run each endpoint against your own real traffic and check the numbers against what you know happened. When it settles, four endpoints cover range summaries, top lists, one-event property splits, and a three-step funnel.",
+      "why": "Wrong aggregate SQL looks identical to right aggregate SQL, so you want eyes on real results while iterating.",
+      "prompt": "Build the authenticated stats API over the existing events table. Requirements:\n- Protect /api/* with basic auth, credentials in DASH_USER and DASH_PASS in .env.\n- GET /api/summary?from=YYYY-MM-DD&to=YYYY-MM-DD returns per-day visitors, pageviews, and a bounce proxy (single-page visits divided by total visits).\n- GET /api/top?dim=page|referrer|country with from and to returns the top 10 rows with counts.\n- GET /api/event?name=signup&prop=plan splits one named event by one property using json_extract on the properties column.\n- GET /api/funnel?steps=a,b,c counts distinct visitor_id values reaching each ordered step within the range.\n- Parameterize every query and return 400 for malformed dates.\n- Out of scope: caching layers, chart rendering, GraphQL.\n- Honest pain note: funnel queries over raw rows get slow near 100k events, the nightly rollup planned in a later step is the intended fix."
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Render the dashboard against the frozen API",
+      "body": "With the JSON contract fixed in the previous step, the page itself is precise, low-risk work an agent can finish whole. Review it in a browser instead of line by line: charts draw, ranges switch, tables render. Visual taste is the only judgment left to you.",
+      "why": "Markup against a frozen JSON contract is low-risk delegation, and the review surface becomes visual rather than structural.",
+      "prompt": "Build a single-page dashboard consuming the /api endpoints from the previous step. Requirements:\n- One file public/dashboard.html with vanilla JavaScript, no framework, no build step, served at / behind the same basic auth.\n- Fetch /api/summary, /api/top, /api/event, and /api/funnel using the exact parameter names already defined, no client-side reshaping beyond number formatting.\n- Render the daily series as a canvas line chart (uPlot from CDN is acceptable), top lists as tables, the funnel as labeled horizontal bars.\n- Include a date range picker with 7, 30, and 90 day presets plus custom from and to inputs.\n- Handle empty ranges and missing property values gracefully, never throw on null.\n- Out of scope: dark mode, saved views, team accounts, CSV buttons.\n- Verify by loading the page in a browser and matching the numbers the API returns via curl."
+    },
+    {
+      "label": "WE",
+      "title": "Make it survive: rollups, retention, backups, restarts",
+      "body": "This step separates a demo from infrastructure. Drive the assistant to add the nightly rollup, prune raw rows past your retention window, copy backups off the box, and register a systemd unit so collection resumes after a reboot. The policies are yours to choose because they concern your data; the translation into scripts is shared work.",
+      "why": "Retention windows and backup cadence are judgments about your data; the assistant converts them into cron entries and unit files.",
+      "prompt": "Add the operations layer that keeps collection alive unattended. Requirements:\n- Nightly job at 02:00 UTC building a daily_summary table (day, visitors, pageviews, top_referrer) from events, then deleting raw rows older than RETENTION_DAYS from .env.\n- GET /export.csv streams the surviving raw rows as CSV with a header row, gated by the existing basic auth.\n- scripts/backup.sh copies events.db to a timestamped file and rsyncs it to an OFFBOX_PATH configured in .env.\n- Install analytics.service as a systemd unit running server.js with Restart=always, enabled at boot.\n- Append a timestamped heartbeat line to heartbeat.txt every minute so silent stalls become detectable.\n- Out of scope: alerting services, multi-node deployments, database replication.\n- Honest pain note: pruning raw rows means old funnels lose path-level detail and only summary totals survive, so pick RETENTION_DAYS deliberately."
+    }
+  ],
+  "stretchGoals": [
+    "Email yourself a weekly digest of visitors and top pages from the daily_summary table",
+    "Track two sites side by side in the same dashboard using the site column",
+    "Run your box and PostHog's free tier on the same site for a month and compare the counts"
+  ],
+  "resources": [
+    {
+      "title": "Umami",
+      "url": "https://github.com/umami-software/umami",
+      "note": "A mature open-source analytics codebase worth reading after your v1 works, especially its schema and bot-filtering choices."
+    },
+    {
+      "title": "PostHog pricing",
+      "url": "https://posthog.com/pricing",
+      "note": "Shows the free allowances and metered rates, so you know exactly where the paid line sits relative to your traffic."
+    },
+    {
+      "title": "Rybbit",
+      "url": "https://rybbit.com",
+      "note": "A hosted option with analytics and replay if you later want capabilities this build intentionally skips."
+    },
+    {
+      "title": "OpenPanel",
+      "url": "https://openpanel.dev",
+      "note": "Another hosted middle ground with product analytics and replay, useful for seeing what self-hosting trades away."
+    }
+  ]
+}

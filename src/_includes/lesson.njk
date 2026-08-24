@@ -1,0 +1,96 @@
+---
+layout: default
+---
+{% set o = lesson.overlay %}
+{% set e = lesson.entry %}
+<article>
+  <header>
+    <p style="--d:flex; --g:0.5rem; --fw:wrap; --size:0.8rem">
+      <span style="--bg:var(--c-{{ o.level }}); --c:white; --p:0.15rem 0.6rem; --br:0.3rem; --weight:700">{{ o.level }}</span>
+      <span style="--p:0.15rem 0.6rem; --b:1px solid oklch(80% 0.01 250); --br:0.3rem">{{ taxonomy.timeLabels[o.timeEstimate] }}</span>
+      <span style="--p:0.15rem 0.6rem; --b:1px solid oklch(80% 0.01 250); --br:0.3rem">{{ e.category }}</span>
+    </p>
+    <h1 style="--size:1.6rem; --size-md:2.1rem">{{ o.title }}</h1>
+    <p>{{ o.summary }}</p>
+  </header>
+
+  <section>
+    <h2 style="--size:1.15rem">What you'll learn</h2>
+    <ul>
+      {% for item in o.whatYoullLearn %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% if o.prerequisites.length %}
+    <h2 style="--size:1.15rem">Before you start</h2>
+    <ul>
+      {% for item in o.prerequisites %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2 style="--size:1.15rem">The build
+      <span data-progress-counter style="--size:0.8rem; --weight:400"></span>
+    </h2>
+    {% for step in o.steps %}
+      {% set labelMeta = taxonomy.labels[step.label] %}
+      {% set index = loop.index0 %}
+      {% set slug = o.slug %}
+      {% include "component/step.njk" %}
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2 style="--size:1.15rem">What you won't get</h2>
+    <ul>
+      {% for item in o.whatYouWontGet %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    <h2 style="--size:1.15rem">Why people still pay — and what that teaches you</h2>
+    {% for m in o.moatLessons %}
+    <p><strong>{{ m.tag }}:</strong> {{ m.lesson }}</p>
+    {% endfor %}
+    {% if o.stretchGoals.length %}
+    <h2 style="--size:1.15rem">Stretch goals</h2>
+    <ul>
+      {% for item in o.stretchGoals %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+
+  {% set slug = o.slug %}
+  {% set level = o.level %}
+  {% include "component/built-it.njk" %}
+
+  <section style="--mt:2rem; --p:1rem; --bg:oklch(96% 0.005 90); --br:0.5rem; --size:0.9rem">
+    <h2 style="--size:1rem">About {{ e.name }}</h2>
+    <p>
+      {{ e.name }} costs ${{ e.priceMonthly }}/month.
+      {{ e.whyPeopleStillPay }}
+    </p>
+    <p style="--size:0.8rem">
+      Product facts from
+      <a href="{{ site.upstream.site }}/{{ e.slug }}">canivibecodeit.com/{{ e.slug }}</a>
+      by Rob Hallam &amp; contributors, MIT licensed{% if e.pricing.checkedOn %} · checked {{ e.pricing.checkedOn }}{% endif %}.
+    </p>
+  </section>
+
+  {% if o.resources.length or e.alternatives.length %}
+  <section style="--size:0.9rem">
+    <h2 style="--size:1.15rem">Sources &amp; further reading</h2>
+    <ul>
+      {% for r in o.resources %}
+      <li><a href="{{ r.url }}">{{ r.title }}</a>{% if r.note %} — {{ r.note }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% if e.alternatives.length %}
+    <h3 style="--size:1rem">Finished alternatives (if you'd rather not build)</h3>
+    <ul>
+      {% for alt in e.alternatives %}
+      <li><a href="{{ alt.url }}">{{ alt.name }}</a>{% if alt.desc %} — {{ alt.desc }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  {% include "component/newsletter.njk" %}
+</article>

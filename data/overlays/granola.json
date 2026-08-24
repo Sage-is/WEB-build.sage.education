@@ -1,0 +1,89 @@
+{
+  "slug": "granola",
+  "sourceHash": "sha256:288b17ea4659b2dddc887acf2b9c6b2344bdbd1fc381c68d81a19a2cbc4c37c5",
+  "generatedAt": "2026-08-24T10:07:34.516Z",
+  "generator": {
+    "model": "opencode/big-pickle",
+    "promptVersion": 1
+  },
+  "reviewStatus": "auto",
+  "level": "beginner",
+  "timeEstimate": "one-sitting",
+  "title": "Build your own meeting notepad (a personal Granola)",
+  "summary": "In one sitting you will build a small command-line tool that records a meeting, turns the speech into text (that conversion is called transcription), and asks an AI model to write a Markdown note with a five-bullet summary, decisions made, and action items with owners. Everything lands in folders on your machine, readable forever and searchable with any text tool. Granola still charges $14 a month because it wakes up at the right moment by itself, syncs notes across devices, wraps it all in a polished editor, and takes responsibility when something breaks.",
+  "whatYoullLearn": [
+    "Capture microphone and system audio from a script using sounddevice",
+    "Transcribe audio through a hosted Whisper API or a local whisper.cpp model",
+    "Write LLM prompts that turn messy transcripts into structured, skimmable notes",
+    "Keep secrets in a .env file instead of hardcoding keys",
+    "Organize outputs as dated Markdown files you can grep years later"
+  ],
+  "whatYouWontGet": [
+    "Notes stay on this machine and these folders; moving them between devices is your job",
+    "Capture happens on your computer during the call, so there is no phone companion",
+    "You press record yourself instead of the tool joining calendar events automatically",
+    "Updates, backups, and troubleshooting are part of owning the tool"
+  ],
+  "moatLessons": [
+    {
+      "tag": "execution-polish",
+      "lesson": "Granola wins because the note is simply there after every call: no device pickers, no failed recordings, no cleanup. The DIY core loop is one sitting, but making it never miss a beat across headsets, browser calls, and quiet rooms is years of edge-case work. Builders learn that reliability, not feature count, is what people pay for."
+    },
+    {
+      "tag": "integrations",
+      "lesson": "Granola reads your calendar and rides along with your call apps, so it shows up before you remember to hit record. A personal script depends on your memory; the integrated product removes that step entirely. Builders learn that living inside an existing workflow beats being one more app to open."
+    }
+  ],
+  "prerequisites": [
+    "Python 3.10 or newer on your PATH (verify with python3 --version)",
+    "An OpenAI or Groq API key for transcription and summaries, ready to paste into meeting-notes/.env",
+    "Optional fully-offline route: a built whisper.cpp binary plus a downloaded model (about 1.5 GB)",
+    "macOS: the free BlackHole virtual audio driver if you want the other callers' audio, plus microphone permission for your terminal app",
+    "Windows: nothing extra; sounddevice reaches system audio through WASAPI loopback (a mode that taps what your computer is playing)"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the project and audio recorder",
+      "body": "Hand the whole skeleton to your agent in one shot. You want a folder named meeting-notes containing recorder.py, notes.py, a requirements.txt, a .env.example, and a README. Nothing here is risky or ambiguous, which makes it ideal delegate material. When it finishes, skim the files so you know where recordings will land.",
+      "why": "Folder scaffolding with exact filenames and deps is precise, low-risk boilerplate, exactly what to hand off whole.",
+      "prompt": "Build the project skeleton for a local meeting-notes tool in a folder called meeting-notes. Requirements:\n- Python 3.10+ with three dependencies: sounddevice, soundfile, and python-dotenv, listed in requirements.txt\n- Create .env.example with OPENAI_API_KEY, GROQ_API_KEY, INPUT_DEVICE_INDEX, and NOTES_DIR, plus a .gitignore covering .env, recordings/, and transcripts/\n- recorder.py: a CLI with start and stop subcommands that records 16 kHz mono WAV files into meeting-notes/recordings/ using filenames like 2026-08-24-1400.wav\n- Read INPUT_DEVICE_INDEX from .env to select the input device, and add a list-devices subcommand that prints every available audio input\n- Keep everything local: no cloud uploads, no accounts, no telemetry\n- Out of scope for this step: GUI, packaging, and transcription logic, those arrive later\n- README.md documents the pip install line and warns that macOS system audio usually needs the free BlackHole virtual device, which is the fiddliest part of this project"
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Approve microphone access and capture a test recording",
+      "body": "Run python3 recorder.py start in your terminal, talk for thirty seconds, then run recorder.py stop. Your operating system will show a microphone permission dialog for the terminal app the first time; click Allow, because only a human at the keyboard can. Confirm a WAV file now sits in meeting-notes/recordings/ and plays back with your voice in it. If it is silent, run the list-devices subcommand, put a different index in .env, and try again.",
+      "why": "OS permission dialogs are human-only surfaces; no agent can click Allow on your behalf.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Turn recordings into structured Markdown notes",
+      "body": "This is the heart of the lesson: chaining transcription and an LLM (a large language model that reads text and writes answers) into one command. Drive the agent yourself and test after each change, because API errors and oversized files are where the real learning is. Verify the pipeline end to end on the thirty-second test recording from the last step before pointing it at a real meeting.",
+      "why": "Two chained APIs with real failure modes is where you want the assistant beside you while you learn, not handed the whole problem blind.",
+      "prompt": "Add transcription and note generation to the meeting-notes project from our earlier steps. Requirements:\n- In notes.py, take a WAV path from recordings/, transcribe it with the Groq or OpenAI whisper endpoint when GROQ_API_KEY or OPENAI_API_KEY is set in .env, otherwise shell out to a local whisper.cpp binary when WHISPER_BIN is set\n- Save the raw transcript to transcripts/<same-filename>.txt before doing anything else, so a crash never loses the words\n- Send the transcript plus optional rough typed notes from a --notes flag to the chat model with instructions to return a 5-bullet summary, decisions made, and action items each with an owner\n- Write the result to NOTES_DIR as YYYY-MM-DD-HHMM.md: title, summary, decisions, and action items on top, full transcript below a divider\n- Print the note path on success, and exit with a clear error message when neither an API key nor a local binary is configured\n- Out of scope: speaker labels, databases, and any web UI\n- Pain warning: audio over roughly 25 MB gets rejected by hosted APIs, so split longer recordings into 10-minute chunks before sending"
+    }
+  ],
+  "stretchGoals": [
+    "Label who said what (diarization) using a library like pyannote, so action-item owners map to real voices",
+    "Wrap recorder.py in a Mac menu-bar or Windows tray icon so starting a capture is one click",
+    "Add a tiny search script that greps all notes in NOTES_DIR for a keyword and prints matching action items"
+  ],
+  "resources": [
+    {
+      "title": "whisper.cpp",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "note": "The local transcription engine to reach for when you want notes without sending audio anywhere."
+    },
+    {
+      "title": "Granola pricing",
+      "url": "https://www.granola.ai/pricing",
+      "note": "Shows what the managed version costs and how the free tier locks history after 30 days."
+    },
+    {
+      "title": "Meetily (open-source alternative)",
+      "url": "https://github.com/Zackriya-Solutions/meetily",
+      "note": "An MIT-licensed meeting recorder worth reading when you want to compare architecture choices with your own build."
+    }
+  ]
+}
