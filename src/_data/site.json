@@ -1,0 +1,14 @@
+{
+  "name": "Build it yourself",
+  "tagline": "Learn to build your own software, one project at a time.",
+  "url": "https://build.sage.education",
+  "parent": {
+    "name": "Sage.Education",
+    "url": "https://sage.education"
+  },
+  "upstream": {
+    "name": "canivibecodeit",
+    "site": "https://canivibecodeit.com",
+    "repo": "https://github.com/canivibecodeit/canivibecodeit"
+  }
+}

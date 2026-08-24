@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include "component/head.njk" %}
+  <body style="--maxw:46rem; --m:auto; --bg:var(--c-paper); --c:var(--c-ink)">
+    {% include "component/header.njk" %}
+    <main style="--p:0 1rem">
+      {{ content | safe }}
+    </main>
+    {% include "component/footer.njk" %}
+    {% include "component/scripts.njk" %}
+  </body>
+</html>

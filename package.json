@@ -1,0 +1,14 @@
+{
+  "name": "web-build-sage-education",
+  "version": "0.1.0",
+  "description": "build.sage.education — learn to build your own software, one project at a time. Educational overlay on the canivibecodeit dataset.",
+  "license": "AGPL-3.0-only",
+  "scripts": {
+    "start": "cd src && npx @11ty/eleventy --serve --output=../dist",
+    "build": "cd src && npx @11ty/eleventy --output=../dist",
+    "buildfresh": "rm -rf dist && mkdir dist && cd src && npx @11ty/eleventy --output=../dist"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
