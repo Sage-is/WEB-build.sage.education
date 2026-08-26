@@ -1,9 +1,9 @@
 {# expects: step, index, slug, labelMeta #}
-<article style="--b:1px solid oklch(88% 0.01 250); --br:0.5rem; --p:1rem; --mb:1rem">
+<article style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem; --mb:1rem">
   <header style="--d:flex; --ai:center; --g:0.6rem; --fw:wrap">
     <input type="checkbox" data-step="{{ slug }}:{{ index }}" id="step-{{ index }}"
            aria-label="mark step {{ index + 1 }} done" />
-    <span style="--bg:{{ labelMeta.color }}; --c:white; --p:0.1rem 0.5rem; --br:0.3rem; --size:0.75rem; --weight:700">{{ labelMeta.display }}</span>
+    <span style="--bg:{{ labelMeta.color }}; --c:white; --p:0.1rem 0.5rem; --radius:0.3rem; --size:0.75rem; --weight:700">{{ labelMeta.display }}</span>
     <label for="step-{{ index }}" style="--weight:700">{{ index + 1 }}. {{ step.title }}</label>
   </header>
   <p>{{ step.body }}</p>
@@ -13,7 +13,7 @@
   {% if step.prompt %}
   <details style="--mt:0.6rem">
     <summary>step prompt</summary>
-    <pre data-prompt style="--p:0.8rem; --bg:oklch(96% 0.01 250); --br:0.4rem; --ws:pre-wrap; --ofx:auto">{{ step.prompt }}</pre>
+    <pre data-prompt style="--p:0.8rem; --bg:oklch(96% 0.01 250); --radius:0.4rem; --ws:pre-wrap; --ofx:auto">{{ step.prompt }}</pre>
     <button type="button" data-copy-prompt style="--p:0.3rem 0.8rem">copy prompt</button>
   </details>
   {% endif %}

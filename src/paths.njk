@@ -8,7 +8,7 @@ eleventyComputed:
   title: "{{ pathLevel.label }} path"
 ---
 <h1 style="--size:1.6rem; --size-md:2.1rem">
-  <span style="--bg:var(--c-{{ pathLevel.key }}); --c:white; --p:0.1rem 0.6rem; --br:0.3rem">{{ pathLevel.label }}</span>
+  <span style="--bg:var(--c-{{ pathLevel.key }}); --c:white; --p:0.1rem 0.6rem; --radius:0.3rem">{{ pathLevel.label }}</span>
   {{ pathLevel.sub }}
 </h1>
 <p>{{ pathLevel.intro }}</p>
@@ -17,7 +17,7 @@ eleventyComputed:
 <ul style="--lis:none; --p:0; --d:grid; --g:0.8rem">
   {% for lesson in lessons %}
     {% if lesson.overlay.level == pathLevel.key %}
-    <li style="--b:1px solid oklch(88% 0.01 250); --br:0.5rem; --p:0.8rem">
+    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:0.8rem">
       <a href="/lessons/{{ lesson.slug }}/" style="--weight:700">{{ lesson.overlay.title }}</a>
       <p style="--size:0.85rem; --m:0.3rem 0 0">{{ lesson.overlay.summary | truncate(140) }}</p>
       <p style="--size:0.75rem; --m:0.3rem 0 0">{{ taxonomy.timeLabels[lesson.overlay.timeEstimate] }} · {{ lesson.entry.category }}</p>

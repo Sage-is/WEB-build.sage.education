@@ -6,9 +6,9 @@ layout: default
 <article>
   <header>
     <p style="--d:flex; --g:0.5rem; --fw:wrap; --size:0.8rem">
-      <span style="--bg:var(--c-{{ o.level }}); --c:white; --p:0.15rem 0.6rem; --br:0.3rem; --weight:700">{{ o.level }}</span>
-      <span style="--p:0.15rem 0.6rem; --b:1px solid oklch(80% 0.01 250); --br:0.3rem">{{ taxonomy.timeLabels[o.timeEstimate] }}</span>
-      <span style="--p:0.15rem 0.6rem; --b:1px solid oklch(80% 0.01 250); --br:0.3rem">{{ e.category }}</span>
+      <span style="--bg:var(--c-{{ o.level }}); --c:white; --p:0.15rem 0.6rem; --radius:0.3rem; --weight:700">{{ o.level }}</span>
+      <span style="--p:0.15rem 0.6rem; --b:1px solid oklch(80% 0.01 250); --radius:0.3rem">{{ taxonomy.timeLabels[o.timeEstimate] }}</span>
+      <span style="--p:0.15rem 0.6rem; --b:1px solid oklch(80% 0.01 250); --radius:0.3rem">{{ e.category }}</span>
     </p>
     <h1 style="--size:1.6rem; --size-md:2.1rem">{{ o.title }}</h1>
     <p>{{ o.summary }}</p>
@@ -60,7 +60,7 @@ layout: default
   {% set level = o.level %}
   {% include "component/built-it.njk" %}
 
-  <section style="--mt:2rem; --p:1rem; --bg:oklch(96% 0.005 90); --br:0.5rem; --size:0.9rem">
+  <section style="--mt:2rem; --p:1rem; --bg:oklch(96% 0.005 90); --radius:0.5rem; --size:0.9rem">
     <h2 style="--size:1rem">About {{ e.name }}</h2>
     <p>
       {{ e.name }} costs ${{ e.priceMonthly }}/month.
