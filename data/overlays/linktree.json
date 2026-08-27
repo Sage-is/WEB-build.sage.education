@@ -10,7 +10,7 @@
   "level": "beginner",
   "timeEstimate": "one-sitting",
   "title": "Build your own link-in-bio page (a personal Linktree Pro)",
-  "summary": "You will build one static page (a page served exactly as stored, with no app logic behind it) showing your avatar, name, short bio, and one button per entry in a links.json file you edit to update the site. A small Node server turns button taps into redirects and logs each one, feeding a password-protected stats page with your true click counts. Linktree keeps its paying subscribers because it hosts the page, keeps the editor and analytics working at scale, and bundles marketing extras, all chores that become yours as the operator.",
+  "summary": "Learn and build a static single page site (a page served exactly as stored, with no app logic behind it) showing your avatar, name, short bio, and one button per entry in a links.json file you edit to update the site. A small Node server turns button taps into redirects and logs each one, feeding a password-protected stats page with your true click counts. Linktree keeps its paying subscribers because it hosts the page, keeps the editor and analytics working at scale, and bundles marketing extras, all chores that become yours as the operator.",
   "whatYoullLearn": [
     "Modeling site content as data, keeping every link in links.json so redesigns never touch content",
     "Mobile-first CSS with automatic dark mode through prefers-color-scheme",
