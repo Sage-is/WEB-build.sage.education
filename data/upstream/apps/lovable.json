@@ -225,7 +225,7 @@
   "verdict": "no",
   "verdictConfidence": "high",
   "verdictSummary": "The wrapper is easy: a CLI that sends your brief to a model, writes the files, and starts the dev server is one sitting of work. The model doing the writing is the actual product, and you cannot rebuild that. Everything Lovable puts around it, the hosted preview, the deploy, the database wired up for you, and a non-developer being able to use any of it, goes with the subscription.",
-  "coreLoopDIY": "Send a plain-language brief to a model API, have it write a small React app into a local folder, run it, and keep iterating in the same conversation.",
+  "coreLoopDIY": "Send a plain-language brief to a model API, have it write a small web app into a local folder, run it, and keep iterating in the same conversation.",
   "diyTimeEstimate": "closest consolation build: one sitting",
   "requirements": [
     "Node 22",

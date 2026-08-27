@@ -10,7 +10,7 @@
   "level": "advanced",
   "timeEstimate": "one-sitting",
   "title": "Build your own brief-to-app generator (a personal Lovable)",
-  "summary": "You will build vibe, a terminal tool that takes a plain-language brief like 'a habit tracker with a weekly grid', asks a model to write a small React app into a local folder, checks that it compiles, and commits every round to git so nothing is unrecoverable. Building it teaches the real shape of prompt-to-app products: the wrapper around the model is a sitting of work, and the model doing the writing is the actual product. Lovable keeps its customers because the subscription bundles frontier model access, hosted previews, deploys, and a database wired up for people who never open a terminal, and none of that comes home with a weekend CLI.",
+  "summary": "You will build vibe, a terminal tool that takes a plain-language brief like 'a habit tracker with a weekly grid', asks a model to write a small web app into a local folder, checks that it compiles, and commits every round to git so nothing is unrecoverable. Building it teaches the real shape of prompt-to-app products: the wrapper around the model is a sitting of work, and the model doing the writing is the actual product. Lovable keeps its customers because the subscription bundles frontier model access, hosted previews, deploys, and a database wired up for people who never open a terminal, and none of that comes home with a weekend CLI.",
   "whatYoullLearn": [
     "Calling Anthropic or OpenAI APIs from Node and parsing strict JSON file output",
     "Scaffolding Vite + React + TypeScript projects programmatically",
