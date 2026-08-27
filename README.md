@@ -1,10 +1,8 @@
 # build.sage.education
 
-Learn to build your own software, one project at a time. A
-[Sage.Education](https://sage.education) vertical that turns the
-[canivibecodeit](https://canivibecodeit.com) dataset into leveled, multi-step
-lessons: what to do **BY HAND**, what to build **WE**-style with an assistant
-in the loop, and what to **DELEGATE** to an agent outright.
+## Learn to build your own software, one project at a time. 
+
+A [Sage.Education](https://sage.education) projects that builds on the [canivibecodeit](https://canivibecodeit.com) dataset. Providing leveled, multi-step lessons: what to do **BY HAND**, what to build **WE**-style with an assistant in the loop, and what to **DELEGATE** to an agent outright.
 
 ## How it works
 
@@ -21,11 +19,8 @@ in the loop, and what to **DELEGATE** to an agent outright.
   overlay.
 - `make deploy` — Cloudflare Pages via wrangler.
 
-Levels map from upstream verdicts: yes → beginner (one-sitting wins),
-kinda → intermediate (weekend builds), no → advanced (capstones that teach
-why the moat exists).
+Levels map from upstream verdicts: yes → beginner (one-sitting wins), kinda → intermediate (weekend builds), no → advanced (capstones that teach why moats exists).
 
 ## Licensing
 
-Code and lessons are AGPL-3.0 (`LICENSE`). Upstream data is MIT by Rob
-Hallam & contributors — see `NOTICE.md` for full attribution.
+Code and lessons are AGPL-3.0 (`LICENSE`). Upstream data is MIT by Rob Hallam & contributors — see `NOTICE.md` for full attribution.

@@ -3,12 +3,11 @@ title: Learn to build your own software
 ---
 <h1 style="--size:1.8rem; --size-md:2.4rem">{{ site.tagline }}</h1>
 <p>
-  Pick a project you already pay for, and learn to build your own version —
-  step by step, with honest notes on what you get and what you give up.
+  Pick something you already pay for, and learn how to build your own version  one step at a time. We’ll explain what you gain, what you give up, and the trade-offs along the way.
 </p>
 <ul style="--lis:none; --p:0; --d:grid; --g:1rem; --gtc-md:1fr 1fr 1fr">
   {% for l in taxonomy.levels %}
-  <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem">
+  <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem; --shadow: 6">
     <a href="/paths/{{ l.key }}/" style="--weight:700; --c:var(--c-{{ l.key }})">{{ l.label }}</a>
     <p style="--size:0.85rem; --m:0.3rem 0 0">{{ l.sub }}</p>
   </li>
