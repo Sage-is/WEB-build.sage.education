@@ -13,3 +13,45 @@ title: Learn to build your own software
   </li>
   {% endfor %}
 </ul>
+
+<section style="--mt:2.5rem">
+  <h2 style="--size:1.3rem">How every lesson works</h2>
+  <p>Every build is split into steps, and every step is labeled with who does the work.</p>
+  <ul style="--lis:none; --p:0; --d:grid; --g:1rem; --gtc-md:1fr 1fr 1fr">
+    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem">
+      <span style="--bg:var(--c-manually); --c:white; --p:0.15rem 0.6rem; --radius:0.3rem; --weight:700">BY HAND</span>
+      <p style="--size:0.9rem; --m:0.6rem 0 0">Steps that need your identity or your judgment. Accounts, billing, DNS, third-party dashboards. No agent should drive these, so you do them yourself.</p>
+    </li>
+    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem">
+      <span style="--bg:var(--c-we); --c:white; --p:0.15rem 0.6rem; --radius:0.3rem; --weight:700">WE</span>
+      <p style="--size:0.9rem; --m:0.6rem 0 0">You build alongside an assistant. Run the code, watch it break, describe the error, apply the fix. Debugging with a helper is the skill these steps teach.</p>
+    </li>
+    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem">
+      <span style="--bg:var(--c-delegate); --c:white; --p:0.15rem 0.6rem; --radius:0.3rem; --weight:700">DELEGATE</span>
+      <p style="--size:0.9rem; --m:0.6rem 0 0">Hand a precise prompt to an agent and let it do the typing. Then review the result like a first draft, because that is what it is.</p>
+    </li>
+  </ul>
+</section>
+
+<section style="--mt:2.5rem">
+  <h2 style="--size:1.3rem">Browse the lessons</h2>
+  <p style="--size:0.9rem">{{ lessons.length }} builds so far, each modeled on software people pay for today.</p>
+  <ul style="--lis:none; --p:0; --d:grid; --g:0.6rem; --gtc:1fr 1fr; --gtc-md:1fr 1fr 1fr 1fr">
+    {% for lesson in lessons %}
+    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem">
+      <a href="/lessons/{{ lesson.slug }}/" style="--d:flex; --ai:center; --g:0.5rem; --p:0.6rem; text-decoration:none">
+        {% if lesson.icon %}<img src="{{ lesson.icon }}" alt="" width="20" height="20" style="--radius:0.25rem; flex-shrink:0" />{% endif %}
+        <span style="--size:0.9rem; --weight:600">{{ lesson.entry.name }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<p style="--mt:2rem; --size:0.8rem">
+  Product facts come from <a href="{{ site.upstream.site }}">canivibecodeit.com</a>,
+  a dataset by Rob Hallam &amp; contributors, MIT licensed.
+  The lessons themselves are original work by <a href="{{ site.parent.url }}">Sage.Education</a>.
+</p>
+
+{% include "component/newsletter.njk" %}
