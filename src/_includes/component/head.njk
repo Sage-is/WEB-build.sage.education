@@ -5,18 +5,11 @@
   <meta name="description" content="{{ description or site.tagline }}" />
   <meta name="generator" content="Startr" />
   {% if env.pbUrl %}<meta name="pb-url" content="{{ env.pbUrl }}" />{% endif %}
+  {% if lesson and lesson.icon %}
+  <link rel="icon" href="{{ lesson.icon }}" />
+  {% else %}
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>" />
+  {% endif %}
   <link rel="stylesheet" href="https://startr.style/style.css" />
-  <style>
-    :root {
-      /* Level + step-label palette, oklch */
-      --c-beginner: oklch(65% 0.15 145);
-      --c-intermediate: oklch(70% 0.14 85);
-      --c-advanced: oklch(55% 0.18 25);
-      --c-we: oklch(60% 0.14 250);
-      --c-manually: oklch(60% 0.15 45);
-      --c-delegate: oklch(55% 0.13 305);
-      --c-ink: oklch(22% 0.02 250);
-      --c-paper: oklch(98% 0.005 90);
-    }
-  </style>
+  {% include "component/style.njk" %}
 </head>

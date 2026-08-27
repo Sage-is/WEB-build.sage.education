@@ -18,7 +18,10 @@ eleventyComputed:
   {% for lesson in lessons %}
     {% if lesson.overlay.level == pathLevel.key %}
     <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:0.8rem">
-      <a href="/lessons/{{ lesson.slug }}/" style="--weight:700">{{ lesson.overlay.title }}</a>
+      <p style="--d:flex; --ai:center; --g:0.5rem; --m:0">
+        {% if lesson.icon %}<img src="{{ lesson.icon }}" alt="" width="20" height="20" style="--radius:0.25rem; flex-shrink:0" />{% endif %}
+        <a href="/lessons/{{ lesson.slug }}/" style="--weight:700">{{ lesson.overlay.title }}</a>
+      </p>
       <p style="--size:0.85rem; --m:0.3rem 0 0">{{ lesson.overlay.summary | truncate(140) }}</p>
       <p style="--size:0.75rem; --m:0.3rem 0 0">{{ taxonomy.timeLabels[lesson.overlay.timeEstimate] }} · {{ lesson.entry.category }}</p>
     </li>

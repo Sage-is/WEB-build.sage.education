@@ -47,6 +47,9 @@ transform:
 validate:
 	bun scripts/validate-overlays.mjs
 
+favicons:
+	bun scripts/fetch-favicons.mjs
+
 build:
 	bun run build
 
