@@ -69,11 +69,7 @@ layout: default
       {{ e.name }} costs ${{ e.priceMonthly }}/month.
       {{ e.whyPeopleStillPay }}
     </p>
-    <p style="--size:0.8rem">
-      Product facts from
-      <a href="{{ site.upstream.site }}/{{ e.slug }}">canivibecodeit.com/{{ e.slug }}</a>
-      by Rob Hallam &amp; contributors, MIT licensed{% if e.pricing.checkedOn %} · checked {{ e.pricing.checkedOn }}{% endif %}.
-    </p>
+    
   </section>
 
   {% if o.resources.length or e.alternatives.length %}
