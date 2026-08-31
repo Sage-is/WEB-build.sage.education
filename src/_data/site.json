@@ -2,6 +2,7 @@
   "name": "Build it yourself",
   "tagline": "Learn to build your own software, one project at a time.",
   "url": "https://build.sage.education",
+  "repo": "https://github.com/Sage-is/WEB-build.sage.education",
   "parent": {
     "name": "Sage.Education",
     "url": "https://sage.education"
