@@ -43,11 +43,11 @@ layout: default
   </section>
 
   <section>
-    <h2 style="--size:1.15rem">What you won't get</h2>
+    <h2 style="--size:1.15rem"> Where things stand</h2>
     <ul>
       {% for item in o.whatYouWontGet %}<li>{{ item }}</li>{% endfor %}
     </ul>
-    <h2 style="--size:1.15rem">Why people still pay — and what that teaches you</h2>
+    <h2 style="--size:1.15rem">Why people pay for the original and what that teaches us</h2>
     {% for m in o.moatLessons %}
     <p><strong>{{ m.tag }}:</strong> {{ m.lesson }}</p>
     {% endfor %}
