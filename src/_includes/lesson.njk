@@ -10,9 +10,9 @@ layout: default
       <span style="--p:0.15rem 0.6rem; --b:1px solid oklch(80% 0.01 250); --radius:0.3rem">{{ taxonomy.timeLabels[o.timeEstimate] }}</span>
       <span style="--p:0.15rem 0.6rem; --b:1px solid oklch(80% 0.01 250); --radius:0.3rem">{{ e.category }}</span>
     </p>
-    <h1 style="--size:1.6rem; --size-md:2.1rem; --d:flex; --ai:center; --g:0.6rem">
-    {% if lesson.icon %}<img src="{{ lesson.icon }}" alt="" width="32" height="32" style="--radius:0.4rem; flex-shrink:0" />{% endif %}
-    <span>{{ o.title }}</span>
+    <h1 style="--size:1.6rem; --size-md:2.1rem; --d:flex; --g:0.6rem; --ta:right; --p:1rem; --bg:oklch(96% 0.005 90); --radius:0.5rem; --shadow: 6">
+    {% if lesson.icon %}<img src="{{ lesson.icon }}" alt="" width="32" height="32" style="--radius:0.4rem; flex-shrink:0; --mt:0.06rem" />{% endif %}
+    <span>{{ o.title | titleBreak | safe }}</span>
   </h1>
     <p>{{ o.summary }}</p>
   </header>
