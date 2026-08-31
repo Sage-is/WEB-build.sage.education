@@ -1,6 +1,11 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./assets/": "/assets/" });
 
+  // data/ lives one level above the project dir (src/) and is read at build
+  // time by _data/lessons.js, so 11ty can't infer it as a dependency. Watch
+  // it explicitly so overlay edits trigger a rebuild.
+  eleventyConfig.addWatchTarget("../data");
+
   // App titles wrap before their bracketed subtitle, e.g.
   // "Build your own link-in-bio page" / "(a personal Linktree Pro)".
   // Escapes first, so pair with | safe at the call site.
