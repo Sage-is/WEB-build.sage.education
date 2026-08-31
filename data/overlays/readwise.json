@@ -10,7 +10,7 @@
   "level": "intermediate",
   "timeEstimate": "one-sitting",
   "title": "Build your own reading archive (a personal Readwise)",
-  "summary": "You will build a local reading archive that imports highlights from files you already have, reviews them with spaced repetition, searches the whole collection instantly, and exports everything as Markdown, CSV, and JSON. The core loop fits in a focused sitting. Readwise still charges monthly because capture works across dozens of apps, reading state syncs between devices, and its parsers get repaired whenever publishers change their sites.",
+  "summary": "You will build a local reading archive that imports highlights from files you already have, reviews them with spaced repetition, searches the whole collection instantly, and exports everything as Markdown, CSV, and JSON. The core loop fits in a focused sitting. Readwise charges monthly because capture works across dozens of apps, reading state syncs between devices, and its parsers get repaired whenever publishers change their sites.",
   "whatYoullLearn": [
     "Parsing messy real-world export files, JSON, CSV, and Kindle clippings text, into a typed SQLite schema",
     "Implementing a simplified SM-2 spaced repetition scheduler with due-date queries",

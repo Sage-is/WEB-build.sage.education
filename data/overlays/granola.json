@@ -10,7 +10,7 @@
   "level": "beginner",
   "timeEstimate": "one-sitting",
   "title": "Build your own meeting notepad (a personal Granola)",
-  "summary": "In one sitting you will build a small command-line tool that records a meeting, turns the speech into text (that conversion is called transcription), and asks an AI model to write a Markdown note with a five-bullet summary, decisions made, and action items with owners. Everything lands in folders on your machine, readable forever and searchable with any text tool. Granola still charges $14 a month because it wakes up at the right moment by itself, syncs notes across devices, wraps it all in a polished editor, and takes responsibility when something breaks.",
+  "summary": "In one sitting you will build a small command-line tool that records a meeting, turns the speech into text (that's called transcription), and asks an AI model to write a Markdown note with a five-bullet summary, decisions made, and action items with owners. Everything lands in folders on your machine, readable forever and searchable with any text tool. Granola charges $14 a month, for this, because it auto wakes up at the right moment, syncs notes across devices, wraps it all in a polished editor, and takes responsibility when something breaks.  By the end of today your system waits for you to hit record.",
   "whatYoullLearn": [
     "Capture microphone and system audio from a script using sounddevice",
     "Transcribe audio through a hosted Whisper API or a local whisper.cpp model",
@@ -27,11 +27,11 @@
   "moatLessons": [
     {
       "tag": "execution-polish",
-      "lesson": "Granola wins because the note is simply there after every call: no device pickers, no failed recordings, no cleanup. The DIY core loop is one sitting, but making it never miss a beat across headsets, browser calls, and quiet rooms is years of edge-case work. Builders learn that reliability, not feature count, is what people pay for."
+      "lesson": "Granola wins because the note is simply there after every call: no device pickers, no failed recordings, no cleanup. The DIY core loop takes a sitting. Making it never miss a beat across headsets, browser calls, and quiet rooms is years of edge-case work. People pay for that reliability more than for any single feature."
     },
     {
       "tag": "integrations",
-      "lesson": "Granola reads your calendar and rides along with your call apps, so it shows up before you remember to hit record. A personal script depends on your memory; the integrated product removes that step entirely. Builders learn that living inside an existing workflow beats being one more app to open."
+      "lesson": "Granola reads your calendar and rides along with your call apps, so it shows up before you remember to hit record. A personal script depends on your memory; the integrated product removes that step entirely. Living inside an existing workflow beats being one more app to open."
     }
   ],
   "prerequisites": [

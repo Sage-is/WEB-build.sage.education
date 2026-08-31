@@ -10,7 +10,7 @@
   "level": "intermediate",
   "timeEstimate": "multi-day",
   "title": "Build your own notes workspace (a personal Notion)",
-  "summary": "You'll build a local notes workspace: Markdown pages with [[wiki links]] and backlinks (pages that link back to the current one), simple typed tables embedded in pages, full-text search over everything, and a nightly export to plain files, all backed by one SQLite database. This is a multi-day build for an intermediate learner. Notion keeps its customers because teams need a shared space: real-time collaboration across devices, per-user permissions, and a deeply refined block editor that nontechnical teammates can trust. Your build proves the personal core is reproducible; the team layer is the product.",
+  "summary": "You'll build a local notes workspace: Markdown pages with [[wiki links]] and backlinks, simple typed tables embedded in pages, full-text search over everything, and a nightly export to plain files, all backed by one SQLite database. This is a multi-day build for an intermediate learner. Notion keeps its customers because teams need a shared space: real-time collaboration across devices, per-user permissions, and a block editor polished enough that nontechnical teammates trust it. A single-user build can't reproduce any of that. What it can reproduce is the personal core: search that works, storage you trust, notes that stay yours.",
   "whatYoullLearn": [
     "Modeling a notes app in SQLite: a pages table, JSON documents for databases, and an FTS5 virtual table for search",
     "Rendering and sanitizing user Markdown safely with marked",
@@ -28,15 +28,15 @@
   "moatLessons": [
     {
       "tag": "collaboration",
-      "lesson": "Notion wins because teammates can edit the same page at once with permissions that admins trust. A builder learns that single-user storage is a weekend project, while merging simultaneous edits across devices (operational transforms or CRDTs) is product-scale engineering."
+      "lesson": "Notion wins because teammates can edit the same page at once with permissions admins trust. Your single-user storage is a weekend project. Merging simultaneous edits across devices (operational transforms or CRDTs) is product-scale engineering. Keep that in mind when the weekend project starts feeling complete."
     },
     {
       "tag": "execution-polish",
-      "lesson": "Notion's block editor feels effortless after years of iteration on drag handles, keyboard shortcuts, and paste handling. A builder learns the interface is the moat: the same features shipped rough read as unfinished rather than useful."
+      "lesson": "Notion's block editor feels effortless after years of iteration on drag handles, keyboard shortcuts, and paste handling. Ship the same features rough and they read as unfinished, not useful. The interface is a real deliverable in its own right."
     },
     {
       "tag": "integrations",
-      "lesson": "Notion wins by connecting to Slack, GitHub, calendars, and a public API, making it the hub people already live in. A builder learns each connector multiplies surface area and maintenance load, so a personal tool stays lean by choosing zero integrations on purpose."
+      "lesson": "Notion wins by connecting to Slack, GitHub, calendars, and a public API, making it the hub people already live in. Each connector also multiplies surface area and maintenance load. A personal tool stays lean by choosing zero integrations on purpose."
     }
   ],
   "prerequisites": [

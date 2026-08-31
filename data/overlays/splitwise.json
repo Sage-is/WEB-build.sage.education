@@ -10,7 +10,7 @@
   "level": "intermediate",
   "timeEstimate": "one-sitting",
   "title": "Build your own group expense splitter (a personal Splitwise)",
-  "summary": "You will build a small web app where a household or trip group logs shared expenses and gets back the shortest list of repayments that settles everyone up. There are no accounts: a group lives at an unguessable link, and whoever holds the link can log and settle. Splitwise survives because the whole group already has it installed and its quiet reminders do the chasing, which is adoption rather than math. You are building for the people who share your fridge, and that is a perfectly good audience.",
+  "summary": "You will build a small web app where a household or trip group logs shared expenses and gets back the shortest list of repayments that settles everyone up. There are no accounts: a group lives at an unguessable link, and whoever holds the link can log and settle. Splitwise survives because the whole group already has it installed and its quiet reminders do the chasing. The math was never the hard part. You are building for the people who share your fridge, which is a perfectly good audience.",
   "whatYoullLearn": [
     "Modeling a shared ledger in SQLite with integer-cent arithmetic",
     "Minimum cash flow debt simplification: turning a tangle of IOUs into the fewest repayments",
@@ -28,15 +28,15 @@
   "moatLessons": [
     {
       "tag": "network-effects",
-      "lesson": "Splitwise wins because everyone's flatmate already has it installed, so the group picks the tool, not the individual. Builders learn that shipping to a group you already coordinate with beats adding more features."
+      "lesson": "Splitwise wins because everyone's flatmate already has it installed. The group picks the tool, and individuals follow. Shipping to a group you already coordinate with beats adding features, because your first users arrive the day you send the link."
     },
     {
       "tag": "execution-polish",
-      "lesson": "Polished apps and quiet balance reminders keep debts moving without awkward conversations. Builders learn that software doing the nagging is real product substance and worth copying in spirit."
+      "lesson": "Polished apps and quiet balance reminders keep debts moving without awkward conversations. The nagging is a feature: software that reminds gently is real product substance, and worth copying."
     },
     {
       "tag": "integrations",
-      "lesson": "Pro sells receipt scanning, automatic currency conversion and settle-up hooks into payment apps. Builders learn these connectors are the paid surface, and naming them out of scope keeps a personal build honest."
+      "lesson": "Pro sells receipt scanning, automatic currency conversion and settle-up hooks into payment apps. Those connectors are the paid surface; naming them out of scope keeps a personal build honest."
     }
   ],
   "prerequisites": [
@@ -64,7 +64,7 @@
       "label": "WE",
       "title": "Compute balances and the settle-up plan",
       "body": "This is the satisfying part: collapsing everyone's tangled IOUs into the fewest payments. Have the assistant implement the greedy creditor-debtor pairing, then you write the circular-debt test yourself and watch it collapse to zero transfers. Read the GeeksforGeeks walkthrough first if the algorithm feels opaque.",
-      "why": "Algorithm work rewards iterating with the assistant on tests and edge cases, not delegating blind, because wrong-but-plausible math is easy to miss in review.",
+      "why": "Algorithm work rewards iterating with the assistant on tests and edge cases. Wrong-but-plausible math is easy to miss in review, so stay in the loop.",
       "prompt": "Add the balances view and the settle-up plan to the existing app. Requirements:\n- GET /groups/<id>/balances shows each member's net position: total paid minus total owed across expense_splits, with reimbursements netted in\n- Write a simplifyDebts function implementing minimum cash flow debt simplification, repeatedly pairing the largest creditor with the largest debtor until every net reaches zero\n- Render the result as a plain transfer list, one row per payment showing payer, recipient and amount, no buttons\n- Add a unit test where A owes B, B owes C and C owes A, asserting the plan collapses to zero transfers\n- Cover edge cases: a single-member group, and an equal split whose one cent remainder lands on the payer\n- Pain warning: the greedy approach gives few transfers in practice but is not provably optimal, resist rewriting it as a graph flow problem\n- Out of scope: interest calculations, date-aware settlement, any payment processing"
     },
     {
