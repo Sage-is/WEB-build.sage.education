@@ -19,7 +19,7 @@
     "Metering token usage and computing a dollar cost per generation round"
   ],
   "whatYouWontGet": [
-    "Generation quality tracks whichever model API key you bring; the frontier model itself is Lovable's core asset",
+    "Generation quality tracks whichever model API key you bring; under Lovable's hood they've connected in Claude",
     "Apps run on localhost; shareable URLs mean setting up hosting separately",
     "Persistence is the SQLite or JSON layer you wire up; managed auth and database services stay out of scope",
     "The workflow assumes terminal comfort; it does not turn non-developers into shippers"

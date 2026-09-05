@@ -1,0 +1,125 @@
+{
+  "slug": "otter-ai",
+  "sourceHash": "sha256:81356e840e5a4c251ec3e0592838cee772f4694f7aea1f508cd2635bb976b654",
+  "generatedAt": "2026-08-31T12:00:00.000Z",
+  "generator": {
+    "model": "opencode/deepseek-v4-flash",
+    "promptVersion": 1
+  },
+  "reviewStatus": "human",
+  "level": "advanced",
+  "levelReason": "Upstream verdict is kinda (weekend-sized), but the bot-participant core is capstone-shaped: platform admission, per-participant capture, and a searchable shared archive are closer to Otter's real scope, so this sits at the top of the advanced path.",
+  "timeEstimate": "multi-day",
+  "title": "Build your own meeting bot (a personal Otter)",
+  "summary": "You will build a bot that joins your video calls like an attendee, captures each participant's audio, transcribes it with speaker labels that come from the platform rather than a diarization guess, and writes the same kind of note your Granola build produced: a five-bullet summary, decisions made, and action items with owners. Everything lands in a searchable SQLite archive you can query or chat with. Otter charges about $17 a month because its bot reliably joins every call, works across three platforms, syncs across devices, and keeps a shared searchable meeting memory, none of which a weekend build does.",
+  "whatYoullLearn": [
+    "Spawning a meeting bot through the Recall.ai API and handling its lifecycle events",
+    "Storing per-participant transcript segments with speaker labels and timestamps in SQLite",
+    "Writing LLM prompts that turn live meeting transcripts into structured notes",
+    "Indexing transcripts with FTS5 and exposing search plus grounded question answering",
+    "Tunneling a local webhook to the public internet so the bot can reach your machine"
+  ],
+  "whatYouWontGet": [
+    "The bot is a visible participant, and platforms or hosts can deny it entry",
+    "Capture reliability across every platform configuration, with no retry when admission fails",
+    "No mobile apps, team workspaces, or admin controls",
+    "Speaker labels depend on per-participant audio, so a shared room full of crosstalk still degrades"
+  ],
+  "moatLessons": [
+    {
+      "tag": "integrations",
+      "lesson": "Otter works because its bot lives inside Zoom, Meet, and Teams, and each platform is an integration contract: lobby admission, OAuth tokens, bot fingerprinting. Your build rides the Recall.ai API, so the hard parts are handled for the platforms it supports. Otter's real asset is having negotiated those contracts at scale, and that is what the monthly price covers."
+    },
+    {
+      "tag": "execution-polish",
+      "lesson": "The transcript loop is a weekend build. What Otter charges for is capture reliability: the bot joins every call without surprising anyone, per-participant audio stays clean, and sessions recover when a platform hiccups. Your bot gets denied at a lobby and that is a visible failure; theirs is a solved edge case."
+    },
+    {
+      "tag": "collaboration",
+      "lesson": "People pay for a shared, searchable meeting memory, not for the transcript file. Your archive is yours alone. Otter's team workspace, permissions, and cross-device sync turn individual notes into something a whole company searches, and that jump is where the product lives."
+    }
+  ],
+  "prerequisites": [
+    "Node.js 20 or newer, or Python 3.11, plus your code editor",
+    "A free Recall.ai account and API key, ready to paste into a .env file",
+    "ngrok or cloudflared for a public webhook URL",
+    "An LLM API key for summaries and chat (OpenAI, Anthropic, or Groq)",
+    "A Zoom, Google Meet, or Teams meeting you control, for sending the bot into a real call"
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the webhook receiver and bot spawner",
+      "body": "Build the server half of your meeting bot: an API that creates a bot through Recall.ai, a webhook endpoint that receives its events, and SQLite storage for meetings and transcript segments. Hand the whole skeleton to your agent in one shot, then review the diff. Nothing here is ambiguous, which makes it ideal delegate material.",
+      "why": "A webhook receiver with a well-defined API surface is precise, low-risk boilerplate, exactly what to hand off whole.",
+      "prompt": "Build the webhook receiver and bot spawner for a personal meeting bot. Requirements:\n- Node 20+ with Express, better-sqlite3, and dotenv; put secrets in .env and ship .env.example\n- SQLite schema: meetings (id, status, platform, started_at) and segments (id, meeting_id, speaker, text, ts_start, ts_end)\n- POST /bots accepts {meeting_url, bot_name}, calls the Recall.ai create-bot endpoint with webhook_url set to your public base URL plus /webhook, and stores the returned bot id\n- POST /webhook verifies a shared secret header, then updates meeting status on bot.status events and inserts segments on transcript events\n- GET /bots/:id returns the meeting row plus segment count so you can watch progress\n- Graceful failure: a bad meeting link returns a clear 400 naming what Recall rejected\n- Out of scope: summaries, search, chat, and any frontend\n- Pain warning: webhooks must reply 200 fast or Recall retries, so acknowledge before doing heavy work\nDone means creating a bot against a dummy link writes a meeting row and your webhook accepts a hand-delivered transcript event."
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Create the bot account, API key, and public tunnel",
+      "body": "Create the free Recall.ai account and generate an API key. Install ngrok or cloudflared and open a tunnel to localhost on the port your app listens on. Put the tunnel URL, the key, and a test meeting link you own into .env. You are about to send a bot into a real call, so use a meeting you control and tell anyone else on it that a bot is joining. These consoles authenticate as you personally, which is exactly why no agent should drive them.",
+      "why": "Account creation, API keys, and tunnels are identity-gated surfaces, the one area an assistant must never touch.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Send the bot into a live meeting and capture the stream",
+      "body": "Send the bot into your test meeting and keep the assistant beside you while you watch the webhook log. Expect the lifecycle waiting, joined, completed and handle each transition, including the lobby. If the host has to admit the bot, that admission state is a real product behavior, not a bug. Confirm per-participant segments land in SQLite with speaker names before moving on.",
+      "why": "Platform admission and webhook timing are exactly where a one-shot generation fails, so drive the debugging together.",
+      "prompt": "Wire the bot into a real meeting and persist the transcript stream. Requirements:\n- On bot.status events map waiting, joining, in_meeting, leaving, and completed to the meetings.status column\n- On transcript events insert one row per segment: meeting_id, speaker, text, ts_start, ts_end\n- Keep speaker labels as given by the platform's per-participant audio, stored verbatim\n- On participant events, log join and leave times to a participants table so you can map speakers to names\n- When the bot completes, mark the meeting finished and write the raw transcript to a file\n- Handle the lobby: if the bot sits in waiting for more than 90 seconds, surface a clear message saying the host must admit it\n- Pain warning: Google Meet may deny bots by name under some access settings, treat that as a real outcome to report, not an error to hide\nDone means a completed test meeting has segments in SQLite with speaker names and a transcript file on disk."
+    },
+    {
+      "label": "WE",
+      "title": "Write the notes with clean speaker labels",
+      "body": "Point the assistant at real transcripts and iterate on the note prompt until the output matches what your Granola build produced: a five-bullet summary, decisions made, and action items with owners. Speaker labels make this easier than your local recorder, because the names come from the platform instead of a diarization guess. Keep refining until the notes read like a person wrote them.",
+      "why": "Note quality on real messy transcripts is a matter of taste, so expect a tuning loop rather than accepting a first shot.",
+      "prompt": "Add LLM note generation over stored meeting transcripts. Requirements:\n- For a finished meeting, send the transcript segments (speaker, text, timestamp) to the LLM with a system prompt requesting: a five-bullet summary, decisions made, and action items each with an owner\n- Write the result to notes/<meeting_id>.md with the meeting title and date in front matter\n- Reuse the transcript file from the capture step as the source of truth, never the webhook payload\n- Keep the LLM key in .env and fail with a clear message when it is missing\n- Add a POST /bots/:id/notes endpoint that triggers generation and returns the note path\n- Out of scope: template libraries, per-speaker summaries, sentiment\n- Pain warning: long meetings exceed context windows, chunk the transcript by timestamp and summarize in passes\nDone means one real meeting produces a notes file with a summary, decisions, and owned action items."
+    },
+    {
+      "label": "WE",
+      "title": "Search the archive and ask questions of it",
+      "body": "Make the archive useful the way Otter's is: full-text search across every transcript, plus an ask box that answers questions about a chosen meeting. FTS5 gives you the search index for free; the hard part is grounding the chat answers in the right segments. Tune that with the assistant until answers cite their sources.",
+      "why": "Retrieval and grounded answering are quality judgments, the kind of step you steer rather than delegate.",
+      "prompt": "Add full-text search and question answering over the transcript archive. Requirements:\n- Create an FTS5 virtual table over segments with content = segments so rows stay in sync\n- GET /search?q= returns matching segments with meeting id, speaker, and timestamp, ranked by relevance\n- GET /meetings/:id/ask?q= retrieves the top matching segments and asks the LLM to answer using only that context, then returns the answer plus the segments it used\n- Render results with the query terms highlighted and a link to each meeting\n- Out of scope: semantic embeddings, cross-meeting chat, typo tolerance\n- Pain warning: FTS5 tokenizes brackets oddly, so test quoted phrases against bare words\nDone means a search for a phrase from a real transcript returns the right segment and ask answers with a citation."
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Export nightly and clean up bot media",
+      "body": "Close the loop the way the earlier builds did: a script that exports every meeting and note to plain Markdown in ./export, scheduled nightly, plus a cleanup pass that deletes bot media from Recall after processing. Delegate the whole contract, then diff two consecutive runs.",
+      "why": "Once the schema exists this is a fully specified file transform and lifecycle chore, safe to hand off and spot-check.",
+      "prompt": "Add nightly export and bot-media cleanup to the meeting bot. Requirements:\n- scripts/export.js writes one .md file per meeting into ./export/ combining the raw transcript and the generated note\n- Clear ./export/ at the start of each run and log the count of files written\n- After a meeting is exported, delete its media from Recall via the delete-bot-media API so storage stays bounded\n- Add npm run export to package.json and README instructions for launchd on macOS or cron on Linux\n- Acceptance: running export twice yields byte-identical files and the meeting list is unchanged\n- Out of scope: uploading exports, object storage, anything cloud\n- Pain warning: deleting media is irreversible, so only delete meetings already exported and marked finished\nDone means a second export run matches the first byte for byte."
+    }
+  ],
+  "stretchGoals": [
+    "Subscribe to your calendar and auto-spawn a bot for every meeting you are invited to",
+    "Add a live keyword watch that sends a chat message when a tracked topic comes up",
+    "Add per-speaker talk ratios and a simple coaching notebook per meeting"
+  ],
+  "resources": [
+    {
+      "title": "Recall.ai meeting bot API",
+      "url": "https://www.recall.ai",
+      "note": "The API that joins a bot to Zoom, Meet, and Teams and streams back per-participant audio and transcripts."
+    },
+    {
+      "title": "recallai/meeting-bot (GitHub)",
+      "url": "https://github.com/recallai/meeting-bot",
+      "note": "The reference sample app: spawn a bot, receive webhooks, and run LLM analysis over transcripts."
+    },
+    {
+      "title": "Speakr",
+      "url": "https://murtaza-nasir.github.io/speakr/",
+      "note": "Open-source transcription, summaries, and chat across your archive, the closest DIY alternative."
+    },
+    {
+      "title": "whisperX",
+      "url": "https://github.com/m-bain/whisperX",
+      "note": "Transcription plus diarization for the local-recorder variant of this build."
+    },
+    {
+      "title": "Otter pricing",
+      "url": "https://otter.ai/pricing",
+      "note": "What the paid tiers charge, handy context for what the bot and the archive replace."
+    }
+  ]
+}
