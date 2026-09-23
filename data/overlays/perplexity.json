@@ -1,0 +1,140 @@
+{
+  "slug": "perplexity",
+  "sourceHash": "sha256:baca16ef80d13fd469156b15fa64e47d36fe1f9c0e96610eae0f125f1605b531",
+  "generatedAt": "2026-09-09T12:00:00Z",
+  "generator": {
+    "model": "nvidia/deepseek-ai/deepseek-v4-pro-0813 with human revision",
+    "promptVersion": 1
+  },
+  "reviewStatus": "human",
+  "level": "intermediate",
+  "levelReason": "Upstream rates the rebuild kinda. The retrieval and answer loop is a weekend of work. The search access underneath it is the part that fights back, and that is what makes this a weekend build rather than a one-sitting win.",
+  "timeEstimate": "multi-day",
+  "title": "Build your own answer engine (a personal Perplexity)",
+  "summary": "You will build an answer engine that searches the web, reads the top results, and asks an LLM to answer with citations. You run your own metasearch on SearXNG rather than renting a search API, which means you meet the wall nobody warns you about: search engines judge where a request comes from, and a data centre address reads as a robot. The middle of this lesson is how to get past that honestly, by sending your searches out through a normal connection instead of pretending to be a browser. Perplexity charges $20 a month because the index, the crawl access, and the polish around them are the product, and none of the three come free.",
+  "whatYoullLearn": [
+    "Read an engine's empty results as an IP reputation problem, and confirm it with ipinfo.io before you change any code",
+    "Configure SearXNG with use_default_settings: true so your file holds only your deltas and survives upstream upgrades",
+    "Route individual engines through a SOCKS5 proxy with socks5h, and keep an un-proxied fallback tier for when the tunnel drops",
+    "Hold a reverse SSH tunnel open with autossh, supervised by systemd on Linux or launchd on macOS",
+    "Rate limit by caller with valkey, so your own services get a pass list while public callers get the stock limits"
+  ],
+  "whatYouWontGet": [
+    "Your answers are only as good as the engines you can still reach, and a blocked engine means a thinner answer that day",
+    "The tunnel is a single point of failure. When the egress box loses power, the proxied engines go quiet and only the fallback tier answers",
+    "No mobile app, no browser extension, and no shared threads, which is most of what the paid subscription actually delivers",
+    "No CAPTCHA solving. This works because your volume is low and your traffic does not look like a bot farm, not because you beat the check",
+    "You own the upkeep: image upgrades, expired keys, a rebooted router, and the engine that quietly renames itself upstream"
+  ],
+  "prerequisites": [
+    "Docker and a terminal, plus a host you can deploy containers to",
+    "A second always-on machine on a residential or office connection, and permission from whoever owns that connection",
+    "An SSH key pair you are willing to restrict to a single forwarded port",
+    "An LLM API key for the final step"
+  ],
+  "moatLessons": [
+    {
+      "tag": "proprietary-data",
+      "lesson": "Perplexity's real asset is access to a web index and a crawl pipeline it either owns or pays for. IP reputation is the gate on that access, and this lesson is you standing at the gate. A builder learns that the answer layer is the cheap half. Getting fresh, broad, permitted access to the web is the expensive half, and it is the half that never stops costing money."
+    },
+    {
+      "tag": "proprietary-models",
+      "lesson": "The company owns the routing between models, the tuned latency, and per-query pricing it negotiated at volume, all hidden behind one managed API. You give that up and gain the choice itself. You name your own endpoints, you see every per-query cost, and you can swap models the week a better one ships."
+    },
+    {
+      "tag": "execution-polish",
+      "lesson": "Citations that resolve, threads that persist, and answers that stream feel like one product rather than five parts. Your version has the same parts, wired by hand. A builder learns that the difference between rough and finished is almost never a missing feature, it is the seams between features that someone spent a year sanding down."
+    }
+  ],
+  "steps": [
+    {
+      "label": "MANUALLY",
+      "title": "Deploy stock SearXNG and watch it return nothing",
+      "body": "Deploy the official SearXNG image on your host, set the base URL and a secret key as environment variables, and open port 8080. Search for anything. Google, DuckDuckGo, Startpage and Brave will return nothing while Wikipedia answers normally. Open /stats and you will see those four engines suspended. Nothing is broken in your configuration. Run curl -s https://ipinfo.io/json on the server and read the org line: a hosting company's name there is the whole explanation. The stock config then makes it worse, because one CAPTCHA suspends an engine for a full day. See this failure yourself before you fix it, because every later step only makes sense once you have.",
+      "why": "No agent can read a blocked results page for you, and the hosting dashboard that holds the container's secrets is a human surface.",
+      "prompt": null
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the config repository",
+      "body": "The stock setup edits configuration by hand inside a storage volume, which means nobody can rebuild it and nothing has a history. Replace that with a small repository: a Dockerfile that starts from a pinned SearXNG tag and copies in two config files, a minimal settings.yml, a limiter.toml, and a Makefile that tells you when a newer upstream tag exists without ever upgrading on its own. Every file is named and every target is specified, so hand the whole skeleton over in one go and read the result. One detail matters more than it looks: the image bakes the config into /etc/searxng, so any leftover volume mounted there will hide it.",
+      "why": "The file list, the pinned tag, and the Makefile targets are named exactly, so reviewing the result costs less than watching it get typed.",
+      "prompt": "Set up a git repository named search-egress that builds a custom SearXNG image. Requirements:\n- A Dockerfile whose first line pins an exact upstream tag, FROM searxng/searxng:<tag>, then COPY searxng/settings.yml searxng/limiter.toml into /etc/searxng/\n- searxng/settings.yml starts with use_default_settings: true and holds only our deltas, never a copy of the upstream defaults\n- searxng/limiter.toml with a [botdetection] section, a trusted_proxies list, and an ip_lists pass_ip list\n- A Makefile with three targets: check-upstream compares the pinned tag against the newest tag on Docker Hub and prints a warning, bump rewrites the FROM line, deploy depends on check-upstream and never bumps on its own\n- A check-proxies target that fails when a socks5h line in settings.yml has no matching egress host, or an egress host has no matching line\n- A README noting that the image bakes the config, so any persistent volume mounted on /etc/searxng would shadow it and must be removed\n- Secrets stay out of git, SEARXNG_SECRET is read from the environment at runtime\n- Out of scope for this step: the proxy values and the limiter numbers, those arrive in later steps"
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Stand up the residential egress box",
+      "body": "Pick a machine that stays on: a Raspberry Pi at home, or a spare box somewhere you have permission to use. Check its connection with curl -s https://ipinfo.io/json, and look for an ISP name rather than a hosting company. Install microsocks and bind it to 127.0.0.1:1080 only, so nobody on the internet or even the local network can use it directly. Then have autossh dial out to your server and hold a reverse tunnel open, publishing that SOCKS port at 172.18.0.1:1080 where your container can reach it. The box always dials out, so the server never needs to find your changing home address. Restrict the key on the server side with permitlisten so a stolen key can open that one port and nothing else. Supervise both programs with a systemd unit on Linux or a launchd plist on macOS. On a Mac, run pmset -a sleep 0 first, because a sleeping Mac drops the tunnel.",
+      "why": "The egress box is a physical machine on someone else's connection, and generating its SSH key, its firewall rule, and its restricted authorized_keys line is work no agent should do for you.",
+      "prompt": null
+    },
+    {
+      "label": "WE",
+      "title": "Route each engine separately and shorten the suspensions",
+      "body": "Now point the blocked engines through the tunnel. Give each engine its own proxies entry rather than a shared network, because engines that share a named network also share one suspension: a single CAPTCHA would take all of them down together. Leave mojeek and qwant direct and enabled, so the site still answers when the tunnel is down. Then shorten the recovery times, because the stock config sulks for a full day after one refusal. Verify each door separately with bang queries rather than trusting the combined page, which can look fine while three engines return nothing.",
+      "why": "Each engine either clears its CAPTCHA or does not, and you want to watch which one fails while you are still editing.",
+      "prompt": "Add per-engine residential proxying and faster suspension recovery to searxng/settings.yml. Requirements:\n- Define a YAML anchor named egress holding all://: socks5h://172.18.0.1:1080, and reference it per engine with *egress\n- Apply the anchor to google, duckduckgo, startpage and brave, plus their images, news and video variants, each engine listed separately so one suspension never takes the others down\n- Set retries: 1 on the four primary engines so a failed proxy attempt falls through to the next entry in the list\n- Enable mojeek and qwant with disabled: false and leave them un-proxied, they are the fallback tier that keeps answering when the tunnel is down\n- Under search.suspended_times set SearxEngineCaptcha and SearxEngineAccessDenied to 1800, SearxEngineTooManyRequests to 900, and the cf_ and recaptcha_ variants to 3600\n- Set outgoing.request_timeout to 4.0 and outgoing.extra_proxy_timeout to 10.0\n- Do not group these engines under a named outgoing.networks entry, engines that share one also share a single suspension state\n- Verify with the bang queries !go, !ddg, !sp, !br, !wp, !mjk and !qw, each expecting HTTP 200 with results"
+    },
+    {
+      "label": "WE",
+      "title": "Add valkey and tiered rate limiting",
+      "body": "Your instance is now useful, which makes it worth abusing, and abuse is what would burn the egress box's reputation. Add valkey as the scoreboard that counts requests per caller, then switch the limiter on. Without valkey the limiter does nothing at all and says nothing about it, which is why the scoreboard comes first. Give your own services a pass list so they run at full speed, and leave public callers on the stock limits, throttled but never locked out. Finish with a five minute check that asks one question: does traffic through the tunnel still come out at the right address? Have it notify you only when the answer changes, so it stays quiet until it matters.",
+      "why": "The limiter does nothing at all when valkey is missing, and it fails silently, so you check the counter is really counting before you trust the numbers.",
+      "prompt": "Set up valkey and a tiered rate limiter for the search instance. Requirements:\n- Run valkey/valkey:8-alpine as a second container with no public HTTP port and a persistent /data directory\n- Point the search container at it with SEARXNG_VALKEY_URL and set SEARXNG_LIMITER to true, both as environment variables, never baked into the image\n- In limiter.toml set trusted_proxies to your reverse proxy subnet 10.0.1.0/24 so the real client IP is read from X-Forwarded-For\n- Add 10.0.1.0/24 and 100.64.0.0/10 to botdetection.ip_lists.pass_ip so your own services and any future tailnet clients skip throttling\n- Set link_token to false so non-browser callers keep working\n- Leave public callers on the stock limits, roughly 15 requests per 20 seconds and 150 per 10 minutes per IP\n- Add a shell script on a five minute cron that fetches your public IP through the SOCKS proxy, compares it against the server's own address, and notifies only when the answer changes state\n- Out of scope: dashboards and metrics, the state-change notification is the whole alerting surface"
+    },
+    {
+      "label": "WE",
+      "title": "Build the answer layer with real citations",
+      "body": "Everything so far was retrieval. This step is the answer engine. Ask your instance for JSON, take the top six results, fetch each page, and pull the readable text out of it. Hand the question and the numbered excerpts to an LLM with one instruction: answer only from these excerpts, and cite every claim by number. Then render footnotes that link back to the sources. The failure mode to design against is the interesting one. When engines are suspended and only two excerpts come back, a model will happily answer from memory and cite nothing, which looks exactly like a good answer. Make it refuse instead, and say which engines were down. Store the threads in SQLite so follow-ups keep their context. Read the citations by hand for the first dozen questions, because that is the only way to learn what a fabricated one looks like.",
+      "why": "This is where answers get judged, and you have to read the citations yourself to tell a quoted source from an invented one.",
+      "prompt": "Build the answer layer that turns search results into a cited answer. Requirements:\n- A Python CLI using httpx and selectolax that queries your SearXNG instance at http://localhost:8080/search with format=json and takes the top 6 results\n- Fetch each result page with a 5 second timeout, extract readable text, and truncate each excerpt to 2000 characters\n- Send the question plus the numbered excerpts to an LLM through the Anthropic or OpenAI SDK, with a system prompt telling it to answer only from the excerpts and to cite every claim by number\n- Refuse to answer when fewer than 2 excerpts came back, and print which engines were suspended instead of inventing an answer\n- Store every question, answer and source list in SQLite at answers.db, one row per thread, so follow-up questions reuse the thread\n- Render the answer as Markdown with numbered footnotes linking back to the source URLs\n- Keys live in .env, never in code\n- Out of scope: streaming, a web UI and reranking, a plain CLI is enough to see whether the citations are real"
+    }
+  ],
+  "stretchGoals": [
+    "Add a second egress host on a different connection, then list both proxies so SearXNG rotates between them and retries on the other when one fails",
+    "Swap the reverse SSH tunnel for Tailscale, keeping the same 172.18.0.1:1080 address so nothing downstream changes, which is interface against implementation applied to infrastructure",
+    "Rerank the fetched excerpts by relevance before they reach the model, and measure whether the answers actually improve"
+  ],
+  "resources": [
+    {
+      "title": "SearXNG documentation",
+      "url": "https://docs.searxng.org/",
+      "note": "The settings.yml and limiter reference, including use_default_settings and suspended_times."
+    },
+    {
+      "title": "SearXNG source and issues",
+      "url": "https://github.com/searxng/searxng",
+      "note": "Where engine renames and upstream behaviour changes get discussed first."
+    },
+    {
+      "title": "microsocks",
+      "url": "https://github.com/rofl0r/microsocks",
+      "note": "A SOCKS5 server small enough to read in one sitting."
+    },
+    {
+      "title": "autossh",
+      "url": "https://www.harding.motd.ca/autossh/",
+      "note": "Keeps the reverse tunnel dialled and redials after a dropout."
+    },
+    {
+      "title": "Valkey",
+      "url": "https://valkey.io/",
+      "note": "The in-memory store the rate limiter counts into."
+    },
+    {
+      "title": "Perplexica",
+      "url": "https://github.com/ItzCrazyKns/Perplexica",
+      "note": "An open-source answer engine built on SearXNG. Read it before you write step 6."
+    },
+    {
+      "title": "GPT Researcher",
+      "url": "https://github.com/assafelovic/gpt-researcher",
+      "note": "The same fetch-then-synthesize flow, aimed at longer research reports."
+    },
+    {
+      "title": "Morphic",
+      "url": "https://github.com/miurla/morphic",
+      "note": "Another open-source answer engine, useful for comparing citation rendering."
+    }
+  ]
+}
