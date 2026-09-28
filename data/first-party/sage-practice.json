@@ -1,0 +1,32 @@
+{
+  "slug": "sage-practice",
+  "origin": "first-party",
+  "name": "Sage Practice",
+  "site": "https://sage.education",
+  "category": "education",
+  "subcategory": "spaced repetition practice",
+  "tagline": "Practice that schedules itself, grades on the server, and keeps every answer as a fact you can replay",
+  "verdict": "no",
+  "verdictSummary": "A drill app is a weekend. A practice system that generates its own questions, grades them without trusting the browser, schedules review per learner, and survives a change of scheduling algorithm is a capstone. The hard parts are question generation you can prove correct and a record you can recompute.",
+  "moatTags": ["proprietary-data", "content-rights", "execution-polish"],
+  "about": "Sage Practice is the spaced-repetition practice system Sage.Education is building on the same stack as Sage Trellis, our CRM: Django 5.1 on Python 3.12, SQLite in WAL mode, Jinja2 pages, and startr.style with startr-swap vendored locally rather than pulled from a CDN. Mathematics is the proof of concept because arithmetic can be generated and graded exactly, but the item model is deliberately subject-agnostic. The design is settled and the build is not finished, so this lesson is that design at a size one person can carry to a working system in a few weekends.",
+  "alternatives": [
+    {
+      "name": "IXL",
+      "url": "https://www.ixl.com",
+      "desc": "Per-skill drilling with the SmartScore progress bar this design borrows from, sold by subscription per child or per school."
+    },
+    {
+      "name": "Anki",
+      "url": "https://apps.ankiweb.net",
+      "desc": "The reference spaced-repetition app. Free, open source, and card-based, so you author every card instead of generating questions."
+    },
+    {
+      "name": "Khan Academy",
+      "url": "https://www.khanacademy.org",
+      "desc": "Free exercises with mastery tracking across a full curriculum, funded by donations rather than subscriptions."
+    }
+  ],
+  "priorArt": [],
+  "notes": "First-party entry. Written by Sage.Education about our own project, not sourced from canivibecodeit. Kept in data/first-party/ so make validate can hold every overlay rule without an upstream mirror to match."
+}

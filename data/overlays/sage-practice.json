@@ -1,0 +1,141 @@
+{
+  "slug": "sage-practice",
+  "sourceHash": "sha256:69467d6df603989fb5f95e8d4c3bc0bc072e5943618aeecf3efbaca2ec067c0e",
+  "generatedAt": "2026-09-28T00:00:00Z",
+  "generator": {
+    "model": "human/sage-education editorial",
+    "promptVersion": 1
+  },
+  "reviewStatus": "human",
+  "level": "advanced",
+  "levelReason": "Any one piece here is a weekend. Together they are a capstone: a generator you can prove correct, a record that survives a change of algorithm, and a grading path that never trusts the browser. Each part is easy to build wrong in a way that only shows up months later, in a learner's schedule.",
+  "timeEstimate": "multi-week",
+  "title": "Build your own learning platform (an IXL alternative)",
+  "summary": "IXL sells one question at a time, a score that climbs, and a schedule that decides what you practise next. None of that is hard to copy. What you cannot copy is the answer history it has collected from millions of children, or its curriculum-aligned content library. This build gives you the machine and leaves you the content problem, which is the honest shape of the work.",
+  "whatYoullLearn": [
+    "Generate a question from a skill, a seed and a difficulty band, so the server can re-derive the answer at grading time and never send it to the browser",
+    "Keep answer history append-only, enforced by the database, and rebuild every learner's schedule from it when you change the algorithm",
+    "Write a scheduler as a pure function over exact arithmetic, and prove that rebuilding twice gives the same result",
+    "Design one item model that holds vocabulary or dates as comfortably as arithmetic, so the second subject is content work rather than a migration",
+    "Ship a Django app that loads no third-party asset, which is what lets you tell a school where every byte comes from"
+  ],
+  "whatYouWontGet": [
+    "No tutor chat. A model that can see the answer will eventually hand it over, and that makes your practice data worthless. Ship the drill loop first.",
+    "No self-serve signup. Accounts are created by a teacher or parent, which keeps consent and the credential set small.",
+    "No content library. You author every skill grammar by hand, and that is the real cost: four skills is a weekend, a useful maths product is hundreds.",
+    "No classroom reporting, rosters, or parent dashboards. Django admin is the whole staff surface here.",
+    "No curriculum alignment. IXL sells standards coverage per grade and per region, and that is a content licensing business, not a feature."
+  ],
+  "prerequisites": [
+    "Comfortable with Python, the Django ORM, and writing a migration by hand",
+    "Docker on your machine, and somewhere to run a container that you control",
+    "Willing to author question grammars and debug them against a verifier, which is most of the work after week one"
+  ],
+  "moatLessons": [
+    {
+      "tag": "proprietary-data",
+      "lesson": "IXL's real asset is the answer history of millions of children: which wrong answer follows which question, and how long each took. That tells them what to ask next better than any published algorithm can. You start with zero of it, so use a published scheduler and keep every attempt from day one, because history is the one thing you cannot backfill later."
+    },
+    {
+      "tag": "content-rights",
+      "lesson": "Curriculum alignment is a licensing and editorial operation, not code. Matching a state or provincial standard means paying people who know it and keeping up when it changes. Generated arithmetic sidesteps this for one subject; the moment you want reading comprehension, you are buying or authoring content and the economics change completely."
+    },
+    {
+      "tag": "execution-polish",
+      "lesson": "The difference between a demo and something a ten year old will use twice is answer normalization. Marking 0.25 wrong when the answer is 1/4 punishes a learner for being right, and it also writes a false lapse into their schedule, so the damage outlives the moment. Budget real work for parsing input, and log every wrong verdict with the raw text so you can audit it."
+    }
+  ],
+  "steps": [
+    {
+      "label": "DELEGATE",
+      "title": "Scaffold the Django project with SQLite in WAL mode and no CDN",
+      "body": "Start from the shape that already works in production for us: Python 3.12, Django 5.1, five pinned dependencies, SQLite on one volume, and front-end assets vendored into the repo instead of linked from a CDN. Jinja2 renders the pages and Django templates are left to the admin. The point of vendoring is not speed, it is that you can tell a school exactly what the browser loads.",
+      "why": "This is structure with no product judgment in it, so a precise spec is cheaper to review than to watch being typed.",
+      "prompt": "Set up a Django 5.1 project called practice, for a spaced repetition learning app. Requirements:\n\n- Python 3.12, and a flat requirements.txt pinned to majors holding only Django, Jinja2, PyYAML, gunicorn and whitenoise\n- SQLite as the only database, with OPTIONS init_command setting PRAGMA journal_mode=WAL, busy_timeout=5000 and synchronous=NORMAL, plus transaction_mode IMMEDIATE, and the file under a DATA_DIR env path\n- Two template engines: Jinja2 with APP_DIRS off for pages, and the Django engine reserved for django.contrib.admin\n- Refuse to boot in production without DJANGO_SECRET_KEY, and derive ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS from a PUBLIC_URL env var\n- WhiteNoise serving static files, with collectstatic run inside the image at build time\n- A single stage Dockerfile on python:3.12-slim, VOLUME for the data dir, and an entrypoint that migrates then runs gunicorn\n- Download startr.style and startr-swap into static/vendor/ and record each file's sha256 in a checksums file, so a drifted asset is a failed check and not a surprise\n- Out of scope: any other dependency, any JavaScript build step, and docker compose"
+    },
+    {
+      "label": "WE",
+      "title": "Make a question a pure function of skill, seed and difficulty",
+      "body": "A skill is a small grammar file: named symbols with integer ranges, a question template, an answer expression over those symbols, and invariants that reject a bad draw. Expanding it with a seeded generator gives you a question and its answer from the same bindings, which is what lets the server grade without storing millions of rows. Use exact rational arithmetic throughout, because a float turns a correct answer into a wrong one at the seventeenth decimal place. Watch this step carefully: it is where a whole corpus can quietly become unreproducible.",
+      "why": "The purity rule is the design decision the rest of the system rests on, and you want to see it hold rather than trust that it did.",
+      "prompt": "Add a question generator to the practice app, expanding a skill grammar deterministically. Requirements:\n\n- Skills are JSON files with id, grade, title, symbols, difficulty bands, origin template, answer expression and invariants\n- Symbols are an ordered map where each value is an integer range, a choice list, or an arithmetic expression over earlier symbols\n- Seed a mulberry32 generator from a hash of skill id, seed and difficulty, and implement it yourself over integers so the corpus never depends on a language runtime detail\n- All arithmetic goes through fractions.Fraction, never float, and the answer is returned as an exact value plus a rendered string\n- Evaluate expressions by walking a parsed syntax tree against a whitelist of nodes and operators, and never call eval, because a skill file is untrusted input\n- A draw that fails its invariants is skipped by incrementing the seed, so expansion stays a pure function of its inputs\n- Same inputs must always give the same question and the same answer, proven by a test on fixed seeds\n- Out of scope: rendering maths for the browser, and storing anything in the database"
+    },
+    {
+      "label": "WE",
+      "title": "Write the verifier that makes \"provable\" mean something",
+      "body": "Without this command, \"the questions are correct\" is a feeling. With it, you can change a grammar and know within a minute whether you broke it. This is also what makes model-authored grammars safe later: the verifier is the gate, so a generated skill either passes or never ships. Run it in CI and treat a failure as a blocked release.",
+      "why": "You will edit grammars constantly, and this is the only thing standing between an edit and a wrong answer marked correct for a month.",
+      "prompt": "Add a verify management command for the skill grammars written in the previous step. Requirements:\n\n- Expand every skill across 1000 seeds and all five difficulty bands\n- Assert that no expansion leaves an unresolved symbol token in the question text\n- Assert that every answer parses as an exact integer or rational value\n- Assert that every expansion satisfies the skill's own invariants\n- Assert that the same seed and band produce identical output on a second expansion in the same run\n- Print a per skill summary with counts of expansions, skipped seeds and failures\n- Exit non-zero on any failure so continuous integration can gate on it\n- Out of scope: measuring question difficulty, and any judgment about pedagogy"
+    },
+    {
+      "label": "WE",
+      "title": "Store attempts append-only, with a Learner row standing between the record and the login",
+      "body": "Two decisions here, and both are hard to change later. First, the attempt table is immutable, enforced by database triggers rather than good intentions, and it stores the rendered question and the derived answer as text rather than only the seed, because a grammar you fix tomorrow makes yesterday's seeds meaningless. Second, attempts reference a Learner row you own forever, never the auth user, so changing how people sign in later is an update to one nullable column instead of a rewrite of your most protected table. That indirection is also how you answer a deletion request: drop the Learner link and the history is anonymous without breaking append-only.",
+      "why": "An append-only table with the wrong foreign key in it is the one mistake you cannot migrate out of later.",
+      "prompt": "Add the record layer to the practice app, holding learners and their attempts. Requirements:\n\n- A Learner model with a stable id, a display name chosen by an adult, a nullable link to a Django auth user, and a nullable external identity id for a later single sign on\n- An Attempt model referencing Learner, with an opaque item reference string rather than separate skill and seed columns, plus the rendered question, the derived answer, the raw learner input, the verdict, elapsed milliseconds and a created timestamp\n- Attempt also stores the content hash of the skill definition it was generated from, so a later accuracy change can be told apart from a grammar edit\n- A migration adding SQLite triggers that abort on update or delete of an attempt row, and a queryset that raises on update and delete so the ORM refuses first\n- Write the trigger migration to no-op on any other database vendor rather than raising, so a future move to Postgres is not blocked by migration history\n- A test that proves an update and a delete both fail, at the ORM and at the database\n- Out of scope: scheduling, grading, and any view"
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Schedule with a pure function, and rebuild every schedule from the attempts",
+      "body": "Scheduling state is derived, not authored: given a learner's attempts in order, the schedule is whatever the algorithm says it is. Keep the algorithm a pure function and the state a JSON blob rather than columns named after one algorithm, and swapping SM-2 for FSRS later becomes a rebuild rather than a migration with an apology email. Prove the rebuild is idempotent, because that test is the entire payoff of the previous step.",
+      "why": "It is a well specified transformation with a test that says whether it is right, which is exactly the shape worth handing off whole.",
+      "prompt": "Add SM-2 scheduling to the practice app on top of the Attempt record. Requirements:\n\n- A pure function taking current state and one attempt, returning the next state, with no database access inside it\n- State is a small JSON structure holding ease, interval, due date, repetitions, lapses and a difficulty band, under a named algorithm version\n- Grade quality from the verdict and elapsed time: wrong is the lowest, correct and slow is middling, correct and fast is the highest\n- Standard SM-2 behaviour: a wrong answer resets the interval to one day and lowers ease with a floor, otherwise intervals step one day, then six days, then the previous interval times ease\n- Three correct answers in a row raise the difficulty band by one to a maximum of five, and a miss lowers it by one to a minimum of one\n- Scheduling state hangs off a learner and a target reference, not a skill foreign key, so authored cards can be scheduled per item later\n- A rebuild_schedules management command that discards all scheduling state and replays every attempt in order\n- Tests proving the pure function against fixed inputs, and proving that rebuilding twice produces identical rows\n- Out of scope: any alternative algorithm, and any user interface"
+    },
+    {
+      "label": "DELEGATE",
+      "title": "Build the practice screen, and grade on the server",
+      "body": "One question at a time, an input, a verdict, and a next question. The grading endpoint takes the item reference and the learner's input, re-expands the question from the seed, compares exactly, appends an attempt and returns the verdict. The answer is never in the page before the learner has earned it, which is the whole reason grading lives on the server. Make it work with JavaScript switched off first, then let the swap library replace only the question region, so a phone on a school network stays usable.",
+      "why": "It is a precise interface specification against assets you already vendored, and reviewing the result costs less than watching it be typed.",
+      "prompt": "Add the practice interface to the app, using the vendored startr.style and startr-swap assets. Requirements:\n\n- A home page listing skills with a count of items due now for the signed in learner\n- A practice page showing one question, a text input, a check button, and after answering the verdict, the correct answer and a worked solution\n- A grading view that takes the item reference and the raw input, re-expands the question server side, compares as exact rationals so two quarters equals one half, appends an Attempt and updates scheduling state in one transaction\n- Normalize input before comparing: trim spaces, accept a decimal that is exactly equal to the fraction, accept a mixed number, and reject nothing on formatting alone\n- Never include the answer or the solution in a response for a question the learner has not yet answered\n- Plain form posts that answer with a redirect so the page works with JavaScript disabled, and a single swap region around the question so it updates in place when JavaScript runs\n- Mobile first inline style props, tap targets at least 44 pixels, and a visible streak, difficulty band and mastery bar\n- Out of scope: any framework, any CDN asset, and any animation"
+    },
+    {
+      "label": "MANUALLY",
+      "title": "Put it on a host you control, and settle the school data posture before a learner logs in",
+      "body": "The deploy is the easy half: build the image, create the app, point a domain at it, let the platform issue a certificate. The half people skip is deciding what you are, legally, before a child's performance data exists. In a school pilot the school is the controller and you are the processor, which means a written agreement, no use of learner data for your own purposes, and a deletion path you have actually tested. Decide the age floor, who consents, how long you keep attempts, and who gets called if something goes wrong. Write it on one page and keep it with the repo.",
+      "why": "This is your host, your domain, your registrar and your signature on an agreement, so none of it can be handed to an agent.",
+      "prompt": null
+    }
+  ],
+  "stretchGoals": [
+    "Export a deck as tab separated cards that import into Anki with working maths and no add-ons, which gives learners something that outlives your server",
+    "Add FSRS beside SM-2 and rebuild every schedule from the attempt log, which is the moment the append-only record pays for itself",
+    "Add a second subject with authored cards rather than generated questions, and see whether the item model really held"
+  ],
+  "resources": [
+    {
+      "title": "SuperMemo 2: the original SM-2 algorithm",
+      "url": "https://super-memory.com/english/ol/sm2.htm",
+      "note": "The source for the interval and ease rules, written by the author. Short enough to implement directly from."
+    },
+    {
+      "title": "Python fractions module",
+      "url": "https://docs.python.org/3/library/fractions.html",
+      "note": "Exact rational arithmetic in the standard library, which is what keeps grading honest."
+    },
+    {
+      "title": "SQLite write-ahead logging",
+      "url": "https://www.sqlite.org/wal.html",
+      "note": "Why WAL mode lets a web process and a worker share one file without blocking each other."
+    },
+    {
+      "title": "Django database transactions",
+      "url": "https://docs.djangoproject.com/en/5.1/topics/db/transactions/",
+      "note": "For the grade-and-schedule write path that has to be one transaction."
+    },
+    {
+      "title": "FSRS, a modern scheduler",
+      "url": "https://github.com/open-spaced-repetition/fsrs4anki",
+      "note": "The algorithm you will probably want after SM-2, and the reason to keep scheduling state as a blob."
+    },
+    {
+      "title": "KaTeX",
+      "url": "https://katex.org",
+      "note": "Maths rendering for when arithmetic is not enough. Vendor it rather than loading it from a CDN."
+    },
+    {
+      "title": "startr.style",
+      "url": "https://startr.style",
+      "note": "The inline custom property framework used for the interface, and the source of the vendored stylesheet."
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OVERLAYS = join(ROOT, "data", "overlays");
 const APPS = join(ROOT, "data", "upstream", "apps");
+const FIRST_PARTY = join(ROOT, "data", "first-party");
 const DEST = join(ROOT, "src", "assets", "icons");
 const FORCE = process.argv.includes("--force");
 const SIZE = 128;
@@ -30,6 +31,14 @@ for (const f of readdirSync(OVERLAYS).sort()) {
   const out = join(DEST, `${slug}.png`);
   if (existsSync(out) && !FORCE) {
     skipped++;
+    continue;
+  }
+  // Our own projects have no third-party favicon to fetch. Say what to do
+  // instead of blaming Google for a miss it could never have served.
+  if (existsSync(join(FIRST_PARTY, f))) {
+    misses.push(
+      `${slug} (first-party: draw src/assets/icons/${slug}.png by hand, ${SIZE}x${SIZE})`,
+    );
     continue;
   }
   const entryPath = join(APPS, f);

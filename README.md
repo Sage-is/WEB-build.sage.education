@@ -12,8 +12,12 @@ A [Sage.Education](https://sage.education) projects that builds on the [canivibe
   `data/overlays/`, one JSON per slug, keyed by a content hash so only
   changed entries reprocess. Route via `LLM_ROUTE` (see `.env.example`).
   Draft → validate → one retry with errors fed back.
+- `data/first-party/` — entries for projects we build ourselves, which have no
+  upstream entry to mirror. Same shape as an upstream entry, so the validator
+  keeps every rule armed; written by hand, never by `make transform`.
 - `make validate` — CI gate; same validator the pipeline uses
-  (`lib/validate-overlay.mjs`).
+  (`lib/validate-overlay.mjs`). It rejects an overlay with no entry on either
+  side, and a slug claimed by both.
 - `make it_run` / `make build` — 11ty + [startr.style](https://startr.style),
   static output in `dist/`. Lessons render only for slugs with a valid
   overlay.

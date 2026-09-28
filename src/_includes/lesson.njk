@@ -64,12 +64,24 @@ layout: default
   {% include "component/built-it.njk" %}
 
   <section style="--mt:2rem; --p:1rem; --bg:oklch(96% 0.005 90); --radius:0.5rem; --size:0.9rem">
+    {% if e.origin == "first-party" %}
+    <h2 style="--size:1rem">About this project</h2>
+    <p>{{ e.about }}</p>
+    <p>
+      {{ e.name }} is ours. Sage.Education builds and runs it, and this lesson was written from that build.
+      It does not come from a <a href="{{ site.upstream.site }}">{{ site.upstream.name }}</a> entry.
+      {% if e.repo %}The code is AGPL-3.0 at <a href="{{ e.repo }}" rel="noopener">{{ e.repo }}</a>.{% endif %}
+    </p>
+    {% else %}
     <h2 style="--size:1rem">About {{ e.name }}</h2>
     <p>
       {{ e.name }} costs ${{ e.priceMonthly }}/month.
       {{ e.whyPeopleStillPay }}
     </p>
-    
+    <p style="--size:0.8rem">
+      Entry data from <a href="{{ site.upstream.site }}">{{ site.upstream.name }}</a>, licensed MIT.
+    </p>
+    {% endif %}
   </section>
 
   {% if o.resources.length or e.alternatives.length %}
