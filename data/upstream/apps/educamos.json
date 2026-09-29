@@ -18,7 +18,7 @@
   },
   "verdict": "no",
   "verdictConfidence": "medium",
-  "verdictSummary": "This is not an app you own, it is the system of record your school runs on. The grades, attendance marks, timetables and official report cards live on the school's tenant, entered by teachers you do not employ, under student data rules you do not control. A personal replacement would have nothing authoritative to read from: there is no public API you can point at, and scraping a minor's school portal is a bad idea on several axes at once. Even if you rebuilt the parent-facing screens perfectly, the moment a teacher posts a notice it would appear in Educamos and not in your build. The honest DIY here is a private tracker that sits beside it, not a replacement for it.",
+  "verdictSummary": "This is not an app you own, it is the system of record your school runs on. The grades, attendance marks, timetables and official report cards live on the school's tenant, entered by teachers you do not employ, under student data rules you do not control. A personal replacement would have nothing authoritative to read from: there is no public API you can point at, and scraping a minor's school portal is a bad idea on several axes at once. Even if you rebuilt the parent-facing screens perfectly, the moment a teacher posts a notice it would appear in Educamos and not in your build. The DIY here is a private tracker that sits beside it, not a replacement for it.",
   "coreLoopDIY": "A local family dashboard where you manually log grades, homework and school notices per child and get a simple trend view plus a weekly summary.",
   "diyTimeEstimate": "one sitting",
   "requirements": [

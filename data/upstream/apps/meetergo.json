@@ -61,7 +61,7 @@
   },
   "verdict": "kinda",
   "verdictConfidence": "high",
-  "verdictSummary": "The public booking loop is weekend-buildable. The honest replacement, however, stops being a scheduler almost immediately: meetergo combines maintained multi-calendar sync, time-zone and conflict handling, round-robin and conditional routing, resource and multi-location booking, automated reminders, payments, video, CRM, client portals, e-signatures, invoicing, and AI across one EU-hosted system. An agent can reproduce the solo front door; replacing the operating layer behind customer meetings is an ongoing product and compliance job.",
+  "verdictSummary": "The public booking loop is weekend-buildable. The replacement, however, stops being a scheduler almost immediately: meetergo combines maintained multi-calendar sync, time-zone and conflict handling, round-robin and conditional routing, resource and multi-location booking, automated reminders, payments, video, CRM, client portals, e-signatures, invoicing, and AI across one EU-hosted system. An agent can reproduce the solo front door; replacing the operating layer behind customer meetings is an ongoing product and compliance job.",
   "coreLoopDIY": "Publish a booking page, subtract calendar conflicts from configured availability, let a guest reserve a slot, create the calendar event, and send confirmation and rescheduling links.",
   "diyTimeEstimate": "weekend",
   "requirements": [

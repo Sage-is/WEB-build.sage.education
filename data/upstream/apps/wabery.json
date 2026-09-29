@@ -60,7 +60,7 @@
   },
   "verdict": "kinda",
   "verdictConfidence": "high",
-  "verdictSummary": "The core loop (send, receive, verify webhooks, retry, inspect conversations) is one-shottable for a single business using Meta's WhatsApp Cloud API. What you cannot one-shot is the reason managed WhatsApp providers exist as products: production messaging infrastructure must stay reliable, secure, monitored, and compliant, while onboarding other businesses requires Meta business verification, app review, and approval for the relevant Tech Provider and Meta Business Partner capabilities. The honest DIY move is to build for your own verified WhatsApp Business Account and phone number; matching Wabery as a multi-tenant provider means operating that infrastructure and completing Meta's approval process.",
+  "verdictSummary": "The core loop (send, receive, verify webhooks, retry, inspect conversations) is one-shottable for a single business using Meta's WhatsApp Cloud API. What you cannot one-shot is the reason managed WhatsApp providers exist as products: production messaging infrastructure must stay reliable, secure, monitored, and compliant, while onboarding other businesses requires Meta business verification, app review, and approval for the relevant Tech Provider and Meta Business Partner capabilities. The DIY move is to build for your own verified WhatsApp Business Account and phone number; matching Wabery as a multi-tenant provider means operating that infrastructure and completing Meta's approval process.",
   "coreLoopDIY": "For one verified business and phone number, send WhatsApp messages, ingest and verify events, retry delivery, forward signed webhooks, and inspect conversations.",
   "diyTimeEstimate": "multi-day",
   "requirements": [

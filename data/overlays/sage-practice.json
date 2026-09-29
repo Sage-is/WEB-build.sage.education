@@ -11,7 +11,7 @@
   "levelReason": "Any one piece here is a weekend. Together they are a capstone: a generator you can prove correct, a record that survives a change of algorithm, and a grading path that never trusts the browser. Each part is easy to build wrong in a way that only shows up months later, in a learner's schedule.",
   "timeEstimate": "multi-week",
   "title": "Build your own learning platform (an IXL alternative)",
-  "summary": "IXL sells one question at a time, a score that climbs, and a schedule that decides what you practise next. None of that is hard to copy. What you cannot copy is the answer history it has collected from millions of children, or its curriculum-aligned content library. This build gives you the machine and leaves you the content problem, which is the honest shape of the work.",
+  "summary": "IXL is wonderful: it delivers one question at a time, a score that climbs, and a schedule that decides what you practise next. None of that is hard to copy. What you cannot copy is the answer history it has collected from millions of children, or its curriculum-aligned content library. This build gives you the machine and leaves you the content problem, which is the honest shape of the work.",
   "whatYoullLearn": [
     "Generate a question from a skill, a seed and a difficulty band, so the server can re-derive the answer at grading time and never send it to the browser",
     "Keep answer history append-only, enforced by the database, and rebuild every learner's schedule from it when you change the algorithm",

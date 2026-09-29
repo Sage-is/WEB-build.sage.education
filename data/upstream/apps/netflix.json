@@ -18,7 +18,7 @@
   },
   "verdict": "no",
   "verdictConfidence": "high",
-  "verdictSummary": "You can absolutely build a Netflix, the software part is the easy part. A video catalog, transcoding pipeline, adaptive streaming player, watch progress, and profiles is a genuinely fun weekend of work, and self-hosted media servers already prove it. What you cannot build is the thing you were actually paying for: thousands of hours of licensed content plus originals you legally cannot obtain. A media server pointed at an empty disk is a very nice empty shelf. The honest DIY move is Jellyfin or a hand-rolled version of it over media you already own, which changes what the product is rather than replacing it.",
+  "verdictSummary": "You can absolutely build a Netflix, the software part is the easy part. A video catalog, transcoding pipeline, adaptive streaming player, watch progress, and profiles is a genuinely fun weekend of work, and self-hosted media servers already prove it. What you cannot build is the thing you were actually paying for: thousands of hours of licensed content plus originals you legally cannot obtain. A media server pointed at an empty disk is a very nice empty shelf. The DIY move is Jellyfin or a hand-rolled version of it over media you already own, which changes what the product is rather than replacing it.",
   "coreLoopDIY": "A self-hosted streaming site that scans a local media folder, pulls metadata and artwork, and plays it back in the browser with per-profile resume.",
   "diyTimeEstimate": "a weekend",
   "requirements": [

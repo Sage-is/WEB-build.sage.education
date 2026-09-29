@@ -19,7 +19,7 @@
   },
   "verdict": "kinda",
   "verdictConfidence": "high",
-  "verdictSummary": "Kinda. A coding agent can one-shot an isolated Yaps feature, such as hotkey dictation, a Markdown notes shell, or local read-aloud, but not the integrated product. Yaps spans native work across macOS, Windows, Linux, Android, and iOS, with platform-level text insertion and mobile keyboards, local AI model orchestration, notes and cross-device sync, browser capture, transcription and diarization, speech and media tools, permissions, installers, updates, and long-tail reliability. The honest DIY outcome is a useful single-platform subset, not a replacement for the suite.",
+  "verdictSummary": "Kinda. A coding agent can one-shot an isolated Yaps feature, such as hotkey dictation, a Markdown notes shell, or local read-aloud, but not the integrated product. Yaps spans native work across macOS, Windows, Linux, Android, and iOS, with platform-level text insertion and mobile keyboards, local AI model orchestration, notes and cross-device sync, browser capture, transcription and diarization, speech and media tools, permissions, installers, updates, and long-tail reliability. The DIY outcome is a useful single-platform subset, not a replacement for the suite.",
   "coreLoopDIY": "Build one honest single-platform subset: local hotkey dictation into the active app plus a Markdown notes vault and read-aloud.",
   "diyTimeEstimate": "weekend for one platform and a narrow subset; the full suite is a major product build",
   "requirements": [

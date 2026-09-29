@@ -53,7 +53,7 @@
   },
   "verdict": "kinda",
   "verdictConfidence": "high",
-  "verdictSummary": "The happy path is genuinely a one-sitting build: the open-source youtube-transcript-api library fetches a caption track in a few lines, and wrapping it in FastAPI gives you a working personal endpoint. The honest gap is reliability. YouTube rate-limits and IP-blocks caption scraping at any real volume, so the DIY version works until it suddenly does not, and there is no fix without a rotating proxy pool you must rent and operate. The paid product is not selling the parsing; it is selling the unblocked pipe, plus search and playlist endpoints on top.",
+  "verdictSummary": "The happy path is genuinely a one-sitting build: the open-source youtube-transcript-api library fetches a caption track in a few lines, and wrapping it in FastAPI gives you a working personal endpoint. The gap is reliability. YouTube rate-limits and IP-blocks caption scraping at any real volume, so the DIY version works until it suddenly does not, and there is no fix without a rotating proxy pool you must rent and operate. The paid product is not selling the parsing; it is selling the unblocked pipe, plus search and playlist endpoints on top.",
   "coreLoopDIY": "A FastAPI endpoint that takes a YouTube URL and returns the caption track as timestamped JSON.",
   "diyTimeEstimate": "one sitting",
   "requirements": [

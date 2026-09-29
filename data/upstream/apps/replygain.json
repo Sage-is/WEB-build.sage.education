@@ -70,7 +70,7 @@
   ],
   "pagePriority": 4,
   "verifiedOneShot": false,
-  "notes": "A founder-focused lead finder. The honest DIY version is a useful personal monitor, not a maintenance-free replacement for the hosted service.",
+  "notes": "A founder-focused lead finder. The DIY version is a useful personal monitor, not a maintenance-free replacement for the hosted service.",
   "prompt": "Build a local, honest personal substitute for ReplyGain in an empty folder.\n\nStack: Node 22, TypeScript, Express, better-sqlite3, and vanilla HTML/CSS/JS. Do not use React or a hosted database.\n\nScope: Reddit and Hacker News only.\n\n- Import recent public posts using Reddit JSON endpoints and the Hacker News Algolia API\n- Let me enter a product description and keywords\n- Store posts in SQLite with source, URL, title, text, author, score, and discoveredAt\n- Use an OpenAI-compatible API from .env to classify purchase intent from 0 to 100\n- Show a sortable local feed with intent score, source, matched keyword, and a link to the original post\n- Generate an editable suggested reply for one selected lead\n- Add seen, dismissed, and replied states; never post automatically\n- Poll on demand only; no background worker, billing, login, Telegram, email, X, Bluesky, or multi-user features\n- Include .env.example, README, seed data, and a smoke test that uses fixtures instead of live APIs\n- Explain in README that APIs, rate limits, moderation rules, and platform changes make this a personal prototype\n- Finish by listing the exact commands used to install, test, and run the app",
   "promptCurated": true
 }

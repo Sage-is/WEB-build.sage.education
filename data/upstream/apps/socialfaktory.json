@@ -36,7 +36,7 @@
   },
   "verdict": "kinda",
   "verdictConfidence": "high",
-  "verdictSummary": "The generation half is honest API glue: script writing is an LLM call and the video itself comes from hosted model APIs (fal.ai and friends), so a personal brief-to-video pipeline is very buildable · but you pay those per-generation model invoices yourself either way. The publishing half is the same wall every scheduler hits: TikTok, Instagram, and YouTube OAuth apps are review-gated for weeks, which is why SocialFaktory itself publishes through Postiz. The honest DIY is a generation script feeding a self-hosted Postiz, and what's left over is the tuned prompt pipelines, the QA pass, and someone else eating the platform-review pain.",
+  "verdictSummary": "The generation half is honest API glue: script writing is an LLM call and the video itself comes from hosted model APIs (fal.ai and friends), so a personal brief-to-video pipeline is very buildable · but you pay those per-generation model invoices yourself either way. The publishing half is the same wall every scheduler hits: TikTok, Instagram, and YouTube OAuth apps are review-gated for weeks, which is why SocialFaktory itself publishes through Postiz. The DIY is a generation script feeding a self-hosted Postiz, and what's left over is the tuned prompt pipelines, the QA pass, and someone else eating the platform-review pain.",
   "coreLoopDIY": "Turn a text brief into a script and a rendered short video via hosted AI model APIs, then queue and publish it through a self-hosted Postiz.",
   "diyTimeEstimate": "multi-day",
   "requirements": [

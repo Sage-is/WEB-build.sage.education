@@ -20,7 +20,7 @@
   },
   "verdict": "kinda",
   "verdictConfidence": "medium",
-  "verdictSummary": "The core loop, resume plus job posting into an LLM holding a scoring rubric, is one prompt and an afternoon, and for improving one resume against one posting it genuinely works. The honest gap is calibration: a rubric you wrote today measures today's mood, two runs of the same resume can disagree, and a 72 means nothing without a baseline of scored applications behind it. Fine as a mirror, thin as a measuring stick.",
+  "verdictSummary": "The core loop, resume plus job posting into an LLM holding a scoring rubric, is one prompt and an afternoon, and for improving one resume against one posting it genuinely works. The gap is calibration: a rubric you wrote today measures today's mood, two runs of the same resume can disagree, and a 72 means nothing without a baseline of scored applications behind it. Fine as a mirror, thin as a measuring stick.",
   "coreLoopDIY": "Extract text from the resume PDF, send it with the job description to an LLM holding a fixed scoring rubric, get structured JSON scores per criterion with quoted evidence, render a Markdown report.",
   "diyTimeEstimate": "one sitting",
   "requirements": [

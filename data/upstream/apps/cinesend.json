@@ -69,7 +69,7 @@
   "verdict": "no",
   "verdictConfidence": "high",
   "verdictSummary": "The file delivery is not the product. The product is that A24, HBO, and Sundance accept it. A screener page with an expiring link is an afternoon, and it buys you nothing, because the two things CineSend actually sells cannot be written by an agent at any price: forensic watermarking, which is a licensed product from Nagra that survives a camcorder pointed at a monitor and traces the leak back to one named viewer, and studio-grade DRM, which needs license keys Google and Apple issue to companies, not to your VPS. Underneath both sits the part no code touches · a rights holder's legal team signing off on where their unreleased master is allowed to sit. You can build a private video page. You cannot build permission to receive the film.",
-  "coreLoopDIY": "The honest floor: expiring private screener links with a visible per-viewer burn-in, view limits, and an access log. Deterrence, not security.",
+  "coreLoopDIY": "The floor: expiring private screener links with a visible per-viewer burn-in, view limits, and an access log. Deterrence, not security.",
   "diyTimeEstimate": "not realistically solo",
   "requirements": [
     "ffmpeg",
