@@ -25,6 +25,7 @@
 - [ ] **Keep first-party slugs out of `data/pilot-slugs.json`**: `scripts/transform.mjs` hard-fails a slug with no upstream entry, and first-party lessons are written by hand.
 - [ ] **Make `make favicons` set a non-zero exit on any miss**: hand-drawn first-party icons count as misses too, so a gap cannot pass CI.
 - [ ] **Version the startr.style stylesheet in `src/_includes/component/head.njk`**: the unversioned CDN link lets upstream changes reach production with no commit here.
+- [ ] **`data/upstream` is not verbatim**: e531270, e91c7d7 and d6e112f edited 19 files; `NOTICE.md:5` says verbatim and `make sync` would revert them; move the wording into `data/overlays/` or change NOTICE (found 2026-10-06).
 
 ## Backlog
 
