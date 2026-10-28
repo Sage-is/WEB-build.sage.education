@@ -1,0 +1,85 @@
+---
+title: Certificate
+description: A self-reported certificate, made in your browser from the steps you ticked.
+permalink: /certificate/
+noindex: true
+---
+{# startr.style has no @page rule, and @page cannot sit inside @scope. This
+   block lives in <main>, so Startr Swap adds and removes it with the page.
+   Upstream card: WEB-startr.style.core TODO, "--page and @page startr-sheet".
+   Print centres the frame with 100vh, which Chrome and Firefox read as the
+   page height. WebKit reads it, and every media query, as the window, so
+   Safari cannot tell A4 from Letter and gets a fixed 28mm top gap: about
+   centred on Letter, a little high on A4. WebKit also lays print out 1.25x
+   the page width and shrinks it, so 1px prints as 0.8pt, not 0.75pt; zoom
+   0.9375 brings the frame back to Chrome's size. `-apple-system-body` is the
+   WebKit-only feature test. Not @scope: Safari before 17.4 would skip it. #}
+<style>
+  @page { margin: 0; }
+  @media print { @supports (font: -apple-system-body) { [data-cert-body] { zoom: 0.9375; --p-pt: 28mm 0 0 !important; } } }
+</style>
+<div data-certificate>
+  <section data-cert-missing hidden>
+    <h1 style="--size:1.6rem">Not finished yet</h1>
+    <p>A certificate appears here once every step of the build is ticked, or once a path's builds are done. Your progress stays in this browser.</p>
+    <p><a data-cert-back href="/progress/">Back to where you were</a></p>
+  </section>
+
+  <div data-cert-body hidden style="--p-pt:clamp(14mm, calc((100vh - 226mm) / 2), 36mm) 0 0">
+    <section style="--d-pt:none">
+      <h1 style="--size:1.6rem">Your certificate</h1>
+      <p style="{{ ui.note }}">This certificate is self-reported. It records what you marked done in this browser. Nothing here is sent anywhere, and nothing goes into the address bar.</p>
+      <div style="{{ ui.panel }}; --d:grid; --g:0.8rem">
+        <label style="--d:grid; --g:0.3rem">
+          <span>Your name, as it should appear</span>
+          <input type="text" data-learner-name autocomplete="name" maxlength="120" placeholder="Your name" style="--p:0.4rem" />
+        </label>
+        <label data-cert-evidence style="--d:grid; --g:0.3rem">
+          <span>Link to what you built <span style="{{ ui.note }}">(optional: a repo or a live page)</span></span>
+          <input type="url" data-evidence-url inputmode="url" placeholder="https://" style="--p:0.4rem" />
+        </label>
+        <label style="--d:flex; --ai:flex-start; --g:0.6rem; --cur:pointer">
+          <input type="checkbox" data-pledge style="--w:1.4rem; --h:1.4rem; --m:0.1rem 0 0" />
+          <span>I built this myself, with the help the steps describe.</span>
+        </label>
+        <p style="--m:0"><button type="button" data-print disabled style="{{ ui.button }}; --weight:700">Print or save as PDF</button></p>
+        <p style="{{ ui.note }}; --m:0">In the print dialog, turn off headers and footers.</p>
+      </div>
+    </section>
+
+    {# Inside the certificate: no headings and no <strong>. startr.style can
+       paint those with gradient text, which vanishes in print. #}
+    {# A restrained 1920s frame: an outer double rule, a thin gold rule set in
+       from it, stepped corners and a diamond divider. The ornaments are SVG,
+       which prints without print-color-adjust. #}
+    <article style="--pos:relative; --b:3px double var(--c-ink); --p:0.45rem; --mt:1.5rem; --m-pt:0 12mm">
+      <img src="/assets/brand/deco-corner.svg" alt="" width="44" height="44" style="--pos:absolute; --top:0.9rem; --left:0.9rem; --w:2.2rem; --w-md:2.75rem" />
+      <img src="/assets/brand/deco-corner.svg" alt="" width="44" height="44" style="--pos:absolute; --top:0.9rem; --right:0.9rem; --w:2.2rem; --w-md:2.75rem; --t:scaleX(-1)" />
+      <img src="/assets/brand/deco-corner.svg" alt="" width="44" height="44" style="--pos:absolute; --bottom:0.9rem; --left:0.9rem; --w:2.2rem; --w-md:2.75rem; --t:scaleY(-1)" />
+      <img src="/assets/brand/deco-corner.svg" alt="" width="44" height="44" style="--pos:absolute; --bottom:0.9rem; --right:0.9rem; --w:2.2rem; --w-md:2.75rem; --t:scale(-1)" />
+      {# In print the frame is 226mm tall (222mm here plus rules), with no
+         margin below it, since a bottom margin that overflows prints a blank
+         page. Safari takes header room from the page when headers are on:
+         28mm plus 226mm leaves room for them on Letter. #}
+      <div style="--b:1px solid var(--c-deco); --p:2.75rem 1.5rem 2rem; --p-md:3.25rem 3rem 2.5rem; --ta:center; --lh:1.4; --p-pt:14mm 14mm 10mm; --minh-pt:222mm; --d-pt:flex; --fd-pt:column; --jc-pt:center">
+      <img src="/assets/brand/sage-education-hex.svg" alt="" width="64" height="56" style="--m:0 auto; --w-pt:22mm; --h-pt:auto" />
+      <p style="--size:0.8rem; --ls:0.18em; --m:0.6rem 0 0">SAGE.EDUCATION<sup>™</sup> · BUILD IT YOURSELF</p>
+      <p style="--size:1.45rem; --size-md:1.95rem; --size-pt:2.3rem; --weight:700; --ls:0.12em; --m:1.2rem 0 0; --c:var(--c-ink)">CERTIFICATE OF COMPLETION</p>
+      <img src="/assets/brand/deco-rule.svg" alt="" width="240" height="16" style="--m:0.6rem auto 0; --w:12rem; --w-md:15rem" />
+      <p style="--size:0.75rem; --ls:0.24em; --m:0.4rem 0 0">SELF-REPORTED</p>
+      <p style="--m:1.6rem 0 0">This records that</p>
+      <p data-cert-name style="--size:1.6rem; --size-md:2rem; --size-pt:2.4rem; --as:center; --m:0.3rem 0 0; --c:var(--c-ink); --bb:1px solid var(--c-line); --d:inline-block; --p:0 1rem 0.2rem">Your name</p>
+      <p data-cert-kind style="--m:0.8rem 0 0">finished the build</p>
+      <p data-cert-title style="--size:1.2rem; --size-md:1.4rem; --size-pt:1.6rem; --weight:700; --m:0.3rem 0 0; --c:var(--c-ink)"></p>
+      <p data-cert-subtitle style="--size:0.95rem; --m:0.1rem 0 0"></p>
+      <p data-cert-level style="--size:0.9rem; --m:0.4rem 0 0"></p>
+      <ul data-cert-lessons style="--lis:none; --p:0; --m:0.6rem 0 0; --size:0.9rem"></ul>
+      <p data-cert-dates style="--size:0.9rem; --m:0.8rem 0 0"></p>
+      <p data-cert-goal style="--size:0.9rem; --m:0.2rem 0 0"></p>
+      <p data-cert-link hidden style="--size:0.85rem; --m:0.4rem 0 0; --wb:break-all"></p>
+      <p style="--size:0.75rem; --m:1.6rem auto 0; --maxw:32rem">Made in the learner's browser from steps they marked done. Sage.Education has not reviewed or verified this work.</p>
+      <p style="--size:0.7rem; --m:0.8rem 0 0">Sage.Education™ Build it yourself · © <span data-cert-year>2026</span> Startr LLC · startr.llc</p>
+      </div>
+    </article>
+  </div>
+</div>

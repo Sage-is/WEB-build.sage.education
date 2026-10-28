@@ -6,6 +6,20 @@
 
 ## In Progress
 
+- [ ] **Gamify progress locally and share it with LLR/1**: steps, stretch goals, time goals, badges and self-reported certificates live in the learner's browser; LLR/1 moves summaries between our sites by navigation (n8n "your servers" pattern). Plan: `~/.claude/plans/polymorphic-rolling-breeze.md`.
+  - [x] `src/assets/progress-core.js` + `test/progress-core.test.js`: state, migration from `sage-build-progress`, merge, sticky awards, goals, xAPI and OB3 views. shipped 2026-10-27
+  - [x] `src/assets/llr.js` + `test/llr.test.js`: fragment payload, referrer and registry check, snapshots, widget, "your Sage servers". shipped 2026-10-27
+  - [x] Lesson page, `/progress/`, `/certificate/` (1920s frame), `/llr/export/`, `/catalog.json`, `/achievements/<id>.json`, `src/_headers` CORS for `/llr/v1/*`. shipped 2026-10-27
+  - [x] Startr Swap v1.1 vendored (sha256 `8a4f07ee…`); `<main data-swap>`; delegated `progress.js` and `pb-capture.js`. shipped 2026-10-27
+  - [x] Design pass: chips 5.1:1 or better on white, one card recipe in `src/_data/ui.js`, one phone gutter, title card, `[hidden]` fix. shipped 2026-10-27
+  - [x] `docs/llr-1.md` spec. shipped 2026-10-27
+  - [x] Verify: 29 bun tests, `make validate`, `make build`, Chrome on :8080/:8081/:8082, headless print to one page on A4 and Letter, no overflow at 390px. 2026-10-27
+  - [x] Print in Safari on A4 and Letter: one page, 28mm top gap, `zoom: 0.9375` undoes WebKit's 0.8pt px. Safari cannot tell A4 from Letter, so A4 sits a little high (accepted). 2026-10-28
+  - [ ] Widget push and pull in Safari and Firefox on the deployed hosts.
+  - [x] POST an export to Yet Analytics SQL LRS v0.9.11 in Docker (SQLite): a resend stores nothing (`200 []`); actor hard-delete leaves 0. 2026-10-28
+    - [x] Found and fixed: a later export (goal moved, step unticked) got `409 Statement Conflict` and lost the whole batch. Statements now carry event-time facts only: a `set-goal` statement, no progress %, a frozen `completion`. Rerun: 9 of 9 stored. 2026-10-28
+  - [ ] Commit, push and deploy.
+
 - [ ] **Ship our first first-party lesson**: first-party lessons let us teach projects we build ourselves, which have no upstream canivibecodeit entry.
   - [x] `data/first-party/<slug>.json` entry-shaped so `validateOverlay` keeps slug match, moatTag membership and step-count band armed with no rule relaxed. shipped 2026-09-28
   - [x] `src/_data/lessons.js` resolving the entry from `data/first-party/` first and `data/upstream/apps/` as fallback. shipped 2026-09-28
@@ -31,6 +45,20 @@
 
 - [ ] **Decide whether Sage Trellis (the CRM) earns its own lesson**: the advanced band ceiling is 8 steps, so the scope has to fit that ceiling or ship as something else.
 - [ ] **Offer canivibecodeit a courtesy priorArt PR**: point at our repos, and treat it as a courtesy that must never gate our own publishing.
+- [ ] **Classroom page on `sage.education`**: a full-size LLR widget over every registered site's snapshot, with "Refresh from …" pull buttons.
+- [ ] **Central hub for learning records**: pick one permanent origin first, because moving it strands stored data; a single origin with sites as paths is the only setup silent in every browser.
+- [ ] **Adopt LLR/1 on `sage.education` lessons and `docs.sage.education`**: load `/llr/v1/llr.js`, add `data-llr` links and a `data-llr-widget`.
+- [ ] **Sage AI-UI `/learn/import`**: the server side of "your Sage servers"; login, preview, save on click, lesson content fetched from `/catalog.json`.
+- [ ] **Backend sync and signed credentials**: Yet Analytics SQL LRS (Apache-2.0, SQLite mode, one container on CapRover) behind a thin relay in Django, PocketBase or Sage AI-UI; no blockchain, no IPFS (research 2026-10-28).
+  - [ ] Relay: a static site cannot hold LRS credentials. It keeps the key, rate-limits and forwards; unique index on statement id; read any 409 as stored, then resend that batch one statement at a time
+  - [ ] SQL LRS: `LRSQL_ENABLE_ADMIN_DELETE_ACTOR=true` for erasure (`DELETE /admin/agents`, IFI `account::<uuid>@https://build.sage.education`); back up the SQLite file; amd64 image only, about 500 MiB idle under emulation
+  - [ ] "Delete my records" button: the browser holds its own UUID and sends it; link per-site UUIDs into one Person only when the learner opts in
+  - [ ] Sign OB3: `did:web` on sage.education, Ed25519 key in the vault via `sage-secret`, eddsa-rdfc-2022 or VC-JWT; revoke through a Bitstring Status List we host; bundle as CLR 2.0
+  - [ ] Ruled out: Ralph (needs Elasticsearch, Mongo or ClickHouse), TRAX Starter (erasure is paid-only), ADL LRS (proof of concept), Learning Locker OSS (no commit since 2021-11), public chains and IPFS (EDPB 02/2025: keep personal data off-chain)
+- [ ] **Optional live LLR reader**: an iframe reader, silent in Chrome and Firefox same-site; Safari partitions per origin, so it can never be the only path.
+- [ ] **Certificate share image**: a PNG from canvas, offered beside the printable page.
+- [ ] **Per-lesson favicon does not update after a swap**: Startr Swap replaces `main` only.
+- [ ] **Set `PB_URL` in the production build**: the live site still says "Signups open when the site goes live" (seen 2026-10-27).
 
 ## Bugs
 

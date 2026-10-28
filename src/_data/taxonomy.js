@@ -34,4 +34,14 @@ module.exports = {
     "multi-week": "multi-week",
     "not-solo": "not realistically solo",
   },
+  // Default goal, in calendar days from the start, per time estimate. Wider
+  // than the effort itself because people underestimate (the planning
+  // fallacy); the learner can always pick their own date.
+  timeTargets: {
+    "one-sitting": 2,
+    weekend: 7,
+    "multi-day": 14,
+    "multi-week": 42,
+    "not-solo": 90,
+  },
 };

@@ -1,0 +1,49 @@
+<!doctype html>
+<!-- LLR/1 receiver fixture: a second registered site on http://localhost:8081.
+     It shows the minimum a site needs to receive and show progress from
+     build: the head snippet, a registry, llr.js and a widget.
+     Serve with: python3 -m http.server 8081 --directory test/fixtures/receiver -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script>
+    (function () {
+      var hash = location.hash, query = new URLSearchParams(location.search), strip = false;
+      if (hash.indexOf("#llr=") === 0) {
+        window.__llrIncoming = { payload: hash.slice(5), referrer: document.referrer };
+        hash = "";
+        strip = true;
+      }
+      if (query.has("sage_server")) {
+        window.__llrServer = { server: query.get("sage_server"), caps: query.get("sage_caps") || "" };
+        query.delete("sage_server");
+        query.delete("sage_caps");
+        strip = true;
+      }
+      if (strip) {
+        var rest = query.toString();
+        history.replaceState(history.state, "", location.pathname + (rest ? "?" + rest : "") + hash);
+      }
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLR receiver fixture</title>
+  <link rel="stylesheet" href="https://startr.style/style.css" />
+  <style>:root { --c-line: oklch(88% 0.01 250); --c-we: oklch(53% 0.14 250); }</style>
+</head>
+<body style="--maxw:40rem; --m:auto; --p:1.5rem 1rem">
+  <main>
+    <h1 style="--size:1.4rem">Receiver fixture (:8081)</h1>
+    <p>Progress from build appears below once you follow a <code>data-llr</code> link from it, or press Refresh.</p>
+    <section data-llr-section style="--p:1rem; --b:1px solid var(--c-line); --radius:0.5rem">
+      <div data-llr-widget></div>
+    </section>
+    <p><a href="http://localhost:8080/progress/" data-llr>Back to build (:8080)</a></p>
+  </main>
+  <script type="application/json" id="llr-registry">{"version":1,"sites":[
+    {"origin":"http://localhost:8080","name":"Build it yourself (local)","receives":true,"exports":true},
+    {"origin":"http://localhost:8081","name":"Receiver fixture (local)","receives":true,"exports":false}
+  ]}</script>
+  <script src="http://localhost:8080/llr/v1/llr.js" defer></script>
+</body>
+</html>

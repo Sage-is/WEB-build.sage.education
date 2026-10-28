@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 16" aria-hidden="true">
+  <!-- Certificate divider: two rules meeting at a stepped diamond. -->
+  <g stroke="#9a7b3c" stroke-width="1.2" fill="none">
+    <path d="M12 8 H96" />
+    <path d="M144 8 H228" />
+    <path d="M44 5 H96 M144 5 H196" stroke-width="0.6" />
+  </g>
+  <g fill="#9a7b3c">
+    <path d="M100 8 L104 4 L108 8 L104 12 Z" />
+    <path d="M120 1 L127 8 L120 15 L113 8 Z" />
+    <path d="M132 8 L136 4 L140 8 L136 12 Z" />
+  </g>
+</svg>

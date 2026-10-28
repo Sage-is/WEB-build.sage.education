@@ -7,20 +7,24 @@ permalink: "/paths/{{ pathLevel.key }}/"
 eleventyComputed:
   title: "{{ pathLevel.label }} path"
 ---
+{# <main> is the swap region, so links here swap in place with no wrapper. #}
 <h1 style="--size:1.6rem; --size-md:2.1rem">
   <span style="--bg:var(--c-{{ pathLevel.key }}); --c:white; --p:0.1rem 0.6rem; --radius:0.3rem">{{ pathLevel.label }}</span>
   {{ pathLevel.sub }}
 </h1>
 <p>{{ pathLevel.intro }}</p>
+{% for a in achievements %}{% if a.kind == "path" and a.level == pathLevel.key %}
+<p style="{{ ui.note }}">Finish {{ a.count }} {{ "build" if a.count == 1 else "builds" }} here for the {{ a.name }} certificate. <a href="/progress/">Your progress</a></p>
+{% endif %}{% endfor %}
 
-<div data-swap>
 <ul style="--lis:none; --p:0; --d:grid; --g:0.8rem">
   {% for lesson in lessons %}
     {% if lesson.overlay.level == pathLevel.key %}
-    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:0.8rem">
-      <p style="--d:flex; --ai:center; --g:0.5rem; --m:0">
-        {% if lesson.icon %}<img src="{{ lesson.icon }}" alt="" width="20" height="20" style="--radius:0.25rem; flex-shrink:0" />{% endif %}
+    <li data-lesson-card style="{{ ui.card }}; --p:0.8rem; --bc-on:var(--c-done); --bgc-on:var(--c-done-bg)">
+      <p style="--d:flex; --ai:flex-start; --g:0.5rem; --m:0">
+        {% if lesson.icon %}<img src="{{ lesson.icon }}" alt="" width="20" height="20" style="--radius:0.25rem; --mt:0.2rem" />{% endif %}
         <a href="/lessons/{{ lesson.slug }}/" style="--weight:700">{{ lesson.overlay.title | titleBreak | safe }}</a>
+        <span data-lesson-chip="{{ lesson.slug }}" hidden style="--ml:auto; --size:0.75rem; --c:var(--c-done); --weight:700"></span>
       </p>
       <p style="--size:0.85rem; --m:0.3rem 0 0">{{ lesson.overlay.summary | truncate(140) }}</p>
       <p style="--size:0.75rem; --m:0.3rem 0 0">{{ taxonomy.timeLabels[lesson.overlay.timeEstimate] }} · {{ lesson.entry.category }}</p>
@@ -34,4 +38,3 @@ eleventyComputed:
   Other paths:
   {% for l in taxonomy.levels %}{% if l.key != pathLevel.key %}<a href="/paths/{{ l.key }}/">{{ l.label }}</a> {% endif %}{% endfor %}
 </p>
-</div>

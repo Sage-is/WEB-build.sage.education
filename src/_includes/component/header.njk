@@ -1,8 +1,12 @@
-<header style="--d:flex; --fw:wrap; --ai:center; --jc:space-between; --g:0.5rem; --p:1rem; --p:1rem 0rem">
-  <a href="/" style="--td:none; --weight:700; --size:1.1rem">{{ site.name }}</a>
-  <nav style="--d:flex; --g:1rem">
-    <a href="/paths/beginner/">beginner</a>
-    <a href="/paths/intermediate/">intermediate</a>
-    <a href="/paths/advanced/">advanced</a>
+<header style="--d:flex; --fw:wrap; --ai:center; --jc:space-between; --g:0.5rem; --p:1rem 0; --d-pt:none">
+  <a href="/" data-swap-target="main" style="--td:none; --weight:700; --size:1.1rem">{{ site.name }}</a>
+  <nav style="--d:flex; --fw:wrap; --g:0.4rem 1rem">
+    {% for l in taxonomy.levels %}
+    {% set href = "/paths/" + l.key + "/" %}
+    <a href="{{ href }}" data-swap-target="main" data-nav {% if page.url == href %}aria-current="page"{% endif %}
+       style="--c-on:var(--c-ink)">{{ l.key }}</a>
+    {% endfor %}
+    <a href="/progress/" data-swap-target="main" data-nav {% if page.url == "/progress/" %}aria-current="page"{% endif %}
+       style="--c-on:var(--c-ink)">progress <span data-progress-count hidden style="{{ ui.chip }}; --bg:var(--c-done)"></span></a>
   </nav>
 </header>

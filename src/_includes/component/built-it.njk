@@ -1,11 +1,24 @@
-{# expects: slug, level — revealed by progress.js when all steps are checked #}
-<section data-built-it hidden style="--p:1rem; --radius:0.5rem; --b:2px solid var(--c-beginner); --mt:2rem; --ta:center">
-  <h2 style="--size:1.1rem">All steps done — did it work?</h2>
+{# expects: slug, level — progress.js reveals and fills this once every step is ticked #}
+<section data-built-it hidden style="--p:1rem; --radius:0.5rem; --b:2px solid var(--c-done); --mt:2rem">
+  <h2 style="--size:1.2rem; --m:0">All steps done</h2>
+  <p data-finished-date style="--m:0.3rem 0 0"></p>
+  <p data-goal-result style="--m:0.3rem 0 0; --weight:700"></p>
+  <p data-new-awards aria-live="polite" style="--m:0.3rem 0 0"></p>
+  <label style="--d:block; --mt:0.9rem">
+    What would you change next time?
+    <span style="{{ ui.note }}">Optional. It stays in this browser.</span>
+    <textarea data-reflection rows="3" style="--d:block; --w:100%; --mt:0.3rem; --p:0.4rem"></textarea>
+  </label>
+  <p style="--d:flex; --fw:wrap; --g:0.6rem 1rem; --mt:0.9rem; --mb:0">
+    <a data-certificate-link href="/certificate/?lesson={{ slug }}" style="--weight:700">Get your certificate</a>
+    <a href="/progress/#backup">Back up your progress</a>
+  </p>
+  <div data-llr-send data-slug="{{ slug }}" hidden style="--d:flex; --fw:wrap; --g:0.5rem; --mt:0.8rem"></div>
   {% if env.pbUrl %}
-  <button type="button" data-built-it-btn data-slug="{{ slug }}" data-level="{{ level }}"
-          style="--p:0.5rem 1.2rem; --weight:700">I built this</button>
-  <p data-built-it-note hidden style="--size:0.85rem"></p>
-  {% else %}
-  <p style="--size:0.9rem">Congratulations. Tell someone what you built.</p>
+  <p style="--mt:0.9rem; --mb:0">
+    <button type="button" data-built-it-btn data-slug="{{ slug }}" data-level="{{ level }}"
+            style="--p:0.5rem 1.2rem; --weight:700">I built this</button>
+  </p>
+  <p data-built-it-note hidden style="{{ ui.note }}"></p>
   {% endif %}
 </section>

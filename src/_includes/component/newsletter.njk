@@ -1,9 +1,9 @@
 {# expects: slug (optional source) #}
-<section style="--p:1rem; --radius:0.5rem; --b:1px solid oklch(88% 0.01 250); --mt:2rem">
+<section style="{{ ui.card }}; --mt:2rem; --d-pt:none">
   <h2 style="--size:1.1rem">Keep building</h2>
   <p style="--size:0.9rem">New lessons and honest build notes, by email. No spam, one-click out.</p>
   {% if env.pbUrl %}
-  <form data-newsletter data-source-slug="{{ slug }}" style="--d:flex; --g:0.5rem; --fw:wrap">
+  <form data-newsletter data-swap-off method="post" data-source-slug="{{ slug }}" style="--d:flex; --g:0.5rem; --fw:wrap">
     <input type="email" name="email" required placeholder="you@example.com" style="--p:0.4rem; --fg:1" />
     <button type="submit" style="--p:0.4rem 1rem">subscribe</button>
   </form>

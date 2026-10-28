@@ -1,0 +1,86 @@
+---
+title: Your progress
+description: Your builds, badges and certificates. Kept in this browser only.
+permalink: /progress/
+---
+<div data-progress-page>
+<h1 style="--size:1.6rem; --size-md:2.1rem">Your progress</h1>
+<p>Everything on this page lives in this browser only. There is no account, and nothing is sent anywhere unless you follow a link that says so.</p>
+<p data-storage-warning hidden style="{{ ui.panel }}; {{ ui.note }}">This browser is not saving progress, perhaps because of private browsing. Ticks will be gone when you close the tab.</p>
+
+<section style="{{ ui.panel }}">
+  <h2 style="--size:1.05rem; --m:0 0 0.6rem">Continue where you left off</h2>
+  <div data-llr-widget><p style="{{ ui.note }}; --m:0">Loading…</p></div>
+</section>
+
+<section>
+  <h2 style="{{ ui.h2 }}">Your name, for certificates</h2>
+  <label style="--d:flex; --fw:wrap; --ai:center; --g:0.5rem">
+    <span style="{{ ui.note }}">Printed on certificates. Stays in this browser.</span>
+    <input type="text" data-learner-name autocomplete="name" maxlength="120" placeholder="Your name" style="--p:0.4rem; --fg:1; --minw:12rem" />
+  </label>
+</section>
+
+<section>
+  <h2 style="{{ ui.h2 }}">Your builds</h2>
+  {% for l in taxonomy.levels %}
+  <h3 style="--size:1rem; --mt:1.2rem">
+    <span style="{{ ui.chip }}; --bg:var(--c-{{ l.key }}); --size:0.8rem">{{ l.label }}</span>
+  </h3>
+  <ul style="--lis:none; --p:0; --d:grid; --g:0.5rem">
+    {% for lesson in lessons %}{% if lesson.overlay.level == l.key %}
+    <li data-progress-row="{{ lesson.slug }}" style="{{ ui.card }}; --p:0.6rem 0.8rem; --bc-on:var(--c-done); --bgc-on:var(--c-done-bg)">
+      <p style="--d:flex; --fw:wrap; --ai:baseline; --jc:space-between; --g:0.3rem 0.8rem; --m:0">
+        <a href="/lessons/{{ lesson.slug }}/" style="--weight:700">{{ lesson.entry.name }}</a>
+        <span data-row-status style="--size:0.8rem">Not started</span>
+      </p>
+      <p data-row-detail style="--size:0.8rem; --m:0.2rem 0 0"></p>
+      <p data-row-cert hidden style="--size:0.8rem; --m:0.2rem 0 0"><a href="/certificate/?lesson={{ lesson.slug }}">Certificate</a></p>
+    </li>
+    {% endif %}{% endfor %}
+  </ul>
+  {% endfor %}
+</section>
+
+<section>
+  <h2 style="{{ ui.h2 }}">Badges and certificates</h2>
+  <p style="{{ ui.note }}">Every badge says what earns it before you have it, and once earned it stays. There are no points, streaks or leaderboards.</p>
+  <ul style="--lis:none; --p:0; --d:grid; --g:0.6rem; --gtc-md:1fr 1fr">
+    {% for a in achievements %}
+    <li data-award="{{ a.id }}" style="{{ ui.card }}; --op:0.6; --op-on:1; --bc-on:var(--c-done)">
+      <p style="--d:flex; --jc:space-between; --g:0.5rem; --m:0">
+        <strong>{{ a.name }}</strong>
+        <span style="--size:0.75rem">{{ "certificate" if a.certificate else "badge" }}</span>
+      </p>
+      <p style="--size:0.85rem; --m:0.3rem 0 0">{{ a.criteria }}</p>
+      <p data-award-date style="--size:0.8rem; --m:0.3rem 0 0">Not yet</p>
+      {% if a.certificate %}
+      <p data-award-cert hidden style="--size:0.85rem; --m:0.3rem 0 0"><a href="/certificate/?path={{ a.level }}">Get the certificate</a></p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2 style="{{ ui.h2 }}">Your Sage servers</h2>
+  <p style="{{ ui.note }}">If you run your own Sage, its Learn link introduces it here, the way n8n's template library remembers your n8n instances. A server you add can receive a lesson's progress when you click "Send", and only then.</p>
+  <div data-llr-servers></div>
+</section>
+
+<section id="backup">
+  <h2 style="{{ ui.h2 }}">Back up and restore</h2>
+  <p style="{{ ui.note }}">Safari clears a site's stored data after 7 days of use without a visit, and clearing your browser data removes it too. A backup file keeps your progress safe; importing one merges it with what is here.</p>
+  <p style="--d:flex; --fw:wrap; --g:0.6rem; --ai:center">
+    <button type="button" data-export style="{{ ui.button }}">Download a backup</button>
+    <label style="--d:flex; --ai:center; --g:0.4rem">
+      <span>Import a backup</span>
+      <input type="file" accept="application/json,.json" data-import />
+    </label>
+  </p>
+  <p data-import-status aria-live="polite" style="{{ ui.note }}"></p>
+  <p style="--mt:1.5rem">
+    <button type="button" data-reset style="{{ ui.button }}">Erase all progress on this site</button>
+  </p>
+</section>
+</div>

@@ -1,0 +1,18 @@
+<!doctype html>
+<!-- LLR/1 outsider fixture: an unregistered site on http://localhost:8082.
+     Its links try to plant progress on the receiver and to abuse build's
+     pull endpoint. Both must fail quietly.
+     Serve with: python3 -m http.server 8082 --directory test/fixtures/outsider -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>LLR outsider fixture</title>
+</head>
+<body>
+  <h1>Outsider fixture (:8082)</h1>
+  <p>Paste a real payload after <code>#llr=</code> to test a forged handoff:</p>
+  <p><a id="forge" href="http://localhost:8081/#llr=">Forge a handoff to the receiver</a></p>
+  <p><a id="steal" href="http://localhost:8080/llr/export/?return=http%3A%2F%2Flocalhost%3A8082%2F">Ask build to send progress here</a></p>
+  <p><a id="announce" href="http://localhost:8080/?sage_server=http%3A%2F%2Flocalhost%3A8082%2F&amp;sage_caps=llr-import">Announce a Sage server to build</a></p>
+</body>
+</html>

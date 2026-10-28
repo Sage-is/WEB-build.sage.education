@@ -47,6 +47,10 @@ transform:
 validate:
 	bun scripts/validate-overlays.mjs
 
+# Progress core and LLR/1 rules (bun test, no browser needed)
+test:
+	bun test test/
+
 favicons:
 	bun scripts/fetch-favicons.mjs
 
@@ -122,4 +126,4 @@ things_clean:
 .PHONY: help show_vars verify require_gitflow_next \
 	minor_release patch_release major_release hotfix \
 	release_finish hotfix_finish things_clean \
-	it_run sync transform validate build deploy
+	it_run sync transform validate test build deploy

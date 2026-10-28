@@ -1,9 +1,33 @@
 <head>
   <meta charset="utf-8" />
+  <script>
+    // LLR/1: lift a progress handoff (#llr=) or a Sage server introducing
+    // itself (?sage_server=) off the address bar before anything else runs,
+    // so neither lingers in the URL. llr.js decides what to keep.
+    (function () {
+      var hash = location.hash, query = new URLSearchParams(location.search), strip = false;
+      if (hash.indexOf("#llr=") === 0) {
+        window.__llrIncoming = { payload: hash.slice(5), referrer: document.referrer };
+        hash = "";
+        strip = true;
+      }
+      if (query.has("sage_server")) {
+        window.__llrServer = { server: query.get("sage_server"), caps: query.get("sage_caps") || "" };
+        query.delete("sage_server");
+        query.delete("sage_caps");
+        strip = true;
+      }
+      if (strip) {
+        var rest = query.toString();
+        history.replaceState(history.state, "", location.pathname + (rest ? "?" + rest : "") + hash);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% if title %}{{ title }} · {% endif %}{{ site.name }}</title>
   <meta name="description" content="{{ description or site.tagline }}" />
   <meta name="generator" content="Startr" />
+  {% if noindex %}<meta name="robots" content="noindex" />{% endif %}
   {% if env.pbUrl %}<meta name="pb-url" content="{{ env.pbUrl }}" />{% endif %}
   {% if lesson and lesson.icon %}
   <link rel="icon" href="{{ lesson.icon }}" />

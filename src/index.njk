@@ -5,49 +5,56 @@ title: Learn to build your own software
 <p>
   Pick something you like, and learn how to build your own version step by step. We’ll show you what you gain, what you give up, and explore the trade-offs along the way.
 </p>
+
+<section data-llr-section hidden style="{{ ui.panel }}; --mb:1.5rem">
+  <h2 style="--size:1.05rem; --m:0 0 0.6rem">Continue where you left off</h2>
+  <div data-llr-widget="quiet"></div>
+  <p style="{{ ui.note }}; --m:0.6rem 0 0"><a href="/progress/">All your progress</a></p>
+</section>
+
 <ul style="--lis:none; --p:0; --d:grid; --g:1rem; --gtc-md:1fr 1fr 1fr">
   {% for l in taxonomy.levels %}
-  <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem; --shadow: 6">
+  <li style="{{ ui.card }}">
     <a href="/paths/{{ l.key }}/" style="--weight:700; --c:var(--c-{{ l.key }})">{{ l.label }}</a>
     <p style="--size:0.85rem; --m:0.3rem 0 0">{{ l.sub }}</p>
   </li>
   {% endfor %}
 </ul>
 
-<section style="--mt:2.5rem">
-  <h2 style="--size:1.3rem">How every lesson works</h2>
+<section>
+  <h2 style="{{ ui.h2 }}">How every lesson works</h2>
   <p>Every build is split into steps, and every step is labeled with who does the work.</p>
   <ul style="--lis:none; --p:0; --d:grid; --g:1rem; --gtc-md:1fr 1fr 1fr">
-    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem">
-      <span style="--bg:var(--c-manually); --c:white; --p:0.15rem 0.6rem; --radius:0.3rem; --weight:700">BY HAND</span>
+    <li style="{{ ui.card }}">
+      <span style="{{ ui.chip }}; --bg:var(--c-manually); --size:0.8rem">BY HAND</span>
       <p style="--size:0.9rem; --m:0.6rem 0 0">Steps that need your identity or your judgment. Accounts, billing, DNS, third-party dashboards. No Agent should drive these, so you do them yourself.</p>
     </li>
-    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem">
-      <span style="--bg:var(--c-we); --c:white; --p:0.15rem 0.6rem; --radius:0.3rem; --weight:700">WE</span>
+    <li style="{{ ui.card }}">
+      <span style="{{ ui.chip }}; --bg:var(--c-we); --size:0.8rem">WE</span>
       <p style="--size:0.9rem; --m:0.6rem 0 0">Build alongside an Agent (an AI assistant). Run the code, watch it break, describe the error, apply the fix. Debugging with a helper is the skill these steps teach.</p>
     </li>
-    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem; --p:1rem">
-      <span style="--bg:var(--c-delegate); --c:white; --p:0.15rem 0.6rem; --radius:0.3rem; --weight:700">DELEGATE</span>
+    <li style="{{ ui.card }}">
+      <span style="{{ ui.chip }}; --bg:var(--c-delegate); --size:0.8rem">DELEGATE</span>
       <p style="--size:0.9rem; --m:0.6rem 0 0">Hand a precise prompt to an Agent and let it do the typing. Then review the result like a first draft, because that is what it is.</p>
     </li>
   </ul>
+  <p style="{{ ui.note }}">Tick steps off as you go. Your progress, badges and certificates stay in this browser; <a href="/progress/">see them here</a>.</p>
 </section>
 
-<section style="--mt:2.5rem">
-  <h2 style="--size:1.3rem">Browse the lessons</h2>
+<section>
+  <h2 style="{{ ui.h2 }}">Browse the lessons</h2>
   <p style="--size:0.9rem">{{ lessons.length }} builds so far, each modeled on software people pay for today.</p>
   <ul style="--lis:none; --p:0; --d:grid; --g:0.6rem; --gtc:1fr 1fr; --gtc-md:1fr 1fr 1fr 1fr">
     {% for lesson in lessons %}
-    <li style="--b:1px solid oklch(88% 0.01 250); --radius:0.5rem">
+    <li data-lesson-card style="--b:1px solid var(--c-line); --radius:0.5rem; --bc-on:var(--c-done); --bgc-on:var(--c-done-bg)">
       <a href="/lessons/{{ lesson.slug }}/" style="--d:flex; --ai:center; --g:0.5rem; --p:0.6rem; text-decoration:none">
-        {% if lesson.icon %}<img src="{{ lesson.icon }}" alt="" width="20" height="20" style="--radius:0.25rem; flex-shrink:0" />{% endif %}
+        {% if lesson.icon %}<img src="{{ lesson.icon }}" alt="" width="20" height="20" style="--radius:0.25rem" />{% endif %}
         <span style="--size:0.9rem; --weight:600">{{ lesson.entry.name }}</span>
+        <span data-lesson-chip="{{ lesson.slug }}" hidden style="--ml:auto; --size:0.7rem; --c:var(--c-done); --weight:700"></span>
       </a>
     </li>
     {% endfor %}
   </ul>
 </section>
-
-
 
 {% include "component/newsletter.njk" %}

@@ -1,0 +1,14 @@
+---
+title: Sending your progress
+permalink: /llr/export/
+noindex: true
+---
+{# LLR/1 pull endpoint. Another registered site sends the learner here with
+   ?return=<its page>; llr.js sends them straight back with this site's
+   summary in the fragment, or refuses an unknown return address. #}
+<section data-llr-export>
+  <h1 style="--size:1.4rem">Sending your progress</h1>
+  <p data-llr-export-status>Preparing your progress summary…</p>
+  <noscript><p>This page needs JavaScript to send your progress back.</p></noscript>
+  <p style="{{ ui.note }}">Only titles, step counts and dates travel. Your name, project links and notes stay here.</p>
+</section>

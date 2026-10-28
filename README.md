@@ -22,6 +22,18 @@ A [Sage.Education](https://sage.education) projects that builds on the [canivibe
   static output in `dist/`. Lessons render only for slugs with a valid
   overlay.
 - `make deploy` — Cloudflare Pages via wrangler.
+- `make test` — bun tests for the progress core and LLR/1.
+
+## Progress, badges and certificates
+
+Learners tick steps and stretch goals, set a time goal, earn badges and print
+self-reported certificates (`/progress/`, `/certificate/`). All of it stays in
+the learner's browser under localStorage `sage-build`; there is no account and
+no server. Rules live in `src/assets/progress-core.js`, badge criteria in
+`src/_data/achievements.js`. Progress moves to our other learning sites only
+when the learner follows a link, as a URL fragment: the LLR/1 protocol in
+`docs/llr-1.md`. Records use xAPI 2.0 and Open Badges 3.0 shapes, so a later
+backend can ingest them unchanged.
 
 Levels map from upstream verdicts: yes → beginner (one-sitting wins), kinda → intermediate (weekend builds), no → advanced (capstones that teach why moats exists).
 

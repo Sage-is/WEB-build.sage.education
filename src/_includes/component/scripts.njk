@@ -1,3 +1,14 @@
+{# Client config, built from the same _data files the pages render from. #}
+<script type="application/json" id="sage-progress-config">{{ {
+  site: site.url,
+  achievements: achievements,
+  timeTargets: taxonomy.timeTargets,
+  timeLabels: taxonomy.timeLabels,
+  levels: taxonomy.levels
+} | dump | safe }}</script>
+<script type="application/json" id="llr-registry">{{ llr | dump | safe }}</script>
 <script src="/assets/startr-swap.js" defer></script>
+<script src="/assets/progress-core.js" defer></script>
+<script src="/assets/llr.js" defer></script>
 <script src="/assets/progress.js" defer></script>
 <script src="/assets/pb-capture.js" defer></script>

@@ -1,0 +1,4 @@
+# Cloudflare Pages headers. The LLR/1 client may be loaded by our other
+# sites with SRI, which a cross-origin script only passes with CORS.
+/llr/v1/*
+  Access-Control-Allow-Origin: *
