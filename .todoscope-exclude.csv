@@ -1,0 +1,6 @@
+path,reason
+node_modules,dependency cache
+dist,generated 11ty build output
+data/upstream,canivibecodeit mirror; make sync replaces it wholesale
+src/assets/startr-swap.js,vendored Startr Swap v1.1; its tags belong to WEB-Startr.Style
+.delegate,agent scratch copies; gitignored
